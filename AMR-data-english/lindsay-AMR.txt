@@ -1,0 +1,19 @@
+# :: snt1	  Lindsay left in order to eat lunch .
+
+# AMR graph:
+(s1l / leave-02
+    :ARG0 (s1p / person
+        :name (s1n / name :op1 "Lindsay"))
+    :purpose (s1e / eat-01
+        :ARG0 s1p
+        :ARG1 (s1l2 / lunch)))
+
+
+# :: snt2	  If it rains , Alana won't water the plants .
+
+# sentence level graph:
+(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 "Alana"))
+    :ARG1 (s2p2 / plant)
+    :condition (s2r / rain-01))

@@ -1,0 +1,429 @@
+user name: jbonn
+user id: 37
+file language: english
+file format: plain_text
+Doc ID in database: 1343
+export time: 7/14/2023, 11:44:51 PM
+
+# :: snt1	
+# Sentence:  Edmund Pope tasted freedom today for the first time in more than eight months .
+
+# sentence level graph:
+(s1t / taste-01
+    :ARG0 (s1p / person
+        :name (s1n / name :op1 "Edmund" :op2 "Pope"))
+    :ARG1 (s1f / freedom)
+    :temporal (s1t2 / today)
+    :Aspect State
+    :MODSTR FullAff)
+
+# alignment:
+s1t: 3-3
+s1n: 1-2
+s1p: 0-0
+s1f: 4-4
+s1t2: 5-5
+
+# document level annotation:
+(s1s0 / sentence
+    :temporal   ((DCT :depends-on s1t2)
+	             (s1t2 :contained s1t))
+    :modal      ((AUTH :FullAff s1t)))
+
+
+
+# :: snt2	
+# Sentence:  Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison .
+
+# sentence level graph:
+(s2i / identity-91
+    :ARG1 (s2p / person :wiki "Edmond_Pope"
+     	:name (s2n / name "op1 "Pope))
+    :ARG2 (s2b / businessman
+	    :mod (s2c4 / country :wiki "United_States"
+	        :name (s2n3 / name :op1 "America"))
+        :ARG1-of (s2c / convict-01
+            :ARG2 (s2c2 / charge-05
+                :ARG1 s2b
+                :ARG2 (s2s / spy-02
+                    :ARG0 s2b
+                    :Aspect Habitual
+                    :MODSTR FullAff))
+            :temporal (s2w / week
+                :mod (s2l / last))
+            :Aspect Performance
+            :MODSTR FullAff)
+        :ARG1-of (s2s2 / sentence-01
+            :ARG2 (s2p2 / prison
+                :mod (s2c3 / country :wiki "Russia"
+                    :name (s2n4 / name :op1 "Russia))
+                :duration (s2t / temporal-quantity
+                    :quant 20
+                    :unit (s2y / year)))
+            :ARG3 s2s
+            :Aspect Performance
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+
+# alignment:
+s2i: 2-2
+s2p: 1-1
+s2n: 0-0
+s2b: 5-5
+s2c4: 4-4
+s2n3: 0-0
+s2c: 8-8
+s2c2: 13-13
+s2s: 12-12
+s2w: 10-10
+s2l: 9-9
+s2s2: 15-15
+s2p2: 22-22
+s2c3: 21-21
+s2n4: 0-0
+s2t: 0-0
+s2y: 18-18
+
+# document level annotation:
+(s2s0 / sentence
+    :temporal ((DCT :depends-on s2w)
+    	    (s2w :contained s2c)
+            (s2w :contained s2s2)
+            (s2c :after s2s))
+    :modal ((AUTH :FullAff s2i)
+            (AUTH :FullAff s2c)
+            (AUTH :FullAff NULL_CHARGER)
+            (NULL_CHARGER :FullAff s2c)
+            (s2c :Unsp s2s))
+    :coref ((s1p :same-entity s2p)))
+
+
+
+# :: snt3	
+# Sentence:  He denied any wrongdoing .
+
+# sentence level graph:
+(s3d / deny-01 
+    :ARG0 (s3p / person
+        :ref-person 3rd
+    :ref-number Singular)
+    :ARG1 (s3d2 / do-02
+        :ARG0 s3p
+        :ARG1 (s3t / thing
+            :mod (s3a / any)
+            :ARG1-of (s3w / wrong-02))
+        :Aspect Performance
+        :MODSTR FullAff
+        :MODPRED s3d)
+    :Aspect Performance
+    :MODSTR FullAff)
+
+# alignment:
+s3d: 2-2
+s3p: 1-1
+s3d2: 4-4
+s3t: 0-0
+s3a: 3-3
+s3w: 0-0
+
+# document level annotation:
+(s3s0 / sentence
+    :temporal ((DCT :before s3d)
+            (s3d :before s3d2))
+    :modal ((AUTH :FullAff s3p)
+    	    (s3p :FullAff s3d)
+	        (s3d :Unsp s3d2))
+    :coref ((s2p :same-entity s3p)))
+
+
+# :: snt4	
+# Sentence:  Russian President Vladimir Putin pardoned him for health reasons .
+# sentence level graph:
+(s4p / pardon-01
+    :ARG0 (s4p2 / person :wiki "Vladimir_Putin"
+        :name (s4n / name :op1 "Vladimir" :op2 "Putin")
+        :ARG1-of (s4h / have-org-role-92
+            :ARG2 (s4c / country :wiki "Russia"
+                :name (s4n2 / name :op1 "Russia"))
+            :ARG3 (s4p3 / president)))
+    :ARG1 (s4p4 / person
+        :ref-person 3rd
+        :ref-number Singular)
+    :reason (s4r / reason
+        :mod (s4h2/ health)
+        :refer-number Plural)
+    :aspect Performance
+    :modstr FullAff)
+
+# alignment:
+s4p: 5-5
+s4p2: 0-0
+s4n: 3-4
+s4h: 0-0
+s4c: 1-1
+s4n2: 0-0
+s4p3: 2-2
+s4p4: 6-6
+s4r: 9-9
+s4h2: 8-8
+
+# document level annotation:
+(s4s0 / sentence
+    :temporal ((s2s2 :after s4p))
+    :modal ((AUTH :FullAff s4p))
+    :coref ((s3p :same-entity s4p4)))
+
+
+# :: snt5	
+# Sentence:  Pope was flown to the U.S. military base at Ramstein , Germany .
+
+# sentence level graph:
+(s5f / fly-01
+    :ARG1 (s5p / person :wiki "Edmond_Pope"
+        :name (s5n / name :op1 "Pope"))
+    :goal (s5b / base
+        :mod (s5m / military
+            :mod (s5c / country :wiki "United_States"
+                :name (s5n2 / name :op1 "U.S.")))
+        :place (s5h / human-settlement :wiki "Ramstein_Air_Base"
+            :name (s5n3 / name :op1 "Ramstein")
+            :place (s5c3 / country :wiki "Germany"
+                :name (s5n4 / name :op1 "Germany"))))
+    :aspect Performance
+    :modstr FullAff)
+
+# alignment:
+s5f: 3-3
+s5p: 1-1
+s5n: 0-0
+s5b: 8-8
+s5m: 7-7
+s5c: 6-6
+s5n2: 0-0
+s5h: 0-0
+s5n3: 10-10
+s5c3: 12-12
+s5n4: 0-0
+
+# document level annotation:
+(s5s0 / sentence
+    :temporal ((s4p :after s5f))
+    :modal ((AUTH :FullAff s5f))
+    :coref ((s4p4 :same-entity s5p)))
+
+
+# :: snt6	
+# Sentence:  He will spend the next several days at the medical center there before he returns home with his wife Sherry .
+
+# sentence level graph:
+(s6s / spend-02
+    :ARG0 (s6p / person
+        :ref-person 3rd
+        :ref-number Singular)
+    :ARG1 (s6t / temporal-quantity
+        :quant (s6s2 / several)
+        :unit (s6d / day)
+        :mod (s6n / next))
+    :place (s6c / center
+        :mod (s6m / medicine)
+        :place (s6t2 / there))
+    :temporal (s6b / before
+        :op2 (s6r / return-01
+            :ARG1 s6p
+            :ARG4 (s6h / home)
+            :companion (s6p2 / person :wiki -
+                :name (s6n2 / name :op1 "Sherry")
+                :ARG1-of (s6h2 / have-role-91
+                    :ARG2 s6p
+                    :ARG3 (s6w / wife)))
+            :aspect Performance
+            :modstr FullAff))
+    :aspect State
+    :modstr FullAff)
+
+# alignment:
+s6s: 3-3
+s6p: 1-1
+s6t: 
+s6s2: 6-6
+s6d: 7-7
+s6n: 5-5
+s6b: 13-13
+s6r: 15-15
+s6h: 16-16
+s6p2: 0-0
+s6n2: 20-20
+s6h2: 0-0
+s6w: 19-19
+s6c: 11-11
+s6m: 10-10
+s6t2: 12-12
+
+# document level annotation:
+(s6s0 / sentence
+    :temporal ((DCT :after s6s)
+            (s6s :after s6r))
+    :modal ((AUTH :FullAff s6s)
+            (AUTH :FullAff s6r))
+    :coref ((s5p :same-entity s6p)
+            (s5b :same-entity s6t2)))
+
+
+# :: snt7	
+# Sentence:  Pope was in remission from a rare form of bone cancer when he was arrested in Russia.
+# sentence level graph:
+(s7r / remission-02
+    :ARG1 (s7d / disease :wiki -
+        :name (s7n2 / name :op1 "bone" :op2 "cancer")
+        :ARG1-of (s7r2 / rare-02))
+    :ARG2 (s7p / person :wiki "Edmond_Pope"
+        :name (s7n / name :op1 "Pope"))
+    :temporal (s7a / arrest-01
+        :ARG1 s7p
+        :place (s7c / country :wiki "Russia"
+            :name (s7n3 / name :op1 "Russia"))
+        :Aspect Performance
+        :MODSTR FullAff)
+    :aspect State
+    :modstr FullAff)
+
+# alignment:
+s7r: 3-4
+s7d: 10-11
+s7n2: 0-0
+s7r2: 7-7
+s7p: 1-1
+s7n: 0-0
+s7a: 15-15
+s7c: 17-17
+s7n3: 0-0
+
+# document level annotation:
+(s7s0 / sentence
+    :temporal ((s2c :before s7a)
+            (s7a :overlap s7h))
+    :modal ((AUTH :FullAff s7h)
+            (AUTH :FullAff s7a))
+    :coref ((s6p :same-entity s7p)))
+
+
+# :: snt8	
+# Sentence:  Doctors will examine him for signs that the cancer may have come back while he [was] awaiting trial in a Russian jail.
+
+# sentence level graph:
+(s8e / examine-01
+    :ARG0 (s8p2 / person
+        :ref-number Plural
+        :ARG1-of (s8h / have-role-91
+            :ARG3 (s8d / doctor)))
+    :ARG1 (s8p / person
+        :ref-person 3rd
+        :ref-number Singular)
+    :ARG2 (s8s / signal-07
+        :ARG1 (s8c / come-01
+            :ARG1 (s8d2 / disease :wiki "Cancer"
+                :name (s8n / name :op1 "cancer))
+            :other-role (s8b / back)
+            :temporal (s8a / await-01
+                :ARG1 s8p
+                :ARG2 (s8t/ try-02
+                    :ARG1 s8p
+                    :Aspect Process
+                    :MODSTR FullAff)
+                :place (s8j / jail
+                    :mod (s8c2 / country :wiki "Russia
+                        :name (s8n2 / name :op1 "Russia")))
+                :Aspect State
+                :MODSTR NeutAff)
+            :Aspect Performance
+            :MODSTR NeutAff)
+        :ARG2 s8d)
+    :Aspect Endeavor
+    :MODSTR FullAff)
+
+# alignment:
+s8e: 3-3
+s8p2: 1-1
+s8h: 0-0
+s8d: 0-0
+s8p: 4-4
+s8s: 6-6
+s8c: 12-12
+s8d2: 9-9
+s8b: 13-13
+s8a: 17-17
+s8t: 18-18
+s8j: 22-22
+s8c2: 21-21
+
+# document level annotation:
+(s8/ sentence
+    :temporal ((DCT :after s8e)
+            (s2c :before s8a)
+            (s8a :overlap s8c))
+    :modal ((AUTH :FullAff s8e)
+            (AUTH :NeutAff s8c)
+            (AUTH :FullAff s8a))
+    :coref ((s7p :same-entity s8p)))
+
+
+# :: snt9	
+# Sentence:  A spokeswoman said that Pope was suffering from malnutrition and high blood pressure .
+
+# sentence level graph:
+(s9s / say-01
+    :ARG0 (s9p / person
+        :ref-number Singular
+        :ARG1-of (s9h / have-org-role-92
+            :ARG3 (s9s2 / spokeswoman)))
+    :ARG1 (s9s3 / suffer-01
+        :ARG0 (s9p2 / person :wiki "Edmond_Pope"
+            :name (s9n / name :op1 "Pope"))
+        :ARG1 (s9a / and
+            :op1 (s9m / malnourished-01
+                :ARG1 s9p2)
+            :op2 (s9p3 / pressure-01
+                :ARG1 (s9b / blood
+                    :part s9p2)
+                :ARG1-of (s9h2 / high-02)))
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s9s)
+    :Aspect Performance
+    :MODSTR FullAff)
+
+# alignment:
+s9s: 3-3
+s9p: 2-2
+s9h: 0-0
+s9s2: 0-0
+s9s3: 7-7
+s9p2: 5-5
+s9n: 0-0
+s9a: 10-10
+s9m: 9-9
+s9p3: 13-13
+s9b: 12-12
+s9h2: 11-11
+
+# document level annotation:
+(s9/ sentence
+    :temporal ((DCT :before s9s)
+            (s9s :overlap s9s3))
+    :modal ((AUTH :AFF s9s)
+            (AUTH :AFF s9p)
+            (s9p :AFF s9s3))
+    :coref ((s8p :same-entity s9p2)))
+
+
+# Source File: 
+Edmund Pope tasted freedom today for the first time in more than eight months.
+Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.
+He denied any wrongdoing.
+Russian President Vladimir Putin pardoned him for health reasons.
+Pope was flown to the U.S. military base at Ramstein, Germany.
+He will spend the next several days at the medical center there before he returns home with his wife Sherry.
+Pope was in remission from a rare form of bone cancer when he was arrested in Russia.
+Doctors will examine him for signs that the cancer may have come back while he [was] awaiting trial in a Russian jail.
+A spokeswoman said that Pope was suffering from malnutrition and high blood pressure.

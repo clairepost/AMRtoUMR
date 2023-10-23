@@ -1,0 +1,4815 @@
+user name: jbonn
+user id: 37
+file language: english
+file format: plain_text
+Doc ID in database: 1345
+export time: 7/13/2023, 11:28:53 AM
+
+# :: snt1	:: snt1 Okay .
+# sentence level graph:
+(s1o / okay-04)
+
+# alignment:
+s1o: 1-1
+
+# document level annotation:
+(s1s0 / sentence)
+
+
+
+
+# :: snt2	:: snt2 U—m the s the scene opens up with um you see a tree ,
+# sentence level graph:
+(s2o2 / open-02
+  :ARG1 (s2s3 / scene
+          :refer-number Singular)
+  :manner (s2s4 / see-01
+            :ARG0 (s2p2 / person
+                    :refer-person 2nd
+                    :refer-number Singular)
+            :ARG1 (s2t2 / tree
+                    :refer-number Singular)
+            :Aspect State
+            :MODSTR FullAff)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s2o2: 6-7
+s2p2: 10-10
+s2s3: 5-5
+s2s4: 11-11
+s2t2: 13-13
+
+# document level annotation:
+(s2s0 / sentence
+
+  :temporal ((present-ref :overlap s2o2)
+             (s2o2 :overlap s2s4))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s2s4)
+          (AUTH :FullAff s2o2)))
+
+
+
+
+# :: snt3	:: snt3 k kay ?
+# sentence level graph:
+(s3o / okay-04
+  :Aspect State
+  :MODSTR NeutAff
+  :ARG2-of (s3r / request-confirmation-91
+             :ARG1 (s3e / event)))
+
+# alignment:s3e: 0-0
+s3o: 2-2
+s3r: 0-0
+
+# document level annotation:
+(s3s0 / sentence
+
+  :temporal ((s2o2 :overlap s3o))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s3o))
+
+  :coref ((s2o2 :same-event s3e)))
+
+
+
+
+# :: snt4	:: snt4 And there's a ladder coming out . . o of the tree ,
+# sentence level graph:
+(s4e / exist-91
+  :ARG1 (s4c / come-33
+          :ARG1 s4l
+          :ARG3 (s4t / tree
+                  :refer-number Singular)
+          :Aspect State
+          :MODSTR FullAff)
+  :ARG2 (s4l / ladder
+          :refer-number Singular)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:s4c: 5-5
+s4e: 2-2
+s4l: 4-4
+s4t: 12-12
+
+# document level annotation:
+(s4s0 / sentence
+
+  :temporal ((s2s4 :overlap s4e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s4e))
+
+  :coref ((s2t2 :same-entity s4t)))
+
+
+
+
+# :: snt5	:: snt5 and there's a man at the top of the ladder ,
+# sentence level graph:
+(s5h / have-place-91
+  :ARG1 (s5m / man
+          :refer-number Singular)
+  :ARG2 (s5t / top
+          :Part-of (s5l / ladder
+                     :refer-number Singular)
+          :refer-number Singular)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s5h: 1-1
+s5m: 4-4
+s5t: 7-7
+s5l: 10-10
+
+# document level annotation:
+(s5s0 / sentence
+
+  :temporal ((s4e :overlap s5h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s5h))
+
+  :coref ((s4l :same-entity s5l)))
+
+
+
+
+# :: snt6	:: snt6 you can't see him yet .
+# sentence level graph:
+(s6s / see-01
+  :ARG0 (s6p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s6p2 / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :mod (s6y / yet)
+  :Aspect State
+  :MODSTR NeutNeg
+  :polarity -)
+
+# alignment:
+s6p: 1-1
+s6p2: 4-4
+s6s: 3-3
+s6y: 5-5
+
+# document level annotation:
+(s6s0 / sentence
+
+  :temporal ((s5e :overlap s6s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s6s))
+
+  :coref ((s2p2 :same-entity s6p)
+          (s5m :same-entity s6p2)))
+
+
+
+
+# :: snt7	:: snt7 A-nd then . . it shifts
+# sentence level graph:
+(s7s / shift-01
+  :ARG1 (s7t / thing
+          :refer-person 3rd
+          :refer-number Singular)
+  :temporal (s7t2 / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s7t: 5-5
+s7s: 6-6
+s7t2: 2-2
+
+# document level annotation:
+(s7s0 / sentence
+
+  :temporal ((s2o2 :after (s7s))
+
+  :modal ((ROOT :MODAL (AUTH)
+          (AUTH :FullAff (s7s))
+
+  :coref ((s2s3 :same-entity (s7t)))
+
+
+
+
+# :: snt8	:: snt8 and you see him ,
+# sentence level graph:
+(s8s / see-01
+  :ARG0 (s8p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s8e / event
+          :ARG0 (s8p2 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :MODPRED s8s)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s8s: 3-3
+s8e: 0-0
+s8p: 2-2
+s8p2: 4-4
+
+# document level annotation:
+(s8s0 / sentence
+
+  :temporal ((s7s :after s8s)
+             (s8s :overlap s8e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s8s)
+          (s8p :AFF s8s)
+          (s8s :UNSP s8e)
+          (AUTH :FullAff s8p))
+
+  :coref ((s6p :same-entity s8p)
+          (s6p2 :same-entity s8p2)))
+
+
+
+
+# :: snt9	:: snt9 plucking a pear from the tree .
+# sentence level graph:
+(s9p / pluck-01
+  :ARG0 (s9p2 / person)
+  :ARG1 (s9p3 / pear
+          :refer-number Singular)
+  :ARG2 (s9t / tree
+          :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s9p: 1-1
+s9p2: 0-0
+s9p3: 3-3
+s9t: 6-6
+
+# document level annotation:
+(s9s0 / sentence
+
+  :coref ((s8e :same-event s9p)
+          (s8p2 :same-entity s9p2)
+          (s4t :same-entity s9t)))
+
+
+
+
+# :: snt10	:: snt10 And you watch him pluck a few pears ,
+# sentence level graph:
+(s10w / watch-01
+  :ARG0 (s10p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s10p2 / pluck-01
+          :ARG0 (s10p3 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :ARG1 (s10p4 / pear
+                  :quant (s10a / a-few))
+          :Aspect Activity
+	  :MODSTR FullAff
+          :MODPRED s10w)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s10a: 6-7
+s10p: 2-2
+s10p2: 5-5
+s10p3: 4-4
+s10p4: 8-8
+s10w: 3-3
+
+# document level annotation:
+(s10s0 / sentence
+
+  :temporal ((s8e :after s10w)
+             (s10w :overlap s10p2))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s10w)
+          (s10p :AFF s10w)
+          (s10w :UNSP s10p2)
+          (AUTH :FullAff s10p))
+
+  :coref ((s8p :same-entity s10p)
+          (s9p2 :same-entity s10p4)))
+
+
+
+
+# :: snt11	:: snt11 and he'd drop them into his thing
+# sentence level graph:
+(s11d / drop-01
+  :ARG0 (s11p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s11t / thing
+          :refer-number Plural)
+  :ARG4 (s11t2 / thing
+          :refer-number Singular
+          :poss s11p)
+  :Aspect Habitual
+  :MODSTR FullAff)
+
+# alignment:
+s11d: 3-3
+s11p: 2-2
+s11t: 4-4
+s11t2: 7-7
+
+# document level annotation:
+(s11s0 / sentence
+
+  :temporal ((s10p2 :after s11d))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s11d))
+
+  :coref ((s10p3 :same-entity s11p)
+          (s10p4 :same-entity s11t)))
+
+
+
+
+# :: snt12	:: snt12 but I don't . . he's wearing like an apron with huge pockets .
+# sentence level graph:
+(s12w / wear-01
+  :ARG0 (s12p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s12t / thing
+          :refer-number Singular
+          :ARG1-of (s12r / resemble-91
+                     :ARG2 (s12a / apron))
+          :part (s12p2 / pocket
+                  :refer-number Plural
+                  :mod (s12h / huge)))
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s12a: 10-10
+s12h: 12-12
+s12p: 6-6
+s12p2: 13-13
+s12r: 8-8
+s12t: 0-0
+s12w: 7-7
+
+# document level annotation:
+(s12s0 / sentence
+
+  :temporal ((s11d :overlap s12w))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s12w))
+
+  :coref ((s11p :same-entity s12p)
+          (s11t2 :same-entity s12t)))
+
+
+
+
+# :: snt13	:: snt13 But I don't think you see the apron at first .
+# sentence level graph:
+(s13h / have-concession-91
+  :ARG1 (s13e / event)
+  :ARG2 (s13t / think-01
+          :ARG0 (s13p / person
+                  :refer-person 1st
+                  :refer-number Singular)
+          :ARG1 (s13s / see-01
+                  :ARG0 (s13p2 / person
+                          :refer-person 2nd
+                          :refer-number Singular)
+                  :ARG1 (s13a / apron
+                          :refer-number Singular)
+                  :temporal (s13a2 / at-first)
+          	  :polarity -
+                  :Aspect State
+                  :MODSTR NeutNeg
+		  :MODPRED s13t))
+	  :Aspect State
+	  :MODSTR FullAff)
+
+# alignment:
+s13a: 8-8
+s13a2: 9-10
+s13h: 1-1
+s13e: 0-0
+s13p: 1-1
+s13s: 6-6
+s13t: 4-4
+s13p2: 5-5
+
+# document level annotation:
+(s13s0 / sentence
+
+  :temporal ((s12w :overlap s13t)
+             (s13a2 :Contained s13s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutNeg s13s))
+
+  :coref ((s12w :same-event s13e)
+          (s10p :same-entity s13p2)
+          (s12t :same-entity s13a)))
+
+
+
+
+# :: snt14	:: snt14 I don't know if that's important or not .
+# sentence level graph:
+(s14k / know-01
+        :ARG0 (s14p / person
+                :refer-person 1st
+                :refer-number Singular)
+        :ARG1 (s14i / important-01
+                :ARG1 (s14t / thing
+                        :mod (s14t2 / that)
+                        :refer-number Singular)
+                :Aspect State
+                :polarity (s14u / umr-unknown)
+                :MODPRED s14k)
+        :polarity -
+        :Aspect State
+        :MODSTR FullNeg)
+
+# alignment:
+s14k: 3-3
+s14p: 1-1
+s14i: 6-6
+s14t: 5-5
+s14t2: 0-0
+s14u: 4-4
+
+# document level annotation:
+(s14s0 / sentence
+
+  :temporal ((s13s :overlap s14k))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s14p)
+          (s14p :NEG s14k))
+
+  :coref ((s13s :same-event s14t)))
+
+
+
+
+# :: snt15	:: snt15 A-nd u-h and then he gets down out of the tree ,
+# sentence level graph:
+(s15g / get-05
+  :ARG1 (s15p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s15d / down)
+  :source (s15t / tree
+          :refer-number Singular)
+  :temporal (s15t2 / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s15g: 6-6
+s15d: 7-7
+s15p: 5-5
+s15t: 11-11
+s15t2: 4-4
+
+# document level annotation:
+(s15s0 / sentence
+
+  :temporal ((s11d :after s15g))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s15g))
+
+  :coref ((s12p :same-entity s15p)
+          (s9t :same-entity s15t)))
+
+
+
+
+# :: snt16	:: snt16 and he dumps all his pears into the basket
+# sentence level graph:
+(s16d / dump-01
+  :ARG0 (s16p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s16p2 / pear
+          :quant (s16a / all)
+          :poss s16p)
+  :goal (s16b / basket
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s16a: 4-4
+s16b: 9-9
+s16d: 3-3
+s16p: 2-2
+s16p2: 6-6
+
+# document level annotation:
+(s16s0 / sentence
+
+  :temporal ((s15g :after s16d))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s16d))
+
+  :coref ((s15p :same-entity s16p)
+          (s11t :same-entity s16p2)))
+
+
+
+
+# :: snt17	:: snt17 and the basket's full ,
+# sentence level graph:
+(s17f / full-09
+  :ARG1 (s17b / basket
+          :refer-number Singular)
+  :ARG2 (s17t / thing)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s17b: 3-3
+s17f: 4-4
+s17t: 0-0
+
+# document level annotation:
+(s17s0 / sentence
+
+  :temporal ((s16d :overlap s17h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s17h))
+
+  :coref ((s16b :same-entity s17b)
+	  (s16p2 :same-entity s17t))
+
+
+
+
+# :: snt18	:: snt18 and one of the pears drops down to the floor ,
+# sentence level graph:
+(s18d / drop-01
+  :ARG1 (s18p / pear
+          :quant 1
+          :ARG2-of (s18i / include-91
+                     :ARG1 (s18p2 / pear
+                             :refer-number Plural)))
+  :ARG4 (s18f / floor
+          :refer-number Singular)
+  :direction (s18d2 / down)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s18d: 6-6
+s18d2: 7-7
+s18f: 10-10
+s18i: 3-3
+s18p: 2-2
+s18p2: 5-5
+
+# document level annotation:
+(s18s0 / sentence
+
+  :temporal ((s16d :after s18d))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s18d))
+
+  :coref ((s18p :subset-of s16p2)
+          (s16p2 :same-entity s18p2)))
+
+
+
+
+# :: snt19	:: snt19 and he picks it up ,
+# sentence level graph:
+(s19p / pick-up-04
+  :ARG0 (s19p2 / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s19t / thing
+          :refer-person 3rd
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s19p: 3-5
+s19p2: 2-2
+s19t: 4-4
+
+# document level annotation:
+(s19s0 / sentence
+
+  :temporal ((s18d :after s19p))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s19p))
+
+  :coref ((s16p :same-entity s19p2)
+          (s18p :same-entity s19t)))
+
+
+
+
+# :: snt20	:: snt20 and he takes his kerchief off ,
+# sentence level graph:
+(s20t / take-off-07
+  :ARG0 (s20p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s20k / kerchief
+          :poss s20p
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s20k: 5-5
+s20p: 2-2
+s20t: 3-6
+
+# document level annotation:
+(s20s0 / sentence
+
+  :temporal ((s19p :after s20t))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s20t))
+
+  :coref ((s19p2 :same-entity s20p)))
+
+
+
+
+# :: snt21	:: snt21 and he wipes it off ,
+# sentence level graph:
+(s21w / wipe-off-03
+  :ARG0 (s21p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s21t / thing
+          :refer-person 3rd
+          :refer-number Singular)
+  :instrument (s21t2 / thing)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s21p: 2-2
+s21t: 4-4
+s21w: 3-5
+s21t2: 0-0
+
+# document level annotation:
+(s21s0 / sentence
+
+  :temporal ((s20t :after s21w))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s21w))
+
+  :coref ((s20p :same-entity s21p)
+          (s19t :same-entity s21t)
+          (s20k :same-entity s21t2)))
+
+
+
+
+# :: snt22	:: snt22 and places it in in the basket which is very full .
+# sentence level graph:
+(s22p / place-01
+  :ARG0 (s22p2 / person)
+  :ARG1 (s22t / thing
+	  :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s22b / basket
+          :refer-number Singular
+          :ARG1-of (s22f / full
+		  :ARG2 (s22t2 / thing)
+                  :degree (s22v / very))
+                  :Aspect State
+                  :MODSTR FullAff)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s22b: 7-7
+s22f: 11-11
+s22h: 0-0
+s22p: 2-2
+s22p2: 0-0
+s22t: 3-3
+s22t2: 0-0
+s22v: 10-10
+
+# document level annotation:
+(s22s0 / sentence
+
+  :temporal ((s21w :after s22p)
+                    (s22p :overlap s22h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s22h)
+          (AUTH :FullAff s22p))
+
+  :coref ((s21p :same-entity s22p2)
+          (s21t :same-entity s22t)
+          (s17b :same-entity s22b)
+	  (s18p2 :same-entity s22t2))
+
+
+
+
+# :: snt23	:: snt23 That's why it fell off in the first place .
+# sentence level graph:
+(s23h / have-reason-91
+  :ARG1 (s23f / fall-01
+          :ARG1 (s23t / thing
+		  :refer-person 3rd
+                  :refer-number Singular)
+          :direction (s23o / off)
+          :Aspect Performance
+          :MODSTR FullAff)
+  :ARG2 (s23e / event
+	  :mod (s23t2 / that))
+  :mod (s23i2 / in-the-first-place)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s23e: 0-0
+s23f: 4-4
+s23h: 0-0
+s23i2: 6-9
+s23o: 5-5
+s23t: 0-0
+s23t2: 1-1
+
+# document level annotation:
+(s23s0 / sentence
+
+  :temporal ((s22h :overlap s23h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s23f)
+          (AUTH :FullAff s23h))
+
+  :coref ((s18d :same-event s23f)
+          (s22h :same-event s23e)
+          (s22t :same-entity s23t)))
+
+
+
+
+# :: snt24	:: snt24 A--nd u--m then he climbs back up the ladder ,
+# sentence level graph:
+(s24c / climb-01
+  :ARG0 (s24p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s24l / ladder
+          :refer-number Singular)
+  :direction (s24u / up)
+  :temporal (s24t / then)
+  :other-role (s24b / back)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s24b: 6-6
+s24c: 5-5
+s24l: 9-9
+s24p: 4-4
+s24t: 3-3
+s24u: 7-7
+
+# document level annotation:
+(s24s0 / sentence
+
+  :temporal ((s22p :after s24c))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s24c))
+
+  :coref ((s22p2 :same-entity s24p)
+          (s5l :same-entity s24l)))
+
+
+
+
+# :: snt25	:: snt25 and he and he . . starts picking pears again .
+# sentence level graph:
+(s25s / start-01
+  :ARG0 s25p2
+  :ARG1 (s25p / pick-01
+  	  :ARG0 (s25p2 / person
+          	  :refer-person 3rd
+          	  :refer-number Singular)
+  	  :ARG1 (s25p3 / pear
+          	  :refer-number Plural)
+  	  :other-role (s25a / again)
+  	  :Aspect Activity
+  	  :MODSTR FullAff)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+
+# alignment:
+s25a: 10-10
+s25p: 8-8
+s25p2: 2-2
+s25p3: 9-9
+s25s: 7-7
+
+# document level annotation:
+(s25s0 / sentence
+
+  :temporal ((s24c :after s25p))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s25p))
+
+  :coref ((s24p :same-entity s25p2)))
+
+
+
+
+# :: snt26	:: snt26 And then while he's up in the ladder,
+# sentence level graph:
+(s26h / have-temporal-91
+  :ARG1 (s26e / event)
+  :ARG2 (s26h2 / have-place-91
+  	:ARG1 (s26p / person
+        	:refer-person 3rd
+        	:refer-number Singular)
+  	:ARG2 (s26u / up-03
+        	:ARG2 (s26l / ladder
+                	:refer-number Singular))
+   	:Aspect State
+  	:MODSTR FullAff))
+
+
+# alignment:
+s26e: 0-0
+s26h: 3-3
+s26h2: 0-0
+s26l: 8-8
+s26p: 4-4
+s26u: 5-5
+
+# document level annotation:
+(s26s0 / sentence
+
+  :temporal ((s24c :after s26h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s26h))
+
+  :coref ((s25p2 :same-entity s26p)
+          (s24l :same-entity s26l)))
+
+
+
+
+# :: snt27	:: snt27 let's see is it while he's up in the ladder ?
+# sentence level graph:
+(s27s / see-01
+  :ARG0 (s27p / person
+          :refer-person 1st
+          :refer-number Plural)
+  :ARG1 (s27u / umr-choice
+          :op1 (s27h / have-temporal-91
+		  :ARG1 (s27e / event)
+		  :ARG2 (s27h2 / have-place-91
+			  :ARG1 (s27p2 / person
+			  	  :refer-person 3rd
+				  :refer-number Singular)
+			  :ARG2 (s27p3 / place
+				  :ARG1-of (s27u2 / up-03
+				  	  :ARG2 (s27l / ladder
+					  	  :refer-number Singular)
+					  :Aspect State
+					  :MODSTR FullAff))
+			  :Aspect State
+			  :MODSTR NeutAff)
+		  :Aspect State)
+	  :op2 (s27e2 / event)
+  :mode imperative
+  :Aspect State
+  :MODSTR PrtAff)
+
+# alignment:
+s27s: 2-2
+s27p: 0-0
+s27u: 0-0
+s27h: 5-5
+s27e: 4-4
+s27h2: 0-0
+s27p2: 6-6
+s27p3: 0-0
+s27u2: 7-7
+s27l: 10-10
+s27e2: 0-0
+
+# document level annotation:
+(s27s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s27h2)
+          (AUTH :NeutAff s27b)
+          (AUTH :PrtAff s27s))
+
+  :coref ((s27p :subset-of s14p)
+          (s26p :same-entity s27p2)
+          (s26l :same-entity s27l)
+          (s26h :same-event s27h2)
+          (s26e :same-event s27e)))
+
+
+
+
+# :: snt28	:: snt28 Or . . or before .
+# sentence level graph:
+(s28h / have-temporal-91
+  :ARG1 (s28e / event)
+  :ARG2 (s28b2 / before
+	  :op1 (s28e2 / event))
+  :Aspect State
+  :MODSTR NeutAff)
+
+# alignment:
+s28h: 0-0
+s28e: 0-0
+s28b2: 5-5
+s28e2: 0-0
+
+# document level annotation:
+(s28s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s28b))
+
+  :coref ((s27e :same-event s28e)
+          (s27h2 :same-event s28e2)))
+
+
+
+
+# :: snt29	:: snt29 U—m anyway ,
+# sentence level graph:
+(s29a / anyway)
+
+# alignment:
+s29a: 2-2
+
+# document level annotation:
+(s29s0 / sentence)
+
+
+
+
+# :: snt30	:: snt30 a guy comes by leading a goat .
+# sentence level graph:
+(s30c / come-01
+  :ARG1 (s30g / guy
+          :refer-number Singular)
+  :ARG4 (s30b / by)
+  :temporal (s30l / lead-01
+              :ARG0 s30g
+              :ARG1 (s30g2 / goat
+                      :refer-number Singular)
+              :Aspect Activity
+              :MODSTR FullAff)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s30b: 4-4
+s30c: 3-3
+s30g: 2-2
+s30g2: 7-7
+s30l: 5-5
+
+# document level annotation:
+(s30s0 / sentence
+
+  :temporal ((s30c :overlap s30l))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s30c)
+          (AUTH :FullAff s30g2))
+
+  :coref ((s28e3 :same-event s30c)))
+
+
+
+
+# :: snt31	:: snt31 And the goat's aaarrr but . . and they don't talk to each other ,
+# sentence level graph:
+(s31a / and
+  :op1 (s31e / event
+          :other-role (s31g / goat
+                  :refer-number Singular))
+  :op2 (s31t / talk-01
+          :ARG0 (s31a2 / and
+		  :op1 (s31p / person
+                	  :refer-person 3rd
+                	  :refer-number Singular)
+		  :op2 (s31p2 / person
+                	  :refer-person 3rd
+                	  :refer-number Singular))
+          :ARG2 s31a2
+	  :polarity -
+          :Aspect Activity
+          :MODSTR FullNeg))
+
+# alignment:
+s31a: 8-8
+s31a2: 0-0
+s31e: 0-0
+s31g: 3-3
+s31p: 0-0
+s31t: 11-11
+s31p2: 0-0
+
+# document level annotation:
+(s31s0 / sentence
+
+  :temporal ((s30c :overlap s31t))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s31t))
+
+  :coref ((s30g2 :same-entity s31g)
+          (s30g :same-entity s31p)
+          (s27p2 :same-entity s31p2)))
+
+
+
+
+# :: snt32	:: snt32 they don't e . . I don't think they even look at each other ,
+# sentence level graph:
+(s32t / think-01
+  :ARG0 (s32p3 / person
+	  :refer-person 1st
+	  :refer-number Singular)
+  :ARG1 (s32l / look-01
+	  :ARG0 (s32a / and
+		  :op1 (s32p / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+		  :op2 (s32p2 / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+	  :ARG1 s32a
+	  :mod (s32e / even)
+	  :polarity -
+	  :Aspect Performance
+	  :MODSTR FullNeg
+	  :MODPRED s32t)
+  :Aspect State
+  :MODSTR PrtAff)
+
+
+# alignment:
+s32t: 8-8
+s32p3: 6-6
+s32l: 11-11
+s32a: 0-0
+s32p: 0-0
+s32p2: 0-0
+s32e: 10-10
+
+# document level annotation:
+(s32s0 / sentence
+
+  :temporal ((s30c :overlap s32l))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :PrtAff s32t)
+	  (AUTH :FullNeg s32l)
+
+  :coref ((s31p :same-entity s32p)
+          (s31p2 :same-entity s32p2)
+	  (s14p :same-entity s32p3))
+
+
+
+
+# :: snt33	:: snt33 and . . the guy . . walks by .
+# sentence level graph:
+(s33w / walk-01
+  :ARG0 (s33g / guy
+          :refer-number Singular)
+  :ARG2 (s33b / by)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s33b: 9-9
+s33g: 5-5
+s33w: 8-8
+
+# document level annotation:
+(s33s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s33w))
+
+  :coref ((s30c :same-event s33w)
+          (s32p :same-entity s33g)))
+
+
+
+
+# :: snt34	:: snt34 And you watch the goat ,
+# sentence level graph:
+(s34w / watch-01
+  :ARG0 (s34p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s34e / event
+          :undergoer (s34g / goat
+                  :refer-number Singular)
+          :MODPRED s34w)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s34e: 0-0
+s34g: 5-5
+s34p: 2-2
+s34w: 3-3
+
+# document level annotation:
+(s34s0 / sentence
+
+  :temporal ((s33w :overlap s34w)
+             (s34w :overlap s34e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s34p)
+          (s34p :AFF s34w)
+          (s34w :UNSP s34e))
+
+  :coref ((s13p2 :same-entity s34p)
+          (s31g :same-entity s34g)))
+
+
+
+
+# :: snt35	:: snt35 disappearing all the way ,
+# sentence level graph:
+(s35d / disappear-01
+  :ARG1 (s35a / animal)
+  :extent (s35a2 / all-the-way)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s35a: 0-0
+s35a2: 2-4
+s35d: 1-1
+
+# document level annotation:
+(s35s0 / sentence
+
+  :coref ((s34e :same-event s35d)
+          (s34g :same-entity s35t)))
+
+
+
+
+# :: snt36	:: snt36 ? and then then you're back to the man in the tree .
+# sentence level graph:
+(s36h / have-place-91
+  :ARG1 (s36p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG2 (s36m / man
+          :place (s36t / tree
+          	  :refer-number Singular))
+  :other-role (s36b / back)
+  :temporal (s36t2 / then)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s36h: 0-0
+s36p: 5-5
+s36m: 9-9
+s36t: 12-12
+s36b: 6-6
+s36t2: 4-4
+
+# document level annotation:
+(s36s0 / sentence
+
+  :temporal ((s35d :after s36h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s36h))
+
+  :coref ((s34p :same-entity s36p)
+          (s27p2 :same-entity s36m)
+          (s15t :same-entity s36t)))
+
+
+
+
+# :: snt37	:: snt37 And he's up there in the tree .
+# sentence level graph:
+(s37h / have-place-91
+  :ARG1 (s37p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s37t2 / there
+	  :ARG1-of (s37u / up-03
+        	  :ARG2 (s37t / tree
+                	  :refer-number Singular)))
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s37h: 0-0
+s37p: 2-2
+s37t: 7-7
+s37t2: 4-4
+s37u: 3-3
+
+# document level annotation:
+(s37s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s37h))
+
+  :coref ((s36h2 :same-event s37h)
+          (s36m :same-entity s37p)
+          (s36t :same-entity s37t)))
+
+
+
+
+# :: snt38	:: snt38 And then definitely when he's up there ,
+# sentence level graph:
+(s38h2 / have-temporal-91
+	:ARG1 (s38e / event)
+	:ARG2 (s38h / have-place-91
+              :ARG1 (s38p / person
+                      :refer-person 3rd
+                      :refer-number Singular)
+              :ARG2 (s38t / there
+			:ARG1-of (s38u / up-03))
+              :Aspect State
+              :MODSTR FullAff))
+
+# alignment:
+s38e: 0-0
+s38h2: 4-4
+s38h: 0-0
+s38p: 5-5
+s38t: 7-7
+s38u: 6-6
+
+# document level annotation:
+(s38s0 / sentence
+
+  :temporal ((s38h :Contained s38e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s38h))
+
+  :coref ((s37h :same-event s38h)
+          (s37p :same-entity s38p)))
+
+
+
+
+# :: snt39	:: snt39 . . a kid comes by on a bicycle .
+# sentence level graph:
+(s39c / come-01
+  :ARG1 (s39k / kid
+          :refer-number Singular)
+  :ARG3 (s39p / place)
+  :ARG4 (s39b / by)
+  :instrument (s39b2 / bicycle
+          :refer-number Singular)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s39b: 6-6
+s39b2: 9-9
+s39c: 5-5
+s39k: 4-4
+s39p: 0-0
+
+# document level annotation:
+(s39s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s39c))
+
+  :coref ((s38e :same-event s39c)))
+
+
+
+
+# :: snt40	:: snt40 From the direction where the goat man left ,
+# sentence level graph:
+(s40d / direction
+  :ARG2-of (s40l / leave-11
+  	  :ARG0 (s40m / man
+                  :Poss-of (s40g / goat
+                  	  :refer-number Singular))
+          :Aspect Performance
+          :MODSTR FullAff)))
+
+# alignment:
+s40d: 3-3
+s40l: 8-8
+s40m: 7-7
+s40g: 6-6
+
+# document level annotation:
+(s40s0 / sentence
+
+  :temporal ((s40c :before s40l))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s40l))
+
+  :coref ((s33g :same-entity s40m)
+          (s35a :same-entity s40g)
+	  (s39p :same-event :s40d))
+
+
+
+
+# :: snt41	:: snt41 okay ?
+# sentence level graph:
+(s41o / okay-04
+  :ARG2-of (s41r / request-confirmation-91
+  	  :ARG1 (s41e / event))
+  :MODSTR NeutAff)
+
+# alignment:
+s41r: 0-0
+s41o: 1-1
+
+# document level annotation:
+(s41s0 / sentence
+
+  :temporal ((s41e :overlap s41o))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s41o)))
+
+
+
+
+# :: snt42	:: snt42 A--nd . . u--m the bicycle's way too big for the kid .
+# sentence level graph:
+(s42h / have-degree-92
+  :ARG1 (s42b / bicycle
+          :refer-number Singular)
+  :ARG2 (s42b2 / big)
+  :ARG3 (s42t / too
+          :degree intensifier)
+  :ARG6 (s42k / kid
+          :refer-number Singular)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s42b: 6-6
+s42b2: 9-9
+s42h: 0-0
+s42k: 12-12
+s42t: 8-8
+
+# document level annotation:
+(s42s0 / sentence
+
+  :temporal ((s41e :overlap s42h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s42h))
+
+  :coref ((s40p :same-entity s42k)
+          (s39b2 :same-entity s42b)))
+
+
+
+
+# :: snt43	:: snt43 I'm giving you all these details .
+# sentence level graph:
+(s43g / give-01
+  :ARG0 (s43p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s43d / detail
+          :quant (s43a / all)
+          :mod (s43t / this)
+          :refer-number Plural)
+  :ARG2 (s43p2 / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s43a: 4-4
+s43d: 6-6
+s43g: 2-2
+s43p: 1-1
+s43p2: 3-3
+s43t: 5-5
+
+# document level annotation:
+(s43s0 / sentence
+
+  :temporal ((present-ref :overlap s43g))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s43g))
+
+  :coref ((s14p :same-entity s43p)
+          (s36p :same-entity s43p2)))
+
+
+
+
+# :: snt44	:: snt44 I don't know if you want them.
+# sentence level graph:
+(s44k / know-01
+        :ARG0 (s44p / person
+                :refer-person 1st
+                :refer-number Singular)
+        :ARG1 (s44w / want-01
+                :ARG0 (s44p2 / person
+                        :refer-person 2nd
+                        :refer-number Singular)
+                :ARG1 (s44t2 / thing
+                        :refer-person 3rd
+                        :refer-number Plural)
+                :polarity (s44u / umr-unknown)
+                :Aspect State
+                :MODPRED s44k))
+  :polarity -
+  :Aspect State
+  :MODSTR FullNeg)
+
+# alignment:
+s44k: 3-3
+s44p: 1-1
+s44p2: 5-5
+s44u: 4-4
+s44t2: 7-7
+s44w: 6-6
+
+# document level annotation:
+(s44s0 / sentence
+
+  :temporal ((s43g :overlap s44k)
+                    (s44k :overlap s44w))
+
+  :modal ((ROOT :MODAL AUTH)
+                    (s44p :AFF s44k)
+                    (s44k :UNSP s44w)
+                    (AUTH :FullNeg s44p))
+
+  :coref ((s43p :same-entity s44p)
+                    (s43p2 :same-entity s44p2)
+                    (s43d :same-entity s44t2)))
+
+
+
+
+# :: snt45	:: snt45 U—m the . . the reason I'm giving you the details is cause I don't know what the point of the movie was.
+# sentence level graph:
+(s45h / have-reason-91
+  :ARG1 (s45g / give-01
+          :ARG0 (s45p / person
+                  :refer-person 1st
+                  :refer-number Singular)
+          :ARG1 (s45d / detail
+                  :refer-number Plural)
+          :ARG2 (s45p2 / person
+                  :refer-person 2nd
+                  :refer-number Singular)
+          :Aspect Activity
+          :MODSTR FullAff)
+  :ARG2 (s45k / know-01
+          :ARG0 s45p
+          :ARG1 (s45p3 / point
+		  :refer-number Singular
+		  :Purpose-of (s45m / movie
+			  :refer-number Singular)
+                  :MODPRED s45k)
+	  :polarity -
+          :Aspect State
+          :MODSTR FullNeg))
+
+# alignment:
+s45h: 13-13
+s45g: 8-8
+s45p: 7-7
+s45d: 11-11
+s45p2: 9-9
+s45k: 16-16
+s45p3: 19-19
+s45m: 22-22
+
+# document level annotation:
+(s45s0 / sentence
+
+  :temporal ((s45g :overlap s45h)
+             (s45h :overlap s45k)
+             (s45k :overlap s45i2))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s45g)
+          (s45g :AFF s45k)
+          (AUTH :FullNeg s45g)
+          (AUTH :FullAff s45g))
+
+  :coref ((s43g :same-event s45g)
+          (s44p :same-entity s45p)
+          (s44p2 :same-entity s45p2)
+          (s44t2 :same-entity s45d)
+          (s45m :subset-of s2s3)))
+
+
+
+
+# :: snt46	:: snt46 Okay?
+# sentence level graph:
+(s46o / okay-04
+  :ARG2-of (s46r / request-confirmation-91
+	:ARG1 (s46e / event))
+
+# alignment:
+s46e: 0-0
+s46o: 1-1
+s46r: 0-0
+
+# document level annotation:
+(s46s0 / sentence
+
+  :temporal ((s46e :overlap s46o))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s46o))
+
+  :coref ((s45h :same-event s46e)))
+
+
+
+
+# :: snt47	:: snt47 So maybe you can see {laugh begins} something that {laugh ends} I didn't.
+# sentence level graph:
+(s47s / see-01
+  :ARG0 (s47p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s47s3 / something
+          :ARG1-of (s47s2 / see-01
+                     :ARG0 (s47p2 / person
+                             :refer-person 1st
+                             :refer-number Singular)
+		     :polarity -
+                     :Aspect State
+                     :MODSTR FullNeg))
+  :Aspect State
+  :MODSTR NeutAff)
+
+# alignment:
+s47p: 3-3
+s47p2: 12-12
+s47s: 5-5
+s47s2: 0-0
+s47s3: 8-8
+
+# document level annotation:
+(s47s0 / sentence
+
+  :temporal ((s45g :overlap s47s)
+             (s45g :before s47p2))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s47s2)
+          (AUTH :NeutAff s47s))
+
+  :coref ((s45p2 :same-entity s47p)
+          (s45p :same-entity s47p2)))
+
+
+
+
+# :: snt48	:: snt48 Okay?
+# sentence level graph:
+(s48o / okay-04
+  :ARG2-of (s48r / request-confirmation-91
+	  :ARG1 (s48e / event))
+  :MODSTR NeutAff)
+
+# alignment:
+s48e: 0-0
+s48o: 1-1
+
+# document level annotation:
+(s48s0 / sentence
+
+  :temporal ((s48e :overlap s48o))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s48o))
+
+  :coref ((s47s :same-event s48e)))
+
+
+
+
+# :: snt49	:: snt49 U--m g a kid comes by on a bicycle ,
+# sentence level graph:
+(s49c / come-01
+  :ARG1 (s49k / kid
+          :refer-number Singular)
+  :ARG4 (s49b / by)
+  :instrument (s49b2 / bicycle
+          :refer-number Singular)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s49b: 6-6
+s49b2: 9-9
+s49c: 5-5
+s49k: 4-4
+
+# document level annotation:
+(s49s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s49c))
+
+  :coref ((s40c :same-event s49c)
+          (s42b :same-entity s49b2)
+          (s42k :same-entity s49k)))
+
+
+
+
+# :: snt50	:: snt50 . . he stops ,
+# sentence level graph:
+(s50s / stop-01
+  :ARG1 (s50p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s50p: 3-3
+s50s: 4-4
+
+# document level annotation:
+(s50s0 / sentence
+
+  :temporal ((s49c :overlap s50s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s50s))
+
+  :coref ((s49k :same-entity s50p)))
+
+
+
+
+# :: snt51	:: snt51 he gets off his bike ,
+# sentence level graph:
+(s51g / get-05
+  :ARG1 (s51p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :source (s51b / bike
+            :poss s51p
+            :refer-number Singular)
+  :direction (s51o / off)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s51b: 5-5
+s51g: 2-2
+s51p: 1-1
+s51o: 3-3
+
+# document level annotation:
+(s51s0 / sentence
+
+  :temporal ((s50s :after s51g))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s51g))
+
+  :coref ((s50p :same-entity s51p)
+          (s49b2 :same-entity s51b)))
+
+
+
+
+# :: snt52	:: snt52 u--m the movie was in color .
+# sentence level graph:
+(s52h / have-mod-91
+  :ARG1 (s52m2 / movie
+          :refer-number Singular)
+  :ARG2 (s52c2 / color)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s52c2: 6-6
+s52h: 0-0
+s52m2: 3-3
+
+# document level annotation:
+(s52s0 / sentence
+
+  :temporal ((s51g :overlap s52h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s52h))
+
+  :coref ((s45m :same-entity s52m2)))
+
+
+
+
+# :: snt53	:: snt53 And the movie had sound track .
+# sentence level graph:
+(s53h / have-part-91
+  :ARG1 (s53m / movie
+          :refer-number Singular)
+  :ARG2 (s53s / sound-track
+          :refer-number Singular)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s53h: 4-4
+s53m: 3-3
+s53s: 5-6
+
+# document level annotation:
+(s53s0 / sentence
+
+  :temporal ((s52h :overlap s53h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s53h))
+
+  :coref ((s52m2 :same-entity s53m)))
+
+
+
+
+# :: snt54	:: snt54 It's important .
+# sentence level graph:
+(s54i2 / important-01
+  :ARG1 (s54e / event)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s54e: 1-1
+s54i2: 2-2
+
+# document level annotation:
+(s54s0 / sentence
+
+  :temporal ((s54e :overlap s54h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s54h))
+
+  :coref ((s53h :same-event s54e)))
+
+
+
+
+# :: snt55	:: snt55 And then the mo the whole movie started with a a cock crowing.
+# sentence level graph:
+(s55s / start-01
+  :ARG1 (s55m / movie
+          :refer-number Singular
+          :extent (s55w / whole))
+  :ARG2 (s55c / crow-01
+          :ARG0 (s55c2 / cock
+                  :refer-number Singular)
+          :Aspect Activity
+          :MODSTR FullAff)
+  :temporal (s55t / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s55c: 13-13
+s55c2: 12-12
+s55m: 7-7
+s55s: 8-8
+s55t: 2-2
+s55w: 6-6
+
+# document level annotation:
+(s55s0 / sentence
+
+  :temporal ((s2o2 :overlap s55s)
+          (s55s :overlap s55c))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s55s)
+          (AUTH :FullAff s55c))
+
+  :coref ((s53m :same-entity s55m)))
+
+
+
+
+# :: snt56	:: snt56 And then you see /?/ .
+# sentence level graph:
+(s56s / see-01
+  :ARG0 (s56p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :temporal (s56t / then)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s56p: 3-3
+s56s: 4-4
+s56t: 2-2
+
+# document level annotation:
+(s56s0 / sentence
+
+  :temporal ((s55s :after s56s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s56s))
+
+  :coref ((s47p :same-entity s56p)))
+
+
+
+
+# :: snt57	:: snt57 Anyway .
+# sentence level graph:
+(s57a / anyway)
+
+# alignment:
+s57a: 1-1
+
+# document level annotation:
+(s57s0 / sentence)
+
+
+
+
+# :: snt58	:: snt58 I just remembered that .
+# sentence level graph:
+(s58r / remember-01
+  :ARG0 (s58p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s58e / event
+          :mod (s58t / that))
+  :temporal (s58j / just)
+  :MODSTR FullAff
+  :Aspect Performance)
+
+# alignment:
+s58e: 0-0
+s58p: 1-1
+s58r: 3-3
+s58t: 4-4
+s58j: 2-2
+
+# document level annotation:
+(s58s0 / sentence
+
+  :temporal ((present-ref :overlap s58r))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s58r))
+
+  :coref ((s47p2 :same-entity s58p)
+          (s55s :same-event s58e)))
+
+
+
+
+# :: snt59	:: snt59 Anyway ,
+# sentence level graph:
+(s59a / anyway)
+
+# alignment:
+s59a: 1-1
+
+# document level annotation:
+(s59s0 / sentence)
+
+
+
+
+# :: snt60	:: snt60 so u--m the kid on the bicycle ,
+# sentence level graph:
+(s60k / kid
+  :refer-number Singular
+  :place (s60b / bicycle
+        :refer-number Singular))
+
+# alignment:
+s60b: 7-7
+s60k: 4-4
+
+# document level annotation:
+(s60s0 / sentence
+
+  :coref ((s51p :same-entity s60k)
+          (s51b :same-entity s60b)))
+
+
+
+
+# :: snt61	:: snt61 . . gets off the bicycle ,
+# sentence level graph:
+(s61g / get-05
+  :ARG1 (s61p / person)
+  :source (s61b / bicycle
+            :refer-number Singular)
+  :direction (s61o / off)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s61b: 6-6
+s61g: 3-3
+s61o:4-4
+s61p: 0-0
+
+# document level annotation:
+(s61s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s61g))
+
+  :coref ((s60k :same-entity s61p)
+          (s60b :same-entity s61b)))
+
+
+
+
+# :: snt62	:: snt62 I think he he picks up the b—asket of pears ,
+# sentence level graph:
+(s62t / think-01
+  :ARG0 (s62p4 / person
+        :refer-person 1st
+        :refer-number Singular)
+  :ARG1 (s62p / pick-up-04
+        :ARG0 (s62p2 / person
+                :refer-person 3rd
+                :refer-number Singular)
+        :ARG1 (s62p3 / pear
+                :unit (s62b / basket)
+                :quant 1)
+        :Aspect Performance
+        :MODSTR NeutAff
+        :MODPRED s62t)
+  :Aspect State
+  :MODSTR FullAff)
+
+
+# alignment:
+s62t: 2-2
+s62p4: 1-1
+s62b: 8-8
+s62p: 5-6
+s62p2: 3-3
+s62p3: 10-10
+
+# document level annotation:
+(s62s0 / sentence
+
+  :temporal ((s61g :after s62p))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s62p))
+
+  :coref ((s61p :same-entity s62p2)
+          (s22b :same-entity s62b)
+          (s58p :same-entity s62p4)))
+
+
+
+
+# :: snt63	:: snt63 and he puts it on his bicycle ,
+# sentence level graph:
+(s63p / put-01
+  :ARG0 (s63p2 / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s63t / thing)
+  :ARG2 (s63b / bicycle
+          :refer-number Singular
+          :poss s63p2)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s63b: 7-7
+s63p: 3-3
+s63p2: 0-0
+s63t: 0-0
+
+# document level annotation:
+(s63s0 / sentence
+
+  :temporal ((s62p :after s63p))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s63p))
+
+  :coref ((s62p2 :same-entity s63p2)
+          (s62b :same-entity s63t)
+          (s61b :same-entity s63b)))
+
+
+
+
+# :: snt64	:: snt64 . . on the front ?
+# sentence level graph:
+(s64f / front
+  :Part-of (s64t / thing)
+  :refer-number Singular)
+
+# alignment:
+s64f: 5-5
+s64t: 0-0
+
+# document level annotation:
+(s64s0 / sentence
+
+  :coref ((s63b :same-entity s64t)))
+
+
+
+
+# :: snt65	:: snt65 And he rides off .
+# sentence level graph:
+(s65r / ride-01
+  :ARG0 (s65p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :direction (s65o / off)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s65o: 4-4
+s65p: -1--1
+s65r: 3-3
+
+# document level annotation:
+(s65s0 / sentence
+
+  :temporal ((s63p :after s65r))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s65r))
+
+  :coref ((s63p2 :same-entity s65p)))
+
+
+
+
+# :: snt66	:: snt66 A--nd you see him ,
+# sentence level graph:
+(s66s / see-01
+        :ARG0 (s66p / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :ARG1 (s66e / event
+                :actor (s66p2 / person
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :MODPRED s66s)
+        :Aspect State
+        :MODSTR FullAff)
+
+# alignment:
+s66s: 3-3
+s66p: 2-2
+s66e: 0-0
+s66p2: 4-4
+
+# document level annotation:
+(s66s0 / sentence
+
+  :temporal ((s66e :overlap s66s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (s66p :AFF s66s)
+          (s66s :UNSP s66e)
+          (AUTH :FullAff s66p))
+
+  :coref ((s65r :same-event s66e)
+          (s56p :same-entity s66p)
+          (s65p :same-entity s66p2)))
+
+
+
+
+# :: snt67	:: snt67 riding off and the next scene you see him ,
+# sentence level graph:
+(s67a / and
+  :op1 (s67r / ride-01
+        :ARG0 s67p
+        :direction (s67o / off)
+        :Aspect Activity
+        :MODSTR FullAff)
+  :op2 (s67s / see-01
+        :ARG0 (s67p2 / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :ARG1 (s67p / person
+                :refer-person 3rd
+                :refer-numger Singular)
+        :temporal (s67s2 / scene
+                :mod (s67n / next))
+        :Aspect State
+        :MODSTR FullAff))
+
+# alignment:
+s67a: 3-3
+s67r: 1-1
+s67o: 2-2
+s67s: 8-8
+s67p2: 7-7
+s67p: 9-9
+s67s2: 6-6
+s67n: 5-5
+
+# document level annotation:
+(s67s0 / sentence
+
+  :temporal ((s67e :after s67s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s67s))
+
+  :coref ((s66e :same-event s67r)
+          (s66p2 :same-entity s67p)
+          (s66p :same-entity s67p2)))
+
+
+
+
+# :: snt68	:: snt68 like at a at a distance
+,
+# sentence level graph:
+(s68h / have-manner-91
+        :ARG1 (s68e / event)
+        :ARG2 (s68d / distant-01
+                :ARG1 (s68p / person)
+                :Aspect State
+                :MODSTR FullAff))
+
+# alignment:
+s68h: 0-0
+s68e: 0-0
+s68d: 4-6
+s68p: 0-0
+
+# document level annotation:
+(s68s0 / sentence
+
+  :coref ((s67p :same-entity s68p)
+          (s67s :same-event s68e)))
+
+
+
+
+# :: snt69	:: snt69 a pan shot .
+# sentence level graph:
+(s69h / have-manner-91
+        :ARG1 (s69e / event)
+        :ARG2 (s69t / thing
+                :ARG2-of (s69s / shoot-03)
+                :ARG2-of (s69p / pan-03)))
+
+
+# alignment:
+s69h: 0-0
+s69e: 0-0
+s69t: 0-0
+s69s: 3-3
+s69p: 2-2
+
+# document level annotation:
+(s69s0 / sentence
+
+  :coref ((s67p3 :same-entity s69t)
+          (s67s2 :subset-of s69t)
+          (s67s :same-event s69e)))
+
+
+
+
+# :: snt70	:: snt70 And he's riding on a lane ,
+# sentence level graph:
+(s70r / ride-01
+  :ARG0 (s70p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :path (s70l / lane
+          :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s70l: 6-6
+s70p: 0-0
+s70r: 3-3
+
+# document level annotation:
+(s70s0 / sentence
+
+  :temporal ((s67s :overlap s70r))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s70r))
+
+  :coref ((s67p :same-entity s70p)))
+
+
+
+
+# :: snt71	:: snt71 riding on a bicycle and they cro you know .
+# sentence level graph:
+(s71a / and
+  :op1 (s71r / ride-01
+         :ARG0 (s71p / person)
+         :ARG1 (s71b / bicycle
+                :refer-number Singular)
+         :Aspect Activity
+         :MODSTR FullAff)
+  :op2 (s71c / cross-01
+         :ARG0 (s71p3 / person
+                :refer-person 3rd
+                :refer-number Plural)
+         :Aspect Performance
+         :MODSTR FullAff))
+
+# alignment:
+s71a: 0-0
+s71r: 1-1
+s71p: 0-0
+s71b: 4-4
+s71c: 7-7
+s71p3: 6-6
+
+# document level annotation:
+(s71s0 / sentence
+
+  :temporal ((s71r :Contained s71c))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s71r))
+
+  :coref ((s70r :same-event s71r)
+          (s70p :same-entity s71p)
+          (s64t :same-entity s71b)
+          (s71p3 :subset-of s71p)))
+
+
+
+
+# :: snt72	:: snt72 Cross paths.
+# sentence level graph:
+(s72c / cross-01
+  :ARG1 (s72p2 / path
+          :refer-number Plural)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s72c: 1-1
+s72p2: 2-2
+
+# document level annotation:
+(s72s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s72c))
+
+  :coref ((s71c :same-event s72c)))
+
+
+
+
+# :: snt73	:: snt73 And he kind of watches her go by .
+# sentence level graph:
+(s73w / watch-01
+  :ARG0 (s73p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s73g / go-01
+          :ARG1 (s73p2 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :direction (s73b / by)
+          :Aspect Activity
+          :MODPRED s73w)
+  :degree downtoner
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s73w: 5-5
+s73p: 2-2
+s73g: 7-7
+s73p2: 6-6
+s73b: 8-8
+
+# document level annotation:
+(s73s0 / sentence
+
+  :temporal ((s72c :overlap s73w)
+             (s73w :overlap s73g))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s73w)
+          (s73p :AFF s73w)
+          (s73w :UNSP s73g)
+          (AUTH :FullAff s73p))
+
+  :coref ((s71p :same-entity s73p)
+          (s71p3 :subset-of s73p2)))
+
+
+
+
+# :: snt74	:: snt74 And . . because he's watching her ,
+# sentence level graph:
+(s74h / have-cause-01
+        :ARG1 (s74e / event)
+        :ARG2 (s74w / watch-01
+                :ARG0 (s74p / person
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :ARG1 (s74p2 / person
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :Aspect State
+                :MODSTR FullAff))
+
+# alignment:
+s74h: 4-4
+s74w: 6-6
+s74p: 5-5
+s74p2: 7-7
+s74e: 0-0
+
+# document level annotation:
+(s74s0 / sentence
+
+  :temporal ((s74w :overlap s74e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s74w))
+
+  :coref ((s73w :same-event s74w)
+          (s73p :same-entity s74p)
+          (s73p2 :same-entity s74p2)))
+
+
+
+
+# :: snt75	:: snt75 he when he turns around his hat flies off .
+# sentence level graph:
+(s75f / fly-01
+  :ARG2 (s75h / hat
+          :refer-number Singular
+          :poss (s75p / person
+                  :refer-person 3rd
+                  :refer-number Singular))
+  :direction (s75o / off)
+  :temporal (s75t / turn-01
+              :ARG0 s75p
+              :ARG1 s75p
+              :direction (s75a / around)
+              :Aspect Performance
+              :MODSTR FullAff)
+  :Aspect Performance)
+  :MODSTR FullAff)
+
+# alignment:
+s75f: 8-8
+s75h: 7-7
+s75p: 6-6
+s75o: 9-9
+s75t: 4-4
+s75a: 5-5
+
+# document level annotation:
+(s75s0 / sentence
+
+  :temporal ((s75f :overlap s75t))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s75t)
+        (AUTH :FullAff s75f))
+
+  :coref ((s74p :same-entity s75p)
+        (s74w :same-event s75e)
+        (s74c :same-event s75c)
+        (s74e :same-event s75f)))
+
+
+
+ 
+# :: snt76	:: snt76 Okay ?
+# sentence level graph:
+(s76o / okay-04
+        :ARG2-of (s76r / request-confirmation-91
+                :ARG1 (s76e / event))
+        :MODSTR NeutAff)
+
+# alignment:
+s76e: 0-0
+s76o: 1-1
+s76r: 0-0
+
+# document level annotation:
+(s76s0 / sentence
+
+  :temporal ((s76e :overlap s76o))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s76o))
+
+  :coref ((s75f :same-event s76e)))
+
+
+
+
+# :: snt77	:: snt77 And then he bumps into a rock .
+# sentence level graph:
+(s77b / bump-01
+  :ARG0 (s77p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s77r / rock
+          :refer-number Singular)
+  :temporal (s77t / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s77b: 4-4
+s77p: -1--1
+s77r: 7-7
+s77t: 2-2
+
+# document level annotation:
+(s77s0 / sentence
+
+  :temporal ((s76e :after s77b))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s77b))
+
+  :coref ((s75p :same-entity s77p)))
+
+
+
+
+# :: snt78	:: snt78 A--nd . . u--m falls down ,
+# sentence level graph:
+(s78f / fall-01
+  :ARG1 (s78p / person)
+  :ARG4 (s78d / down)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s78d: 6-6
+s78f: 5-5
+s78p: 0-0
+
+# document level annotation:
+(s78s0 / sentence
+
+  :temporal ((s77b :after s78f))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s78f))
+
+  :coref ((s77p :same-entity s78p)))
+
+
+
+
+# :: snt79	:: snt79 and . . the . . pears all s--pray all over the place ,
+# sentence level graph:
+(s79s / spray-01
+  :ARG1 (s79p / pear
+          :quant (s79a / all))
+  :ARG2 (s79p2 / place
+          :mod (s79a2 / all-over))
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s79a: 8-8
+s79a2: 10-11
+s79p: 7-7
+s79p2: 13-13
+s79s: 9-9
+
+# document level annotation:
+(s79s0 / sentence
+
+  :temporal ((s78f :after s79s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s79s))
+
+  :coref ((s62p3 :same-entity s69p)))
+
+
+
+
+# :: snt80	:: snt80 ? and and then . . you see him fall down ,
+# sentence level graph:
+(s80s / see-01
+  :ARG0 (s80p / person
+          :refer-number Singular
+          :refer-person 2nd)
+  :ARG1 (s80f / fall-01
+          :ARG1 (s80p2 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :ARG4 (s80d / down)
+          :Aspect Performance
+          :MODSTR FullAff
+          :MODPRED s80s)
+  :temporal (s80t / then)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s80d: 11-11
+s80f: 10-10
+s80p: 7-7
+s80p2: 9-9
+s80s: 8-8
+s80t: 4-4
+
+# document level annotation:
+(s80s0 / sentence
+
+  :temporal ((s80f :overlap s80s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s80s)
+        (AUTH :FullAff s80f)
+        (s80p :AFF s80s)
+        (s80s :UNSP s80f)
+        (AUTH :FullAff s80p))
+
+  :coref ((s78f :same-event s80f)
+        (s78p :same-entity s80p2)
+        (s67p2 :same-entity s80p)))
+
+
+
+
+# :: snt81	:: snt81 and he gets up ,
+# sentence level graph:
+(s81g / get-up-26
+  :ARG1 (s81p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s81g: 3-3
+s81p: 2-2
+
+# document level annotation:
+(s81s0 / sentence
+
+  :temporal ((s80f :after s81g))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s81g))
+
+  :coref ((s80p :same-entity s81p)))
+
+
+
+
+# :: snt82	:: snt82 and brushes himself off ,
+# sentence level graph:
+(s82b / brush-off-04
+  :ARG0 (s82p / person
+        :refer-person 3rd
+        :refer-number Singular)
+  :ARG1 s82p
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s82b: 2-2
+s82p: 3-3
+
+# document level annotation:
+(s82s0 / sentence
+
+  :temporal ((s81g :after s82b))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s82b))
+
+  :coref ((s81p :same-entity s82p)))
+
+
+
+
+# :: snt83	:: snt83 . . and he goes . . you know {brushing gesture} and then you see three other boys about his age .
+# sentence level graph:
+(s83a / and
+  :op1 (s83g / go-05
+         :ARG0 (s83p / person
+                 :refer-person 3rd
+                 :refer-number Singular)
+         :ARG1 (s83g2 / gesture-91
+                :ARG0 s83p
+                :ARG1 (s83b / brush-off-04))
+         :Aspect Endeavor
+         :MODSTR FullAff)
+  :op2 (s83s / see-01
+         :ARG0 (s83p2 / person
+                 :refer-person 2nd
+                 :refer-number Singular)
+         :ARG1 (s83b2 / boy
+                 :quant 3
+                 :mod (s83o / other)
+                 :ARG1-of (s83h / have-age-91
+                            :ARG2 (s83a2 / about
+                                    :op1 (s83t / temporal-quantity
+                                           :ARG2-of (s83h2 / have-age-91
+                                                      :ARG1 s83p)))))
+         :Aspect State
+         :temporal (s83t3 / then)
+         :MODSTR FullAff))
+
+# alignment:
+s83a: 0-0
+s83a2: 19-19
+s83b: 10-10
+s83b2: 18-18
+s83g: 5-5
+s83g2: 6-6
+s83o: 17-17
+s83p: 4-4
+s83p2: 14-14
+s83s: 15-15
+s83t: 0-0
+s83t3: 13-13
+
+# document level annotation:
+(s83s0 / sentence
+
+  :temporal ((s83g :after s83s))
+
+  :modal ((ROOT :MODAL AUTH)
+                    (AUTH :FullAff s83g)
+                    (AUTH :FullAff s83s))
+
+  :coref ((s82b :same-event s83g)
+                    (s82p :same-entity s83p)
+                    (s80p :same-entity s83p2)))
+
+
+
+
+# :: snt84	:: snt84 He's like maybe . . what ,
+# sentence level graph:
+(s84h / have-age-91
+  :ARG1 (s84p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s84t / temporal-quantity)
+  :Aspect State
+  :MODSTR NeutAff)
+
+# alignment:
+s84p: 1-1
+s84t: 0-0
+
+# document level annotation:
+(s84s0 / sentence
+
+  :temporal ((s83s :overlap s84h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :NeutAff s84h))
+
+  :coref ((s83h2 :same-event s84h)
+          (s83p :same-entity s84p)))
+
+
+
+
+# :: snt85	:: snt85 ten or something ?
+# sentence level graph:
+(s85o2 / or
+  :op1 (s85t4 / temporal-quantity
+         :unit (s85y3 / year)
+         :quant 10)
+  :op3 (s85t / temporal-quantity))
+
+# alignment:s85a3: 0-0
+s85o2: 2-2
+s85t4: 1-1
+s85y3: 0-0
+s85t: 3-3
+
+# document level annotation:
+(s85s0 / sentence
+
+  :coref ((s84t :same-entity s85o)))
+
+
+
+
+# :: snt86	:: snt86 . . Twelve ?
+# sentence level graph:
+(s86t / temporal-quantity
+  :unit (s86y / year)
+  :quant 12)
+
+# alignment:
+s86t: 3-3
+s86y: 0-0
+
+# document level annotation:
+(s86s0 / sentence
+
+  :coref ((s85t :same-entity s86t)))
+
+
+
+
+# :: snt87	:: snt87 I don't know .
+# sentence level graph:
+(s87k / know-01
+  :ARG0 (s87p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s87t / thing)
+  :polarity -
+  :Aspect State
+  :MODSTR FullNeg)
+
+# alignment:
+s87k: 3-3
+s87p: 1-1
+s87t: 0-0
+
+# document level annotation:
+(s87s0 / sentence
+
+  :temporal ((s83s :overlap s87k))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s87k))
+
+  :coref ((s84t :same-entity s87t)
+          (s84p :same-entity s87p)))
+
+
+
+
+# :: snt88	:: snt88 A--nd and you look at them ,
+# sentence level graph:
+(s88l / look-01
+  :ARG0 (s88p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s88p2 / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s88l: 4-4
+s88p: 3-3
+s88p2: 6-6
+
+# document level annotation:
+(s88s0 / sentence
+
+  :temporal ((s83s :overlap s88l))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s88l))
+
+  :coref ((s83p2 :same-entity s88p)
+          (s83b2 :same-entity s88p2)))
+
+
+
+
+# :: snt89	:: snt89 and and they see him ,
+# sentence level graph:
+(s89s / see-01
+  :ARG0 (s89p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s89p2 / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s89p: 3-3
+s89p2: 5-5
+s89s: 4-4
+
+# document level annotation:
+(s89s0 / sentence
+
+  :temporal ((s88l :overlap s89s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s89s))
+
+  :coref ((s88p2 :same-entity s89p)
+          (s87p2 :same-entity s89p2)))
+
+
+
+
+# :: snt90	:: snt90 and they come up ,
+# sentence level graph:
+(s90c / come-01
+  :ARG1 (s90p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :direction (s90u / up)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s90c: 3-3
+s90p: 2-2
+s90u: 4-4
+
+# document level annotation:
+(s90s0 / sentence
+
+  :temporal ((s89s :overlap s90c))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s90c))
+
+  :coref ((s89p :same-entity s90p)))
+
+
+
+
+# :: snt91	:: snt91 a-nd without saying anything ,
+# sentence level graph:
+(s91h / have-manner-91
+        :ARG1 (s91e / event)
+        :ARG2 (s91s / say-01
+                :ARG0 (s91p / person)
+                :ARG1 (s91t / thing)
+                :polarity -
+                :Aspect Performance
+                :MODSTR FullNeg))
+
+# alignment:
+s91h: 0-0
+s91e: 0-0
+s91s: 3-3
+s91p: 0-0
+s91t: 4-4
+
+# document level annotation:
+(s91s0 / sentence
+
+  :temporal ((s91e :overlap s91s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s91s))
+
+  :coref ((s90p :same-entity s91p)))
+
+
+
+
+# :: snt92	:: snt92 there's no speech in the whole movie .
+# sentence level graph:
+(s92e / exist-91
+  :ARG1 (s92m / movie
+          :refer-number Singular
+          :extent (s92w / whole))
+  :ARG2 (s92s / speech)
+  :polarity -
+  :Aspect State
+  :MODSTR FullNeg)
+
+# alignment:
+s92e: 0-0
+s92m: 7-7
+s92s: 3-3
+s92w: 6-6
+
+# document level annotation:
+(s92s0 / sentence
+
+  :temporal ((present-ref :overlap s92e))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s92e))
+
+  :coref ((s55m :same-entity s92m)))
+
+
+
+
+# :: snt93	:: snt93 Without saying anything ,
+# sentence level graph:
+(s93h / have-manner-91
+        :ARG1 (s93e / event)
+        :ARG2 (s93s / say-01
+                :ARG0 (s93p / person)
+                :ARG1 (s93t / thing)
+                :polarity -
+                :Aspect Performance
+                :MODSTR FullNeg))
+
+# alignment:
+s93h: 0-0
+s93e: 0-0
+s93s: 2-2
+s93p: 0-0
+s93t: 3-3
+
+# document level annotation:
+(s93s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s93s))
+
+  :coref ((s91h :same-event s93h)
+          (s91e :same-event s93e)
+          (s91s :same-event s93s)
+          (s91p :same-entity s93p)
+          (s91t :same-entity s93t)))
+
+
+
+
+# :: snt94	:: snt94 they . . u--m . . help him . . put the pears back in the basket.
+# sentence level graph:
+(s94h / help-01
+  :ARG0 (s94p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s94p2 / put-01
+          :ARG0 (s94p3 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :ARG1 (s94p4 / pear
+                  :refer-number Plural)
+          :ARG2 (s94b / basket
+                  :refer-number Singular)
+          :other-role (s94b2 / back)
+          :Aspect Performance
+          :MODSTR FullAff)
+  :ARG2 s94p3
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s94h: 7-7
+s94p: 1-1
+s94p2: 11-11
+s94p3: 8-8
+s94p4: 13-13
+s94b: 17-17
+s94b2: 14-14
+
+# document level annotation:
+(s94s0 / sentence
+
+  :temporal ((s90c :after s94h)
+        (s94h :overlap s94p2))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s94p2)
+        (AUTH :FullAff s94h))
+
+  :coref ((s93p :same-entity s94p)
+        (s93e :same-event s94h)
+        (s79p :same-entity s94p4)
+        (s62b :same-entity s94b)
+        (s89p2 :same-entity s94p3)))
+
+
+
+
+# :: snt95	:: snt95 Only they don't wipe them off first .
+# sentence level graph:
+(s95h / have-concession-91
+        :ARG1 (s95e / event)
+        :ARG2 (s95w / wipe-off-03
+                :ARG0 (s95p / person
+                        :refer-person 3rd
+                        :refer-number Plural)
+                :ARG2 (s95t / thing
+                        :refer-person 3rd
+                        :refer-number Plural)
+                :ord (s95b / before
+                        :op1 s95e)
+                :polarity -
+                :Aspect Performance
+                :MODSTR FullNeg))
+
+
+# alignment:
+s95h: 1-1
+s95e: 0-0
+s95w: 4,7
+s95p: 2-2
+s95t: 5-5
+s95b: 8-8
+
+# document level annotation:
+(s95s0 / sentence
+
+  :temporal ((s94p2 :before s95w))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullNeg s95w))
+
+  :coref ((s94p :same-entity s95p)
+        (s94p4 :same-entity s95t)))
+
+
+
+
+# :: snt96	:: snt96 Just pick them up ,
+# sentence level graph:
+(s96p / pick-up-04
+        :ARG0 (s96p2 / person)
+        :ARG1 (s96t / thing
+                :refer-person 3rd
+                :refer-number Plural)
+        :mod (s96j / just)
+        :Aspect Performance
+        :MODSTR FullAff)
+
+# alignment:
+s96p: 2,4
+s96p2: 0-0
+s96t: 3-3
+s96j: 1-1
+
+# document level annotation:
+(s96s0 / sentence
+
+  :temporal ((s94p2 :overlap s96p))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s96p))
+
+  :coref ((s95p :same-entity s96p2)
+        (s95t :same-entity s96t)))
+
+
+
+
+# :: snt97	:: snt97 . . and pour them in .
+# sentence level graph:
+(s97a / and
+        :op1 (s97e / event)
+        :op2 (s97p / pour-01
+                :ARG0 (s97p2 / person)
+                :ARG1 (s97t / thing
+                        :refer-number 3rd
+                        :refer-number Plural)
+                :ARG3 (s97t2 / thing)
+                :Aspect Performance
+                :MODSTR FullAff))
+
+
+# alignment:
+s97a: 3-3
+s97e: 0-0
+s97p: 4-4
+s97p2: 0-0
+s97t: 5-5
+s97t2: 0-0
+
+# document level annotation:
+(s97s0 / sentence
+
+  :temporal ((s96p :after s97p))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s97p))
+
+  :coref ((s96p :same-event s97e)
+        (s96p2 :same-entity s97p2)
+        (s96t :same-entity s97t)
+        (s94b :same-entity s97t2)))
+
+
+
+
+# :: snt98	:: snt98 And they-- help him get his bike u--p ,
+# sentence level graph:
+(s98h / help-01
+  :ARG0 (s98p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s98g / get-up-26
+          :ARG0 (s98p2 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :ARG1 (s98b / bike
+                  :refer-number Singular
+                  :poss s98p2)
+          :Aspect Performance
+          :MODSTR FullAff)
+  :ARG2 s98p2
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s98h: 3-3
+s98p: 2-2
+s98g: 5,8
+s98p2: 4-4
+s98b: 7-7
+
+# document level annotation:
+(s98s0 / sentence
+
+  :temporal ((s97p :after s98h)
+        (s98h :overlap s98g))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s98g)
+        (AUTH :FullAff s98h))
+
+  :coref ((s97p2 :same-entity s98p)
+        (s94p3 :same-entity s98p2)
+        (s71b :same-entity s98b)))
+
+
+
+
+# :: snt99	:: snt99 and one kid takes the rock that he tripped on and he throws it off to the side of the roa—d ,
+# sentence level graph:
+(s99a / and
+  :op1 (s99t / take-01
+         :ARG0 (s99k / kid
+                 :quant 1)
+         :ARG1 (s99r / rock
+                 :refer-number Singular
+                 :ARG1-of (s99t2 / trip-04
+                            :ARG0 (s99p / person
+                                    :refer-person 3rd
+                                    :refer-number Singular)
+                            :Aspect Performance
+                            :MODSTR FullAff))
+         :Aspect Performance
+         :MODSTR FullAff)
+  :op2 (s99t3 / throw-01
+         :ARG0 s99k
+         :ARG1 s99r
+         :ARG2 (s99s / side
+                 :refer-number Singular
+                 :Part-of (s99r2 / road
+                         :refer-number Singular))
+         :direction (s99o / off)
+         :Aspect Performance
+         :MODSTR FullAff))
+
+# alignment:
+s99a: 11-11
+s99t: 4-4
+s99k: 3-3
+s99r: 6-6
+s99t2: 9-9
+s99p: 8-8
+s99t3: 13-13
+s99s: 18-18
+s99r2: 21-21
+s99o: 15-15
+
+# document level annotation:
+(s99s0 / sentence
+
+  :temporal ((s98g :after s99t)
+        (s99t :after s99t3)
+        (s99t :before s99t2))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s99t2)
+        (AUTH :FullAff s99t)
+        (AUTH :FullAff s99t3))
+
+  :coref ((s98p :subset-of s99k)
+        (s77r :same-entity s99r)
+        (s98p2 :same-entity s99p)))
+
+
+
+
+# :: snt100	:: snt100 ? and and they set him upright ,
+# sentence level graph:
+(s100s / set-01
+  :ARG0 (s100p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s100p2 / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s100u / upright)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s100p: 4-4
+s100p2: 6-6
+s100s: 5-5
+s100u: 7-7
+
+# document level annotation:
+(s100s0 / sentence
+
+  :temporal ((s99t3 :after s100s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s100s))
+
+  :coref ((s98p :same-entity s100p)
+        (s99p :same-entity s100p2)))
+
+
+
+
+# :: snt101	:: snt101 . . and they . . and then he . . you know they I don't they don't say thank you ,
+# sentence level graph:
+(s101s / say-01
+  :ARG0 (s101p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s101t / thank-01
+        :ARG0 s101p
+        :ARG2 (s101p2 / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s101s)
+  :polarity -
+  :Aspect Performance
+  :MODSTR FullNeg)
+
+# alignment:
+s101s: 19-19
+s101p: 17-17
+s101t: 20-20
+s101p2: 21-21
+
+
+# document level annotation:
+(s101s0 / sentence
+
+  :temporal ((s100s :after s101s))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullNeg s101s))
+
+  :coref ((s100p :same-entity s101p)
+          (s100p2 :same-entity s101p2)))
+
+
+
+
+# :: snt102	:: snt102 he just splits .
+# sentence level graph:
+(s102s / split-02
+  :ARG0 (s102p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :mod (s102j / just)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s102s: 3-3
+s102p: 1-1
+s102j: 2-2
+
+# document level annotation:
+(s102s0 / sentence
+
+  :temporal ((s100s :after s102s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s102s))
+
+  :coref ((s100p2 :same-entity s102p)))
+
+
+
+
+# :: snt103	:: snt103 And then . . they walk . . the three boys walk down the road and they see-- . . the kid's hat .
+# sentence level graph:
+(s103a / and
+  :op1 (s103w / walk-01
+         :ARG0 (s103b / boy
+                 :quant 3)
+         :ARG2 (s103r / road
+                 :refer-number Singular)
+         :direction (s103d / down)
+         :Aspect Activity
+         :MODSTR FullAff)
+  :op2 (s103s / see-01
+         :ARG0 s103b
+         :ARG1 (s103h / hat
+                 :refer-number Singular
+                 :poss (s103k / kid
+                         :refer-number Singular))
+         :Aspect State
+         :MODSTR FullAff))
+
+# alignment:
+s103a: 16-16
+s103w: 12-12
+s103b: 11-11
+s103r: 15-15
+s103d: 13-13
+s103s: 18-18
+s103h: 23-23
+s103k: 22-22
+
+# document level annotation:
+(s103s0 / sentence
+
+  :temporal ((s102s :after s103w)
+        (s103w :overlap s103s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s103w)
+        (AUTH :FullAff s103s))
+
+  :coref ((s101p :same-entity s103b)
+        (s99r2 :same-entity s103r)
+        (s75h :same-entity s103h)
+        (s102p :same-entity s103k)))
+
+
+
+
+# :: snt104	:: snt104 And so one of them whistles .
+# sentence level graph:
+(s104w / whistle-01
+        :ARG0 (s104p / person
+                :refer-person 3rd
+                :quant 1
+                :ARG1-of (s104i / include-91
+                        :ARG2 (s104p2 / person
+                                :refer-person 3rd
+                                :refer-number Plural)))
+        :reason (s104e / event))
+        :Aspect Endeavor
+        :MODSTR FullAff)
+
+# alignment:
+s104w: 6-6
+s104p: 3-3
+s104i: 4-4
+s104p2: 5-5
+s104e: 0-0
+
+# document level annotation:
+(s104s0 / sentence
+
+  :temporal ((s103s :overlap s104w))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s104w))
+
+  :coref ((s103b :subset-of s104p)
+        (s103b :same-entity s104p2)
+        (s103s :same-event s104e)))
+
+
+
+
+# :: snt105	:: snt105 And the kid on the bike turns around ,
+# sentence level graph:
+(s105t / turn-around-23
+        :ARG0 (s105k / kid
+                :refer-number Singular
+                :place (s105b / bike
+                        :refer-number Singular))
+        :ARG1 s105k
+        :reason (s105e / event)
+        :Aspect Performance
+        :MODSTR FullAff)
+
+# alignment:
+s105t: 7-8
+s105k: 3-3
+s105b: 6-6
+s105e: 0-0
+
+# document level annotation:
+(s105s0 / sentence
+
+  :temporal ((s104w :after s105t))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s105t))
+
+  :coref ((s103k :same-entity s105k)
+        (s98b :same-entity s105b)
+        (s104w :same-event s105e)))
+
+
+
+
+# :: snt106	:: snt106 and then he brings his hat to him ,
+# sentence level graph:
+(s106b / bring-01
+  :ARG0 (s106p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s106h / hat
+          :refer-number Singular
+          :poss (s106p2 / person
+                  :refer-person 3rd
+                  :refer-number Singular))
+  :ARG2 s106p2
+  :temporal (s106t / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s106b: 4-4
+s106p: 3-3
+s106h: 6-6
+s106p2: 5-5
+s106t: 2-2
+
+# document level annotation:
+(s106s0 / sentence
+
+  :temporal ((s105t :after s106b))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s106b))
+
+  :coref ((s104p :same-entity s106p)
+        (s103h :same-entity s106h)
+        (s105k :same-entity s106p2)))
+
+
+
+
+# :: snt107	:: snt107 and the g guy on the bike gives the other kids gives the kid that returns his hat . . three pears to share with his buddies.
+# sentence level graph:
+(s107g / give-01
+  :ARG0 (s107g2 / guy
+          :refer-number Singular
+          :place (s107b / bike
+                   :refer-number Singular))
+  :ARG1 (s107p / pear
+          :quant 3)
+  :ARG2 (s107k / kid
+          :refer-number Singular
+          :ARG0-of (s107r / return-02
+                     :ARG1 (s107h2 / hat
+                             :refer-number Singular
+                             :poss s107g2)
+                     :ARG2 s107g2
+                     :Aspect Performance
+                     :MODSTR FullAff))
+  :purpose (s107s / share-01
+             :ARG0 s107k
+             :ARG1 s107p
+             :ARG2 (s107p2 / person
+                     :ARG1-of (s107h3 / have-rel-role-92
+                                :ARG2 s107k
+                                :ARG3 (s107b2 / buddy))
+                     :refer-number Plural)
+             :Aspect Performance
+             :MODSTR FullAff)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s107b: 7-7
+s107b2: 27-27
+s107g: 8-8
+s107g2: 4-4
+s107h2: 18-18
+s107h3: 0-0
+s107k: 14-14
+s107p: 22-22
+s107p2: 27-27
+s107r: 16-16
+s107s: 24-24
+
+# document level annotation:
+(s107s0 / sentence
+
+  :temporal ((s106b :after s107g)
+        (s107g :before s107r)
+        (s107g :after s107s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s107r)
+        (AUTH :FullAff s107s)
+        (AUTH :FullAff s107g))
+
+  :coref ((s106p2 :same-entity s107g2)
+        (s105b :same-entity s107b)
+        (s97t :subset-of s107p)
+        (s106p :same-entity s107k)
+        (s106h :same-entity s107h2)
+        (s104p2 :same-entity s107p2)))
+
+
+
+
+# :: snt108	:: snt108 So-- and then he splits .
+# sentence level graph:
+(s108s / split-02
+  :ARG0 (s108p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :temporal (s108t2 / then)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s108s: 5-5
+s108p: 4-4
+s108t2: 3-3
+
+# document level annotation:
+(s108s0 / sentence
+
+  :temporal ((s107g :after s108s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s108s))
+
+  :coref ((s107g2 :same-entity s108p)
+        (s107h2 :same-entity s108t)))
+
+
+
+
+# :: snt109	:: snt109 With his hat ,
+# sentence level graph:
+(s109h2 / have-manner-91
+        :ARG1 (s109e / event)
+        :ARG2 (s109h3 / have-91
+                :ARG1 (s109p / person
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :ARG2 (s109h / hat
+                        :poss s109p
+                        :refer-number Singular)
+                :Aspect State
+                :MODSTR FullAff))
+
+
+# alignment:
+s109h2: 0-0
+s109e: 0-0
+s109h3: 0-0
+s109p: 2-2
+s109h: 3-3
+
+# document level annotation:
+(s109s0 / sentence
+
+  :coref ((s108s :same-event s109e)
+          (s108t :same-entity s109h)
+          (s108p :same-entity s109p)))
+
+
+
+
+# :: snt110	:: snt110 with his pears ,
+# sentence level graph:
+(s110h2 / have-manner-91
+        :ARG1 (s110e / event)
+        :ARG2 (s110h3 / have-91
+                :ARG1 (s110p / person
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :ARG2 (s110p2 / pear
+                        :poss s110p
+                        :refer-number Plural)
+                :Aspect State
+                :MODSTR FullAff))
+
+# alignment:
+s110h2: 0-0
+s110e: 0-0
+s110h3: 0-0
+s110p: 2-2
+s110p2: 3-3
+
+# document level annotation:
+(s110s0 / sentence
+
+  :coref ((s97t :same-entity s110p2)
+          (s109p :same-entity s110p)))
+
+
+
+
+# :: snt111	:: snt111 everything .
+# sentence level graph:
+(s111h / have-manner-91
+        :ARG1 (s111e / event)
+        :ARG2 (s111h2 / have-91
+                :ARG1 (s111p / person)
+                :ARG2 (s111e2 / everything)
+                :Aspect State
+                :MODSTR FullAff))
+
+# alignment:
+s111h: 0-0
+s111e: 0-0
+s111h2: 0-0
+s111p: 0-0
+s111e2: 1-1
+
+# document level annotation:
+(s111s0 / sentence
+
+  :coref ((s109h :subset s111e)
+          (s110p :subset s111e)))
+
+
+
+
+# :: snt112	:: snt112 A--nd um I just remembered another detail .
+# sentence level graph:
+(s112r / remember-01
+  :ARG0 (s112p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s112d / detail
+          :mod (s112a / another)
+          :refer-number Singular)
+  :temporal (s112j / just)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s112r: 5-5
+s112p: 3-3
+s112d: 7-7
+s112a: 6-6
+s112j: 4-4
+
+# document level annotation:
+(s112s0 / sentence
+
+  :temporal ((present-ref :overlap s112r))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s112r))
+
+  :coref ((s87p :same-entity s112p)))
+
+
+
+
+# :: snt113	:: snt113 Before he meets the girl ?
+# sentence level graph:
+(s113h / have-temporal-91
+        :ARG1 (s113e / event)
+        :ARG2 (s113b / before
+                :op1 (s113m / meet-03
+                        :ARG0 (s113p / person
+                                :refer-person 3rd
+                                :refer-number Singular)
+                        :ARG1 (s113g / girl
+                                :refer-number Singular)
+                        :Aspect Performance
+                        :MODSTR FullAff)))
+
+# alignment:
+s113h: 0-0
+s113e: 0-0
+s113b: 1-1
+s113m: 3-3
+s113p: 2-2
+s113g: 5-5
+
+# document level annotation:
+(s113s0 / sentence
+
+  :temporal ((s113m :before s113e))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s113m))
+
+  :coref ((s72c :same-event s113m)
+        (s110p2 :same-entity s113p)
+        (s74p2 :same-entity s113g)))
+
+
+
+
+# :: snt114	:: snt114 One of the pears ,
+# sentence level graph:
+(s114p / pear
+        :quant 1
+        :ARG1-of (s114i2 / include-91
+                :ARG2 (s114p2 / pear
+                        :refer-number Plural)))
+
+# alignment:
+s114p: 1-1
+s114i2: 2-2
+s114p2: 4-4
+
+# document level annotation:
+(s114s0 / sentence
+
+  :coref ((s113e :same-event s114e)
+          (s110p :subset-of s114p2)))
+
+
+
+
+# :: snt115	:: snt115 . . it's a bumpy road little dirt road ,
+# sentence level graph:
+(s115h / have-mod-91
+        :ARG1 (s115r / road
+                :refer-number Singular)
+        :ARG2 (s115a / and
+                :op1 (s115b / bumpy)
+                :op2 (s115l / little)
+                :op3 (s115h2 / have-material-91
+                        :ARG1 s115r
+                        :ARG2 (s115d / dirt)))
+        :Aspect State
+        :MODSTR FullAff)
+
+# alignment:
+s115h: 1-1
+s115r: 9-9
+s115a: 0-0
+s115b: 5-5
+s115l: 7-7
+s115h2: 0-0
+s115d: 8-8
+
+# document level annotation:
+(s115s0 / sentence
+
+  :temporal ((s114e :overlap s115h))
+
+  :modal ((ROOT :MODAL AUTH)
+          (AUTH :FullAff s115h)))
+
+
+
+
+# :: snt116	:: snt116 one of the pears . . flies out .
+# sentence level graph:
+(s116f / fly-01
+        :ARG2 (s116p / pear
+                :quant 1
+                :ARG2-of (s116i2 / include-91
+                        :ARG1 (s116p2 / pear
+                                :refer-number Plural)))
+        :direction (s116o / out)
+        :source (s116t2 / thing)
+        :cause (s116e / event)
+        :Aspect Performance
+        :MODSTR FullAff)
+
+# alignment:
+s116f: 7-7
+s116p: 1-1
+s116i2: 2-2
+s116p2: 4-4
+s116o: 8-8
+s116t2: 0-0
+s116e: 0-0
+
+# document level annotation:
+(s116s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s116f))
+
+  :coref ((s114e :same-event s116f)
+        (s114p :same-entity s116p)
+        (s114p2 :same-entity s116p2)
+        (s115t :same-entity s116l)
+        (s94b :subset-of s116t2)
+        (s113e :same-event :s116f)
+        (s115h :same-event :s116e)))
+
+
+
+
+# :: snt117	:: snt117 Whatever .
+# sentence level graph:
+(s117w / whatever)
+
+# alignment:
+s117w: 1-1
+
+# document level annotation:
+(s117s0 / sentence)
+
+
+
+
+# :: snt118	:: snt118 A--nd u—m then you don't see the kid with the bike with the pears anymore .
+# sentence level graph:
+(s118s / see-01
+        :ARG0 (s118p / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :ARG1 (s118k / kid
+                :refer-number Singular
+                :ARG1-of (s118h / have-91
+                        :ARG2 (s118a / and
+                                :op1 (s118b / bike
+                                        :refer-number Singular)
+                                :op2 (s118p2 / pear
+                                        :refer-number Plural))))
+        :mod (s118a2 / anymore)
+        :polarity -
+        :Aspect State
+        :MODSTR FullNeg)
+
+# alignment:
+s118s: 6-6
+s118p: 4-4
+s118k: 8-8
+s118h: 9-9
+s118a: 0-0
+s118b: 11-11
+s118p2: 14-14
+s118a2: 15-15
+
+# document level annotation:
+(s118s0 / sentence
+
+  :temporal ((s108s :after s118s))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullNeg s118s))
+
+  :coref ((s88p :same-entity s118p)
+        (s113p :same-entity s118k)
+        (s107b :same-entity s118b)
+        (s116p2 :same-entity s118p2)))
+
+
+
+
+# :: snt119	:: snt119 And the three kids that are walking ,
+# sentence level graph:
+(s119k2 / kid
+  :quant 3
+  :ARG0-of (s119w2 / walk-01
+             :Aspect Activity
+             :MODSTR FullAff))
+
+# alignment:
+s119k2: 4-4
+s119w2: 7-7
+
+# document level annotation:
+(s119s0 / sentence
+
+  :temporal ((s108s :after s119w2))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s119w2))
+
+  :coref ((s104p2 :same-entity s119k2)))
+
+
+
+
+# :: snt120	:: snt120 one of them has a . . what do you call those little [l.l?] um paddleball?
+# sentence level graph:
+(s120a / and
+        :op1 (s120h / have-91
+                :ARG1 (s120p / person
+                        :refer-person 3rd
+                        :quant 1
+                        :ARG1-of (s120i2 / include-91
+                                :ARG2 (s120p2 / person
+                                        :refer-person 3rd
+                                        :refer-number Plural)))
+                :ARG2 (s120p4 / paddleball
+                        :refer-number Singular
+                        :ARG1-of (s120i / identity-91
+                                :ARG2 s120u))
+                :Aspect State
+                :MODSTR FullAff)
+        :op2 (s120c / call-01
+                :ARG0 (s120p3 / person
+                        :refer-person 2nd
+                        :refer-number Singular)
+                :ARG1 (s120t / thing
+                        :refer-number Plural
+                        :mod (s120t2 / that)
+                        :mod (s120l / little))
+                :ARG2 (s120u / umr-unknown)
+                :mode interrogative
+                :Aspect Habitual
+                :MODSTR NeutAff))
+
+
+# alignment:
+s120a: 0-0
+s120h: 4-4
+s120p: 1-1
+s120i2: 2-2
+s120p2: 3-3
+s120p4: 16-16
+s120i: 0-0
+s120c: 11-11
+s120p3: 10-10
+s120t: 0-0
+s120t2: 12-12
+s120l: 13-13
+
+s120u: 8-8
+
+# document level annotation:
+(s120s0 / sentence
+
+  :temporal ((s119w2 :overlap s120h)
+        (s120h :overlap s120c))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s120h))
+
+  :coref ((s119k2 :same-entity s120p2)
+        (s120p2 :subset-of s120p)))
+
+
+
+
+# :: snt121	:: snt121 You know ,
+# sentence level graph:
+(s121k / know-01
+        :ARG0 (s121p / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :ARG1 (s121t / thing)
+        :Aspect State
+        :MODSTR FullAff)
+
+# alignment:
+s121k: 2-2
+s121p: 1-1
+s121t: 0-0
+
+# document level annotation:
+(s121s0 / sentence
+
+  :temporal ((s120c :overlap s121k))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s121k))
+
+  :coref ((s118p :same-entity s121p)))
+
+
+
+
+# :: snt122	:: snt122 with a ball on ay uh /??/ ?
+# sentence level graph:
+(s122t / thing
+        :part (s122b / ball
+                :refer-number Singular))
+
+# alignment:
+s122b: 3-3
+s122t: 0-0
+
+# document level annotation:
+(s122s0 / sentence
+
+  :coref ((s121t :same-entity s122t)))
+
+
+
+
+# :: snt123	:: snt123 . . chong chong chong chong .
+# sentence level graph:
+(s123e / emit-sound-91
+        :ARG1 (s123t / thing)
+        :ARG2 (s123a / and
+                :op1 (s123s / string-entity :value "chong")
+                :op2 (s123s2 / string-entity :value "chong")
+                :op3 (s123s3 / string-entity :value "chong")
+                :op4 (s123s4 / string-entity :value "chong")))
+
+
+# alignment:
+s123e: 0-0
+s123t: 0-0
+s123a: 0-0
+s123s: 3-3
+s123s2: 4-4
+s123s3: 5-5
+s123s4: 6-6
+
+# document level annotation:
+(s123s0 / sentence
+
+  :coref ((s122t :same-entity s123t)))
+
+
+
+
+# :: snt124	:: snt124 So they're walking along ,
+# sentence level graph:
+(s124w / walk-01
+  :ARG0 (s124p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG2 (s124a / along)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s124w: 3-3
+s124p: 2-2
+s124a: 4-4
+
+# document level annotation:
+(s124s0 / sentence
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s124w))
+
+  :coref ((s119w2 :same-event s124w)
+        (s120p2 :same-entity s124p)))
+
+
+
+
+# :: snt125	:: snt125 and they brush off their pears ,
+# sentence level graph:
+(s125b / brush-off-04
+  :ARG0 (s125p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG1 (s125p2 / pear
+          :refer-number Plural
+          :poss s125p)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s125b: 3-4
+s125p: 5-5
+s125p2: 6-6
+
+# document level annotation:
+(s125s0 / sentence
+
+  :temporal ((s124w :overlap s125b))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s125b))
+
+  :coref ((s124p :same-entity s125p)
+        (s107p :same-entity s125p2)))
+
+
+
+
+# :: snt126	:: snt126 and they start eating it .
+# sentence level graph:
+(s126s / start-01
+        :ARG0 (s126p / person
+                :refer-person 3rd
+                :refer-number Plural)
+        :ARG1 (s126e / eat-01
+                :ARG0 s126p
+                :ARG1 (s126t / thing
+                        :refer-person 3rd
+                        :refer-number Singular)
+                :Aspect Activity
+                :MODSTR FullAff)
+        :Aspect Performance
+        :MODSTR FullAff)
+
+
+# alignment:
+s126s: 3-3
+s126p: 2-2
+s126e: 4-4
+s126t: 5-5
+
+# document level annotation:
+(s126s0 / sentence
+
+  :temporal ((s125b :after s126e))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s126e))
+
+  :coref ((s125p :same-entity s126p)
+        (s125p2 :same-entity s126t)))
+
+
+
+
+# :: snt127	:: snt127 Then they walk by-- the man who was picking the pears .
+# sentence level graph:
+(s127w / walk-01
+  :ARG0 (s127p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :ARG2 (s127b / by
+        :op1 (s127m / man
+                :refer-number Singular
+                :ARG0-of (s127p2 / pick-01
+                        :ARG1 (s127p3 / pear
+                                :refer-number Plural)
+                        :Aspect Activity
+                        :MODSTR FullAff)))
+  :temporal (s127t / then)
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s127w: 3-3
+s127p: 2-2
+s127b: 4-4
+s127m: 6-6
+s127p2: 9-9
+s127p3: 11-11
+s127t: 1-1
+
+# document level annotation:
+(s127s0 / sentence
+
+  :temporal ((s126e :after s127w)
+        (s127w :before s127p2))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s127p2)
+        (AUTH :FullAff s127w))
+
+  :coref ((s126p :same-entity s127p)
+        (s38p :same-entity s127m)
+        (s25p3 :same-entity s127p3)))
+
+
+
+
+# :: snt128	:: snt128 Who looks like a Mexican-American if that's important ?
+# sentence level graph:
+(s128l / look-02
+        :ARG0 (s128p / person)
+        :ARG1 (s128h / have-mod-91
+                :ARG1 s128p
+                :ARG2 (s128e / ethnic-group
+                        :name (s128n / name
+                                :op1 "Mexican-American"))
+                :Aspect State
+                :MODSTR PrtAff)
+        :Aspect State
+        :MODSTR FullAff
+        :ARG1-of (s128i2 / important-01
+                :polarity (u / umr-unknown)
+                :Aspect State
+                :MODSTR NeutAff))
+
+# alignment:
+s128l: 2-2
+s128p: 1-1
+s128h: 0-0
+s128e: 5-5
+s128n: 0-0
+s128i2: 8-8
+s128u: 6-6
+
+# document level annotation:
+(s128s0 / sentence
+
+  :temporal ((s127w :overlap s128l)
+                    (s128l :overlap s128h))
+
+  :modal ((ROOT :MODAL AUTH)
+                    (AUTH :FullAff s128l)
+                    (AUTH :NeutAff s128h))
+
+  :coref ((s127p :same-entity s128p)))
+
+
+
+
+# :: snt129	:: snt129 U-m and he's ge he's getting down out of the tree ,
+# sentence level graph:
+(s129g / get-05
+  :ARG1 (s129p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG2 (s129d / down)
+  :direction (s129o / out)
+  :source (s129t / tree
+            :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s129d: 7-7
+s129g: 6-6
+s129p: 5-5
+s129t: 11-11
+s129o: 8-8
+
+# document level annotation:
+(s129s0 / sentence
+
+  :temporal ((s127w :overlap s129g))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s129g))
+
+  :coref ((s128p :same-entity s129p)
+        (s37t :same-entity s129t)))
+
+
+
+
+# :: snt130	:: snt130 and fucking with the ladder .
+# sentence level graph:
+(s130f / fuck-around-04
+  :ARG0 (s130p / person)
+  :ARG1 (s130l / ladder
+          :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)
+
+# alignment:
+s130f: 2-2
+s130l: 5-5
+s130p: 0-0
+
+# document level annotation:
+(s130s0 / sentence
+
+  :temporal ((s129g :after s130f))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s130f))
+
+  :coref ((s129p :same-entity s130p)
+        (s27l :same-entity s130l)))
+
+
+
+
+# :: snt131	:: snt131 A--nd he sees . . and and there's one full basket of pears there ,
+# sentence level graph:
+(s131e2 / exist-91
+  :ARG1 (s131t2 / there)
+  :ARG2 (s131b2 / basket
+        :quant 1
+        :ARG1-of (s131f2 / full-09
+                :ARG2 (s131p2 / pear
+                        :refer-number Plural)))
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s131e2: 8-8
+s131t2: 14-14
+s131b2: 11-11
+s131f2: 10-10
+s131p2: 13-13
+
+# document level annotation:
+(s131s0 / sentence
+
+  :temporal ((s130f :overlap s131e2))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s131e2))
+
+  :coref ((s127p3 :subset-of s131p2)))
+
+
+
+
+# :: snt132	:: snt132 and and an empty basket .
+# sentence level graph:
+(s132e / exist-91
+        :ARG1 (s132p / place)
+        :ARG2 (s132b2 / basket
+                :refer-number Singular
+                :ARG1-of (s132e3 / empty-02))
+        :Aspect State
+        :MODSTR FullAff)
+
+
+# alignment:
+s132e: 0-0
+s132p: 0-0
+s132b2: 5-5
+s132e3: 4-4
+
+# document level annotation:
+(s132s0 / sentence
+
+  :coref ((s131t3 :same-entity s132b2)))
+
+
+
+
+# :: snt133	:: snt133 And the other full basket is gone .
+# sentence level graph:
+(s133g / gone-02
+        :ARG1 (s133b / basket
+                :refer-number Singular
+                :ARG1-of (s133o / other-01)
+                :ARG1-of (s133f / full-09))
+        :Aspect State
+        :MODSTR FullAff)
+
+# alignment:
+s133g: 7-7
+s133b: 5-5
+s133o: 3-3
+s133f: 4-4
+
+# document level annotation:
+(s133s0 / sentence
+
+  :temporal ((s131e2 :overlap s133g))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s133g)))
+
+
+
+
+# :: snt134	:: snt134 And he goes . . {counting gesture}
+# sentence level graph:
+(s134g / go-05
+  :ARG0 (s134p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s134g2 / gesture-91
+        :ARG0 s134p
+        :ARG1 (s134c / count-01))
+  :Aspect Endeavor
+  :MODSTR FullAff)
+
+# alignment:
+s134g: 3-3
+s134p: 2-2
+s134g2: 7-7
+s134c: 6-6
+
+# document level annotation:
+(s134s0 / sentence
+
+  :temporal ((s133h :overlap s134g))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s134g))
+
+  :coref ((s130p :same-entity s134p)))
+
+
+
+
+# :: snt135	:: snt135 And he sees the kids walking by and eating their pears .
+# sentence level graph:
+(s135s / see-01
+  :ARG0 (s135p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s135a / and
+          :op1 (s135w / walk-01
+                 :ARG0 (s135k / kid
+                         :refer-number Plural)
+                 :direction (s135b / by)
+                 :Aspect Activity
+                 :Modpred s135s)
+          :op2 (s135e / eat-01
+                 :ARG0 s135k
+                 :ARG1 (s135p2 / pear
+                         :refer-number Plural
+                         :poss s135k)
+                 :Aspect Activity
+                 :MODPRED s135s))
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s135a: 8-8
+s135b: 7-7
+s135e: 9-9
+s135k: 5-5
+s135p: 2-2
+s135p2: 11-11
+s135s: 3-3
+s135w: 6-6
+
+# document level annotation:
+(s135s0 / sentence
+
+  :temporal ((s134g :after s135s)
+        (s135w :overlap s135e))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s135s)
+        (s135p :AFF s135s)
+        (s135s :UNSP s135e)
+        (AUTH :FullAff s135p))
+
+  :coref ((s134p :same-entity s135p)
+        (s127p :same-entity s135k)
+        (s127w :same-event s135w)
+        (s126t :same-entity s135p2)))
+
+
+
+
+# :: snt136	:: snt136 . . And he and he looks after them ,
+# sentence level graph:
+(s136l / look-01
+  :ARG0 (s136p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s136p2 / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :direction (s136a / after)
+  :Aspect State
+  :MODSTR FullAff)
+
+# alignment:
+s136a: 8-8
+s136l: 7-7
+s136p: 6-6
+s136p2: 9-9
+
+# document level annotation:
+(s136s0 / sentence
+
+  :temporal ((s135s :overlap s136l))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s136l))
+
+  :coref ((s135p :same-entity s136p)
+        (s135k :same-entity s136p2)))
+
+
+
+
+# :: snt137	:: snt137 and they disappear ,
+# sentence level graph:
+(s137d / disappear-01
+  :ARG1 (s137p / person
+          :refer-person 3rd
+          :refer-number Plural)
+  :Aspect Performance
+  :MODSTR FullAff)
+
+# alignment:
+s137d: 3-3
+s137p: 2-2
+
+# document level annotation:
+(s137s0 / sentence
+
+  :temporal ((s136l :overlap s137d))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s137d))
+
+  :coref ((s136p2 :same-entity s137p)))
+
+
+
+
+# :: snt138	:: snt138 and that's the end of the movie .
+# sentence level graph:
+(s138i2 / identity-91
+        :ARG0 (s138t / thing
+                :mod (s138t2 / that))
+        :ARG1 (s138t3 / thing
+                :ARG2-of (s138e / end-01
+                        :ARG1 (s138m / movie
+                                :refer-number Singular)
+                        :Aspect Performance
+                        :MODSTR FullAff))
+        :Aspect State
+        :MODSTR FullAff)
+
+# alignment:
+s138i2: 0-0
+s138t: 0-0
+s138t2: 1-1
+s138t3: 0-0
+s138e: 4-4
+s138m: 7-7
+
+# document level annotation:
+(s138s0 / sentence
+
+  :temporal ((s138t :overlap s138i2)
+        (s138t :overlap s138e))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullAff s138e)
+        (AUTH :FullAff s138i2))
+
+  :coref ((s137d :same-event s138t)
+        (s92m :same-entity s138m)))
+
+
+
+
+# :: snt139	:: snt139 And there's no no language ,
+# sentence level graph:
+(s139e / exist-91
+        :ARG2 (s139l / language)
+        :polarity -)
+
+
+# alignment:
+s139e: 2-2
+s139l: 5-5
+
+# document level annotation:
+(s139s0 / sentence
+
+  :temporal ((present-ref :overlap s139e))
+
+  :modal ((ROOT :MODAL AUTH)
+        (AUTH :FullNeg s139e)))
+
+
+
+
+# :: snt140	:: snt140 . . used ,
+# sentence level graph:
+(s140u / use-01
+         :ARG1 (s140t / thing)
+         :Aspect Process
+         :MODSTR FullNeg)
+
+# alignment:
+s140u: 3-3
+s140t: 0-0
+
+# document level annotation:
+(s140s0 / sentence
+
+  :coref ((s139l :same-entity s140t)))
+
+
+
+
+# :: snt141	:: snt141 . . throughout the whole thing.
+# sentence level graph:
+(s141h / have-duration-91
+        :ARG1 (s141e / event)
+        :ARG2 (s141t5 / thing
+                 :extent (s141w2 / whole)
+                 :refer-number Singular))
+
+# alignment:
+s141h: 3-3
+s141e: 0-0
+s141t5: 6-6
+s141w2: 5-5
+
+# document level annotation:
+(s141s0 / sentence
+
+  :coref ((s140u :same-event s141e)
+        (s138m :same-entity s141t5)))
+
+
+
+
+# Source File: 
+Okay .
+U—m  the s the scene opens up  with  um  you see a tree , 
+k kay ? 
+And there's   a ladder coming out . . o of the tree , 
+and there's a man at the top of the ladder ,
+you can't see him yet . 
+A-nd  then . . it shifts
+and you see him , 
+plucking a pear from the tree . 
+And you watch him pluck a few pears , 
+and he'd drop them into his  thing
+but I don't . . he's wearing like an apron with huge pockets . 
+But I don't think you see the apron at first .
+I don't know if that's important or not.
+ A-nd u-h and then he gets down out of the tree , 
+and he  dumps all his pears into the basket
+and the basket's full , 
+and one of the pears drops down to the floor , 
+and he  picks it up , 
+and he takes his kerchief off , 
+and he  wipes it off ,
+and  places it in in the basket which is  very full . 
+That's why it fell off in the first place .
+A--nd u--m then he climbs back up the ladder ,
+and he  and he . . starts picking pears again . 
+And then while he's up in the ladder , 
+let's see is it while he's up in the ladder ? 
+Or. .or before .
+U—m  anyway ,
+a guy comes by leading a goat . 
+And the goat's aaarrr but . . and they don't talk to each other , 
+they don't e . . I don't think they even look at each other , 
+and . . the guy . . walks by . 
+And you watch the goat , 
+disappearing all the way , 
+? and then  then you're back to the man in the tree . 
+And he's up there in the tree . 
+And then  definitely when he's up there , 
+. . a kid comes by on a bicycle . 
+From the direction where the goat man left , 
+okay ? 
+A--nd . . u--m  the bicycle's way too big for the kid . 
+I'm giving you all these details . 
+I don't know if you want them . 
+U—m the . . the reason I'm giving you the details is cause I don't know what the point of the movie was . 
+Okay ? 
+So maybe you can see {laugh begins} something that {laugh ends} I didn't . 
+Okay ? 
+U--m  g a kid comes by on a bicycle , 
+. . he stops , 
+he gets off his bike , 
+u--m  the movie was in color . 
+And the movie had sound track . 
+It's important . 
+And then the mo the whole movie started with a a cock crowing . 
+And then you see /?/ . 
+Anyway . 
+I just remembered that . 
+Anyway , 
+so u--m  the kid on the bicycle , 
+. . gets off the bicycle , 
+I think he  he picks up the b—asket of pears , 
+and he puts it on his bicycle , 
+. . on the front ? 
+And he rides off . 
+A--nd  you see him ,
+riding off and the next scene you see him , 
+like  at a at a distance , 
+a pan shot . 
+And he's riding on a lane , 
+riding on a bicycle and they  cro you know . 
+Cross paths . 
+And he kind of watches her go by .
+And . . because he's watching her , 
+he when he turns around his hat flies off . 
+Okay ? 
+And then he bumps into a rock . 
+A--nd . . u--m  falls down , 
+and . . the . . pears all s--pray all over the place , 
+? and  and then . . you see him fall down , 
+and he gets up , 
+and brushes himself off , 
+. . and he goes . . you know {brushing gesture}  and then you see three other boys about his age . 
+He's like maybe . . what , 
+ten or something ? 
+. . Twelve ? 
+I don't know . 
+A--nd and you look at them , 
+and and they see him , 
+and they come up , 
+a-nd without saying anything , 
+there's no speech in the whole movie . 
+Without saying anything , 
+they . . u--m . . help him . . put the pears back in the basket . 
+Only they don't wipe them off first . 
+Just pick them up , 
+. . and pour them in . 
+And they-- help him get his bike u--p , 
+and one kid takes the rock that he tripped on and he throws it off to the side of the roa—d , 
+? and  and they set him upright , 
+. . and they . . and then he . . you know they I don't they don't say thank you , 
+he just  splits . 
+And then . . they walk . . the three boys walk down the road and they see-- . . the kid's hat . 
+And so one of them whistles . 
+And the kid on the bike turns around , 
+and then he brings his hat to him , 
+and the g guy on the bike  gives  the other kids  gives the kid that returns his hat . . three pears to share with his buddies . 
+So--  and then he splits . 
+With his hat , 
+with his pears , 
+everything . 
+A--nd um  I just remembered another detail . 
+Before he meets the girl ? 
+One of the pears , 
+. . it's a bumpy road little dirt road , 
+one of the pears . . flies out . 
+Whatever . 
+A--nd u—m  then you don't see the kid with the bike with the pears anymore . 
+And the three kids that are walking ,
+one of them has a . . what do you call those little [l.l? um  paddleball ? 
+You know , 
+with a ball on ay uh /??/ ? 
+. . chong chong chong chong . 
+So they're walking along , 
+and they brush off their pears , 
+and they start eating it . 
+Then they walk by--  the man who was picking the pears .  
+Who looks like a Mexican-American if that's important ? 
+U-m  and he's ge he's getting down out of the tree , 
+and fucking with the ladder . 
+A--nd  he sees . . and and there's one  full basket of pears there , 
+and and an empty basket . 
+And the other full basket is gone .
+And he goes . . {counting gesture}
+And he sees the kids walking by and eating their pears . 
+. . And he and he looks after them , 
+and they disappear , 
+and that's the end of the movie . 
+And there's no  no language , 
+. . used , 
+. . throughout the whole thing .

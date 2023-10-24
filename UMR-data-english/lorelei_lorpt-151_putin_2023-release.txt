@@ -360,7 +360,7 @@ s6t: 0-0
     :ARG2 (s7p2 / person)
     :Aspect Performance
     :MODSTR FullAff)
-g
+
 # alignment:
 s7s: 0-0
 s7p: 0-0

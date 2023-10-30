@@ -3,6 +3,8 @@ from nltk.stem import PorterStemmer
 def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
     cant_find_heads_count = 0
     cant_find_tails_count = 0
+    umr_head_tail_no_role = 0
+    total_count=0
     porter = PorterStemmer()
     splits_data = []
     for file in amr_graphs.keys():
@@ -15,6 +17,7 @@ def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
             for r in amr_roles:
                 for edge in amr_all_edges:
                     if edge[2] == r: # found an amr split role in the graph we're looking for, now let's align it to the umr graph
+                        total_count +=1
                         amr_role = edge[2]
                         
                         #get amr head and tail node and ids 
@@ -47,6 +50,9 @@ def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
                                 umr_role = umr_graph.get_edge_data(umr_head_id,umr_tail_id)
                                 if umr_role: #if umr role was found
                                     umr_role = umr_role["label"] #will return none if no edge
+                                else:
+                                    umr_head_tail_no_role+=1
+
 
                                 #create entry and add to data
                                 entry = [file, sent_i, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
@@ -64,5 +70,7 @@ def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
 
     print("unable to find", cant_find_heads_count," matching UMR heads")
     print("unable to find", cant_find_tails_count,"matching UMR tails")
+    print("unable to find", umr_head_tail_no_role,"link betwen head-tail")
+    print("total amr split roles examined: ", total_count)
     return splits_data
                         

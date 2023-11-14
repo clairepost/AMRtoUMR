@@ -6,6 +6,7 @@ pipe = pipeline("token-classification", model="andrewt-cam/bert-finetuned-animac
 def parse_for_animacy(input_sent):
     animacy_info = pipe(input_sent)
     print(animacy_info)
+    print(animacy_info, file = open("animacy_parse.txt","w"))
     return
 
 parse_for_animacy("My name is Clara and I live in Berkeley, California.")

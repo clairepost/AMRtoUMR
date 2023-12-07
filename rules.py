@@ -39,6 +39,13 @@ def detect_split_role(role_instance, animacy_information, named_entity_type):
         parent_node = get_parent_node(role_instance)  # Implement a function to get the parent node
         if parent_node == ":theme":
             return ":source"
+    
+    # Rule 5: Find :cause instance
+    if role_instance == ":consist-of":
+        if animacy_information == "inanimate":
+            return [":group", ":part-of"]
+        elif animacy_information == "animate":
+            return ":group"
 
     # Default: If no rule is matched, return None or provide a default suggestion
     return None

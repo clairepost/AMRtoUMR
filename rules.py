@@ -49,3 +49,24 @@ def detect_split_role(role_instance, animacy_information, named_entity_type):
 
     # Default: If no rule is matched, return None or provide a default suggestion
     return None
+
+
+def get_parent_node(role_instance, umr_graph):
+    """
+    Helper function to get the parent node of a given role instance.
+
+    Parameters:
+    - role_instance (str): The role instance for which to find the parent node.
+    - umr_graph: probably need some way to access the previous tuple that this child tuple is connencted to.
+
+    Returns:
+    - parent_node (str): The parent node of the given role instance.
+    """
+    # Find the incoming edges to the role_instance node and get the source nodes
+
+    incoming_edges = umr_graph.in_edges(role_instance)
+    if incoming_edges:
+        parent_node = incoming_edges[0][0]
+        return parent_node
+    else:
+        return None

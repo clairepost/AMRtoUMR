@@ -71,6 +71,8 @@ def extract_node(node_str,i):
         #print(node_list)
         #create new id for the graph so that we don't accidently duplicate the nodes when adding
         node_list= node_list[0].split(" ")
+        if len(node_list) <2:
+            return None
         node = node_list[1]
         edge = node_list[0]
         node = node.strip(" ()")
@@ -97,20 +99,22 @@ def create_graph(graph_str):
     for i in range(len(graph_str.splitlines())):
         #extact node and edge, get spacing to know what to attach it to 
         curr_line = graph_str.splitlines()[i]
-        curr_node, g_id, edge = extract_node(curr_line,i) 
-        curr_spacing = len(curr_line) - len(curr_line.lstrip())
-        head_dict[curr_spacing] = g_id #update thespacing level to point to this node
-        if i == 0:
-            #add top  node to the graph
-            G.add_node(g_id,name = curr_node, head_id = None)
-        else:
-            #get head_node spacing
-            head_spacing = get_head_spacing(curr_spacing, head_dict)
-            head_node_id= head_dict[head_spacing]
-        
-            #attach curr_node to head_node
-            G.add_node(g_id,name=curr_node, head= head_node_id)
-            G.add_edge(head_node_id,g_id, label = edge)#add whatever is last in the heap
+        result = extract_node(curr_line,i) 
+        if result != None:
+            [curr_node, g_id, edge] = result
+            curr_spacing = len(curr_line) - len(curr_line.lstrip())
+            head_dict[curr_spacing] = g_id #update thespacing level to point to this node
+            if i == 0:
+                #add top  node to the graph
+                G.add_node(g_id,name = curr_node, head_id = None)
+            else:
+                #get head_node spacing
+                head_spacing = get_head_spacing(curr_spacing, head_dict)
+                head_node_id= head_dict[head_spacing]
+            
+                #attach curr_node to head_node
+                G.add_node(g_id,name=curr_node, head= head_node_id)
+                G.add_edge(head_node_id,g_id, label = edge)#add whatever is last in the heap
             
     return G
 

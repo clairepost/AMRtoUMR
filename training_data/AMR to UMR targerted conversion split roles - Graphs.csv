@@ -1,0 +1,985 @@
+ID,dataset,split-role,split-choice,animacy of term,sentence,AMR,UMR,notes,Animacy Recognition,Named Entity
+dest1,umr-guidelines,:destination,:recipient,,He showed the sea to the girl .,"# ::snt He showed the sea to the girl .
+# ::alignments 0-1|0.0 1-2|0 3-4|0.1 6-7|0.2 
+(s / show-01
+    :ARG0 (h / he)
+    :ARG1 (s2 / sea)
+    :ARG2 (g / girl))","hogco                 kibba-l         raɬad                 b-ega-l-lo  
+he.OBL(ERG)         girl.OBL-LAT         sea(iii)         iii-see-CAUS-PST 
+# ::snt He showed the sea to the girl.’
+(b/ begallo-00 ‘show’
+        :actor (p/ person
+                :ref-person 3rd
+                :ref-number Singular)
+        :theme (r/ raɬad ‘sea’)
+        :recipient (k/ kibba ‘girl’
+                :ref-number Singular)
+        :aspect Performance
+        :modstr FullAff)",,,"[{'B_human': 'girl'}, {'PER': 'He'}],"
+dest2,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,It 's extremely troublesome to get there via land .,"# ::id bc.cctv_0000.167 ::date 2012-12-05T12:59:46 ::annotator ISI-AMR-01 ::preferred
+# ::snt It 's extremely troublesome to get there via land .
+# ::save-date Fri Nov 10, 2017 ::file bc_cctv_0000_167.txt
+(t / trouble-05
+      :ARG2 (g / get-05
+            :destination (t2 / there)
+            :path (l / land))
+      :degree (e / extreme))","# ::snt It 's extremely troublesome to get there via land .
+(s2t / trouble-05
+  :ARG2 (s2g / get-05
+          :goal (s2t2 / there)
+          :path (s2l / land))
+  :degree (s2e / extreme)
+  :aspect State
+  :modstr FullAff)",,,"[],"
+dest3,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,She heated the oven to 250 degrees Celsius.,"# ::id isi_0002.33 ::date 2012-06-02T15:47:01 ::annotator ISI-AMR-01 ::preferred
+# ::snt She heated the oven to 250 degrees Celsius.
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_33.txt
+(h / heat-01
+      :ARG0 (s / she)
+      :ARG1 (o / oven)
+      :destination (t / temperature-quantity :quant 250
+            :scale (c / celsius)))","# ::snt She heated the oven to 250 degrees Celsius.
+(s3h / heat-up-02
+  :undergoer (s3o / oven
+          :goal (s3t / temperature-quantity
+                  :quant (s3x / 250)
+                  :scale (s3c / celsius)))
+  :actor (s3s / she
+           :refer-person 3rd
+           :refer-number Singular))",,,"[{'MISC': 'Celsius'}, {'PER': 'She'}],"
+dest4,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,"He drove west, from Houston to Austin .","# ::id isi_0002.47 ::date 2012-06-02T19:54:06 ::annotator ISI-AMR-01 ::preferred
+# ::snt He drove west, from Houston to Austin .
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_47.txt
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))","# He drove west, from Houston to Austin .
+(s4d / drive-01
+  :actor (s4h / he
+          :refer-person 3rd
+          :refer-number Singular)
+  :direction (s4w / west)
+  :start (s4c / city :name (s4n / name :op1 ""Houston""))
+  :goal (s4c2 / city :name (s4n2 / name :op1 ""Austin"")))",,,"[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}],"
+dest5,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,I drove to the store.,"# ::id isi_0002.119 ::date 2012-12-05T11:02:36 ::annotator ISI-AMR-01 ::preferred
+# ::snt I drove to the store.
+# ::save-date Wed Dec 5, 2012 ::file isi_0002_119.txt
+(d / drive-01
+      :ARG0 (i / i)
+      :destination (s / store))","# I drove to the store.
+
+(s5d / drive-01
+  :actor (s5p / person
+           :refer-person 1st
+           :refer-number Singular)
+  :goal (s5s / store)
+  :Aspect Performance
+  :MODSTR FullAff)",,,"[{'PER': 'I'}],"
+dest6,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,I walked up to the window.,"# ::id isi_0002.130 ::date 2012-12-05T11:37:12 ::annotator ISI-AMR-01 ::preferred
+# ::snt I walked up to the window.
+# ::save-date Wed Dec 5, 2012 ::file isi_0002_130.txt
+(w / walk-01
+      :ARG0 (i / i)
+      :destination (w2 / window))","# I walked up to the window.
+
+(s6w / walk-01
+  :actor (s6p / person
+           :refer-person 1st
+           :refer-number Singular)
+  :goal (s6w2 / window)
+  :Aspect Performance
+  :MODSTR FullAff)",,,"[{'PER': 'I'}],"
+dest7,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,The MiG-25 fired an AAM at the Predator.,"# ::id isi_0002.701 ::date 2015-10-23T19:23:54 ::annotator ISI-AMR-01 ::preferred
+# ::snt The MiG-25 fired an AAM at the Predator.
+# ::save-date Wed Jan 17, 2018 ::file isi_0002_701.txt
+(f / fire-01
+      :ARG0 (a / aircraft-type :wiki ""Mikoyan-Gurevich_MiG-25"" :name (n / name :op1 ""MiG-25""))
+      :ARG1 (m / missile
+            :source (a2 / air)
+            :direction (a3 / air))
+      :destination (a4 / aircraft-type :wiki ""General_Atomics_MQ-1_Predator"" :name (n2 / name :op1 ""Predator"")))","# ::snt The MiG-25 fired an AAM at the Predator.
+(s7f / fire-01
+  :instrument (s7a / aircraft-type
+                :name (s7n / name
+                        :op1 ""MiG-25""))
+  :theme (s7m / missile
+           :source (s7a3 / air)
+           :direction (s7a2 / air))
+  :goal (s7a4 / aircraft-type
+          :name (s7n2 / name
+                  :op1 ""Predator"")))",,,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}],"
+dest8,amr-release-3.0-amrs-guidelines.txt,:destination,:goal,,"For their honeymoon, the couple flew first class to Hawaii.","# ::id isi_0002.654 ::date 2015-07-28T15:07:57 ::annotator ISI-AMR-01 ::preferred
+# ::snt For their honeymoon, the couple flew first class to Hawaii.
+# ::save-date Tue Jul 28, 2015 ::file isi_0002_654.txt
+(f / fly-01
+      :ARG1 (c / couple)
+      :destination (s / state :wiki ""Hawaii"" :name (n / name :op1 ""Hawaii""))
+      :manner (c2 / class
+            :ord (o / ordinal-entity :value 1))
+      :subevent-of (h / honeymoon-01
+            :ARG0 c))","(s8f / fly-01
+  :theme (s8c / couple)
+  :goal (s8s / state
+          :name (s8n / name
+                  :op1 ""Hawaii""))
+  :manner (s8c2 / class)
+  :ord (s8o / ordinal-entity
+         :value (s8x / 1))
+  :value (s8h / have-subevent-91
+           :value (s8h2 / honeymoon-01
+                    :ARG0 (s8c))))",,,"[{'LOC': 'Hawaii'}, {'B_human': 'couple'}],"
+dest9,umr-guidelines,:destination,:recipient,,I showed the pictures to her.,"# ::snt I showed the pictures to her .
+# ::alignments 0-1|0.0 1-2|0 3-4|0.1 
+(s / show-01
+    :ARG0 (i / i)
+    :ARG1 (p / picture
+        :destination (h / her))","I showed the pictures to her.
+(s/ show-01  
+	:actor (p/ person
+		:ref-person 1st
+		:ref-number Singular)  
+	:theme (p2/ picture
+		:ref-number Plural)
+	:recipient (p3/ person
+		:ref-person 3rd
+		:ref-number Singular)
+	:aspect Performance
+	:modstr FullAff) ",,,"[{'PER': 'I'}, {'PER': 'her'}],"
+dest10,umr-guidelines,:destination,:recipient,,He gave the cat some wet food .,"# ::snt He gave the cat some wet food .
+# ::alignments 0-1|0.0 1-2|0 3-4|0.1 4-5|0.1.0.1 5-6|0.1.0.0 6-7|0.1.0 
+(g / give-01
+    :ARG0 (h / he)
+    :destination (c / cat
+        :location (f / food
+            :mod (w / wet-01)
+            :mod (s / some))))","He gave the cat some wet food.
+(g/ give-01  
+        :actor (p/ person
+                :ref-person 3rd
+                :ref-number Singular)  
+        :theme (f/ food
+                :mod (w/ wet)
+                :quant (s/ some))  
+        :recipient (c/ cat
+                :ref-number Singular)
+        :aspect Performance
+        :modstr FullAff)",,,"[{'B_animal': 'cat'}, {'PER': 'He'}],"
+cause1,AMR guidelines,:cause,:reason,,"The boy murmured softly to soothe the girl, because he worried about her.","# The boy murmured softly to soothe the girl, because he worried about her.
+(m / murmur-01
+  :ARG0 (b / boy)
+  :manner (s / soft-02)
+  :purpose (s2 / soothe-01
+               :ARG1 (g / girl))
+  :cause (w / worry-01
+            :ARG0 b
+            :topic g))","# The boy murmured softly to soothe the girl, because he worried about her.
+(s11m / murmur-01
+  :actor (s11b / boy)
+  :manner (s11s / soft)
+  :purpose (s11s2 / soothe-01
+             :undergoer (s11g / girl))
+  :reason (s11w / worry-01
+            :ARG0 (s11b)
+            :topic (s11g)))",,,"[{'B_human': 'boy'}, {'B_human': 'girl'}, {'PER': 'he'}, {'PER': 'her'}],"
+cause2,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,The old man died of lung cancer .,"# ::id isi_0002.36 ::date 2012-06-02T18:42:55 ::annotator ISI-AMR-01 ::preferred
+# ::snt The old man died of lung cancer .
+# ::save-date Wed Oct 28, 2015 ::file isi_0002_36.txt
+(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))","# ::snt The old man died of lung cancer .
+(s12d / die-01
+  :undergoer (s12m / man
+               :mod (s12o / old))
+  :Cause-of (s12d2 / disease
+              :name (s12n / name
+                      :op1 ""lung""
+                      :op2 ""cancer"")))",,,"[{'B_human': 'man'}],"
+cause3,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,The match has been canceled due to the rain.,"# ::id isi_0002.360 ::date 2014-02-14T17:33:10 ::annotator ISI-AMR-01 ::preferred
+# ::snt The match has been canceled due to the rain.
+# ::save-date Sun Jun 21, 2015 ::file isi_0002_360.txt
+(c / cancel-01
+      :ARG1 (m / match-03)
+      :ARG1-of (c2 / cause-01
+            :ARG0 (r / rain-01)))","# ::snt The match has been canceled due to the rain.
+(s13c / cancel-01
+  :undergoer (s13m / match-03)
+  :cause (s13r / rain-01))",,,"[],"
+cause4,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,He was injured and therefore unable to play.,"# ::id isi_0002.375 ::date 2014-02-20T14:22:10 ::annotator ISI-AMR-01 ::preferred
+# ::snt He was injured and therefore unable to play.
+# ::save-date Thu Feb 20, 2014 ::file isi_0002_375.txt
+(i / injure-01
+      :ARG1 (h / he)
+      :ARG0-of (c / cause-01
+            :ARG1 (p / possible-01 :polarity -
+                  :ARG1 (p2 / play-01
+                        :ARG0 h))))","# ::snt He was injured and therefore unable to play.
+(s14i2 / injure-01
+  :undergoer (s14h / he
+               :refer-person 3rd
+               :refer-number Singular)
+  :cause (s14p / possible-01
+           :ARG1 (s14p2 / play-01
+                   :actor (s14h))
+           :polarity -))",,,"[{'PER': 'He'}],"
+cause5,amr-release-3.0-amrs-guidelines.txt,:cause,:reason,,"I can't do work at home, because she shouts at me.","# ::id isi_0002.376 ::date 2014-02-20T16:29:03 ::annotator ISI-AMR-01 ::preferred
+# ::snt I can't do work at home, because she shouts at me.
+# ::save-date Thu Feb 20, 2014 ::file isi_0002_376.txt
+(p / possible-01 :polarity -
+      :ARG1 (w / work-01
+            :ARG0 (i / i)
+            :location (h / home))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / shout-01
+                  :ARG0 (s2 / she)
+                  :ARG2 i)))","# ::snt I can't do work at home, because she shouts at me.
+(s15p / possible-01
+  :ARG1 (s15w / work-01
+          :actor (s15i / i
+                   :refer-person 1st
+                   :refer-number Singular)
+          :place (s15h / home))
+  :polarity -
+  :reason (s15s / shout-01
+            :actor (s15s2 / she
+                     :refer-person 3rd
+                     :refer-number Singular)
+            :Experiencer-of (s15i)))",,,"[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}],"
+cause6,amr-release-3.0-amrs-lorelei.txt,:cause,:cause,,The hospital has been vacated due to extensive damage.,"# ::id ENG_DF_000203_20120415_C0001ONSN_0001.8 ::date 2017-11-14T02:09:08 ::annotator SDL-AMR-09 ::preferred
+# ::snt The hospital has been vacated due to extensive damage.
+# ::save-date Thu Jan 11, 2018 ::file ENG_DF_000203_20120415_C0001ONSN_0001_8.txt
+(v / vacate-01
+      :ARG1 (h / hospital)
+      :ARG1-of (c / cause-01
+            :ARG0 (d / damage-01
+                  :ARG1-of (e / extensive-03))))","# ::snt The hospital has been vacated due to extensive damage.
+(s16v / vacate-01
+  :undergoer (s16h / hospital)
+  :cause (s16d / damage-01
+           :mod (s16e / extensive)))",,,"[],"
+cause7,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,The earthquake caused a tsunami.,"# ::id isi_0002.378 ::date 2014-02-20T16:39:45 ::annotator ISI-AMR-01 ::preferred
+# ::snt The earthquake caused a tsunami.
+# ::save-date Thu Feb 20, 2014 ::file isi_0002_378.txt
+(c / cause-01
+      :ARG0 (e / earthquake)
+      :ARG1 (t / tsunami))","# ::snt The earthquake caused a tsunami.
+(s17h / have-cause-91
+  :undergoer (s17n / natural-disaster
+               :name (s17n2 / name
+                       :op1 ""tsunami""))
+  :force (s17n3 / natural-disaster
+           :name (s17n4 / name
+                   :op1 ""earthquake""))
+  :Aspect Performance
+  :MODSTR FullAff)",,,"[],"
+cause8,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,Scores of people drowned when the boat sank.,"# ::id isi_0002.386 ::date 2014-02-20T20:49:55 ::annotator ISI-AMR-01 ::preferred
+# ::snt Scores of people drowned when the boat sank.
+# ::save-date Thu Feb 20, 2014 ::file isi_0002_386.txt
+(d / drown-02
+      :ARG1 (p / person
+            :quant (m / multiple :op1 20))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / sink-01
+                  :ARG1 (b / boat))))","# ::snt Scores of people drowned when the boat sank.
+(s18d / drown-02
+  :experiencer (s18p2 / person
+          :quant (s18m / multiple
+                   :op1 (s18x / 20)))
+  :cause (s18s / sink-01
+           :undergoer (s18b / boat)))",*missing people?,,"[],"
+cause9,amr-release-3.0-amrs-guidelines.txt,:cause,:cause,,I must stop now as the shuttle leaves in 10 minutes.,"# ::id isi_0002.424 ::date 2014-02-24T17:44:26 ::annotator ISI-AMR-01 ::preferred
+# ::snt I must stop now as the shuttle leaves in 10 minutes.
+# ::save-date Sat Jul 25, 2015 ::file isi_0002_424.txt
+(o / obligate-01
+      :ARG2 (s / stop-01
+            :ARG0 (i / i)
+            :time (n / now))
+      :ARG1-of (c / cause-01
+            :ARG0 (l / leave-11
+                  :ARG0 (s2 / shuttle)
+                  :time (a / after
+                        :op1 (n2 / now)
+                        :quant (t / temporal-quantity :quant 10
+                              :unit (m / minute))))))","# ::snt I must stop now as the shuttle leaves in 10 minutes.
+(s19o / obligate-01
+  :ARG2 (s19s / stop-01
+          :actor (s19i / i
+                   :refer-person 1st
+                   :refer-number Singular)
+          :time (s19n / now))
+  :Cause-of (s19l / leave-11
+              :theme (s19s2 / shuttle)
+              :time (s19a / after
+                      :op1 (s19n2 / now)
+                      :quant (s19t / temporal-quantity
+                               :unit (s19m / minute))
+                      :quant 10)))",,,"[{'PER': 'I'}],"
+cause10,amr-release-3.0-amrs-guidelines.txt,:cause,:reason,,"John, please -- there are children in the audience.","# ::id isi_0002.658 ::date 2015-09-15T21:37:34 ::annotator ISI-AMR-01 ::preferred
+# ::snt John, please -- there are children in the audience.
+# ::save-date Tue Sep 15, 2015 ::file isi_0002_658.txt
+(r / reasonable-02 :mode imperative :polite +
+      :ARG1 (p / person :wiki - :name (n / name :op1 ""John""))
+      :ARG1-of (c / cause-01
+            :ARG0 (i / include-91
+                  :ARG1 (c2 / child)
+                  :ARG2 (a / audience))))","# John, please -- there are children in the audience.
+(s20r / reasonable-02
+  :actor (s20p / person
+          :name (s20n / name
+                  :op1 ""John"")))
+  :polite (s20b / be-polite-91)
+  :reason (s20a / audience)
+             :Group-of (s20c / child)))",,,"[{'PER': 'John'}, {'B_human': 'children'}],"
+cause11,amr-release-3.0-amrs-guidelines.txt,:cause,:reason,,She divorced him in part due to his alcoholism.,"# ::id isi_0002.722 ::date 2015-11-19T18:38:43 ::annotator ISI-AMR-01 ::preferred
+# ::snt She divorced him in part due to his alcoholism.
+# ::save-date Thu Nov 19, 2015 ::file isi_0002_722.txt
+(d / divorce-01
+      :ARG0 (s / she)
+      :ARG1 (h / he)
+      :ARG1-of (c / cause-01
+            :ARG0 (a / alcoholic
+                  :domain h)
+            :degree (p / part)))","# ::snt She divorced him in part due to his alcoholism.
+(s21d / divorce-02
+  :actor (s21s / she
+          :refer-person 3rd
+          :refer-number Singular)
+  :undergoer (s21h / him
+          :refer-person 3rd
+          :refer-number Singular)
+  :reason (s21a / alcoholism
+            :degree (s21p / part))
+  :MODSTR FullAff)",*his alcohalism should be captured here?,,"[{'PER': 'She'}, {'PER': 'him'}],"
+part1,amr-release-3.0-amrs-guidelines.txt,:part,:part,,"John Smith, 30, blond, blue eyes, 6'2, 200 lbs.","# ::id isi_0002.665 ::date 2015-10-09T15:45:15 ::annotator ISI-AMR-01 ::preferred
+# ::snt John Smith, 30, blond, blue eyes, 6'2, 200 lbs.
+# ::save-date Thu Jan 11, 2018 ::file isi_0002_665.txt
+(p / person :wiki - :name (n / name :op1 ""John"" :op2 ""Smith"")
+      :age (t / temporal-quantity :quant 30
+            :unit (y / year))
+      :mod (b / blonde)
+      :part (e / eye
+            :mod (b2 / blue))
+      :mod (t2 / tall
+            :quant (s / sum-of
+                  :op1 (d / distance-quantity :quant 6
+                        :unit (f / foot))
+                  :op2 (d2 / distance-quantity :quant 2
+                        :unit (i / inch))))
+      :ARG1-of (w / weigh-01
+            :ARG3 (m / mass-quantity :quant 200
+                  :unit (p2 / pound))))",,,,"[{'PER': 'John Smith'}],"
+part2,amr-release-3.0-amrs-consensus.txt,:part,:part,,"From 1953 to 1955 , 9.8 billion Kent cigarettes with the filters were sold , the company said .","# ::id nw.wsj_0003.12 ::date 2012-04-25T21:25:40 ::annotator ISI-AMR-01 ::preferred
+# ::snt From 1953 to 1955 , 9.8 billion Kent cigarettes with the filters were sold , the company said .
+# ::save-date Thu Aug 16, 2012 ::file nw_wsj_0003_12.txt
+(s / say-01
+      :ARG0 (c / company)
+      :ARG1 (s2 / sell-01
+            :ARG1 (c2 / cigarette :quant 9800000000 :wiki ""Kent_(cigarette)""
+                  :name (k / name :op1 ""Kent"")
+                  :part (p / product
+                        :ARG0-of (f / filter-02)))
+            :time (d / date-interval
+                  :op1 (d2 / date-entity :year 1953)
+                  :op2 (d3 / date-entity :year 1955))))",,,,"[{'ORG': 'Kent'}],"
+part3,amr-release-3.0-amrs-consensus.txt,:part,:part,,"Of course , VDOT has no more money for road construction in the Richmond region .","# ::id wb.eng_0003.11 ::date 2012-08-27T11:31:24 ::annotator ISI-AMR-01 ::preferred
+# ::snt Of course , VDOT has no more money for road construction in the Richmond region .
+# ::save-date Wed Oct 17, 2012 ::file wb_eng_0003_11.txt
+(h / have-03 :polarity -
+      :ARG0 (g / government-organization :wiki ""Virginia_Department_of_Transportation""
+            :name (v / name :op1 ""VDOT""))
+      :ARG1 (m / money
+            :purpose (c2 / construct-01
+                  :ARG1 (r2 / road
+                        :location (r3 / region
+                              :part (c / city :wiki ""Richmond,_Virginia""
+                                    :name (r / name :op1 ""Richmond""))))))
+      :mod (o / of-course))",,,,"[{'ORG': 'VDOT'}, {'LOC': 'Richmond'}],"
+part4,amr-release-3.0-amrs-xinhua.txt,:part,:part,,"Regarding foreign contracted projects and cooperation of labor service , the Hong Kong region is still the most important market of the inland .","# ::id nw.chtb_0101.8 ::date 2012-11-20T08:12:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt Regarding foreign contracted projects and cooperation of labor service , the Hong Kong region is still the most important market of the inland .
+# ::save-date Tue Jan 21, 2014 ::file nw_chtb_0101_8.txt
+(m / market
+      :ARG1-of (i / important-01
+            :mod (m2 / most))
+      :mod (s / still)
+      :poss (i2 / inland)
+      :domain (r / region
+            :part (c / city :wiki ""Hong_Kong""
+                  :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))
+      :topic (a / and
+            :op1 (p / project
+                  :ARG1-of (c4 / contract-02
+                        :mod (f / foreign)))
+            :op2 (c6 / cooperate-01
+                  :ARG0 (s2 / serve-01
+                        :ARG1 (l / labor-01)))))",,,,"[{'LOC': 'Hong Kong'}],"
+part5,amr-release-3.0-amrs-dfb.txt,:part,:part,,"It applies to male adherents of feminism too, you know, limp-wristed, leftist men.","# ::id bolt-eng-DF-170-181103-8882248_0238.21 ::date 2015-10-23T00:53:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt It applies to male adherents of feminism too, you know, limp-wristed, leftist men.
+# ::save-date Thu Mar 3, 2016 ::file bolt-eng-DF-170-181103-8882248_0238_21.txt
+(a3 / apply-02
+      :ARG1 (i / it)
+      :ARG2 (m2 / man
+            :ARG0-of (a2 / adhere-02
+                  :ARG1 (f / feminism))
+            :ARG1-of (l2 / left-19)
+            :part (w / wrist
+                  :mod (l3 / limp)))
+      :mod (k / know-06
+            :ARG0 (y / you))
+      :mod (t / too))",,,,"[{'B_human': 'ad'}, {'B_human': 'men'}, {'PER': 'you'}],"
+part6,amr-release-3.0-amrs-lorelei.txt,:part,:part,,"Texas, Especially Austin, Needs Help!","# ::id ENG_DF_000170_20050903_C00020J0V_0001.1 ::date 2017-11-16T11:22:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt Texas, Especially Austin, Needs Help!
+# ::save-date Mon Jan 22, 2018 ::file ENG_DF_000170_20050903_C00020J0V_0001_1.txt
+(n2 / need-01
+      :ARG0 (s / state :wiki ""Texas"" :name (n / name :op1 ""Texas"")
+            :part (c / city :wiki ""Austin,_Texas"" :name (n3 / name :op1 ""Austin"")
+                  :mod (e / especially)))
+      :ARG1 (h / help-01
+            :ARG2 s))",,,,"[{'LOC': 'Texas'}, {'LOC': 'Austin'}],"
+part7,amr-release-3.0-amrs-cctv.txt,:part,:part,,"Among common birds , a rather special one is the black - faced spoonbill ","# ::id bc.cctv_0000.128 ::date 2012-12-19T15:33:07 ::annotator SDL-AMR-09 ::preferred
+# ::snt Among common birds , a rather special one is the black - faced spoonbill .
+# ::save-date Fri Jul 24, 2015 ::file bc_cctv_0000_128.txt
+(s / special-02
+      :ARG1 (s2 / spoonbill
+            :part (f / face
+                        :ARG1-of (b / black-04))
+            :ARG1-of (i / include-91
+                  :ARG2 (b2 / bird
+                        :mod (c / common))))
+      :degree (r / rather))",,,,"[{'B_animal': 'birds'}, {'B_animal': 'spoon'}],"
+part8,amr-release-3.0-amrs-lorelei.txt,:part,:part,,"They collect and prepare nonperishable food boxes for local shelters and meal programs, and are helping with the Katrina effort.","# ::id ENG_DF_000170_20050903_C00020J0V_0001.30 ::date 2017-11-16T13:18:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt They collect and prepare nonperishable food boxes for local shelters and meal programs, and are helping with the Katrina effort.
+# ::save-date Fri Nov 17, 2017 ::file ENG_DF_000170_20050903_C00020J0V_0001_30.txt
+(a / and
+      :op1 (c / collect-01
+            :ARG0 (t / they)
+            :ARG1 (b / box
+                  :part (f / food
+                        :mod (p2 / perishable :polarity -)))
+            :beneficiary (a2 / and
+                  :op1 (s / shelter-01
+                        :ARG1-of (l / local-02))
+                  :op2 (p3 / program
+                        :mod (m / meal))))
+      :op2 (p / prepare-01
+            :ARG0 t
+            :ARG1 b)
+      :op3 (h / help-01
+            :ARG0 t
+            :ARG1 (e / effort-01
+                  :ARG1 (n / natural-disaster :wiki ""Hurricane_Katrina""
+                        :name (n2 / name :op1 ""Katrina"")))))",,,,"[{'MISC': 'Katrina'}, {'PER': 'They'}],"
+part9,amr-release-3.0-amrs-lorelei.txt,:part,:part,,"Tornado rakes Southern Indiana; Marysville, town of 1,900, 'completely gone' | The Indianapolis Star | indystar.com","# ::id ENG_DF_000170_20120302_C000205QT_0001.12 ::date 2017-11-17T14:42:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt Tornado rakes Southern Indiana; Marysville, town of 1,900, 'completely gone' | The Indianapolis Star | indystar.com
+# ::save-date Fri Nov 17, 2017 ::file ENG_DF_000170_20120302_C000205QT_0001_12.txt
+(h / headline-01
+      :ARG1 (c / company :wiki ""The_Indianapolis_Star""
+            :name (n / name :op1 ""The"" :op2 ""Indianapolis"" :op3 ""Star"")
+            :mod (u / url-entity :value ""indystar.com""))
+      :ARG2 (a / and
+            :op1 (r / rake-01
+                  :ARG0 (t / tornado)
+                  :ARG1 (l / local-region :wiki ""Southern_Indiana""
+                        :name (n3 / name :op1 ""Southern"" :op2 ""Indiana"")))
+            :op2 (g / go-02
+                  :ARG0 (t2 / town :wiki ""Marysville,_Indiana""
+                        :name (n4 / name :op1 ""Marysville"")
+                        :part (p / person :quant 1900))
+                  :ARG1-of (c2 / complete-02))))",,,,"[{'LOC': 'Southern Indiana'}, {'LOC': 'Marysville'}, {'ORG': 'Indianapolis Star'}],"
+part10,amr-release-3.0-amrs-fables.txt,:part,:part,,"The Monkey came with the rest and presented, with all a mother's tenderness, a flat-nosed, hairless, ill-featured young Monkey as a candidate for the promised reward.","# ::id qmul-short_0001.2 ::date 2017-11-03T20:34:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt The Monkey came with the rest and presented, with all a mother's tenderness, a flat-nosed, hairless, ill-featured young Monkey as a candidate for the promised reward.
+# ::save-date Mon Nov 27, 2017 ::file qmul-short_0001_2.txt
+(a / and
+      :op1 (c / come-01
+            :ARG1 (m3 / monkey)
+            :accompanier (r / rest))
+      :op2 (p2 / present-01
+            :ARG0 m3
+            :ARG1 (m2 / monkey
+                  :mod (y / young)
+                  :part (n / nose
+                        :ARG1-of (f2 / flat-06))
+                  :ARG0-of (h2 / have-03 :polarity -
+                        :ARG1 (h3 / hair))
+                  :mod (f / feature
+                        :ARG1-of (i3 / ill-02)))
+            :ARG3 (c2 / candidate
+                  :purpose (r2 / reward-01
+                        :ARG2-of (p / promise-01)))
+            :manner (t / tender
+                  :domain (m / mother)
+                  :mod (a3 / all))))",,,* redundancy due to combining different parsers.,"[{'MISC': 'Monkey'}, {'PER': 'Monkey'}, {'B_animal': 'Monkey'}, {'B_human': 'mother'}, {'B_animal': 'Monkey'}, {'B_human': 'candidate'}],"
+consist1,amr-release-3.0-amrs-guidelines.txt,:consist-of,:material,,I saw a cloud of dust .,"# ::id isi_0002.27 ::date 2012-06-02T15:20:45 ::annotator ISI-AMR-01 ::preferred
+# ::snt I saw a cloud of dust .
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_27.txt
+(s / see-01
+      :ARG0 (i / i)
+      :ARG1 (c / cloud
+            :consist-of (d / dust)))","# ::snt I saw a cloud of dust .
+(s32s / see-01
+  :experiencer (s32i / i
+          :refer-person 1st
+          :refer-number Singular)
+  :stimulus (s32c / cloud
+          :material (s32d / dust)))",,,"[{'PER': 'I'}],"
+consist2,amr-release-3.0-amrs-guidelines.txt,:consist-of,:group,,A team of researchers made a discovery .,"# ::id isi_0002.28 ::date 2012-06-02T15:21:20 ::annotator ISI-AMR-01 ::preferred
+# ::snt A team of researchers made a discovery .
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_28.txt
+(d / discover-01
+      :ARG0 (t / team
+            :consist-of (p / person
+                  :ARG0-of (r / research-01))))","# ::snt A team of researchers made a discovery .
+(s33d / discover-01
+  :actor (s33t / team
+          :group (s33r / researcher))
+  :undergoer (s33t2 / thing))",,,"[{'B_human': 'researchers'}],"
+consist3,amr-release-3.0-amrs-guidelines.txt,:consist-of,:material,,a ring of gold,"# ::id isi_0002.79 ::date 2012-07-03T11:00:24 ::annotator ISI-AMR-01 ::preferred
+# ::snt a ring of gold
+# ::save-date Tue Jul 3, 2012 ::file isi_0002_79.txt
+(r / ring
+      :consist-of (g / gold))","# ::snt a ring of gold
+(s34e / exist-01
+  :undergoer (s34r / ring
+          :material (s34g / gold)))",,,"[],"
+consist4,amr-release-3.0-amrs-guidelines.txt,:consist-of,:group,,The children's choir sang beautifully.,"# ::id isi_0002.479 ::date 2014-05-07T16:09:57 ::annotator ISI-AMR-01 ::preferred
+# ::snt The children's choir sang beautifully.
+# ::save-date Sat Jul 25, 2015 ::file isi_0002_479.txt
+(s / sing-01
+      :ARG0 (c / choir
+            :consist-of (c2 / child))
+      :ARG1-of (b / beautiful-02))","# ::snt The children's choir sang beautifully.
+(s35s / sing-01
+  :actor (s35c / choir
+          :group (s35c2 / child))
+  :mod (s35b / beautiful))",,,"[],"
+consist5,amr-release-3.0-amrs-guidelines.txt,:consist-of,:material,,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"# ::id isi_0002.929 ::date 2018-01-06T23:33:51 ::annotator ISI-AMR-01 ::preferred
+# ::snt the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1
+# ::save-date Sun Jan 7, 2018 ::file isi_0002_929.txt
+(p / protein-segment :wiki - :name (n / name :op1 ""eXchanger"" :op2 ""Inhibitory"" :op3 ""Peptide"")
+      :consist-of (r / residue
+            :mod (v / value-interval :op1 251 :op2 271)
+            :part-of (p2 / protein :wiki ""Sodium-calcium_exchanger"" :name (n2 / name :op1 ""NCX1""))))","# ::snt the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1
+(s36p / protein-segment
+  :name (s36n / name
+          :op1 ""eXchanger""
+          :op2 ""Inhibitory""
+          :op3 ""Peptide"")
+  :Material-of (s36r / residue
+                 :mod (s36v / value-interval
+                        :op1 251
+                        :op2 271)
+                 :Part-of (s36p2 / protein
+                            :name (s36n2 / name
+                                    :op1 ""NCX1""))))",,,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}],"
+consist6,amr-release-3.0-amrs-consensus.txt,:consist-of,:material,,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .","# ::id nw.wsj_0003.27 ::date 2012-05-26T20:23:14 ::annotator ISI-AMR-01 ::preferred
+# ::snt Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .
+# ::save-date Fri May 9, 2014 ::file nw_wsj_0003_27.txt
+(d / describe-01
+      :ARG0 (p / person
+            :ARG0-of (w / work-01))
+      :ARG1 (c3 / cloud
+            :consist-of (d3 / dust
+                  :mod (b2 / blue))
+            :ARG1-of (h / hang-01
+                  :location (o / over
+                        :op1 (t / thing
+                              :part-of (f / factory)))
+                  :concession (v / ventilate-01
+                        :ARG0 (f2 / fan
+                              :mod (e / exhaust))
+                        :ARG1 (a / area)))))","# ::snt Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .
+
+(s37d / describe-01
+  :undergoer (s37c / cloud-01
+          :material (s37d2 / dust
+                      :mod (s37b / blue))
+          :place (s37h / hang-01
+                   :place (s37o / over
+                            :op1 (s37t / thing)
+                            :Part-of (s37f / factory))
+                   :concession (s37v / ventilate-01
+                                 :force (s37f2 / fans
+                                          :mod ""exhaust"")
+                                 :undergoer (s37a / area))))
+  :actor (s37p / person
+           :Group-of (s37w / work)))",,,"[{'B_human': 'Workers'}],"
+consist7,amr-release-3.0-amrs-dfb.txt,:consist-of,:group,,"Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.","# ::id bolt-eng-DF-170-181103-8881981_0040.4 ::date 2015-12-03T04:21:21 ::annotator LDC-AMR-14 ::preferred
+# ::snt Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.
+# ::save-date Thu Dec 3, 2015 ::file bolt-eng-DF-170-181103-8881981_0040_4.txt
+(s / say-01
+      :ARG0 (a / all
+            :consist-of (a2 / and
+                  :op1 (p2 / person :wiki ""Rush_Limbaugh""
+                        :name (n2 / name :op1 ""Rush""))
+                  :op2 (p3 / person :wiki ""Mark_Levin""
+                        :name (n3 / name :op1 ""Levin""))
+                  :op3 (p4 / person :wiki ""Sean_Hannity""
+                        :name (n4 / name :op1 ""Hannity""))
+                  :op4 (p5 / person :wiki ""Michael_Savage""
+                        :name (n5 / name :op1 ""Savage""))
+                  :op5 (e / et-cetera)))
+      :ARG1 (c / candidate
+            :mod (c2 / conservative)
+            :domain (p / person :wiki ""Mitt_Romney""
+                  :name (n / name :op1 ""Romney""))))","# ::snt Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.
+(s38s / say-01
+  :undergoer (s38c / candidate
+          :name (s38p3 / person)
+          :name ""Mitt-Romney""
+          :mod (s38c2 / conservative))
+  :actor (s38a / all
+           :group (s38p / politician
+                    :op1 (s38i2 / individual-person
+                           :name (s38n / name
+                                   :op1 ""Rush""
+                                   :op2 ""Limbaugh""))
+                    :op2 (s38i3 / individual-person
+                           :name (s38n2 / name
+                                   :op1 ""mark""
+                                   :op2 ""levin""))
+                    :op3 (s38i4 / individual-person
+                           :name (s38n3 / name
+                                   :op1 ""Sean""
+                                   :op2 ""Hannity""))
+                    :op4 (s38i5 / individual-person
+                           :name (s38n4 / name
+                                   :op1 ""Michael""
+                                   :op2 ""Savage""))
+                    :op5 (s38p2 / person))))",,,"[{'PER': 'Rush'}, {'PER': 'Levin'}, {'PER': 'Hannity'}, {'PER': 'Savage'}, {'PER': 'Romney'}, {'B_human': 'candidate'}],"
+consist8,amr-release-3.0-amrs-proxy.txt,:consist-of,:material,,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","# ::id PROXY_AFP_ENG_20020111_0093.4 ::date 2013-05-08T13:52:31 ::snt-type summary ::annotator LDC-AMR-14 ::preferredc# ::snt South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.
+# ::save-date Wed Apr 29, 2015 ::file PROXY_AFP_ENG_20020111_0093_4.txt
+(r / rally-01
+      :ARG1 (p / person
+            :source (c / country :wiki ""South_Korea"" :name (n / name :op1 ""South"" :op2 ""Korea"")))
+      :ARG2 (s / support-01
+            :ARG0 p
+            :ARG1 (r2 / right-05
+                  :ARG1 p
+                  :ARG2 (e / eat-01
+                        :ARG0 p
+                        :ARG1 (m / meat
+                              :consist-of (d2 / dog)))))
+      :time (d / date-entity :year 2002 :month 1 :day 11))","# ::snt South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.
+(s39r / rally-01
+  :actor (s39p / person
+          :group (s39c / country
+                   :name (s39n / name
+                           :op1 ""South""
+                           :op2 ""Korea"")))
+  :undergoer (s39s / support-01
+          :undergoer (s39e / eat-01
+                  :actor (s39p)
+                  :undergoer (s39m / meat
+                               :material (s39d2 / dog)))
+          :actor (s39p))
+  :time (s39d / date-entity
+          :year 2002
+          :month (s39j / january)
+          :day 11))",,*dog as a modifier of meat is not animate?,"[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}],"
+consist9,amr-release-3.0-amrs-proxy.txt,:consist-of,:group,,Religious extremism continues in Pakistan despite the banning of militant groups.,"# ::id PROXY_AFP_ENG_20020115_0320.4 ::date 2013-05-09T16:03:16 ::snt-type summary ::annotator LDC-AMR-14 ::preferred
+# ::snt Religious extremism continues in Pakistan despite the banning of militant groups.
+# ::save-date Thu May 9, 2013 ::file PROXY_AFP_ENG_20020115_0320_4.txt
+(c / continue-01
+      :ARG1 (e / extremism
+            :mod (r / religion))
+      :location (c2 / country :wiki ""Pakistan""
+            :name (n / name :op1 ""Pakistan""))
+      :concession (b / ban-01
+            :ARG1 (g / group
+                  :consist-of (m / militant))))","# ::snt Religious extremism continues in Pakistan despite the banning of militant groups.
+(s40c / continue-01
+  :force (s40e / extremism
+           :mod (s40r / religion))
+  :place (s40c2 / country
+           :name (s40n / name
+                   :op1 ""Pakistan""))
+  :concession (s40b / ban-01
+                :undergoer (s40g / group
+                             :group (s40m / militant))))",,*missing militant groups,"[{'LOC': 'Pakistan'}],"
+consist10,amr-release-3.0-amrs-proxy.txt,:consist-of,:material,,They will focus on the import of cheap chemical drugs made in Thailand.,"# ::id PROXY_AFP_ENG_20020423_0133.7 ::date 2013-07-15T08:36:16 ::snt-type body ::annotator LDC-AMR-14 ::preferred
+# ::snt They will focus on the import of cheap chemical drugs made in Thailand.
+# ::save-date Sat Jul 25, 2015 ::file PROXY_AFP_ENG_20020423_0133_7.txt
+(f / focus-01
+      :ARG0 (t / they)
+      :ARG1 (i / import-01
+            :ARG1 (d / drug
+                  :ARG1-of (c2 / cheap-02)
+                  :consist-of (c3 / chemical)
+                  :ARG1-of (m / make-01
+                        :location (c / country :wiki ""Thailand"" :name (n / name :op1 ""Thailand""))))))","# ::snt They will focus on the import of cheap chemical drugs made in Thailand.
+(s41f / focus-01
+  :actor (s41t / they
+           :refer-person 3rd
+           :refer-number Plural)
+  :theme (s41i2 / import-01
+           :undergoer (s41d / drug
+                        :mod (s41c / cheap-02)
+                        :material (s41c2 / chemical))
+           :source (s41c3 / country
+                    :name (s41n / name
+                            :op1 ""Thailand""))))",,,"[{'LOC': 'Thailand'}, {'PER': 'They'}],"
+source1,amr-release-3.0-amrs-guidelines.txt,:source,:source,,The boy met a girl from Spain .,"# ::id isi_0002.48 ::date 2012-06-02T20:00:27 ::annotator ISI-AMR-01 ::preferred
+# ::snt The boy met a girl from Spain .
+# ::save-date Tue Feb 25, 2014 ::file isi_0002_48.txt
+(m / meet-02
+      :ARG0 (b / boy)
+      :ARG1 (g / girl
+            :source (c / country :wiki ""Spain"" :name (n / name :op1 ""Spain""))))","# ::snt The boy met a girl from Spain .
+(s42m / meet-02
+  :theme (s42g / girl
+          :source (s42h / have-place-91
+                    :place (s42c / country
+                             :name (s42n / name
+                                     :op1 ""Spain""))))
+  :actor (s42b / boy))",,,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}],"
+source2,amr-release-3.0-amrs-guidelines.txt,:source,:start,,"He drove west, from Houston to Austin .","# ::id isi_0002.47 ::date 2012-06-02T19:54:06 ::annotator ISI-AMR-01 ::preferred
+# ::snt He drove west, from Houston to Austin .
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_47.txt
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))","# He drove west, from Houston to Austin .
+(s4d / drive-01
+  :actor (s4h / he
+          :refer-person 3rd
+          :refer-number Singular)
+  :direction (s4w / west)
+  :source (s4c / city :name (s4n / name :op1 ""Houston""))
+  :goal (s4c2 / city :name (s4n2 / name :op1 ""Austin"")))",,,"[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}],"
+source3,amr-release-3.0-amrs-guidelines.txt,:source,:start,, I backed away from the window.,"# ::id isi_0002.131 ::date 2012-12-05T12:06:13 ::annotator ISI-AMR-01 ::preferred
+# ::snt I backed away from the window.
+# ::save-date Tue Dec 11, 2012 ::file isi_0002_131.txt
+(b / back-02
+      :ARG0 (i / i)
+      :source (w / window))","# ::snt I backed away from the window.
+(s44b / back-02
+  :actor (s44i / i
+          :refer-person 1st
+          :refer-number Singular)
+  :start (s44w / window)
+  :mod (s44a / away))",,,"[{'PER': 'I'}],"
+source4,amr-release-3.0-amrs-guidelines.txt,:source,:source,,These have all be vacated too from what I'm hearing.,"# ::id ENG_DF_000203_20120415_C0001ONSN_0001.14 ::date 2017-11-14T03:07:45 ::annotator SDL-AMR-09 ::preferred
+# ::snt These have all be vacated too from what I'm hearing.
+# ::save-date Tue Nov 14, 2017 ::file ENG_DF_000203_20120415_C0001ONSN_0001_14.txt
+(v / vacate-01
+      :ARG1 (t / this
+            :mod (a / all))
+      :source (t2 / thing
+            :ARG1-of (h / hear-01
+                  :ARG0 (i / i)))
+      :mod (t3 / too))","(s45v / vacate-01
+  :undergoer (s45t / thing
+               :mod (s45a / all))
+  :source (s45h / hear-01
+            :experiencer (s45i / i
+                           :refer-person 1st
+                           :refer-number Singular))
+  :mod (s45t2 / too))",,,"[],"
+source5,amr-release-3.0-amrs-guidelines.txt,:source,:source,,physicists from all over the world,"# ::id isi_0002.459 ::date 2014-04-24T20:16:20 ::annotator ISI-AMR-01 ::preferred
+# ::snt physicists from all over the world
+# ::save-date Thu Apr 24, 2014 ::file isi_0002_459.txt
+(p / physicist
+      :source (a / all-over
+            :op1 (w / world)))","# ::snt physicists from all over the world
+(s46e / exist-01
+  :group (s46p / physicist
+           :source (s46a / all-over
+                     :op1 (s46w / world))))",,*weird parse. will fix this to inclde I_human as well as to not break up words,"[{'B_human': 'Ph'}],"
+source6,amr-release-3.0-amrs-guidelines.txt,:source,:source,,She got a master's degree in linguistics from UCLA.,"# ::id isi_0002.908 ::date 2017-12-07T16:40:34 ::annotator ISI-AMR-01 ::preferred
+# ::snt She got a master's degree in linguistics from UCLA.
+# ::save-date Thu Dec 7, 2017 ::file isi_0002_908.txt
+(g / get-01
+      :ARG0 (s / she)
+      :ARG1 (d / degree
+            :mod (m / master)
+            :topic (l / linguistics)
+            :source (u / university :wiki ""University_of_California,_Los_Angeles"" :name (n / name :op1 ""UCLA""))))","# ::snt She got a master's degree in linguistics from UCLA.
+(s47g / get-01
+  :undergoer (s47d / degree
+          :mod (s47m / master)
+          :topic (s47l / linguistics)
+          :source (s47a / academic-organization
+                    :name (s47n / name
+                            :op1 ""UCLA"")))
+  :actor (s47s / she
+           :refer-person 3rd
+           :refer-number Singular))",,*master?,"[{'ORG': 'UCLA'}, {'B_human': 'master'}, {'PER': 'She'}],"
+source7,amr-release-3.0-amrs-dfa.txt,:source,:source,,Hallmark could make a fortune off of this guy.,"# ::id DF-170-181103-888_2097.2 ::date 2013-09-16T07:19:54 ::annotator LDC-AMR-14 ::preferred
+# ::snt Hallmark could make a fortune off of this guy.
+# ::save-date Mon Sep 16, 2013 ::file DF-170-181103-888_2097_2.txt
+(p / possible-01
+      :ARG1 (m / make-05
+            :ARG0 (c / company :wiki ""Hallmark_Cards""
+                  :name (n / name :op1 ""Hallmark""))
+            :ARG1 (f / fortune
+                  :source (g / guy
+                        :mod (t / this)))))","# ::snt Hallmark could make a fortune off of this guy.
+(s48p / possible-01
+  :undergoer (s48m / make-05
+               :undergoer (s48f / fortune
+                       :source (s48g / guy
+                                 :mod (s48t / this)))
+               :actor (s48c / company
+                        :name (s48n / name
+                                :op1 ""Hallmark""))))
+",,,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}],"
+source8,amr-release-3.0-amrs-dfa.txt,:source,:source,,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"# ::id DF-170-181103-888_3333.10 ::date 2013-09-18T15:56:27 ::annotator LDC-AMR-14 ::preferred
+# ::snt It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.
+# ::save-date Sun Jul 26, 2015 ::file DF-170-181103-888_3333_10.txt
+(s / stimulate-01
+      :ARG0 (i / it)
+      :ARG1 (o / other)
+      :ARG3 (c / contribute-01
+            :ARG0 o
+            :degree (b / big))
+      :purpose (p / possible-01
+            :ARG1 (p2 / participate-01
+                  :ARG0 o
+                  :ARG1 (w / wave-04
+                        :ARG1 (c2 / cash
+                              :ARG1-of (f / free-03)
+                              :source (k / king
+                                    :mod (b2 / boy)))
+                        :mod (n / next)))))","# ::snt It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.
+
+(s49s / stimulate-01
+  :experiencer (s49p / person
+          :mod (s49o / others))
+  :stimulus (s49i2 / it)
+  :goal (s49c / contribute-01
+          :actor (s49o2 / others)
+          :Degree-of (s49b / big))
+  :purpose (s49p2 / possible-01
+             :undergoer (s49p3 / participate-01
+                     :actor (s49o3 / others)
+                     :ARG1-of (s49w / wave-04
+                                :theme (s49c2 / cash
+                                         :mod (s49f / free-03)
+                                         :source (s49k / king
+                                                   :mod (s49b2 / boy)))
+                                :mod (s49n / next)))))",,,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}],"
+source9,amr-release-3.0-amrs-cctv.txt,:source,:start,,The Wonder Tour will start from Hong Kong .,"# ::id bc.cctv_0000.190 ::date 2012-12-30T11:50:23 ::annotator SDL-AMR-09 ::preferred
+# ::snt The Wonder Tour will start from Hong Kong .
+# ::save-date Fri Apr 11, 2014 ::file bc_cctv_0000_190.txt
+(s / start-01
+      :ARG1 (e2 / event :wiki -
+            :name (n / name :op1 ""The"" :op2 ""Wonder"" :op3 ""Tour""))
+      :source (c / city :wiki ""Hong_Kong""
+            :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))","# ::snt The Wonder Tour will start from Hong Kong .
+(s50s / start-01
+  :ARG1 (s50e / event
+          :name (s50n / name
+                  :op1 ""Wonder""
+                  :op2 ""Tour""))
+  :start (s50c / city
+           :name (s50n2 / name
+                   :op1 ""Hong""
+                   :op2 ""Kong"")))",,,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}],"
+source10,amr-release-3.0-amrs-cctv.txt,:source,:start,,"After all , what are the joyful memories from inside paradise ?","# ::id bc.cctv_0000.198 ::date 2012-12-30T13:02:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt After all , what are the joyful memories from inside paradise ?
+# ::save-date Thu Jan 4, 2018 ::file bc_cctv_0000_198.txt
+(m / memory
+      :mod (j / joyful)
+      :domain (a / amr-unknown)
+      :source (i / inside
+            :op1 (p / paradise))
+      :mod (a2 / after-all))","# ::snt After all , what are the joyful memories from inside paradise ?
+(s51m / memory
+  :mod (s51j / joyful)
+  :mode interrogative
+  :start (s51p / paradise
+           :mod (s51i2 / inside))
+  :mod (s51a / after-all))",,,"[],"
+mod1,amr-release-3.0-amrs-cctv.txt,:mod,,,Then welcome to the official writing ceremony of Hong Kong Disneyland .,"# ::id bc.cctv_0000.6 ::date 2012-12-11T20:08:34 ::annotator SDL-AMR-09 ::preferred
+# ::snt Then welcome to the official writing ceremony of Hong Kong Disneyland .
+# ::save-date Tue Apr 8, 2014 ::file bc_cctv_0000_6.txt
+(w / welcome-01
+      :ARG2 (c / ceremony
+            :mod (w2 / write-01)
+            :mod (o / official)
+            :beneficiary (a / amusement-park :wiki ""Hong_Kong_Disneyland""
+                  :name (n / name :op1 ""Hong"" :op2 ""Kong"" :op3 ""Disneyland"")))
+      :mod (t / then))",,,,"[{'LOC': 'Hong Kong Disneyland'}],"
+mod2,amr-release-3.0-amrs-cctv.txt,:mod,,,This dynamic metropolis never ceases its movement .,"# ::id bc.cctv_0000.191 ::date 2012-11-28T12:11:25 ::annotator ISI-AMR-01 ::preferred
+# ::snt This dynamic metropolis never ceases its movement .
+# ::save-date Wed Nov 28, 2012 ::file bc_cctv_0000_191.txt
+(c / cease-01 :polarity -
+      :ARG0 (m / metropolis
+            :mod (d / dynamic)
+            :mod (t / this))
+      :ARG1 (m2 / move-01
+            :ARG1 m)
+      :time (e2 / ever))",,,,"[],"
+mod3,amr-release-3.0-amrs-guidelines.txt,:mod,,,"According to government sources, the killing happened yesterday.","# ::id isi_0001.23 ::date 2012-05-04T11:38:38 ::annotator ISI-AMR-01 ::preferred
+# ::snt According to government sources, the killing happened yesterday.
+# ::save-date Tue Mar 12, 2013 ::file isi_0001_23.txt
+(s / say-01
+      :ARG0 (s2 / source
+            :mod (g / government-organization
+                  :ARG0-of (g2 / govern-01)))
+      :ARG1 (k / kill-01
+            :time (y / yesterday)))",,,,"[],"
+mod4,amr-release-3.0-amrs-guidelines.txt,:mod,,,I ate pasta with tomato sauce .,"# ::id isi_0002.45 ::date 2012-06-02T19:39:57 ::annotator ISI-AMR-01 ::preferred
+# ::snt I ate pasta with tomato sauce .
+# ::save-date Sat Jun 2, 2012 ::file isi_0002_45.txt
+(e / eat-01
+      :ARG0 (i / i)
+      :ARG1 (p / pasta)
+      :accompanier (s / sauce
+            :mod (t / tomato)))",,,,"[{'PER': 'I'}],"
+mod5,amr-release-3.0-amrs-guidelines.txt,:mod,,,A special gubernatorial election will take place next Tuesday .,"# ::id isi_0002.73 ::date 2012-06-11T15:03:04 ::annotator ISI-AMR-01 ::preferred
+# ::snt A special gubernatorial election will take place next Tuesday .
+# ::save-date Fri Jul 24, 2015 ::file isi_0002_73.txt
+(e / elect-01
+      :ARG2 (g / governor
+            :ARG2-of (h / have-org-role-91))
+      :time (d / date-entity
+            :weekday (t / tuesday)
+            :mod (n / next))
+      :ARG1-of (s / special-02))",,,,"[],"
+mod6,amr-release-3.0-amrs-guidelines.txt,:mod,,,microbial virus,"# ::id isi_0002.74 ::date 2012-06-11T18:00:08 ::annotator ISI-AMR-01 ::preferred
+# ::snt microbial virus
+# ::save-date Mon Jun 11, 2012 ::file isi_0002_74.txt
+(v / virus
+      :mod (m / microbe))",,,,"[],"
+mod7,amr-release-3.0-amrs-cctv.txt,:mod,,,First let 's focus on the main contents of today 's program .,"# ::id bc.cctv_0000.203 ::date 2012-12-30T13:34:32 ::annotator SDL-AMR-09 ::preferred
+# ::snt First let 's focus on the main contents of today 's program .
+# ::save-date Fri Apr 11, 2014 ::file bc_cctv_0000_203.txt
+(l / let-01 :li 1
+      :ARG1 (f / focus-01
+            :ARG0 (w / we)
+            :ARG2 (t2 / thing
+                  :mod (m / main)
+                  :ARG1-of (c / contain-01
+                        :ARG0 (p / program
+                              :time (t / today))))))",,,,"[],"
+mod8,amr-release-3.0-amrs-cctv.txt,:mod,,,"Well , originally the construction of the new --","# ::id bc.cctv_0000.175 ::date 2012-12-24T10:54:07 ::annotator SDL-AMR-09 ::preferred
+# ::snt Well , originally the construction of the new --
+# ::save-date Fri Feb 5, 2016 ::file bc_cctv_0000_175.txt
+(c / construct-01
+      :ARG1 (t / thing
+            :ARG1-of (n / new-01))
+      :manner (o / original)
+      :mod (w / well))",,,,"[],"
+mod9,amr-release-3.0-amrs-bolt.txt,:mod,,,Establishing Models in Industrial Innovation,"# ::id bolt12_07_4800.1 ::date 2012-12-19T12:53:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt Establishing Models in Industrial Innovation
+# ::save-date Wed Oct 30, 2013 ::file bolt12_07_4800_1.txt
+(e / establish-01
+  :ARG1 (m / model
+          :mod (i / innovate-01
+                 :ARG1 (i2 / industry))))",,,,"[{'MISC': 'Industrial Innovation'}],"
+mod10,amr-release-3.0-amrs-bolt.txt,:mod,,,"In addition, there was something else that was very suspicious","# ::id bolt12_10489_5932.9 ::date 2012-12-09T17:30:37 ::annotator SDL-AMR-09 ::preferred
+# ::snt In addition, there was something else that was very suspicious.
+# ::save-date Thu Nov 2, 2017 ::file bolt12_10489_5932_9.txt
+(a / and
+      :op2 (s / suspicious-03
+            :ARG1 (s3 / something
+                  :mod (e / else))
+            :degree (v / very)))",,,,[]

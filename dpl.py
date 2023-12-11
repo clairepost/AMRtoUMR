@@ -3,7 +3,30 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
+import pandas as pd
 from rules import detect_split_role
+from transformers import BertModel, BertTokenizer
+
+def get_embeddings(data):
+    # Load pre-trained BERT model and tokenizer
+    bert_model = BertModel.from_pretrained('bert-base-uncased')
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    embeddings = []
+    for i in range(len(data)):
+        # Example input text
+        text = data["sent"][i]
+
+        # Tokenize input text and get BERT embeddings
+        inputs = tokenizer(text, return_tensors='pt')
+        with torch.no_grad():
+            outputs = bert_model(**inputs)
+            embedding = outputs.last_hidden_state.mean(dim=1)  # Using mean pooling for simplicity
+        
+        embeddings.append(embedding)
+    data["embeddings"] = embeddings
+    return data
+    # Now, you can use 'embeddings' as input features for your own neural network
+
 
 def extract_data():
     #creat X's and Y's
@@ -31,25 +54,24 @@ def extract_data():
 
 def data_programming(X,Y):
 
-    num_rules = 2 #change as needed for more rules to be added, num_rules is referred to as v in the paper
     
     #TO DO: make sure the input is in the format that Benet expects
-    Y_rules = detect_split_role(X)
-    f_l1 = (l1_x == Y).astype(int)
-
-    l2_x = rule_2(x)
-    f_l2 = (l1_x == Y).astype(int)
-
-    return [fl_1,fl_2]
+    Y_rules = [Y]
+    f_l = []
+    #Y_rules = detect_split_role(X,Y) just using place holder rules for right now
+    for l_x in Y_rules:
+        rule_f = (l_x == Y).astype(int)
+        f_l.append(rule_f)
+    return f_l
     
-
 
 def train_model(X,Y):
     # Define your virtual evidence model, neural network model, and data
     class VirtualEvidenceModel(nn.Module):
         def forward(self, X, Y):
             # Implement logic for the virtual evidence model
-            pass
+            exp(wv · fv(X, Y ))
+            
 
     class NeuralNetworkModel(nn.Module):
         def forward(self, X, Y):
@@ -59,7 +81,7 @@ def train_model(X,Y):
     # Initialize weights w_v for each v and set up K
     rules = data_programming(X,Y)
     num_weights = len(rules)
-    weights = [nn.Parameter(torch.randn(1, requires_grad=True)) for _ in range(num_weights)]
+    phi_0 = [nn.Parameter(torch.randn(1, requires_grad=True)) for _ in range(num_weights)] #initializing random weights for Virtual Evidence
     K = [np.exp(w[v] * rules[v]) for v in range(len(rules))]
 
 
@@ -99,8 +121,10 @@ def train_model(X,Y):
 
 if __name__ == "__main__":
     X,Y= extract_data()
-    print(X[0:4])
-   # trained_model = train_model(X,Y)
+    X =  pd.DataFrame.from_records(X, columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name'])
+    X = get_embeddings(X)
+    print(data_programming(X,Y))
+    trained_model = train_model(X,Y)
     #test_data_x, test_data_y = extract_data()
     #y_preds = train_model.predict(test_data)
     #compare y_preds to y_test

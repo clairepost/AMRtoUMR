@@ -1,6 +1,6 @@
 from nltk.stem import PorterStemmer
 
-def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles):
+def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
     cant_find_heads_count = 0
     cant_find_tails_count = 0
     umr_head_tail_no_role = 0
@@ -18,26 +18,45 @@ def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles):
             amr_all_edges = amr_graph.edges(data='label')
             for r in amr_roles:
                 for edge in amr_all_edges:
-                    if edge[2] == r: # found an amr split role in the graph we're looking for, now let's align it to the umr graph
+                   
+                    amr_role = edge[2]
+                    
+                    #get amr head and tail node and ids 
+                    head_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[0]][0]
+                    amr_head_id = head_ans[0]
+                    amr_head_name = head_ans[1]
+
+                    tail_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[1]][0]
+                    amr_tail_id = tail_ans[0]
+                    amr_tail_name =  tail_ans[1]
+
+                    #split on the '-' so that if there's an updated roleset it won't matter, also do a stemmer in case there's slight variation
+                    tail_matcher = porter.stem(tail_ans[1].split('-')[0])
+                    head_matcher = porter.stem(amr_head_name.split('-')[0])
+
+                    if r in amr_roles_in_tail:
+                       if amr_tail_name == amr_roles_in_tail[r]:
+                            
+                            head_ans = [item for item in (umr_graph.nodes(data="name")) if porter.stem(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
+                            # get the relation and then we will get the tail
+                            r_matcher =  umr_t2r[amr_tail_name]
+                            #r_ans = [item for item in list(umr_graph.edges(data='label'))[2] if porter.stem(item.split('-')[0]) in r_matcher or item in r_matcher]
+                            r_ans = []
+                            for item in list(umr_graph.edges(data='label')):
+                                if item[2] is not None and item[2] in r_matcher:
+                                    r_ans=(item)
+                                    umr_role = r_ans[2]
+                            if r_ans:
+                                total_count +=1
+                                umr_head_name = umr_graph.nodes[r_ans[0]]['name']
+                                umr_tail_name = umr_graph.nodes[r_ans[1]]['name']
+                                umr_tail_id = r_ans[0]
+                                umr_head_id = r_ans[1]
+                                entry = [file, sent_i, sent, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
+                                splits_data.append(entry)
+                    elif (edge[2]==r and r not in amr_roles_in_tail): # found an amr split role in the graph we're looking for, now let's align it to the umr graph
                         total_count +=1
-                        amr_role = edge[2]
-                        
-                        #get amr head and tail node and ids 
-                        head_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[0]][0]
-                        amr_head_id = head_ans[0]
-                        amr_head_name = head_ans[1]
-                        
-
-                        # print(amr_head_name)
-
-                        tail_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[1]][0]
-                        amr_tail_id = tail_ans[0]
-                        amr_tail_name =  tail_ans[1]
-
-                        #split on the '-' so that if there's an updated roleset it won't matter, also do a stemmer in case there's slight variation
-                        tail_matcher = porter.stem(tail_ans[1].split('-')[0])
-                        head_matcher = porter.stem(amr_head_name.split('-')[0])
-
+                        #continue on
                        
                         #get matching umr info, check if node when split is equal to the matcher or just the basic version
                         head_ans = [item for item in (umr_graph.nodes(data="name")) if porter.stem(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
@@ -54,7 +73,6 @@ def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles):
                                     umr_role = umr_role["label"] #will return none if no edge
                                 else:
                                     umr_head_tail_no_role+=1
-
 
                                 #create entry and add to data
                                 entry = [file, sent_i, sent, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]

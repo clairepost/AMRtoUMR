@@ -70,7 +70,8 @@ def train_model(X,Y):
     class VirtualEvidenceModel(nn.Module):
         def forward(self, X, Y):
             # Implement logic for the virtual evidence model
-            exp(wv · fv(X, Y ))
+            #exp(wv · fv(X, Y ))
+            pass
             
 
     class NeuralNetworkModel(nn.Module):

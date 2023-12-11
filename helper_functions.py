@@ -34,19 +34,25 @@ def read_training_data(folder):
 
 
        
-    amr_roles= {":mod",
+    amr_roles= {
+        ":mod",
         ":cause",
         ":part", 
         ":consist-of",
         ":source",
         ":destination",
-        ":condition",
-        ":concession"}
+        ":condition"
+        } # I think remove concession
+    
+    amr_roles_in_tail= {
+        "cause-01"
+    }
         
     splits_data = align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles)
     splits_data_df = pd.DataFrame(splits_data)
     columns = ["file", "sent", "amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
     splits_data_df.columns= columns
+    splits_data_df.to_csv('sample_df.csv', index=False)
     return splits_data_df
 
         

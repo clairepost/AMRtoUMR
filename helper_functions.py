@@ -21,6 +21,7 @@ def read_training_data(folder):
         amr_graphs_str = df["AMR"]
         umr_graphs_str = df["UMR"] 
         sents = df["sentence"].tolist()
+        ne_info = df["Named Entity"].tolist()
 
         #set up dict for this file, dicts are used just for consiticncy sake of the rest of the data
         amr_graphs[file] =[]
@@ -54,10 +55,10 @@ def read_training_data(folder):
     }
         
 
-    splits_data = align_graphs_on_AMR_splits(sents, amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail, umr_t2r)
+    splits_data = align_graphs_on_AMR_splits(sents,ne_info ,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail, umr_t2r)
     splits_data_df = pd.DataFrame(splits_data)
 
-    columns = ["file", "sent_i","sent", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+    columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
     splits_data_df.to_csv('sample_df.csv', index=False)

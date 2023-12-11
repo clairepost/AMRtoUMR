@@ -10,7 +10,7 @@ def extract_data():
     #X's should be of the form [(amr_head_name1,amr_role1,amr_tail_name1),(h2,r2,t2)]
     #Y's will be of the form [umr_role1, umr_role2]
     df = read_training_data("training_data")
-    X_columns = ['sent', 'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name']
+    X_columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name']
     Y_columns = ['umr_role']
     # Create a new DataFrame X with the selected columns
     X = df[X_columns].copy()
@@ -99,7 +99,7 @@ def train_model(X,Y):
 
 if __name__ == "__main__":
     X,Y= extract_data()
-    print(X[0])
+    print(X[0:4])
    # trained_model = train_model(X,Y)
     #test_data_x, test_data_y = extract_data()
     #y_preds = train_model.predict(test_data)

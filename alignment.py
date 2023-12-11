@@ -1,6 +1,7 @@
 from nltk.stem import PorterStemmer
+import ast
 
-def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
+def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
     cant_find_heads_count = 0
     cant_find_tails_count = 0
     umr_head_tail_no_role = 0
@@ -13,7 +14,9 @@ def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles,amr_ro
             umr_graph = umr_graphs[file][sent_i]
 
             sent = sentences[sent_i]
-            
+            ne = ne_info[sent_i]
+            ne = ast.literal_eval(ne)[0]
+
             #get edge where edge in AMR roles
             amr_all_edges = amr_graph.edges(data='label')
             for r in amr_roles:
@@ -52,7 +55,7 @@ def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles,amr_ro
                                 umr_tail_name = umr_graph.nodes[r_ans[1]]['name']
                                 umr_tail_id = r_ans[0]
                                 umr_head_id = r_ans[1]
-                                entry = [file, sent_i, sent, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
+                                entry = [file, sent_i, sent, ne,amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                     elif (edge[2]==r and r not in amr_roles_in_tail): # found an amr split role in the graph we're looking for, now let's align it to the umr graph
                         total_count +=1
@@ -75,7 +78,7 @@ def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles,amr_ro
                                     umr_head_tail_no_role+=1
 
                                 #create entry and add to data
-                                entry = [file, sent_i, sent, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
+                                entry = [file, sent_i, sent, ne,amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                             else:
                                 #couldn't find matching tail in umr graph

@@ -1,6 +1,6 @@
 from nltk.stem import PorterStemmer
 
-def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
+def align_graphs_on_AMR_splits(sentences, amr_graphs,umr_graphs,amr_roles):
     cant_find_heads_count = 0
     cant_find_tails_count = 0
     umr_head_tail_no_role = 0
@@ -11,6 +11,8 @@ def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
         for sent_i in range(len(amr_graphs[file])):
             amr_graph = amr_graphs[file][sent_i]
             umr_graph = umr_graphs[file][sent_i]
+
+            sent = sentences[sent_i]
             
             #get edge where edge in AMR roles
             amr_all_edges = amr_graph.edges(data='label')
@@ -55,7 +57,7 @@ def align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles):
 
 
                                 #create entry and add to data
-                                entry = [file, sent_i, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
+                                entry = [file, sent_i, sent, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                             else:
                                 #couldn't find matching tail in umr graph

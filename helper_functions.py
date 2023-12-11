@@ -20,6 +20,7 @@ def read_training_data(folder):
         #get AMR, UMR cols
         amr_graphs_str = df["AMR"]
         umr_graphs_str = df["UMR"] 
+        sents = df["sentence"].tolist()
 
         #set up dict for this file, dicts are used just for consiticncy sake of the rest of the data
         amr_graphs[file] =[]
@@ -32,8 +33,6 @@ def read_training_data(folder):
         for i in umr_graphs_str:
             umr_graphs[file].append(create_graph(i))
 
-
-       
     amr_roles= {":mod",
         ":cause",
         ":part", 
@@ -43,9 +42,12 @@ def read_training_data(folder):
         ":condition",
         ":concession"}
         
-    splits_data = align_graphs_on_AMR_splits(amr_graphs,umr_graphs,amr_roles)
+
+    splits_data = align_graphs_on_AMR_splits(sents, amr_graphs,umr_graphs,amr_roles)
     splits_data_df = pd.DataFrame(splits_data)
-    columns = ["file", "sent", "amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+
+    columns = ["file", "sent_i","sent", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+
     splits_data_df.columns= columns
     return splits_data_df
 

@@ -10,7 +10,7 @@ def extract_data():
     #X's should be of the form [(amr_head_name1,amr_role1,amr_tail_name1),(h2,r2,t2)]
     #Y's will be of the form [umr_role1, umr_role2]
     df = read_training_data("training_data")
-    X_columns = ['amr_head_name', 'amr_role', 'amr_tail_name']
+    X_columns = ['sent', 'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name']
     Y_columns = ['umr_role']
     # Create a new DataFrame X with the selected columns
     X = df[X_columns].copy()
@@ -18,9 +18,15 @@ def extract_data():
     # If you want X to be a list of tuples, you can use the to_records() method
     X_tuples = list(X.to_records(index=False))
 
+    # 1st push - format
+    # input: [sent, G, h, r,t],..., ...] of length n
+
+    # 2nd push - access to cause-01: (h, :arg1-of, cause-01)
+
+    # output: ["cause", "reason", .....] of length n (1 choice)
+    # output: [(["cause", "reason"], [.75,.25]), (["mod"],[1]), ....] - initial approach
+
     # Example output
-    print(len(X_tuples))
-    print(len(Y))
     return X_tuples, Y
 
 def data_programming(X,Y):
@@ -28,7 +34,7 @@ def data_programming(X,Y):
     num_rules = 2 #change as needed for more rules to be added, num_rules is referred to as v in the paper
     
     #TO DO: make sure the input is in the format that Benet expects
-    detect_split_role(X)
+    Y_rules = detect_split_role(X)
     f_l1 = (l1_x == Y).astype(int)
 
     l2_x = rule_2(x)
@@ -93,7 +99,8 @@ def train_model(X,Y):
 
 if __name__ == "__main__":
     X,Y= extract_data()
-    trained_model = train_model(X,Y)
+    print(X[0])
+   # trained_model = train_model(X,Y)
     #test_data_x, test_data_y = extract_data()
     #y_preds = train_model.predict(test_data)
     #compare y_preds to y_test

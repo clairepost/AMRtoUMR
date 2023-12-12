@@ -1,4 +1,4 @@
-from helper_functions import read_training_data,reformat_x
+from helper_functions import read_training_data
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -24,10 +24,11 @@ def get_embeddings(data):
         with torch.no_grad():
             outputs = bert_model(**inputs)
             embedding = outputs.last_hidden_state.mean(dim=1)  # Using mean pooling for simplicity
-        
         embeddings.append(embedding)
-    return torch.tensor(embeddings, dtype=torch.float32), N_BERT, D_BERT
-    # Now, you can use 'embeddings' as input features for your own neural network
+    b = torch.Tensor(len(data), N_BERT,D_BERT)
+
+    return torch.cat(embeddings, out = b), N_BERT, D_BERT
+
 
 
 def extract_data():
@@ -51,12 +52,9 @@ def extract_data():
     # output: ["cause", "reason", .....] of length n (1 choice)
     # output: [(["cause", "reason"], [.75,.25]), (["mod"],[1]), ....] - initial approach
 
-    # Example output
     return X_tuples, Y["umr_role"]
 
-def data_programming(X,Y):
-
-    
+def data_programming(X,Y):    
     #TO DO: make sure the input is in the format that Benet expects
     Y_rules = [Y]
     f_l = []
@@ -85,13 +83,8 @@ def train_model(X,Y):
             return torch.softmax(self.fc(x),dim = 1)
 
     #add BERT embeddings to X
-    embeddings,N,D = get_embeddings(X)
-    X = reformat_x(X,embeddings, N,D)
+    embeddings,N,D= get_embeddings(X)
 
-    #Get sizes for NN
-    input_size = len(X.axes[1])
-    output_size = len(set(Y))
-    print("I/O Sizes:",input_size, output_size)
     # Initialize weights w_v for each v and set up K
     rules = data_programming(X,Y)
     num_weights = len(rules)

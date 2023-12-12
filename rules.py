@@ -1,5 +1,6 @@
 import re
 import networkx as nx
+from animacyParser import parse_animacy_runner
 
 # Rules for split role determination.
 
@@ -33,7 +34,7 @@ def detect_split_role(X_tuples):
             # update the tail
             tail, role = fixCause(amr_graph, tail, role)
         #get animacy
-        animacy_info = ne_animacy(named_entity, tail)
+        animacy_info = ne_animacy(named_entity, tail, amr_graph, sentence)
         print("animacy: \n", animacy_info)
 
 
@@ -93,8 +94,35 @@ def detect_split_role(X_tuples):
 
 
 
-def ne_animacy(named_entity, tail):
+def ne_animacy(named_entity, tail, amr_graph, sentence):
 
+    # Check if named_entity matches tail
+    animacy = animacy_classification(named_entity, tail)
+    if animacy != "none":
+        return animacy
+
+    # just check the animacy of the tail now if we could not find anything
+    new_named_entity = parse_animacy_runner([tail]) # needs to send sentence and tail
+    print("NEW NAMED ENTITY: ", new_named_entity)
+
+    # Extract the first dictionary from the list, if any
+    if new_named_entity and isinstance(new_named_entity[0], dict):
+        new_named_entity = new_named_entity[0]
+    else:
+        new_named_entity = {}  # Default to an empty dictionary if no valid dictionary is found
+    animacy = animacy_classification(new_named_entity, tail)
+    if animacy != "none":
+        return animacy
+
+    # Run through a second time on the next entity if it was a verb
+    animacy = second_pass_animacy(named_entity, tail, amr_graph)
+    if animacy != "none":
+        return animacy
+
+    # Default to Inanimate if no match is found
+    return "inanimate"
+
+def animacy_classification(named_entity, tail):
     # Check if named_entity matches tail
     for ne_entry in named_entity:
         for ne_type, ne_value in ne_entry.items():
@@ -104,15 +132,25 @@ def ne_animacy(named_entity, tail):
                     return "animate"
                 elif ne_type in ["ORG", "LOC", "MISC"]:
                     return "inanimate"
+    return "none"
 
-    # # Check if named_entity is empty or contains ANY animate roles
-    # for ne_entry in named_entity:
-    #     for ne_type, ne_value in ne_entry.items():
-    #         if ne_type in ["PER", "B_human", "B_animal"]:
-    #             return "animate"
-
-    # Default to Inanimate if no match is found
-    return "inanimate"
+def second_pass_animacy(named_entity, tail, amr_graph):
+    # Check if named_entity is empty or contains ANY animate roles for the next node
+    for ne_entry in named_entity:
+        for ne_type, ne_value in ne_entry.items():
+            if ne_type in ["PER", "B_human", "B_animal"]:
+                # if the node has a -## (so a verb) we could instead check for something in the children of the node
+                if re.search(r'-\d+$', tail):
+                    role_id = get_label_name(amr_graph, tail)
+                    second_check_node = find_replacement_node(amr_graph, tail, role_id)
+                    return animacy_classification(named_entity, second_check_node)
+            else:
+                # if the node has a -## (so a verb) we could instead check for something in the children of the node
+                if re.search(r'-\d+$', tail):
+                    role_id = get_label_name(amr_graph, tail)
+                    second_check_node = find_replacement_node(amr_graph, tail, role_id)
+                    return animacy_classification(named_entity, second_check_node)
+    return "none"
 
 
 def fixCause(amr_graph, tail, role):
@@ -124,12 +162,12 @@ def fixCause(amr_graph, tail, role):
     # get the role id for cause-01
     role_id = get_label_name(amr_graph, tail)
     print("role_id: ", role_id)
-    replacement_node = find_replacement_node(amr_graph, tail, role, role_id)
+    replacement_node = find_replacement_node(amr_graph, tail, role_id)
     print("\nFOUND NEW CAUSE ROLE:\n", replacement_node)
 
     return replacement_node, ":cause"
 
-def find_replacement_node(amr_graph, tail, role, role_id):
+def find_replacement_node(amr_graph, tail, role_id):
     # Find the child node of the current node with the specified role and head
     nodes_list = list(amr_graph.nodes(data="name"))
     node_found1 = False

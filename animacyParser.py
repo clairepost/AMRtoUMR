@@ -56,9 +56,15 @@ def combine_parses(list_of_parses):
             list_of_parses[0][i].extend(list_of_parses[j][i])
 
     combined = list_of_parses[0]
-    for i in range(len(combined)):
-        if combined[i] == []:
-            combined[i] = [{}]
+    # for i in range(len(combined)):
+    #     if combined[i] == []:
+    #         combined[i] = [{}]
+    # Additional check to return an empty list if all items are empty lists
+    if all(item == [] for item in combined):
+        combined = []
+
+    print("COMBINED: ", combined)
+    
     return combined
 
 

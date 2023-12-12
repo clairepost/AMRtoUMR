@@ -2,6 +2,7 @@ import pandas as pd
 import os
 from str2graph import create_graph
 import re
+import torch
 from alignment import *
 
 def remove_comment_lines(input_string):
@@ -64,6 +65,15 @@ def read_training_data(folder):
     splits_data_df.to_csv('sample_df.csv', index=False)
     return splits_data_df
 
+def reformat_x(X,bert_embeddings, N,D):
+    #this function flattens the bert embeddings so that the input vecotr can be the appropriate size
+    # Combine all inputs into a list
+    combined_inputs = []
+    for i in range(len(X)):
+        combined_input = torch.cat((bert_embeddings.view(-1,N,D),X[i]),dim=1)
+        combined_inputs.append(combined_input)
+    combined_inputs_tensor = torch.cat(combined_inputs, dim=0)
+    return combined_inputs_tensor
         
 
 

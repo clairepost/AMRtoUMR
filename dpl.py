@@ -1,15 +1,18 @@
-from helper_functions import read_training_data
+from helper_functions import read_training_data,reformat_x
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import pandas as pd
 from rules import detect_split_role
-from transformers import BertModel, BertTokenizer
+from transformers import BertModel, BertTokenizer, BertConfig
 
 def get_embeddings(data):
-    # Load pre-trained BERT model and tokenizer
+    # Load pre-trained BERT model and tokenizer and config info
     bert_model = BertModel.from_pretrained('bert-base-uncased')
+    config =  BertConfig.from_pretrained("bert-base-uncased")
+    N_BERT = config.num_hidden_layers
+    D_BERT = config.hidden_size
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     embeddings = []
     for i in range(len(data)):
@@ -23,8 +26,7 @@ def get_embeddings(data):
             embedding = outputs.last_hidden_state.mean(dim=1)  # Using mean pooling for simplicity
         
         embeddings.append(embedding)
-    data["embeddings"] = embeddings
-    return data
+    return torch.tensor(embeddings, dtype=torch.float32), N_BERT, D_BERT
     # Now, you can use 'embeddings' as input features for your own neural network
 
 
@@ -50,7 +52,7 @@ def extract_data():
     # output: [(["cause", "reason"], [.75,.25]), (["mod"],[1]), ....] - initial approach
 
     # Example output
-    return X_tuples, Y
+    return X_tuples, Y["umr_role"]
 
 def data_programming(X,Y):
 
@@ -70,15 +72,26 @@ def train_model(X,Y):
     class VirtualEvidenceModel(nn.Module):
         def forward(self, X, Y):
             # Implement logic for the virtual evidence model
-            #exp(wv · fv(X, Y ))
+            #return exp(wv * fv(X, Y ))
             pass
             
-
     class NeuralNetworkModel(nn.Module):
+        def __init__(self, input_size, output_size):
+            super(NeuralNetworkModel, self.__init__())
+            self.fc = nn.Linear(input_size, output_size)
+        
         def forward(self, X, Y):
             # Implement logic for the neural network model
-            pass
+            return torch.softmax(self.fc(x),dim = 1)
 
+    #add BERT embeddings to X
+    embeddings,N,D = get_embeddings(X)
+    X = reformat_x(X,embeddings, N,D)
+
+    #Get sizes for NN
+    input_size = len(X.axes[1])
+    output_size = len(set(Y))
+    print("I/O Sizes:",input_size, output_size)
     # Initialize weights w_v for each v and set up K
     rules = data_programming(X,Y)
     num_weights = len(rules)
@@ -88,7 +101,7 @@ def train_model(X,Y):
 
     # Initialize virtual evidence model, neural network model, and parameters
     virtual_evidence_model = VirtualEvidenceModel()
-    neural_network_model = NeuralNetworkModel()
+    neural_network_model = NeuralNetworkModel(input_size,output_size)
     optimizer_phi = optim.SGD(virtual_evidence_model.parameters(), lr=0.001)
     optimizer_psi = optim.SGD(neural_network_model.parameters(), lr=0.001)
 
@@ -123,7 +136,6 @@ def train_model(X,Y):
 if __name__ == "__main__":
     X,Y= extract_data()
     X =  pd.DataFrame.from_records(X, columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name'])
-    X = get_embeddings(X)
     print(data_programming(X,Y))
     trained_model = train_model(X,Y)
     #test_data_x, test_data_y = extract_data()

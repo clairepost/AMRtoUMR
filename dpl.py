@@ -58,7 +58,7 @@ def data_programming(X,Y):
     #TO DO: make sure the input is in the format that Benet expects
     Y_rules = [Y]
     f_l = []
-    #Y_rules = detect_split_role(X,Y) just using place holder rules for right now
+    Y_rules = detect_split_role(X) #just using place holder rules for right now
     for l_x in Y_rules:
         rule_f = (l_x == Y)
         f_l.append(rule_f)

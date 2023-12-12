@@ -153,5 +153,5 @@ sentences = [
 
 word = ["children"]
 
-print(parse_animacy_runner(sentences))
-print(parse_animacy_runner(word))
+# print(parse_animacy_runner(sentences))
+# print(parse_animacy_runner(word))

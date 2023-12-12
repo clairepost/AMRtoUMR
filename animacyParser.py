@@ -54,7 +54,12 @@ def combine_parses(list_of_parses):
     for i in range(len(list_of_parses[0])):
         for j in range(1,num_parses):
             list_of_parses[0][i].extend(list_of_parses[j][i])
-    return list_of_parses[0]
+
+    combined = list_of_parses[0]
+    for i in range(len(combined)):
+        if combined[i] == []:
+            combined[i] = [{}]
+    return combined
 
 
 
@@ -151,7 +156,7 @@ sentences = [
 "In addition, there was something else that was very suspicious."
 ]
 
-word = ["children"]
+word = ["shuttle", "the shuttle is cold"]
 
-# print(parse_animacy_runner(sentences))
-# print(parse_animacy_runner(word))
+#print(parse_animacy_runner(sentences))
+#print(parse_animacy_runner(word))

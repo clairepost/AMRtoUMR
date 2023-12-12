@@ -1,26 +1,40 @@
 import re
+import networkx as nx
 
 # Rules for split role determination.
 
 def detect_split_role(X_tuples): 
 
     Y = []
+    print("X_tuples 0:")
+    print(X_tuples)
+    count = 0
 
-    for x_tuple in X_tuples:
-
+    for _, x_tuple in X_tuples.iterrows():  # Using iterrows to iterate over DataFrame rows
+        count+=1
         # getting info from X_tuple
-        sentence = x_tuple[0]
-        named_entity = x_tuple[1]
-        amr_graph = x_tuple[2]
-        head = x_tuple[3] 
-        role = x_tuple[4]
-        tail = x_tuple[5]
+        print("\nSentence ", count, ":\n")
+        print("sent: \n", x_tuple["sent"])
+        print("ne_info: \n", x_tuple["ne_info"])
+        print("amr_graph: \n", x_tuple["amr_graph"])
+        print("amr_head_name: \n", x_tuple["amr_head_name"])
+        print("amr_role: \n", x_tuple["amr_role"])
+        print("amr_tail_name: \n", x_tuple["amr_tail_name"])
+
+        # getting each piece of info from X_tuple
+        sentence = x_tuple["sent"]
+        named_entity = x_tuple["ne_info"]
+        amr_graph = x_tuple["amr_graph"]
+        head = x_tuple["amr_head_name"]
+        role = x_tuple["amr_role"]
+        tail = x_tuple["amr_tail_name"]
         # check for cause-01
         if tail == "cause-01":
             # update the tail
             tail, role, head = fixCause(sentence, amr_graph, tail, role, head)
         #get animacy
         animacy_info = ne_animacy(named_entity, tail)
+        print("animacy: \n", animacy_info)
 
 
         # Rule 1: :destination instance
@@ -39,7 +53,7 @@ def detect_split_role(X_tuples):
 
         # Rule 3: Source -> (material, source, start) # Rule 4: Find parent node of source and check if it has a theme
         elif role == ":source":
-            parent_node = get_parent_node(role, amr_graph)  # Implement a function to get the parent node
+            parent_node = get_parent_node(amr_graph, head, tail)  # Implement a function to get the parent node
             if animacy_info == "animate":
                 Y.append(([":source"], [1.0]))
             elif parent_node == ":theme":
@@ -71,7 +85,10 @@ def detect_split_role(X_tuples):
         # Default: If no rule is matched, return None
         else:
             Y.append((["None"], [1.0]))
+        print("Y value: ",Y[-1])
 
+
+    print("Y:\n",Y)
     return Y
 
 
@@ -88,48 +105,48 @@ def ne_animacy(named_entity, tail):
                 elif ne_type in ["ORG", "LOC", "MISC"]:
                     return "inanimate"
 
-    # Check if named_entity is empty or contains ANY animate roles
-    for ne_entry in named_entity:
-        for ne_type, ne_value in ne_entry.items():
-            if ne_type in ["PER", "B_human", "B_animal"]:
-                return "animate"
+    # # Check if named_entity is empty or contains ANY animate roles
+    # for ne_entry in named_entity:
+    #     for ne_type, ne_value in ne_entry.items():
+    #         if ne_type in ["PER", "B_human", "B_animal"]:
+    #             return "animate"
 
     # Default to Inanimate if no match is found
     return "inanimate"
 
 
 def fixCause(sentence, amr_graph, tail, role, head):
-    # this function will fix the graph when cause-01 appears
-    child_nodes = [child for _, _, child in amr_graph if _ == head]
 
-    # Check if any child node is a verb ("-01" or other "-##" patterns)
-    verb_child = next((child for child in child_nodes if re.search(r'-\d+$', child)), None)
-
-    # If there is a verb child, recursively call fixCause on that child
-    if verb_child:
-        return fixCause(sentence, amr_graph, verb_child, role, head)
-    else:
-        # If no verb child is found, return the first child as the new tail
-        new_tail = child_nodes[0] if child_nodes else tail
-        return new_tail, role, head
-    return tail, role
+    # find the child node of tail in the amr_graph
+    # if the child node has any "-01" or any other "-##" dash plus numbers at the end then it is a verb and we need to recursively go down the children of the node until we find a tail without a node in the tuple. 
+    # If we go through the whole graph and none can be found then we just return the first child 
+    role = ":cause"
+    return tail, role, head
 
 
-def get_parent_node(amr_graph,head):
-    """
-    Helper function to get the parent node of a given role instance.
+def get_parent_node(amr_graph, head, tail):
 
-    Returns:
-    - parent_node (str): The parent node of the given role instance.
-    """
+    label_name_head = get_label_name(amr_graph, head)
+    label_name_tail = get_label_name(amr_graph, tail)
 
-    if ":theme" in amr_graph:
+    # Iterate over edges and find the parent role based on label names
+    for edge in amr_graph.edges(data=True):
+
+        if (label_name_head and label_name_tail) in edge:
+            print("Edge: ",edge[2])
+            label = edge[2]
+            return label['label']
+    
+    if ":theme" in amr_graph.edges(data=True):
         return ":theme"
-    
-    # Find the role to the head of the current role (the current role's parent role)
-    for edge in amr_graph:
-        if edge[2] == head:  # Check if the third element (head) of the edge matches the given head
-            return edge[1]  # Return the second element (parent node) of the edge
-    return None  # Return None if no parent node is found
-    
+
+    return None
+
+def get_label_name(amr_graph, node_id):
+    # Find the label name associated with a node ID
+    for node in amr_graph.nodes(data="name"):
+        if node_id in node:
+            return node[0]
+    return None
+
 

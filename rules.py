@@ -31,7 +31,7 @@ def detect_split_role(X_tuples):
         # check for cause-01
         if tail == "cause-01":
             # update the tail
-            tail, role, head = fixCause(sentence, amr_graph, tail, role, head)
+            tail, role = fixCause(amr_graph, tail, role)
         #get animacy
         animacy_info = ne_animacy(named_entity, tail)
         print("animacy: \n", animacy_info)
@@ -115,13 +115,47 @@ def ne_animacy(named_entity, tail):
     return "inanimate"
 
 
-def fixCause(sentence, amr_graph, tail, role, head):
+def fixCause(amr_graph, tail, role):
+    # re.search(r'-\d+$', successor)
 
-    # find the child node of tail in the amr_graph
-    # if the child node has any "-01" or any other "-##" dash plus numbers at the end then it is a verb and we need to recursively go down the children of the node until we find a tail without a node in the tuple. 
-    # If we go through the whole graph and none can be found then we just return the first child 
-    role = ":cause"
-    return tail, role, head
+    print("\nSearching new role\n")
+    print("amr graph nodes: ", amr_graph.nodes(data="name"))
+    print("amr graph edges: ", amr_graph.edges(data=True))
+    # get the role id for cause-01
+    role_id = get_label_name(amr_graph, tail)
+    print("role_id: ", role_id)
+    replacement_node = find_replacement_node(amr_graph, tail, role, role_id)
+    print("\nFOUND NEW CAUSE ROLE:\n", replacement_node)
+
+    return replacement_node, ":cause"
+
+def find_replacement_node(amr_graph, tail, role, role_id):
+    # Find the child node of the current node with the specified role and head
+    nodes_list = list(amr_graph.nodes(data="name"))
+    node_found1 = False
+    for node in nodes_list:
+        if node_found1:
+            child_node_id = node[1]
+            print("matches and we've got child node:", node[1])
+            # Check if the child node is a verb ("-01" or other "-##" pattern)
+            if re.search(r'-\d+$', child_node_id):
+                continue
+            else:
+                return child_node_id #otherwise return the new tail
+        elif node[0] == role_id:
+            node_found1 = True
+    
+    # If no suitable replacement is found, return the next item in the nodes list
+    node_found = False
+    for node in nodes_list:
+        if node_found:
+            print("just returning next node:", node[1])
+            return node[1]
+        if node[0] == role_id:
+            node_found = True
+    
+    # otherwise just return the tail again
+    return tail
 
 
 def get_parent_node(amr_graph, head, tail):

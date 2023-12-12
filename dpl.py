@@ -1,4 +1,4 @@
-from helper_functions import read_training_data, create_mapping_dict, map_categorical_to_tensor
+from helper_functions import extract_data, create_mapping_dict, map_categorical_to_tensor
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -29,30 +29,6 @@ def get_embeddings(data):
 
     return torch.cat(embeddings, out = b), N_BERT, D_BERT
 
-
-
-def extract_data():
-    #creat X's and Y's
-    #X's should be of the form [(amr_head_name1,amr_role1,amr_tail_name1),(h2,r2,t2)]
-    #Y's will be of the form [umr_role1, umr_role2]
-    df = read_training_data("training_data")
-    X_columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name']
-    Y_columns = ['umr_role']
-    # Create a new DataFrame X with the selected columns
-    X = df[X_columns].copy()
-    Y = df[Y_columns].copy()
-    # If you want X to be a list of tuples, you can use the to_records() method
-    X_tuples = list(X.to_records(index=False))
-
-    # 1st push - format
-    # input: [sent, G, h, r,t],..., ...] of length n
-
-    # 2nd push - access to cause-01: (h, :arg1-of, cause-01)
-
-    # output: ["cause", "reason", .....] of length n (1 choice)
-    # output: [(["cause", "reason"], [.75,.25]), (["mod"],[1]), ....] - initial approach
-
-    return X_tuples, Y["umr_role"]
 
 def data_programming(X,Y):    
     #TO DO: make sure the input is in the format that Benet expects
@@ -257,7 +233,7 @@ def train_model(X,Y):
 
 
 if __name__ == "__main__":
-    X,Y= extract_data()
+    X,Y= extract_data(True) # gets training data
     X =  pd.DataFrame.from_records(X, columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name'])
     print(data_programming(X,Y))
     trained_model = train_model(X,Y)

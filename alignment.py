@@ -15,7 +15,10 @@ def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_role
 
             sent = sentences[sent_i]
             ne = ne_info[sent_i]
-            ne = ast.literal_eval(ne)[0]
+            if type(ne) == str:
+                ne = ast.literal_eval(ne)[0]
+            else:
+                print(ne)
 
             #get edge where edge in AMR roles
             amr_all_edges = amr_graph.edges(data='label')

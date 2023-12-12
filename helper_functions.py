@@ -3,6 +3,7 @@ import os
 from str2graph import create_graph
 import re
 import torch
+from sklearn.preprocessing import LabelEncoder
 from alignment import *
 
 def remove_comment_lines(input_string):
@@ -82,3 +83,55 @@ def read_training_data(folder):
 
 
 read_training_data("training_data")
+
+from sklearn.preprocessing import LabelEncoder
+
+def map_categorical_to_tensor(series):
+    """
+    Map categorical data in a pandas Series to a PyTorch tensor of numerical values using LabelEncoder.
+
+    Parameters:
+    - series (pandas Series): The categorical data in a pandas Series to be mapped.
+
+    Returns:
+    - torch.Tensor: The numerical representation of the input categorical data as a PyTorch tensor.
+    """
+    label_encoder = LabelEncoder()
+    numerical_data = label_encoder.fit_transform(series)
+    numerical_tensor = torch.tensor(numerical_data, dtype=torch.long)
+    return numerical_tensor
+
+
+
+
+def create_mapping_dict(series):
+    """
+    Create a dictionary mapping unique values in a pandas Series to numerical values using LabelEncoder.
+
+    Parameters:
+    - series (pandas Series): The categorical data in a pandas Series.
+
+    Returns:
+    - dict: A dictionary mapping unique values to their corresponding numerical representations.
+    """
+    label_encoder = LabelEncoder()
+    numerical_data = label_encoder.fit_transform(series)
+    
+    mapping_dict = dict(zip(series.unique(), numerical_data))
+    return mapping_dict
+
+def map_categorical_to_tensor(series, mapping_dict):
+    """
+    Map categorical data in a pandas Series to a PyTorch tensor of numerical values using a pre-defined mapping dictionary.
+
+    Parameters:
+    - series (pandas Series): The categorical data in a pandas Series.
+    - mapping_dict (dict): The mapping dictionary created using create_mapping_dict.
+
+    Returns:
+    - torch.Tensor: The numerical representation of the input categorical data as a PyTorch tensor.
+    """
+    numerical_data = series.map(mapping_dict)
+    numerical_tensor = torch.tensor(numerical_data, dtype=torch.long)
+    return numerical_tensor
+

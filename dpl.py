@@ -1,4 +1,4 @@
-from helper_functions import read_training_data
+from helper_functions import read_training_data, create_mapping_dict, map_categorical_to_tensor
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -56,13 +56,28 @@ def extract_data():
 
 def data_programming(X,Y):    
     #TO DO: make sure the input is in the format that Benet expects
-    Y_rules = [Y]
     f_l = []
-    Y_rules = detect_split_role(X) #just using place holder rules for right now
+    Y_rules =[detect_split_role(X)] #just using place holder rules for right now
+
     for l_x in Y_rules:
-        rule_f = (l_x == Y)
-        f_l.append(rule_f)
-    return torch.tensor(f_l,dtype=float)
+
+        rule = []
+        for i in range(len(l_x)):
+            label = l_x[i][0]
+            weight = l_x[i][1]
+ 
+            if Y[i] in label:
+                score = weight[label.index(Y[i])]
+            else:
+                score = 0
+
+            rule.append(score)
+            
+        f_l.append(rule)
+    print(f_l)
+    f_l =  torch.tensor(f_l,dtype=float)
+    print("size of rules", f_l.size())
+    return f_l
     
 
 
@@ -82,26 +97,37 @@ def train_model(X,Y):
             K = torch.exp(torch.matmul(self.weight.t(),self.F_X_Y))
 
             # Apply an activation function (e.g., ReLU)
-            output = torch.relu(K)
+            #output = torch.relu(K)
 
-            return output
+            return K
 
     class NeuralNetworkModule(nn.Module):
-        def __init__(self, input_size, output_size):
+        def __init__(self, input_size, latent_size, output_size):
+            hidden_size = 64
             super(NeuralNetworkModule, self).__init__()
             # Replace with your actual neural network initialization
-            self.fc = nn.Linear(input_size, output_size)
+            self.fc1 = nn.Linear(input_size + latent_size, hidden_size)
+            self.relu = nn.ReLU()
+            self.fc2 = nn.Linear(hidden_size, output_size)
             self.double()
 
-        def forward(self, X):
+        def forward(self, X,K):
             # Replace with your actual neural network forward pass
-            return self.fc(X)
+            print(X.size())
+            print(K.size())
+            x_with_k = torch.cat([X, K], dim=0)
+            print(x_with_k.size())
+            # Apply the factor Phi(X, K)
+            x_with_k = self.fc1(x_with_k)
+            x_with_k = self.relu(x_with_k)
+            psi_result = self.fc2(x_with_k)
+            return psi_result
 
     class DPLModel(nn.Module):
         def __init__(self, input_size, latent_variable_size, output_size):
             super(DPLModel, self).__init__()
             self.probabilistic_logic = ProbabilisticLogicModule(input_size, latent_variable_size)
-            self.neural_network = NeuralNetworkModule(latent_variable_size, output_size)
+            self.neural_network = NeuralNetworkModule(input_size, latent_variable_size, output_size)
             self.double()
 
         def forward(self, X):
@@ -109,19 +135,23 @@ def train_model(X,Y):
             latent_variables = self.probabilistic_logic(X)
 
             # Forward pass through neural network
-            predictions = self.neural_network(latent_variables)
+            predictions = self.neural_network(latent_variables,latent_variables)
 
             return predictions
 
+    #Preprocessing and Setup
     embeddings,N,D= get_embeddings(X)
     f_x_y = data_programming(X,Y)
-    input_size = len(X)
+    
+    mapping_dict=create_mapping_dict(Y)
+    Y_tensor = map_categorical_to_tensor(Y, mapping_dict)
 
     print("input_size", type(X))
     print("latent_var_size", f_x_y.size())
     print("output_size", type(Y), len(set(Y)))
     latent_variable_size = len(f_x_y) #number of rules
     output_size = len(set(Y))
+    input_size = len(X)
 
 
     # Instantiate DPL model
@@ -129,6 +159,7 @@ def train_model(X,Y):
 
     # Set up optimizer
     optimizer = torch.optim.SGD(dpl_model.parameters(), lr=0.01)
+
 
     # Number of optimization steps
     num_steps = 1000
@@ -138,21 +169,26 @@ def train_model(X,Y):
         # Forward pass through the DPL model
         predictions = dpl_model(X)
 
-        # Compute negative log-likelihood (replace with your actual likelihood function)
-        negative_log_likelihood = -compute_likelihood(K, predictions)
+
+        # Compute the conditional likelihood (softmax)
+        p_k_given_x = torch.nn.functional.softmax(predictions, dim=1)
+
+        # Compute the negative log-likelihood
+        loss = -torch.log(p_k_given_x[range(num_samples), Y]).mean()
+
 
         # Zero the gradients
         optimizer.zero_grad()
 
         # Backpropagation
-        negative_log_likelihood.backward()
+        loss.backward()
 
         # Update parameters
         optimizer.step()
 
         # Optionally print or log the loss for monitoring
         if step % 100 == 0:
-            print(f"Step {step}, Loss: {negative_log_likelihood.item()}")
+            print(f"Step {step}, Loss: {loss.item()}")
 
 # After the optimization loop, your DPL model parameters are trained
 

@@ -5,7 +5,7 @@ file format: plain_text
 Doc ID in database: 1350
 export time: 7/15/2023, 7:52:55 AM
 
-# :: snt1	
+# :: snt1 Lindsay left in order to eat lunch .
 # Sentence:  Lindsay left in order to eat lunch .
 # sentence level graph:
 (s1l / leave-02
@@ -35,7 +35,7 @@ s1l2: 7-7
             (AUTH :FullNeg s1e)))
 
 
-# :: snt2	
+# :: snt2 If it rains , Alana won't water the plants .
 # Sentence:  If it rains , Alana won't water the plants .
 # sentence level graph:
 (s2w / water-01

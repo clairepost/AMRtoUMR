@@ -147,11 +147,16 @@ def read_test_data():
     all_sentences = []
     for f in umr_files:
         umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
-        all_sentences.extend(umr_sents[f])
 
     amr_sents = {}
     for f in amr_files:
         amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
+        sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)',amr_files[f]) #first look
+        if not sentences:
+            sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
+            sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+        all_sentences.extend(sentences)
+
 
     #using the str2graph.create_graph() function
     umr_graphs = {}

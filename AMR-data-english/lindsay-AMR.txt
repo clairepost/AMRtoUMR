@@ -1,4 +1,4 @@
-# :: snt1	  Lindsay left in order to eat lunch .
+# :: snt1 Lindsay left in order to eat lunch .
 
 # AMR graph:
 (s1l / leave-02
@@ -9,7 +9,7 @@
         :ARG1 (s1l2 / lunch)))
 
 
-# :: snt2	  If it rains , Alana won't water the plants .
+# :: snt2 If it rains , Alana won't water the plants .
 
 # sentence level graph:
 (s2w / water-01

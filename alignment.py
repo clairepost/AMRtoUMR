@@ -1,4 +1,4 @@
-from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 import ast
 
 def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
@@ -6,7 +6,7 @@ def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_role
     cant_find_tails_count = 0
     umr_head_tail_no_role = 0
     total_count=0
-    porter = PorterStemmer()
+    lemmatizer = WordNetLemmatizer()
     splits_data = []
     for file in amr_graphs.keys():
         for sent_i in range(len(amr_graphs[file])):
@@ -37,13 +37,13 @@ def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_role
                     amr_tail_name =  tail_ans[1]
 
                     #split on the '-' so that if there's an updated roleset it won't matter, also do a stemmer in case there's slight variation
-                    tail_matcher = porter.stem(tail_ans[1].split('-')[0])
-                    head_matcher = porter.stem(amr_head_name.split('-')[0])
+                    tail_matcher = lemmatizer.lemmatize(tail_ans[1].split('-')[0])
+                    head_matcher = lemmatizer.lemmatize(amr_head_name.split('-')[0])
 
                     if r in amr_roles_in_tail:
                        if amr_tail_name == amr_roles_in_tail[r]:
                             
-                            head_ans = [item for item in (umr_graph.nodes(data="name")) if porter.stem(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
+                            head_ans = [item for item in (umr_graph.nodes(data="name")) if lemmatizer.lemmatize(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
                             # get the relation and then we will get the tail
                             r_matcher =  umr_t2r[amr_tail_name]
                             #r_ans = [item for item in list(umr_graph.edges(data='label'))[2] if porter.stem(item.split('-')[0]) in r_matcher or item in r_matcher]
@@ -65,12 +65,12 @@ def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_role
                         #continue on
                        
                         #get matching umr info, check if node when split is equal to the matcher or just the basic version
-                        head_ans = [item for item in (umr_graph.nodes(data="name")) if porter.stem(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
+                        head_ans = [item for item in (umr_graph.nodes(data="name")) if lemmatizer.lemmatize(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
                         if head_ans: #if head is found
                             umr_head_id = head_ans[0][0]
                             umr_head_name= head_ans[0][1]
                             
-                            tail_ans = [item for item in (umr_graph.nodes(data="name")) if porter.stem(item[1].split('-')[0]) == tail_matcher]
+                            tail_ans = [item for item in (umr_graph.nodes(data="name")) if lemmatizer.lemmatize(item[1].split('-')[0]) == tail_matcher]
                             if tail_ans:#if tail was found
                                 umr_tail_id = tail_ans[0][0]
                                 umr_tail_name = tail_ans[0][1]

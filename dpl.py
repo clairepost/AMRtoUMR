@@ -7,6 +7,7 @@ import pandas as pd
 from rules import detect_split_role
 from transformers import BertModel, BertTokenizer, BertConfig
 
+
 def get_embeddings(data):
     # Load pre-trained BERT model and tokenizer and config info
     bert_model = BertModel.from_pretrained('bert-base-uncased')

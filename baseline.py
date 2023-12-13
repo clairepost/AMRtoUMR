@@ -40,7 +40,7 @@ def run_baseline():
 
     #output preditcions
     y_pred= pd.Series(y_pred, name='y_rules')
-    df = pd.concat([y_true, y_pred], axis=1)
+    df = pd.concat([X,y_true, y_pred], axis=1)
     df.to_csv(out_file)
 
 

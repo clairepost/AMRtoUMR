@@ -22,14 +22,14 @@ def run_baseline():
     #run animacy_parser on X, to get tuples
     x_file = "x_test.csv"
     y_file = "y_trues_test.csv"
-    out_file = "baseline.csv"
+    out_file = "baseline_train.csv"
     # if os.path.exists(x_file) and os.path.exists(y_file):
     #     X= pd.read_csv(x_file)
     #     #X_tuples = list(X.to_records(index=False))
     #     y_true= pd.read_csv(y_file)  
         
    # else: 
-    X_tupes, y_true = extract_data(False) #setting this argument equal to False means we are getting test data
+    X_tupes, y_true = extract_data(True) #setting this argument equal to False means we are getting test data
     X =  pd.DataFrame.from_records(X_tupes, columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name'])
         #X.to_csv(x_file)
         #y_true.to_csv(y_file)

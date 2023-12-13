@@ -77,7 +77,7 @@ def detect_split_role(X_tuples):
 
         # Rule 7: mod
         elif role == ":mod":
-            Y.append(([":mod", ":other-role"], [0.95, 0.05]))
+            Y.append(([":mod", ":other-role"], [0.99, 0.01]))
 
         # Rule 8: condition (concessive condition does not really occur in English)
         elif role == ":condition":

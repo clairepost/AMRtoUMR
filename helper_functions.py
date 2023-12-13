@@ -6,6 +6,7 @@ import torch
 from sklearn.preprocessing import LabelEncoder
 from alignment import *
 from sklearn.preprocessing import LabelEncoder
+from transformers import BertModel, BertTokenizer, BertConfig
 from animacyParser import parse_animacy_runner
 
 def extract_data(training):
@@ -246,3 +247,85 @@ def map_categorical_to_tensor(series, mapping_dict):
     numerical_tensor = torch.tensor(numerical_data, dtype=torch.long)
     return numerical_tensor
 
+def get_embeddings(data):
+    # Load pre-trained BERT model and tokenizer and config info
+    bert_model = BertModel.from_pretrained('bert-base-uncased')
+    config =  BertConfig.from_pretrained("bert-base-uncased")
+    N_BERT = config.num_hidden_layers
+    D_BERT = config.hidden_size
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    embeddings = []
+    for i in range(len(data)):
+        # Example input text
+        text = data["sent"][i]
+        print(text)
+
+        # Tokenize input text and get BERT embeddings
+        inputs = tokenizer(text, return_tensors='pt')
+        with torch.no_grad():
+            outputs = bert_model(**inputs)
+            embedding = outputs.last_hidden_state.mean(dim=1)  # Using mean pooling for simplicity
+        embeddings.append(embedding)
+    b = torch.Tensor(len(data), N_BERT,D_BERT)
+
+    return torch.cat(embeddings, out = b)
+
+def create_mapping():
+    amr_roles= {":mod",
+            ":cause",
+            ":part", 
+            ":consist-of",
+            ":source",
+            ":destination",
+            ":condition",
+            ":ARG1-of"}
+
+    umr_roles = {":mod", #mod with a space to avoid modal
+                    ":other-role",
+                    ":cause",
+                    ":Cause-of",
+                    ":reason",
+                    ":part",
+                    ":group",
+                    ":material",
+                    ":source",
+                    ":start",
+                    ":goal",
+                    ":recipient",
+                    ":condition",
+                    ":Material-of"}
+
+    #crete role relationship dict
+
+    amr2umr_splits = dict.fromkeys(amr_roles,0)
+    amr2umr_splits[":mod"] = [":mod",":other-role"]
+    amr2umr_splits[":cause"] = [":cause",":reason"]
+    amr2umr_splits[":part"] = [":part"]
+    amr2umr_splits[":cause"] = [":cause",":reason"]
+    amr2umr_splits[":source"] = [":material",":source",":start"]
+    amr2umr_splits[":consist-of"] = [":part",":group",":material",":Material-of"]
+    amr2umr_splits[":destination"] = [":goal",":recipient"]
+    amr2umr_splits[":condition"] = [":condition"]
+    amr2umr_splits[":ARG1-of"] = [":cause",":Cause-of"] #manipulative right now, this doesn't fully reflect split roles
+
+    swap_amr_int_dict = create_combined_dict(amr_roles)
+    swap_umr_int_dict = create_combined_dict(umr_roles)
+    return convert_mapping_2_ints(amr2umr_splits,swap_amr_int_dict,swap_umr_int_dict),swap_amr_int_dict,swap_umr_int_dict
+
+def convert_mapping_2_ints(mapping, amr, umr):
+    new_mapping = {}
+    for i in mapping.keys():
+        values = mapping[i]
+        new_mapping[amr[i]] = [umr[j] for j in values]
+    return new_mapping
+
+
+def create_combined_dict(input_set):
+    combined_dict = {}
+    for index, element in enumerate(input_set):
+        combined_dict[index] = element
+        combined_dict[element] = index
+    return combined_dict
+
+    
+#print(create_mapping())

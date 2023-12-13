@@ -6,7 +6,7 @@
 4,I drove to the store.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,drive-01,:destination,store,:goal,:goal
 5,I walked up to the window.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,walk-01,:destination,window,:goal,:goal
 6,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]",DiGraph with 12 nodes and 12 edges,fire-01,:destination,aircraft-type,:instrument,:goal
-7,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]",DiGraph with 12 nodes and 12 edges,missile,:source,air,:source,:start
+7,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]",DiGraph with 12 nodes and 12 edges,missile,:source,air,:source,:source
 8,"For their honeymoon, the couple flew first class to Hawaii.","[{'LOC': 'Hawaii'}, {'B_human': 'couple'}]",DiGraph with 11 nodes and 11 edges,fly-01,:destination,state,:goal,:goal
 9,"The boy murmured softly to soothe the girl, because he worried about her.","[{'B_human': 'boy'}, {'B_human': 'girl'}, {'PER': 'he'}, {'PER': 'her'}]",DiGraph with 8 nodes and 8 edges,murmur-01,:cause,worry-01,:reason,:cause
 10,The old man died of lung cancer .,[{'B_human': 'man'}],DiGraph with 9 nodes and 9 edges,man,:mod,old,:mod,:mod
@@ -19,26 +19,26 @@
 17,I must stop now as the shuttle leaves in 10 minutes.,[{'PER': 'I'}],DiGraph with 12 nodes and 12 edges,obligate-01,:ARG1-of,cause-01,:Cause-of,:cause
 18,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}]",DiGraph with 10 nodes and 10 edges,reasonable-02,:ARG1-of,cause-01,:reason,:cause
 19,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]",DiGraph with 7 nodes and 7 edges,divorce-01,:ARG1-of,cause-01,:reason,:cause
-20,I saw a cloud of dust .,[{'PER': 'I'}],DiGraph with 4 nodes and 4 edges,cloud,:consist-of,dust,:material,:group
-21,a ring of gold,[],DiGraph with 2 nodes and 2 edges,ring,:consist-of,gold,:material,:material
-22,The children's choir sang beautifully.,[],DiGraph with 4 nodes and 4 edges,choir,:consist-of,child,:group,:group
+20,I saw a cloud of dust .,[{'PER': 'I'}],DiGraph with 4 nodes and 4 edges,cloud,:consist-of,dust,:material,:material
+21,a ring of gold,[],DiGraph with 2 nodes and 2 edges,ring,:consist-of,gold,:material,:part
+22,The children's choir sang beautifully.,[],DiGraph with 4 nodes and 4 edges,choir,:consist-of,child,:group,:material
 23,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,residue,:mod,value-interval,,:mod
-24,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,protein-segment,:consist-of,residue,:Material-of,:material
+24,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,protein-segment,:consist-of,residue,:Material-of,:group
 25,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,dust,:mod,blue,:mod,:mod
 26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,cloud,:consist-of,dust,:material,:material
 27,"Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.","[{'PER': 'Rush'}, {'PER': 'Levin'}, {'PER': 'Hannity'}, {'PER': 'Savage'}, {'PER': 'Romney'}, {'B_human': 'candidate'}]",DiGraph with 26 nodes and 26 edges,candidate,:mod,conservative,:mod,:mod
-28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,person,:source,country,:group,:start
+28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,person,:source,country,:group,:source
 29,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,meat,:consist-of,dog,,:group
 30,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,extremism,:mod,religion,:mod,:mod
 31,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,group,:consist-of,militant,,:material
 32,They will focus on the import of cheap chemical drugs made in Thailand.,"[{'LOC': 'Thailand'}, {'PER': 'They'}]",DiGraph with 11 nodes and 11 edges,drug,:consist-of,chemical,:material,:material
-33,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}]",DiGraph with 7 nodes and 7 edges,girl,:source,country,,:source
+33,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}]",DiGraph with 7 nodes and 7 edges,girl,:source,country,,:start
 34,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:destination,city,:source,:goal
 35,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:source,city,:source,:source
 36, I backed away from the window.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,back-02,:source,window,:start,:source
 37,These have all be vacated too from what I'm hearing.,[],DiGraph with 7 nodes and 7 edges,vacate-01,:mod,too,:mod,:mod
 38,These have all be vacated too from what I'm hearing.,[],DiGraph with 7 nodes and 7 edges,vacate-01,:source,thing,:undergoer,:source
-39,physicists from all over the world,[{'B_human': 'Ph'}],DiGraph with 3 nodes and 3 edges,physicist,:source,all-over,,:start
+39,physicists from all over the world,[{'B_human': 'Ph'}],DiGraph with 3 nodes and 3 edges,physicist,:source,all-over,,:source
 40,She got a master's degree in linguistics from UCLA.,"[{'ORG': 'UCLA'}, {'B_human': 'master'}, {'PER': 'She'}]",DiGraph with 9 nodes and 9 edges,degree,:mod,master,:mod,:mod
 41,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]",DiGraph with 9 nodes and 9 edges,guy,:mod,this,:mod,:mod
 42,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]",DiGraph with 9 nodes and 9 edges,fortune,:source,guy,:source,:source
@@ -47,5 +47,5 @@
 45,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]",DiGraph with 15 nodes and 15 edges,cash,:source,king,:source,:source
 46,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}]",DiGraph with 12 nodes and 12 edges,start-01,:source,city,:start,:source
 47,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:mod,joyful,:mod,:mod
-48,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:mod,after-all,,:other-role
+48,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:mod,after-all,:mod,:mod
 49,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:source,inside,,:source

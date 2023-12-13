@@ -1,34 +1,11 @@
-from helper_functions import extract_data, create_mapping_dict, map_categorical_to_tensor
+from helper_functions import extract_data, create_mapping_dict, map_categorical_to_tensor, get_embeddings
 import torch
 import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 import pandas as pd
 from rules import detect_split_role
-from transformers import BertModel, BertTokenizer, BertConfig
 
-
-def get_embeddings(data):
-    # Load pre-trained BERT model and tokenizer and config info
-    bert_model = BertModel.from_pretrained('bert-base-uncased')
-    config =  BertConfig.from_pretrained("bert-base-uncased")
-    N_BERT = config.num_hidden_layers
-    D_BERT = config.hidden_size
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-    embeddings = []
-    for i in range(len(data)):
-        # Example input text
-        text = data["sent"][i]
-
-        # Tokenize input text and get BERT embeddings
-        inputs = tokenizer(text, return_tensors='pt')
-        with torch.no_grad():
-            outputs = bert_model(**inputs)
-            embedding = outputs.last_hidden_state.mean(dim=1)  # Using mean pooling for simplicity
-        embeddings.append(embedding)
-    b = torch.Tensor(len(data), N_BERT,D_BERT)
-
-    return torch.cat(embeddings, out = b), N_BERT, D_BERT
 
 
 def data_programming(X,Y):    

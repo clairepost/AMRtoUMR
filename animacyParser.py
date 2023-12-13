@@ -162,7 +162,7 @@ sentences = [
 "In addition, there was something else that was very suspicious."
 ]
 
-word = ["shuttle", "the shuttle is cold"]
+#word = ["shuttle", "the shuttle is cold"]
 
 #print(parse_animacy_runner(sentences))
 #print(parse_animacy_runner(word))

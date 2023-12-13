@@ -1,7 +1,7 @@
 from nltk.stem import WordNetLemmatizer
 import ast
 
-def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
+def align_graphs_on_AMR_splits(sentence_dict, ne_info,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
     cant_find_heads_count = 0
     cant_find_tails_count = 0
     umr_head_tail_no_role = 0
@@ -9,16 +9,15 @@ def align_graphs_on_AMR_splits(sentences, ne_info,amr_graphs,umr_graphs,amr_role
     lemmatizer = WordNetLemmatizer()
     splits_data = []
     for file in amr_graphs.keys():
+        sentences = sentence_dict[file]
         for sent_i in range(len(amr_graphs[file])):
             amr_graph = amr_graphs[file][sent_i]
             umr_graph = umr_graphs[file][sent_i]
 
             sent = sentences[sent_i]
-            ne = ne_info[sent_i]
+            ne = ne_info[file][sent_i]
             if type(ne) == str:
                 ne = ast.literal_eval(ne)[0]
-            else:
-                print(ne)
 
             #get edge where edge in AMR roles
             amr_all_edges = amr_graph.edges(data='label')

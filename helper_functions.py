@@ -4,6 +4,7 @@ from str2graph import create_graph
 import re
 import torch
 from sklearn.preprocessing import LabelEncoder
+from str2graph import create_graph,draw_graph
 from alignment import *
 from sklearn.preprocessing import LabelEncoder
 from transformers import BertModel, BertTokenizer, BertConfig
@@ -45,6 +46,8 @@ def remove_comment_lines(input_string):
 def read_training_data(folder):
     amr_graphs = {}
     umr_graphs = {} #keys are file name, values are list of sentences
+    sents= {}
+    ne_info = {}
     for file in os.listdir(folder):
         df = pd.read_csv(folder + "/" + file) #read file
 
@@ -52,8 +55,8 @@ def read_training_data(folder):
         #get AMR, UMR cols
         amr_graphs_str = df["AMR"]
         umr_graphs_str = df["UMR"] 
-        sents = df["sentence"].tolist()
-        ne_info = df["Named Entity"].tolist()
+        sents[file]= df["sentence"].tolist()
+        ne_info[file]=  df["Named Entity"].tolist()
 
         #set up dict for this file, dicts are used just for consiticncy sake of the rest of the data
         amr_graphs[file] =[]
@@ -91,6 +94,7 @@ def read_training_data(folder):
     columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
+    splits_data_df.to_csv("training_data_splits.csv")
     return splits_data_df
     
 
@@ -145,7 +149,7 @@ def read_test_data():
     file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story"}
 
     umr_sents = {}
-    all_sentences = []
+    all_sentences = {}
     for f in umr_files:
         umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
 
@@ -156,7 +160,7 @@ def read_test_data():
         if not sentences:
             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
-        all_sentences.extend(sentences)
+        all_sentences[f] = sentences
 
 
     #using the str2graph.create_graph() function
@@ -166,11 +170,13 @@ def read_test_data():
         for sent in umr_sents[file]:
             umr_graphs[file].append(create_graph(sent))
 
+
     amr_graphs = {}
     for file in amr_sents.keys():
         amr_graphs[file] = []
         for sent in amr_sents[file]:
             amr_graphs[file].append(create_graph(sent))
+
 
     amr_roles= {
        ":mod",
@@ -189,13 +195,18 @@ def read_test_data():
     umr_t2r = {
         "cause-01":[":cause", ":reason",":Cause-of"]
     }
-    ne_info = parse_animacy_runner(all_sentences)
+
+    ne_info = {}
+    for f in all_sentences:
+        ne_info[f] = parse_animacy_runner(all_sentences[f])
+
     splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
     splits_data_df = pd.DataFrame(splits_data)
 
     columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
+    splits_data_df.to_csv("test_data_splits.csv")
     return splits_data_df
 
 def map_categorical_to_tensor(series):
@@ -329,3 +340,5 @@ def create_combined_dict(input_set):
 
     
 #print(create_mapping())
+read_test_data()
+read_training_data("training_data")

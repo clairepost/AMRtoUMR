@@ -1,0 +1,2333 @@
+,sent,ne_info,amr_graph,amr_head_name,amr_role,amr_tail_name
+0,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 6 nodes and 5 edges,water-01,:condition,rain-01
+1,"(s1p / publication-91
+    :ARG1 (s1l / landslide-01
+      :ARG3 (s1a / and
+            :op1 (s1d / die-01
+                  :ARG1 (s1p / person :quant 200)
+                  :Aspect State
+                  :MODSTR FullAff)
+            :op2 (s1f / fear-01
+                  :ARG1 (s1m / miss-01
+                        :ARG1 (s1p2 / person :quant 1500)
+                        :Aspect State
+                        :MODSTR PrtAff)
+                  :Aspect State
+                  :MODSTR FullAff))
+    :place (s1c / country :wiki ""Philippines"" :name (s1n / name :op1 ""Philippines""))))","[{'LOC': 'Philippines'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 27 nodes and 26 edges,person,:mod,other
+2,"(s1p / publication-91
+    :ARG1 (s1l / landslide-01
+      :ARG3 (s1a / and
+            :op1 (s1d / die-01
+                  :ARG1 (s1p / person :quant 200)
+                  :Aspect State
+                  :MODSTR FullAff)
+            :op2 (s1f / fear-01
+                  :ARG1 (s1m / miss-01
+                        :ARG1 (s1p2 / person :quant 1500)
+                        :Aspect State
+                        :MODSTR PrtAff)
+                  :Aspect State
+                  :MODSTR FullAff))
+    :place (s1c / country :wiki ""Philippines"" :name (s1n / name :op1 ""Philippines""))))","[{'LOC': 'Philippines'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 27 nodes and 26 edges,village,:mod,entire
+3,"(s4s / say-01 
+    :ARG0 (s4p / person
+        :ARG0-of (s4w / witness-01
+            :ARG1 s4l2))
+    :ARG1 (s4l / leave-14 
+        :ARG0 (s4h / hit-01 
+            :ARG0 (s4l2 / landslide-01) 
+            :ARG1 (s4v / village  
+                :mod (s4s4 / settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                    :name (s4n / name :op1 ""Guinsaugon""))
+                :place (s4s2 / south 
+                    :part-of (s4i2 / island 
+                        :wiki ""Leyte"" 
+                        :name (s4n2 / name :op1 ""Leyte"") 
+                        :place (s4c / country  :wiki ""Philippines"" 
+                            :name (s4n3 / name :op1 ""Philippine"")))))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1 (s4s3 / stand-01 
+            :ARG1 (s4h2 / house 
+                :quant (s4a / a-few 
+                    :mod (s4o / only)))
+            :Aspect State
+            :MODSTR FullAff)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s4s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'saug'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Philippines'}, {'LOC': 'Philippine'}, {'B_human': 'person'}, {'B_human': 'witness'}]",DiGraph with 14 nodes and 13 edges,thing,:mod,farmland
+4,"(s4s / say-01 
+    :ARG0 (s4p / person
+        :ARG0-of (s4w / witness-01
+            :ARG1 s4l2))
+    :ARG1 (s4l / leave-14 
+        :ARG0 (s4h / hit-01 
+            :ARG0 (s4l2 / landslide-01) 
+            :ARG1 (s4v / village  
+                :mod (s4s4 / settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                    :name (s4n / name :op1 ""Guinsaugon""))
+                :place (s4s2 / south 
+                    :part-of (s4i2 / island 
+                        :wiki ""Leyte"" 
+                        :name (s4n2 / name :op1 ""Leyte"") 
+                        :place (s4c / country  :wiki ""Philippines"" 
+                            :name (s4n3 / name :op1 ""Philippine"")))))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1 (s4s3 / stand-01 
+            :ARG1 (s4h2 / house 
+                :quant (s4a / a-few 
+                    :mod (s4o / only)))
+            :Aspect State
+            :MODSTR FullAff)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s4s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'saug'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Philippines'}, {'LOC': 'Philippine'}, {'B_human': 'person'}, {'B_human': 'witness'}]",DiGraph with 14 nodes and 13 edges,thing,:mod,lush
+5,"(s5s / say-01 
+    :ARG0 (s5p / person :wiki ""Richard_J._Gordon"" :name (s5n / name :op1 ""Richard"" :op2 ""Gordon"") 
+        :ARG0-of (s5h / head-01 
+            :ARG1 (s5o / organization :wiki ""Philippine_Red_Cross"" :name (s5n2 / name :op1 ""Philippine"" :op2 ""Red"" :op3 ""Cross""))
+            :Aspect State)) 
+    :ARG1 (s5a / and 
+        :op1 (s5p2 / person 
+            :quant (s5a2 / about 
+                :op1 1500)
+            :ARG1-of (s5m / miss-02
+                :Aspect State
+                :MODSTR FullAff) ) 
+        :op2 (s5p3 / person 
+            :quant 200 
+            :ARG1-of (s5d / die-01
+                :Aspect State
+                :MODSTR FullAff)) ) 
+    :place (s5i2 / interview-01 
+        :ARG1 s5p 
+        :medium (s5r / radio)
+    :QUOT s5s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'PER': 'Richard'}, {'PER': 'J'}, {'PER': 'Gordon'}, {'PER': 'Richard'}, {'PER': 'Gordon'}, {'ORG': 'Philippine'}, {'ORG': 'Red_Cross'}, {'LOC': 'Philippine'}, {'PER': 'Cross'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 11 nodes and 10 edges,and,:mod,only
+6,"(s5s / say-01 
+    :ARG0 (s5p / person :wiki ""Richard_J._Gordon"" :name (s5n / name :op1 ""Richard"" :op2 ""Gordon"") 
+        :ARG0-of (s5h / head-01 
+            :ARG1 (s5o / organization :wiki ""Philippine_Red_Cross"" :name (s5n2 / name :op1 ""Philippine"" :op2 ""Red"" :op3 ""Cross""))
+            :Aspect State)) 
+    :ARG1 (s5a / and 
+        :op1 (s5p2 / person 
+            :quant (s5a2 / about 
+                :op1 1500)
+            :ARG1-of (s5m / miss-02
+                :Aspect State
+                :MODSTR FullAff) ) 
+        :op2 (s5p3 / person 
+            :quant 200 
+            :ARG1-of (s5d / die-01
+                :Aspect State
+                :MODSTR FullAff)) ) 
+    :place (s5i2 / interview-01 
+        :ARG1 s5p 
+        :medium (s5r / radio)
+    :QUOT s5s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'PER': 'Richard'}, {'PER': 'J'}, {'PER': 'Gordon'}, {'PER': 'Richard'}, {'PER': 'Gordon'}, {'ORG': 'Philippine'}, {'ORG': 'Red_Cross'}, {'LOC': 'Philippine'}, {'PER': 'Cross'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 11 nodes and 10 edges,tree,:mod,coconut
+7,"(s5s / say-01 
+    :ARG0 (s5p / person :wiki ""Richard_J._Gordon"" :name (s5n / name :op1 ""Richard"" :op2 ""Gordon"") 
+        :ARG0-of (s5h / head-01 
+            :ARG1 (s5o / organization :wiki ""Philippine_Red_Cross"" :name (s5n2 / name :op1 ""Philippine"" :op2 ""Red"" :op3 ""Cross""))
+            :Aspect State)) 
+    :ARG1 (s5a / and 
+        :op1 (s5p2 / person 
+            :quant (s5a2 / about 
+                :op1 1500)
+            :ARG1-of (s5m / miss-02
+                :Aspect State
+                :MODSTR FullAff) ) 
+        :op2 (s5p3 / person 
+            :quant 200 
+            :ARG1-of (s5d / die-01
+                :Aspect State
+                :MODSTR FullAff)) ) 
+    :place (s5i2 / interview-01 
+        :ARG1 s5p 
+        :medium (s5r / radio)
+    :QUOT s5s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'PER': 'Richard'}, {'PER': 'J'}, {'PER': 'Gordon'}, {'PER': 'Richard'}, {'PER': 'Gordon'}, {'ORG': 'Philippine'}, {'ORG': 'Red_Cross'}, {'LOC': 'Philippine'}, {'PER': 'Cross'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 11 nodes and 10 edges,tree,:mod,occasional
+8,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 15 nodes and 14 edges,show-01,:mod,also
+9,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 15 nodes and 14 edges,group-01,:mod,tiny
+10,"(s7s / see-01 
+    :ARG1 (s7a / and 
+        :op1 (s7r / roofing
+            :material (s7t / tin)
+            :unit (s7s2 / sheet)
+            :quant (s7a2 / a-few))
+        :op2 (s7t2 / tree 
+            :mod (s7c / coconut) 
+            :mod (s7o / occasional)) 
+        :mod (s7o2 / only))
+    :Aspect State
+    :MODSTR NeutAff)
+",[],DiGraph with 23 nodes and 22 edges,rush-01,:source,and
+11,"(s7s / see-01 
+    :ARG1 (s7a / and 
+        :op1 (s7r / roofing
+            :material (s7t / tin)
+            :unit (s7s2 / sheet)
+            :quant (s7a2 / a-few))
+        :op2 (s7t2 / tree 
+            :mod (s7c / coconut) 
+            :mod (s7o / occasional)) 
+        :mod (s7o2 / only))
+    :Aspect State
+    :MODSTR NeutAff)
+",[],DiGraph with 23 nodes and 22 edges,team,:mod,rescue-01
+12,"(s8s / show-01 
+    :ARG1 (s8g / group
+        :mod (s8t2 / tiny)
+        :Group-of (s8p / person 
+            :ARG0-of (s8s2 / survive-02
+                :ARG1 (s8e / event)
+                :Aspect activity
+                :MODSTR FullAff) 
+            :ARG2-of (s8s3 / spatter-01 
+                :ARG1 (s8m / mud)
+                :Aspect State
+                :MODSTR FullAff))
+        :ARG0-of (s8w / walk-01 
+            :ARG2 (s8t / through 
+                :op1 (s8m2 / muck))
+            :Aspect activity
+            :MODSTR FullAff)
+        :ARG1-of (s8s4 / stun-01 
+            :ARG0 (s8s5 / scope
+                :Extent-of (s8d / destroy-01
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :ARG1-of (s8a / appear-02)
+            :Aspect State
+            :MODSTR PrtAff)) 
+    :mod (s8a2 / also)
+    :Aspect Performance
+    :MODSTR FullAff) 
+",[{'B_human': 'person'}],DiGraph with 20 nodes and 19 edges,force-04,:mod,navy
+13,"(s8s / show-01 
+    :ARG1 (s8g / group
+        :mod (s8t2 / tiny)
+        :Group-of (s8p / person 
+            :ARG0-of (s8s2 / survive-02
+                :ARG1 (s8e / event)
+                :Aspect activity
+                :MODSTR FullAff) 
+            :ARG2-of (s8s3 / spatter-01 
+                :ARG1 (s8m / mud)
+                :Aspect State
+                :MODSTR FullAff))
+        :ARG0-of (s8w / walk-01 
+            :ARG2 (s8t / through 
+                :op1 (s8m2 / muck))
+            :Aspect activity
+            :MODSTR FullAff)
+        :ARG1-of (s8s4 / stun-01 
+            :ARG0 (s8s5 / scope
+                :Extent-of (s8d / destroy-01
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :ARG1-of (s8a / appear-02)
+            :Aspect State
+            :MODSTR PrtAff)) 
+    :mod (s8a2 / also)
+    :Aspect Performance
+    :MODSTR FullAff) 
+",[{'B_human': 'person'}],DiGraph with 20 nodes and 19 edges,force-04,:mod,entire
+14,"(s9s / say-01 
+    :ARG0 (s9p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s9n / name :op1 ""Gloria"" :op2 ""Arroyo"") 
+        :ARG1-of (s9h / have-org-role-92 
+            :ARG2 s9n
+            :ARG3 (s9p2 / president))) 
+    :ARG1 (s9r / rush-01  
+        :ARG1 (s9t / team 
+                :ARG0-of (s9r2 / rescue-01
+                    :Aspect Habitual))
+        :ARG2 (s9a / area) 
+        :path (s9a2 / and 
+            :op1 (s9a3 / air) 
+            :op2 (s9l / land) 
+            :op3 (s9s2 / sea))
+        :purpose (s9c / cope-01 
+            :ARG0 s9t
+            :ARG1 (s9c2 / catastrophe)
+            :Aspect activity
+            :MODSTR FullAff)
+        :Aspect activity
+        :MODSTR FullAff) 
+    :temporal (s9a4 / address-03 
+        :ARG0 s9p 
+        :ARG1 (s9n2 / nation) 
+        :ARG1-of (s9t2 / televise-01
+            :Aspect activity
+            :MODSTR FullAff)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Gloria'}, {'LOC': 'Arroyo'}]",DiGraph with 11 nodes and 10 edges,ship,:mod,navy
+15,"(s9s / say-01 
+    :ARG0 (s9p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s9n / name :op1 ""Gloria"" :op2 ""Arroyo"") 
+        :ARG1-of (s9h / have-org-role-92 
+            :ARG2 s9n
+            :ARG3 (s9p2 / president))) 
+    :ARG1 (s9r / rush-01  
+        :ARG1 (s9t / team 
+                :ARG0-of (s9r2 / rescue-01
+                    :Aspect Habitual))
+        :ARG2 (s9a / area) 
+        :path (s9a2 / and 
+            :op1 (s9a3 / air) 
+            :op2 (s9l / land) 
+            :op3 (s9s2 / sea))
+        :purpose (s9c / cope-01 
+            :ARG0 s9t
+            :ARG1 (s9c2 / catastrophe)
+            :Aspect activity
+            :MODSTR FullAff)
+        :Aspect activity
+        :MODSTR FullAff) 
+    :temporal (s9a4 / address-03 
+        :ARG0 s9p 
+        :ARG1 (s9n2 / nation) 
+        :ARG1-of (s9t2 / televise-01
+            :Aspect activity
+            :MODSTR FullAff)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Gloria'}, {'LOC': 'Arroyo'}]",DiGraph with 11 nodes and 10 edges,center,:mod,command-02
+16,"(s10s / say-01 
+    :ARG0 (s10p / person
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s10o / order-02 
+        :ARG0 s10p 
+        :ARG1 (s10a / and 
+            :op1 (s10a2 / armed-organization :wiki ""Philippine_Coast_Guard"" 
+                :name (s10n / name :op1 ""Coast"" :op2 ""Guard"")) 
+            :op2 (s10f / force
+                :poss (s10p2 / person
+                    :refer-person 1st
+                    :refer-number Plural) 
+                :mod (s10n2 / navy) 
+                :extent (s10e / entire)
+                :place (s10r / region 
+                    :mod (s10c / country-region :wiki - 
+                        :name (s10n3 / name :op1 ""Central"" :op2 ""Philippines"")))))
+        :ARG2 (s10a3 / area)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s10s)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Philippine_Coast_Guard'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,census,:mod,last
+17,"(s14s / say-01 
+    :ARG0 (s14p2 / person 
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s14a / and 
+        :op1 (s14r / resemble-91 
+            :ARG1 (s14t / thing)
+            :ARG2 (s14m / mud
+                :ARG0-of (s14r2 / run-02 
+                    :direction (s14d / down-03
+                        :ARG2 (s14m2 / mountain))
+                    :Aspect activity
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff) 
+        :op2 (s14c / cover-02 
+            :ARG1 (s14v / village) 
+            :ARG2 s14t
+            :duration (s14m3 / multiple 
+                :op1 (s14t2 / temporal-quantity :quant 1 
+                    :unit (s14s3 / second)))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1-of (s14q / quote-01 
+            :ARG0 s14p2 
+            :ARG2 (s14p / person 
+                :ARG0-of (s14s4 / survive-02
+                    :ARG1 (s14e / event)
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :Aspect Activity
+            :MODSTR FullAff)
+        :QUOT s14s
+        :QUOT s14q)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 36 nodes and 35 edges,return-01,:ARG1-of,cause-01
+18,"(s15b / blame-01 
+    :ARG0 (s15p / person 
+        :ARG1-of (s15e / expert-01
+            :Aspect State
+            :MODSTR FullAff)) 
+    :ARG1 (s15d / deforest-01
+        :Aspect Activity
+        :MODSTR FullAff)
+    :ARG2 (s15t / tragedy 
+        :ARG1-of (s15c / come-01 
+                :temporal (s15a / after 
+                    :op1 (s15r / rain-01
+                        :ARG1-of (s15h2 / have-quant-91 
+                            :ARG2 (s15v / volume-quantity) 
+                            :ARG3 (s15h / high-02
+                                :extent (s15t / times :op1 5)
+                                :degree (s15m / more)) 
+                            :ARG4 (s15u / usual))
+                        :duration (s15m / multiple 
+                            :op1 (s15t3 / temporal-quantity :quant 1 
+                                :unit (s15d2 / day)))
+                        :Aspect Activity
+                        :MODSTR FullAff))
+                :Aspect Performance
+                :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff) 
+","[{'B_human': 'person'}, {'B_human': 'expert'}]",DiGraph with 27 nodes and 26 edges,earthquake,:mod,mild
+19,"(s15b / blame-01 
+    :ARG0 (s15p / person 
+        :ARG1-of (s15e / expert-01
+            :Aspect State
+            :MODSTR FullAff)) 
+    :ARG1 (s15d / deforest-01
+        :Aspect Activity
+        :MODSTR FullAff)
+    :ARG2 (s15t / tragedy 
+        :ARG1-of (s15c / come-01 
+                :temporal (s15a / after 
+                    :op1 (s15r / rain-01
+                        :ARG1-of (s15h2 / have-quant-91 
+                            :ARG2 (s15v / volume-quantity) 
+                            :ARG3 (s15h / high-02
+                                :extent (s15t / times :op1 5)
+                                :degree (s15m / more)) 
+                            :ARG4 (s15u / usual))
+                        :duration (s15m / multiple 
+                            :op1 (s15t3 / temporal-quantity :quant 1 
+                                :unit (s15d2 / day)))
+                        :Aspect Activity
+                        :MODSTR FullAff))
+                :Aspect Performance
+                :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff) 
+","[{'B_human': 'person'}, {'B_human': 'expert'}]",DiGraph with 27 nodes and 26 edges,wall,:mod,mud
+20,"(s16s / say-01
+    :ARG0 (s16p / person
+        :name (s16n / name :op1 ""Lerias""))
+    :ARG1 (s16u / unexpected-co-occurrence-91
+        :ARG1 (s16e / evacuate-01
+            :ARG1 (s16h / human-settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                :name (s16n2 / name :op1 ""Guinsaugon""))
+            :ARG2 (s16p2 / person
+                :ARG0-of (s16r / reside-01
+                    :ARG1 s16h)
+                :quant (s16m / many)
+                :refer-number Plural)
+            :temporal (s16a / after
+                :op1 (s16k / kill-01
+                    :ARG0 (s16l / landslide-01
+                        :refer-number Plural
+                        :Aspect Process
+                        :MODSTR FullAff)
+                    :ARG1 (s16p3 / person
+                        :quant (s16m2 / more-than
+                            :op1 20))
+                    :place (s16i2 / island :wiki ""Leyte""
+                        :name (s16n3 / name :op1 ""Leyte""))
+                    :temporal (s16e2 / earlier-in
+                        :op1 (s16w / week))
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :Aspect Performance
+            :MODSTR FullAff)
+        :ARG2 (s16r2 / return-01
+            :ARG1 (s16p4 / person
+                :ARG1-of (s16i4 / include-91
+                    :ARG2 s16p2)
+                :quant (s16m3 / many)
+                :refer-number Plural)
+            :temporal (s16d / date-entity
+                :weekday (s16f / friday))
+            :reason (s16a2 / and
+                :op1 (s16r4 / rain-01
+                    :Aspect Endeavor
+                    :MODSTR FullAff
+                    :QUOT s16s)
+                :op2 (s16c2 / come-out-09
+                    :ARG1 (s16c3 / celestial-body :wiki ""sun""
+                        :name (s16n4 / name :op1 ""sun""))
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :Aspect Performance
+            :MODSTR FullAff
+            :QUOT s16s))
+    :MODSTR FullAff
+    :Aspect Performance)
+","[{'ORG': 'Le'}, {'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 20 nodes and 19 edges,possible-01,:ARG1-of,cause-01
+21,"(s17s / say-01
+    :ARG0 (s17p / person
+        :name (s17n / name :op1 ""Rene"" :op2 ""Solidum"")
+        :ARG1-of (s17h / have-org-role-92
+            :ARG2 (s17o / office
+                :topic (s17v / vulcanology)
+                :part (s17g / government)
+                :refer-number Singular)
+            :ARG3 (s17h2 / head)))
+    :ARG1 (s17h3 / help-01
+        :ARG0 (s17e / earthquake-02
+            :ARG2 (s17s2 / seismic-quantity
+                :quant 2.6
+                :scale (s17r / richter))
+            :mod (s17m / mild)
+            :ARG2-of (s17s3 / strike-01
+                :temporal (s17b / before
+                    :op1 (s17l / landslide-01
+                        :Aspect Process
+                        :MODSTR FullAff
+                        :refer-number Singular))
+                :Aspect Performance
+                :MODSTR FullAff
+                :QUOT s17s)
+            :refer-number Singular
+            :Aspect Process
+            :MODSTR FullAff)
+        :ARG1 (s17s4 / set-off-04
+            :ARG0 (s17w / wall
+                :material (s17m2 / mud)
+                :ARG1-of (s17c / crash-01
+                    :direction (s17d / down)
+                    :goal (s17v2 / village
+                        :refer-number Singular)
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :refer-number Singular)
+            :causer s17e
+            :Aspect Performance
+            :MODSTR NeutAff
+            :MODPRED s17h3)
+        :mod (s17a / also)
+        :Aspect Performance
+        :MODSTR NeutAff
+        :QUOT s17s)
+    :Aspect Performance
+    :MODSTR FullAff)
+",[{'B_human': 'person'}],DiGraph with 22 nodes and 21 edges,force-04,:mod,task-01
+22,"(s17s / say-01
+    :ARG0 (s17p / person
+        :name (s17n / name :op1 ""Rene"" :op2 ""Solidum"")
+        :ARG1-of (s17h / have-org-role-92
+            :ARG2 (s17o / office
+                :topic (s17v / vulcanology)
+                :part (s17g / government)
+                :refer-number Singular)
+            :ARG3 (s17h2 / head)))
+    :ARG1 (s17h3 / help-01
+        :ARG0 (s17e / earthquake-02
+            :ARG2 (s17s2 / seismic-quantity
+                :quant 2.6
+                :scale (s17r / richter))
+            :mod (s17m / mild)
+            :ARG2-of (s17s3 / strike-01
+                :temporal (s17b / before
+                    :op1 (s17l / landslide-01
+                        :Aspect Process
+                        :MODSTR FullAff
+                        :refer-number Singular))
+                :Aspect Performance
+                :MODSTR FullAff
+                :QUOT s17s)
+            :refer-number Singular
+            :Aspect Process
+            :MODSTR FullAff)
+        :ARG1 (s17s4 / set-off-04
+            :ARG0 (s17w / wall
+                :material (s17m2 / mud)
+                :ARG1-of (s17c / crash-01
+                    :direction (s17d / down)
+                    :goal (s17v2 / village
+                        :refer-number Singular)
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :refer-number Singular)
+            :causer s17e
+            :Aspect Performance
+            :MODSTR NeutAff
+            :MODPRED s17h3)
+        :mod (s17a / also)
+        :Aspect Performance
+        :MODSTR NeutAff
+        :QUOT s17s)
+    :Aspect Performance
+    :MODSTR FullAff)
+",[{'B_human': 'person'}],DiGraph with 22 nodes and 21 edges,task-01,:mod,rescue-01
+23,"(s17s / say-01
+    :ARG0 (s17p / person
+        :name (s17n / name :op1 ""Rene"" :op2 ""Solidum"")
+        :ARG1-of (s17h / have-org-role-92
+            :ARG2 (s17o / office
+                :topic (s17v / vulcanology)
+                :part (s17g / government)
+                :refer-number Singular)
+            :ARG3 (s17h2 / head)))
+    :ARG1 (s17h3 / help-01
+        :ARG0 (s17e / earthquake-02
+            :ARG2 (s17s2 / seismic-quantity
+                :quant 2.6
+                :scale (s17r / richter))
+            :mod (s17m / mild)
+            :ARG2-of (s17s3 / strike-01
+                :temporal (s17b / before
+                    :op1 (s17l / landslide-01
+                        :Aspect Process
+                        :MODSTR FullAff
+                        :refer-number Singular))
+                :Aspect Performance
+                :MODSTR FullAff
+                :QUOT s17s)
+            :refer-number Singular
+            :Aspect Process
+            :MODSTR FullAff)
+        :ARG1 (s17s4 / set-off-04
+            :ARG0 (s17w / wall
+                :material (s17m2 / mud)
+                :ARG1-of (s17c / crash-01
+                    :direction (s17d / down)
+                    :goal (s17v2 / village
+                        :refer-number Singular)
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :refer-number Singular)
+            :causer s17e
+            :Aspect Performance
+            :MODSTR NeutAff
+            :MODPRED s17h3)
+        :mod (s17a / also)
+        :Aspect Performance
+        :MODSTR NeutAff
+        :QUOT s17s)
+    :Aspect Performance
+    :MODSTR FullAff)
+",[{'B_human': 'person'}],DiGraph with 22 nodes and 21 edges,body,:mod,die-01
+24,"(s19s / say-01 
+    :ARG0 (s19p / person :wiki - 
+        :name (s19n / name :op1 ""Nestor"" :op2 ""Sadirin"") 
+        :ARG1-of (s19h / have-org-role-92 
+            :ARG2 (s19a / army) 
+            :ARG3 (s19c / colonel)) 
+        :ARG0-of (s19h2 / head-01 
+            :ARG1 (s19f / force 
+                :ARG0-of (s19t / task-01
+                    :ARG1 (s19r / rescue-01)))
+            :Aspect State
+            :MODSTR FullAff)) 
+    :ARG1 (s19a2 / and 
+        :op1 (s19r2 / recover-02 
+            :ARG1 (s19b / body :quant 16 
+                :ARG1-of (s19d / die-01
+                    :Aspect State
+                    :MODSTR FullAff)) 
+            :temporal (s19s2 / so-far)
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :op2 (s19r3 / rescue-01  
+            :ARG1 (s19p2 / person :quant 100)
+            :Aspect Performance
+            :MODSTR FullAff)
+        :QUOT s19s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'ORG': 'N'}, {'ORG': 'or'}, {'LOC': 'Sad'}, {'B_human': 'colonel'}, {'B_human': 'person'}]",DiGraph with 36 nodes and 35 edges,call-03,:ARG1-of,cause-01
+25,"(s19s / say-01 
+    :ARG0 (s19p / person :wiki - 
+        :name (s19n / name :op1 ""Nestor"" :op2 ""Sadirin"") 
+        :ARG1-of (s19h / have-org-role-92 
+            :ARG2 (s19a / army) 
+            :ARG3 (s19c / colonel)) 
+        :ARG0-of (s19h2 / head-01 
+            :ARG1 (s19f / force 
+                :ARG0-of (s19t / task-01
+                    :ARG1 (s19r / rescue-01)))
+            :Aspect State
+            :MODSTR FullAff)) 
+    :ARG1 (s19a2 / and 
+        :op1 (s19r2 / recover-02 
+            :ARG1 (s19b / body :quant 16 
+                :ARG1-of (s19d / die-01
+                    :Aspect State
+                    :MODSTR FullAff)) 
+            :temporal (s19s2 / so-far)
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :op2 (s19r3 / rescue-01  
+            :ARG1 (s19p2 / person :quant 100)
+            :Aspect Performance
+            :MODSTR FullAff)
+        :QUOT s19s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'ORG': 'N'}, {'ORG': 'or'}, {'LOC': 'Sad'}, {'B_human': 'colonel'}, {'B_human': 'person'}]",DiGraph with 36 nodes and 35 edges,equipment,:mod,heavy
+26,"(s19s / say-01 
+    :ARG0 (s19p / person :wiki - 
+        :name (s19n / name :op1 ""Nestor"" :op2 ""Sadirin"") 
+        :ARG1-of (s19h / have-org-role-92 
+            :ARG2 (s19a / army) 
+            :ARG3 (s19c / colonel)) 
+        :ARG0-of (s19h2 / head-01 
+            :ARG1 (s19f / force 
+                :ARG0-of (s19t / task-01
+                    :ARG1 (s19r / rescue-01)))
+            :Aspect State
+            :MODSTR FullAff)) 
+    :ARG1 (s19a2 / and 
+        :op1 (s19r2 / recover-02 
+            :ARG1 (s19b / body :quant 16 
+                :ARG1-of (s19d / die-01
+                    :Aspect State
+                    :MODSTR FullAff)) 
+            :temporal (s19s2 / so-far)
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :op2 (s19r3 / rescue-01  
+            :ARG1 (s19p2 / person :quant 100)
+            :Aspect Performance
+            :MODSTR FullAff)
+        :QUOT s19s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'ORG': 'N'}, {'ORG': 'or'}, {'LOC': 'Sad'}, {'B_human': 'colonel'}, {'B_human': 'person'}]",DiGraph with 36 nodes and 35 edges,person,:mod,official
+27,"(s20a / and 
+    :op1 (s20s / say-01 
+        :ARG0 (s20p / person :wiki - 
+            :name (s20n / name :op1 ""Roger"" :op2 ""Mercado"") 
+            :ARG1-of (s20h / have-org-role-92 
+                :ARG2 (s20i2 / island :wiki ""Leyte"" 
+                    :name (s20n2 / name :op1 ""Leyte"")) 
+                :ARG3 (s20c / congressman))) 
+        :ARG1 (s20p2 / populate-01 
+            :ARG1 (s20v / village)
+            :ARG2 (s20p4 / person    
+                :quant (s20b / between :op1 3000 :op2 4000))
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20s)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :op2 (s20e / express-01 
+        :ARG0 s20p 
+        :ARG1 (s20f / fear-01 
+            :ARG0 s20p 
+            :ARG1 (s20b2 / bury-01 
+                :ARG1 (s20p3 / person 
+                    :quant (s20a2 / as-many-as :op1 2000))
+                :Aspect Performance
+                :MODSTR NeutAff)
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20e)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :temporal (s20i3 / interview-01 
+        :ARG1 s20p 
+        :medium (s20r / radio)
+        :Aspect Performance
+        :MODSTR FullAff)) 
+","[{'PER': 'Roger'}, {'LOC': 'Me'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 23 nodes and 22 edges,team,:source,company
+28,"(s20a / and 
+    :op1 (s20s / say-01 
+        :ARG0 (s20p / person :wiki - 
+            :name (s20n / name :op1 ""Roger"" :op2 ""Mercado"") 
+            :ARG1-of (s20h / have-org-role-92 
+                :ARG2 (s20i2 / island :wiki ""Leyte"" 
+                    :name (s20n2 / name :op1 ""Leyte"")) 
+                :ARG3 (s20c / congressman))) 
+        :ARG1 (s20p2 / populate-01 
+            :ARG1 (s20v / village)
+            :ARG2 (s20p4 / person    
+                :quant (s20b / between :op1 3000 :op2 4000))
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20s)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :op2 (s20e / express-01 
+        :ARG0 s20p 
+        :ARG1 (s20f / fear-01 
+            :ARG0 s20p 
+            :ARG1 (s20b2 / bury-01 
+                :ARG1 (s20p3 / person 
+                    :quant (s20a2 / as-many-as :op1 2000))
+                :Aspect Performance
+                :MODSTR NeutAff)
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20e)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :temporal (s20i3 / interview-01 
+        :ARG1 s20p 
+        :medium (s20r / radio)
+        :Aspect Performance
+        :MODSTR FullAff)) 
+","[{'PER': 'Roger'}, {'LOC': 'Me'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 23 nodes and 22 edges,go-01,:mod,also
+29,"(s20a / and 
+    :op1 (s20s / say-01 
+        :ARG0 (s20p / person :wiki - 
+            :name (s20n / name :op1 ""Roger"" :op2 ""Mercado"") 
+            :ARG1-of (s20h / have-org-role-92 
+                :ARG2 (s20i2 / island :wiki ""Leyte"" 
+                    :name (s20n2 / name :op1 ""Leyte"")) 
+                :ARG3 (s20c / congressman))) 
+        :ARG1 (s20p2 / populate-01 
+            :ARG1 (s20v / village)
+            :ARG2 (s20p4 / person    
+                :quant (s20b / between :op1 3000 :op2 4000))
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20s)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :op2 (s20e / express-01 
+        :ARG0 s20p 
+        :ARG1 (s20f / fear-01 
+            :ARG0 s20p 
+            :ARG1 (s20b2 / bury-01 
+                :ARG1 (s20p3 / person 
+                    :quant (s20a2 / as-many-as :op1 2000))
+                :Aspect Performance
+                :MODSTR NeutAff)
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20e)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :temporal (s20i3 / interview-01 
+        :ARG1 s20p 
+        :medium (s20r / radio)
+        :Aspect Performance
+        :MODSTR FullAff)) 
+","[{'PER': 'Roger'}, {'LOC': 'Me'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 23 nodes and 22 edges,company,:mod,mine-01
+30,"(s20a / and 
+    :op1 (s20s / say-01 
+        :ARG0 (s20p / person :wiki - 
+            :name (s20n / name :op1 ""Roger"" :op2 ""Mercado"") 
+            :ARG1-of (s20h / have-org-role-92 
+                :ARG2 (s20i2 / island :wiki ""Leyte"" 
+                    :name (s20n2 / name :op1 ""Leyte"")) 
+                :ARG3 (s20c / congressman))) 
+        :ARG1 (s20p2 / populate-01 
+            :ARG1 (s20v / village)
+            :ARG2 (s20p4 / person    
+                :quant (s20b / between :op1 3000 :op2 4000))
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20s)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :op2 (s20e / express-01 
+        :ARG0 s20p 
+        :ARG1 (s20f / fear-01 
+            :ARG0 s20p 
+            :ARG1 (s20b2 / bury-01 
+                :ARG1 (s20p3 / person 
+                    :quant (s20a2 / as-many-as :op1 2000))
+                :Aspect Performance
+                :MODSTR NeutAff)
+            :Aspect State
+            :MODSTR FullAff
+            :QUOT s20e)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :temporal (s20i3 / interview-01 
+        :ARG1 s20p 
+        :medium (s20r / radio)
+        :Aspect Performance
+        :MODSTR FullAff)) 
+","[{'PER': 'Roger'}, {'LOC': 'Me'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 23 nodes and 22 edges,dig-01,:mod,skill
+31,"(s22s / say-01 
+    :ARG0 (s22p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s22n / name :op1 ""Arroyo"") 
+        :ARG1-of (s22h / have-org-role-92 
+            :ARG2 s22c2
+            :ARG3 (s22p2 / president))) 
+    :ARG1 (s22g / go-01 
+        :ARG1 (s22t / team 
+            :ARG0-of (s22r / rescue-01
+                :Aspect Activity) 
+            :ARG0-of (s22v / volunteer-01
+                :Aspect Activity
+                :MODSTR FullAff) 
+            :source (s22c / company 
+                :mod (s22m / mine-01) 
+                :poss (s22c2 / country)) 
+            :ARG1-of (s22s2 / skillful-01
+                :ARG2 (s22d / dig-01 
+                    :ARG0 s22t
+                    :ARG2 (s22t2 / through 
+                        :op1 (s22e / earth)) 
+                    :ARG3 (s22r2 / rescue-01 
+                        :ARG0 s22t 
+                        :ARG1 (s22p3 / person
+                            :refer-number Plural)
+                        :Aspect Performance
+                        :MODSTR FullAff)
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect State
+                :MODSTR FullAff)) 
+        :ARG4 (s22a / area) 
+        :mod (s22a2 / also)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Arroyo'}, {'B_human': 'president'}, {'B_human': 'volunteer'}, {'B_human': 'person'}]",DiGraph with 22 nodes and 21 edges,cease-01,:ARG1-of,cause-01
+32,"(s22s / say-01 
+    :ARG0 (s22p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s22n / name :op1 ""Arroyo"") 
+        :ARG1-of (s22h / have-org-role-92 
+            :ARG2 s22c2
+            :ARG3 (s22p2 / president))) 
+    :ARG1 (s22g / go-01 
+        :ARG1 (s22t / team 
+            :ARG0-of (s22r / rescue-01
+                :Aspect Activity) 
+            :ARG0-of (s22v / volunteer-01
+                :Aspect Activity
+                :MODSTR FullAff) 
+            :source (s22c / company 
+                :mod (s22m / mine-01) 
+                :poss (s22c2 / country)) 
+            :ARG1-of (s22s2 / skillful-01
+                :ARG2 (s22d / dig-01 
+                    :ARG0 s22t
+                    :ARG2 (s22t2 / through 
+                        :op1 (s22e / earth)) 
+                    :ARG3 (s22r2 / rescue-01 
+                        :ARG0 s22t 
+                        :ARG1 (s22p3 / person
+                            :refer-number Plural)
+                        :Aspect Performance
+                        :MODSTR FullAff)
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect State
+                :MODSTR FullAff)) 
+        :ARG4 (s22a / area) 
+        :mod (s22a2 / also)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Arroyo'}, {'B_human': 'president'}, {'B_human': 'volunteer'}, {'B_human': 'person'}]",DiGraph with 22 nodes and 21 edges,helicopter,:mod,military
+33,"(s22s / say-01 
+    :ARG0 (s22p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s22n / name :op1 ""Arroyo"") 
+        :ARG1-of (s22h / have-org-role-92 
+            :ARG2 s22c2
+            :ARG3 (s22p2 / president))) 
+    :ARG1 (s22g / go-01 
+        :ARG1 (s22t / team 
+            :ARG0-of (s22r / rescue-01
+                :Aspect Activity) 
+            :ARG0-of (s22v / volunteer-01
+                :Aspect Activity
+                :MODSTR FullAff) 
+            :source (s22c / company 
+                :mod (s22m / mine-01) 
+                :poss (s22c2 / country)) 
+            :ARG1-of (s22s2 / skillful-01
+                :ARG2 (s22d / dig-01 
+                    :ARG0 s22t
+                    :ARG2 (s22t2 / through 
+                        :op1 (s22e / earth)) 
+                    :ARG3 (s22r2 / rescue-01 
+                        :ARG0 s22t 
+                        :ARG1 (s22p3 / person
+                            :refer-number Plural)
+                        :Aspect Performance
+                        :MODSTR FullAff)
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect State
+                :MODSTR FullAff)) 
+        :ARG4 (s22a / area) 
+        :mod (s22a2 / also)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Arroyo'}, {'B_human': 'president'}, {'B_human': 'volunteer'}, {'B_human': 'person'}]",DiGraph with 22 nodes and 21 edges,cloud,:mod,heavy
+34,"(s23s / say-01 
+    :ARG0 (s23p / person :wiki ""Richard_J._Gordon"" 
+        :name (s23n / name :op1 ""Gordon"")) 
+    :ARG1 (s23s2 / say-01 
+        :ARG0 (s23o / organization :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+            :name (s23n2 / name :op1 ""Red"" :op2 ""Cross"")) 
+        :ARG1 (s23t / try-01 
+            :ARG0 s23o 
+            :ARG1 (s23d / dispatch-01 
+                :ARG0 s23o 
+                :ARG1 (s23d2 / dog 
+                    :ARG0-of (s23s3 / sniff-01
+                        :Aspect Habitual)) 
+                :ARG2 (s23h / hunt-01 
+                    :ARG0 s23d2 
+                    :ARG1 (s23p2 / person 
+                        :ARG0-of (s23s4 / survive-02
+                            :Aspect Activity))
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect PrtAff
+                :MODSTR FullAff
+                :MODPRED s23t)
+            :Aspect Activity
+            :MODSTR FullAff
+            :QUOT s23s2)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s23s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'PER': 'Richard'}, {'PER': 'J'}, {'PER': 'Gordon'}, {'PER': 'Gordon'}, {'ORG': 'International'}, {'ORG': 'Red_Cross'}, {'ORG': 'and'}, {'ORG': 'Red_Crescent'}, {'ORG': 'Movement'}, {'PER': 'Cross'}, {'B_human': 'person'}, {'B_animal': 'dog'}, {'B_human': 'person'}]",DiGraph with 25 nodes and 24 edges,landslide,:mod,small
+35,"(s24r / reach-01 
+    :ARG0 (s24h / helicopter 
+        :mod (s24m / military)) 
+    :ARG1 (s24a / area) 
+    :concession (s24w / weather-91
+        :ARG1 s24a 
+        :ARG2 (s24c / cloud 
+            :refer-number Plural
+            :mod (s24h2 / heavy))
+        :Aspect State
+        :MODSTR FullAff)
+    :Concession-of (s24c2 / cease-01 
+        :ARG1 (s24f / fly-01 
+            :ARG2 s24h) 
+        :temporal (s24a2 / after 
+            :op1 (s24f3 / fall-04 
+                :ARG1 (s24n / night))) 
+        :reason (s24c4 / capable-01 
+                :ARG1 (s24a3 / aircraft)
+                :ARG2 (s24f2 / fly-01 
+                    :temporal (s24d / date-entity 
+                        :dayperiod (s24n2 / night)))
+                :polarity -
+                :Aspect State
+                :MODSTR FullNeg)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff)
+",[],DiGraph with 12 nodes and 11 edges,bag,:mod,body
+36,"(s25s / say-01 
+    :ARG0 (s25p / person :wiki - 
+        :name (s25n / name :op1 ""Lerias"")) 
+    :ARG1 (s25d2 / damage-01 
+        :polarity -
+        :ARG0 (s25l / landslide-01 
+            :mod (s25s2 / small 
+                :ARG2-of (s25h / have-degree-91 
+                    :ARG1 s25l 
+                    :ARG3 (s25m / more)
+                    :ARG4 (s25e / event)))
+            :temporal (s25l2 / later-in
+                :op1 (s25d / date-entity 
+                    :dayperiod (s25a / afternoon)))) 
+        :concession (s25l3 / leave-13 
+            :ARG0 s25l 
+            :ARG1 (s25w / worry-02 
+                :ARG0 (s25p2 / person 
+                    :ARG0-of (s25r / rescue-01) 
+                    :quant (s25m2 / many)) 
+                :ARG1 (s25d3 / disaster-01 
+                    :ARG1-of (s25n2 / new-01)
+                    :Aspect Performance
+                    :MODSTR NeutAff)))
+        :QUOT s25s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'ORG': 'Le'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,board,:mod,provincial
+37,"(s25s / say-01 
+    :ARG0 (s25p / person :wiki - 
+        :name (s25n / name :op1 ""Lerias"")) 
+    :ARG1 (s25d2 / damage-01 
+        :polarity -
+        :ARG0 (s25l / landslide-01 
+            :mod (s25s2 / small 
+                :ARG2-of (s25h / have-degree-91 
+                    :ARG1 s25l 
+                    :ARG3 (s25m / more)
+                    :ARG4 (s25e / event)))
+            :temporal (s25l2 / later-in
+                :op1 (s25d / date-entity 
+                    :dayperiod (s25a / afternoon)))) 
+        :concession (s25l3 / leave-13 
+            :ARG0 s25l 
+            :ARG1 (s25w / worry-02 
+                :ARG0 (s25p2 / person 
+                    :ARG0-of (s25r / rescue-01) 
+                    :quant (s25m2 / many)) 
+                :ARG1 (s25d3 / disaster-01 
+                    :ARG1-of (s25n2 / new-01)
+                    :Aspect Performance
+                    :MODSTR NeutAff)))
+        :QUOT s25s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'ORG': 'Le'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,equipment,:mod,heavy
+38,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 25 nodes and 24 edges,businessman,:mod,country
+39,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 25 nodes and 24 edges,week,:mod,this
+40,"(s1p / publication-91
+    :ARG1 (s1l / landslide-01
+      :ARG3 (s1a / and
+            :op1 (s1d / die-01
+                  :ARG1 (s1p / person :quant 200)
+                  :Aspect State
+                  :MODSTR FullAff)
+            :op2 (s1f / fear-01
+                  :ARG1 (s1m / miss-01
+                        :ARG1 (s1p2 / person :quant 1500)
+                        :Aspect State
+                        :MODSTR PrtAff)
+                  :Aspect State
+                  :MODSTR FullAff))
+    :place (s1c / country :wiki ""Philippines"" :name (s1n / name :op1 ""Philippines""))))","[{'LOC': 'Philippines'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 20 nodes and 19 edges,person,:mod,country
+41,"(s3s / say-01
+    :ARG0 (s3o2 / organization 
+        :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+        :name (s3n2 / name :op1 ""Red"" :op2 ""Cross""))
+    :ARG1 (s3a / and
+        :op1 (s3b / believe-01
+            :ARG1 (s3k / kill-01
+                :ARG1 (s3p / person
+                    :quant (s3a2 / about 
+                        :op1 200))
+                :Aspect Performance
+                :MODSTR PrtAff)
+            :Aspect State
+            :MODSTR FullAff
+            :MODPRED s3b)
+        :op2 (s3m / miss-01
+            :ARG1 (s3p2 / person :quant 1500
+                :ARG1-of (s3o / other-01
+                    :ARG2 s3p))
+            :Aspect State
+            :MODSTR FullAff)
+        :place (s3c / country 
+            :name (s3n / name :op1 ""Philippines"")
+            :part (s3c2 / center))
+        :temporal (s3d / date-entity
+            :weekday (s3f / friday))
+        :ARG1-of (s3h / have-cause-91
+            :ARG2 (s3b2 / bury-01
+                :ARG0 (s3l / landslide-01
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :ARG1 (s3v / village
+                    :extent (s3e / entire)))
+                :Aspect Performance
+                :MODSTR FullAff)
+        :QUOT s3s)
+    :Aspect Performance
+    :MODSTR FullAff)","[{'ORG': 'International'}, {'ORG': 'Red'}, {'ORG': 'Cross'}, {'ORG': 'and'}, {'ORG': 'Red'}, {'ORG': 'Crescent'}, {'ORG': 'Movement'}, {'ORG': 'Red'}, {'MISC': 'Cross'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 16 nodes and 15 edges,magazine,:mod,news
+42,"(s4s / say-01 
+    :ARG0 (s4p / person
+        :ARG0-of (s4w / witness-01
+            :ARG1 s4l2))
+    :ARG1 (s4l / leave-14 
+        :ARG0 (s4h / hit-01 
+            :ARG0 (s4l2 / landslide-01) 
+            :ARG1 (s4v / village  
+                :mod (s4s4 / settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                    :name (s4n / name :op1 ""Guinsaugon""))
+                :place (s4s2 / south 
+                    :part-of (s4i2 / island 
+                        :wiki ""Leyte"" 
+                        :name (s4n2 / name :op1 ""Leyte"") 
+                        :place (s4c / country  :wiki ""Philippines"" 
+                            :name (s4n3 / name :op1 ""Philippine"")))))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1 (s4s3 / stand-01 
+            :ARG1 (s4h2 / house 
+                :quant (s4a / a-few 
+                    :mod (s4o / only)))
+            :Aspect State
+            :MODSTR FullAff)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s4s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'saug'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Philippines'}, {'LOC': 'Philippine'}, {'B_human': 'person'}, {'B_human': 'witness'}]",DiGraph with 19 nodes and 18 edges,reason-01,:mod,any
+43,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,article,:source,law
+44,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,reason,:mod,formal
+45,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,reason,:mod,that
+46,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,outlet,:mod,various
+47,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,term,:mod,maximum
+48,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 52 nodes and 51 edges,sentence-01,:condition,have-04
+49,"(s8s / show-01 
+    :ARG1 (s8g / group
+        :mod (s8t2 / tiny)
+        :Group-of (s8p / person 
+            :ARG0-of (s8s2 / survive-02
+                :ARG1 (s8e / event)
+                :Aspect activity
+                :MODSTR FullAff) 
+            :ARG2-of (s8s3 / spatter-01 
+                :ARG1 (s8m / mud)
+                :Aspect State
+                :MODSTR FullAff))
+        :ARG0-of (s8w / walk-01 
+            :ARG2 (s8t / through 
+                :op1 (s8m2 / muck))
+            :Aspect activity
+            :MODSTR FullAff)
+        :ARG1-of (s8s4 / stun-01 
+            :ARG0 (s8s5 / scope
+                :Extent-of (s8d / destroy-01
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :ARG1-of (s8a / appear-02)
+            :Aspect State
+            :MODSTR PrtAff)) 
+    :mod (s8a2 / also)
+    :Aspect Performance
+    :MODSTR FullAff) 
+",[{'B_human': 'person'}],DiGraph with 11 nodes and 10 edges,say-01,:mod,also
+50,"(s8s / show-01 
+    :ARG1 (s8g / group
+        :mod (s8t2 / tiny)
+        :Group-of (s8p / person 
+            :ARG0-of (s8s2 / survive-02
+                :ARG1 (s8e / event)
+                :Aspect activity
+                :MODSTR FullAff) 
+            :ARG2-of (s8s3 / spatter-01 
+                :ARG1 (s8m / mud)
+                :Aspect State
+                :MODSTR FullAff))
+        :ARG0-of (s8w / walk-01 
+            :ARG2 (s8t / through 
+                :op1 (s8m2 / muck))
+            :Aspect activity
+            :MODSTR FullAff)
+        :ARG1-of (s8s4 / stun-01 
+            :ARG0 (s8s5 / scope
+                :Extent-of (s8d / destroy-01
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :ARG1-of (s8a / appear-02)
+            :Aspect State
+            :MODSTR PrtAff)) 
+    :mod (s8a2 / also)
+    :Aspect Performance
+    :MODSTR FullAff) 
+",[{'B_human': 'person'}],DiGraph with 11 nodes and 10 edges,court,:mod,this
+51,"(s8s / show-01 
+    :ARG1 (s8g / group
+        :mod (s8t2 / tiny)
+        :Group-of (s8p / person 
+            :ARG0-of (s8s2 / survive-02
+                :ARG1 (s8e / event)
+                :Aspect activity
+                :MODSTR FullAff) 
+            :ARG2-of (s8s3 / spatter-01 
+                :ARG1 (s8m / mud)
+                :Aspect State
+                :MODSTR FullAff))
+        :ARG0-of (s8w / walk-01 
+            :ARG2 (s8t / through 
+                :op1 (s8m2 / muck))
+            :Aspect activity
+            :MODSTR FullAff)
+        :ARG1-of (s8s4 / stun-01 
+            :ARG0 (s8s5 / scope
+                :Extent-of (s8d / destroy-01
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :ARG1-of (s8a / appear-02)
+            :Aspect State
+            :MODSTR PrtAff)) 
+    :mod (s8a2 / also)
+    :Aspect Performance
+    :MODSTR FullAff) 
+",[{'B_human': 'person'}],DiGraph with 11 nodes and 10 edges,procedure,:mod,due
+52,"(s10s / say-01 
+    :ARG0 (s10p / person
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s10o / order-02 
+        :ARG0 s10p 
+        :ARG1 (s10a / and 
+            :op1 (s10a2 / armed-organization :wiki ""Philippine_Coast_Guard"" 
+                :name (s10n / name :op1 ""Coast"" :op2 ""Guard"")) 
+            :op2 (s10f / force
+                :poss (s10p2 / person
+                    :refer-person 1st
+                    :refer-number Plural) 
+                :mod (s10n2 / navy) 
+                :extent (s10e / entire)
+                :place (s10r / region 
+                    :mod (s10c / country-region :wiki - 
+                        :name (s10n3 / name :op1 ""Central"" :op2 ""Philippines"")))))
+        :ARG2 (s10a3 / area)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s10s)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Philippine_Coast_Guard'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 34 nodes and 33 edges,sound-01,:mod,less
+53,"(s10s / say-01 
+    :ARG0 (s10p / person
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s10o / order-02 
+        :ARG0 s10p 
+        :ARG1 (s10a / and 
+            :op1 (s10a2 / armed-organization :wiki ""Philippine_Coast_Guard"" 
+                :name (s10n / name :op1 ""Coast"" :op2 ""Guard"")) 
+            :op2 (s10f / force
+                :poss (s10p2 / person
+                    :refer-person 1st
+                    :refer-number Plural) 
+                :mod (s10n2 / navy) 
+                :extent (s10e / entire)
+                :place (s10r / region 
+                    :mod (s10c / country-region :wiki - 
+                        :name (s10n3 / name :op1 ""Central"" :op2 ""Philippines"")))))
+        :ARG2 (s10a3 / area)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s10s)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Philippine_Coast_Guard'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 34 nodes and 33 edges,system,:mod,court
+54,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,businessman,:mod,country
+55,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,week,:mod,last
+56,"(s2w / water-01
+    :ARG0 (s2p / person
+        :name (s2n / name :op1 ""Alana""))
+    :ARG1 (s2p2 / plant
+        :refer-number Plural)
+    :condition (s2r / rain-01
+        :Aspect Process
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullNeg)","[{'LOC': 'Alan'}, {'B_human': 'person'}]",DiGraph with 26 nodes and 25 edges,prison,:mod,country
+57,"(s2p / publication-91
+    :ARG3 (s2t / thing)
+        :place (s2h / human-settlement :wiki ""Tacloban"" 
+            :name (s2n / name :op1 ""Tacloban"")
+            :place (s2c2 / country 
+                :wiki ""Philippines"" 
+                :name (s2n2 / name :op1 ""Philippines"")))
+        :temporal (s2d / date-entity 
+            :month 2 
+            :day 17 
+            :year 2006))","[{'MISC': 'Tac'}, {'LOC': 'lo'}, {'MISC': 'ban'}, {'MISC': 'Tac'}, {'LOC': 'lo'}, {'MISC': 'ban'}, {'LOC': 'Philippines'}, {'LOC': 'Philippines'}]",DiGraph with 16 nodes and 15 edges,pardon-01,:ARG1-of,cause-01
+58,"(s3s / say-01
+    :ARG0 (s3o2 / organization 
+        :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+        :name (s3n2 / name :op1 ""Red"" :op2 ""Cross""))
+    :ARG1 (s3a / and
+        :op1 (s3b / believe-01
+            :ARG1 (s3k / kill-01
+                :ARG1 (s3p / person
+                    :quant (s3a2 / about 
+                        :op1 200))
+                :Aspect Performance
+                :MODSTR PrtAff)
+            :Aspect State
+            :MODSTR FullAff
+            :MODPRED s3b)
+        :op2 (s3m / miss-01
+            :ARG1 (s3p2 / person :quant 1500
+                :ARG1-of (s3o / other-01
+                    :ARG2 s3p))
+            :Aspect State
+            :MODSTR FullAff)
+        :place (s3c / country 
+            :name (s3n / name :op1 ""Philippines"")
+            :part (s3c2 / center))
+        :temporal (s3d / date-entity
+            :weekday (s3f / friday))
+        :ARG1-of (s3h / have-cause-91
+            :ARG2 (s3b2 / bury-01
+                :ARG0 (s3l / landslide-01
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :ARG1 (s3v / village
+                    :extent (s3e / entire)))
+                :Aspect Performance
+                :MODSTR FullAff)
+        :QUOT s3s)
+    :Aspect Performance
+    :MODSTR FullAff)","[{'ORG': 'International'}, {'ORG': 'Red'}, {'ORG': 'Cross'}, {'ORG': 'and'}, {'ORG': 'Red'}, {'ORG': 'Crescent'}, {'ORG': 'Movement'}, {'ORG': 'Red'}, {'MISC': 'Cross'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 19 nodes and 18 edges,base,:mod,military
+59,"(s3s / say-01
+    :ARG0 (s3o2 / organization 
+        :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+        :name (s3n2 / name :op1 ""Red"" :op2 ""Cross""))
+    :ARG1 (s3a / and
+        :op1 (s3b / believe-01
+            :ARG1 (s3k / kill-01
+                :ARG1 (s3p / person
+                    :quant (s3a2 / about 
+                        :op1 200))
+                :Aspect Performance
+                :MODSTR PrtAff)
+            :Aspect State
+            :MODSTR FullAff
+            :MODPRED s3b)
+        :op2 (s3m / miss-01
+            :ARG1 (s3p2 / person :quant 1500
+                :ARG1-of (s3o / other-01
+                    :ARG2 s3p))
+            :Aspect State
+            :MODSTR FullAff)
+        :place (s3c / country 
+            :name (s3n / name :op1 ""Philippines"")
+            :part (s3c2 / center))
+        :temporal (s3d / date-entity
+            :weekday (s3f / friday))
+        :ARG1-of (s3h / have-cause-91
+            :ARG2 (s3b2 / bury-01
+                :ARG0 (s3l / landslide-01
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :ARG1 (s3v / village
+                    :extent (s3e / entire)))
+                :Aspect Performance
+                :MODSTR FullAff)
+        :QUOT s3s)
+    :Aspect Performance
+    :MODSTR FullAff)","[{'ORG': 'International'}, {'ORG': 'Red'}, {'ORG': 'Cross'}, {'ORG': 'and'}, {'ORG': 'Red'}, {'ORG': 'Crescent'}, {'ORG': 'Movement'}, {'ORG': 'Red'}, {'MISC': 'Cross'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 19 nodes and 18 edges,military,:mod,country
+60,"(s3s / say-01
+    :ARG0 (s3o2 / organization 
+        :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+        :name (s3n2 / name :op1 ""Red"" :op2 ""Cross""))
+    :ARG1 (s3a / and
+        :op1 (s3b / believe-01
+            :ARG1 (s3k / kill-01
+                :ARG1 (s3p / person
+                    :quant (s3a2 / about 
+                        :op1 200))
+                :Aspect Performance
+                :MODSTR PrtAff)
+            :Aspect State
+            :MODSTR FullAff
+            :MODPRED s3b)
+        :op2 (s3m / miss-01
+            :ARG1 (s3p2 / person :quant 1500
+                :ARG1-of (s3o / other-01
+                    :ARG2 s3p))
+            :Aspect State
+            :MODSTR FullAff)
+        :place (s3c / country 
+            :name (s3n / name :op1 ""Philippines"")
+            :part (s3c2 / center))
+        :temporal (s3d / date-entity
+            :weekday (s3f / friday))
+        :ARG1-of (s3h / have-cause-91
+            :ARG2 (s3b2 / bury-01
+                :ARG0 (s3l / landslide-01
+                    :Aspect Performance
+                    :MODSTR FullAff)
+                :ARG1 (s3v / village
+                    :extent (s3e / entire)))
+                :Aspect Performance
+                :MODSTR FullAff)
+        :QUOT s3s)
+    :Aspect Performance
+    :MODSTR FullAff)","[{'ORG': 'International'}, {'ORG': 'Red'}, {'ORG': 'Cross'}, {'ORG': 'and'}, {'ORG': 'Red'}, {'ORG': 'Crescent'}, {'ORG': 'Movement'}, {'ORG': 'Red'}, {'MISC': 'Cross'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 19 nodes and 18 edges,fly-01,:destination,base
+61,"(s4s / say-01 
+    :ARG0 (s4p / person
+        :ARG0-of (s4w / witness-01
+            :ARG1 s4l2))
+    :ARG1 (s4l / leave-14 
+        :ARG0 (s4h / hit-01 
+            :ARG0 (s4l2 / landslide-01) 
+            :ARG1 (s4v / village  
+                :mod (s4s4 / settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                    :name (s4n / name :op1 ""Guinsaugon""))
+                :place (s4s2 / south 
+                    :part-of (s4i2 / island 
+                        :wiki ""Leyte"" 
+                        :name (s4n2 / name :op1 ""Leyte"") 
+                        :place (s4c / country  :wiki ""Philippines"" 
+                            :name (s4n3 / name :op1 ""Philippine"")))))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1 (s4s3 / stand-01 
+            :ARG1 (s4h2 / house 
+                :quant (s4a / a-few 
+                    :mod (s4o / only)))
+            :Aspect State
+            :MODSTR FullAff)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s4s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'saug'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Philippines'}, {'LOC': 'Philippine'}, {'B_human': 'person'}, {'B_human': 'witness'}]",DiGraph with 21 nodes and 20 edges,day,:mod,next
+62,"(s6s / show-01 
+    :ARG0 (s6f / footage 
+        :topic (s6v / village 
+            :ARG1-of (s6d / devastate-01
+                :Aspect State
+                :MODSTR FullAff))
+        :ord (s6o / ordinal-entity :value 1))
+    :ARG1 (s6s2 / sea
+        :material (s6m / mud) 
+        :ARG0-of (s6c / cover-01 
+            :ARG1 (s6t / thing 
+                :ARG1-of (s6i2 / identity-91
+                    :ARG2 (s6f2 / farmland  
+                        :mod (s6l / lush)
+                        :mod (s6g / green)
+                        :place (s6v2 / valley))
+                    :Aspect State
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff))
+    :Aspect State
+    :MODSTR FullAff)
+",[],DiGraph with 21 nodes and 20 edges,jail,:mod,country
+63,"(s4s / say-01 
+    :ARG0 (s4p / person
+        :ARG0-of (s4w / witness-01
+            :ARG1 s4l2))
+    :ARG1 (s4l / leave-14 
+        :ARG0 (s4h / hit-01 
+            :ARG0 (s4l2 / landslide-01) 
+            :ARG1 (s4v / village  
+                :mod (s4s4 / settlement :wiki ""Saint_Bernard,_Southern_Leyte""
+                    :name (s4n / name :op1 ""Guinsaugon""))
+                :place (s4s2 / south 
+                    :part-of (s4i2 / island 
+                        :wiki ""Leyte"" 
+                        :name (s4n2 / name :op1 ""Leyte"") 
+                        :place (s4c / country  :wiki ""Philippines"" 
+                            :name (s4n3 / name :op1 ""Philippine"")))))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1 (s4s3 / stand-01 
+            :ARG1 (s4h2 / house 
+                :quant (s4a / a-few 
+                    :mod (s4o / only)))
+            :Aspect State
+            :MODSTR FullAff)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s4s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Saint_Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'G'}, {'LOC': 'saug'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Philippines'}, {'LOC': 'Philippine'}, {'B_human': 'person'}, {'B_human': 'witness'}]",DiGraph with 5 nodes and 4 edges,see-01,:mod,yet
+64,"(s10s / say-01 
+    :ARG0 (s10p / person
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s10o / order-02 
+        :ARG0 s10p 
+        :ARG1 (s10a / and 
+            :op1 (s10a2 / armed-organization :wiki ""Philippine_Coast_Guard"" 
+                :name (s10n / name :op1 ""Coast"" :op2 ""Guard"")) 
+            :op2 (s10f / force
+                :poss (s10p2 / person
+                    :refer-person 1st
+                    :refer-number Plural) 
+                :mod (s10n2 / navy) 
+                :extent (s10e / entire)
+                :place (s10r / region 
+                    :mod (s10c / country-region :wiki - 
+                        :name (s10n3 / name :op1 ""Central"" :op2 ""Philippines"")))))
+        :ARG2 (s10a3 / area)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s10s)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Philippine_Coast_Guard'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,pocket,:mod,huge
+65,"(s10s / say-01 
+    :ARG0 (s10p / person
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s10o / order-02 
+        :ARG0 s10p 
+        :ARG1 (s10a / and 
+            :op1 (s10a2 / armed-organization :wiki ""Philippine_Coast_Guard"" 
+                :name (s10n / name :op1 ""Coast"" :op2 ""Guard"")) 
+            :op2 (s10f / force
+                :poss (s10p2 / person
+                    :refer-person 1st
+                    :refer-number Plural) 
+                :mod (s10n2 / navy) 
+                :extent (s10e / entire)
+                :place (s10r / region 
+                    :mod (s10c / country-region :wiki - 
+                        :name (s10n3 / name :op1 ""Central"" :op2 ""Philippines"")))))
+        :ARG2 (s10a3 / area)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s10s)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Philippine_Coast_Guard'}, {'LOC': 'Philippines'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,thing,:part,pocket
+66,"(s12s / say-01 
+    :ARG0 (s12p / person :wiki - 
+        :name (s12n / name :op1 ""Rosette"" :op2 ""Lerias"") 
+        :ARG1-of (s12h / have-org-role-92 
+            :ARG2 (s12i2 / island :wiki ""Leyte"" 
+                :name (s12n2 / name :op1 ""Leyte"")) 
+            :ARG3 (s12p3 / person   
+                :ARG0-of (s12g / govern-01))))
+    :ARG1 (s12i3 / indicate-01 
+        :ARG0 (s12c / census 
+            :mod (s12l / last)) 
+        :ARG1 (s12e / exist-91
+            :ARG1 (s12h2 / human-settlement :wiki ""Saint_Bernard,_Southern_Leyte"" 
+                :name (s12n3 / name :op1 ""Guinsaugon""))
+            :ARG2 (s12h3 / house :quant 375 
+                :Place-of (s12l2 / live-01 
+                    :ARG0 (s12p2 / person :quant 3000)
+                    :Aspect State
+                    :MODSTR FullAff))
+            :temporal (s12b / before 
+                :op1 (s12l3 / landslide-01))
+            :Aspect State
+            :MODSTR FullAff
+            :MODPRED s12i3)
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s12s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'MISC': 'Rose'}, {'LOC': 'Le'}, {'LOC': 'Leyte'}, {'LOC': 'Leyte'}, {'LOC': 'Saint'}, {'LOC': 'Bernard'}, {'LOC': 'Southern'}, {'LOC': 'Leyte'}, {'LOC': 'Guinsaug'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,thing,:mod,that
+67,"(s13d / describe-01 
+    :ARG0 (s13p / person 
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s13v / village) 
+    :ARG2 (s13f / flatten-01 
+        :ARG1 s13v 
+        :extent (s13t / total)
+        :Aspect State
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 6 nodes and 5 edges,get-05,:source,tree
+68,"(s14s / say-01 
+    :ARG0 (s14p2 / person 
+        :refer-person 3rd
+        :refer-number Singular) 
+    :ARG1 (s14a / and 
+        :op1 (s14r / resemble-91 
+            :ARG1 (s14t / thing)
+            :ARG2 (s14m / mud
+                :ARG0-of (s14r2 / run-02 
+                    :direction (s14d / down-03
+                        :ARG2 (s14m2 / mountain))
+                    :Aspect activity
+                    :MODSTR FullAff))
+            :Aspect State
+            :MODSTR FullAff) 
+        :op2 (s14c / cover-02 
+            :ARG1 (s14v / village) 
+            :ARG2 s14t
+            :duration (s14m3 / multiple 
+                :op1 (s14t2 / temporal-quantity :quant 1 
+                    :unit (s14s3 / second)))
+            :Aspect Performance
+            :MODSTR FullAff) 
+        :ARG1-of (s14q / quote-01 
+            :ARG0 s14p2 
+            :ARG2 (s14p / person 
+                :ARG0-of (s14s4 / survive-02
+                    :ARG1 (s14e / event)
+                    :Aspect Performance
+                    :MODSTR FullAff))
+            :Aspect Activity
+            :MODSTR FullAff)
+        :QUOT s14s
+        :QUOT s14q)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,dump-01,:destination,basket
+69,"(s21c / call-03 
+    :ARG0 (s21p / person :wiki - 
+        :name (s21n / name :op1 ""Lerias"")) 
+    :ARG1 (s21p2 / person 
+        :ARG0-of (s21r / rescue-01) 
+        :ARG1-of (s21h / have-quant-91 
+            :ARG3 (s21m / more))) 
+    :purpose (s21c2 / come-01 
+        :ARG1 s21p2 
+        :ARG4 (s21s / site) 
+        :purpose (s21h2 / help-01 
+            :ARG0 s21p2 
+            :ARG1 (s21l / look-01 
+                :ARG0 s21p2 
+                :ARG1 (s21b / body
+                    :refer-numbr Plural)
+                :Aspect Activity
+                :MODSTR FullAff
+                :MODPRED s21h2)
+            :Aspect Activity
+            :MODSTR FullAff)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :reason (s21w / work-09 
+        :ARG1 (s21e / equipment 
+            :ARG0-of (s21m2 / move-01 
+                :ARG1 (s21e2 / earth)) 
+            :mod (s21h3 / heavy)) 
+        :place (s21m3 / mud 
+            :ARG1-of (s21d / deep-02 
+                :ARG2 (s21m4 / more-than 
+                    :op1 (s21d2 / distance-quantity :quant 6 
+                        :unit (s21m5 / meter))) 
+                :place (s21a / area 
+                    :quant (s21m6 / many))
+                :Aspect State
+                :MODSTR FullAff
+                :QUOT s21s2) 
+            :ARG1-of (s21s2 / say-01 
+                :ARG0 (s21p4 / person 
+                    :ARG1-of (s21h4 / have-role-91
+                        :ARG3 (s21o / official)))
+                :Aspect Performance
+                :MODSTR FullAff))
+        :polarity -
+        :Aspect Activity
+        :MODSTR NeutNeg)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Le'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,thing,:mod,that
+70,"(s21c / call-03 
+    :ARG0 (s21p / person :wiki - 
+        :name (s21n / name :op1 ""Lerias"")) 
+    :ARG1 (s21p2 / person 
+        :ARG0-of (s21r / rescue-01) 
+        :ARG1-of (s21h / have-quant-91 
+            :ARG3 (s21m / more))) 
+    :purpose (s21c2 / come-01 
+        :ARG1 s21p2 
+        :ARG4 (s21s / site) 
+        :purpose (s21h2 / help-01 
+            :ARG0 s21p2 
+            :ARG1 (s21l / look-01 
+                :ARG0 s21p2 
+                :ARG1 (s21b / body
+                    :refer-numbr Plural)
+                :Aspect Activity
+                :MODSTR FullAff
+                :MODPRED s21h2)
+            :Aspect Activity
+            :MODSTR FullAff)
+        :Aspect Performance
+        :MODSTR FullAff) 
+    :reason (s21w / work-09 
+        :ARG1 (s21e / equipment 
+            :ARG0-of (s21m2 / move-01 
+                :ARG1 (s21e2 / earth)) 
+            :mod (s21h3 / heavy)) 
+        :place (s21m3 / mud 
+            :ARG1-of (s21d / deep-02 
+                :ARG2 (s21m4 / more-than 
+                    :op1 (s21d2 / distance-quantity :quant 6 
+                        :unit (s21m5 / meter))) 
+                :place (s21a / area 
+                    :quant (s21m6 / many))
+                :Aspect State
+                :MODSTR FullAff
+                :QUOT s21s2) 
+            :ARG1-of (s21s2 / say-01 
+                :ARG0 (s21p4 / person 
+                    :ARG1-of (s21h4 / have-role-91
+                        :ARG3 (s21o / official)))
+                :Aspect Performance
+                :MODSTR FullAff))
+        :polarity -
+        :Aspect Activity
+        :MODSTR NeutNeg)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'ORG': 'Le'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,fall-01,:mod,in-the-first-place
+71,"(s22s / say-01 
+    :ARG0 (s22p / person :wiki ""Gloria_Macapagal_Arroyo"" 
+        :name (s22n / name :op1 ""Arroyo"") 
+        :ARG1-of (s22h / have-org-role-92 
+            :ARG2 s22c2
+            :ARG3 (s22p2 / president))) 
+    :ARG1 (s22g / go-01 
+        :ARG1 (s22t / team 
+            :ARG0-of (s22r / rescue-01
+                :Aspect Activity) 
+            :ARG0-of (s22v / volunteer-01
+                :Aspect Activity
+                :MODSTR FullAff) 
+            :source (s22c / company 
+                :mod (s22m / mine-01) 
+                :poss (s22c2 / country)) 
+            :ARG1-of (s22s2 / skillful-01
+                :ARG2 (s22d / dig-01 
+                    :ARG0 s22t
+                    :ARG2 (s22t2 / through 
+                        :op1 (s22e / earth)) 
+                    :ARG3 (s22r2 / rescue-01 
+                        :ARG0 s22t 
+                        :ARG1 (s22p3 / person
+                            :refer-number Plural)
+                        :Aspect Performance
+                        :MODSTR FullAff)
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect State
+                :MODSTR FullAff)) 
+        :ARG4 (s22a / area) 
+        :mod (s22a2 / also)
+        :Aspect Performance
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'LOC': 'Gloria'}, {'LOC': 'Macapa'}, {'MISC': 'gal'}, {'LOC': 'Arroyo'}, {'LOC': 'Arroyo'}, {'B_human': 'president'}, {'B_human': 'volunteer'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,climb-01,:mod,back
+72,"(s23s / say-01 
+    :ARG0 (s23p / person :wiki ""Richard_J._Gordon"" 
+        :name (s23n / name :op1 ""Gordon"")) 
+    :ARG1 (s23s2 / say-01 
+        :ARG0 (s23o / organization :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" 
+            :name (s23n2 / name :op1 ""Red"" :op2 ""Cross"")) 
+        :ARG1 (s23t / try-01 
+            :ARG0 s23o 
+            :ARG1 (s23d / dispatch-01 
+                :ARG0 s23o 
+                :ARG1 (s23d2 / dog 
+                    :ARG0-of (s23s3 / sniff-01
+                        :Aspect Habitual)) 
+                :ARG2 (s23h / hunt-01 
+                    :ARG0 s23d2 
+                    :ARG1 (s23p2 / person 
+                        :ARG0-of (s23s4 / survive-02
+                            :Aspect Activity))
+                    :Aspect Activity
+                    :MODSTR FullAff)
+                :Aspect PrtAff
+                :MODSTR FullAff
+                :MODPRED s23t)
+            :Aspect Activity
+            :MODSTR FullAff
+            :QUOT s23s2)
+        :Aspect Performance
+        :MODSTR FullAff
+        :QUOT s23s)
+    :Aspect Performance
+    :MODSTR FullAff) 
+","[{'PER': 'Richard'}, {'PER': 'J'}, {'PER': 'Gordon'}, {'PER': 'Gordon'}, {'ORG': 'International'}, {'ORG': 'Red_Cross'}, {'ORG': 'and'}, {'ORG': 'Red_Crescent'}, {'ORG': 'Movement'}, {'PER': 'Cross'}, {'B_human': 'person'}, {'B_animal': 'dog'}, {'B_human': 'person'}]",DiGraph with 7 nodes and 6 edges,pick-01,:mod,again
+73,"(s2b2 / begin-01
+    :ARG1 (s2s / serve-04
+        :ARG0 (s2p2 / person
+            :ARG1-of (s2h / have-role-91
+                :ARG2 (s2b / businessman)))
+            :mod (s2c / country :wiki ""United_States""
+                :name (s2n2 / name :op1 ""America""))
+        :ARG1 (s2s2 / sentence-01
+            :ARG1 s2p2
+            :ARG2 (s2p / prison)
+            :ARG3 s2s3
+            :ARG4 (s2t2 / temporal-quantity :quant 20
+                :unit (s2y / year))
+            :place (s2h4 / human-settlement :wiki ""Moscow""
+                :name (s2n3 / name :op1 ""Moscow"")))
+        :temporal (s2a / after
+            :op1 (s2c3 / convict-01
+                :ARG1 s2b
+                :ARG2 (s2s3 / spy-01
+                    :ARG0 s2b
+                    :Aspect Activity)
+                    :MODSTR FullAff)
+                :Aspect Performance
+                :MODSTR FullAff)
+        :temporal (s2w / week
+            :mod (s2t3 / this))
+        :Aspect Activity
+        :MODSTR FullAff)
+    :Aspect Performance
+    :MODSTR FullAff)
+","[{'LOC': 'United_States'}, {'LOC': 'America'}, {'LOC': 'Moscow'}, {'LOC': 'Moscow'}, {'B_human': 'person'}, {'B_human': 'businessman'}]",DiGraph with 7 nodes and 6 edges,look-01,:mod,even
+74,"(s1t / taste-01
+    :ARG0 (s1p / person
+        :name (s1n / name :op1 ""Edmund"" :op2 ""Pope""))
+    :ARG1 (s1f / freedom)
+    :temporal (s1t2 / today)
+    :Aspect State
+    :MODSTR FullAff)","[{'PER': 'Edmund'}, {'PER': 'Pope'}, {'B_human': 'person'}]",DiGraph with 6 nodes and 5 edges,detail,:mod,this
+75,"(s9s / say-01
+    :ARG0 (s9p / person
+        :ref-number Singular
+        :ARG1-of (s9h / have-org-role-92
+            :ARG3 (s9s2 / spokeswoman)))
+    :ARG1 (s9s3 / suffer-01
+        :ARG0 (s9p2 / person :wiki ""Edmond_Pope""
+            :name (s9n / name :op1 ""Pope""))
+        :ARG1 (s9a / and
+            :op1 (s9m / malnourished-01
+                :ARG1 s9p2)
+            :op2 (s9p3 / pressure-01
+                :ARG1 (s9b / blood
+                    :part s9p2)
+                :ARG1-of (s9h2 / high-02)))
+        :Aspect State
+        :MODSTR FullAff
+        :QUOT s9s)
+    :Aspect Performance
+    :MODSTR FullAff)","[{'PER': 'Edmond'}, {'PER': 'Pope'}, {'PER': 'Pope'}, {'B_human': 'spoke'}, {'B_human': 'person'}]",DiGraph with 5 nodes and 4 edges,get-05,:source,bike
+76,"(s10w / watch-01
+  :ARG0 (s10p / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :ARG1 (s10p2 / pluck-01
+          :ARG0 (s10p3 / person
+                  :refer-person 3rd
+                  :refer-number Singular)
+          :ARG1 (s10p4 / pear
+                  :quant (s10a / a-few))
+          :Aspect Activity
+	  :MODSTR FullAff
+          :MODPRED s10w)
+  :Aspect State
+  :MODSTR FullAff)","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 3 nodes and 2 edges,get-05,:source,bicycle
+77,"(s11d / drop-01
+  :ARG0 (s11p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s11t / thing
+          :refer-number Plural)
+  :ARG4 (s11t2 / thing
+          :refer-number Singular
+          :poss s11p)
+  :Aspect Habitual
+  :MODSTR FullAff)","[{'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 6 nodes and 5 edges,basket,:mod,pear
+78,"(s16d / dump-01
+  :ARG0 (s16p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :ARG1 (s16p2 / pear
+          :quant (s16a / all)
+          :poss s16p)
+  :goal (s16b / basket
+          :refer-number Singular)
+  :Aspect Performance
+  :MODSTR FullAff)","[{'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 9 nodes and 8 edges,scene,:mod,next
+79,"(s28h / have-temporal-91
+  :ARG1 (s28e / event)
+  :ARG2 (s28b2 / before
+	  :op1 (s28e2 / event))
+  :Aspect State
+  :MODSTR NeutAff)",[],DiGraph with 6 nodes and 5 edges,place,:mod,all-over
+80,"(s32t / think-01
+  :ARG0 (s32p3 / person
+	  :refer-person 1st
+	  :refer-number Singular)
+  :ARG1 (s32l / look-01
+	  :ARG0 (s32a / and
+		  :op1 (s32p / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+		  :op2 (s32p2 / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+	  :ARG1 s32a
+	  :mod (s32e / even)
+	  :polarity -
+	  :Aspect Performance
+	  :MODSTR FullNeg
+	  :MODPRED s32t)
+  :Aspect State
+  :MODSTR PrtAff)
+","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 14 nodes and 13 edges,gesture,:mod,brush-off-04
+81,"(s32t / think-01
+  :ARG0 (s32p3 / person
+	  :refer-person 1st
+	  :refer-number Singular)
+  :ARG1 (s32l / look-01
+	  :ARG0 (s32a / and
+		  :op1 (s32p / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+		  :op2 (s32p2 / person
+        		  :refer-person 3rd
+        		  :refer-number Singular)
+	  :ARG1 s32a
+	  :mod (s32e / even)
+	  :polarity -
+	  :Aspect Performance
+	  :MODSTR FullNeg
+	  :MODPRED s32t)
+  :Aspect State
+  :MODSTR PrtAff)
+","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 14 nodes and 13 edges,boy,:mod,other
+82,"(s41o / okay-04
+  :ARG2-of (s41r / request-confirmation-91
+  	  :ARG1 (s41e / event))
+  :MODSTR NeutAff)",[],DiGraph with 4 nodes and 3 edges,movie,:mod,whole
+83,"(s43g / give-01
+  :ARG0 (s43p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s43d / detail
+          :quant (s43a / all)
+          :mod (s43t / this)
+          :refer-number Plural)
+  :ARG2 (s43p2 / person
+          :refer-person 2nd
+          :refer-number Singular)
+  :Aspect Activity
+  :MODSTR FullAff)","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 8 nodes and 7 edges,put-01,:mod,back
+84,"(s45h / have-reason-91
+  :ARG1 (s45g / give-01
+          :ARG0 (s45p / person
+                  :refer-person 1st
+                  :refer-number Singular)
+          :ARG1 (s45d / detail
+                  :refer-number Plural)
+          :ARG2 (s45p2 / person
+                  :refer-person 2nd
+                  :refer-number Singular)
+          :Aspect Activity
+          :MODSTR FullAff)
+  :ARG2 (s45k / know-01
+          :ARG0 s45p
+          :ARG1 (s45p3 / point
+		  :refer-number Singular
+		  :Purpose-of (s45m / movie
+			  :refer-number Singular)
+                  :MODPRED s45k)
+	  :polarity -
+          :Aspect State
+          :MODSTR FullNeg))","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 3 nodes and 2 edges,pick-up-04,:mod,just
+85,"(s51g / get-05
+  :ARG1 (s51p / person
+          :refer-person 3rd
+          :refer-number Singular)
+  :source (s51b / bike
+            :poss s51p
+            :refer-number Singular)
+  :direction (s51o / off)
+  :Aspect Performance
+  :MODSTR FullAff)","[{'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 3 nodes and 2 edges,split-02,:mod,just
+86,"(s61g / get-05
+  :ARG1 (s61p / person)
+  :source (s61b / bicycle
+            :refer-number Singular)
+  :direction (s61o / off)
+  :Aspect Performance
+  :MODSTR FullAff)",[{'B_human': 'person'}],DiGraph with 6 nodes and 5 edges,detail,:mod,another
+87,"(s67a / and
+  :op1 (s67r / ride-01
+        :ARG0 s67p
+        :direction (s67o / off)
+        :Aspect Activity
+        :MODSTR FullAff)
+  :op2 (s67s / see-01
+        :ARG0 (s67p2 / person
+                :refer-person 2nd
+                :refer-number Singular)
+        :ARG1 (s67p / person
+                :refer-person 3rd
+                :refer-numger Singular)
+        :temporal (s67s2 / scene
+                :mod (s67n / next))
+        :Aspect State
+        :MODSTR FullAff))","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 8 nodes and 7 edges,see-01,:mod,anymore
+88,"(s69h / have-manner-91
+        :ARG1 (s69e / event)
+        :ARG2 (s69t / thing
+                :ARG2-of (s69s / shoot-03)
+                :ARG2-of (s69p / pan-03)))
+",[],DiGraph with 12 nodes and 11 edges,thing,:mod,that
+89,"(s69h / have-manner-91
+        :ARG1 (s69e / event)
+        :ARG2 (s69t / thing
+                :ARG2-of (s69s / shoot-03)
+                :ARG2-of (s69p / pan-03)))
+",[],DiGraph with 12 nodes and 11 edges,thing,:mod,little
+90,"(s78f / fall-01
+  :ARG1 (s78p / person)
+  :ARG4 (s78d / down)
+  :Aspect Performance
+  :MODSTR FullAff)",[{'B_human': 'person'}],DiGraph with 5 nodes and 4 edges,get-05,:source,tree
+91,"(s83a / and
+  :op1 (s83g / go-05
+         :ARG0 (s83p / person
+                 :refer-person 3rd
+                 :refer-number Singular)
+         :ARG1 (s83g2 / gesture-91
+                :ARG0 s83p
+                :ARG1 (s83b / brush-off-04))
+         :Aspect Endeavor
+         :MODSTR FullAff)
+  :op2 (s83s / see-01
+         :ARG0 (s83p2 / person
+                 :refer-person 2nd
+                 :refer-number Singular)
+         :ARG1 (s83b2 / boy
+                 :quant 3
+                 :mod (s83o / other)
+                 :ARG1-of (s83h / have-age-91
+                            :ARG2 (s83a2 / about
+                                    :op1 (s83t / temporal-quantity
+                                           :ARG2-of (s83h2 / have-age-91
+                                                      :ARG1 s83p)))))
+         :Aspect State
+         :temporal (s83t3 / then)
+         :MODSTR FullAff))","[{'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'person'}, {'B_human': 'boy'}]",DiGraph with 6 nodes and 5 edges,gesture,:mod,count-01
+92,"(s87k / know-01
+  :ARG0 (s87p / person
+          :refer-person 1st
+          :refer-number Singular)
+  :ARG1 (s87t / thing)
+  :polarity -
+  :Aspect State
+  :MODSTR FullNeg)","[{'B_human': 'person'}, {'B_human': 'person'}]",DiGraph with 5 nodes and 4 edges,thing,:mod,that

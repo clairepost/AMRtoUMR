@@ -340,5 +340,5 @@ def create_combined_dict(input_set):
 
     
 #print(create_mapping())
-read_test_data()
-read_training_data("training_data")
+#read_test_data()
+#read_training_data("training_data")

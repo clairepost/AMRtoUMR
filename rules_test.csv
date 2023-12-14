@@ -1,0 +1,51 @@
+,y_guess,weight
+0,[':goal'],[1.0]
+1,[':goal'],[1.0]
+2,[':goal'],[1.0]
+3,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+4,[':goal'],[1.0]
+5,[':goal'],[1.0]
+6,[':goal'],[1.0]
+7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+8,[':goal'],[1.0]
+9,"[':cause', ':reason']","[0.9, 0.1]"
+10,"[':cause', ':reason']","[0.9, 0.1]"
+11,"[':mod', ':other-role']","[0.995, 0.005]"
+12,"[':cause', ':reason']","[0.9, 0.1]"
+13,"[':cause', ':reason']","[0.9, 0.1]"
+14,[':reason'],[1.0]
+15,"[':cause', ':reason']","[0.9, 0.1]"
+16,"[':cause', ':reason']","[0.9, 0.1]"
+17,"[':cause', ':reason']","[0.9, 0.1]"
+18,[':reason'],[1.0]
+19,"[':cause', ':reason']","[0.9, 0.1]"
+20,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+21,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+22,[':group'],[1.0]
+23,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+24,"[':mod', ':other-role']","[0.995, 0.005]"
+25,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+26,"[':mod', ':other-role']","[0.995, 0.005]"
+27,"[':mod', ':other-role']","[0.995, 0.005]"
+28,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+29,[':group'],[1.0]
+30,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+31,"[':mod', ':other-role']","[0.995, 0.005]"
+32,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+33,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+34,[':goal'],[1.0]
+35,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+36,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+37,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+38,"[':mod', ':other-role']","[0.995, 0.005]"
+39,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+40,"[':mod', ':other-role']","[0.995, 0.005]"
+41,[':source'],[1.0]
+42,"[':mod', ':other-role']","[0.995, 0.005]"
+43,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+44,"[':mod', ':other-role']","[0.995, 0.005]"
+45,"[':mod', ':other-role']","[0.995, 0.005]"
+46,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+47,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+48,"[':mod', ':other-role']","[0.995, 0.005]"
+49,"[':mod', ':other-role']","[0.995, 0.005]"

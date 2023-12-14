@@ -1,4 +1,4 @@
-#This function will create a base NN 
+#This function will create a NN with rules
 #Steps
 #1 : preprocess input data to just be the sentence embedding and one hot encoding of the relation
 #2 : create the neural network. The neural network architecture allows for contraining the output depending on the feature role that we provide
@@ -10,21 +10,38 @@ from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
 from helper_functions import get_embeddings, create_mapping
 import ast
+import sklearn
 
-def preprocessing(training):
+def create_rule_weight_tensor(y_guess, rule_weights,mapping):
+    #takes guess and weights and will return a tensor of size(n, output_length) for the corresponding weights of each rule
+    flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
+    num_classes_output = len(set(flat_values))//2
+    weight_tensor = torch.zeros(len(y_guess),num_classes_output)
+
+    for i in range(len(y_guess)):
+        for j in range(len(y_guess[i])):
+            y_guess[i][j] = mapping[y_guess[i][j]]
+
+    # Fill the tensor with corresponding weights
+    for i, (class_numbers, weights_list) in enumerate(zip(y_guess, rule_weights)):
+        for j in range(len(class_numbers)):
+            weight_tensor[i, class_numbers[j]] = float(weights_list[j])
+
+    return weight_tensor
+
+
+def preprocessing(split):
     #training is a boolean: set it to trtue, to preprocess the training data, and false to preprocess the test data
     #load in data, get bert embeddings, and set it up as tensors
 
-    if training:
-        X= pd.read_csv("x_train.csv")
-        X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
-        y_true= pd.read_csv("y_trues_train.csv") 
-    else:
-        X= pd.read_csv("x_test.csv")
-        X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
-        y_true= pd.read_csv("y_trues_test.csv") 
-
-    X = pd.concat([X,y_true],axis = 1)
+    X= pd.read_csv("x_"+split+".csv")
+    y_true= pd.read_csv("y_trues_"+split+".csv") 
+    rules = pd.read_csv("rules_"+split+".csv")
+    
+    X = pd.concat([X,y_true,rules],axis = 1)
+    X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
+    X['weight'] = X['weight'].apply(ast.literal_eval)
+    X['y_guess'] = X['y_guess'].apply(ast.literal_eval)
    
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
@@ -35,29 +52,32 @@ def preprocessing(training):
     umr_role = torch.tensor(X["umr_role"],dtype=torch.long)
     amr_role = torch.tensor(X['amr_role'], dtype=torch.long)
     embeddings = get_embeddings(X) 
-    y_rules = detect
-    
+
+    y_guess = X["y_guess"]
+    rule_weights = X["weight"]
+    class_weights = create_rule_weight_tensor(y_guess, rule_weights,swap_umr_int_dict)
 
     #print sizes of returned data
-    print("amr_role" , amr_role.size())
+    
+    print("class_weights:",class_weights.size())
     print("umr_role" , umr_role.size())
+    print("amr_role" , amr_role.size())
     print("embeddings size", embeddings.size()) #size ([50,768])
 
-    return embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict #return X and y_truefor mapping back to the categories later
+    return embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict, class_weights #return X and y_truefor mapping back to the categories later
 
-def train_model(embeddings, amr_role, umr_role,mapping):
+def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
 
-    # Sample data (replace this with your actual data)
-    # X = torch.randn((100, 5))  # 100 samples, 5 features
-    # letter = torch.randint(0, 3, (100,))  # 0: "a", 1: "b", 2: "c"
-    # output = torch.randint(0, 4, (100,))  # Sample output (replace with your actual target)
-
-    # print("sample x: ", X.size())
-    # print("sameple_letter", letter.size())
-    # print("sample output", output.size())
-
-    dataset = TensorDataset(embeddings, amr_role, umr_role)
-    dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+    #define the loss function
+    class CustomLoss(nn.Module):
+        def __init__(self):
+            super(CustomLoss, self).__init__()
+        def forward(self,y_pred,y_true, class_weight):
+            loss = nn.CrossEntropyLoss()
+            supervised_loss = loss(y_pred, y_true)
+            weighted_supervised_loss = supervised_loss * class_weight
+            total_loss = torch.mean(weighted_supervised_loss)
+            return total_loss
 
     # Define the neural network model
     class CustomModel(nn.Module):
@@ -90,6 +110,8 @@ def train_model(embeddings, amr_role, umr_role,mapping):
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
     num_classes_output = len(set(flat_values))
 
+    dataset = TensorDataset(embeddings, amr_role, umr_role,class_weights)
+
     print("input size", input_size)
     print("num amr roles", num_amr_roles)
     print("num classes_ouptut",num_classes_output)
@@ -97,21 +119,21 @@ def train_model(embeddings, amr_role, umr_role,mapping):
     model = CustomModel(input_size, num_classes_output, num_amr_roles, mapping)
 
     # Define loss function and optimizer
-    criterion = nn.CrossEntropyLoss()
+    criterion = CustomLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
 
     # Training loop
-    num_epochs = 40
+    num_epochs = 10
 
     for epoch in range(num_epochs):
-        for inputs, letter, targets in dataset:
+        for inputs, letter, targets,class_weight in dataset:
             optimizer.zero_grad()
 
             # Forward pass
             outputs = model(inputs, letter)
 
             # Compute loss
-            loss = criterion(outputs, targets)
+            loss = criterion(outputs, targets,class_weight)
 
             # Backward pass and optimization
             loss.backward()
@@ -123,7 +145,7 @@ def train_model(embeddings, amr_role, umr_role,mapping):
 
 
 def predict(model):
-    embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict = preprocessing(False)
+    embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict,class_weights = preprocessing("test")
     dataset = TensorDataset(embeddings, amr_role, umr_role)
     with torch.no_grad():
         predictions = []
@@ -138,8 +160,8 @@ def predict(model):
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
     print(y_preds,X)
     df = pd.concat([X,y_preds],axis = 1)
-    df.to_csv("base_nn_test.csv")
-    return predictions, y_true
+    df.to_csv("nn_with_rules_test.csv")
+    return X['umr_role'].to_list(), y_true
 
 
 # Once trained, you can use the model for predictions
@@ -157,7 +179,8 @@ def predict(model):
 # The predicted_labels are the predicted classes for your output
 
 
-embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict, swap_amr_int_dict= preprocessing(True)
-model = train_model(embeddings,amr_role, umr_role,mapping)
+embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict, swap_amr_int_dict, class_weights= preprocessing("train")
+model = train_model(embeddings,amr_role, umr_role,mapping, class_weights)
 predictions,y_true = predict(model)
+#sklearn.metrics.accuracy_score(y_true, predictions)
 print(type(predictions), type(y_true))

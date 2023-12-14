@@ -20,9 +20,11 @@ def calc_role(Y_preds):
 def run_baseline():
     #extract test data into X,Y
     #run animacy_parser on X, to get tuples
-    x_file = "x_train.csv"
-    y_file = "y_trues_train.csv"
-    out_file = "baseline_train.csv"
+    split = "test"
+    x_file = "x_"+split+".csv"
+    y_file = "y_trues_"+split+".csv"
+    out_file = "baseline_"+split+".csv"
+    rules_output = "rules_"+split+".csv"
     #if os.path.exists(x_file) and os.path.exists(y_file):
        # X= pd.read_csv(x_file)
       #  X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
@@ -35,11 +37,15 @@ def run_baseline():
     y_true.to_csv(y_file)
     #apply rules to X to get predictions
     y_pred = detect_split_role(X) #gets roles and weights
+    y_pred_df = pd.DataFrame(y_pred, columns=["y_guess","weight"])
+    y_pred_df.to_csv(rules_output)
+    
     y_pred = calc_role(y_pred) # just picks most prob role
 
 
     #output preditcions
     y_pred= pd.Series(y_pred, name='y_rules')
+    
     df = pd.concat([X,y_true, y_pred], axis=1)
     df.to_csv(out_file)
 

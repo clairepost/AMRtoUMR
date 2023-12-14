@@ -1,92 +1,51 @@
 ,sent,ne_info,amr_graph,amr_head_name,amr_role,amr_tail_name
-0,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 6 nodes and 5 edges,water-01,:condition,rain-01
-1,"200 dead, 1,500 feared missing in Philippines landslide",[{'LOC': 'Philippines'}],DiGraph with 27 nodes and 26 edges,person,:mod,other
-2,"200 dead, 1,500 feared missing in Philippines landslide",[{'LOC': 'Philippines'}],DiGraph with 27 nodes and 26 edges,village,:mod,entire
-3,Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte.,"[{'LOC': 'Guinsaugon'}, {'MISC': 'Philippine'}, {'LOC': 'Leyte'}, {'B_human': 'Eye'}]",DiGraph with 14 nodes and 13 edges,thing,:mod,farmland
-4,Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte.,"[{'LOC': 'Guinsaugon'}, {'MISC': 'Philippine'}, {'LOC': 'Leyte'}, {'B_human': 'Eye'}]",DiGraph with 14 nodes and 13 edges,thing,:mod,lush
-5,"""There are about 1,500 missing, 200 dead,"" Richard Gordon, the head of the Philippine Red Cross, said in a radio interview.","[{'PER': 'Richard Gordon'}, {'ORG': 'Philippine Red Cross'}]",DiGraph with 11 nodes and 10 edges,and,:mod,only
-6,"""There are about 1,500 missing, 200 dead,"" Richard Gordon, the head of the Philippine Red Cross, said in a radio interview.","[{'PER': 'Richard Gordon'}, {'ORG': 'Philippine Red Cross'}]",DiGraph with 11 nodes and 10 edges,tree,:mod,coconut
-7,"""There are about 1,500 missing, 200 dead,"" Richard Gordon, the head of the Philippine Red Cross, said in a radio interview.","[{'PER': 'Richard Gordon'}, {'ORG': 'Philippine Red Cross'}]",DiGraph with 11 nodes and 10 edges,tree,:mod,occasional
-8,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 15 nodes and 14 edges,show-01,:mod,also
-9,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 15 nodes and 14 edges,group-01,:mod,tiny
-10,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],DiGraph with 23 nodes and 22 edges,team,:mod,rescue-01
-11,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],DiGraph with 23 nodes and 22 edges,rush-01,:source,and
-12,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 20 nodes and 19 edges,force-04,:mod,navy
-13,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 20 nodes and 19 edges,force-04,:mod,entire
-14,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe.",[{'PER': 'Gloria Arroyo'}],DiGraph with 11 nodes and 10 edges,ship,:mod,navy
-15,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe.",[{'PER': 'Gloria Arroyo'}],DiGraph with 11 nodes and 10 edges,center,:mod,command-02
-16,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'ORG': 'Coast Guard'}, {'LOC': 'Philippines'}, {'PER': 'I'}, {'PER': 'she'}]",DiGraph with 26 nodes and 25 edges,census,:mod,last
-17,"""It was like mud running down the mountain and it covered the village in seconds,"" she said, quoting survivors.","[{'B_human': 'survivors'}, {'PER': 'she'}]",DiGraph with 36 nodes and 35 edges,return-01,:ARG1-of,cause-01
-18,"Experts blamed deforestation for the tragedy, which came after days of rainfall that was five times higher than usual.",[{'B_human': 'Ex'}],DiGraph with 27 nodes and 26 edges,earthquake,:mod,mild
-19,"Experts blamed deforestation for the tragedy, which came after days of rainfall that was five times higher than usual.",[{'B_human': 'Ex'}],DiGraph with 27 nodes and 26 edges,wall,:mod,mud
-20,"Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out.","[{'ORG': 'Leria'}, {'LOC': 'Guinsaugon'}, {'LOC': 'Leyte'}, {'B_human': 'residents'}]",DiGraph with 20 nodes and 19 edges,possible-01,:ARG1-of,cause-01
-21,"A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.",[{'PER': 'Rene Solidum'}],DiGraph with 22 nodes and 21 edges,force-04,:mod,task-01
-22,"A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.",[{'PER': 'Rene Solidum'}],DiGraph with 22 nodes and 21 edges,task-01,:mod,rescue-01
-23,"A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.",[{'PER': 'Rene Solidum'}],DiGraph with 22 nodes and 21 edges,body,:mod,die-01
-24,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'PER': 'Nestor Sadirin'}],DiGraph with 36 nodes and 35 edges,equipment,:mod,heavy
-25,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'PER': 'Nestor Sadirin'}],DiGraph with 36 nodes and 35 edges,person,:mod,official
-26,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'PER': 'Nestor Sadirin'}],DiGraph with 36 nodes and 35 edges,call-03,:ARG1-of,cause-01
-27,"Leyte Congressman Roger Mercado said in a radio interview that the village had a population of 3,000 to 4,000 and expressed fears that as many as 2,000 people had been buried.","[{'LOC': 'Leyte'}, {'PER': 'Roger Mercado'}]",DiGraph with 23 nodes and 22 edges,go-01,:mod,also
-28,"Leyte Congressman Roger Mercado said in a radio interview that the village had a population of 3,000 to 4,000 and expressed fears that as many as 2,000 people had been buried.","[{'LOC': 'Leyte'}, {'PER': 'Roger Mercado'}]",DiGraph with 23 nodes and 22 edges,company,:mod,mine-01
-29,"Leyte Congressman Roger Mercado said in a radio interview that the village had a population of 3,000 to 4,000 and expressed fears that as many as 2,000 people had been buried.","[{'LOC': 'Leyte'}, {'PER': 'Roger Mercado'}]",DiGraph with 23 nodes and 22 edges,team,:source,company
-30,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}]",DiGraph with 22 nodes and 21 edges,helicopter,:mod,military
-31,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}]",DiGraph with 22 nodes and 21 edges,cloud,:mod,heavy
-32,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}]",DiGraph with 22 nodes and 21 edges,cease-01,:ARG1-of,cause-01
-33,Gordon said the Red Cross said was trying to dispatch sniffer dogs to hunt for survivors.,"[{'PER': 'Gordon'}, {'ORG': 'Red Cross'}, {'B_human': 's'}, {'B_animal': 'dogs'}, {'B_human': 'survivors'}]",DiGraph with 25 nodes and 24 edges,landslide,:mod,small
-34,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],DiGraph with 12 nodes and 11 edges,bag,:mod,body
-35,Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a possible new disaster.,"[{'PER': 'Le'}, {'ORG': 'ria'}, {'B_human': 'rescue'}]",DiGraph with 26 nodes and 25 edges,board,:mod,provincial
-36,Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a possible new disaster.,"[{'PER': 'Le'}, {'ORG': 'ria'}, {'B_human': 'rescue'}]",DiGraph with 26 nodes and 25 edges,equipment,:mod,heavy
-37,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 25 nodes and 24 edges,businessman,:mod,country
-38,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 25 nodes and 24 edges,week,:mod,this
-39,"200 dead, 1,500 feared missing in Philippines landslide",[{'LOC': 'Philippines'}],DiGraph with 20 nodes and 19 edges,person,:mod,country
-40,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'LOC': 'Philippines'}, {'ORG': 'Red Cross'}]",DiGraph with 16 nodes and 15 edges,magazine,:mod,news
-41,Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte.,"[{'LOC': 'Guinsaugon'}, {'MISC': 'Philippine'}, {'LOC': 'Leyte'}, {'B_human': 'Eye'}]",DiGraph with 19 nodes and 18 edges,reason-01,:mod,any
-42,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 52 nodes and 51 edges,sentence-01,:condition,have-04
-43,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 52 nodes and 51 edges,reason,:mod,that
-44,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 52 nodes and 51 edges,outlet,:mod,various
-45,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 52 nodes and 51 edges,term,:mod,maximum
-46,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 52 nodes and 51 edges,article,:source,law
-47,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 11 nodes and 10 edges,say-01,:mod,also
-48,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 11 nodes and 10 edges,court,:mod,this
-49,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 11 nodes and 10 edges,procedure,:mod,due
-50,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'ORG': 'Coast Guard'}, {'LOC': 'Philippines'}, {'PER': 'I'}, {'PER': 'she'}]",DiGraph with 34 nodes and 33 edges,sound-01,:mod,less
-51,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'ORG': 'Coast Guard'}, {'LOC': 'Philippines'}, {'PER': 'I'}, {'PER': 'she'}]",DiGraph with 34 nodes and 33 edges,system,:mod,court
-52,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 26 nodes and 25 edges,businessman,:mod,country
-53,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 26 nodes and 25 edges,week,:mod,last
-54,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],DiGraph with 26 nodes and 25 edges,prison,:mod,country
-55,"TACLOBAN, Philippines, Feb 17, 2006","[{'LOC': 'T'}, {'LOC': 'ACLOBA'}, {'LOC': 'N'}, {'LOC': 'Philippines'}]",DiGraph with 16 nodes and 15 edges,pardon-01,:ARG1-of,cause-01
-56,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'LOC': 'Philippines'}, {'ORG': 'Red Cross'}]",DiGraph with 19 nodes and 18 edges,fly-01,:destination,base
-57,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'LOC': 'Philippines'}, {'ORG': 'Red Cross'}]",DiGraph with 19 nodes and 18 edges,base,:mod,military
-58,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'LOC': 'Philippines'}, {'ORG': 'Red Cross'}]",DiGraph with 19 nodes and 18 edges,military,:mod,country
-59,Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte.,"[{'LOC': 'Guinsaugon'}, {'MISC': 'Philippine'}, {'LOC': 'Leyte'}, {'B_human': 'Eye'}]",DiGraph with 21 nodes and 20 edges,day,:mod,next
-60,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[],DiGraph with 21 nodes and 20 edges,jail,:mod,country
-61,Eyewitnesses said only a few houses were left standing after the landslide hit the village of Guinsaugon in the south of the Philippine island of Leyte.,"[{'LOC': 'Guinsaugon'}, {'MISC': 'Philippine'}, {'LOC': 'Leyte'}, {'B_human': 'Eye'}]",DiGraph with 5 nodes and 4 edges,see-01,:mod,yet
-62,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'ORG': 'Coast Guard'}, {'LOC': 'Philippines'}, {'PER': 'I'}, {'PER': 'she'}]",DiGraph with 7 nodes and 6 edges,thing,:part,pocket
-63,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'ORG': 'Coast Guard'}, {'LOC': 'Philippines'}, {'PER': 'I'}, {'PER': 'she'}]",DiGraph with 7 nodes and 6 edges,pocket,:mod,huge
-64,"Leyte Governor Rosette Lerias said the latest census indicated there were 375 houses with 3,000 people living in Guinsaugon before the landslide.","[{'LOC': 'Leyte'}, {'PER': 'Rosette Lerias'}, {'LOC': 'Guinsaugon'}]",DiGraph with 7 nodes and 6 edges,thing,:mod,that
-65,She described the village as totally flattened.,[{'PER': 'She'}],DiGraph with 6 nodes and 5 edges,get-05,:source,tree
-66,"""It was like mud running down the mountain and it covered the village in seconds,"" she said, quoting survivors.","[{'B_human': 'survivors'}, {'PER': 'she'}]",DiGraph with 7 nodes and 6 edges,dump-01,:destination,basket
-67,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}]",DiGraph with 7 nodes and 6 edges,thing,:mod,that
-68,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}]",DiGraph with 7 nodes and 6 edges,fall-01,:mod,in-the-first-place
-69,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}]",DiGraph with 7 nodes and 6 edges,climb-01,:mod,back
-70,Gordon said the Red Cross said was trying to dispatch sniffer dogs to hunt for survivors.,"[{'PER': 'Gordon'}, {'ORG': 'Red Cross'}, {'B_human': 's'}, {'B_animal': 'dogs'}, {'B_human': 'survivors'}]",DiGraph with 7 nodes and 6 edges,pick-01,:mod,again
-71,This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.,"[{'MISC': 'American'}, {'LOC': 'Moscow'}, {'B_human': 'businessman'}]",DiGraph with 7 nodes and 6 edges,look-01,:mod,even
-72,Edmund Pope tasted freedom today for the first time in more than eight months.,[{'PER': 'Edmund Pope'}],DiGraph with 6 nodes and 5 edges,detail,:mod,this
-73,A spokeswoman said that Pope was suffering from malnutrition and high blood pressure.,"[{'PER': 'Pope'}, {'B_human': 'spoke'}]",DiGraph with 5 nodes and 4 edges,get-05,:source,bike
-74,"And you watch him pluck a few pears ,","[{'PER': 'you'}, {'PER': 'him'}]",DiGraph with 3 nodes and 2 edges,get-05,:source,bicycle
-75,and he'd drop them into his thing,[{'PER': 'them'}],DiGraph with 6 nodes and 5 edges,basket,:mod,pear
-76,and he dumps all his pears into the basket,[{'PER': 'he'}],DiGraph with 9 nodes and 8 edges,scene,:mod,next
-77,Or . . or before .,[],DiGraph with 6 nodes and 5 edges,place,:mod,all-over
-78,"they don't e . . I don't think they even look at each other ,","[{'PER': 'they'}, {'PER': 'I'}, {'PER': 'they'}]",DiGraph with 14 nodes and 13 edges,gesture,:mod,brush-off-04
-79,"they don't e . . I don't think they even look at each other ,","[{'PER': 'they'}, {'PER': 'I'}, {'PER': 'they'}]",DiGraph with 14 nodes and 13 edges,boy,:mod,other
-80,okay ?,[],DiGraph with 4 nodes and 3 edges,movie,:mod,whole
-81,I'm giving you all these details .,[{'PER': 'you'}],DiGraph with 8 nodes and 7 edges,put-01,:mod,back
-82,Uâ€”m the . . the reason I'm giving you the details is cause I don't know what the point of the movie was.,"[{'PER': 'you'}, {'PER': 'I'}]",DiGraph with 3 nodes and 2 edges,pick-up-04,:mod,just
-83,"he gets off his bike ,",[{'PER': 'he'}],DiGraph with 3 nodes and 2 edges,split-02,:mod,just
-84,". . gets off the bicycle ,",[],DiGraph with 6 nodes and 5 edges,detail,:mod,another
-85,"riding off and the next scene you see him ,","[{'PER': 'you'}, {'PER': 'him'}]",DiGraph with 8 nodes and 7 edges,see-01,:mod,anymore
-86,a pan shot .,[],DiGraph with 12 nodes and 11 edges,thing,:mod,that
-87,a pan shot .,[],DiGraph with 12 nodes and 11 edges,thing,:mod,little
-88,"A--nd . . u--m falls down ,",[],DiGraph with 5 nodes and 4 edges,get-05,:source,tree
-89,. . and he goes . . you know {brushing gesture} and then you see three other boys about his age .,"[{'B_human': 'boys'}, {'PER': 'he'}, {'PER': 'you'}, {'PER': 'you'}]",DiGraph with 6 nodes and 5 edges,gesture,:mod,count-01
-90,I don't know .,[{'PER': 'I'}],DiGraph with 5 nodes and 4 edges,thing,:mod,that
+0,It 's extremely troublesome to get there via land .,[],DiGraph with 5 nodes and 5 edges,get-05,:destination,there
+1,She heated the oven to 250 degrees Celsius.,"[{'MISC': 'Celsius'}, {'PER': 'She'}]",DiGraph with 6 nodes and 6 edges,heat-01,:destination,temperature-quantity
+2,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:destination,city
+3,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:source,city
+4,I drove to the store.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,drive-01,:destination,store
+5,I walked up to the window.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,walk-01,:destination,window
+6,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]",DiGraph with 12 nodes and 12 edges,fire-01,:destination,aircraft-type
+7,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]",DiGraph with 12 nodes and 12 edges,missile,:source,air
+8,"For their honeymoon, the couple flew first class to Hawaii.","[{'LOC': 'Hawaii'}, {'B_human': 'couple'}]",DiGraph with 11 nodes and 11 edges,fly-01,:destination,state
+9,"The boy murmured softly to soothe the girl, because he worried about her.","[{'B_human': 'boy'}, {'B_human': 'girl'}, {'PER': 'he'}, {'PER': 'her'}]",DiGraph with 8 nodes and 8 edges,murmur-01,:cause,worry-01
+10,The old man died of lung cancer .,[{'B_human': 'man'}],DiGraph with 9 nodes and 9 edges,man,:mod,old
+11,The old man died of lung cancer .,[{'B_human': 'man'}],DiGraph with 9 nodes and 9 edges,die-01,:ARG1-of,cause-01
+12,The match has been canceled due to the rain.,[],DiGraph with 4 nodes and 4 edges,cancel-01,:ARG1-of,cause-01
+13,He was injured and therefore unable to play.,[{'PER': 'He'}],DiGraph with 7 nodes and 7 edges,injure-01,:ARG0-of,cause-01
+14,"I can't do work at home, because she shouts at me.","[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}]",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,:ARG1-of,cause-01
+15,The hospital has been vacated due to extensive damage.,[],DiGraph with 5 nodes and 5 edges,vacate-01,:ARG1-of,cause-01
+16,Scores of people drowned when the boat sank.,[],DiGraph with 7 nodes and 7 edges,drown-02,:ARG1-of,cause-01
+17,I must stop now as the shuttle leaves in 10 minutes.,[{'PER': 'I'}],DiGraph with 12 nodes and 12 edges,obligate-01,:ARG1-of,cause-01
+18,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}]",DiGraph with 10 nodes and 10 edges,reasonable-02,:ARG1-of,cause-01
+19,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]",DiGraph with 7 nodes and 7 edges,divorce-01,:ARG1-of,cause-01
+20,I saw a cloud of dust .,[{'PER': 'I'}],DiGraph with 4 nodes and 4 edges,cloud,:consist-of,dust
+21,a ring of gold,[],DiGraph with 2 nodes and 2 edges,ring,:consist-of,gold
+22,The children's choir sang beautifully.,[],DiGraph with 4 nodes and 4 edges,choir,:consist-of,child
+23,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,protein-segment,:consist-of,residue
+24,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,residue,:mod,value-interval
+25,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,cloud,:consist-of,dust
+26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,dust,:mod,blue
+27,"Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.","[{'PER': 'Rush'}, {'PER': 'Levin'}, {'PER': 'Hannity'}, {'PER': 'Savage'}, {'PER': 'Romney'}, {'B_human': 'candidate'}]",DiGraph with 26 nodes and 26 edges,candidate,:mod,conservative
+28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,meat,:consist-of,dog
+29,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,person,:source,country
+30,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,group,:consist-of,militant
+31,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,extremism,:mod,religion
+32,They will focus on the import of cheap chemical drugs made in Thailand.,"[{'LOC': 'Thailand'}, {'PER': 'They'}]",DiGraph with 11 nodes and 11 edges,drug,:consist-of,chemical
+33,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}]",DiGraph with 7 nodes and 7 edges,girl,:source,country
+34,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:destination,city
+35,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:source,city
+36, I backed away from the window.,[{'PER': 'I'}],DiGraph with 3 nodes and 3 edges,back-02,:source,window
+37,These have all be vacated too from what I'm hearing.,[],DiGraph with 7 nodes and 7 edges,vacate-01,:mod,too
+38,These have all be vacated too from what I'm hearing.,[],DiGraph with 7 nodes and 7 edges,vacate-01,:source,thing
+39,physicists from all over the world,[{'B_human': 'Ph'}],DiGraph with 3 nodes and 3 edges,physicist,:source,all-over
+40,She got a master's degree in linguistics from UCLA.,"[{'ORG': 'UCLA'}, {'B_human': 'master'}, {'PER': 'She'}]",DiGraph with 9 nodes and 9 edges,degree,:mod,master
+41,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]",DiGraph with 9 nodes and 9 edges,guy,:mod,this
+42,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]",DiGraph with 9 nodes and 9 edges,fortune,:source,guy
+43,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]",DiGraph with 15 nodes and 15 edges,wave-04,:mod,next
+44,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]",DiGraph with 15 nodes and 15 edges,king,:mod,boy
+45,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]",DiGraph with 15 nodes and 15 edges,cash,:source,king
+46,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}]",DiGraph with 12 nodes and 12 edges,start-01,:source,city
+47,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:mod,joyful
+48,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:mod,after-all
+49,"After all , what are the joyful memories from inside paradise ?",[],DiGraph with 6 nodes and 6 edges,memory,:source,inside

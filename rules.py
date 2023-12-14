@@ -74,10 +74,10 @@ def detect_split_role(X_tuples):
         # Rule 6: part is always part
         elif role == ":part":
             Y.append(([":part"], [1.0]))
-
+ 
         # Rule 7: mod
         elif role == ":mod":
-            Y.append(([":mod", ":other-role"], [0.99, 0.01]))
+            Y.append(([":mod", ":other-role"], [.995,0.005]))
 
         # Rule 8: condition (concessive condition does not really occur in English)
         elif role == ":condition":
@@ -102,16 +102,12 @@ def ne_animacy(named_entity, tail, amr_graph, sentence):
         return animacy
 
     # just check the animacy of the tail now if we could not find anything
+    print("sending tail to be parsed:", tail)
     new_named_entity = parse_animacy_runner([tail]) # needs to send sentence and tail
     print("NEW NAMED ENTITY: ", new_named_entity)
-
-    # Extract the first dictionary from the list, if any
-    if new_named_entity and isinstance(new_named_entity[0], dict):
-        new_named_entity = new_named_entity[0]
-    else:
-        new_named_entity = {}  # Default to an empty dictionary if no valid dictionary is found
-    animacy = animacy_classification(new_named_entity, tail)
+    animacy = animacy_classification_second_pass(new_named_entity, tail)
     if animacy != "none":
+        print("used new animacy identified from running animacy parser again")
         return animacy
 
     # Run through a second time on the next entity if it was a verb
@@ -123,33 +119,76 @@ def ne_animacy(named_entity, tail, amr_graph, sentence):
     return "inanimate"
 
 def animacy_classification(named_entity, tail):
+    print("Named entities going into animacy classification: ", named_entity)
     # Check if named_entity matches tail
     for ne_entry in named_entity:
         for ne_type, ne_value in ne_entry.items():
             if ne_value == tail:
                 # Check animacy based on ne_type
                 if ne_type in ["PER", "B_human", "B_animal"]:
+                    print("returning animate!!")
                     return "animate"
                 elif ne_type in ["ORG", "LOC", "MISC"]:
+                    print("returning inanimate!!")
                     return "inanimate"
     return "none"
 
+def animacy_classification_second_pass(named_entity, tail):
+    print("in second pass animacy")
+    # Check if named_entity is an empty list
+    if not named_entity or all(not entry for entry in named_entity):
+        print("went to none for second pass animacy")
+        return "none"
+
+    # Check if named_entity matches tail
+    for ne_entry_list in named_entity:
+        for ne_entry in ne_entry_list:
+            # Handle the case where named_entity is a string
+            if isinstance(ne_entry, str) and ne_entry == tail:
+                # Check animacy based on ne_type
+                if ne_type in ["PER", "B_human", "B_animal"]:
+                    return "animate"
+                elif ne_type in ["ORG", "LOC", "MISC"]:
+                    return "inanimate"
+            # Handle the case where named_entity is a dictionary
+            elif isinstance(ne_entry, dict):
+                for ne_type, ne_value in ne_entry.items():
+                    if ne_value == tail:
+                        # Check animacy based on ne_type
+                        if ne_type in ["PER", "B_human", "B_animal"]:
+                            return "animate"
+                        elif ne_type in ["ORG", "LOC", "MISC"]:
+                            return "inanimate"
+
+    return "none"
+
 def second_pass_animacy(named_entity, tail, amr_graph):
-    # Check if named_entity is empty or contains ANY animate roles for the next node
-    for ne_entry in named_entity:
-        for ne_type, ne_value in ne_entry.items():
-            if ne_type in ["PER", "B_human", "B_animal"]:
-                # if the node has a -## (so a verb) we could instead check for something in the children of the node
-                if re.search(r'-\d+$', tail):
-                    role_id = get_label_name(amr_graph, tail)
-                    second_check_node = find_replacement_node(amr_graph, tail, role_id)
-                    return animacy_classification(named_entity, second_check_node)
+    # checking the next node if it is -## assuming it is child of verb
+    print("\nin second pass animacy\n")
+    if re.search(r'-\d+$', tail):
+        # get the label name for find replacement
+        role_id = get_label_name(amr_graph, tail)
+        # check for the child of this node that is not a verb
+        second_check_node = find_replacement_node(amr_graph, tail, role_id)
+        print("second check node: ", second_check_node)
+        # use the child node in the new animacy classification
+        second_animacy = animacy_classification_second_pass(named_entity, second_check_node)
+        print("second animacy term: ", second_animacy)
+        # if there was no animacy run the parse animacy runner again on the child node
+        if second_animacy == "none":
+            new_named_entity = parse_animacy_runner([second_check_node])
+            # Extract the first dictionary from the list, if any
+            if new_named_entity and isinstance(new_named_entity[0], dict):
+                new_named_entity = new_named_entity[0]
+                print("change to new_named_entity (second pass):", new_named_entity)
             else:
-                # if the node has a -## (so a verb) we could instead check for something in the children of the node
-                if re.search(r'-\d+$', tail):
-                    role_id = get_label_name(amr_graph, tail)
-                    second_check_node = find_replacement_node(amr_graph, tail, role_id)
-                    return animacy_classification(named_entity, second_check_node)
+                new_named_entity = {}  # Default to an empty dictionary if no valid dictionary is found
+            print("new_named_entity: ",new_named_entity)
+            # then return the new animacy classification
+            return animacy_classification_second_pass(new_named_entity, second_check_node)
+        else:
+            return second_animacy
+   
     return "none"
 
 

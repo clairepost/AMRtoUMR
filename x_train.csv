@@ -22,15 +22,15 @@
 20,I saw a cloud of dust .,[{'PER': 'I'}],DiGraph with 4 nodes and 4 edges,cloud,:consist-of,dust
 21,a ring of gold,[],DiGraph with 2 nodes and 2 edges,ring,:consist-of,gold
 22,The children's choir sang beautifully.,[],DiGraph with 4 nodes and 4 edges,choir,:consist-of,child
-23,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,protein-segment,:consist-of,residue
-24,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,residue,:mod,value-interval
-25,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,cloud,:consist-of,dust
-26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,dust,:mod,blue
+23,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,residue,:mod,value-interval
+24,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]",DiGraph with 13 nodes and 13 edges,protein-segment,:consist-of,residue
+25,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,dust,:mod,blue
+26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,cloud,:consist-of,dust
 27,"Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.","[{'PER': 'Rush'}, {'PER': 'Levin'}, {'PER': 'Hannity'}, {'PER': 'Savage'}, {'PER': 'Romney'}, {'B_human': 'candidate'}]",DiGraph with 26 nodes and 26 edges,candidate,:mod,conservative
 28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,person,:source,country
 29,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]",DiGraph with 19 nodes and 19 edges,meat,:consist-of,dog
-30,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,group,:consist-of,militant
-31,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,extremism,:mod,religion
+30,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,extremism,:mod,religion
+31,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],DiGraph with 10 nodes and 10 edges,group,:consist-of,militant
 32,They will focus on the import of cheap chemical drugs made in Thailand.,"[{'LOC': 'Thailand'}, {'PER': 'They'}]",DiGraph with 11 nodes and 11 edges,drug,:consist-of,chemical
 33,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}]",DiGraph with 7 nodes and 7 edges,girl,:source,country
 34,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,:source,city

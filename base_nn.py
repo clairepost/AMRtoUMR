@@ -8,30 +8,21 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
-from helper_functions import get_embeddings, create_mapping
+from helper_functions import get_embeddings, create_mapping, preprocess_data
 import ast
 
-def preprocessing(training):
-    #training is a boolean: set it to trtue, to preprocess the training data, and false to preprocess the test data
+def preprocessing_for_NN(split):
+    #split is either "train" or "test"
     #load in data, get bert embeddings, and set it up as tensors
 
-    if training:
-        X= pd.read_csv("x_train.csv")
-        X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
-        y_true= pd.read_csv("y_trues_train.csv") 
-    else:
-        X= pd.read_csv("x_test.csv")
-        X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
-        y_true= pd.read_csv("y_trues_test.csv") 
-
-    X = pd.concat([X,y_true],axis = 1)
+    X = preprocess_data(split, False, False)
    
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
     # Convert the categorical column to numerical form using the mapping
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
-    X = X.dropna(subset=['umr_role','amr_role']).reset_index(drop=True) #remove missing y_true
+
     umr_role = torch.tensor(X["umr_role"],dtype=torch.long)
     amr_role = torch.tensor(X['amr_role'], dtype=torch.long)
     embeddings = get_embeddings(X) 
@@ -42,7 +33,7 @@ def preprocessing(training):
     print("umr_role" , umr_role.size())
     print("embeddings size", embeddings.size()) #size ([50,768])
 
-    return embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict #return X and y_truefor mapping back to the categories later
+    return embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict #return X and y_truefor mapping back to the categories later
 
 def train_model(embeddings, amr_role, umr_role,mapping):
 
@@ -122,7 +113,7 @@ def train_model(embeddings, amr_role, umr_role,mapping):
 
 
 def predict(model):
-    embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict = preprocessing(False)
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict = preprocessing_for_NN("test")
     dataset = TensorDataset(embeddings, amr_role, umr_role)
     with torch.no_grad():
         predictions = []
@@ -137,8 +128,7 @@ def predict(model):
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
     print(y_preds,X)
     df = pd.concat([X,y_preds],axis = 1)
-    df.to_csv("base_nn_test.csv")
-    return predictions, y_true
+    return df
 
 
 # Once trained, you can use the model for predictions
@@ -154,9 +144,14 @@ def predict(model):
 
 
 # The predicted_labels are the predicted classes for your output
+def run_base_nn():
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict= preprocessing_for_NN("train")
+    model = train_model(embeddings,amr_role, umr_role,mapping)
+    df_test = predict(model) #returns 
 
+    df_test.to_csv("output/base_nn_test.csv")
+    return df_test
 
-embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict, swap_amr_int_dict= preprocessing(True)
-model = train_model(embeddings,amr_role, umr_role,mapping)
-predictions,y_true = predict(model)
-print(type(predictions), type(y_true))
+if __name__ == "__main__":
+    run_base_nn()
+    

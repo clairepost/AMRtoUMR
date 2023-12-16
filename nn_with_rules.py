@@ -8,7 +8,8 @@ import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
-from helper_functions import get_embeddings, create_mapping
+from helper_functions import get_embeddings, create_mapping, preprocess_data
+
 import ast
 import sklearn
 
@@ -34,27 +35,21 @@ def preprocessing(split):
     #training is a boolean: set it to trtue, to preprocess the training data, and false to preprocess the test data
     #load in data, get bert embeddings, and set it up as tensors
 
-    X= pd.read_csv("x_"+split+".csv")
-    y_true= pd.read_csv("y_trues_"+split+".csv") 
-    rules = pd.read_csv("rules_"+split+".csv")
-    
-    X = pd.concat([X,y_true,rules],axis = 1)
-    X['ne_info'] = X['ne_info'].apply(ast.literal_eval)
-    X['weight'] = X['weight'].apply(ast.literal_eval)
-    X['y_guess'] = X['y_guess'].apply(ast.literal_eval)
+    X = preprocess_data(split, False, False)
    
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
     # Convert the categorical column to numerical form using the mapping
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
-    X = X.dropna(subset=['umr_role','amr_role']).reset_index(drop=True) #remove missing y_true
+
     umr_role = torch.tensor(X["umr_role"],dtype=torch.long)
     amr_role = torch.tensor(X['amr_role'], dtype=torch.long)
     embeddings = get_embeddings(X) 
+   
 
     y_guess = X["y_guess"]
-    rule_weights = X["weight"]
+    rule_weights = X["y_guess_dist"]
     class_weights = create_rule_weight_tensor(y_guess, rule_weights,swap_umr_int_dict)
 
     #print sizes of returned data
@@ -64,7 +59,7 @@ def preprocessing(split):
     print("amr_role" , amr_role.size())
     print("embeddings size", embeddings.size()) #size ([50,768])
 
-    return embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict, class_weights #return X and y_truefor mapping back to the categories later
+    return embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict, class_weights #return X and y_truefor mapping back to the categories later
 
 def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
 
@@ -145,12 +140,12 @@ def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
 
 
 def predict(model):
-    embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict,swap_amr_int_dict,class_weights = preprocessing("test")
-    dataset = TensorDataset(embeddings, amr_role, umr_role)
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict,class_weights = preprocessing("test")
+    dataset = TensorDataset(embeddings, amr_role, umr_role,class_weights)
     with torch.no_grad():
         predictions = []
         model.eval()
-        for embeddings, amr_role, umr_role in dataset:
+        for embeddings, amr_role, umr_role,class_weights in dataset:
         # predict and swap it back from an integer to the class
             predictions.append(swap_umr_int_dict[torch.argmax(model(embeddings, amr_role)).item()])
    
@@ -158,10 +153,10 @@ def predict(model):
     y_preds = pd.Series(predictions, name = "y_pred")
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
-    print(y_preds,X)
-    df = pd.concat([X,y_preds],axis = 1)
-    df.to_csv("nn_with_rules_test.csv")
-    return X['umr_role'].to_list(), y_true
+
+    df_test = pd.concat([X,y_preds],axis = 1)
+
+    return df_test
 
 
 # Once trained, you can use the model for predictions
@@ -178,9 +173,17 @@ def predict(model):
 
 # The predicted_labels are the predicted classes for your output
 
+def run_nn_with_rules():
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, class_weights= preprocessing("train")
+    model = train_model(embeddings,amr_role, umr_role,mapping, class_weights)
+    df_test = predict(model)
 
-embeddings,amr_role, umr_role, X,y_true, mapping, swap_umr_int_dict, swap_amr_int_dict, class_weights= preprocessing("train")
-model = train_model(embeddings,amr_role, umr_role,mapping, class_weights)
-predictions,y_true = predict(model)
-#sklearn.metrics.accuracy_score(y_true, predictions)
-print(type(predictions), type(y_true))
+    df_test.to_csv("output/nn_with_rules_test.csv")
+
+    #sklearn.metrics.accuracy_score(y_true, predictions)
+    #print(type(predictions), type(y_true))
+
+
+if __name__ == "__main__":
+    run_nn_with_rules()
+    

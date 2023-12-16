@@ -1,4 +1,4 @@
-,y_guess,weight
+,y_guess,y_guess_dist
 0,[':goal'],[1.0]
 1,[':goal'],[1.0]
 2,[':goal'],[1.0]
@@ -22,15 +22,15 @@
 20,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
 21,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
 22,[':group'],[1.0]
-23,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
-24,"[':mod', ':other-role']","[0.995, 0.005]"
-25,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
-26,"[':mod', ':other-role']","[0.995, 0.005]"
+23,"[':mod', ':other-role']","[0.995, 0.005]"
+24,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+25,"[':mod', ':other-role']","[0.995, 0.005]"
+26,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
 27,"[':mod', ':other-role']","[0.995, 0.005]"
 28,[':group'],[1.0]
 29,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
-30,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
-31,"[':mod', ':other-role']","[0.995, 0.005]"
+30,"[':mod', ':other-role']","[0.995, 0.005]"
+31,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
 32,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
 33,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
 34,[':goal'],[1.0]

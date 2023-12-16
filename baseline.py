@@ -1,5 +1,5 @@
 
-from helper_functions import extract_data
+from helper_functions import extract_data, preprocess_data
 from rules import detect_split_role
 import os
 import random
@@ -18,9 +18,9 @@ def calc_role(Y_preds):
     return Y_prob
 
 
-def run_baseline():
+def run_baseline_X_times():
     num_iterations=20
-    X_tupes, y_true = extract_data(True)
+    X_tupes, y_true = extract_data("test")
     X = pd.DataFrame.from_records(X_tupes, columns=['sent', 'ne_info', 'amr_graph', 'amr_head_name', 'amr_role', 'amr_tail_name'])
     
     comparison_results = []
@@ -57,8 +57,32 @@ def compare_results(y_true, y_pred):
     else:
         print("No non-empty values in y_true.")
 
+def run_baseline(num_iters, split):
+    #slightly different implementation than what is happening in compare_results. Just so the format is consistent across models
+    #takes in num of iterations: returns X (input data- size (n x m)) and y_probs (size n x num_iters)
+    y_preds = []
+    X = preprocess_data(split, True,Truee) #reload the graphs and the rules -> set both to True
+    y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
+    for i in range(num_iters):
+        print(y_prob)
+        y_calc = calc_role(y_prob)
+        y_preds.append(y_calc)
+
+    c = len(y_preds)
+    n = len(y_preds[0])
+
+    print(y_preds)
+    # Transpose the list
+    list_of_lists_n = [[y_preds[j][i] for j in range(c)] for i in range(n)]
+
+    y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
+    full_df = pd.concat([X, y_pred],axis = 1)
+    full_df.to_csv("output/baseline_"+split+".csv")
+    return full_df
 
 
-df = pd.DataFrame()
-# Run the baseline model
-run_baseline()
+if __name__ == "__main__":
+    df = pd.DataFrame()
+    # Run the baseline model
+    run_baseline_X_times()
+    #run_baseline(20,"test") #Marie's version

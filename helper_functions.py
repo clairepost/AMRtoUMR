@@ -9,16 +9,20 @@ from alignment import *
 from sklearn.preprocessing import LabelEncoder
 from transformers import BertModel, BertTokenizer, BertConfig
 from animacyParser import parse_animacy_runner
+from rules import detect_split_role
 
-def extract_data(training):
+def extract_data(split):
     #training parameter: boolean- True if you want to extract training, false if you want to extract test
     #creat X's and Y's
     #X's should be of the form [(amr_head_name1,amr_role1,amr_tail_name1),(h2,r2,t2)]
     #Y's will be of the form [umr_role1, umr_role2]
-    if training:
-        df = read_training_data("training_data")
-    else:
+    if "train":
+        df = read_training_data()
+    elif split == "test":
         df = read_test_data()
+    else:
+        print("extract_data() takes in 1 arg: either 'train' or 'test'")
+        return
     X_columns = ['sent','ne_info' ,'amr_graph','amr_head_name', 'amr_role', 'amr_tail_name']
     Y_columns = ['umr_role']
     # Create a new DataFrame X with the selected columns
@@ -43,14 +47,15 @@ def remove_comment_lines(input_string):
 
     return result_string
 
-def read_training_data(folder):
+def read_training_data():
+    #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     amr_graphs = {}
     umr_graphs = {} #keys are file name, values are list of sentences
     sents= {}
     ne_info = {}
+    folder = "raw_data/training_data"
     for file in os.listdir(folder):
         df = pd.read_csv(folder + "/" + file) #read file
-
         df.dropna(subset=['UMR'], inplace=True) #remove the rows that don't have umr graphs
         #get AMR, UMR cols
         amr_graphs_str = df["AMR"]
@@ -94,32 +99,20 @@ def read_training_data(folder):
     columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
-    splits_data_df.to_csv("training_data_splits.csv")
+    splits_data_df.to_csv("input_data/train_data.csv")
     return splits_data_df
     
 
-# def reformat_x(X,bert_embeddings, N,D):
-#     #this function flattens the bert embeddings so that the input vecotr can be the appropriate size
-#     # Combine all inputs into a list
-#     combined_inputs = []
-#     X=tf.convert_to_tensor(X)
-#     print(bert_embeddings)
-#     print(bert_embeddings.size())
-#     print(type(X))
-#     for i in range(len(X)):
-#         combined_input = torch.cat((bert_embeddings.view(-1,N*D),X[i]),dim=1)
-#         combined_inputs.append(combined_input)
-#     combined_inputs_tensor = torch.cat(combined_inputs, dim=0)
-#     return X, embeddings
         
 def read_test_data():
-    #THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
+    #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
+    # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
     # put all files in dicts
     umr_files = {}
     amr_files = {}
 
-    umr_path = os.getcwd() + '/UMR-data-english'
-    amr_path = os.getcwd() + '/AMR-data-english'
+    umr_path = os.getcwd() + '/raw_data/UMR-data-english'
+    amr_path = os.getcwd() + '/raw_data/AMR-data-english'
 
     for f in os.listdir(umr_path):
         file1 = open(umr_path + '/' + f, 'r')
@@ -206,7 +199,7 @@ def read_test_data():
     columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
-    splits_data_df.to_csv("test_data_splits.csv")
+    splits_data_df.to_csv("input_data/test_data.csv")
     return splits_data_df
 
 def map_categorical_to_tensor(series):
@@ -338,7 +331,64 @@ def create_combined_dict(input_set):
         combined_dict[element] = index
     return combined_dict
 
+
+
+def preprocess_data(split, reload_graphs, reload_rules):
+    #Function that will read in files from the input/test_data_splits or training data_split 
+    #Return a dataframe X where X contains sentence info, graph info, animacy info, amr and umr_role, rule info
+    #Args: 
+        #split: string either "train" or "test"
+        #reload_rules: bool, True to reprocess raw->input, creates graphs, calculate rule distriutions;  False to just load in data
+            #Need True when rules have changed, or Graphs need to be accessible for doing some calcs
+
+    rules_file = "input_data/rules_" +split+".csv"
+
+    #load in or regenerate the files 
+    if split == "train":
+        if reload_graphs == True:
+            X= read_training_data()
+        else:
+            X = pd.read_csv("input_data/train_data.csv")
+            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+    elif split == "test":
+        if reload_graphs == True:
+            X = read_test_data()
+        else:
+            X = pd.read_csv("input_data/test_data.csv")
+            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+    else:
+        print("arg 1 must be 'test' or 'train")
+        return
     
+
+    if reload_rules == True:
+        rules = detect_split_role(X)
+        # Create a DataFrame
+        rules_df = pd.DataFrame(rules, columns=['y_guess', 'y_guess_dist'])  
+        rules_df.to_csv(rules_file)
+    else:
+        rules_df = pd.read_csv(rules_file)
+        rules_df['y_guess'] = rules_df['y_guess'].apply(ast.literal_eval) 
+        rules_df['y_guess_dist'] = rules_df['y_guess_dist'].apply(ast.literal_eval)
+    X = pd.concat([X, rules_df], axis = 1)
+    
+    
+    #clean up data
+    a2umr_map,amr_2_int, umr_2_int = create_mapping()
+    rows_to_drop = [] #if alignment stop made a mistake and found roles that we aren't exploring
+    X = X.dropna(subset=['umr_role']).reset_index(drop=True) #remove missing y_true
+    for i in range(len(X['umr_role'])):
+        if X['umr_role'][i] not in umr_2_int:
+            rows_to_drop.append(i)
+        if X['amr_role'][i] not in amr_2_int:
+            rows_to_drop.append(i)
+    X = X.drop(rows_to_drop)
+    X = X.reset_index(drop=True) #reset the indices
+    return X
+      
+
+
+X = preprocess_data("test", False, False)
 #print(create_mapping())
 # read_test_data()
 # read_training_data("training_data")

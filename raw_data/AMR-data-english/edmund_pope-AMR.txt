@@ -1,0 +1,173 @@
+# workset lorpt-152 (generated on Mon Oct 16, 2023 at 12:08:06 for user cjconsensus)
+
+# ::id NW_PRI_ENG_0153_2000_1214.1 ::date 2017-11-06T03:35:25 ::authors aanca
+# ::snt Edmund Pope tasted freedom today for the first time in more than eight months.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_1.txt
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:Edmond_Pope
+(t2 / taste-01
+      :ARG0 (p / person :wiki "Edmond_Pope"
+            :name (n2 / name :op1 "Edmund" :op2 "Pope"))
+      :ARG1 (f / free-04
+            :ARG1 p)
+      :time (t3 / today)
+      :ord (o3 / ordinal-entity :value 1
+            :range (m / more-than
+                  :op1 (t / temporal-quantity :quant 8
+                        :unit (m2 / month)))))
+
+# ::id NW_PRI_ENG_0153_2000_1214.2 ::date 2017-11-06T04:47:53 ::authors aanca
+# ::snt Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_2.txt
+# ::note auto-repair-amr 2017-12-11T12:47:46 wikify:Russia wikify:United_States
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:Edmond_Pope
+(b2 / businessman
+      :mod (c5 / country :wiki "United_States"
+            :name (n6 / name :op1 "America"))
+      :domain (p / person :wiki "Edmond_Pope"
+            :name (n5 / name :op1 "Pope"))
+      :ARG1-of (c4 / convict-01
+            :ARG2 (c / charge-05
+                  :ARG1 b2
+                  :ARG2 (s2 / spy-01
+                        :ARG0 p))
+            :time (w / week
+                  :mod (l / last)))
+      :ARG1-of (s / sentence-01
+            :ARG2 (p2 / prison
+                  :mod (c3 / country :wiki "Russia"
+                        :name (n4 / name :op1 "Russia"))
+                  :duration (t3 / temporal-quantity :quant 20
+                        :unit (y2 / year)))
+            :ARG3 s2))
+
+# ::id NW_PRI_ENG_0153_2000_1214.3 ::date 2017-11-06T05:07:09 ::authors aanca
+# ::snt He denied any wrongdoing.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Thu Nov 9, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_3.txt
+(d / deny-01
+      :ARG0 (h / he)
+      :ARG1 (t / thing
+            :ARG1-of (d2 / do-02
+                  :ARG0 h
+                  :ARG1-of (w / wrong-02))))
+
+# ::id NW_PRI_ENG_0153_2000_1214.4 ::date 2017-11-06T05:30:37 ::authors aanca
+# ::snt Russian President Vladimir Putin pardoned him for health reasons.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_4.txt
+# ::note auto-repair-amr 2017-12-11T12:47:46 wikify:Russia wikify:Vladimir_Putin
+(p3 / pardon-01
+      :ARG0 (p / person :wiki "Vladimir_Putin"
+            :name (n / name :op1 "Vladimir" :op2 "Putin")
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (c / country :wiki "Russia"
+                        :name (n2 / name :op1 "Russia"))
+                  :ARG2 (p2 / president)))
+      :ARG1 (h2 / he)
+      :ARG1-of (c2 / cause-01
+            :ARG0 (r2 / reason
+                  :mod (h3 / health))))
+
+# ::id NW_PRI_ENG_0153_2000_1214.5 ::date 2017-11-06T05:33:23 ::authors aanca
+# ::snt Pope was flown to the U.S. military base at Ramstein, Germany.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Thu Nov 9, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_5.txt
+# ::note auto-repair-amr 2017-12-11T12:47:46 wikify:Germany wikify:United_States
+# ::note auto-repair-amr 2017-12-11T13:22:36 de-reify:ARG1-of/be-located-at-91/:ARG2->:location
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:Edmond_Pope wikify:Ramstein_Air_Base
+(f / fly-01
+      :ARG1 (p / person :wiki "Edmond_Pope"
+            :name (n3 / name :op1 "Pope"))
+      :destination (b2 / base
+            :mod (m / military
+                  :mod (c / country :wiki "United_States"
+                        :name (n / name :op1 "U.S.")))
+            :location (c3 / city :wiki "Ramstein_Air_Base"
+                  :name (n4 / name :op1 "Ramstein")
+                  :location (c2 / country :wiki "Germany"
+                        :name (n2 / name :op1 "Germany")))))
+
+# ::id NW_PRI_ENG_0153_2000_1214.6 ::date 2017-11-06T05:37:49 ::authors aanca
+# ::snt He will spend the next several days at the medical center there before he returns home with his wife Sherry.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_6.txt
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:-(person:Sherry)
+(s2 / spend-02
+      :ARG0 (h2 / he)
+      :ARG1 (s / several
+            :op1 (t / temporal-quantity :quant 1
+                  :unit (d / day
+                        :mod (n2 / next))))
+      :time (b / before
+            :op1 (r / return-01
+                  :ARG1 h2
+                  :ARG4 (h3 / home)
+                  :accompanier (p / person :wiki -
+                        :name (n / name :op1 "Sherry")
+                        :ARG0-of (h / have-rel-role-91
+                              :ARG1 h2
+                              :ARG2 (w / wife)))))
+      :location (c / center
+            :mod (m / medical)
+            :location (t2 / there)))
+
+# ::id NW_PRI_ENG_0153_2000_1214.7 ::date 2017-11-06T05:42:19 ::authors aanca
+# ::snt Pope was in remission from a rare form of bone cancer when he was arrested in Russia.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_7.txt
+# ::note auto-repair-amr 2017-12-11T12:47:46 wikify:Russia
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:-(disease:bone cancer) wikify:Edmond_Pope
+(h / have-mod-91
+      :ARG1 (p / person :wiki "Edmond_Pope"
+            :name (n3 / name :op1 "Pope"))
+      :ARG2 (r / remission-02
+            :ARG1 (d / disease :wiki -
+                  :name (n / name :op1 "bone" :op2 "cancer")
+                  :ARG1-of (r2 / rare-02))
+            :time (a / arrest-01
+                  :ARG1 p
+                  :location (c / country :wiki "Russia"
+                        :name (n2 / name :op1 "Russia")))))
+
+# ::id NW_PRI_ENG_0153_2000_1214.8 ::date 2017-11-06T05:47:16 ::authors aanca
+# ::snt Doctors will examine him for signs that the cancer may have come back while he awaiting trial in a Russian jail.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::save-date Wed Dec 6, 2017 ::user aanca ::file NW_PRI_ENG_0153_2000_1214_8.txt
+# ::note auto-repair-amr 2017-12-11T12:47:46 wikify:Cancer wikify:Russia
+(e / examine-01
+      :ARG0 (d3 / doctor)
+      :ARG1 (h / he)
+      :ARG2 (s / signal-07
+            :ARG1 (p / possible-01
+                  :ARG1 (c3 / come-01
+                        :ARG1 (d2 / disease :wiki "Cancer"
+                              :name (n / name :op1 "cancer"))
+                        :direction (b2 / back)
+                        :time (a / await-01
+                              :ARG1 h
+                              :ARG2 (t / try-02
+                                    :ARG1 h)
+                              :location (j / jail
+                                    :mod (c2 / country :wiki "Russia"
+                                          :name (n3 / name :op1 "Russia"))))))
+            :ARG2 d3))
+
+# ::id NW_PRI_ENG_0153_2000_1214.9 ::date 2017-11-06T05:55:46 ::authors aanca
+# ::snt A spokeswoman said that Pope was suffering from malnutrition and high blood pressure.
+# ::note Sentence+ loaded by script SntLoaderUlf1.7.pl
+# ::note auto-repair-amr 2017-12-15T04:55:47 wikify:Edmond_Pope
+# ::save-date Mon Dec 18, 2017 ::user cjconsensus ::file NW_PRI_ENG_0153_2000_1214_9.txt
+(s / say-01
+      :ARG0 (p3 / person
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG2 (s2 / spokeswoman)))
+      :ARG1 (s3 / suffer-01
+            :ARG0 (p / person :wiki "Edmond_Pope" :name (n / name :op1 "Pope"))
+            :ARG1 (a / and
+                  :op1 (m / malnourished-01
+                        :ARG1 p)
+                  :op2 (p2 / pressure-01
+                        :ARG1 (b2 / blood)
+                        :ARG1-of (h / high-02)))))

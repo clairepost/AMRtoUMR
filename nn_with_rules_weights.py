@@ -18,6 +18,7 @@ def create_rule_weight_tensor(y_guess, rule_weights,mapping):
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
     num_classes_output = len(set(flat_values))//2
     weight_tensor = torch.zeros(len(y_guess),num_classes_output)
+    #weight_tensor = torch.full((len(y_guess),num_classes_output),0.01) #allow for the rules to be mistaken here as well
 
     for i in range(len(y_guess)):
         for j in range(len(y_guess[i])):
@@ -43,50 +44,53 @@ def preprocessing(split):
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
 
-    umr_role = torch.tensor(X["umr_role"],dtype=torch.long)
-    amr_role = torch.tensor(X['amr_role'], dtype=torch.long)
+    umr_roles = torch.tensor(X["umr_role"],dtype=torch.long)
+    amr_roles = torch.tensor(X['amr_role'], dtype=torch.long)
     embeddings = get_embeddings(X) 
    
 
     y_guess = X["y_guess"]
     rule_weights = X["y_guess_dist"]
-    class_weights = create_rule_weight_tensor(y_guess, rule_weights,swap_umr_int_dict)
+    rule_outputs = create_rule_weight_tensor(y_guess, rule_weights,swap_umr_int_dict)
 
     #print sizes of returned data
     
-    print("class_weights:",class_weights.size())
-    print("umr_role" , umr_role.size())
-    print("amr_role" , amr_role.size())
+    print("class_weights:",rule_outputs.size())
+    print("umr_role" , umr_roles.size())
+    print("amr_role" , amr_roles.size())
     print("embeddings size", embeddings.size()) #size ([50,768])
 
-    return embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict, class_weights #return X and y_truefor mapping back to the categories later
+    return embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict,swap_amr_int_dict, rule_outputs #return X and y_truefor mapping back to the categories later
 
-def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
+def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs):
 
-    #define the loss function
-    class CustomLoss(nn.Module):
-        def __init__(self):
-            super(CustomLoss, self).__init__()
-        def forward(self,y_pred,y_true, class_weight):
-            loss = nn.CrossEntropyLoss()
-            supervised_loss = loss(y_pred, y_true)
-            weighted_supervised_loss = supervised_loss * class_weight
-            total_loss = torch.mean(weighted_supervised_loss)
-            return total_loss
+    # #define the loss function
+    # class CustomLoss(nn.Module):
+    #     def __init__(self):
+    #         super(CustomLoss, self).__init__()
+    #     def forward(self,y_pred,y_true, class_weight):
+    #         loss = nn.CrossEntropyLoss()
+    #         supervised_loss = loss(y_pred, y_true)
+    #         weighted_supervised_loss = supervised_loss * class_weight
+    #         total_loss = torch.mean(weighted_supervised_loss)
+    #         return total_loss
 
     # Define the neural network model
     class CustomModel(nn.Module):
         def __init__(self, input_size, num_classes_output, num_amr_roles,mapping):
             super(CustomModel, self).__init__()
             self.fc1 = nn.Linear(input_size, 64)
-            self.fc_letter = nn.ModuleList([nn.Linear(64, num_classes_output) for _ in range(num_amr_roles)])
+            self.fc_amr_role = nn.ModuleList([nn.Linear(64, num_classes_output) for _ in range(num_amr_roles)])
             self.mapping = mapping
-
-        def forward(self, x, letter):
+            self.weights = nn.Linear(2,2)  # Updated to match the number of classes
+            # Initialize the weights to 0.5 for all entries
+            nn.init.constant_(self.weights.weight, 0.5)
+        def forward(self, x, amr_role, rule_output):
+            #input is x- input data, letter -amr_role for split into diff module,rule_output - rules output 
             x = torch.relu(self.fc1(x))
-            output_branch = self.fc_letter[letter]
+            output_branch = self.fc_amr_role[amr_role]
 
-            allowed_outputs = torch.tensor(self.mapping[letter.item()]) #only allow whatever the amr_role maps to to becomne the output, letter is a tensor so we get the item
+            allowed_outputs = torch.tensor(self.mapping[amr_role.item()]) #only allow whatever the amr_role maps to to becomne the output, letter is a tensor so we get the item
 
             output = output_branch(x)
             # Create a mask for indices not in the specified mask
@@ -95,9 +99,33 @@ def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
             # Apply the desired operations using the mask
             tensor_result = torch.zeros_like(output)  # Initialize with zeros
             tensor_result[allowed_outputs] = output[allowed_outputs] * 1    # Multiply indices in the mask by 1
-            tensor_result[not_in_mask] = float('-inf')  # Set indices not in the mask to -inf
+            tensor_result[not_in_mask] = float(0)  # Set indices not in the mask to -inf
             #output[:,~torch.tensor(allowed_outputs, dtype=torch.bool)] = float('-inf')  # Set disallowed outputs to -inf
-            return tensor_result
+            
+
+            ##Combine the NN and the Rules output
+            #resize the tensors
+            # Reshape the tensors to have the same number of rows (elements along the 0th dimension)
+            tensor_result = tensor_result.view(-1, 1)
+            rule_output = rule_output.view(-1, 1)
+            # Concatenate the outputs along dimension 1
+            # print(tensor_result.shape)
+            # print(rule_output.shape)
+            combined_output = torch.cat([tensor_result, rule_output], dim=1)
+            # Pass through the linear layer to learn weights
+            learned_weights = torch.softmax(self.weights(combined_output), dim=1)
+            # Split the learned weights for each model
+            learned_weights1 = learned_weights[:, :tensor_result.size(1)]
+            learned_weights2 = learned_weights[:, tensor_result.size(1):]
+            
+            # Apply the learned weights to the model outputs
+            weighted_output1 = learned_weights1 * tensor_result
+            weighted_output2 = learned_weights2 * rule_output
+            
+            # Sum the weighted outputs for the final prediction
+            final_output = weighted_output1 + weighted_output2
+        
+            return final_output.t()
 
     # Initialize the model
     input_size = embeddings.size(dim =1)  # Replace with the actual number of features
@@ -105,7 +133,7 @@ def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
     num_classes_output = len(set(flat_values))
 
-    dataset = TensorDataset(embeddings, amr_role, umr_role,class_weights)
+    dataset = TensorDataset(embeddings, amr_roles, umr_roles,rule_outputs)
 
     print("input size", input_size)
     print("num amr roles", num_amr_roles)
@@ -114,21 +142,23 @@ def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
     model = CustomModel(input_size, num_classes_output, num_amr_roles, mapping)
 
     # Define loss function and optimizer
-    criterion = CustomLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.0001)
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Training loop
-    num_epochs = 100
+    num_epochs = 50
 
     for epoch in range(num_epochs):
-        for inputs, letter, targets,class_weight in dataset:
+        for x, amr_role, target, rule_output in dataset:
             optimizer.zero_grad()
 
             # Forward pass
-            outputs = model(inputs, letter)
+            output = model(x, amr_role, rule_output)
 
             # Compute loss
-            loss = criterion(outputs, targets,class_weight)
+            target = target.view(1)
+            
+            loss = criterion(output, target)
 
             # Backward pass and optimization
             loss.backward()
@@ -140,19 +170,30 @@ def train_model(embeddings, amr_role, umr_role,mapping, class_weights):
 
 
 def predict(model):
-    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict,class_weights = preprocessing("test")
-    dataset = TensorDataset(embeddings, amr_role, umr_role,class_weights)
+    embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict,swap_amr_int_dict,rule_outputs = preprocessing("test")
+    dataset = TensorDataset(embeddings, amr_roles, umr_roles,rule_outputs)
     with torch.no_grad():
         predictions = []
         model.eval()
-        for embeddings, amr_role, umr_role,class_weights in dataset:
+        for x, amr_role, umr_role,rule_output in dataset:
         # predict and swap it back from an integer to the class
-            predictions.append(swap_umr_int_dict[torch.argmax(model(embeddings, amr_role)).item()])
+            predictions.append(swap_umr_int_dict[torch.argmax(model(x, amr_role, rule_output)).item()])
    
+    
     #convert the numbers back to categorical data
     y_preds = pd.Series(predictions, name = "y_pred")
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
+
+
+    #Calculate accuracy
+    accuracy = (y_preds == X['umr_role']).mean()
+    # Print the accuracy
+    print(f"Accuracy: {accuracy * 100:.2f}%")
+    print("\nFinal Weights:")
+    print(model.weights.weight)
+
+
 
     df_test = pd.concat([X,y_preds],axis = 1)
 
@@ -174,11 +215,11 @@ def predict(model):
 # The predicted_labels are the predicted classes for your output
 
 def run_nn_with_rules():
-    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, class_weights= preprocessing("train")
-    model = train_model(embeddings,amr_role, umr_role,mapping, class_weights)
+    embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_outputs= preprocessing("train")
+    model = train_model(embeddings,amr_roles, umr_roles,mapping, rule_outputs)
     df_test = predict(model)
 
-    df_test.to_csv("output/nn_with_rules_test.csv")
+    df_test.to_csv("output/nn_with_rules_test_2.csv")
 
     #sklearn.metrics.accuracy_score(y_true, predictions)
     #print(type(predictions), type(y_true))

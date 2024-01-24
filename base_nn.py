@@ -9,6 +9,8 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
 from helper_functions import get_embeddings, create_mapping, preprocess_data
+from error_analysis import get_indices
+import numpy as np
 import ast
 
 def preprocessing_for_NN(split):
@@ -88,10 +90,10 @@ def train_model(embeddings, amr_role, umr_role,mapping):
 
     # Define loss function and optimizer
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.0001)
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Training loop
-    num_epochs = 40
+    num_epochs = 50
 
     for epoch in range(num_epochs):
         for inputs, letter, targets in dataset:
@@ -112,8 +114,8 @@ def train_model(embeddings, amr_role, umr_role,mapping):
     return model
 
 
-def predict(model):
-    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict = preprocessing_for_NN("test")
+def predict(model, test_data, swap_umr_int_dict, swap_amr_int_dict):
+    embeddings,amr_role, umr_role, X = test_data
     dataset = TensorDataset(embeddings, amr_role, umr_role)
     with torch.no_grad():
         predictions = []
@@ -147,11 +149,56 @@ def predict(model):
 def run_base_nn():
     embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict= preprocessing_for_NN("train")
     model = train_model(embeddings,amr_role, umr_role,mapping)
-    df_test = predict(model) #returns 
+
+    #get the test data
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict = preprocessing_for_NN("test")
+    df_test = predict(model, (embeddings, amr_role, umr_role,X), swap_umr_int_dict, swap_amr_int_dict) 
 
     df_test.to_csv("output/base_nn_test.csv")
     return df_test
 
+
+def run_splits_nn():
+    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
+    
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
+    all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
+    all_amr_roles = torch.cat((amr_role,amr_role_1),0)
+    all_umr_roles = torch.cat((umr_role, umr_role_1),0)
+    Xs = pd.concat((X,X_1),axis=0)
+
+    splits= get_indices(all_umr_roles)
+
+    for i, (train_index, test_index) in splits:
+        print(f"Fold {i}:")
+        print(f"  Train: index={train_index}")
+        print(f"  Test:  index={test_index}")
+        
+        #select training data
+        embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(train_index))
+        amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(train_index) )
+        umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(train_index) )
+
+        model = train_model(embeddings,amr_roles, umr_roles,mapping)
+
+        #select test data
+        embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
+        amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(test_index))
+        umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(test_index))
+        print(Xs)
+        print()
+        print(type(test_index))
+        Xs = Xs.iloc[test_index.tolist()]
+
+
+        df_test = predict(model, (embeddings, amr_roles, umr_roles,Xs), swap_umr_int_dict, swap_amr_int_dict) 
+
+
+        df_test.to_csv(f"output/k-fold/base_nn_test_{i}.csv")
+    return df_test
+
+    
+
 if __name__ == "__main__":
-    run_base_nn()
+    run_splits_nn()
     

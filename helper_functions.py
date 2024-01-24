@@ -388,7 +388,7 @@ def preprocess_data(split, reload_graphs, reload_rules):
       
 
 
-X = preprocess_data("test", False, False)
+#X = preprocess_data("test", True, True)
 #print(create_mapping())
 # read_test_data()
 # read_training_data("training_data")

@@ -61,7 +61,7 @@ def run_baseline(num_iters, split):
     #slightly different implementation than what is happening in compare_results. Just so the format is consistent across models
     #takes in num of iterations: returns X (input data- size (n x m)) and y_probs (size n x num_iters)
     y_preds = []
-    X = preprocess_data(split, True,Truee) #reload the graphs and the rules -> set both to True
+    X = preprocess_data(split, True,True) #reload the graphs and the rules -> set both to True
     y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
     for i in range(num_iters):
         print(y_prob)

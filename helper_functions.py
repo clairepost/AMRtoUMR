@@ -384,11 +384,14 @@ def preprocess_data(split, reload_graphs, reload_rules):
             rows_to_drop.append(i)
     X = X.drop(rows_to_drop)
     X = X.reset_index(drop=True) #reset the indices
+    X = X.loc[:,~X.columns.duplicated()].copy() #drop duplicte columns
     return X
-      
 
 
-X = preprocess_data("test", False, False)
+
+
+
+#X = preprocess_data("test", True, True)
 #print(create_mapping())
 # read_test_data()
 # read_training_data("training_data")

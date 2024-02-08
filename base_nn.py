@@ -125,12 +125,19 @@ def predict(model, test_data, swap_umr_int_dict, swap_amr_int_dict):
             predictions.append(swap_umr_int_dict[torch.argmax(model(embeddings, amr_role)).item()])
    
     #convert the numbers back to categorical data
+
+
     y_preds = pd.Series(predictions, name = "y_pred")
+
+
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
-    print(y_preds,X)
-    df = pd.concat([X,y_preds],axis = 1)
-    return df
+
+  
+    print(y_preds)
+    X["y_pred"] = predictions
+
+    return X
 
 
 # Once trained, you can use the model for predictions
@@ -158,14 +165,21 @@ def run_base_nn():
     return df_test
 
 
-def run_splits_nn():
+def run_splits_nn(model_choice):
+    model_list = ["base_nn", "nn_with_rules_weights", "baseline"]
+    if model_choice not in model_list:
+        print("pick a model that has been created")
+        return
+    
+
     embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
     
     embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
     all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
     all_amr_roles = torch.cat((amr_role,amr_role_1),0)
     all_umr_roles = torch.cat((umr_role, umr_role_1),0)
-    Xs = pd.concat((X,X_1),axis=0)
+    all_Xs = pd.concat((X,X_1),axis=0)
+
 
     splits= get_indices(all_umr_roles)
 
@@ -185,20 +199,18 @@ def run_splits_nn():
         embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
         amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(test_index))
         umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(test_index))
-        print(Xs)
-        print()
-        print(type(test_index))
-        Xs = Xs.iloc[test_index.tolist()]
 
+        Xs = all_Xs.iloc[test_index.tolist()]
 
         df_test = predict(model, (embeddings, amr_roles, umr_roles,Xs), swap_umr_int_dict, swap_amr_int_dict) 
 
-
-        df_test.to_csv(f"output/k-fold/base_nn_test_{i}.csv")
+        print(len(Xs))
+        print(len(df_test))
+        df_test.to_csv(f"output/k-fold/{model_choice}_test_{i}.csv")
     return df_test
 
     
 
 if __name__ == "__main__":
-    run_splits_nn()
+    run_splits_nn("base_nn")
     

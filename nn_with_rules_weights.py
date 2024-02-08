@@ -9,6 +9,7 @@ import torch.optim as optim
 from torch.utils.data import DataLoader, TensorDataset
 import pandas as pd
 from helper_functions import get_embeddings, create_mapping, preprocess_data
+from error_analysis import get_indices
 
 import ast
 import sklearn
@@ -169,9 +170,9 @@ def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs):
     return model
 
 
-def predict(model):
-    embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict,swap_amr_int_dict,rule_outputs = preprocessing("test")
-    dataset = TensorDataset(embeddings, amr_roles, umr_roles,rule_outputs)
+def predict(model, test_data, swap_umr_int_dict, swap_amr_int_dict):
+    embeddings,amr_role, umr_role, X, rule_outputs = test_data
+    dataset = TensorDataset(embeddings, amr_role, umr_role, rule_outputs)
     with torch.no_grad():
         predictions = []
         model.eval()
@@ -179,25 +180,21 @@ def predict(model):
         # predict and swap it back from an integer to the class
             predictions.append(swap_umr_int_dict[torch.argmax(model(x, amr_role, rule_output)).item()])
    
-    
     #convert the numbers back to categorical data
     y_preds = pd.Series(predictions, name = "y_pred")
+
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
 
+    print("STARTING HERE /n")
+    print(y_preds)
+    
 
-    #Calculate accuracy
-    accuracy = (y_preds == X['umr_role']).mean()
-    # Print the accuracy
-    print(f"Accuracy: {accuracy * 100:.2f}%")
-    print("\nFinal Weights:")
-    print(model.weights.weight)
+    X["y_pred"] = predictions
 
-
-
-    df_test = pd.concat([X,y_preds],axis = 1)
-
-    return df_test
+    return X, model.weights.weight
+    
+   
 
 
 # Once trained, you can use the model for predictions
@@ -215,9 +212,9 @@ def predict(model):
 # The predicted_labels are the predicted classes for your output
 
 def run_nn_with_rules():
-    embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_outputs= preprocessing("train")
-    model = train_model(embeddings,amr_roles, umr_roles,mapping, rule_outputs)
-    df_test = predict(model)
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_outputs= preprocessing("train")
+    model = train_model(embeddings,amr_role, umr_role ,mapping, rule_outputs)
+    df_test = predict(model, (embeddings, amr_role, umr_role,X, rule_outputs), swap_umr_int_dict, swap_amr_int_dict) 
 
     df_test.to_csv("output/nn_with_rules_test_2.csv")
 
@@ -225,6 +222,62 @@ def run_nn_with_rules():
     #print(type(predictions), type(y_true))
 
 
+def run_splits_nn(model_choice):
+    model_list = ["base_nn", "nn_with_rules_weights", "baseline"]
+    if model_choice not in model_list:
+        print("pick a model that has been created")
+        return
+    
+
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_output = preprocessing("train")
+    
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_1 = preprocessing("test")
+    all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
+    all_amr_roles = torch.cat((amr_role,amr_role_1),0)
+    all_umr_roles = torch.cat((umr_role, umr_role_1),0)
+    all_rule_outputs = torch.cat((rule_output, rule_outputs_1),0)
+    all_Xs = pd.concat((X,X_1),axis=0)
+    weights = []
+
+
+    splits= get_indices(all_umr_roles)
+
+    for i, (train_index, test_index) in splits:
+        print(f"Fold {i}:")
+        print(f"  Train: index={train_index}")
+        print(f"  Test:  index={test_index}")
+        
+        #select training data
+        embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(train_index))
+        amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(train_index) )
+        umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(train_index) )
+        rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(train_index) )
+
+
+        model = train_model(embeddings,amr_roles, umr_roles,mapping, rule_outputs)
+
+        #select test data
+        embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
+        amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(test_index))
+        umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(test_index))
+        rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(test_index) )
+
+        Xs = all_Xs.iloc[test_index.tolist()]
+
+        df_test, weight_i = predict(model, (embeddings, amr_roles, umr_roles,Xs, rule_outputs), swap_umr_int_dict, swap_amr_int_dict) 
+        weights.append(weight_i)
+
+
+        df_test.to_csv(f"output/k-fold/{model_choice}_test_{i}.csv")
+    final_weights_folder = "output/k-fold/combined_nn_weights.txt"
+    with open(final_weights_folder, 'w') as f:
+        for line in weights:
+            f.write(f"{line}\n")
+    return df_test
+
+
+
 if __name__ == "__main__":
-    run_nn_with_rules()
+    #run_nn_with_rules()
+    run_splits_nn("nn_with_rules_weights")
     

@@ -34,17 +34,17 @@ i, (train_index,test_index) = splits[i]
 
 
 #select training data given split
-embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(train_index))
+#embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(train_index))
 amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(train_index) )
 umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(train_index) )
-rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(train_index) )
+#rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(train_index) )
 
 
 #select test datagiven split
-embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
+#embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
 amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(test_index))
 umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(test_index))
-rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(test_index))
+#rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(test_index))
 
 
 

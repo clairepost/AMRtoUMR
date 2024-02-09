@@ -1,0 +1,2917 @@
+# AMR release (generated on Thu Jan 25, 2018 at 16:15:46)
+
+# ::id wiki-minicorpus-a_0001.1 ::date 2017-10-16T13:15:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <i><b>Nepenthes alata</b></i> (/nᵻˈpɛnθiːz əˈlɑːtə/; Latin: alatus "winged") is a tropical pitcher plant endemic to the Philippines.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0001_1.txt
+(s / species :wiki "Nepenthes_alata" :name (n3 / name :op1 "Nepenthes" :op2 "alata")
+      :ARG1-of (i2 / include-91
+            :ARG2 (p / plant
+                  :mod (p2 / pitcher)
+                  :mod (t / tropic)
+                  :mod (e / endemic
+                        :location (c / country :wiki "Philippines" :name (n2 / name :op1 "Philippines"))))))
+
+# ::id wiki-minicorpus-a_0001.2 ::date 2017-10-17T03:05:10 ::annotator SDL-AMR-09 ::preferred
+# ::snt Like all pitcher plants, it is carnivorous and uses its nectar to attract insects that drown in the pitcher and are digested by the plant.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0001_2.txt
+(a / and
+      :op1 (c / carnivore
+            :domain (p2 / plant
+                  :ARG1-of (r / resemble-01
+                        :ARG2 (p3 / plant
+                              :mod p
+                              :mod (a3 / all)))))
+      :op2 (u / use-01
+            :ARG0 p2
+            :ARG1 (n / nectar
+                  :poss p2)
+            :ARG2 (a2 / attract-01
+                  :ARG0 p2
+                  :ARG1 (i3 / insect
+                        :ARG1-of (d / drown-02
+                              :location (p / pitcher))
+                        :ARG1-of (d2 / digest-01
+                              :ARG0 p2)))))
+
+# ::id wiki-minicorpus-a_0002.1 ::date 2017-10-17T03:26:05 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>New Renaissance Party</b> (新党改革 <i>Shintō Kaikaku</i>) is a minor political party in Japan.
+# ::save-date Wed Dec 27, 2017 ::file wiki-minicorpus-a_0002_1.txt
+(p / political-party
+      :location (c / country :wiki "Japan" :name (n / name :op1 "Japan"))
+      :ARG1-of (m / minor-01)
+      :domain (p3 / political-party :wiki "New_Renaissance_Party" :name (n2 / name :op1 "New" :op2 "Renaissance" :op3 "Party")))
+
+# ::id wiki-minicorpus-a_0002.2 ::date 2017-10-17T03:27:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt The NRP is the successor to the Reform Club (改革クラブ), founded by Hideo Watanabe and Hiroyuki Arai in August 2008.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0002_2.txt
+(s / succeed-02
+      :ARG0 (p / political-party :wiki "New_Renaissance_Party"
+            :name (n / name :op1 "NRP"))
+      :ARG1 (p2 / political-party :wiki -
+            :name (n2 / name :op1 "Reform" :op2 "Club")
+            :ARG1-of (f / found-01
+                  :ARG0 (a / and
+                        :op1 (p3 / person :wiki "Hideo_Watanabe"
+                              :name (n3 / name :op1 "Hideo" :op2 "Watanabe"))
+                        :op2 (p4 / person :wiki "Hiroyuki_Arai"
+                              :name (n4 / name :op1 "Hiroyuki" :op2 "Arai")))
+                  :time (d / date-entity :month 8 :year 2008))))
+
+# ::id wiki-minicorpus-a_0003.1 ::date 2017-10-17T03:32:18 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Spodnja Voličina</b> (pronounced [ˈspoːdnja ʋɔˈliːtʃina]) is a settlement in the Municipality of Lenart in northeastern Slovenia.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0003_1.txt
+(s / settlement
+      :domain (c2 / city-district :wiki "Spodnja_Voličina" :name (n2 / name :op1 "Spodnja" :op2 "Voličina"))
+      :location (c3 / city :wiki "Municipality_of_Lenart" :name (n3 / name :op1 "Municipality" :op2 "of" :op3 "Lenart")
+            :location (n4 / northeast
+                  :part-of (c / country :wiki "Slovenia" :name (n / name :op1 "Slovenia")))))
+
+# ::id wiki-minicorpus-a_0003.2 ::date 2017-10-17T03:41:53 ::annotator SDL-AMR-09 ::preferred
+# ::snt It lies in the valley of a minor right tributary of the Pesnica River.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0003_2.txt
+(l / lie-07
+      :ARG1 (i2 / it)
+      :ARG2 (v / valley
+            :mod (t / tributary
+                  :ARG1-of (r / right-04)
+                  :ARG1-of (m / minor-01)
+                  :mod (r2 / river :wiki "Pesnica_(river)" :name (n / name :op1 "Pesnica" :op2 "River")))))
+
+# ::id wiki-minicorpus-a_0004.1 ::date 2017-10-17T05:55:50 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Borki</b> [ˈbɔrki] is a settlement in the administrative district of Gmina Ładzice, within Radomsko County, Łódź Voivodeship, in central Poland.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0004_1.txt
+(s / settlement
+      :location (d / district
+            :mod (a / administrate-01)
+            :mod (l / local-region :wiki "Gmina_Ładzice" :name (n2 / name :op1 "Gmina" :op2 "Ładzice"))
+            :location (c2 / county :wiki "Radomsko_County" :name (n3 / name :op1 "Radomsko" :op2 "County")
+                  :location (p / province :wiki "Łódź_Voivodeship" :name (n4 / name :op1 "Łódź" :op2 "Voivodeship")
+                        :location (c3 / center
+                              :part-of (c / country :wiki "Poland" :name (n / name :op1 "Poland"))))))
+      :domain (c4 / city :wiki "Borki,_Gmina_Ładzice" :name (n5 / name :op1 "Borki")))
+
+# ::id wiki-minicorpus-a_0005.1 ::date 2017-10-17T06:07:54 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Fucked Up</b> is a Canadian hardcore punk band from Toronto, Ontario.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0005_1.txt
+(b / band
+      :mod (p / punk
+            :mod (h / hardcore))
+      :source (c2 / city :wiki "Toronto" :name (n2 / name :op1 "Toronto")
+            :part-of (p2 / province :wiki "Ontario" :name (n4 / name :op1 "Ontario")))
+      :domain (o / organization :wiki "Fucked_Up" :name (n3 / name :op1 "Fucked" :op2 "Up"))
+      :mod (c / country :wiki "Canada" :name (n / name :op1 "Canada")))
+
+# ::id wiki-minicorpus-a_0005.2 ::date 2017-10-17T06:12:42 ::annotator SDL-AMR-09 ::preferred
+# ::snt The band won the 2009 Polaris Music Prize for the album <i>The Chemistry of Common Life</i>.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0005_2.txt
+(w / win-01
+      :ARG0 (b / band)
+      :ARG1 (a / award :wiki "Polaris_Music_Prize" :name (n / name :op1 "Polaris" :op2 "Music" :op3 "Prize")
+            :time (d / date-entity :year 2009))
+      :ARG5 (a2 / album :wiki "The_Chemistry_of_Common_Life" :name (n2 / name :op1 "The" :op2 "Chemistry" :op3 "of" :op4 "Common" :op5 "Life")))
+
+# ::id wiki-minicorpus-a_0006.1 ::date 2017-10-17T06:17:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>John Strong, Jr.</b> (April 7, 1830 – April 2, 1913) was a politician from the U.S. state of Michigan.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0006_1.txt
+(p / politician
+      :source (s / state :wiki "Michigan" :name (n2 / name :op1 "Michigan")
+            :part-of (c / country :wiki "United_States" :name (n / name :op1 "U.S.")))
+      :domain (p2 / person :wiki "John_Strong_(Michigan_politician)" :name (n3 / name :op1 "John" :op2 "Strong" :op3 "," :op4 "Jr.")
+            :time (d3 / date-interval
+                  :op1 (d / date-entity :day 7 :month 4 :year 1830)
+                  :op2 (d2 / date-entity :day 2 :month 4 :year 1913))))
+
+# ::id wiki-minicorpus-a_0006.2 ::date 2017-10-17T06:21:09 ::annotator SDL-AMR-09 ::preferred
+# ::snt Strong, the son of John Strong Sr. (1798–1881), from Wroxton, Oxfordshire, England, was a first generation American born in a log cabin in Greenfield Township, Michigan, which is now part of Detroit.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0006_2.txt
+(p2 / person
+      :ARG1-of (b / bear-02
+            :location (c4 / cabin
+                  :consist-of (l / log)
+                  :location (c5 / city :wiki "Greenfield_Township,_Michigan"
+                        :name (n5 / name :op1 "Greenfield" :op2 "Township")
+                        :part-of (s2 / state :wiki "Michigan"
+                              :name (n4 / name :op1 "Michigan"))
+                        :ARG2-of (h2 / have-part-91
+                              :ARG1 (c3 / city :wiki "Detroit"
+                                    :name (n3 / name :op1 "Detroit"))
+                              :time (n6 / now)))))
+      :mod (g / generation
+            :ord (o3 / ordinal-entity :value 1))
+      :mod (c2 / country :wiki "United_States"
+            :name (n2 / name :op1 "America"))
+      :domain (p3 / person :wiki -
+            :name (n7 / name :op1 "Strong")
+            :ARG0-of (h3 / have-rel-role-91
+                  :ARG1 (p4 / person :wiki "John_Strong_(colonist)"
+                        :name (n8 / name :op1 "John" :op2 "Strong" :op3 "Sr.")
+                        :time (d3 / date-interval
+                              :op1 (d / date-entity :year 1798)
+                              :op2 (d2 / date-entity :year 1881))
+                        :source (c6 / city :wiki "Wroxton"
+                              :name (n9 / name :op1 "Wroxton")
+                              :part-of (c7 / county :wiki "Oxfordshire"
+                                    :name (n10 / name :op1 "Oxfordshire")
+                                    :part-of (c / country :wiki "England"
+                                          :name (n / name :op1 "England")))))
+                  :ARG2 (s3 / son))))
+
+# ::id wiki-minicorpus-a_0007.1 ::date 2017-10-17T06:31:27 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Teufenbach</b> is a municipality in the district of Murau in the Austrian state of Styria.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0007_1.txt
+(m / municipality
+      :domain (c / city :wiki "Teufenbach" :name (n / name :op1 "Teufenbach"))
+      :location (d / district
+            :mod (c2 / country-region :wiki "Murau_District" :name (n2 / name :op1 "Murau")
+                  :part-of (s / state :wiki "Styria" :name (n3 / name :op1 "Styria")
+                        :part-of (c3 / country :wiki "Austria" :name (n4 / name :op1 "Austria"))))))
+
+# ::id wiki-minicorpus-a_0007.2 ::date 2017-10-17T06:37:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt Teufenbach lies in the upper valley of the Mur.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0007_2.txt
+(l / lie-07
+      :ARG1 (c / city :wiki "Teufenbach" :name (n / name :op1 "Teufenbach"))
+      :ARG2 (v / valley
+            :mod (r / river :wiki "Mur_(river)" :name (n2 / name :op1 "Mur"))
+            :mod (u / upper)))
+
+# ::id wiki-minicorpus-a_0008.1 ::date 2017-10-17T06:39:37 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>CBHA-FM</b> is a Canadian radio station.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0008_1.txt
+(s / station
+      :mod (r / radio)
+      :mod (c / country :wiki "Canada" :name (n / name :op1 "Canada"))
+      :domain (b / broadcast-program :wiki "CBHA-FM" :name (n2 / name :op1 "CBHA-FM")))
+
+# ::id wiki-minicorpus-a_0008.2 ::date 2017-10-17T06:40:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is the CBC Radio One affiliate in Halifax, Nova Scotia, broadcasting at 90.5 MHz on the FM dial.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0008_2.txt
+(a / and
+      :op1 (a2 / affiliate-01
+            :ARG1 (i2 / it)
+            :ARG2 (p / publication :wiki "CBC_Radio_One" :name (n / name :op1 "CBC" :op2 "Radio" :op3 "One"))
+            :location (c / city :wiki "Halifax,_Nova_Scotia" :name (n2 / name :op1 "Halifax")
+                  :part-of (p2 / province :wiki "Nova_Scotia" :name (n3 / name :op1 "Nova" :op2 "Scotia"))))
+      :op2 (b / broadcast-01
+            :ARG0 i2
+            :ARG3 (f2 / frequency-quantity :quant 90.5
+                  :unit (m2 / megahertz))
+            :manner (d / dial-01
+                  :manner (m / modulate-01
+                        :ARG1 (f / frequency)))))
+
+# ::id wiki-minicorpus-a_0009.1 ::date 2017-10-17T07:32:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Abadan-e Hoseyni</b> (Persian: ابادان حسيني‎‎, also Romanized as Abādān-e Ḩoseynī) is a village in Khursand Rural District, in the Central District of Shahr-e Babak County, Kerman Province, Iran.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0009_1.txt
+(v / village
+      :domain (c2 / city :wiki "Abadan-e_Hoseyni" :name (n2 / name :op1 "Abadan-e" :op2 "Hoseyni"))
+      :location (c3 / country-region :wiki "Khursand_Rural_District" :name (n3 / name :op1 "Khursand" :op2 "Rural" :op3 "District")
+            :part-of (c4 / country-region :wiki "Central_District_(Shahr-e_Babak_County)" :name (n4 / name :op1 "Central" :op2 "District")
+                  :part-of (c5 / county :wiki "Shahr-e_Babak_County" :name (n5 / name :op1 "Shahr-e" :op2 "Babak" :op3 "County")
+                        :part-of (p / province :wiki "Kerman_Province" :name (n6 / name :op1 "Kerman" :op2 "Province")
+                              :part-of (c / country :wiki "Iran" :name (n / name :op1 "Iran")))))))
+
+# ::id wiki-minicorpus-a_0009.2 ::date 2017-10-17T07:36:11 ::annotator SDL-AMR-09 ::preferred
+# ::snt At the 2006 census, its population was 59, in 12 families.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0009_2.txt
+(h / have-quant-91
+      :ARG1 (p / population
+            :poss (i2 / it)
+            :ARG2-of (i3 / include-91
+                  :ARG1 (f / family :quant 12)))
+      :ARG2 59
+      :ARG3 (e / equal)
+      :time (c / census
+            :time (d / date-entity :year 2006)))
+
+# ::id wiki-minicorpus-a_0010.1 ::date 2017-10-17T07:39:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Josefine Krengel</b> is a German football defender, currently playing for Lokomotive Leipzig in the Bundesliga.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0010_1.txt
+(p2 / person
+      :ARG0-of (d2 / defend-01
+            :ARG3 (f / football))
+      :mod (c / country :wiki "Germany" :name (n2 / name :op1 "Germany"))
+      :ARG0-of (p / play-01
+            :beneficiary (t / team :wiki "1._FC_Lokomotive_Leipzig_(women)" :name (n / name :op1 "Lokomotive" :op2 "Leipzig")
+                  :ARG0-of (h / have-org-role-91
+                        :ARG2 (l / league :wiki "Frauen-Bundesliga" :name (n3 / name :op1 "Bundesliga"))))
+            :time (c2 / current))
+      :domain (p3 / person :wiki "Josefine_Krengel" :name (n4 / name :op1 "Josefine" :op2 "Krengel")))
+
+# ::id wiki-minicorpus-a_0010.2 ::date 2017-10-17T07:46:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt She previously played for Turbine Potsdam, Bayern Munich and Tennis Borussia Berlin.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0010_2.txt
+(p / play-01
+      :ARG0 (s / she)
+      :time (p2 / previous)
+      :beneficiary (a / and
+            :op1 (t / team :wiki "1._FFC_Turbine_Potsdam" :name (n3 / name :op1 "Turbine" :op2 "Potsdam"))
+            :op2 (t2 / team :wiki "FC_Bayern_Munich_(women)" :name (n / name :op1 "Bayern" :op2 "Munich"))
+            :op3 (t3 / team :wiki "Tennis_Borussia_Berlin_(women)" :name (n2 / name :op1 "Tennis" :op2 "Borussia" :op3 "Berlin"))))
+
+# ::id wiki-minicorpus-a_0011.1 ::date 2017-10-17T07:49:00 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Smithfield Township</b> is one of the fourteen townships of Jefferson County, Ohio, United States.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0011_1.txt
+(i2 / include-91
+      :ARG1 (l / local-region :wiki "Smithfield_Township,_Jefferson_County,_Ohio" :name (n3 / name :op1 "Smithfield" :op2 "Township"))
+      :ARG2 (t / township :quant 14
+            :part-of (c2 / county :wiki "Jefferson_County,_Ohio" :name (n4 / name :op1 "Jefferson" :op2 "County")
+                  :part-of (s / state :wiki "Ohio" :name (n / name :op1 "Ohio")
+                        :part-of (c / country :wiki "United_States" :name (n2 / name :op1 "United" :op2 "States"))))))
+
+# ::id wiki-minicorpus-a_0011.2 ::date 2017-10-17T07:52:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt The 2000 census found 3,578 people in the township, 1,804 of whom lived in the unincorporated portions of the township.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0011_2.txt
+(f / find-01
+      :ARG0 (c / census
+            :time (d / date-entity :year 2000))
+      :ARG1 (p / person :quant 3578
+            :location (t / township)
+            :ARG2-of (i2 / include-91
+                  :ARG1 (p2 / person :quant 1804
+                        :ARG0-of (l / live-01
+                              :location (p3 / portion
+                                    :ARG1-of (i3 / incorporate-02 :polarity -
+                                          :ARG2 t)))))))
+
+# ::id wiki-minicorpus-a_0012.1 ::date 2017-10-17T07:55:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Guy Edward Fletcher</b> (born 24 May 1960 in Maidstone, Kent) is an English multi-instrumentalist, best known for his position as the keyboard player in the rock band Dire Straits from 1984 until the group's dissolution, and his subsequent work with Dire Straits frontman Mark Knopfler.
+# ::save-date Thu Jan 4, 2018 ::file wiki-minicorpus-a_0012_1.txt
+(i2 / instrumentalist
+      :domain (p4 / person :wiki "Guy_Fletcher" :name (n3 / name :op1 "Guy" :op2 "Edward" :op3 "Fletcher")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 24 :month 5 :year 1960)
+                  :location (c2 / city :wiki "Maidstone" :name (n4 / name :op1 "Maidstone")
+                        :part-of (c3 / county :wiki "Kent" :name (n5 / name :op1 "Kent")))))
+      :mod (c / country :wiki "England" :name (n2 / name :op1 "England"))
+      :mod (m / multiple)
+      :ARG1-of (k / know-02
+            :ARG3 (a / and
+                  :op1 (p3 / position-01
+                        :ARG1 i2
+                        :ARG2 (p / person
+                              :ARG0-of (p2 / play-11
+                                    :ARG2 (k2 / keyboard))
+                              :ARG2-of (h / have-org-role-91
+                                    :ARG1 (t / team :wiki "Dire_Straits" :name (n / name :op1 "Dire" :op2 "Straits")
+                                          :mod (b2 / band
+                                                :mod (r / rock)))
+                                    :duration (d3 / date-interval
+                                          :op1 (d2 / date-entity :year 1984)
+                                          :op2 (d4 / dissolve-01
+                                                :ARG1 (g / group))))))
+                  :op2 (w / work-01
+                        :ARG0 i2
+                        :ARG3 (p5 / person :wiki "Mark_Knopfler" :name (n6 / name :op1 "Mark" :op2 "Knopfler")
+                              :ARG0-of (h2 / have-org-role-91
+                                    :ARG1 t
+                                    :ARG2 (f / frontman)))
+                        :time (s / subsequent)))
+            :ARG1-of (g2 / good-02
+                  :ARG2-of (h3 / have-degree-91
+                        :ARG1 k
+                        :ARG3 (m2 / most)))))
+
+# ::id wiki-minicorpus-a_0013.1 ::date 2017-10-17T08:10:28 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Faicchio</b> is a <i>comune</i> (municipality) in the Province of Benevento in the Italian region Campania, located about 50 km northeast of Naples and about 30 km northwest of Benevento.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0013_1.txt
+(m / municipality
+      :domain (c2 / city :wiki "Faicchio" :name (n3 / name :op1 "Faicchio"))
+      :location (p / province :wiki "Province_of_Benevento" :name (n4 / name :op1 "Province" :op2 "of" :op3 "Benevento")
+            :part-of (c3 / country-region :wiki "Campania" :name (n5 / name :op1 "Campania")
+                  :part-of (c / country :wiki "Italy" :name (n2 / name :op1 "Italy"))))
+      :location (a3 / and
+                  :op1 (r / relative-position
+                        :op1 (c4 / city :wiki "Naples" :name (n6 / name :op1 "Naples"))
+                        :direction (n7 / northeast)
+                        :quant (a / about
+                              :op1 (d / distance-quantity :quant 50
+                                    :unit (k / kilometer))))
+                  :op2 (r2 / relative-position
+                        :op1 (c5 / city :wiki "Benevento" :name (n8 / name :op1 "Benevento"))
+                        :direction (n / northwest)
+                        :quant (a2 / about
+                              :op1 (d2 / distance-quantity :quant 30
+                                    :unit (k2 / kilometer))))))
+
+# ::id wiki-minicorpus-a_0013.2 ::date 2017-10-17T08:22:25 ::annotator SDL-AMR-09 ::preferred
+# ::snt Faicchio borders the following municipalities: Cusano Mutri, Gioia Sannitica, Puglianello, Ruviano, San Lorenzello, San Salvatore Telesino.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0013_2.txt
+(b / border-01
+      :ARG1 (c / city :wiki "Faicchio"
+            :name (n / name :op1 "Faicchio"))
+      :ARG2 (a / and
+            :op1 (l / local-region :wiki "Cusano_Mutri"
+                  :name (n2 / name :op1 "Cusano" :op2 "Mutri")
+                  :mod (m / municipality))
+            :op2 (l2 / local-region :wiki "Gioia_Sannitica"
+                  :name (n3 / name :op1 "Gioia" :op2 "Sannitica")
+                  :mod m)
+            :op3 (l3 / local-region :wiki "Puglianello"
+                  :name (n4 / name :op1 "Puglianello")
+                  :mod m)
+            :op4 (l4 / local-region :wiki "Ruviano"
+                  :name (n5 / name :op1 "Ruviano")
+                  :mod m)
+            :op5 (l5 / local-region :wiki "San_Lorenzello"
+                  :name (n6 / name :op1 "San" :op2 "Lorenzello")
+                  :mod m)
+            :op6 (l6 / local-region :wiki "San_Salvatore_Telesino"
+                  :name (n7 / name :op1 "San" :op2 "Salvatore" :op3 "Telesino")
+                  :mod m)
+            :ARG1-of (f / follow-04)))
+
+# ::id wiki-minicorpus-a_0014.1 ::date 2017-10-17T08:29:18 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Cressex Community School</b> is a cooperative thrust secondary school in High Wycombe, Buckinghamshire.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0014_1.txt
+(s / school
+      :domain (s2 / school :wiki "Cressex_Community_School" :name (n / name :op1 "Cressex" :op2 "Community" :op3 "School"))
+      :mod (s3 / secondary)
+      :ARG1-of (t / thrust-01
+            :ARG2-of (c / cooperate-01))
+      :location (c2 / city :wiki "High_Wycombe" :name (n2 / name :op1 "High" :op2 "Wycombe")
+            :part-of (c3 / county :wiki "Buckinghamshire" :name (n3 / name :op1 "Buckinghamshire"))))
+
+# ::id wiki-minicorpus-a_0014.2 ::date 2017-10-17T08:35:59 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is a foundation school, which takes children from the age of 3 through to the age of 18.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0014_2.txt
+(s / school
+      :mod (f / foundation)
+      :ARG0-of (t / take-01
+            :ARG1 (c / child
+                  :age (b / between
+                        :op1 (t2 / temporal-quantity :quant 3
+                              :unit (y / year))
+                        :op2 (t3 / temporal-quantity :quant 18
+                              :unit (y2 / year))))))
+
+# ::id wiki-minicorpus-a_0014.3 ::date 2017-10-17T21:52:59 ::annotator SDL-AMR-09 ::preferred
+# ::snt The school has approximately 570 pupils.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0014_3.txt
+(h / have-03
+      :ARG0 (s / school)
+      :ARG1 (p / pupil
+            :quant (a / approximately :op1 570)))
+
+# ::id wiki-minicorpus-a_0015.1 ::date 2017-10-17T21:59:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt <i><b>Teheran 43</b></i> is a 1981 USSR-France-Switzerland drama film made by Mosfilm, <i>Mediterraneo Cine</i> and <i>Pro Dis Film</i>, directed by Aleksandr Alov and Vladimir Naumov.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0015_1.txt
+(f / film
+      :domain (w / work-of-art :wiki "Teheran_43"
+            :name (n2 / name :op1 "Teheran" :op2 43))
+      :time (d / date-entity :year 1981)
+      :mod (c / country :wiki "Soviet_Union"
+            :name (n / name :op1 "USSR"))
+      :mod (c2 / country :wiki "France"
+            :name (n3 / name :op1 "France"))
+      :mod (c3 / country :wiki "Switzerland"
+            :name (n4 / name :op1 "Switzerland"))
+      :mod (d2 / drama)
+      :ARG1-of (m / make-01
+            :ARG0 (a / and
+                  :op1 (c6 / company :wiki "Mosfilm"
+                        :name (n9 / name :op1 "Mosfilm"))
+                  :op2 (c4 / company :wiki -
+                        :name (n5 / name :op1 "Mediterraneo" :op2 "Cine"))
+                  :op3 (c5 / company :wiki -
+                        :name (n6 / name :op1 "Pro" :op2 "Dis" :op3 "Film"))))
+      :ARG1-of (d3 / direct-01
+            :ARG0 (a2 / and
+                  :op1 (p / person :wiki "Aleksandr_Alov"
+                        :name (n7 / name :op1 "Aleksandr" :op2 "Alov"))
+                  :op2 (p2 / person :wiki "Vladimir_Naumov"
+                        :name (n8 / name :op1 "Vladimir" :op2 "Naumov")))))
+
+# ::id wiki-minicorpus-a_0015.2 ::date 2017-10-17T22:05:44 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is based on events around Operation Long Jump, the 1943 attempt by Nazi Germany to assassinate Winston Churchill, Joseph Stalin and Franklin Delano Roosevelt during the Tehran Conference.
+# ::save-date Sun Jan 7, 2018 ::file wiki-minicorpus-a_0015_2.txt
+(b / base-02
+      :ARG1 (i2 / it)
+      :ARG2 (e / event
+            :topic (e2 / event :wiki "Operation_Long_Jump" :name (n3 / name :op1 "Operation" :op2 "Long" :op3 "Jump")
+                  :manner-of (a / attempt-01
+                        :ARG0 (c / country :wiki "Germany" :name (n / name :op1 "Germany")
+                              :mod (p / political-movement :wiki "Nazism" :name (n4 / name :op1 "Nazism")))
+                        :ARG1 (a2 / assassinate-01
+                              :ARG0 c
+                              :ARG1 (a3 / and
+                                    :op1 (p2 / person :wiki "Winston_Churchill" :name (n5 / name :op1 "Winston" :op2 "Churchill"))
+                                    :op2 (p3 / person :wiki "Joseph_Stalin" :name (n6 / name :op1 "Joseph" :op2 "Stalin"))
+                                    :op3 (p4 / person :wiki "Franklin_D._Roosevelt" :name (n7 / name :op1 "Franklin" :op2 "Delano" :op3 "Roosevelt"))
+                                    :time (c3 / conference :wiki "Tehran_Conference" :name (n8 / name :op1 "Tehran" :op2 "Conference"))))
+                        :time (d / date-entity :year 1943)))))
+
+# ::id wiki-minicorpus-a_0016.1 ::date 2017-10-17T22:12:56 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Trần Đại Quang</b> (born 12 October 1956) is a Vietnamese politician, who is the President of Vietnam, in office since 2 April 2016 and one of the country's top leaders.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0016_1.txt
+(p3 / politician
+      :mod (c / country :wiki "Vietnam" :name (n / name :op1 "Vietnam"))
+      :ARG0-of (h2 / have-org-role-91
+            :ARG1 c
+            :ARG2 (p4 / president)
+            :time (s / since
+                  :op1 (d2 / date-entity :day 2 :month 4 :year 2016)))
+      :ARG1-of (i2 / include-91
+            :ARG2 (p2 / person
+                  :ARG0-of (l / lead-02
+                        :ARG1 c)
+                  :mod (t / top)))
+      :domain (p / person :wiki "Trần_Đại_Quang" :name (n2 / name :op1 "Trần" :op2 "Đại" :op3 "Quang")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 12 :month 10 :year 1956))))
+
+# ::id wiki-minicorpus-a_0016.2 ::date 2017-10-17T22:39:20 ::annotator SDL-AMR-09 ::preferred
+# ::snt Previously he served as Minister of Public Security from 2011 to 2016.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0016_2.txt
+(s / serve-01
+      :ARG0 (h2 / he)
+      :ARG1 (m2 / minister
+            :topic (s2 / security
+                  :mod (p2 / public)))
+      :time (p / previous)
+      :duration (d3 / date-interval
+            :op1 (d / date-entity :year 2011)
+            :op2 (d2 / date-entity :year 2016)))
+
+# ::id wiki-minicorpus-a_0017.1 ::date 2017-10-17T22:42:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Karl William Turner</b> (born 15 April 1971) is a British Labour Party politician, who has been the Member of Parliament (MP) for Kingston upon Hull East since 2010.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0017_1.txt
+(p4 / politician
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (p3 / parliament)
+            :ARG2 (m / member)
+            :time (s / since
+                  :op1 (d2 / date-entity :year 2010))
+            :beneficiary (l2 / local-region :wiki "Kingston_upon_Hull_East_(UK_Parliament_constituency)" :name (n5 / name :op1 "Kingston" :op2 "upon" :op3 "Hull" :op4 "East")))
+      :mod (c / country :wiki "United_Kingdom" :name (n / name :op1 "Britain"))
+      :ARG0-of (h2 / have-org-role-91
+            :ARG1 (p2 / political-party :wiki "Labour_Party_(UK)" :name (n4 / name :op1 "Labour" :op2 "Party"))
+            :ARG2 m)
+      :domain (p / person :wiki "Karl_Turner_(British_politician)" :name (n2 / name :op1 "Karl" :op2 "William" :op3 "Turner")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 15 :month 4 :year 1971))))
+
+# ::id wiki-minicorpus-a_0017.2 ::date 2017-10-17T22:46:53 ::annotator SDL-AMR-09 ::preferred
+# ::snt He was appointed Shadow Attorney General in January 2016 by Jeremy Corbyn, before resigning in June.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0017_2.txt
+(a / appoint-01
+      :ARG0 (p / person :wiki "Jeremy_Corbyn" :name (n / name :op1 "Jeremy" :op2 "Corbyn"))
+      :ARG1 (h / he)
+      :ARG2 (a2 / attorney
+            :mod (g / general)
+            :mod (s / shadow))
+      :time (d / date-entity :month 1 :year 2016)
+      :time (b / before
+            :op1 (r / resign-01
+                  :ARG0 h
+                  :time (d2 / date-entity :month 6))))
+
+# ::id wiki-minicorpus-a_0018.1 ::date 2017-10-17T22:50:45 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Doug Sanders Celebrity Classic</b> was a golf tournament on the Champions Tour from 1988 to 1994.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0018_1.txt
+(t / tournament
+      :mod (g / golf-01)
+      :domain (g2 / game :wiki "Doug_Sanders_Celebrity_Classic" :name (n / name :op1 "Doug" :op2 "Sanders" :op3 "Celebrity" :op4 "Classic"))
+      :subevent-of (g3 / game :wiki "PGA_Tour_Champions" :name (n2 / name :op1 "Champions" :op2 "Tour"))
+      :duration (d3 / date-interval
+            :op1 (d / date-entity :year 1988)
+            :op2 (d2 / date-entity :year 1994)))
+
+# ::id wiki-minicorpus-a_0018.2 ::date 2017-10-17T22:53:59 ::annotator SDL-AMR-09 ::preferred
+# ::snt It was played in Kingwood, Houston, Texas at the Deerwood Club.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0018_2.txt
+(p / play-01
+      :ARG1 (i2 / it)
+      :location (s2 / sports-facility :wiki "Deerwood_Country_Club"
+            :name (n2 / name :op1 "Deerwood" :op2 "Club")
+            :location (c / city-district :wiki "Kingwood,_Houston"
+                  :name (n3 / name :op1 "Kingwood")
+                  :part-of (c2 / city :wiki "Houston"
+                        :name (n4 / name :op1 "Houston")
+                        :part-of (s3 / state :wiki "Texas"
+                              :name (n5 / name :op1 "Texas"))))))
+
+# ::id wiki-minicorpus-a_0019.1 ::date 2017-10-17T22:57:02 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Speckled Emperor</b> or <b>Chipumi</b> (<i>Gynanisa maja</i>) is a moth of the Saturniidae family.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0019_1.txt
+(s / species :wiki "Gynanisa_maja" :name (n2 / name :op1 "Speckled" :op2 "Emperor")
+      :ARG1-of (i2 / include-91
+            :ARG2 (f / family :wiki "Saturniidae" :name (n3 / name :op1 "Saturniidae")
+                  :ARG1-of (i3 / include-91
+                        :ARG2 (m / moth)))))
+
+# ::id wiki-minicorpus-a_0019.2 ::date 2017-10-17T22:59:44 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is known from South Africa to eastern Africa (up to Angola and Zambia).
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0019_2.txt
+(k / know-02
+      :ARG1 (i2 / it)
+      :source (c / country :wiki "South_Africa" :name (n / name :op1 "South" :op2 "Africa"))
+      :destination (w / world-region :wiki "East_Africa" :name (n2 / name :op1 "Eastern" :op2 "Africa"))
+      :destination (u / up-to
+            :op1 (a / and
+                  :op1 (c3 / country :wiki "Angola" :name (n3 / name :op1 "Angola"))
+                  :op2 (c4 / country :wiki "Zambia" :name (n4 / name :op1 "Zambia")))))
+
+# ::id wiki-minicorpus-a_0020.1 ::date 2017-10-17T23:13:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Amekawa Dam</b> (Japanese: 雨川ダム) is a check dam on Ame river in Saku, Nagano Prefecture, Japan.
+# ::save-date Thu Jan 18, 2018 ::file wiki-minicorpus-a_0020_1.txt
+(d / dam
+      :ARG0-of (c3 / check-08)
+      :location (r / river :wiki - :name (n4 / name :op1 "Ame")
+            :location (c4 / city :wiki "Saku,_Nagano" :name (n5 / name :op1 "Saku")
+                  :part-of (c5 / county :wiki "Nagano_Prefecture" :name (n6 / name :op1 "Nagano" :op2 "Prefecture")
+                        :part-of (c2 / country :wiki "Japan" :name (n3 / name :op1 "Japan")))))
+      :domain (f / facility :wiki "Amekawa_Dam" :name (n / name :op1 "Amekawa" :op2 "Dam")))
+
+# ::id wiki-minicorpus-a_0020.2 ::date 2017-10-17T23:18:19 ::annotator SDL-AMR-09 ::preferred
+# ::snt The primary purpose is reducing water flow velocity to counteract erosion.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0020_2.txt
+(h / have-purpose-91
+      :ARG2 (r / reduce-01
+            :ARG1 (v / velocity
+                  :mod (f / flow-01
+                        :ARG1 (w / water)))
+            :purpose (c / counteract-01
+                  :ARG1 (e / erode-01)))
+      :mod (p / primary))
+
+# ::id wiki-minicorpus-a_0021.1 ::date 2017-10-17T23:19:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Vitskøl Abbey</b> (Danish: Vitskøl Kloster; Latin: Vitae Schola, meaning "school of life") is a former Cistercian monastery near Ranum in Himmerland in Region Nordjylland, Denmark, one of the oldest existing monastic complexes in northern Europe.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0021_1.txt
+(m / monastery
+      :time (f / former)
+      :mod (r / religious-group :wiki "Cistercians" :name (n4 / name :op1 "Cistercian"))
+      :ARG1-of (n5 / near-02
+            :ARG2 (c3 / city :wiki "Ranum" :name (n6 / name :op1 "Ranum")
+                  :location (p / peninsula :wiki "Himmerland" :name (n7 / name :op1 "Himmerland")
+                        :part-of (c4 / country-region :wiki "North_Denmark_Region" :name (n8 / name :op1 "Region" :op2 "Nordjylland")
+                              :part-of (c / country :wiki "Denmark" :name (n2 / name :op1 "Denmark"))))))
+      :ARG1-of (i2 / include-91
+            :ARG2 (c5 / complex
+                  :mod (m2 / monastic)
+                  :ARG1-of (h / have-degree-91
+                        :ARG2 (o / old)
+                        :ARG3 (m3 / most)
+                        :ARG5 (w / world-region :wiki "Northern_Europe" :name (n9 / name :op1 "Northern" :op2 "Europe")))
+                  :ARG1-of (e / exist-01)))
+      :domain (w2 / worship-place :wiki "Vitskøl_Abbey" :name (n / name :op1 "Vitskøl" :op2 "Abbey")))
+
+# ::id wiki-minicorpus-a_0022.1 ::date 2017-10-17T23:27:26 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Estradiol</b> (abbreviated as <b>E2</b>), or <b>17β-estradiol</b>, also known as <b>estra-1,3,5(10)-triene-3,17β-diol</b>, is a steroid and estrogen sex hormone, and the primary female sex hormone.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0022_1.txt
+(a / and
+      :op1 (s / steroid)
+      :op2 (h / hormone
+            :mod (s2 / sex)
+            :mod (e / estrogen))
+      :op3 (h2 / hormone
+            :mod (s3 / sex
+                  :mod (f / female))
+            :mod (p / primary))
+      :domain (s4 / small-molecule :wiki "Estradiol" :name (n / name :op1 "estradiol")))
+
+# ::id wiki-minicorpus-a_0022.2 ::date 2017-10-17T23:30:58 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is named for and is important in the regulation of the estrous and menstrual female reproductive cycles.
+# ::save-date Tue Nov 7, 2017 ::file wiki-minicorpus-a_0022_2.txt
+(a / and
+      :op1 (n / name-02
+            :ARG1 (i2 / it)
+            :ARG2 r)
+      :op2 (i3 / important-01
+            :ARG1 i2
+            :ARG2 (r / regulate-01
+                  :ARG0 i2
+                  :ARG1 (a2 / and
+                        :op1 (c / cycle-02
+                              :ARG1 (e / estrous)
+                              :ARG2 (r2 / reproduce-01
+                                    :ARG0 (f / female)))
+                        :op2 (c2 / cycle-02
+                              :ARG1 (m / menstruate-00)
+                              :ARG2 r2)))))
+
+# ::id wiki-minicorpus-a_0023.1 ::date 2017-10-17T23:38:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>BRAF</b> is a human gene that makes a protein called B-Raf.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0023_1.txt
+(g / gene
+      :mod (h / human)
+      :ARG0-of (m / make-01
+            :ARG1 (p / protein :wiki "BRAF_(gene)" :name (n2 / name :op1 "B-Raf")))
+      :domain (g2 / gene :wiki "BRAF_(gene)" :name (n / name :op1 "BRAF")))
+
+# ::id wiki-minicorpus-a_0023.2 ::date 2017-10-17T23:40:42 ::annotator SDL-AMR-09 ::preferred
+# ::snt The gene is also referred to as <b>proto-oncogene B-Raf</b> and <b>v-Raf murine sarcoma viral oncogene homolog B</b>, while the protein is more formally known as <b>serine/threonine-protein kinase B-Raf</b>.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0023_2.txt
+(a / and
+      :op1 (r / refer-01
+            :ARG1 (g / gene)
+            :ARG2 (a2 / and
+                  :op1 (g2 / gene :wiki "BRAF_(gene)"
+                        :name (n2 / name :op1 "B-Raf")
+                        :mod (p / proto-oncogene))
+                  :op2 (g3 / gene :wiki "BRAF_(gene)"
+                        :name (n3 / name :op1 "v-Raf" :op2 "murine" :op3 "sarcoma" :op4 "viral" :op5 "oncogene" :op6 "homolog" :op7 "B")))
+            :mod (a3 / also))
+      :op2 (k / know-02
+            :ARG1 (p2 / protein)
+            :ARG2 (e / enzyme :wiki "BRAF_(gene)"
+                  :name (n4 / name :op1 "serine/threonine-protein" :op2 "kinase" :op3 "B-Raf"))
+            :ARG1-of (h / have-degree-91
+                  :ARG2 (f / formal)
+                  :ARG3 (m / more))))
+
+# ::id wiki-minicorpus-a_0024.1 ::date 2017-10-17T23:45:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Twin Hills Airport</b> (IATA: <b>TWA</b>, FAA LID: <b>A63</b>) is a state-owned, public-use airport serving Twin Hills, in the Dillingham Census Area of the U.S. state of Alaska.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0024_1.txt
+(a / airport
+      :ARG1-of (o / own-01
+            :ARG0 (s2 / state))
+      :ARG1-of (u / use-01
+            :ARG1-of (p / public-02))
+      :ARG0-of (s3 / serve-02
+            :ARG2 (c2 / country-region :wiki "Twin_Hills,_Alaska" :name (n3 / name :op1 "Twin" :op2 "Hills")
+                  :part-of (c3 / country-region :wiki "Dillingham_Census_Area,_Alaska" :name (n4 / name :op1 "Dillingham" :op2 "Census" :op3 "Area")
+                        :part-of (s / state :wiki "Alaska" :name (n2 / name :op1 "Alaska")
+                              :part-of (c / country :wiki "United_States" :name (n / name :op1 "U.S."))))))
+      :domain (a2 / airport :wiki "Twin_Hills_Airport" :name (n5 / name :op1 "Twin" :op2 "Hills" :op3 "Airport")
+            :mod (i3 / identifier :value "TWA"
+                  :mod (o2 / organization :wiki "International_Air_Transport_Association" :name (n6 / name :op1 "IATA")))
+            :mod (i4 / identifier :value "A63"
+                  :mod (l / location)
+                  :mod (g / government-organization :wiki "Federal_Aviation_Administration" :name (n7 / name :op1 "FAA")))))
+
+# ::id wiki-minicorpus-a_0024.2 ::date 2017-10-17T23:49:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt Scheduled airline service to Dillingham Airport is provided by Peninsula Airways (PenAir).
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0024_2.txt
+(p / provide-01
+      :ARG0 (c / company :wiki "PenAir" :name (n2 / name :op1 "Peninsula" :op2 "Airways"))
+      :ARG1 (s / serve-01
+            :ARG1 (a / airline)
+            :ARG1-of (s2 / schedule-01)
+            :destination (a2 / airport :wiki "Dillingham_Airport" :name (n / name :op1 "Dillingham" :op2 "Airport"))))
+
+# ::id wiki-minicorpus-a_0025.1 ::date 2017-10-17T23:52:40 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Vrakbukta</b> (<i>The Wreck Bay</i>) is a bay at the northwestern side of Kongsøya in Kong Karls Land, Svalbard.
+# ::save-date Tue Oct 17, 2017 ::file wiki-minicorpus-a_0025_1.txt
+(b / bay
+      :location (s / side
+            :mod (n / northwestern)
+            :part-of (i2 / island :wiki "Kongsøya"
+                  :name (n2 / name :op1 "Kongsøya")
+                  :part-of (i3 / island :wiki "Kong_Karls_Land"
+                        :name (n3 / name :op1 "Kong" :op2 "Karls" :op3 "Land")
+                        :part-of (i4 / island :wiki "Svalbard"
+                              :name (n4 / name :op1 "Svalbard")))))
+      :domain (b2 / bay :wiki "Vrakbukta"
+            :name (n5 / name :op1 "Vrakbukta")))
+
+# ::id wiki-minicorpus-a_0025.2 ::date 2017-10-17T23:56:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is located between Retziusfjellet and the headland of Kennedyneset.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0025_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / it)
+      :ARG2 (b2 / between
+            :op1 (m / mountain :wiki "Retziusfjellet" :name (n / name :op1 "Retziusfjellet"))
+            :op2 (h / headland
+                  :mod (l / location :wiki "Kennedyneset" :name (n2 / name :op1 "Kennedyneset")))))
+
+# ::id wiki-minicorpus-a_0026.1 ::date 2017-10-18T00:03:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Propanethiol</b> is an organic compound with the molecular formula C<sub>3</sub<H<sub>8</sub>S.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0026_1.txt
+(c / compound
+      :mod (o / organic)
+      :mod (f / formula
+            :mod (m / molecule)
+            :mod (s3 / string-entity :value "C38S"))
+      :domain (s2 / small-molecule :wiki "Propanethiol" :name (n2 / name :op1 "propanethiol")))
+
+# ::id wiki-minicorpus-a_0026.2 ::date 2017-10-18T00:10:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt It belongs to the group of thiols.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0026_2.txt
+(b / belong-01
+      :ARG0 (i2 / it)
+      :ARG1 (g / group
+            :ARG2-of (i3 / include-91
+                  :ARG1 (s / small-molecule :wiki "Thiol" :name (n / name :op1 "thiol")))))
+
+# ::id wiki-minicorpus-a_0027.1 ::date 2017-10-18T00:12:52 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>State Route 203</b> (<b>SR 203</b>) is a primary state highway in the U.S. state of Virginia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0027_1.txt
+(h / highway
+      :mod (p / primary)
+      :mod (s2 / state)
+      :location (s / state :wiki "Virginia"
+            :name (n2 / name :op1 "Virginia")
+            :part-of (c / country :wiki "United_States"
+                  :name (n / name :op1 "U.S.")))
+      :domain (r / road :wiki "Virginia_State_Route_203"
+            :name (n3 / name :op1 "State" :op2 "Route" :op3 203)))
+
+# ::id wiki-minicorpus-a_0027.2 ::date 2017-10-18T00:15:16 ::annotator SDL-AMR-09 ::preferred
+# ::snt Known for most of its length as Oldhams Road, the state highway runs 9.76 miles (15.71 km) from SR 3 at Lyells north to SR 608 and SR 1007 in Kinsale.
+# ::save-date Tue Nov 7, 2017 ::file wiki-minicorpus-a_0027_2.txt
+(r / run-04
+      :ARG1 (h / highway
+            :mod (s / state)
+            :ARG1-of (k2 / know-02
+                  :ARG2 (r2 / road :wiki "Virginia_State_Route_203"
+                        :name (n / name :op1 "Oldhams" :op2 "Road"))
+                  :ARG3 (m2 / most
+                        :ARG3-of (i2 / include-91
+                              :ARG2 (l / long-03
+                                    :ARG1 h)))))
+      :ARG2 (d2 / distance-quantity :quant 9.76
+            :unit (m / mile))
+      :ARG3 (r3 / road :wiki "Virginia_State_Route_3"
+            :name (n2 / name :op1 "SR" :op2 3)
+            :location (c / city :wiki "Lyells,_Virginia"
+                  :name (n3 / name :op1 "Lyells")))
+      :ARG4 (c2 / city :wiki "Kinsale,_Virginia"
+            :name (n7 / name :op1 "Kinsale"))
+      :path (r4 / relative-position
+            :op1 (a / and
+                  :op1 (r5 / road :wiki "Ohio_State_Route_608"
+                        :name (n5 / name :op1 "SR" :op2 608))
+                  :op2 (r6 / road :wiki "All_American_Freeway"
+                        :name (n6 / name :op1 "SR" :op2 1007)))
+            :direction (n4 / north)))
+
+# ::id wiki-minicorpus-a_0028.1 ::date 2017-10-18T00:30:02 ::annotator SDL-AMR-09 ::preferred
+# ::snt <i><b>Plaut v. Spendthrift Farm, Inc.</b></i>, 514 U.S. 211 (1995), was a case in which the Supreme Court of the United States held that Congress may not retroactively require federal courts to reopen final judgments.
+# ::save-date Sun Jan 7, 2018 ::file wiki-minicorpus-a_0028_1.txt
+(c3 / case-03
+      :ARG1 (h / hold-02
+            :ARG0 (g2 / government-organization :wiki "Supreme_Court_of_the_United_States" :name (n4 / name :op1 "Supreme" :op2 "Court" :op3 "of" :op4 "the" :op5 "United" :op6 "States"))
+            :ARG1 (p / possible-01 :polarity -
+                  :ARG1 (r / require-01
+                        :ARG0 (g / government-organization :wiki "United_States_Congress" :name (n3 / name :op1 "Congress"))
+                        :ARG1 (r3 / reopen-01
+                              :ARG0 c4
+                              :ARG1 (j / judge-01
+                                    :ARG0 c4
+                                    :mod (f2 / final)))
+                        :ARG2 (c4 / court
+                              :mod (f / federal))
+                        :mod (r2 / retroactive))))
+      :domain (c / court-decision :wiki "Plaut_v._Spendthrift_Farm,_Inc." :name (n5 / name :op1 "Plaut" :op2 "v" :op3 "." :op4 "Spendthrift" :op5 "Farm" :op6 "," :op7 "Inc.")
+            :ARG1-of (c5 / cite-01
+                  :ARG2 (c2 / court-decision :wiki "Plaut_v._Spendthrift_Farm,_Inc." :name (n6 / name :op1 "514" :op2 "U.S." :op3 "211")))
+            :time (d / date-entity :year 1995)))
+
+# ::id wiki-minicorpus-a_0028.2 ::date 2017-10-18T00:40:53 ::annotator SDL-AMR-09 ::preferred
+# ::snt Writing for the Court, Justice Scalia asserted that such action amounted to an unauthorized encroachment by Congress upon the powers of the judiciary and therefore violated the constitutional principle of separation of powers.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0028_2.txt
+(a / assert-03
+      :ARG0 (p / person :wiki "Antonin_Scalia"
+            :name (n2 / name :op1 "Scalia")
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (j / justice)))
+      :ARG1 (a2 / amount-02
+            :ARG1 (a3 / act-02
+                  :mod (s / such))
+            :ARG2 (e / encroach-01
+                  :ARG0 (g / government-organization :wiki "United_States_Congress"
+                        :name (n / name :op1 "Congress"))
+                  :ARG1 (p2 / power
+                        :poss (j2 / judiciary))
+                  :ARG1-of (a4 / authorize-01 :polarity -))
+            :ARG0-of (c / cause-01
+                  :ARG1 (v / violate-01
+                        :ARG0 a3
+                        :ARG1 (p3 / principle
+                              :mod (c2 / constitution)
+                              :topic (s2 / separate-01
+                                    :ARG1 (p4 / power))))))
+      :manner (w / write-01
+            :ARG0 p
+            :ARG3-of (h2 / have-org-role-91
+                  :ARG1 (g2 / government-organization :wiki "Supreme_Court_of_the_United_States"
+                        :name (n3 / name :op1 "Court")))))
+
+# ::id wiki-minicorpus-a_0029.1 ::date 2017-10-18T00:48:11 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Gawade</b> is a Marathi surname.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0029_1.txt
+(s / surname
+      :mod (l / language :wiki "Marathi_language" :name (n / name :op1 "Marathi"))
+      :domain (p / person :wiki "Gawade" :name (n2 / name :op1 "Gawade")))
+
+# ::id wiki-minicorpus-a_0029.2 ::date 2017-10-18T00:50:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is spelled as ’गावडे’ in Marathi and some people spell it as Gawde or Gavade or Gavde in English.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0029_2.txt
+(s2 / spell-01
+      :ARG0 (p / person
+            :mod (s / some))
+      :ARG1 (i2 / it)
+      :ARG2 (p2 / person :wiki "Gawade"
+            :name (n3 / name :op1 "Gawde"))
+      :mod (l / language :wiki "English_language"
+            :name (n / name :op1 "English")))
+
+# ::id wiki-minicorpus-a_0030.1 ::date 2017-10-18T00:56:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Posterior Polymorphous Corneal Dystrophy</b> (<b>PPCD</b>; sometimes also <i>Schlichting dystrophy</i>) is a type of corneal dystrophy, characterised by changes in Descemet's membrane and endothelial layer.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0030_1.txt
+(t / type-03
+      :ARG1 (d / disease :wiki "Posterior_polymorphous_corneal_dystrophy" :name (n / name :op1 "Posterior" :op2 "Polymorphous" :op3 "Corneal" :op4 "Dystrophy")
+            :ARG1-of (c2 / characterize-01
+                  :ARG2 (c3 / change-01
+                        :ARG1 (a / and
+                              :op1 (t2 / thing :wiki "Descemet's_membrane" :name (n2 / name :op1 "Descemet" :op2 "'s" :op3 "membrane"))
+                              :op2 (l / layer
+                                    :mod (e / endothelium))))))
+      :ARG2 (d2 / dystrophy
+            :mod (c / cornea)))
+
+# ::id wiki-minicorpus-a_0030.2 ::date 2017-10-18T01:00:54 ::annotator SDL-AMR-09 ::preferred
+# ::snt Symptoms mainly consist of decreased vision due to corneal edema.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0030_2.txt
+(c / consist-01
+      :ARG1 (s / symptom)
+      :ARG2 (s2 / see-01
+            :ARG1-of (d / decrease-01
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (e / edema
+                              :mod (c3 / cornea)))))
+      :mod (m / main))
+
+# ::id wiki-minicorpus-a_0031.1 ::date 2017-10-18T01:02:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Elon Farnsworth</b> (February 2, 1799, Woodstock, Vermont – March 24, 1877, Detroit) was an American lawyer and politician.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0031_1.txt
+(p / person
+      :mod (c / country :wiki "United_States" :name (n2 / name :op1 "America"))
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (a / and
+                  :op1 (l / lawyer)
+                  :op2 (p2 / politician)))
+      :domain (p3 / person :wiki "Elon_Farnsworth_(Michigan_Attorney_General)" :name (n4 / name :op1 "Elon" :op2 "Farnsworth")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 2 :month 2 :year 1799)
+                  :location (c3 / city :wiki "Woodstock,_Vermont" :name (n5 / name :op1 "Woodstock")
+                        :part-of (s / state :wiki "Vermont" :name (n / name :op1 "Vermont"))))
+            :ARG1-of (d3 / die-01
+                  :time (d2 / date-entity :day 24 :month 3 :year 1877)
+                  :location (c2 / city :wiki "Detroit" :name (n3 / name :op1 "Detroit")))))
+
+# ::id wiki-minicorpus-a_0031.2 ::date 2017-10-18T01:08:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt He served as both Attorney General and Chancellor of the state of Michigan.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0031_2.txt
+(s2 / serve-01
+      :ARG0 (h / he)
+      :ARG1 (a / and
+            :op1 (a2 / attorney
+                  :mod (g / general))
+            :op2 (c / chancellor))
+      :ARG2 (s / state :wiki "Michigan" :name (n / name :op1 "Michigan")))
+
+# ::id wiki-minicorpus-a_0032.1 ::date 2017-10-18T03:27:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Kruševačka Planina</b> is a mountain found in Kosovo in the Šar Mountains in Gora (region) next to Macedonia and Albania.
+# ::save-date Thu Jan 4, 2018 ::file wiki-minicorpus-a_0032_1.txt
+(m / mountain
+      :ARG1-of (f / find-01
+            :location (m2 / mountain :wiki "Šar_Mountains" :name (n4 / name :op1 "Šar" :op2 "Mountains")
+                  :location (w / world-region :wiki "Gora_(region)" :name (n5 / name :op1 "Gora")))
+            :location (n6 / next-to
+                  :op1 (a / and
+                        :op1 (c2 / country :wiki "Republic_of_Macedonia" :name (n2 / name :op1 "Macedonia"))
+                        :op2 (c3 / country :wiki "Albania" :name (n3 / name :op1 "Albania"))))
+            :location (c / country :wiki "Kosovo" :name (n / name :op1 "Kosovo")))
+      :domain (m3 / mountain :wiki "Kruševačka_Planina" :name (n7 / name :op1 "Kruševačka" :op2 "Planina")))
+
+# ::id wiki-minicorpus-a_0032.2 ::date 2017-10-18T03:33:35 ::annotator SDL-AMR-09 ::preferred
+# ::snt Kruševačka Planina reaches a peak altitude of 2,048 m (6,719 ft).
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0032_2.txt
+(r / reach-01
+      :ARG0 (m2 / mountain :wiki "Kruševačka_Planina" :name (n / name :op1 "Kruševačka" :op2 "Planina"))
+      :ARG1 (a / altitude
+            :ARG1-of (p / peak-01
+                  :ARG2 (d / distance-quantity :quant 2048
+                        :unit (m / meter)))))
+
+# ::id wiki-minicorpus-a_0033.1 ::date 2017-10-18T03:35:40 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Alexis Marcou</b> /ɑːlɛksismærkʊ/ is a visual artist and illustrator known for his commercial and self initiated work.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0033_1.txt
+(a / and
+      :op1 (a2 / artist
+            :mod (v / visual))
+      :op2 (p / person
+            :ARG0-of (i2 / illustrate-02))
+      :ARG1-of (k / know-02
+            :ARG3 (a3 / and
+                  :op1 (c / commercial)
+                  :op2 (w / work-01
+                        :ARG0 a
+                        :ARG1-of (i3 / initiate-01
+                              :ARG0 a))))
+      :domain (p2 / person :wiki "Alexis_Marcou" :name (n / name :op1 "Alexis" :op2 "Marcou")))
+
+# ::id wiki-minicorpus-a_0033.2 ::date 2017-10-18T03:38:36 ::annotator SDL-AMR-09 ::preferred
+# ::snt His best known works have been for Nike, Cisco, BMW and Acco Brands.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0033_2.txt
+(b / benefit-01
+      :ARG0 (t / thing
+            :ARG1-of (w / work-01
+                  :ARG0 (h / he))
+            :ARG1-of (k / know-02
+                  :ARG1-of (h2 / have-degree-91
+                        :ARG2 (g / good-02)
+                        :ARG3 (m / most))))
+      :ARG1 (a / and
+            :op1 (c / company :wiki "Nike,_Inc." :name (n / name :op1 "Nike"))
+            :op2 (c2 / company :wiki "Cisco_Systems" :name (n2 / name :op1 "Cisco"))
+            :op3 (c3 / company :wiki "BMW" :name (n3 / name :op1 "BMW"))
+            :op4 (c4 / company :wiki "ACCO_Brands" :name (n4 / name :op1 "Acco" :op2 "Brands"))))
+
+# ::id wiki-minicorpus-a_0034.1 ::date 2017-10-18T03:42:52 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>WVBF</b> (1530 AM) is a radio station broadcasting a news/talk format.
+# ::save-date Tue Dec 19, 2017 ::file wiki-minicorpus-a_0034_1.txt
+(s / station
+      :ARG0-of (r / radio-01)
+      :ARG0-of (b / broadcast-01
+            :ARG1 (s2 / slash
+                  :op1 (f / format
+                        :mod (n / news))
+                  :op2 (f2 / format
+                        :mod (t / talk-01))))
+      :domain (p / publication :wiki "WVBF" :name (n2 / name :op1 "WVBF")
+            :manner (m / modulate-01
+                  :ARG1 (a / amplitude
+                        :quant (f3 / frequency-quantity :quant 1530
+                              :unit (k / kilohertz))))))
+
+# ::id wiki-minicorpus-a_0034.2 ::date 2017-10-18T03:50:53 ::annotator SDL-AMR-09 ::preferred
+# ::snt Licensed to Middleborough Center, Massachusetts, USA, the station serves the Middleborough/Taunton area.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0034_2.txt
+(s2 / serve-02
+      :ARG0 (s3 / station
+            :ARG1-of (l / license-01
+                  :ARG2 (l2 / location :wiki "Middleborough_Center,_Massachusetts" :name (n3 / name :op1 "Middleborough" :op2 "Center")
+                        :location (s / state :wiki "Massachusetts" :name (n / name :op1 "Massachusetts")
+                              :part-of (c / country :wiki "United_States" :name (n2 / name :op1 "USA"))))))
+      :ARG2 (a / area
+            :mod (s4 / slash
+                  :op1 (c2 / city :wiki "Middleborough,_Massachusetts" :name (n4 / name :op1 "Middleborough"))
+                  :op2 (c3 / city :wiki "Taunton,_Massachusetts" :name (n5 / name :op1 "Taunton")))))
+
+# ::id wiki-minicorpus-a_0035.1 ::date 2017-10-18T03:55:04 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Punto Fijo</b> is the capital city of the municipality of Carirubana in northern Falcón State, Venezuela.
+# ::save-date Thu Jan 11, 2018 ::file wiki-minicorpus-a_0035_1.txt
+(h / have-org-role-91
+      :ARG0 (c5 / city :wiki "Punto_Fijo" :name (n5 / name :op1 "Punto" :op2 "Fijo"))
+      :ARG1 (c4 / country-region :wiki - :name (n2 / name :op1 "Carirubana")
+            :mod (m / municipality)
+            :part-of (n4 / north
+                  :part-of (s / state :wiki "Falcón" :name (n3 / name :op1 "Falcón" :op2 "State")
+                        :part-of (c / country :wiki "Venezuela" :name (n / name :op1 "Venezuela")))))
+      :ARG2 (c3 / capital))
+
+# ::id wiki-minicorpus-a_0035.2 ::date 2017-10-18T04:11:52 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is located on the southwestern coast of the Paraguaná Peninsula.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0035_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / it)
+      :ARG2 (c / coast
+            :location (s / southwest)
+            :part-of (p / peninsula :wiki "Paraguaná_Peninsula"
+                  :name (n / name :op1 "Paraguaná" :op2 "Peninsula"))))
+
+# ::id wiki-minicorpus-a_0036.1 ::date 2017-10-18T04:13:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Chewong</b> (Cheq Wong, Ceq Wong) is an aboriginal Mon–Khmer language spoken in Malaya.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0036_1.txt
+(l / language :wiki "Austroasiatic_languages"
+      :name (n / name :op1 "Mon-Khmer")
+      :mod (a / aboriginal)
+      :ARG3-of (s / speak-01
+            :location (c / country :wiki "Malaysia"
+                  :name (n2 / name :op1 "Malaya")))
+      :domain (l2 / language :wiki "Cheq_Wong_language"
+            :name (n3 / name :op1 "Chewong")))
+
+# ::id wiki-minicorpus-a_0037.1 ::date 2017-10-18T04:16:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Hamonado</b> (not to be confused with Hamon or Glazed Bone-in Ham) is a Filipino dish consisting of pork cooked in pineapple (and/or orange, calamansi) juice.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0037_1.txt
+(d / dish
+      :mod (c / country :wiki "Philippines"
+            :name (n / name :op1 "Philippines"))
+      :ARG1-of (c2 / consist-01
+            :ARG2 (p / pork
+                  :ARG1-of (c3 / cook-01
+                        :manner (a / and-or
+                              :op1 (j / juice
+                                    :mod (p2 / pineapple))
+                              :op2 (j2 / juice
+                                    :mod (o / orange))
+                              :op3 (j3 / juice
+                                    :mod (c4 / calamansi))))))
+      :domain (f / food-dish :wiki "Hamonado"
+            :name (n2 / name :op1 "Hamonado")
+            :ARG2-of (c5 / confuse-01 :polarity -
+                  :ARG3 (o2 / or
+                        :op1 (f2 / food-dish :wiki "Hamonado"
+                              :name (n3 / name :op1 "Hamon"))
+                        :op2 (b / bone
+                              :ARG1-of (g / glaze-01
+                                    :manner (h / ham)))))))
+
+# ::id wiki-minicorpus-a_0037.2 ::date 2017-10-18T04:24:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt While Hamon is usually served during special occasions like Pasko (Christmas), the Hamonado is for everyday fare.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0037_2.txt
+(c / contrast-01
+      :ARG1 (s / serve-02
+            :ARG1 (f2 / food-dish :wiki "Hamonado"
+                  :name (n2 / name :op1 "Hamon"))
+            :time (o / occasion
+                  :example (f3 / festival :wiki "Christmas_in_the_Philippines"
+                        :name (n3 / name :op1 "Pasko"))
+                  :ARG1-of (s2 / special-02))
+            :mod (u / usual))
+      :ARG2 (h / have-purpose-91
+            :ARG1 (f4 / food-dish :wiki "Hamonado"
+                  :name (n / name :op1 "Hamonado"))
+            :ARG2 (f / fare
+                  :frequency (r / rate-entity-91
+                        :ARG2 (t / temporal-quantity :quant 1
+                              :unit (d / day))))))
+
+# ::id wiki-minicorpus-a_0038.1 ::date 2017-10-18T07:20:42 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>2-Aminoethoxydiphenyl borate</b> (<b>2-APB</b>) is a chemical that acts to inhibit both IP<sub>3</sub> receptors and TRP channels (although it activates TRPV1, TRPV2, & TRPV3 at higher concentrations).
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0038_1.txt
+(c / chemical
+      :ARG0-of (a / act-01
+            :ARG1 (i4 / inhibit-01
+                  :ARG0 c
+                  :ARG1 (a2 / and
+                        :op1 (p3 / protein :wiki "Inositol_trisphosphate_receptor" :name (n2 / name :op1 "IP3" :op2 "receptor"))
+                        :op2 (p4 / protein :wiki "Transient_receptor_potential_channel" :name (n3 / name :op1 "TRP" :op2 "channel")))
+                  :concession (a3 / activate-01
+                        :ARG0 c
+                        :ARG1 (a4 / and
+                              :op1 (p5 / protein :wiki "TRPV1" :name (n4 / name :op1 "TRPV1"))
+                              :op2 (p6 / protein :wiki "TRPV2" :name (n5 / name :op1 "TRPV2"))
+                              :op3 (p7 / protein :wiki "TRPV3" :name (n6 / name :op1 "TRPV3")))
+                        :condition (h / have-degree-91
+                              :ARG1 (c2 / concentrate-02
+                                    :ARG1 c)
+                              :ARG2 (h2 / high-02)
+                              :ARG3 (m / more)))))
+      :domain (s / small-molecule :wiki "2-Aminoethoxydiphenyl_borate" :name (n / name :op1 "2-Aminoethoxydiphenyl" :op2 "borate")))
+
+# ::id wiki-minicorpus-a_0038.2 ::date 2017-10-18T07:33:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt In research it is used to manipulate intracellular release of calcium ions (Ca<sup>2+</sup>) and modify TRP channel activity, although there its lack of specific effects make it less than ideal under some circumstances.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0038_2.txt
+(u / use-01
+      :ARG1 (i2 / it)
+      :ARG2 (a / and
+            :op1 (m / manipulate-02
+                  :ARG2 (r2 / release-01
+                        :ARG1 (i3 / ion
+                              :mod (c / calcium
+                                    :ARG1-of (i4 / ionize-01 :value "2+")))))
+            :op2 (m2 / modify-01
+                  :ARG1 (a2 / activity-06
+                        :ARG0 (p / protein :wiki "Transient_receptor_potential_channel" :name (n / name :op1 "TRP" :op2 "channel")))))
+      :time (r / research-01)
+      :concession (m3 / make-02
+            :ARG0 (l / lack-01
+                  :ARG0 i2
+                  :ARG1 (a3 / affect-01
+                        :ARG0 i2
+                        :ARG1-of (s / specific-02)))
+            :ARG1 (h / have-degree-91
+                  :ARG1 i2
+                  :ARG2 (i5 / ideal)
+                  :ARG3 (l2 / less)
+                  :condition (c2 / circumstance
+                        :mod (s2 / some)))))
+
+# ::id wiki-minicorpus-a_0039.1 ::date 2017-10-18T07:38:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>The Goddard Institute for Space Studies</b> (<b>GISS</b>) is a laboratory in the Earth Sciences Division of NASA's Goddard Space Flight Center and a unit of the Columbia University Earth Institute.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0039_1.txt
+(a / and
+      :op1 (l / laboratory
+            :part-of (r / research-institute :wiki -
+                  :name (n / name :op1 "Earth" :op2 "Sciences" :op3 "Division")
+                  :part-of (r3 / research-institute :wiki "Goddard_Space_Flight_Center"
+                        :name (n3 / name :op1 "Goddard" :op2 "Space" :op3 "Flight" :op4 "Center")
+                        :part-of (r4 / research-institute :wiki "NASA"
+                              :name (n4 / name :op1 "NASA")))))
+      :op2 (u / unit
+            :part-of (r5 / research-institute :wiki "The_Earth_Institute"
+                  :name (n5 / name :op1 "Columbia" :op2 "University" :op3 "Earth" :op4 "Institute")))
+      :domain (r2 / research-institute :wiki "Goddard_Institute_for_Space_Studies"
+            :name (n2 / name :op1 "Goddard" :op2 "Institute" :op3 "for" :op4 "Space" :op5 "Studies")))
+
+# ::id wiki-minicorpus-a_0039.2 ::date 2017-10-18T07:43:38 ::annotator SDL-AMR-09 ::preferred
+# ::snt The institute is located at Columbia University in New York City.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0039_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / institute)
+      :ARG2 (u / university :wiki "Columbia_University" :name (n2 / name :op1 "Columbia" :op2 "University")
+            :location (c / city :wiki "New_York_City" :name (n / name :op1 "New" :op2 "York" :op3 "City"))))
+
+# ::id wiki-minicorpus-a_0040.1 ::date 2017-10-18T07:44:38 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Large black flying squirrels</b> (genus <i>Aeromys</i>) form a taxon of squirrels under the tribe Pteromyini.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0040_1.txt
+(t / taxon :wiki "Large_black_flying_squirrel" :name (n / name :op1 "Large" :op2 "black" :op3 "flying" :op4 "squirrel")
+      :ARG1-of (i2 / include-91
+            :ARG2 (g / genus :wiki - :name (n5 / name :op1 "Aeromys")
+                  :ARG1-of (i3 / include-91
+                        :ARG2 (t2 / tribe :wiki "Flying_squirrel" :name (n3 / name :op1 "Pteromyini")
+                              :ARG1-of (i4 / include-91
+                                    :ARG2 (s / squirrel)))))))
+
+# ::id wiki-minicorpus-a_0040.2 ::date 2017-10-18T07:50:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt They are only found in South-east Asia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0040_2.txt
+(f / find-01
+      :ARG1 (t / they)
+      :mod (o / only)
+      :location (w / world-region :wiki "Southeast_Asia" :name (n / name :op1 "South-east" :op2 "Asia")))
+
+# ::id wiki-minicorpus-a_0041.1 ::date 2017-10-18T07:51:20 ::annotator SDL-AMR-09 ::preferred
+# ::snt <i><b>Bonjour Tristesse</b></i> (French "Hello, Sadness") is a 1958 British-American Technicolor film in CinemaScope, directed and produced by Otto Preminger from a screenplay by Arthur Laurents based on the novel of the same title by Françoise Sagan.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0041_1.txt
+(f / film
+      :mod (c2 / company :wiki "Technicolor" :name (n3 / name :op1 "Technicolor"))
+      :time (d / date-entity :year 1958)
+      :mod (c / country :wiki "United_Kingdom" :name (n / name :op1 "United" :op2 "Kingdom"))
+      :mod (c3 / country :wiki "United_States" :name (n2 / name :op1 "America"))
+      :mod (p / product :wiki "CinemaScope" :name (n4 / name :op1 "CinemaScope"))
+      :ARG1-of (d2 / direct-01
+            :ARG0 (p2 / person :wiki "Otto_Preminger" :name (n5 / name :op1 "Otto" :op2 "Preminger")))
+      :ARG1-of (p3 / produce-01
+            :ARG0 p2
+            :ARG2 (s / screenplay
+                  :poss (p4 / person :wiki "Arthur_Laurents" :name (n6 / name :op1 "Arthur" :op2 "Laurents"))
+                  :ARG1-of (b / base-02
+                        :ARG2 (n7 / novel
+                              :ARG1-of (t / title-01
+                                    :ARG1-of (s2 / same-01
+                                          :ARG2 w))
+                              :poss (p5 / person :wiki "Françoise_Sagan" :name (n8 / name :op1 "Françoise" :op2 "Sagan"))))))
+      :domain (w / work-of-art :wiki "Bonjour_Tristesse" :name (n9 / name :op1 "Bonjour" :op2 "Tristesse")))
+
+# ::id wiki-minicorpus-a_0041.2 ::date 2017-10-18T08:02:00 ::annotator SDL-AMR-09 ::preferred
+# ::snt The film stars Deborah Kerr, David Niven, Jean Seberg, Mylène Demongeot and Geoffrey Horne, and features Juliette Gréco, Walter Chiari, Martita Hunt and Roland Culver.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0041_2.txt
+(a / and
+      :op1 (s / star-01
+            :ARG1 (a2 / and
+                  :op1 (p / person :wiki "Deborah_Kerr"
+                        :name (n / name :op1 "Deborah" :op2 "Kerr"))
+                  :op2 (p2 / person :wiki "David_Niven"
+                        :name (n2 / name :op1 "David" :op2 "Niven"))
+                  :op3 (p3 / person :wiki "Jean_Seberg"
+                        :name (n3 / name :op1 "Jean" :op2 "Seberg"))
+                  :op4 (p4 / person :wiki "Mylène_Demongeot"
+                        :name (n4 / name :op1 "Mylène" :op2 "Demongeot"))
+                  :op5 (p5 / person :wiki "Geoffrey_Horne"
+                        :name (n5 / name :op1 "Geoffrey" :op2 "Horne")))
+            :ARG2 (f / film))
+      :op2 (f2 / feature-01
+            :ARG1 (a3 / and
+                  :op1 (p6 / person :wiki "Juliette_Gréco"
+                        :name (n6 / name :op1 "Juliette" :op2 "Gréco"))
+                  :op2 (p7 / person :wiki "Walter_Chiari"
+                        :name (n7 / name :op1 "Walter" :op2 "Chiari"))
+                  :op3 (p8 / person :wiki "Martita_Hunt"
+                        :name (n8 / name :op1 "Martita" :op2 "Hunt"))
+                  :op4 (p9 / person :wiki "Roland_Culver"
+                        :name (n9 / name :op1 "Roland" :op2 "Culver")))
+            :ARG2 f))
+
+# ::id wiki-minicorpus-a_0042.1 ::date 2017-10-18T08:07:28 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Matthew K. Rose</b> (born 1959) in Salina, Kansas was the Chairman and CEO of Burlington Northern Santa Fe Corp. from 2002 to Dec. 31, 2013.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0042_1.txt
+(h / have-org-role-91
+      :ARG0 (p / person :wiki "Matthew_K._Rose" :name (n2 / name :op1 "Matthew" :op2 "K." :op3 "Rose")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :year 1959)
+                  :location (c2 / city :wiki "Salina,_Kansas" :name (n3 / name :op1 "Salina")
+                        :location (s2 / state :wiki "Kansas" :name (n4 / name :op1 "Kansas")))))
+      :ARG1 (c5 / company :wiki "BNSF_Railway" :name (n5 / name :op1 "Burlington" :op2 "Northern" :op3 "Santa" :op4 "Fe" :op5 "Corp."))
+      :ARG2 (a / and
+            :op1 (c3 / chairman)
+            :op2 (o2 / officer
+                  :mod (c4 / chief)
+                  :mod (e2 / executive)))
+      :duration (d4 / date-interval
+            :op1 (d2 / date-entity :year 2002)
+            :op2 (d3 / date-entity :day 31 :month 12 :year 2013)))
+
+# ::id wiki-minicorpus-a_0042.2 ::date 2017-10-18T08:16:19 ::annotator SDL-AMR-09 ::preferred
+# ::snt In December 2013, Rose’s role was shifted to that of executive chairman, renewing speculation he might be in line to replace Warren Buffett at Berkshire's helm.
+# ::save-date Tue Jan 9, 2018 ::file wiki-minicorpus-a_0042_2.txt
+(s / shift-01
+      :ARG1 (h / have-org-role-91
+            :ARG0 (p2 / person :wiki "Matthew_K._Rose" :name (n / name :op1 "Rose")))
+      :ARG2 (h2 / have-org-role-91
+            :ARG0 p2
+            :ARG2 (c / chairman
+                  :mod (e / executive)))
+      :time (d / date-entity :month 12 :year 2013)
+      :ARG0-of (r / renew-01
+            :ARG1 (s2 / speculate-01
+                  :ARG1 (p / possible-01
+                        :ARG1 (l / line-up-02
+                              :ARG1 p2
+                              :purpose (r2 / replace-01
+                                    :ARG1 (p3 / person :wiki "Warren_Buffett" :name (n2 / name :op1 "Warren" :op2 "Buffett"))
+                                    :ARG2 p2
+                                    :purpose (h3 / helm
+                                          :mod (c2 / company :wiki "Berkshire_Hathaway" :name (n3 / name :op1 "Berkshire")))))))))
+
+# ::id wiki-minicorpus-a_0043.1 ::date 2017-10-18T08:24:29 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Book of Isaiah</b> (Hebrew: ספר ישעיהו‎‎, IPA: [sɛ.fɛr jə.ʃaʕ.ˈjɑː.hu]) is the first of the Latter Prophets in the Hebrew Bible and the first of the Major Prophets in English Bibles.
+# ::save-date Wed Jan 10, 2018 ::file wiki-minicorpus-a_0043_1.txt
+(a / and
+      :op1 (b2 / book :wiki - :name (n4 / name :op1 "Latter" :op2 "Prophets")
+            :part-of (b3 / book :wiki "Hebrew_Bible" :name (n5 / name :op1 "Hebrew" :op2 "Bible"))
+            :ord (o3 / ordinal-entity :value 1)
+            :domain (b / book :wiki "Book_of_Isaiah" :name (n3 / name :op1 "Book" :op2 "of" :op3 "Isaiah")))
+      :op2 (i3 / include-91
+            :ARG1 b
+            :ARG2 (b4 / book :wiki "Major_prophet" :name (n6 / name :op1 "Major" :op2 "Prophets")
+                  :part-of (b5 / book :wiki "Bible" :name (n7 / name :op1 "Bible")
+                        :mod (c / country :wiki "England" :name (n / name :op1 "England"))))))
+
+# ::id wiki-minicorpus-a_0043.2 ::date 2017-10-18T08:32:22 ::annotator SDL-AMR-09 ::preferred
+# ::snt The book is identified by a superscription as the works of the 8th-century BCE prophet Isaiah ben Amoz, but there is ample evidence that much of it was composed during the Babylonian captivity and later.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0043_2.txt
+(h / have-concession-91
+      :ARG1 (e / evidence-01
+            :ARG1 (c / compose-02
+                  :ARG1 (m / much
+                        :ARG3-of (i3 / include-91
+                              :ARG2 b))
+                  :time (a3 / and
+                        :op1 (c2 / captivity
+                              :location (l / location :wiki "Babylon"
+                                    :name (n2 / name :op1 "Babylon")))
+                        :op2 (a4 / after
+                              :op1 c2)))
+            :mod (a2 / ample))
+      :ARG2 (i2 / identify-01
+            :ARG0 (s / superscription)
+            :ARG1 (b / book)
+            :ARG2 (t / thing
+                  :ARG1-of (w / work-01
+                        :ARG0 (p / person :wiki "Isaiah"
+                              :name (n / name :op1 "Isaiah" :op2 "ben" :op3 "Amoz")
+                              :ARG0-of (h2 / have-rel-role-91
+                                    :ARG2 (p2 / prophet))
+                              :time (d / date-entity :century 8 :era "BC"))))))
+
+# ::id wiki-minicorpus-a_0044.1 ::date 2017-10-18T08:40:29 ::annotator SDL-AMR-09 ::preferred
+# ::snt <i><b>Al-Jumhuriya</b></i> (Arabic: الجمهورية <i>The Republic</i>) is a leading newspaper in the Republic of Yemen based in Taiz.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0044_1.txt
+(n3 / newspaper
+      :domain (n4 / newspaper :wiki "Al-Jumhuryah" :name (n5 / name :op1 "Al-Jumhuriya"))
+      :ARG0-of (l2 / lead-01)
+      :location (c / country :wiki "Yemen" :name (n / name :op1 "Republic" :op2 "of" :op3 "Yemen"))
+      :ARG1-of (b / base-01
+            :location (c2 / city :wiki "Taiz" :name (n2 / name :op1 "Taiz"))))
+
+# ::id wiki-minicorpus-a_0044.2 ::date 2017-10-18T08:44:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt The newspaper was founded in 1962, and is pro-government in its stance.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0044_2.txt
+(a / and
+      :op1 (f / found-01
+            :ARG1 (n / newspaper)
+            :time (d / date-entity :year 1962))
+      :op2 (s / stand-11
+            :ARG0 n
+            :ARG2 (f2 / favor-01
+                  :ARG1 (g / government-organization
+                        :ARG0-of (g2 / govern-01)))))
+
+# ::id wiki-minicorpus-a_0045.1 ::date 2017-10-18T08:47:42 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Rutland and Melton</b> is a county constituency spanning Leicestershire and Rutland, represented in the House of Commons of the Parliament of the United Kingdom.
+# ::save-date Wed Jan 17, 2018 ::file wiki-minicorpus-a_0045_1.txt
+(c2 / constituency
+      :mod (c3 / county)
+      :ARG0-of (s / span-01
+            :ARG1 (a / and
+                  :op1 (c4 / county :wiki "Leicestershire" :name (n3 / name :op1 "Leicestershire"))
+                  :op2 (c5 / county :wiki "Rutland" :name (n4 / name :op1 "Rutland"))))
+      :ARG1-of (r / represent-01
+            :ARG2 (g2 / government-organization :wiki "House_of_Commons_of_the_United_Kingdom" :name (n5 / name :op1 "House" :op2 "of" :op3 "Commons")
+                  :part-of (g / government-organization :wiki "Parliament_of_the_United_Kingdom" :name (n / name :op1 "Parliament" :op2 "of" :op3 "the" :op4 "United" :op5 "Kingdom"))))
+      :domain (c / country-region :wiki "Rutland_and_Melton_(UK_Parliament_constituency)" :name (n2 / name :op1 "Rutland" :op2 "and" :op3 "Melton")))
+
+# ::id wiki-minicorpus-a_0045.2 ::date 2017-10-18T08:53:52 ::annotator SDL-AMR-09 ::preferred
+# ::snt It elects one Member of Parliament (MP) by the first-past-the-post system of election.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0045_2.txt
+(e / elect-01
+      :ARG0 (i2 / it)
+      :ARG1 (p3 / person :quant 1
+            :ARG0-of (h2 / have-org-role-91
+                  :ARG1 (g / government-organization :wiki "Parliament_of_the_United_Kingdom" :name (n / name :op1 "Parliament"))
+                  :ARG2 (m2 / member)))
+      :manner (s / system
+            :mod (e3 / elect-01)
+            :mod (t / thing :wiki "First-past-the-post_voting" :name (n2 / name :op1 "first" :op2 "past" :op3 "the" :op4 "post"))))
+
+# ::id wiki-minicorpus-a_0046.1 ::date 2017-10-18T08:57:16 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Alpha Pi Omega Sorority, Inc.</b> (<b>ΑΠΩ</b>) is the oldest historically American Indian sorority.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0046_1.txt
+(h / have-degree-91
+      :ARG1 (o3 / organization :wiki "Alpha_Pi_Omega" :name (n4 / name :op1 "Alpha" :op2 "Pi" :op3 "Omega" :op4 "Sorority" :op5 "," :op6 "Inc."))
+      :ARG2 (o2 / old)
+      :ARG3 (m / most)
+      :ARG5 (s / sorority
+            :mod (e / ethnic-group :wiki "Native_Americans_in_the_United_States" :name (n / name :op1 "American" :op2 "Indian")
+                  :mod (h2 / historic))))
+
+# ::id wiki-minicorpus-a_0046.2 ::date 2017-10-18T09:01:40 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is also the largest Native American Greek letter organization, with 20 chapters across seven states and the District of Columbia.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0046_2.txt
+(a3 / and
+      :op1 (h / have-degree-91
+            :ARG1 (i2 / it)
+            :ARG2 (l / large)
+            :ARG3 (m / most)
+            :ARG5 (o2 / organization
+                  :purpose (l2 / letter
+                        :mod (l3 / language :wiki "Greek_language" :name (n3 / name :op1 "Greek")))
+                  :mod (c / country :wiki "United_States" :name (n / name :op1 "America")))
+            :mod (a2 / also))
+      :op2 (h2 / have-03
+            :ARG0 i2
+            :ARG1 (c2 / chapter :quant 20)
+            :location (a / and
+                  :op1 (s / state :quant 7)
+                  :op2 (c3 / city :wiki "Washington,_D.C." :name (n2 / name :op1 "District" :op2 "of" :op3 "Columbia")))))
+
+# ::id wiki-minicorpus-a_0047.1 ::date 2017-10-18T09:07:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Juan Ávalos</b> (born 8 January 1941) is a Spanish former sports shooter.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0047_1.txt
+(p / person
+      :time (f / former)
+      :ARG0-of (s / shoot-01
+            :mod (s2 / sport))
+      :mod (c / country :wiki "Spain" :name (n2 / name :op1 "Spain"))
+      :domain (p2 / person :wiki "Juan_Ávalos" :name (n / name :op1 "Juan" :op2 "Ávalos")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 8 :month 1 :year 1941))))
+
+# ::id wiki-minicorpus-a_0047.2 ::date 2017-10-18T09:11:30 ::annotator SDL-AMR-09 ::preferred
+# ::snt He competed at the 1972, 1976 and the 1984 Summer Olympics.
+# ::save-date Thu Jan 25, 2018 ::file wiki-minicorpus-a_0047_2.txt
+(c / compete-01
+      :ARG0 (h / he)
+      :ARG3 (a / and
+            :op1 (g / game :wiki "1972_Summer_Olympics" :name (n / name :op1 "1972" :op2 "Summer" :op3 "Olympics"))
+            :op2 (g2 / game :wiki "1976_Summer_Olympics" :name (n2 / name :op1 "1976" :op2 "Summer" :op3 "Olympics"))
+            :op3 (g3 / game :wiki "1984_Summer_Olympics" :name (n3 / name :op1 "1984" :op2 "Summer" :op3 "Olympics"))))
+
+# ::id wiki-minicorpus-a_0048.1 ::date 2017-10-18T09:15:17 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Vernon Eulion Jordan Jr.</b> (born August 15, 1935) is an American business executive and civil rights activist in the United States.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0048_1.txt
+(p / person
+      :ARG0-of (h / have-org-role-91
+            :ARG2 (a / and
+                  :op1 (e / executive
+                        :mod (b / business))
+                  :op2 (a2 / activist
+                        :purpose (r / right-05
+                              :mod (c5 / civil))))
+            :location (c4 / country :wiki "United_States" :name (n4 / name :op1 "United" :op2 "States")))
+      :mod (c2 / country :wiki "United_States" :name (n2 / name :op1 "America"))
+      :domain (p2 / person :wiki "Vernon_Jordan" :name (n / name :op1 "Vernon" :op2 "Eulion" :op3 "Jordan" :op4 "Jr.")
+            :ARG1-of (b2 / bear-02
+                  :time (d / date-entity :day 15 :month 8 :year 1935))))
+
+# ::id wiki-minicorpus-a_0048.2 ::date 2017-10-18T10:16:09 ::annotator SDL-AMR-09 ::preferred
+# ::snt A leading figure in the Civil Rights Movement, he was chosen by President Bill Clinton as a close adviser.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0048_2.txt
+(c / choose-01
+      :ARG0 (p3 / person :wiki "Bill_Clinton"
+            :name (n2 / name :op1 "Bill" :op2 "Clinton")
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (p4 / president)))
+      :ARG1 (f / figure
+            :ARG0-of (l / lead-02
+                  :ARG1 (p / political-movement :wiki "African-American_civil_rights_movement_(1954–1968)"
+                        :name (n / name :op1 "Civil" :op2 "Rights" :op3 "Movement")))
+            :domain (h2 / he))
+      :ARG4 (p2 / person
+            :ARG0-of (a / advise-01)
+            :ARG1-of (c2 / close-10)))
+
+# ::id wiki-minicorpus-a_0049.1 ::date 2017-10-18T10:25:42 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Senegalese Football Federation</b> (French: Fédération Sénégalaise de Football) (FSF) is the governing body of football in Senegal.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0049_1.txt
+(b / body
+      :ARG0-of (g / govern-01
+            :ARG1 (f / football)
+            :location (c / country :wiki "France" :name (n2 / name :op1 "France")))
+      :domain (o / organization :wiki "Senegalese_Football_Federation" :name (n / name :op1 "Senegalese" :op2 "Football" :op3 "Federation")))
+
+# ::id wiki-minicorpus-a_0049.2 ::date 2017-10-18T10:28:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt It was founded in 1960, affiliated to FIFA in 1964 and to CAF in 1963.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0049_2.txt
+(a / and
+      :op1 (f / found-01
+            :ARG1 (i2 / it)
+            :time (d / date-entity :year 1960))
+      :op2 (a2 / affiliate-01
+            :ARG1 i2
+            :ARG2 (o / organization :wiki "FIFA" :name (n / name :op1 "FIFA"))
+            :time (d2 / date-entity :year 1964))
+      :op3 (a3 / affiliate-01
+            :ARG1 i2
+            :ARG2 (o2 / organization :wiki "Confederation_of_African_Football" :name (n2 / name :op1 "CAF"))
+            :time (d3 / date-entity :year 1963)))
+
+# ::id wiki-minicorpus-a_0050.1 ::date 2017-10-18T10:30:58 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Elswick Ordnance Company</b> (sometimes referred to as Elswick Ordnance Works, but usually as "EOC") was a British armaments manufacturing company of the late 19th and early 20th century.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0050_1.txt
+(c2 / company
+      :ARG0-of (m / manufacture-01
+            :ARG1 (a / armament))
+      :mod (c / country :wiki "United_Kingdom" :name (n / name :op1 "Britain")
+            :time (d2 / date-interval
+                  :op1 (l / late
+                        :op1 (d3 / date-entity :century 19))
+                  :op2 (e / early
+                        :op1 (d / date-entity :century 20))))
+      :domain (c3 / company :wiki "Elswick_Ordnance_Company" :name (n2 / name :op1 "Elswick" :op2 "Ordnance" :op3 "Company")))
+
+# ::id wiki-minicorpus-a_0051.1 ::date 2017-10-18T10:35:04 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>SRI International</b> (<b>SRI</b>) is an American nonprofit research institute headquartered in Menlo Park, California.
+# ::save-date Thu Jan 11, 2018 ::file wiki-minicorpus-a_0051_1.txt
+(i2 / institute
+      :ARG0-of (r / research-01)
+      :ARG0-of (p / profit-01 :polarity -)
+      :poss-of (h / headquarters
+            :location (c3 / city :wiki "Menlo_Park,_California" :name (n4 / name :op1 "Menlo" :op2 "Park")
+                  :location (s / state :wiki "California" :name (n3 / name :op1 "California"))))
+      :mod (c / country :wiki "United_States" :name (n / name :op1 "America"))
+      :domain (r2 / research-institute :wiki "SRI_International" :name (n2 / name :op1 "SRI" :op2 "International")))
+
+# ::id wiki-minicorpus-a_0051.2 ::date 2017-10-18T10:37:58 ::annotator SDL-AMR-09 ::preferred
+# ::snt The trustees of Stanford University established SRI in 1946 as a center of innovation to support economic development in the region.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0051_2.txt
+(e2 / establish-01
+      :ARG0 (p / person
+            :ARG2-of (t / trust-01
+                  :ARG0 (u / university :wiki "Stanford_University" :name (n / name :op1 "Stanford" :op2 "University"))))
+      :ARG1 (r / research-institute :wiki "SRI_International" :name (n2 / name :op1 "SRI"))
+      :ARG2 (c / center
+            :mod (i2 / innovate-01))
+      :ARG3 (s / support-01
+            :ARG0 r
+            :ARG1 (d2 / develop-02
+                  :ARG1 (e / economy)
+                  :location (r2 / region)))
+      :time (d / date-entity :year 1946))
+
+# ::id wiki-minicorpus-a_0052.1 ::date 2017-10-18T10:43:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Holy Jihad Brigades</b> is a Palestinian organization that suddenly gained prominence in August 2006 by kidnapping two journalists in the Gaza Strip.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0052_1.txt
+(o / organization
+      :ARG0-of (g / gain-02
+            :ARG1 (p / prominence)
+            :time (d / date-entity :month 8 :year 2006)
+            :manner (k / kidnap-01
+                  :ARG0 o
+                  :ARG1 (j / journalist :quant 2)
+                  :location (c2 / country-region :wiki "Gaza_Strip" :name (n2 / name :op1 "Gaza" :op2 "Strip")))
+            :manner (s / sudden))
+      :mod (c / country :wiki "State_of_Palestine" :name (n / name :op1 "Palestine"))
+      :domain (c3 / criminal-organization :wiki "Holy_Jihad_Brigades" :name (n3 / name :op1 "Holy" :op2 "Jihad" :op3 "Brigades")))
+
+# ::id wiki-minicorpus-a_0052.2 ::date 2017-10-18T10:48:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt The apparent purpose of this kidnapping was to demand the release of unspecified "Muslim prisoners" in the United States within 72 hours.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0052_2.txt
+(h2 / have-purpose-91
+      :ARG1 (k / kidnap-01
+            :mod (t2 / this))
+      :ARG2 (d / demand-01
+            :ARG1 (r2 / release-01
+                  :ARG1 (p3 / person
+                        :mod (r / religious-group :wiki "Islam" :name (n / name :op1 "Islam"))
+                        :ARG1-of (s / specify-01 :polarity -)
+                        :location (c / country :wiki "United_States" :name (n2 / name :op1 "United" :op2 "States"))
+                        :ARG1-of (i2 / imprison-01))
+                  :time (a2 / after
+                        :quant (u / up-to
+                              :op1 (t / temporal-quantity :quant 72
+                                    :unit (h / hour))))))
+      :ARG1-of (a / appear-02))
+
+# ::id wiki-minicorpus-a_0053.1 ::date 2017-10-18T11:00:43 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Mefele</b> is an Afro-Asiatic language spoken in northern Cameroon.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0053_1.txt
+(l / language
+      :mod (r / regional-group :wiki "Afroasiatic_languages"
+            :name (n2 / name :op1 "Afro-Asiatic"))
+      :ARG3-of (s / speak-01
+            :location (c / country-region :wiki "North_Region_(Cameroon)"
+                  :name (n / name :op1 "Northern" :op2 "Cameroon")))
+      :domain (l2 / language :wiki "Mefele_language"
+            :name (n3 / name :op1 "Mefele")))
+
+# ::id wiki-minicorpus-a_0053.2 ::date 2017-10-18T11:02:20 ::annotator SDL-AMR-09 ::preferred
+# ::snt Dialects are Mefele, Muhura, Serak, and Shugule.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0053_2.txt
+(d / dialect
+      :domain (a / and
+            :op1 (l / language :wiki "Mefele_language"
+                  :name (n / name :op1 "Mefele"))
+            :op2 (l2 / language :wiki -
+                  :name (n2 / name :op1 "Muhura"))
+            :op3 (l3 / language :wiki -
+                  :name (n3 / name :op1 "Serak"))
+            :op4 (l4 / language :wiki -
+                  :name (n4 / name :op1 "Shugule"))))
+
+# ::id wiki-minicorpus-a_0054.1 ::date 2017-10-18T11:14:23 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Gosnells City Football Club</b> is a football (soccer) club based in Thornlie, Western Australia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0054_1.txt
+(c3 / club
+      :mod (f / football)
+      :ARG1-of (b / base-01
+            :location (c4 / city-district :wiki "Thornlie,_Western_Australia" :name (n4 / name :op1 "Thornlie")
+                  :location (s / state :wiki "Western_Australia" :name (n / name :op1 "Western" :op2 "Australia"))))
+      :domain (o / organization :wiki "Gosnells_City_FC" :name (n2 / name :op1 "Gosnells" :op2 "City" :op3 "Football" :op4 "Club")))
+
+# ::id wiki-minicorpus-a_0054.2 ::date 2017-10-18T11:19:16 ::annotator SDL-AMR-09 ::preferred
+# ::snt They currently (2016) compete in Division 1 of the Football West State League.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0054_2.txt
+(c / compete-01
+      :ARG0 (t / they)
+      :ARG3 (d2 / division
+            :ord (o / ordinal-entity :value 1)
+            :part-of (l / league :wiki "National_Premier_Leagues_Western_Australia" :name (n / name :op1 "Football" :op2 "West" :op3 "State" :op4 "League")))
+      :time (c2 / current)
+      :time (d / date-entity :year 2016))
+
+# ::id wiki-minicorpus-a_0055.1 ::date 2017-10-18T11:23:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Ochamchire</b> or <b>Ochamchira</b> (Georgian: ოჩამჩირე, [ɔtʃʰɑmtʃʰire]; Abkhaz: Очамчыра, <i>Ochamchyra</i>; Russian: Очамчира, <i>Ochamchira</i>) is a seaside city on the Black Sea coast of Abkhazia, Georgia. and a centre of the eponymous district.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0055_1.txt
+(a / and
+      :op1 (c4 / city
+            :location (c5 / coast
+                  :mod (s2 / sea :wiki "Black_Sea"
+                        :name (n6 / name :op1 "Black" :op2 "Sea"))
+                  :mod (c6 / country-region :wiki "Abkhazia"
+                        :name (n9 / name :op1 "Abkhazia"))
+                  :location (c3 / country :wiki "Georgia_(country)"
+                        :name (n7 / name :op1 "Georgia")))
+            :domain (c7 / city :wiki "Ochamchire"
+                  :name (n10 / name :op1 "Ochamchire")))
+      :op2 (h / have-org-role-91
+            :ARG0 c7
+            :ARG1 (d / district
+                  :name n10)
+            :ARG2 (c8 / center)))
+
+# ::id wiki-minicorpus-a_0055.2 ::date 2017-10-18T11:28:05 ::annotator SDL-AMR-09 ::preferred
+# ::snt According to the 1978 population census, Ochamchire had 18,700 residents.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0055_2.txt
+(s / say-01
+      :ARG0 (c / census
+            :mod (p2 / population)
+            :time (d / date-entity :year 1978))
+      :ARG1 (h / have-03
+            :ARG0 (c2 / city :wiki "Ochamchire" :name (n / name :op1 "Ochamchire"))
+            :ARG1 (p / person :quant 18700
+                  :ARG0-of (r / reside-01
+                        :ARG1 c2))))
+
+# ::id wiki-minicorpus-a_0056.1 ::date 2017-10-18T11:30:31 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Mustang Ranch</b>, originally known as the <b>Mustang Bridge Ranch</b>, is a brothel in Storey County, Nevada, about 15 miles (24 km) east of Reno.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0056_1.txt
+(b / brothel
+      :location (c / county :wiki "Storey_County,_Nevada" :name (n2 / name :op1 "Storey" :op2 "County")
+            :part-of (s / state :wiki "Nevada" :name (n / name :op1 "Nevada")))
+      :domain (f / facility :wiki "Mustang_Ranch" :name (n3 / name :op1 "Mustang" :op2 "Ranch"))
+      :location (r / relative-position
+            :op1 (c2 / city :wiki "Reno,_Nevada" :name (n4 / name :op1 "Reno"))
+            :direction (e / east)
+            :quant (a / about
+                  :op1 (d / distance-quantity :quant 15
+                        :unit (m / mile)))))
+
+# ::id wiki-minicorpus-a_0056.2 ::date 2017-10-18T11:34:32 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is currently located at 1011 Wild Horse Canyon Dr Sparks, NV 89434.
+# ::save-date Wed Dec 20, 2017 ::file wiki-minicorpus-a_0056_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / it)
+      :ARG2 (s / street-address-91 :ARG1 1011 :ARG6 89434
+            :ARG2 (r / road :wiki -
+                  :name (n / name :op1 "Wild" :op2 "Horse" :op3 "Canyon" :op4 "Dr"))
+            :ARG4 (c2 / city :wiki "Sparks,_Nevada"
+                  :name (n3 / name :op1 "Sparks"))
+            :ARG5 (s2 / state :wiki "Nevada"
+                  :name (n2 / name :op1 "Nevada")))
+      :time (c / current))
+
+# ::id wiki-minicorpus-a_0057.1 ::date 2017-10-18T11:38:29 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Transylvanian varieties of Romanian</b> (<i>subdialectele / graiurile transilvănene</i>) are a group of dialects of the Romanian language (Daco-Romanian).
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0057_1.txt
+(g / group-01
+      :ARG1 (d / dialect
+            :mod (l / language :wiki "Romanian_language"
+                  :name (n / name :op1 "Romanian")))
+      :ARG2 (v / variety
+            :mod (c / country-region :wiki "Transylvania"
+                  :name (n2 / name :op1 "Transylvania"))
+            :mod l))
+
+# ::id wiki-minicorpus-a_0057.2 ::date 2017-10-18T11:44:39 ::annotator SDL-AMR-09 ::preferred
+# ::snt These varieties cover the historical region of Transylvania, except several large areas along the edges towards the neighboring dialects.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0057_2.txt
+(c / cover-01
+      :ARG1 (c2 / country-region :wiki "Transylvania"
+            :name (n / name :op1 "Transylvania")
+            :mod (h / historical)
+            :ARG2-of (e / except-01
+                  :ARG1 (a / area
+                        :mod (l / large)
+                        :quant (s / several)
+                        :location (a2 / along
+                              :op1 (e2 / edge
+                                    :direction (d / dialect
+                                          :ARG1-of (n2 / neighbor-01)))))))
+      :ARG2 (v / variety
+            :mod (t / this)))
+
+# ::id wiki-minicorpus-a_0058.1 ::date 2017-10-18T11:53:31 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Grakliani Hill</b> (Georgian: გრაკლიანი გორა, <i>Grakliani Gora</i>) is an archaeological excavation site in eastern Georgia near Kaspi, showing evidence of human presence possibly going back 300,000 years.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0058_1.txt
+(s3 / site
+      :location-of (e / excavate-01
+            :mod (a / archeology))
+      :location (c3 / country-region :wiki "Eastern_Georgia_(country)" :name (n6 / name :op1 "Eastern" :op2 "Georgia"))
+      :ARG1-of (n7 / near-02
+            :ARG2 (c4 / city :wiki "Kaspi" :name (n8 / name :op1 "Kaspi")))
+      :ARG0-of (s / show-01
+            :ARG1 (e2 / evidence-01
+                  :ARG1 (p / possible-01
+                        :ARG1 (g / go-back-19
+                              :ARG1 (p2 / present-02
+                                    :ARG1 (h / human))
+                              :quant (t / temporal-quantity :quant 300000
+                                    :unit (y / year))))))
+      :domain (l / location :wiki "Grakliani_Hill" :name (n / name :op1 "Grakliani" :op2 "Hill")))
+
+# ::id wiki-minicorpus-a_0058.2 ::date 2017-10-18T12:00:14 ::annotator SDL-AMR-09 ::preferred
+# ::snt The site was discovered in 2007, during work to widen the Tbilisi-Senaki-Leselidze highway.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0058_2.txt
+(d2 / discover-01
+      :ARG1 (s / site)
+      :time (d / date-entity :year 2007)
+      :time (w / work-01
+            :ARG1 (w2 / widen-01
+                  :ARG1 (r / road :wiki "S1_highway_(Georgia)" :name (n / name :op1 "Tbilisi-Senaki-Leselidze" :op2 "highway")))))
+
+# ::id wiki-minicorpus-a_0059.1 ::date 2017-10-18T12:02:07 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>St Arnaud</b> is a closed railway station on the Mildura railway line, in St Arnaud, Victoria, Australia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0059_1.txt
+(s2 / station
+      :mod (r / railway)
+      :ARG1-of (c3 / close-01)
+      :location (r2 / railway-line :wiki "Mildura_railway_line" :name (n4 / name :op1 "Mildura"))
+      :location (c4 / city :wiki "St_Arnaud,_Victoria" :name (n5 / name :op1 "St" :op2 "Arnaud")
+            :location (s / state :wiki "Victoria_(Australia)" :name (n / name :op1 "Victoria")
+                  :part-of (c / country :wiki "Australia" :name (n2 / name :op1 "Australia"))))
+      :domain (s3 / station :wiki "St_Arnaud_railway_station" :name (n3 / name :op1 "St" :op2 "Arnaud")))
+
+# ::id wiki-minicorpus-a_0059.2 ::date 2017-10-18T12:05:54 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is 255 km from Southern Cross station.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0059_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / it)
+      :ARG2 (r / relative-position
+            :op1 (s / station :wiki "Southern_Cross_railway_station" :name (n / name :op1 "Southern" :op2 "Cross"))
+            :quant (d / distance-quantity :quant 255
+                  :unit (k / kilometer))))
+
+# ::id wiki-minicorpus-a_0060.1 ::date 2017-10-18T12:07:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Tumar Aghaj</b> (Persian: طوماراغاج‎‎, also Romanized as <b>Ţūmār Āghāj</b>; also known as <b>Ţūmār Āqāj</b>) is a village in Hulasu Rural District, in the Central District of Shahin Dezh County, West Azerbaijan Province, Iran.
+# ::save-date Wed Jan 17, 2018 ::file wiki-minicorpus-a_0060_1.txt
+(v / village
+      :domain (c3 / city :wiki "Tumar_Aghaj" :name (n4 / name :op1 "Tumar" :op2 "Aghaj"))
+      :location (c4 / city-district :wiki "Hulasu_Rural_District" :name (n5 / name :op1 "Hulasu" :op2 "Rural" :op3 "District")
+            :part-of (l / local-region :wiki "Central_District_(Shahin_Dezh_County)" :name (n6 / name :op1 "Central" :op2 "District")
+                  :part-of (c6 / county :wiki "Shahin_Dezh_County" :name (n7 / name :op1 "Shahin" :op2 "Dezh" :op3 "County")
+                        :part-of (p / province :wiki "West_Azerbaijan_Province" :name (n8 / name :op1 "West" :op2 "Azerbaijan" :op3 "Province")
+                              :part-of (c2 / country :wiki "Iran" :name (n3 / name :op1 "Iran")))))))
+
+# ::id wiki-minicorpus-a_0060.2 ::date 2017-10-18T12:12:30 ::annotator SDL-AMR-09 ::preferred
+# ::snt At the 2006 census, its population was 374, in 73 families.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0060_2.txt
+(p2 / populate-01
+      :ARG1 (i2 / it)
+      :ARG2 (p / person :quant 374
+            :ARG0-of (h / have-rel-role-91
+                  :ARG1 (f / family :quant 73)
+                  :ARG2 (m / member)))
+      :time (c / census
+            :time (d / date-entity :year 2006)))
+
+# ::id wiki-minicorpus-a_0061.1 ::date 2017-10-18T12:15:33 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Chromosome 6 open reading frame 201</b>, C6orf201, is a protein that in humans is encoded by the <i>C6orf201</i> gene.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0061_1.txt
+(p / protein
+      :ARG1-of (e / encode-01
+            :ARG0 (g / gene :wiki "C11orf1"
+                  :name (n / name :op1 "C6orf201"))
+            :location (h / human))
+      :domain (p2 / protein :wiki "C6orf201"
+            :name (n2 / name :op1 "Chromosome" :op2 6 :op3 "open" :op4 "reading" :op5 "frame" :op6 201)))
+
+# ::id wiki-minicorpus-a_0061.2 ::date 2017-10-18T12:17:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt In humans this gene encodes for a nuclear protein that is primarily expressed in the testis.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0061_2.txt
+(e / encode-01
+      :ARG0 (g / gene
+            :mod (t / this))
+      :ARG1 (p / protein
+            :mod (n / nucleus)
+            :ARG2-of (e2 / express-03
+                  :ARG3 (t2 / testis)
+                  :mod (p2 / primary)))
+      :location (h / human))
+
+# ::id wiki-minicorpus-a_0062.1 ::date 2017-10-18T12:26:23 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Jerzy Juliusz Kijowski</b> (b. May 4, 1943 and Lublin) – Polish physicist, Professor of Physical Sciences who specializes in physics, mathematics, classical and quantum field theory, and theory of gravity.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0062_1.txt
+(h / have-org-role-91
+      :ARG0 (p / person :wiki "Jerzy_Juliusz_Kijowski" :name (n / name :op1 "Jerzy" :op2 "Juliusz" :op3 "Kijowski")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 4 :month 5 :year 1943)
+                  :location (c / city :wiki "Lublin" :name (n2 / name :op1 "Lublin"))))
+      :ARG2 (a / and
+            :op1 (p2 / physicist
+                  :mod (c2 / country :wiki "Poland" :name (n3 / name :op1 "Poland")))
+            :op2 (p3 / professor
+                  :mod (s / science
+                        :mod (p4 / physics))
+                  :ARG0-of (s2 / specialize-01
+                        :ARG1 (a2 / and
+                              :op1 p4
+                              :op2 (m / mathematics)
+                              :op3 (t / theory
+                                    :mod (f / field)
+                                    :mod (c3 / classical))
+                              :op4 (t2 / theory
+                                    :mod f
+                                    :mod (q / quantum))
+                              :op5 (t3 / theory
+                                    :mod (g / gravity)))))))
+
+# ::id wiki-minicorpus-a_0062.2 ::date 2017-10-18T12:32:39 ::annotator SDL-AMR-09 ::preferred
+# ::snt Scientific achievements of Professor Kijowski include the introduction of operator 'transition time' in Quantum mechanics, new interpretation of uncertainty principle for the time and energy, providing a new, completely original variational principle for Einstein equations and the discovery of the affine, variational principle for General Relativity Theory, as well as providing new, original positivity proof for gravitational energy.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0062_2.txt
+(i2 / include-01
+      :ARG1 (a2 / and
+            :op1 (i3 / introduce-02
+                  :ARG0 p2
+                  :ARG1 (t / time
+                        :duration-of (t2 / transition-01)
+                        :ARG0-of (o / operate-01))
+                  :ARG2 (m / mechanics
+                        :mod (q / quantum)))
+            :op2 (i4 / interpret-01
+                  :ARG0 p2
+                  :ARG1 (p / principle
+                        :mod (c / certainty :polarity -)
+                        :topic (a3 / and
+                              :op1 (t3 / time)
+                              :op2 (e / energy)))
+                  :ARG1-of (n2 / new-01))
+            :op3 (p4 / provide-01
+                  :ARG0 p2
+                  :ARG1 (p5 / principle
+                        :mod (o2 / original
+                              :ARG1-of (c2 / complete-02))
+                        :ARG1-of (v / vary-01)
+                        :topic (e2 / equation
+                              :mod (p6 / person :wiki "Albert_Einstein" :name (n3 / name :op1 "Einstein")))
+                        :ARG1-of (n4 / new-01)))
+            :op4 (d / discover-01
+                  :ARG0 p2
+                  :ARG1 (p7 / principle
+                        :mod (a4 / affine)
+                        :ARG1-of (v2 / vary-01)
+                        :topic (t4 / theory
+                              :topic (r / relativity
+                                    :ARG1-of (g / general-02)))))
+            :op5 (p8 / provide-01
+                  :ARG0 p2
+                  :ARG1 (p9 / prove-01
+                        :ARG1 (e3 / energy
+                              :mod (g2 / gravity))
+                        :ARG1-of n2
+                        :mod (p10 / positive)
+                        :mod (o3 / original))))
+      :ARG2 (a / achieve-01
+            :ARG0 (p2 / person :wiki "Jerzy_Juliusz_Kijowski" :name (n / name :op1 "Kijowski")
+                  :ARG0-of (h / have-org-role-91
+                        :ARG2 (p3 / professor)))
+            :mod (s / science)))
+
+# ::id wiki-minicorpus-a_0063.1 ::date 2017-10-18T12:44:10 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Arauá River (Coari River)</b> is a river of Amazonas state in north-western Brazil.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0063_1.txt
+(r / river
+      :domain (r2 / river :wiki "Arauá_River_(Aripuanã_River)" :name (n2 / name :op1 "Arauá" :op2 "River"))
+      :location (s / state :wiki "Amazonas_(Brazilian_state)" :name (n3 / name :op1 "Amazonas")
+            :location (n4 / northwest
+                  :part-of (c / country :wiki "Brazil" :name (n / name :op1 "Brazil")))))
+
+# ::id wiki-minicorpus-a_0064.1 ::date 2017-10-18T12:48:06 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Divisaderos</b> the municipal seat of Divisaderos Municipality of the Mexican state of Sonora.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0064_1.txt
+(h / have-org-role-91
+      :ARG0 (c / city :wiki "Divisaderos" :name (n / name :op1 "Divisaderos"))
+      :ARG1 (l / local-region :wiki "Divisaderos_Municipality" :name (n2 / name :op1 "Divisaderos" :op2 "Municipality")
+            :part-of (s2 / state :wiki "Sonora" :name (n3 / name :op1 "Sonora")
+                  :part-of (c2 / country :wiki "Mexico" :name (n4 / name :op1 "Mexico"))))
+      :ARG2 (s / seat))
+
+# ::id wiki-minicorpus-a_0064.2 ::date 2017-10-18T12:51:59 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is located at 29°36′N 109°28′W, about 20 mi/30 km SE of Moctezuma.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0064_2.txt
+(b / be-located-at-91
+      :ARG1 (i2 / it)
+      :ARG2 (r / relative-position
+            :op1 (c / city :wiki "Moctezuma,_Sonora" :name (n / name :op1 "Moctezuma"))
+            :quant (a / about
+                  :op1 (d / distance-quantity :quant 20
+                        :unit (m / mile)))
+            :direction (s / southeast)))
+
+# ::id wiki-minicorpus-a_0065.1 ::date 2017-10-18T12:59:21 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Three Strong Women</i></b> (French: <b><i>Trois Femmes puissantes</i></b>) (2009) is a novel by the French writer Marie NDiaye.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0065_1.txt
+(n3 / novel
+      :ARG1-of (p2 / publication-91
+            :ARG0 (p3 / person :wiki "Marie_NDiaye" :name (n4 / name :op1 "Marie" :op2 "NDiaye")
+                  :ARG0-of (w / write-01)
+                  :mod (c / country :wiki "France" :name (n2 / name :op1 "France")))
+            :time (d / date-entity :year 2009))
+      :domain (p / publication :wiki "Three_Strong_Women" :name (n5 / name :op1 "Three" :op2 "Strong" :op3 "Women")))
+
+# ::id wiki-minicorpus-a_0065.2 ::date 2017-10-18T13:03:31 ::annotator SDL-AMR-09 ::preferred
+# ::snt It won the 2009 Prix Goncourt, France's most prestigious literary award.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0065_2.txt
+(w / win-01
+      :ARG0 (i2 / it)
+      :ARG1 (a / award :wiki "Prix_Goncourt" :name (n2 / name :op1 "Prix" :op2 "Goncourt")
+            :ARG1-of (h / have-degree-91
+                  :ARG2 (p / prestigious)
+                  :ARG3 (m / most)
+                  :ARG5 (a2 / award-01
+                        :ARG0 (c / country :wiki "France" :name (n / name :op1 "France"))
+                        :ARG3 (l / literary))))
+      :time (d / date-entity :year 2009))
+
+# ::id wiki-minicorpus-a_0066.1 ::date 2017-10-18T13:07:28 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Malo Luafutu</b>, also called <b>Jeshua Ioane Luafutu</b> (born on 29 May 1979), and better known by his stage name <b>Scribe</b>, is a New Zealand hip hop rapper and recording artist of Samoan descent.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0066_1.txt
+(a / and
+      :op1 (p2 / person
+            :mod (h / hip-hop)
+            :mod (c / country :wiki "New_Zealand"
+                  :name (n / name :op1 "New" :op2 "Zealand"))
+            :ARG0-of (r / rap-02))
+      :op2 (a2 / artist
+            :ARG0-of (r2 / record-01)
+            :ARG0-of (d2 / descend-01
+                  :ARG1 (e / ethnic-group :wiki "Samoans"
+                        :name (n2 / name :op1 "Samoan"))))
+      :domain (p / person :wiki "Scribe_(rapper)"
+            :name (n3 / name :op1 "Malo" :op2 "Luafutu")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 29 :month 5 :year 1979))))
+
+# ::id wiki-minicorpus-a_0066.2 ::date 2017-10-18T13:12:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt His debut album, <i>The Crusader</i>, was released in 2003 in New Zealand where it has since been certified five times platinum, achieving two number one singles.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0066_2.txt
+(r / release-01
+      :ARG1 (a2 / album
+            :ARG1-of (d2 / debut-01
+                  :ARG0 (h / he))
+            :domain (m / music :wiki "The_Crusader_(album)" :name (n2 / name :op1 "The" :op2 "Crusader")))
+      :time (d / date-entity :year 2003)
+      :location (c / country :wiki "New_Zealand" :name (n / name :op1 "New" :op2 "Zealand")
+            :location-of (a3 / and
+                  :op1 (c2 / certify-01 :frequency 5
+                        :ARG1 m
+                        :ARG2 (p / platinum)
+                        :time (s2 / since
+                              :op1 r))
+                  :op2 (a4 / achieve-01
+                        :ARG0 m
+                        :ARG1 (s / single
+                              :ord (o / ordinal-entity :value 1))))))
+
+# ::id wiki-minicorpus-a_0067.1 ::date 2017-10-18T13:18:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Isabella Hoppringle</b> (1460-1538), was a Scottish abbess and spy.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0067_1.txt
+(h / have-org-role-91
+      :ARG0 (p / person :wiki "Isabella_Hoppringle" :name (n / name :op1 "Isabella" :op2 "Hoppringle")
+            :time (d / date-interval
+                  :op1 (d2 / date-entity :year 1460)
+                  :op2 (d3 / date-entity :year 1538)))
+      :ARG2 (a / and
+            :op1 (a2 / abbess
+                  :mod (c / country :wiki "Scotland" :name (n2 / name :op1 "Scotland")))
+            :op2 (p2 / person
+                  :ARG0-of (s / spy-01)
+                  :mod c)))
+
+# ::id wiki-minicorpus-a_0067.2 ::date 2017-10-18T13:22:44 ::annotator SDL-AMR-09 ::preferred
+# ::snt She was the abbess of Coldstream Abbey in 1505-1538.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0067_2.txt
+(h / have-org-role-91
+      :ARG0 (s / she)
+      :ARG1 (w / worship-place :wiki -
+            :name (n / name :op1 "Coldstream" :op2 "Abbey"))
+      :ARG2 (a / abbess)
+      :time (d2 / date-interval
+            :op1 (d / date-entity :year 1505)
+            :op2 (d3 / date-entity :year 1538)))
+
+# ::id wiki-minicorpus-a_0068.1 ::date 2017-10-18T13:25:24 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Bizlan</b> (also, <b>Biznan</b>) is a village and municipality in the Ismailli Rayon of Azerbaijan.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0068_1.txt
+(a / and
+      :op1 (v / village)
+      :op2 (m / municipality)
+      :location (c3 / country-region :wiki "Ismailli_District" :name (n2 / name :op1 "Ismailli" :op2 "Rayon")
+            :part-of (c / country :wiki "Azerbaijan" :name (n / name :op1 "Azerbaijan")))
+      :domain (c2 / city :wiki "Bizlan" :name (n3 / name :op1 "Bizlan")))
+
+# ::id wiki-minicorpus-a_0068.2 ::date 2017-10-18T13:28:37 ::annotator SDL-AMR-09 ::preferred
+# ::snt It has a population of 480.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0068_2.txt
+(p / populate-01
+      :ARG1 (i2 / it)
+      :ARG2 (p2 / person :quant 480))
+
+# ::id wiki-minicorpus-a_0068.3 ::date 2017-10-18T13:29:39 ::annotator SDL-AMR-09 ::preferred
+# ::snt The municipality consists of the villages of Bizlan and Zərgəran.
+# ::save-date Wed Jan 17, 2018 ::file wiki-minicorpus-a_0068_3.txt
+(c / consist-01
+      :ARG1 (m / municipality)
+      :ARG2 (a / and
+            :op1 (v / village :wiki "Bizlan" :name (n / name :op1 "Bizlan"))
+            :op2 (v2 / village :wiki "Zərgəran" :name (n2 / name :op1 "Zərgəran"))))
+
+# ::id wiki-minicorpus-a_0069.1 ::date 2017-10-18T13:32:44 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Pseudoechthistatus granulatus</i></b> is a species of beetle in the family Cerambycidae.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0069_1.txt
+(s / species :wiki "Pseudoechthistatus_granulatus" :name (n2 / name :op1 "Pseudoechthistatus" :op2 "granulatus")
+      :ARG1-of (i2 / include-91
+            :ARG2 (f / family :wiki "Longhorn_beetle" :name (n / name :op1 "Cerambycidae")
+                  :ARG1-of (i3 / include-91
+                        :ARG2 (b / beetle)))))
+
+# ::id wiki-minicorpus-a_0069.2 ::date 2017-10-18T13:34:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt It was described by Stephan von Breuning in 1942.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0069_2.txt
+(d2 / describe-01
+      :ARG0 (p / person :wiki "Stephan_von_Breuning_(entomologist)" :name (n / name :op1 "Stephan" :op2 "von" :op3 "Breuning"))
+      :ARG1 (i2 / it)
+      :time (d / date-entity :year 1942))
+
+# ::id wiki-minicorpus-a_0070.1 ::date 2017-10-18T13:35:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Eriko Imai</b> (今井 絵理子 <i>Imai Eriko</i>) is a Japanese pop singer.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0070_1.txt
+(p / person
+      :ARG0-of (s / sing-01
+            :ARG1 (p2 / pop))
+      :mod (c / country :wiki "Japan" :name (n2 / name :op1 "Japan"))
+      :domain (p3 / person :wiki "Eriko_Imai" :name (n / name :op1 "Eriko" :op2 "Imai")))
+
+# ::id wiki-minicorpus-a_0070.2 ::date 2017-10-18T13:37:00 ::annotator SDL-AMR-09 ::preferred
+# ::snt She made her debut in the early 1990s as part of the group Speed, which disbanded in March 2000.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0070_2.txt
+(d3 / debut-01
+      :ARG0 (s / she)
+      :ARG1 s
+      :time (e / early
+            :op1 (d / date-entity :decade 1990))
+      :manner (h / have-org-role-91
+            :ARG0 s
+            :ARG1 (t / team :wiki "Speed_(Japanese_band)"
+                  :name (n / name :op1 "Speed")
+                  :ARG2-of (g / group-01)
+                  :ARG1-of (d4 / disband-01
+                        :time (d2 / date-entity :month 3 :year 2000)))
+            :ARG2 (p / part)))
+
+# ::id wiki-minicorpus-a_0071.1 ::date 2017-10-18T13:40:29 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Milenko Kovačević</b> (Serbian Cyrillic:Миленко Ковачевић; born 6 November 1963) is a retired footballer who played as a midfielder for clubs in Yugoslavia, Greece and Cyprus.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0071_1.txt
+(p / person
+      :ARG0-of (p2 / play-01
+            :ARG1 (f / football))
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (c4 / club
+                  :location (a / and
+                        :op1 (c / country :wiki "Yugoslavia" :name (n / name :op1 "Yugoslavia"))
+                        :op2 (c2 / country :wiki "Greece" :name (n2 / name :op1 "Greece"))
+                        :op3 (c3 / country :wiki "Cyprus" :name (n3 / name :op1 "Cyprus"))))
+            :ARG2 (m / midfielder))
+      :domain (p3 / person :wiki "Milenko_Kovačević" :name (n4 / name :op1 "Milenko" :op2 "Kovačević")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 6 :month 11 :year 1963))))
+
+# ::id wiki-minicorpus-a_0072.1 ::date 2017-10-18T13:44:11 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Silvia Abril Fernández</b> (born 10 April 1971) is a Spanish television, cinema and theatre actress and comedian.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0072_1.txt
+(h / have-org-role-91
+      :ARG0 (p2 / person :wiki "Silvia_Abril" :name (n3 / name :op1 "Silvia" :op2 "Abril" :op3 "Fernández")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 10 :month 4 :year 1971)))
+      :ARG1 (a4 / and
+            :op1 (t / television)
+            :op2 (c3 / cinema)
+            :op3 (t2 / theater))
+      :ARG2 (a2 / and
+            :op1 (p / person
+                  :ARG0-of (a / act-01)
+                  :mod (c / country :wiki "Spain" :name (n2 / name :op1 "Spain")))
+            :op2 (c2 / comedian
+                  :mod c)))
+
+# ::id wiki-minicorpus-a_0072.2 ::date 2017-10-18T13:47:23 ::annotator SDL-AMR-09 ::preferred
+# ::snt She is best known for her roles in <i>La que se avecina</i>, <i>Spanish Movie</i> and as one of the dancers for the Spanish entry at the Eurovision Song Contest 2008, "Baila el Chiki-chiki".
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0072_2.txt
+(h / have-degree-91
+      :ARG1 (k / know-02
+            :ARG1 (s / she)
+            :ARG2 (p2 / person
+                  :ARG1-of (i2 / include-91
+                        :ARG2 (p3 / person
+                              :ARG0-of (d3 / dance-01
+                                    :ARG1 (m2 / music :wiki "Baila_el_Chiki-chiki" :name (n5 / name :op1 "Baila" :op2 "el" :op3 "Chiki-chiki"))
+                                    :purpose (e / enter-02
+                                          :ARG0 (c / country :wiki "Spain" :name (n2 / name :op1 "Spain"))
+                                          :ARG2 (e2 / event :wiki "Eurovision_Song_Contest_2008" :name (n / name :op1 "Eurovision" :op2 "Song" :op3 "Contest")
+                                                :time (d / date-entity :year 2008)))))))
+            :ARG3 (h2 / have-org-role-91
+                  :ARG0 s
+                  :ARG1 (a / and
+                        :op1 (w / work-of-art :wiki "La_que_se_avecina" :name (n3 / name :op1 "La" :op2 "que" :op3 "se" :op4 "avecina"))
+                        :op2 (w2 / work-of-art :wiki "Spanish_Movie" :name (n4 / name :op1 "Spanish" :op2 "Movie")))))
+      :ARG2 (g / good-02)
+      :ARG3 (m / most))
+
+# ::id wiki-minicorpus-a_0073.1 ::date 2017-10-18T13:54:40 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Fusiturricula dolenta</i></b> is a species of sea snail, a marine gastropod mollusk in the family Drilliidae.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0073_1.txt
+(s / species :wiki "Fusiturricula_dolenta" :name (n2 / name :op1 "Fusiturricula" :op2 "dolenta")
+      :ARG1-of (i2 / include-91
+            :ARG2 (f / family :wiki "Drilliidae" :name (n / name :op1 "Drilliidae")
+                  :ARG1-of (i3 / include-91
+                        :ARG2 (m / mollusk
+                              :mod (g / gastropod)
+                              :mod (m2 / marine)
+                              :ARG1-of (i4 / include-91
+                                    :ARG2 (s2 / snail
+                                          :mod (s3 / sea))))))))
+
+# ::id wiki-minicorpus-a_0074.1 ::date 2017-10-18T13:56:49 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Richard "Dick" Drescher</b> (born February 2, 1946) is a retired male track and field athlete from the United States.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0074_1.txt
+(a / athlete
+      :mod (m / male)
+      :mod (t / track)
+      :mod (f / field)
+      :mod (c / country :wiki "United_States" :name (n / name :op1 "United" :op2 "States"))
+      :domain (p / person :wiki "Dick_Drescher" :name (n2 / name :op1 "Richard" :op2 "Dick" :op3 "Drescher")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 2 :month 2 :year 1946)))
+      :ARG0-of (r / retire-01))
+
+# ::id wiki-minicorpus-a_0074.2 ::date 2017-10-18T13:59:21 ::annotator SDL-AMR-09 ::preferred
+# ::snt Drescher set his personal best in the discus throw event (63.90 metres) at the Mt. SAC Relays in Walnut on April 24, 1976.
+# ::save-date Wed Jan 17, 2018 ::file wiki-minicorpus-a_0074_2.txt
+(s / set-02
+      :ARG0 (p / person :wiki "Dick_Drescher" :name (n / name :op1 "Drescher"))
+      :ARG1 (h / have-degree-91
+            :ARG1 p
+            :ARG2 (g / good-03
+                  :ARG1 p
+                  :ARG1-of (p2 / personal-02
+                        :ARG2 p))
+            :ARG3 (m2 / most))
+      :time (e / event
+            :mod (t / throw-01
+                  :ARG1 (d3 / discus)
+                  :quant (d / distance-quantity :quant 63.90
+                        :unit (m / meter))))
+      :time (e2 / event :wiki "Mt._SAC_Relays" :name (n2 / name :op1 "Mt" :op2 "." :op3 "SAC" :op4 "Relays")
+            :location (c / city :wiki "Walnut,_California" :name (n3 / name :op1 "Walnut")))
+      :time (d2 / date-entity :day 24 :month 4 :year 1976))
+
+# ::id wiki-minicorpus-a_0075.1 ::date 2017-10-18T14:05:07 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>TAPPI</b> is a registered not-for-profit, international Non-Governmental Organization of about 14,000 member engineers, scientists, managers, academics and others involved in the areas of pulp, and paper.
+# ::save-date Tue Nov 7, 2017 ::file wiki-minicorpus-a_0075_1.txt
+(o / organization
+      :ARG1-of (r / register-02
+            :ARG3 (p2 / profit-01 :polarity -
+                  :ARG0 o))
+      :mod (i2 / international)
+      :mod (g / government-organization :polarity -)
+      :ARG1-of (h / have-org-role-91
+            :ARG0 (a2 / and
+                  :op1 (p3 / person
+                        :ARG0-of (e / engineer-01))
+                  :op2 (s2 / scientist)
+                  :op3 (p / person
+                        :ARG0-of (m / manage-01))
+                  :op4 (p5 / person
+                        :mod (a3 / academics))
+                  :op5 (p6 / person
+                        :mod (o2 / other)
+                        :ARG1-of (i3 / involve-01
+                              :ARG2 (a4 / and
+                                    :op1 (a5 / area
+                                          :mod (p7 / pulp))
+                                    :op2 (a6 / area
+                                          :mod (p8 / paper))))))
+            :ARG2 (m2 / member
+                  :quant (a / about :op1 14000)))
+      :domain (o3 / organization :wiki "TAPPI" :name (n / name :op1 "TAPPI")))
+
+# ::id wiki-minicorpus-a_0075.2 ::date 2017-10-18T14:12:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt In addition to pulp and paper, the TAPPI membership includes some allied areas of packaging (such as corrugated fiberboard, flexible packaging, lamination, adhesives, coatings and extrusion).
+# ::save-date Sun Jan 7, 2018 ::file wiki-minicorpus-a_0075_2.txt
+(i2 / include-01
+      :ARG1 (a / area
+            :mod (s / some)
+            :ARG1-of (a2 / ally-01)
+            :mod (p / package-01)
+            :ARG1-of (a3 / add-02
+                  :ARG2 (a4 / and
+                        :op1 (p2 / pulp)
+                        :op2 (p3 / paper)))
+            :example (a5 / and
+                  :op1 (f / fiberboard
+                        :ARG1-of (c / corrugate-01))
+                  :op2 (p4 / package-01
+                        :ARG1-of (f2 / flexible-04))
+                  :op3 (l / laminate-01)
+                  :op4 (a6 / adhesive)
+                  :op5 (c2 / coat-01)
+                  :op6 (e / extrude-01)))
+      :ARG2 (m / member
+            :ARG2-of (h / have-org-role-91
+                  :ARG1 (o / organization :wiki "TAPPI" :name (n / name :op1 "TAPPI")))))
+
+# ::id wiki-minicorpus-a_0076.1 ::date 2017-10-18T14:17:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Lumbaca-Unayan</b> is a sixth class municipality in the province of Lanao del Sur, Philippines.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0076_1.txt
+(m / municipality
+      :mod (c2 / class
+            :ord (o / ordinal-entity :value 6))
+      :domain (l / location :wiki "Lumbaca-Unayan,_Lanao_del_Sur" :name (n2 / name :op1 "Lumbaca-Unayan"))
+      :location (p / province :wiki "Lanao_del_Sur" :name (n3 / name :op1 "Lanao" :op2 "del" :op3 "Sur")
+            :part-of (c / country :wiki "Philippines" :name (n / name :op1 "Philippines"))))
+
+# ::id wiki-minicorpus-a_0076.2 ::date 2017-10-18T14:19:37 ::annotator SDL-AMR-09 ::preferred
+# ::snt According to the 2015 census, it has a population of 7,260 people.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0076_2.txt
+(s / say-01
+      :ARG0 (c / census
+            :time (d / date-entity :year 2015))
+      :ARG1 (p / populate-01
+            :ARG1 (i2 / it)
+            :ARG2 (p2 / person :quant 7260)))
+
+# ::id wiki-minicorpus-a_0076.3 ::date 2017-10-18T14:21:08 ::annotator SDL-AMR-09 ::preferred
+# ::snt It was created from Lumbatan in 2005.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0076_3.txt
+(c / create-01
+      :ARG1 (i2 / it)
+      :ARG2 (l / location :wiki "Lumbatan,_Lanao_del_Sur" :name (n / name :op1 "Lumbatan"))
+      :time (d / date-entity :year 2005))
+
+# ::id wiki-minicorpus-a_0077.1 ::date 2017-10-18T14:22:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Michael Weidt</b> (born 22 February 1946) is a German photographer.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0077_1.txt
+(p2 / person
+      :ARG0-of (p3 / photograph-01)
+      :mod (c / country :wiki "Germany"
+            :name (n3 / name :op1 "Germany"))
+      :domain (p / person :wiki "Michael_Weidt"
+            :name (n / name :op1 "Michael" :op2 "Weidt")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 22 :month 2 :year 1946))))
+
+# ::id wiki-minicorpus-a_0077.2 ::date 2017-10-18T14:24:23 ::annotator SDL-AMR-09 ::preferred
+# ::snt He is known, in particular, for his portraits of East German theatre and movie stars.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0077_2.txt
+(k / know-02
+      :ARG1 (h / he)
+      :ARG3 (p2 / portrait
+            :poss h
+            :topic (a / and
+                  :op1 (t / theater
+                        :mod (c / country :wiki "East_Germany" :name (n / name :op1 "East" :op2 "Germany")))
+                  :op2 (p3 / person
+                        :ARG1-of (s / star-01
+                              :ARG2 (m / movie)))))
+      :mod (p / particular))
+
+# ::id wiki-minicorpus-a_0078.1 ::date 2017-10-18T14:28:13 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Agiorta</i></b> is a small genus of flowering plants in the family Ericaceae.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0078_1.txt
+(g / genus :wiki "Agiortia" :name (n3 / name :op1 "Agiortia")
+      :mod (s / small)
+      :ARG1-of (i2 / include-91
+            :ARG2 (f2 / family :wiki "Ericaceae" :name (n / name :op1 "Ericaceae")
+                  :ARG1-of (i3 / include-91
+                        :ARG2 (p / plant
+                              :ARG1-of (f / flower-01))))))
+
+# ::id wiki-minicorpus-a_0078.2 ::date 2017-10-18T14:30:32 ::annotator SDL-AMR-09 ::preferred
+# ::snt The genus, which is closely related to <i>Leucopogon</i>, was formally described in 2005.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0078_2.txt
+(d2 / describe-01
+      :ARG1 (g / genus
+            :ARG1-of (r / related-04
+                  :ARG2 (t / taxon :wiki "Leucopogon" :name (n2 / name :op1 "Leucopogon"))
+                  :ARG1-of (c / close-10)))
+      :time (d / date-entity :year 2005)
+      :manner (f / formal))
+
+# ::id wiki-minicorpus-a_0079.1 ::date 2017-10-18T14:32:17 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Adrian Dietrich Lothar von Trotha</b> (3 July 1848 – 31 March 1920) was a German military commander during the European new colonial era.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0079_1.txt
+(h / have-org-role-91
+      :ARG0 (p / person :wiki "Lothar_von_Trotha" :name (n4 / name :op1 "Adrian" :op2 "Dietrich" :op3 "Lothar" :op4 "von" :op5 "Trotha")
+            :time (d3 / date-interval
+                  :op1 (d / date-entity :day 3 :month 7 :year 1848)
+                  :op2 (d2 / date-entity :day 31 :month 3 :year 1920)))
+      :ARG1 (m / military
+            :mod (c / country :wiki "Germany" :name (n2 / name :op1 "Germany")))
+      :ARG2 (c3 / commander)
+      :time (e / era
+            :mod (c4 / colony)
+            :mod (c2 / continent :wiki "Europe" :name (n3 / name :op1 "Europe"))
+            :ARG1-of (n / new-01)))
+
+# ::id wiki-minicorpus-a_0079.2 ::date 2017-10-18T14:36:22 ::annotator SDL-AMR-09 ::preferred
+# ::snt As a brigade commander of the East Asian Expedition Corps, he was involved in suppressing the Boxer Rebellion in Imperial China on behalf of the Eight-Nation Alliance.
+# ::save-date Wed Jan 10, 2018 ::file wiki-minicorpus-a_0079_2.txt
+(i2 / involve-01
+      :ARG1 (h / he)
+      :ARG2 (s / suppress-01
+            :ARG1 (e / event :wiki "Boxer_Rebellion" :name (n3 / name :op1 "Boxer" :op2 "Rebellion")
+                  :location (e2 / empire :wiki "China" :name (n4 / name :op1 "China")))
+            :beneficiary (m / military :wiki "Eight-Nation_Alliance" :name (n5 / name :op1 "Eight-Nation" :op2 "Alliance")))
+      :ARG1-of (c2 / cause-01
+            :ARG0 (h2 / have-org-role-91
+                  :ARG0 h
+                  :ARG1 (m2 / military :wiki "Asia_Corps" :name (n2 / name :op1 "Expedition" :op2 "Corps")
+                        :mod (w / world-region :wiki "East_Asia" :name (n / name :op1 "East" :op2 "Asia")))
+                  :ARG2 (c / commander
+                        :mod (b / brigade)))))
+
+# ::id wiki-minicorpus-a_0080.1 ::date 2017-10-18T14:44:01 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Aida</i></b> is a live album of solo acoustic performances by guitarist Derek Bailey which was recorded in Paris and London in 1980 and originally released on the Incus label.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0080_1.txt
+(a / album
+      :mod (l / live-01)
+      :mod (p / perform-01
+            :ARG0 (p2 / person :wiki "Derek_Bailey_(guitarist)"
+                  :name (n3 / name :op1 "Derek" :op2 "Bailey")
+                  :ARG0-of (h / have-org-role-91
+                        :ARG2 (g / guitarist)))
+            :mod (s / solo)
+            :mod (a2 / acoustics))
+      :ARG1-of (r / record-01
+            :location (a3 / and
+                  :op1 (c / city :wiki "Paris"
+                        :name (n / name :op1 "Paris"))
+                  :op2 (c2 / city :wiki "London"
+                        :name (n2 / name :op1 "London")))
+            :time (d / date-entity :year 1980))
+      :ARG1-of (r2 / release-01
+            :mod (o / original)
+            :manner (l2 / label-01
+                  :ARG2 (c3 / company :wiki "Incus_Records"
+                        :name (n4 / name :op1 "Incus"))))
+      :domain (m / music :wiki "Aida_(album)"
+            :name (n5 / name :op1 "Aida")))
+
+# ::id wiki-minicorpus-a_0080.2 ::date 2017-10-18T14:52:26 ::annotator SDL-AMR-09 ::preferred
+# ::snt The Allmusic review by Brian Olewnick states "<i>Aida</i> is a remarkably beautiful entry to one of the world's masterful musicians. Indeed, he sounds like no one else".
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0080_2.txt
+(m / multi-sentence
+      :snt1 (s / state-01
+            :ARG0 (r / review-01
+                  :ARG0 (p / person :wiki -
+                        :name (n2 / name :op1 "Brian" :op2 "Olewnick"))
+                  :instrument (p2 / product :wiki "AllMusic"
+                        :name (n3 / name :op1 "Allmusic")))
+            :ARG1 (e / enter-02
+                  :ARG1 (m2 / music :wiki "Aida_(album)"
+                        :name (n4 / name :op1 "Aida"))
+                  :ARG2 (p3 / person
+                        :ARG1-of (i2 / include-91
+                              :ARG2 (m3 / musician
+                                    :mod (m4 / masterful)
+                                    :location (w / world))))
+                  :ARG1-of (b / beautiful-02
+                        :ARG1-of (r2 / remarkable-02))))
+      :snt2 (s2 / sound-02
+            :ARG1 (i3 / it)
+            :ARG1-of (r3 / resemble-01
+                  :ARG2 (n / no-one
+                        :mod (e2 / else)))
+            :mod (i4 / indeed)))
+
+# ::id wiki-minicorpus-a_0081.1 ::date 2017-10-18T15:03:12 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Jay Neagle</b> (born 17 January 1988) is an Australian rules footballer formerly with the Essendon Football Club in the Australian Football League (AFL).
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0081_1.txt
+(h / have-org-role-91
+      :ARG0 (p / person :wiki "Jay_Neagle" :name (n2 / name :op1 "Jay" :op2 "Neagle")
+            :ARG1-of (b / bear-02
+                  :time (d / date-entity :day 17 :month 1 :year 1988)))
+      :ARG1 (t / team :wiki "Essendon_Football_Club" :name (n4 / name :op1 "Essendon" :op2 "Football" :op3 "Club")
+            :mod (l / league :wiki "Australian_Football_League" :name (n5 / name :op1 "Australian" :op2 "Football" :op3 "League")))
+      :ARG2 (p2 / person
+            :ARG0-of (p3 / play-01
+                  :ARG1 (g / game :wiki "Australian_rules_football" :name (n3 / name :op1 "Australian" :op2 "rules" :op3 "football"))))
+      :time (f / former))
+
+# ::id wiki-minicorpus-a_0081.2 ::date 2017-10-18T15:10:43 ::annotator SDL-AMR-09 ::preferred
+# ::snt The son of former Bomber Merv Neagle, Jay was drafted under the father-son rule at the end of the 2005 AFL season.
+# ::save-date Tue Nov 7, 2017 ::file wiki-minicorpus-a_0081_2.txt
+(d2 / draft-02
+      :ARG1 (p / person :wiki "Jay_Neagle"
+            :name (n2 / name :op1 "Jay")
+            :ARG0-of (h / have-rel-role-91
+                  :ARG1 (p2 / person :wiki "Merv_Neagle"
+                        :name (n3 / name :op1 "Merv" :op2 "Neagle")
+                        :ARG0-of (h2 / have-org-role-91
+                              :ARG2 (b / bomb-01)
+                              :time (f / former)))
+                  :ARG2 (s2 / son)))
+      :time (e / end-01
+            :ARG1 (s / season
+                  :mod (l / league :wiki "Australian_Football_League"
+                        :name (n / name :op1 "AFL"))
+                  :time (d / date-entity :year 2005)))
+      :ARG1-of (c / cause-01
+            :ARG0 (t / thing :wiki "Father–son_rule"
+                  :name (n4 / name :op1 "father-son" :op2 "rule"))))
+
+# ::id wiki-minicorpus-a_0082.1 ::date 2017-10-18T15:16:52 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Tremont Mill Pond</b> is a 50-acre (200,000 m<sup>2</sup>) pond in Wareham, Massachusetts, in the West Wareham section of town.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0082_1.txt
+(p / pond
+      :location (s2 / section
+            :location (w2 / west
+                  :part-of (c / city :wiki "Wareham,_Massachusetts" :name (n3 / name :op1 "Wareham")
+                        :location (s / state :wiki "Massachusetts" :name (n / name :op1 "Massachusetts")))))
+      :quant (a / area-quantity :quant 50
+            :unit (a2 / acre))
+      :domain (l / lake :wiki "Tremont_Mill_Pond" :name (n2 / name :op1 "Tremont" :op2 "Mill" :op3 "Pond")))
+
+# ::id wiki-minicorpus-a_0082.2 ::date 2017-10-18T15:21:04 ::annotator SDL-AMR-09 ::preferred
+# ::snt The Weweantic River flows through the pond.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0082_2.txt
+(f / flow-01
+      :ARG1 (r / river :wiki "Weweantic_River" :name (n / name :op1 "Weweantic" :op2 "River"))
+      :path (p / pond))
+
+# ::id wiki-minicorpus-a_0083.1 ::date 2017-10-18T15:21:50 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Bloemfontein City Commando</b> was a light infantry regiment of the South African Army.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0083_1.txt
+(h / have-org-role-91
+      :ARG0 (m2 / military :wiki "Bloemfontein_City_Commando" :name (n3 / name :op1 "Bloemfontein" :op2 "City" :op3 "Commando"))
+      :ARG1 (m / military :wiki "South_African_Army" :name (n / name :op1 "South" :op2 "African" :op3 "Army"))
+      :ARG2 (r / regiment
+            :mod (i2 / infantry
+                  :ARG1-of (l / light-06))))
+
+# ::id wiki-minicorpus-a_0083.2 ::date 2017-10-18T15:24:31 ::annotator SDL-AMR-09 ::preferred
+# ::snt It formed part of the South African Army Infantry Formation as well as the South African Territorial Reserve.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0083_2.txt
+(f / form-02
+      :ARG0 (i2 / it)
+      :ARG1 (a / and
+            :op1 (p / part
+                  :part-of (m / military :wiki "South_African_Army_Infantry_Formation"
+                        :name (n / name :op1 "South" :op2 "African" :op3 "Army" :op4 "Infantry" :op5 "Formation")))
+            :op2 (p2 / part
+                  :part-of (m3 / military :wiki -
+                        :name (n4 / name :op1 "South" :op2 "African" :op3 "Territorial" :op4 "Reserve")))))
+
+# ::id wiki-minicorpus-a_0084.1 ::date 2017-10-18T15:27:47 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Abide Weekend</b> is an annual Christian youth conference based in Canterbury, Kent.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0084_1.txt
+(c / conference
+      :mod (y / youth
+            :mod (r / religious-group :wiki "Christian"
+                  :name (n / name :op1 "Christian")))
+      :ARG1-of (b / base-01
+            :location (c2 / city :wiki "Canterbury"
+                  :name (n2 / name :op1 "Canterbury")
+                  :location (c3 / county :wiki "Kent"
+                        :name (n3 / name :op1 "Kent"))))
+      :frequency (r2 / rate-entity-91
+            :ARG3 (t / temporal-quantity :quant 1
+                  :unit (y2 / year)))
+      :domain (c4 / conference :wiki "Abide_Weekend"
+            :name (n4 / name :op1 "Abide" :op2 "Weekend")))
+
+# ::id wiki-minicorpus-a_0084.2 ::date 2017-10-18T15:32:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is hosted by a collaboration of three Christian charities: Scripture Union, Urban Saints (formerly 'Crusaders') and Change Youth.
+# ::save-date Thu Jan 4, 2018 ::file wiki-minicorpus-a_0084_2.txt
+(h / host-01
+      :ARG0 (c / collaborate-01
+            :ARG0 (c2 / charity :quant 3
+                  :mod (r / religious-group :wiki "Christian" :name (n / name :op1 "Christian"))
+                  :domain (a / and
+                        :op1 (o / organization :wiki "Scripture_Union" :name (n2 / name :op1 "Scripture" :op2 "Union"))
+                        :op2 (o2 / organization :wiki "Urban_Saints" :name (n3 / name :op1 "Urban" :op2 "Saints"))
+                        :op3 (o3 / organization :wiki - :name (n4 / name :op1 "Change" :op2 "Youth")))))
+      :ARG1 (i2 / it))
+
+# ::id wiki-minicorpus-a_0085.1 ::date 2017-10-18T15:35:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Sportske novosti</i> awards</b> (Croatian: <i>Nagrade Sportskih novosti</i>) refer to annual sports awards given by <i>Sportske novosti</i>, a Zagreb-based Croatian daily sports newspaper.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0085_1.txt
+(r / refer-01
+      :ARG1 (a2 / award-01
+            :ARG3 (s / sport)
+            :frequency (r2 / rate-entity-91
+                  :ARG3 (t / temporal-quantity :quant 1
+                        :unit (y / year)))
+            :ARG1-of (g / give-01
+                  :ARG0 (n2 / newspaper :wiki "Sportske_novosti" :name (n3 / name :op1 "Sportske" :op2 "novosti")
+                        :frequency (r3 / rate-entity-91
+                              :ARG3 (t2 / temporal-quantity :quant 1
+                                    :unit (d / day)))
+                        :topic s
+                        :ARG1-of (b / base-01
+                              :location (c / city :wiki "Zagreb" :name (n4 / name :op1 "Zagreb")))
+                        :mod (c2 / country :wiki "Croatia" :name (n5 / name :op1 "Croatia")))))
+      :ARG2 (a / award :wiki "Sportske_novosti_awards" :name (n / name :op1 "Sportske" :op2 "novosti" :op3 "awards")))
+
+# ::id wiki-minicorpus-a_0085.2 ::date 2017-10-18T15:41:54 ::annotator SDL-AMR-09 ::preferred
+# ::snt The awards originated in the 1950s and went on to become one of the most prestigious Croatian awards in sports.
+# ::save-date Thu Jan 4, 2018 ::file wiki-minicorpus-a_0085_2.txt
+(a / and
+      :op1 (o / originate-01
+            :ARG1 (a2 / award-01)
+            :ARG2 (d / date-entity :decade 1950))
+      :op2 (g / go-on-15
+            :ARG1 a2
+            :purpose (b / become-01
+                  :ARG1 a2
+                  :ARG2 (a3 / award-01
+                        :ARG1-of (i2 / include-91
+                              :ARG2 (a4 / award-01
+                                    :ARG3 (s / sport)
+                                    :ARG1-of (h / have-degree-91
+                                          :ARG2 (p / prestigious)
+                                          :ARG3 (m / most))
+                                    :location (c / country :wiki "Croatia" :name (n / name :op1 "Croatia"))))))))
+
+# ::id wiki-minicorpus-a_0086.1 ::date 2017-10-18T15:48:51 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Edward D. Garza</b>, known as <b>Ed Garza</b> (born 1969), is an American politician and a professional urban planner.
+# ::save-date Sat Jan 20, 2018 ::file wiki-minicorpus-a_0086_1.txt
+(a / and
+      :op1 (h / have-org-role-91
+            :ARG0 (p3 / person :wiki "Edward_D._Garza" :name (n3 / name :op1 "Edward" :op2 "D." :op3 "Garza")
+                  :ARG1-of (b / bear-01
+                        :time (d / date-entity :year 1969)))
+            :ARG1 (c / country :wiki "United_States" :name (n / name :op1 "America"))
+            :ARG2 (p4 / politician))
+      :op2 (p / person
+            :ARG0-of (p2 / plan-01
+                  :ARG1 (c2 / city)
+                  :mod (p5 / professional))
+            :domain p3))
+
+# ::id wiki-minicorpus-a_0086.2 ::date 2017-10-18T15:51:17 ::annotator SDL-AMR-09 ::preferred
+# ::snt From 2001-2005, he served as mayor of San Antonio, Texas.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0086_2.txt
+(s2 / serve-01
+      :ARG0 (h / he)
+      :ARG1 (m / mayor)
+      :ARG2 (c / city :wiki "San_Antonio" :name (n2 / name :op1 "San" :op2 "Antonio")
+            :location (s / state :wiki "Texas" :name (n / name :op1 "Texas")))
+      :time (d3 / date-interval
+            :op1 (d / date-entity :year 2001)
+            :op2 (d2 / date-entity :year 2005)))
+
+# ::id wiki-minicorpus-a_0087.1 ::date 2017-10-18T15:53:32 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Richard C. Thomas</b> (May 3, 1937 -- November 2, 1991) was a politician and government official who served four terms as Secretary of State of Vermont.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0087_1.txt
+(a / and
+      :op1 (h / have-org-role-91
+            :ARG0 (p / person :wiki "Richard_C._Thomas" :name (n2 / name :op1 "Richard" :op2 "C." :op3 "Thomas")
+                  :time (d3 / date-interval
+                        :op1 (d / date-entity :day 3 :month 5 :year 1937)
+                        :op2 (d2 / date-entity :day 2 :month 11 :year 1991)))
+            :ARG2 (a2 / and
+                  :op1 (p2 / politician)
+                  :op2 (o / official
+                        :mod (g / government-organization
+                              :ARG0-of (g2 / govern-01)))))
+      :op2 (s3 / serve-01
+            :ARG0 p
+            :ARG1 (s4 / secretary)
+            :ARG2 (s2 / state :wiki "Vermont" :name (n / name :op1 "Vermont"))
+            :duration (t / term :quant 4)))
+
+# ::id wiki-minicorpus-a_0088.1 ::date 2017-10-18T15:56:36 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Suining County</b> (simplified Chinese: 绥宁县; traditional Chinese: 綏寧縣; pinyin: <i>Suíníng Xiàn</i>) is a county in the Province of Hunan, China, it is under the administration of Shaoyang City.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0088_1.txt
+(c3 / county
+      :domain (c4 / county :wiki "Suining_County,_Hunan" :name (n4 / name :op1 "Suining" :op2 "County"))
+      :location (p / province :wiki "Hunan" :name (n5 / name :op1 "Province" :op2 "of" :op3 "Hunan")
+            :part-of (c / country :wiki "China" :name (n2 / name :op1 "China")))
+      :ARG1-of (a / administrate-01
+            :ARG0 (c2 / city :wiki "Shaoyang" :name (n / name :op1 "Shaoyang" :op2 "City"))))
+
+# ::id wiki-minicorpus-a_0088.2 ::date 2017-10-18T16:00:03 ::annotator SDL-AMR-09 ::preferred
+# ::snt Suining County covers 2,917 km<sup>2</sup> (1,126 sq mi), as of 2015, it had a registered population of 387,800 and a permanent resident population of 356,800.
+# ::save-date Sun Jan 21, 2018 ::file wiki-minicorpus-a_0088_2.txt
+(a / and
+      :op1 (c / cover-02
+            :ARG0 (c2 / county :wiki "Suining_County,_Hunan" :name (n2 / name :op1 "Suining" :op2 "County"))
+            :ARG1 (a2 / area-quantity :quant 2917
+                  :unit (s2 / square-kilometer)))
+      :op2 (h / have-03
+            :ARG0 c2
+            :ARG1 (a3 / and
+                  :op1 (p2 / population :quant 387800
+                        :ARG1-of (r2 / register-02))
+                  :op2 (p3 / population :quant 356800
+                        :ARG0-of (r / reside-01
+                              :ARG1 c2)
+                        :mod (p / permanent))))
+      :time (a4 / as-of
+            :op1 (d / date-entity :year 2015)))
+
+# ::id wiki-minicorpus-a_0089.1 ::date 2017-10-18T16:04:41 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Kentucky Route 53</b> (<b>KY 53</b>) is a 66.314-mile-long (106.722 km) state highway in the U.S. state of Kentucky.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0089_1.txt
+(h / highway
+      :mod (s2 / state)
+      :ARG1-of (l / long-03
+            :ARG2 (d / distance-quantity :quant 66.314
+                  :unit (m / mile)))
+      :location (s / state :wiki "Kentucky"
+            :name (n / name :op1 "Kentucky")
+            :part-of (c / country :wiki "United_States"
+                  :name (n2 / name :op1 "U.S.")))
+      :domain (r / road :wiki "Kentucky_Route_53"
+            :name (n3 / name :op1 "Kentucky" :op2 "Route" :op3 53)))
+
+# ::id wiki-minicorpus-a_0090.1 ::date 2017-10-18T16:08:57 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Sneak</i></b> is an apocalyptic fiction novel written by Evan Angler and published in 2012.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0090_1.txt
+(n / novel
+      :domain (p / publication :wiki "Sneak_(novel)"
+            :name (n2 / name :op1 "Sneak"))
+      :mod (a / apocalypse)
+      :mod (f / fiction)
+      :ARG1-of (w / write-01
+            :ARG0 (p2 / person :wiki -
+                  :name (n3 / name :op1 "Evan" :op2 "Angler")))
+      :ARG1-of (p3 / publish-01
+            :time (d / date-entity :year 2012)))
+
+# ::id wiki-minicorpus-a_0090.2 ::date 2017-10-18T16:11:13 ::annotator SDL-AMR-09 ::preferred
+# ::snt The second book in the Swipe series, it is aimed at a middle grade audience.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0090_2.txt
+(a / aim-02
+      :ARG1 (b / book
+            :ord (o2 / ordinal-entity :value 2)
+            :part-of (p / publication :wiki "Swipe_(novel)"
+                  :name (n / name :op1 "Swipe" :op2 "series")))
+      :ARG2 (a2 / audience
+            :mod (g / grade
+                  :mod (m / middle))))
+
+# ::id wiki-minicorpus-a_0091.1 ::date 2017-10-18T16:23:46 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Ulupa'U Crater</b> is a cinder cone in the state of Hawaii, where it is located near Marine Corps Base Hawaii.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0091_1.txt
+(c / cone
+      :mod (c2 / cinder)
+      :location (s / state :wiki "Hawaii" :name (n / name :op1 "Hawaii")
+            :location-of (n2 / near-02
+                  :ARG1 c
+                  :ARG2 (f / facility :wiki "Marine_Corps_Base_Hawaii" :name (n3 / name :op1 "Marine" :op2 "Corps" :op3 "Base" :op4 "Hawaii"))))
+      :domain (v / volcano :wiki "Ulupa'U_Crater" :name (n4 / name :op1 "Ulupa'U" :op2 "Crater")))
+
+# ::id wiki-minicorpus-a_0091.2 ::date 2017-10-18T16:27:33 ::annotator SDL-AMR-09 ::preferred
+# ::snt Ulupa'U Crater was formed during the Honolulu Volcanic Series, a series of eruptions coming from the Ko'olau Range that formed other volcanoes such as Diamond Head, Punchbowl Crater and more.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0091_2.txt
+(f / form-01
+      :ARG1 (v / volcano :wiki "Ulupa'U_Crater"
+            :name (n / name :op1 "Ulupa'U" :op2 "Crater"))
+      :time (e / event :wiki "Honolulu_Volcanic_Series"
+            :name (n2 / name :op1 "Honolulu" :op2 "Volcanic" :op3 "Series")
+            :subevent (e2 / erupt-01
+                  :ARG1-of (c / come-03
+                        :ARG2 (v2 / volcano :wiki "Koʻolau_Range"
+                              :name (n3 / name :op1 "Ko'olau" :op2 "Range")
+                              :ARG2-of (f2 / form-01
+                                    :ARG1 (v3 / volcano
+                                          :mod (o / other)
+                                          :example (a / and
+                                                :op1 (v4 / volcano :wiki "Diamond_Head,_Hawaii"
+                                                      :name (n4 / name :op1 "Diamond" :op2 "Head"))
+                                                :op2 (v5 / volcano :wiki "Punchbowl_Crater"
+                                                      :name (n5 / name :op1 "Punchbowl" :op2 "Crater"))
+                                                :op3 (m / more)))))))))
+
+# ::id wiki-minicorpus-a_0092.1 ::date 2017-10-18T16:32:30 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Beaver River</b> is an unincorporated area in central Alberta, Canada within the Municipal District of Bonnyville No. 87.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0092_1.txt
+(a / area
+      :ARG1-of (i2 / incorporate-01 :polarity -)
+      :domain (l / location :wiki "Beaver_River,_Alberta"
+            :name (n2 / name :op1 "Beaver" :op2 "River"))
+      :location (c2 / country-region :wiki "Central_Alberta"
+            :name (n3 / name :op1 "Central" :op2 "Alberta")
+            :part-of (c / country :wiki "Canada"
+                  :name (n / name :op1 "Canada")))
+      :location (d / district
+            :mod (c3 / country-region :wiki "Municipal_District_of_Bonnyville_No._87"
+                  :name (n4 / name :op1 "Municipal" :op2 "District" :op3 "of" :op4 "Bonnyville" :op5 "No" :op6 "." :op7 87))))
+
+# ::id wiki-minicorpus-a_0092.2 ::date 2017-10-18T16:38:16 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is named after the Beaver River that flows from Alberta to Saskatchewan.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0092_2.txt
+(n / name-02
+      :ARG1 (i2 / it)
+      :ARG2 (r / river :wiki "Beaver_River_(Canada)" :name (n2 / name :op1 "Beaver" :op2 "River")
+            :ARG1-of (f / flow-01
+                  :source (p / province :wiki "Alberta" :name (n3 / name :op1 "Alberta"))
+                  :destination (p2 / province :wiki "Saskatchewan" :name (n4 / name :op1 "Saskatchewan")))))
+
+# ::id wiki-minicorpus-a_0093.1 ::date 2017-10-18T16:40:43 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b><i>Lakbima News</i></b> is a weekly English-language newspaper in Sri Lanka. It is published on every Sunday, by Sumathi Newspapers (Pvt) Ltd.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0093_1.txt
+(m / multi-sentence
+      :snt1 (n2 / newspaper
+            :frequency (r / rate-entity-91
+                  :ARG3 (t / temporal-quantity :quant 1
+                        :unit (w / week)))
+            :mod (l / language :wiki "English_language"
+                  :name (n3 / name :op1 "English"))
+            :domain (n4 / newspaper :wiki "Lakbima_News"
+                  :name (n5 / name :op1 "Lakbima" :op2 "News"))
+            :location (c / country :wiki "Sri_Lanka"
+                  :name (n / name :op1 "Sri" :op2 "Lanka")))
+      :snt2 (p / publish-01
+            :ARG0 (c2 / company :wiki -
+                  :name (n6 / name :op1 "Sumathi" :op2 "Newspapers" :op3 "(Pvt)" :op4 "Ltd"))
+            :ARG1 (i2 / it)
+            :frequency (r2 / rate-entity-91
+                  :ARG4 (d2 / date-entity
+                        :weekday (s2 / sunday)))))
+
+# ::id wiki-minicorpus-a_0094.1 ::date 2017-10-18T16:45:28 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>West Arsi</b> (Amharic: <i>Mirab Arsi</i>; Oromo: <i>Arsii Lixaa/Dhihaa</i>) is one of the zones of the Oromia Region in Ethiopia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0094_1.txt
+(i2 / include-91
+      :ARG1 (c2 / country-region :wiki "West_Arsi_Zone" :name (n3 / name :op1 "West" :op2 "Arsi"))
+      :ARG2 (z / zone
+            :part-of (c3 / country-region :wiki "Oromia_Region" :name (n4 / name :op1 "Oromia" :op2 "Region")
+                  :part-of (c / country :wiki "Ethiopia" :name (n2 / name :op1 "Ethiopia")))))
+
+# ::id wiki-minicorpus-a_0094.2 ::date 2017-10-18T16:48:21 ::annotator SDL-AMR-09 ::preferred
+# ::snt This zone is named after a subgroup of the Oromo, who inhabit it.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0094_2.txt
+(n / name-02
+      :ARG1 (z / zone
+            :mod (t / this))
+      :ARG2 (s / subgroup
+            :ARG1-of (i2 / include-91
+                  :ARG2 (p / person
+                        :mod (e / ethnic-group :wiki "Oromo_people" :name (n2 / name :op1 "Oromo"))
+                        :ARG0-of (i3 / inhabit-01
+                              :ARG1 z)))))
+
+# ::id wiki-minicorpus-a_0095.1 ::date 2017-10-18T16:50:29 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Guji Oromo</b> are an ethnic Oromo subgroup living in southern Ethiopia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0095_1.txt
+(s / subgroup
+      :mod (e / ethnic)
+      :mod (e2 / ethnic-group :wiki "Oromo_people" :name (n2 / name :op1 "Oromo"))
+      :ARG0-of (l / live-01
+            :location (s2 / south
+                  :part-of (c / country :wiki "Ethiopia" :name (n / name :op1 "Ethiopia"))))
+      :domain (e3 / ethnic-group :wiki "Guji_Oromo_people" :name (n3 / name :op1 "Guji" :op2 "Oromo")))
+
+# ::id wiki-minicorpus-a_0095.2 ::date 2017-10-18T16:53:28 ::annotator SDL-AMR-09 ::preferred
+# ::snt They are distinguished by their agro-pastoral lifestyle.
+# ::save-date Thu Jan 25, 2018 ::file wiki-minicorpus-a_0095_2.txt
+(d / distinguish-01
+      :ARG1 (t / they)
+      :ARG1-of (c / cause-01
+            :ARG0 (l / lifestyle
+                  :mod (a / agrarian)
+                  :mod (p / pastoral)
+                  :poss t)))
+
+# ::id wiki-minicorpus-a_0095.3 ::date 2017-10-18T16:54:43 ::annotator SDL-AMR-09 ::preferred
+# ::snt According to a population projection from 2007, the total population of the Guji Oromo is above 5 million.
+# ::save-date Tue Jan 2, 2018 ::file wiki-minicorpus-a_0095_3.txt
+(s / say-01
+      :ARG0 (p / project-02
+            :ARG1 (p2 / population)
+            :time (d / date-entity :year 2007))
+      :ARG1 (h / have-quant-91
+            :ARG1 (p3 / population
+                  :mod (e / ethnic-group :wiki "Guji_Oromo_people" :name (n / name :op1 "Guji" :op2 "Oromo"))
+                  :ARG1-of (t / total-01))
+            :ARG3 (m / more)
+            :ARG4 5000000))
+
+# ::id wiki-minicorpus-a_0096.1 ::date 2017-10-18T16:57:50 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Borana Oromo people</b>, also called the <b>Boran</b>, are a subethnic section of the Oromo people who live in southern Ethiopia (Oromia) and northern Kenya.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0096_1.txt
+(s / section
+      :mod (s2 / subethnic)
+      :ARG1-of (i2 / include-91
+            :ARG2 (p / person
+                  :mod (e / ethnic-group :wiki "Oromo_people" :name (n3 / name :op1 "Oromo" :op2 "people"))))
+      :ARG0-of (l / live-01
+            :location (a / and
+                  :op1 (c3 / country-region :wiki "Oromia_Region" :name (n4 / name :op1 "Southern" :op2 "Ethiopia"))
+                  :op2 (n5 / north
+                        :part-of (c2 / country :wiki "Kenya" :name (n2 / name :op1 "Kenya")))))
+      :domain (p2 / person
+            :mod (e2 / ethnic-group :wiki "Borana_Oromo_people" :name (n / name :op1 "Borana" :op2 "Oromo" :op3 "people"))))
+
+# ::id wiki-minicorpus-a_0096.2 ::date 2017-10-18T17:03:20 ::annotator SDL-AMR-09 ::preferred
+# ::snt They speak a dialect of the Oromo language that is distinct enough that it is difficult for other Oromo speakers to understand.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0096_2.txt
+(s2 / speak-01
+      :ARG3 (d / dialect
+            :mod (l / language :wiki "Oromo_language" :name (n / name :op1 "Oromo"))
+            :ARG1-of (h / have-degree-91
+                  :ARG2 (d2 / distinct)
+                  :ARG3 (e / enough)
+                  :ARG6 (d3 / difficult
+                        :domain (u / understand-01
+                              :ARG0 (p / person
+                                    :ARG0-of (s / speak-01
+                                          :ARG3 l)
+                                    :mod (o / other))
+                              :ARG1 d)))))
+
+# ::id wiki-minicorpus-a_0097.1 ::date 2017-10-18T17:06:59 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Shashamane</b> (or <b>Shashemene</b>, Oromo) is a town and a separate woreda in West Arsi Zone, Oromia Region, Ethiopia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0097_1.txt
+(a / and
+      :op1 (t / town)
+      :op2 (w2 / woreda
+            :ARG1-of (s / separate-02))
+      :location (c2 / country-region :wiki "West_Arsi_Zone" :name (n3 / name :op1 "West" :op2 "Arsi" :op3 "Zone")
+            :part-of (c3 / country-region :wiki "Oromia_Region" :name (n4 / name :op1 "Oromia" :op2 "Region")
+                  :part-of (c / country :wiki "Ethiopia" :name (n2 / name :op1 "Ethiopia"))))
+      :domain (c4 / city :wiki "Shashamane" :name (n / name :op1 "Shashamane")))
+
+# ::id wiki-minicorpus-a_0097.2 ::date 2017-10-18T17:10:10 ::annotator SDL-AMR-09 ::preferred
+# ::snt The town lies on the Trans-African Highway 4 Cairo-Cape Town, about 150 miles (240 km) from the capital of Addis Ababa.
+# ::save-date Thu Jan 11, 2018 ::file wiki-minicorpus-a_0097_2.txt
+(l / lie-07
+      :ARG1 (t / town)
+      :ARG2 (a2 / and
+            :op1 (r / road :wiki "Cape_to_Cairo_Road" :name (n / name :op1 "Trans-African" :op2 "Highway" :op3 "4" :op4 "Cairo-Cape" :op5 "Town"))
+            :op2 (r2 / relative-position
+                  :op1 (c / city :wiki "Addis_Ababa" :name (n2 / name :op1 "Addis" :op2 "Ababa")
+                        :ARG0-of (h / have-org-role-91
+                              :ARG2 (c2 / capital)))
+                  :quant (a / about
+                        :op1 (d / distance-quantity :quant 150
+                              :unit (m / mile))))))
+
+# ::id wiki-minicorpus-a_0098.1 ::date 2017-10-18T17:14:17 ::annotator SDL-AMR-09 ::preferred
+# ::snt <b>Shiferaw Shigute Wolassa</b> (Amharic: ?) is an Ethiopian politician who is currently the country's Minister of Education, and previously served as President of the Southern Nations, Nationalities, and Peoples' Region from 2006 to 2013.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0098_1.txt
+(a / and
+      :op1 (h3 / have-org-role-91
+            :ARG0 (p2 / person :wiki "Shiferaw_Shigute" :name (n / name :op1 "Shiferaw" :op2 "Shigute" :op3 "Wolassa"))
+            :ARG1 (c / country :wiki "Ethiopia" :name (n2 / name :op1 "Ethiopia"))
+            :ARG2 (a2 / and
+                  :op1 (p3 / politician)
+                  :op2 (m2 / minister
+                        :topic (e / educate-01)
+                        :time (c2 / current))))
+      :op2 (s / serve-01
+            :ARG0 p2
+            :ARG1 (p / president)
+            :ARG2 (s2 / state :wiki "Southern_Nations,_Nationalities,_and_Peoples'_Region" :name (n3 / name :op1 "Southern" :op2 "Nations" :op3 "," :op4 "Nationalities" :op5 "," :op6 "and" :op7 "Peoples" :op8 "'" :op9 "Region"))
+            :time (p4 / previous)
+            :time (d3 / date-interval
+                  :op1 (d / date-entity :year 2006)
+                  :op2 (d2 / date-entity :year 2013))))
+
+# ::id wiki-minicorpus-a_0099.1 ::date 2017-10-18T17:19:55 ::annotator SDL-AMR-09 ::preferred
+# ::snt The Ethiopian <b>Somali Regional State</b> (Somali: Dawlada Deegaanka Soomaalida Itoobiya, Arabic: الدولة الاثيوبية المنطقة الصومالية‎‎) is the easternmost of the nine ethnic divisions (<i>kililoch</i>) of Ethiopia.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0099_1.txt
+(h / have-degree-91
+      :ARG1 (s / state :wiki "Somali_Region" :name (n3 / name :op1 "Ethiopian" :op2 "Somali" :op3 "Regional" :op4 "State"))
+      :ARG2 (e / eastern)
+      :ARG3 (m / most)
+      :ARG5 (d / division :quant 9
+            :mod (e2 / ethnic)
+            :part-of (c / country :wiki "Ethiopia" :name (n2 / name :op1 "Ethiopia"))))
+
+# ::id wiki-minicorpus-a_0099.2 ::date 2017-10-18T17:22:45 ::annotator SDL-AMR-09 ::preferred
+# ::snt It is often called Soomaali Galbeed ("Western Somalia") on account of its geographical position within the Greater Somalia matrix.
+# ::save-date Tue Nov 7, 2017 ::file wiki-minicorpus-a_0099_2.txt
+(c2 / call-01
+      :ARG1 (i2 / it)
+      :ARG2 (n3 / name :op1 "Western" :op2 "Somalia")
+      :frequency (o / often)
+      :ARG1-of (c / cause-01
+            :ARG0 (p / position-01
+                  :ARG1 i2
+                  :ARG2 (m / matrix
+                        :mod (c4 / country-region :wiki "Greater_Somalia"
+                              :name (n / name :op1 "Greater" :op2 "Somalia")))
+                  :mod (g / geographic))))
+
+# ::id wiki-minicorpus-a_0100.1 ::date 2017-10-18T17:25:35 ::annotator SDL-AMR-09 ::preferred
+# ::snt The <b>Afar Regional State</b> (Afar: Qafar; Amharic: አፋር ክልል?) is one of the nine regional states (<i>kililoch</i>) of Ethiopia, and is the homeland of the Afar people.
+# ::save-date Wed Oct 18, 2017 ::file wiki-minicorpus-a_0100_1.txt
+(a / and
+      :op1 (i2 / include-91
+            :ARG1 (s / state :wiki "Afar_Region" :name (n2 / name :op1 "Afar" :op2 "Regional" :op3 "State"))
+            :ARG2 (s2 / state :quant 9
+                  :mod (r / region)
+                  :part-of (c / country :wiki "Ethiopia" :name (n / name :op1 "Ethiopia"))))
+      :op2 (h / homeland
+            :poss (p / person
+                  :mod (e / ethnic-group :wiki "Afar_people" :name (n3 / name :op1 "Afar" :op2 "people")))
+            :domain s))
+
+# ::id wiki-minicorpus-a_0100.2 ::date 2017-10-18T17:28:04 ::annotator SDL-AMR-09 ::preferred
+# ::snt Formerly known as <b>Region 2</b>, its new capital as of 2007 is the recently constructed city of Semera, which lies on the paved Awash–Assab highway.
+# ::save-date Sun Jan 21, 2018 ::file wiki-minicorpus-a_0100_2.txt
+(h / have-org-role-91
+      :ARG0 (c / city :wiki "Semera" :name (n / name :op1 "Semera")
+            :ARG1-of (c2 / construct-01
+                  :time (r / recent))
+            :ARG1-of (l / lie-07
+                  :ARG2 (r2 / road :wiki - :name (n4 / name :op1 "Awash–Assab" :op2 "highway")
+                        :ARG1-of (p / pave-01))))
+      :ARG1 (i2 / it
+            :ARG1-of (k / know-02
+                  :ARG2 (s2 / state :wiki "Afar_Region" :name (n3 / name :op1 "Region" :op2 "2"))
+                  :time (f / former)))
+      :ARG2 (c3 / capital
+            :ARG1-of (n2 / new-01))
+      :time (a / as-of
+            :op1 (d / date-entity :year 2007)))

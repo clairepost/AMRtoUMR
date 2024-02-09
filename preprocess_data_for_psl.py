@@ -1,20 +1,43 @@
 #This script will preprocess data from input data and divide it into splits that can be used for PSL
 
-#iterate through these each time to get the results for all of the splits
-
-
 #IMPORT STATEMENTS
 import torch
 import pandas as pd
 import os
+import numpy as np
 import sys
 import os
 from error_analysis import get_indices
 from nn_with_rules_weights import preprocessing
 
-#IMPORTANT VARIABLES
+#IMPORTANT VARIABLES and HELPER FUNCTION
 i = 0  #change i to change which split we are using 0-4
 output_path = os.path.join(os.getcwd(), "PSL/data/UMR")
+
+
+def save_to_file(tensor, indices, file_name, target=False):
+# Convert tensor to NumPy array and saves it
+        array = tensor.numpy().astype(int)
+        print(array)
+        indices_column = indices.numpy().astype(int)  # Ensure indices is 2D
+        print(indices_column)   
+
+        if target:
+                #If this is the target version, then we need to add a column of all 1's to indicate truth
+                ones_array = np.ones_like(array)
+                array_with_indices = np.column_stack((indices_column,array, ones_array))
+        else:
+                array_with_indices = np.column_stack((indices_column,array))
+
+
+        # Path to the new file
+        new_file_path = os.path.join(output_path, file_name)
+
+
+
+        # Save NumPy array as tab-separated text file
+        np.savetxt(new_file_path, array_with_indices,fmt='%d', delimiter='\t')
+
 
 
 #READ IN DATA AND COMBINE
@@ -30,31 +53,35 @@ weights = []
 #GET SPLITS 
 splits= get_indices(all_umr_roles)
 splits = list(splits)
-i, (train_index,test_index) = splits[i]
+i, (train_index,test_index) = splits[i]\
+
+train_indices = torch.LongTensor(train_index)
+test_indices = torch.LongTensor(test_index)
 
 
 #select training data given split
 #embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(train_index))
-amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(train_index) )
-umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(train_index) )
+amr_roles = torch.index_select(all_amr_roles, 0,train_indices )
+save_to_file(amr_roles, train_indices, "amr_obs_learn.txt")
+umr_roles = torch.index_select(all_umr_roles, 0,train_indices )
+save_to_file(umr_roles, train_indices, "umr_target_learn.txt")
+save_to_file(umr_roles, train_indices, "umr_truth_learn.txt", True)
 #rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(train_index) )
 
 
 #select test datagiven split
 #embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
-amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(test_index))
-umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(test_index))
+amr_roles = torch.index_select(all_amr_roles, 0,test_indices)
+save_to_file(amr_roles, test_indices, "amr_obs_eval.txt")
+umr_roles = torch.index_select(all_umr_roles, 0,test_indices)
+save_to_file(umr_roles, test_indices, "umr_target_eval.txt")
+save_to_file(umr_roles, test_indices, "umr_truth_eval.txt", True)
 #rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(test_index))
 
 
 
-#OUTPUT DATA TO FILES
-# File name
-file_name = "example.txt"
-# File content
-file_content = "This is an example file."# Write content to the new file
-# Path to the new file
-new_file_path = os.path.join(output_path, file_name)
-with open(new_file_path, 'w') as file:
-    file.write(file_content)
+
+
+
+
 

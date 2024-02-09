@@ -1,33 +1,46 @@
 {
     "rules": [
-        "20: Lived(P1, L) & Lived(P2, L) & (P1 != P2) -> Knows(P1, P2) ^2",
-        "5: Lived(P1, L1) & Lived(P2, L2) & (P1 != P2) & (L1 != L2) -> !Knows(P1, P2) ^2",
-        "10: Likes(P1, L) & Likes(P2, L) & (P1 != P2) -> Knows(P1, P2) ^2"
+        "1.0: AMR_role(A, '1')  >> UMR_role(A, '1') ^2",
+
+        "0.001: !AMR_role(A, N) ^2"
     ],
     "predicates": {
-        "Likes/2": {
-            "observations": [
-                "../data/simple-acquaintances/0/eval/likes_obs.txt"
-            ]
+        "AMR_role/2": {
+            "observations": {
+                "learn": [
+                    "../data/UMR/amr_obs_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/amr_obs_eval.txt"
+                ]
+            }
         },
-        "Lived/2": {
-            "observations": [
-                "../data/simple-acquaintances/0/eval/lived_obs.txt"
-            ]
-        },
-        "Knows/2": {
+        "UMR_role/2": {
             "evaluations": [
-                "DiscreteEvaluator"
+                {
+                    "evaluator": "CategoricalEvaluator",
+                    "options": {
+                        "categoricalevaluator.categoryindexes": 1,
+                        "eval.includeobs": true
+                    }
+                }
             ],
-            "observations": [
-                "../data/simple-acquaintances/0/eval/knows_obs.txt"
-            ],
-            "targets": [
-                "../data/simple-acquaintances/0/eval/knows_targets.txt"
-            ],
-            "truth": [
-                "../data/simple-acquaintances/0/eval/knows_truth.txt"
-            ]
+            "targets": {
+                "learn": [
+                    "../data/UMR/umr_target_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/umr_target_eval.txt"
+                ]
+            },
+            "truth": {
+                "learn": [
+                    "../data/UMR/umr_truth_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/umr_truth_eval.txt"
+                ]
+            }
         }
     }
 }

@@ -212,5 +212,6 @@ def run_splits_nn(model_choice):
     
 
 if __name__ == "__main__":
+    #run_base_nn()
     run_splits_nn("base_nn")
     

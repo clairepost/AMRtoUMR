@@ -115,11 +115,11 @@ def read_test_data():
     amr_path = os.getcwd() + '/raw_data/AMR-data-english'
 
     for f in os.listdir(umr_path):
-        file1 = open(umr_path + '/' + f, 'r')
+        file1 = open(umr_path + '/' + f, 'r',encoding="utf8")
         umr_files[f] = file1.read()
 
     for f in os.listdir(amr_path):
-        file1 = open(amr_path + '/' + f, 'r')
+        file1 = open(amr_path + '/' + f, 'r',encoding="utf8")
         amr_files[f] = file1.read()
 
     #Do not have all of the UMR annotations for the Putin document, so just grab everything before this sentence id from AMR
@@ -132,20 +132,25 @@ def read_test_data():
     amr_files[3] = amr_files.pop('putin_ENG_0152_2000_1208-AMR.txt')
     amr_files[4] = amr_files.pop('edmund_pope-AMR.txt')
     amr_files[5] = amr_files.pop('pear-AMR__of__english-umr-0004.txt')
+    amr_files[6] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
 
     umr_files[1] = umr_files.pop('lindsay-umr.txt')
     umr_files[2] = umr_files.pop('Lorelei_lorpt-024_Philippines_Landslide_2023-release.txt')
     umr_files[3] = umr_files.pop('lorelei_lorpt-151_putin_2023-release.txt')
     umr_files[4] = umr_files.pop('lorelei_lorpt-152_edmundpope_2023-release.txt')
     umr_files[5] = umr_files.pop('Pear_Story_2023-release.txt')
+    umr_files[6] = umr_files.pop('umr-partial-fake-wiki.txt')
 
-    file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story"}
+    file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story", 6:"Augment"}
 
     umr_sents = {}
     all_sentences = {}
     for f in umr_files:
-        umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
-
+        if f!= 6:
+            umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
+        else:
+            umr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', umr_files[f])
+            
     amr_sents = {}
     for f in amr_files:
         amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
@@ -391,7 +396,8 @@ def preprocess_data(split, reload_graphs, reload_rules):
 
 
 
-#X = preprocess_data("test", True, True)
-#print(create_mapping())
+X = preprocess_data("test", True, True)
+Y = preprocess_data("train", True,True)
+print(create_mapping())
 # read_test_data()
-# read_training_data("training_data")
+#read_training_data("training_data")

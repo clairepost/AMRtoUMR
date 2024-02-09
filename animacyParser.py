@@ -5,6 +5,14 @@ from transformers import pipeline
 
 pronouns = ['i', 'you', 'he', 'she', 'we', 'they', 'me', 'him', 'her', 'us', 'them']
 
+
+# just check if these are in the tail
+# maybe need to look for wiki, just check the tail node
+animate_wiki = ['person', 'family', 'animal', 'ethnic-group', 'regional-group', 'religious-group', 'political-movement', 'organization', 'company', 'government-organization', 'military', 'criminal-organization', 'political-party', 'market-sector', 'school', 'university', 'research-institute', 'team', 'league']
+
+inanimate_wiki = ['language', 'nationality', 'location', 'city', 'city-district', 'county', 'state', 'province', 'territory', 'country', 'local-region', 'country-region', 'world-region', 'continent', 'ocean', 'sea', 'lake', 'river', 'gulf', 'bay', 'strait', 'canal; peninsula', 'mountain', 'volcano', 'valley', 'canyon', 'island', 'desert', 'forest moon', 'planet', 'star', 'constellation', 'facility', 'airport', 'station', 'port', 'tunnel', 'bridge', 'road', 'railway-line', 'canal', 'building', 'theater', 'museum', 'palace', 'hotel', 'worship-place', 'market', 'sports-facility', 'park', 'zoo', 'amusement-park', 'event', 'incident', 'natural-disaster', 'earthquake', 'war', 'conference', 'game', 'festival', 'product', 'vehicle', 'ship', 'aircraft', 'aircraft-type', 'spaceship', 'car-make', 'work-of-art', 'picture', 'music', 'show', 'broadcast-program', 'publication', 'book', 'newspaper', 'magazine', 'journal', 'natural-object', 'award', 'law', 'court-decision', 'treaty', 'music-key', 'musical-note', 'food-dish', 'writing-script', 'variable', 'program', 'thing']
+
+
 def parse_by_pipe(sentences, pipe, keep_list = None, raw = False):
     info = []
     for i in sentences:
@@ -34,7 +42,11 @@ def parse_by_pipe(sentences, pipe, keep_list = None, raw = False):
     else:
         return info
 
-
+def wiki_type():
+    # first going to just look through the graph for any keywords, not looking for tail node since that is not currently passed into the animacy parser (an idea might change)
+    info = []
+    # finish this here
+    return info
 
 def parse_for_pronouns(sentences,pronouns= pronouns):
     info = []
@@ -81,22 +93,44 @@ def remove_punctuation(input_string):
 
 
 
-def parse_animacy_runner(sentences):
+# def parse_animacy_runner(sentences, amr_print, amr_graph, tail, role):
+def parse_animacy_runner(sentences, amr_print, X_tuples):
     ##input should be a list, either a list of sentences, a list containing words (could be one word)
     #returns list of dicts that contain combined aimacy, pronoun, and ner info
-    print("testing animacy on", len(sentences), "sentences/words")
+    print("sentences:", len(sentences))
+    print("amr_print:", len(amr_print))
+    print("x tuples", len(X_tuples))
+
     #create pipelines
     pipe_animacy = pipeline("token-classification", model="andrewt-cam/bert-finetuned-animacy",aggregation_strategy="simple")
     pipe_ner = pipeline("token-classification", model="dslim/bert-base-NER",aggregation_strategy="simple")
     keep_list = ['B_animal', 'B_human'] # only relavent ones from animacy_results
 
     #do parses
+    # TODO: edit so that we are not making unnecesarry calls to the API
     animacy_results = parse_by_pipe(sentences, pipe_animacy,keep_list)
     ner_results = parse_by_pipe(sentences, pipe_ner)
     pn_results = parse_for_pronouns(sentences)
     ans = combine_parses([ner_results,animacy_results,pn_results,])
     return ans
 
+
+def parse_animacy_RULES(sentences):
+    ##input should be a list, either a list of sentences, a list containing words (could be one word)
+    #returns list of dicts that contain combined aimacy, pronoun, and ner info
+
+    #create pipelines
+    pipe_animacy = pipeline("token-classification", model="andrewt-cam/bert-finetuned-animacy",aggregation_strategy="simple")
+    pipe_ner = pipeline("token-classification", model="dslim/bert-base-NER",aggregation_strategy="simple")
+    keep_list = ['B_animal', 'B_human'] # only relavent ones from animacy_results
+
+    #do parses
+    # TODO: edit so that we are not making unnecesarry calls to the API
+    animacy_results = parse_by_pipe(sentences, pipe_animacy,keep_list)
+    ner_results = parse_by_pipe(sentences, pipe_ner)
+    pn_results = parse_for_pronouns(sentences)
+    ans = combine_parses([ner_results,animacy_results,pn_results,])
+    return ans
 
 sentences = [
 "He showed the sea to the girl.",

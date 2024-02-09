@@ -20,7 +20,9 @@ def calc_role(Y_preds):
 
 def run_baseline_X_times():
     num_iterations=20
-    X_tupes, y_true = extract_data("test")
+    # X_tupes, y_true = extract_data("test")
+    print("Running augment baseline")
+    X_tupes, y_true = extract_data("augment")
     X = pd.DataFrame.from_records(X_tupes, columns=['sent', 'ne_info', 'amr_graph', 'amr_head_name', 'amr_role', 'amr_tail_name'])
     
     comparison_results = []
@@ -36,7 +38,7 @@ def run_baseline_X_times():
         df[f'comparison_results_{i}'] = result
 
     # Save the DataFrame to a new CSV file
-    df.to_csv(f'baseline_results_NEW.csv', index=False)
+    df.to_csv(f'baseline_results_augment_2.csv', index=False)
     return comparison_results
 
 
@@ -61,7 +63,7 @@ def run_baseline(num_iters, split):
     #slightly different implementation than what is happening in compare_results. Just so the format is consistent across models
     #takes in num of iterations: returns X (input data- size (n x m)) and y_probs (size n x num_iters)
     y_preds = []
-    X = preprocess_data(split, True,Truee) #reload the graphs and the rules -> set both to True
+    X = preprocess_data(split, True,True) #reload the graphs and the rules -> set both to True
     y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
     for i in range(num_iters):
         print(y_prob)
@@ -77,12 +79,13 @@ def run_baseline(num_iters, split):
 
     y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
     full_df = pd.concat([X, y_pred],axis = 1)
-    full_df.to_csv("output/baseline_"+split+".csv")
+    full_df.to_csv("output/baseline_"+split+"1.csv")
     return full_df
 
 
 if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
-    run_baseline_X_times()
-    #run_baseline(20,"test") #Marie's version
+    #run_baseline_X_times()
+    run_baseline(5,"augment")
+    # run_baseline(20,"test") #Marie's version

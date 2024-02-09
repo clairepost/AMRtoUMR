@@ -1,6 +1,6 @@
 import re
 import networkx as nx
-from animacyParser import parse_animacy_runner
+from animacyParser import parse_animacy_runner, parse_animacy_RULES
 
 # Rules for split role determination.
 
@@ -29,13 +29,14 @@ def detect_split_role(X_tuples):
         head = x_tuple["amr_head_name"]
         role = x_tuple["amr_role"]
         tail = x_tuple["amr_tail_name"]
+        # TODO: a new column with the animacy
         # check for cause-01
         if tail == "cause-01":
             # update the tail
             tail, role = fixCause(amr_graph, tail, role)
-        #get animacy
+        #get animacy # this is probably why its running twice
         animacy_info = ne_animacy(named_entity, tail, amr_graph, sentence)
-        print("animacy: \n", animacy_info)
+        print("animacy: \n", animacy_info) # going to change this to just take in ne_info as animacy
 
 
         # Rule 1: :destination instance
@@ -93,7 +94,7 @@ def detect_split_role(X_tuples):
     return Y
 
 
-
+# see if we can mitigate calls to animacy runner
 def ne_animacy(named_entity, tail, amr_graph, sentence):
 
     # Check if named_entity matches tail
@@ -103,7 +104,7 @@ def ne_animacy(named_entity, tail, amr_graph, sentence):
 
     # just check the animacy of the tail now if we could not find anything
     print("sending tail to be parsed:", tail)
-    new_named_entity = parse_animacy_runner([tail]) # needs to send sentence and tail
+    new_named_entity = parse_animacy_RULES([tail]) # needs to send sentence and tail
     print("NEW NAMED ENTITY: ", new_named_entity)
     animacy = animacy_classification_second_pass(new_named_entity, tail)
     if animacy != "none":
@@ -176,7 +177,7 @@ def second_pass_animacy(named_entity, tail, amr_graph):
         print("second animacy term: ", second_animacy)
         # if there was no animacy run the parse animacy runner again on the child node
         if second_animacy == "none":
-            new_named_entity = parse_animacy_runner([second_check_node])
+            new_named_entity = parse_animacy_RULES([second_check_node])
             # Extract the first dictionary from the list, if any
             if new_named_entity and isinstance(new_named_entity[0], dict):
                 new_named_entity = new_named_entity[0]

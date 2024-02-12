@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 from str2graph import create_graph
 import re
 import torch
@@ -8,7 +9,7 @@ from str2graph import create_graph,draw_graph
 from alignment import *
 from sklearn.preprocessing import LabelEncoder
 from transformers import BertModel, BertTokenizer, BertConfig
-from animacyParser import parse_animacy_runner
+from animacyParser import parse_animacy_runner, animacy_decider
 from rules import detect_split_role
 
 def extract_data(split):
@@ -226,8 +227,8 @@ def read_augment_fake_parallel_data():
 
     # umr_path = os.getcwd() + os.path.join(os.getcwd(), 'raw_data', 'umr-fake')
     # amr_path = os.getcwd() + os.path.join(os.getcwd(), 'raw_data', 'augment-sample-data-english2')
-    umr_path = os.getcwd() + '/raw_data/umr-fake2'
-    amr_path = os.getcwd() + '/raw_data/augment-sample-data-english2'
+    umr_path = os.getcwd() + '/raw_data/umr-fake-extra'
+    amr_path = os.getcwd() + '/raw_data/augment-data-english'
 
     
     for f in os.listdir(umr_path):
@@ -252,14 +253,49 @@ def read_augment_fake_parallel_data():
             amr_files[f] = content
 
     # step 2 - get file names
-    #create file mappings augment data
-    umr_files[0] = umr_files.pop('umr-fake-consensus.txt')
-    umr_files[1] = umr_files.pop('umr-fake-wiki.txt')
-    amr_files[0] = amr_files.pop('amr-release-3.0-amrs-consensus.txt')
-    amr_files[1] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
+    # #create file mappings augment data
+    # umr_files[0] = umr_files.pop('umr-fake-consensus.txt')
+    # umr_files[1] = umr_files.pop('umr-fake-wiki.txt')
+    # amr_files[0] = amr_files.pop('amr-release-3.0-amrs-consensus.txt')
+    # amr_files[1] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
+    # umr_files[2] = umr_files.pop('umr-fake-guidelines.txt')
+    # amr_files[2] = amr_files.pop('amr-release-3.0-amrs-guidelines.txt')
+    # umr_files[3] = umr_files.pop('umr-fake-fables.txt')
+    # amr_files[3] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
 
-    # file_map = {1:"consensus"}
-    file_map = {0:"consensus",1:"wiki"}
+    # # file_map = {1:"consensus"}
+    # file_map = {0:"consensus",1:"wiki",2:"guidelines",3:"fables"}
+
+    amr_files[1] = amr_files.pop('amr-release-3.0-amrs-bolt.txt')
+    amr_files[2] = amr_files.pop('amr-release-3.0-amrs-cctv.txt')
+    amr_files[3] = amr_files.pop('amr-release-3.0-amrs-consensus.txt')
+    amr_files[4] = amr_files.pop('amr-release-3.0-amrs-dfa.txt')
+    amr_files[5] = amr_files.pop('amr-release-3.0-amrs-dfb.txt')
+    amr_files[6] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
+    amr_files[7] = amr_files.pop('amr-release-3.0-amrs-guidelines.txt')
+    amr_files[8] = amr_files.pop('amr-release-3.0-amrs-mt09sdl.txt')
+    amr_files[9] = amr_files.pop('amr-release-3.0-amrs-proxy.txt')
+    amr_files[10] = amr_files.pop('amr-release-3.0-amrs-wb.txt')
+    amr_files[11] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
+    amr_files[0] = amr_files.pop('amr-release-3.0-amrs-xinhua.txt')
+
+    umr_files[1] = umr_files.pop('umr-fake-bolt.txt')
+    umr_files[2] = umr_files.pop('umr-fake-cctv.txt')
+    umr_files[3] = umr_files.pop('umr-fake-consensus.txt')
+    umr_files[4] = umr_files.pop('umr-fake-dfa.txt')
+    umr_files[5] = umr_files.pop('umr-fake-dfb.txt')
+    umr_files[6] = umr_files.pop('umr-fake-fables.txt')
+    umr_files[7] = umr_files.pop('umr-fake-guidelines.txt')
+    umr_files[8] = umr_files.pop('umr-fake-mt09sdl.txt')
+    umr_files[9] = umr_files.pop('umr-fake-proxy.txt')
+    umr_files[10] = umr_files.pop('umr-fake-wb.txt')
+    umr_files[11] = umr_files.pop('umr-fake-wiki.txt')
+    umr_files[0] = umr_files.pop('umr-fake-xinhua.txt')
+
+
+
+    file_map = {1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
+
 
     # step 3 - extract graphs and sentences
 
@@ -317,78 +353,28 @@ def read_augment_fake_parallel_data():
         "cause-01":[":cause", ":reason",":Cause-of"]
     }
     
-    # ne_info = {}
-    # for f in all_sentences:
-    #     print("AMR sents at F: ", "\n", amr_sents[f])
-    #     print("\n\n")
-    #     ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f]) # changed this line to send the amr graph with the animacy info 
-    
-    # GAMEPLAN: send 1 version of splits data for processing, then make another version that processes it into the data set like it should be processed in 
 
-    # sending to get the splits
-    print("SENDING TO GET THE SPLITS")
-    # splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) # changing this data structure to get the animacy info 
-    splits_data = align_graphs_no_ne(all_sentences, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) # changing this data structure to get the animacy info 
-
-    # Convert splits_data to a DataFrame
-    splits_data_df_temp = pd.DataFrame(splits_data)
-
-    columnsTemp = ["file", "sent_i","sent","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
-
-    splits_data_df_temp.columns= columnsTemp
+    columnsTemp = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
 
     ne_info = {}
     for f in all_sentences:
-        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f], splits_data_df_temp) 
+        
+        print("IN NE INFO FINDER: file ", f)
+        
+        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
     
+    splits_data1, total_count = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data_df_temp = pd.DataFrame(splits_data1)
+    splits_data_df_temp.columns= columnsTemp
 
-    # ne_info = {}
-    # for f in all_sentences:
-    #     # what I need to run ne_animacy(named_entity, tail, amr_graph, sentence) from the rules function & fixCause(amr_graph, tail, role)
-    #     # named_entity = x_tuple["ne_info"]
-    #     # amr_graph = x_tuple["amr_graph"]
-    #     #  role = x_tuple["amr_role"]
-    #     # tail = x_tuple["amr_tail_name"]
-    #     # sentence = x_tuple["sent"]
+    # add to data frame
+    splits_data_df_temp["animacy"] = animacy_decider(splits_data_df_temp, f)
 
-    #     ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f], amr_graphs[f], splits_data[f]['amr_tail_name'], splits_data[f]['amr_role']) # changed this line to send the amr graph with the animacy info # taking a guess that for this other info we are going to need to just look at index f behind it (might be wrong)
-    # Print the contents and length of splits_data
-    # print("Contents of splits_data:")
-    # for entry in splits_data:
-    #     print(entry)
+    # Convert splits_data_df_temp to a DataFrame
+    splits_data_df_temp.to_csv("input_data/augment_fake_data3.csv")
+    return splits_data_df_temp
 
-    # print("Length of splits_data:", len(splits_data))
-    # print("Length of all_sentences:", len(all_sentences))
-    # print("Length of amr_sents:", len(amr_sents))
-    # print("Length of amr_graphs:", len(amr_graphs))
-    # print("Length of splits_data:", len(splits_data))
-    # ne_info = {}
-    # for entry in splits_data:
-    #     file_idx = entry[0]  # Assuming the file index is at index 0 in each entry
-    #     amr_tail_name = entry[7]  # Assuming amr_tail_name is at index 7
-    #     amr_role = entry[8]  # Assuming amr_role is at index 8
-    #     ne_info[file_idx] = parse_animacy_runner(all_sentences[file_idx], amr_sents[file_idx], amr_graphs[file_idx], amr_tail_name, amr_role)
 
-    # maybe instead I can append a column on after doing adding the ne_animacy info since that is all worked out for me in the align_graph_on_AMR_splits() function (so I would need to delete ne_info and apend right here to splits_data before making the data frame)
-    # Append ne_info to splits_data
-    # for entry in splits_data:
-    #     file = entry[0]
-    #     sent_i = entry[1]
-    #     if file in ne_info and sent_i in ne_info[file]:
-    #         entry.append(ne_info[file][sent_i])
-    
-    # sending to get the splits WITH ne info
-    print("SENDING TO GET THE SPLITS")
-    splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) # changing this data structure to get the animacy info 
-
-    # Convert splits_data to a DataFrame
-    splits_data_df = pd.DataFrame(splits_data)
-
-    columns = ["file", "sent_i","sent", "ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] # will need to move ne_info to the end I think
-
-    splits_data_df.columns= columns
-    splits_data_df.to_csv("input_data/augment_fake_data.csv")
-    return splits_data_df
 
 
 
@@ -686,11 +672,14 @@ def preprocess_data(split, reload_graphs, reload_rules):
             rows_to_drop.append(i)
     X = X.drop(rows_to_drop)
     X = X.reset_index(drop=True) #reset the indices
+    X = X.loc[:,~X.columns.duplicated()].copy() #drop duplicte columns
     return X
-      
 
 
-#X = preprocess_data("test", False, False)
+
+
+
+#X = preprocess_data("test", True, True)
 #print(create_mapping())
 # read_test_data()
 # read_training_data("training_data")

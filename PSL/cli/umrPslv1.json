@@ -1,0 +1,46 @@
+{
+    "rules": [
+        "1.0: AMR_role(A, '1')  >> UMR_role(A, '1') ^2",
+
+        "0.001: !AMR_role(A, N) ^2"
+    ],
+    "predicates": {
+        "AMR_role/2": {
+            "observations": {
+                "learn": [
+                    "../data/UMR/amr_obs_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/amr_obs_eval.txt"
+                ]
+            }
+        },
+        "UMR_role/2": {
+            "evaluations": [
+                {
+                    "evaluator": "CategoricalEvaluator",
+                    "options": {
+                        "categoricalevaluator.categoryindexes": 1,
+                        "eval.includeobs": true
+                    }
+                }
+            ],
+            "targets": {
+                "learn": [
+                    "../data/UMR/umr_target_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/umr_target_eval.txt"
+                ]
+            },
+            "truth": {
+                "learn": [
+                    "../data/UMR/umr_truth_learn.txt"
+                ],
+                "infer": [
+                    "../data/UMR/umr_truth_eval.txt"
+                ]
+            }
+        }
+    }
+}

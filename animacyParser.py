@@ -1,5 +1,6 @@
 # Use a pipeline as a high-level helper
 import string
+import re
 from transformers import pipeline
 
 
@@ -41,11 +42,77 @@ def parse_by_pipe(sentences, pipe, keep_list = None, raw = False):
         return results_formatted
     else:
         return info
-
-def wiki_type():
-    # first going to just look through the graph for any keywords, not looking for tail node since that is not currently passed into the animacy parser (an idea might change)
+    
+def parse_by_pipe_splitroles_only(sentences, amr_graphs, pipe, keep_list = None, raw = False):
     info = []
-    # finish this here
+    for i, sentence in enumerate(sentences):
+
+        # Retrieve the corresponding AMR graph for the current sentence
+        amr_graph = amr_graphs[i]
+        has_split_role = splitrole_check(amr_graph)
+
+        if has_split_role:
+            parse = pipe(sentence)
+            if keep_list != None:
+                parse_keep_only = []
+                for j in parse:
+                    if j["entity_group"] in keep_list:
+                        parse_keep_only.append(j)
+                info.append(parse_keep_only)
+            else:
+                info.append(parse)
+        else: # so we don't call pipeline if there is no splitrole in sentence
+            info.append([])
+    
+    #format the parse so irrelevent info is removed
+    if not raw:
+        results_formatted = []
+        for result_i in range(len(info)):
+            result_f = []
+            for ne_dict in info[result_i]:
+                # Start and end provide an easy way to highlight words in the original text.
+                a = sentences[result_i][ne_dict["start"] : ne_dict["end"]]
+                b = ne_dict['entity_group']
+                result_f.append({b:a})
+            results_formatted.append(result_f)
+        return results_formatted
+    else:
+        return info
+
+
+def splitrole_check(amr_graph):
+    amr_roles= {
+        ":cause",
+        "cause-01",
+        ":cause-01",
+        ":part", 
+        ":consist-of",
+        ":source",
+        ":destination",
+        ":condition",
+        ":ARG1-of"} # ignoring :mod
+    # Check if the word matches any of the roles in amr_roles
+
+    for word in amr_graph.split():
+        if word in amr_roles:
+            return True
+    # If no split role is found, return False
+    return False
+
+
+def wiki_type(sentences,amr_graphs, animate = animate_wiki, inanimate = inanimate_wiki):
+    info = []
+    for amr_graph in amr_graphs:
+        # amr_graph = amr_graphs[i]
+        input_amr = remove_punctuation(amr_graph)
+        word_list = input_amr.split(" ")
+        wiki_found = []
+        for i in word_list:
+            if i.lower() in animate:
+                wiki_found.append({"W_Animate":i})
+            elif i.lower() in inanimate:
+                wiki_found.append({"W_Inanimate":i})
+        info.append(wiki_found)
     return info
 
 def parse_for_pronouns(sentences,pronouns= pronouns):
@@ -94,12 +161,10 @@ def remove_punctuation(input_string):
 
 
 # def parse_animacy_runner(sentences, amr_print, amr_graph, tail, role):
-def parse_animacy_runner(sentences, amr_print, X_tuples):
+# def parse_animacy_runner(sentences, amr_print, X_tuples, file_id):
+def parse_animacy_runner(sentences, amr_print):
     ##input should be a list, either a list of sentences, a list containing words (could be one word)
     #returns list of dicts that contain combined aimacy, pronoun, and ner info
-    print("sentences:", len(sentences))
-    print("amr_print:", len(amr_print))
-    print("x tuples", len(X_tuples))
 
     #create pipelines
     pipe_animacy = pipeline("token-classification", model="andrewt-cam/bert-finetuned-animacy",aggregation_strategy="simple")
@@ -108,11 +173,78 @@ def parse_animacy_runner(sentences, amr_print, X_tuples):
 
     #do parses
     # TODO: edit so that we are not making unnecesarry calls to the API
-    animacy_results = parse_by_pipe(sentences, pipe_animacy,keep_list)
-    ner_results = parse_by_pipe(sentences, pipe_ner)
+
+
+    # animacy_results = parse_by_pipe(sentences, pipe_animacy,keep_list)
+    # ner_results = parse_by_pipe(sentences, pipe_ner)
+    animacy_results = parse_by_pipe_splitroles_only(sentences, amr_print, pipe_animacy,keep_list)
+    ner_results = parse_by_pipe_splitroles_only(sentences, amr_print, pipe_ner)
+    wiki_results = wiki_type(sentences,amr_print)
     pn_results = parse_for_pronouns(sentences)
-    ans = combine_parses([ner_results,animacy_results,pn_results,])
+    ans = combine_parses([ner_results,animacy_results,pn_results,wiki_results])
+
+
     return ans
+
+
+def animacy_decider(X_tuples, file_id):
+    # I need to create a data structure like this but instead I am feeling it with animate / inaniamate decision
+    animacy_info = []
+    count = 0
+    for _, x_tuple in X_tuples.iterrows():
+        # if x_tuple["file"] != file_id:
+        #     continue  # Skip if the file ID does not match
+
+        count+=1
+        # getting info from X_tuple
+        print("\nSentence ", count, ":\n")
+        print("sent: \n", x_tuple["sent"])
+        # the ne_info is going to have to come from parse_animacy_runner
+        print("amr_graph: \n", x_tuple["amr_graph"])
+        print("amr_head_name: \n", x_tuple["amr_head_name"])
+        print("amr_role: \n", x_tuple["amr_role"])
+        print("amr_tail_name: \n", x_tuple["amr_tail_name"])
+
+        # getting each piece of info from X_tuple
+        sentence = x_tuple["sent"]
+        amr_graph = x_tuple["amr_graph"]
+        role = x_tuple["amr_role"]
+        tail = x_tuple["amr_tail_name"]
+        amr_print = x_tuple["amr_prints"]
+
+        if role == ":mod":
+            animacy_info.append("inanimate")
+            continue
+
+        # Get ne_info and amr_prints for the current tuple
+        # these might end up being wrong we shall see
+        print("count:", count)
+        named_entity = x_tuple["ne_info"]
+        # print("length of ne_info:", len(ne_info))
+        # named_entity = ne_info[count - 1]  # Adjust count to start from 0 index
+        
+
+        print("named entity: \n", named_entity)
+        print("amr_print: \n", amr_print)
+
+        # check for cause-01
+        if tail == "cause-01":
+            # update the tail
+            tail, role = fixCause(amr_graph, tail, role)
+        
+
+        decision_animacy = ne_animacy(named_entity, tail, amr_graph, amr_print)
+        
+        print("ANIMACY DECISION: \n", decision_animacy)
+        # Store the animacy decision as a tuple with sentence index and decision
+        # animacy_info.append((x_tuple["sent_i"], decision_animacy))
+        animacy_info.append(decision_animacy)
+
+
+    print("INFORMATION IN ANIMACY INFO", animacy_info)
+    print("animacy info size: ", len(animacy_info))
+    return animacy_info
+
 
 
 def parse_animacy_RULES(sentences):
@@ -129,8 +261,157 @@ def parse_animacy_RULES(sentences):
     animacy_results = parse_by_pipe(sentences, pipe_animacy,keep_list)
     ner_results = parse_by_pipe(sentences, pipe_ner)
     pn_results = parse_for_pronouns(sentences)
-    ans = combine_parses([ner_results,animacy_results,pn_results,])
+    ans = combine_parses([ner_results,animacy_results,pn_results])
     return ans
+
+
+# see if we can mitigate calls to animacy runner
+def ne_animacy(named_entity, tail, amr_graph, amr_print):
+
+    # Check if named_entity matches tail
+    animacy = animacy_classification(named_entity, tail)
+    if animacy != "none":
+        return animacy
+
+    # just check the animacy of the tail now if we could not find anything
+    print("sending tail to be parsed:", tail)
+    new_named_entity = parse_animacy_runner([tail],[amr_print]) # needs to send sentence and tail
+    print("NEW NAMED ENTITY: ", new_named_entity)
+    animacy = animacy_classification_second_pass(new_named_entity, tail)
+    if animacy != "none":
+        print("used new animacy identified from running animacy parser again")
+        return animacy
+
+    # Run through a second time on the next entity if it was a verb
+    animacy = second_pass_animacy(named_entity, tail, amr_graph,amr_print)
+    if animacy != "none":
+        return animacy
+
+    # Default to Inanimate if no match is found
+    return "inanimate"
+
+def animacy_classification(named_entity, tail):
+    print("Named entities going into animacy classification: ", named_entity)
+    # Check if named_entity matches tail
+    for ne_entry in named_entity:
+        for ne_type, ne_value in ne_entry.items():
+            if ne_value == tail:
+                # Check animacy based on ne_type
+                if ne_type in ["PER", "B_human", "B_animal","W_Animate"]:
+                    print("returning animate!!")
+                    return "animate"
+                elif ne_type in ["ORG", "LOC", "MISC","W_Inanimate"]:
+                    print("returning inanimate!!")
+                    return "inanimate"
+    return "none"
+
+def animacy_classification_second_pass(named_entity, tail):
+    print("in second pass animacy")
+    # Check if named_entity is an empty list
+    if not named_entity or all(not entry for entry in named_entity):
+        print("went to none for second pass animacy")
+        return "none"
+
+    # Check if named_entity matches tail
+    for ne_entry_list in named_entity:
+        for ne_entry in ne_entry_list:
+            # Handle the case where named_entity is a string
+            if isinstance(ne_entry, str) and ne_entry == tail: # maybe add .lower() here?
+                # Check animacy based on ne_type
+                if ne_type in ["PER", "B_human", "B_animal"]:
+                    return "animate"
+                elif ne_type in ["ORG", "LOC", "MISC"]:
+                    return "inanimate"
+            # Handle the case where named_entity is a dictionary
+            elif isinstance(ne_entry, dict):
+                for ne_type, ne_value in ne_entry.items():
+                    if ne_value == tail:
+                        # Check animacy based on ne_type
+                        if ne_type in ["PER", "B_human", "B_animal"]:
+                            return "animate"
+                        elif ne_type in ["ORG", "LOC", "MISC"]:
+                            return "inanimate"
+
+    return "none"
+
+def second_pass_animacy(named_entity, tail, amr_graph,amr_print):
+    # checking the next node if it is -## assuming it is child of verb
+    print("\nin second pass animacy\n")
+    if re.search(r'-\d+$', tail):
+        # get the label name for find replacement
+        role_id = get_label_name(amr_graph, tail)
+        # check for the child of this node that is not a verb
+        second_check_node = find_replacement_node(amr_graph, tail, role_id)
+        print("second check node: ", second_check_node)
+        # use the child node in the new animacy classification
+        second_animacy = animacy_classification_second_pass(named_entity, second_check_node)
+        print("second animacy term: ", second_animacy)
+        # if there was no animacy run the parse animacy runner again on the child node
+        if second_animacy == "none":
+            new_named_entity = parse_animacy_runner([second_check_node],[amr_print])
+            # Extract the first dictionary from the list, if any
+            if new_named_entity and isinstance(new_named_entity[0], dict):
+                new_named_entity = new_named_entity[0]
+                print("change to new_named_entity (second pass):", new_named_entity)
+            else:
+                new_named_entity = {}  # Default to an empty dictionary if no valid dictionary is found
+            print("new_named_entity: ",new_named_entity)
+            # then return the new animacy classification
+            return animacy_classification_second_pass(new_named_entity, second_check_node)
+        else:
+            return second_animacy
+   
+    return "none"
+
+
+def fixCause(amr_graph, tail, role):
+    # re.search(r'-\d+$', successor)
+
+    print("\nSearching new role\n")
+    print("amr graph nodes: ", amr_graph.nodes(data="name"))
+    print("amr graph edges: ", amr_graph.edges(data=True))
+    # get the role id for cause-01
+    role_id = get_label_name(amr_graph, tail)
+    print("role_id: ", role_id)
+    replacement_node = find_replacement_node(amr_graph, tail, role_id)
+    print("\nFOUND NEW CAUSE ROLE:\n", replacement_node)
+
+    return replacement_node, ":cause"
+
+def find_replacement_node(amr_graph, tail, role_id):
+    # Find the child node of the current node with the specified role and head
+    nodes_list = list(amr_graph.nodes(data="name"))
+    node_found1 = False
+    for node in nodes_list:
+        if node_found1:
+            child_node_id = node[1]
+            print("matches and we've got child node:", node[1])
+            # Check if the child node is a verb ("-01" or other "-##" pattern)
+            if re.search(r'-\d+$', child_node_id):
+                continue
+            else:
+                return child_node_id #otherwise return the new tail
+        elif node[0] == role_id:
+            node_found1 = True
+    
+    # If no suitable replacement is found, return the next item in the nodes list
+    node_found = False
+    for node in nodes_list:
+        if node_found:
+            print("just returning next node:", node[1])
+            return node[1]
+        if node[0] == role_id:
+            node_found = True
+    
+    # otherwise just return the tail again
+    return tail
+
+def get_label_name(amr_graph, node_id):
+    # Find the label name associated with a node ID
+    for node in amr_graph.nodes(data="name"):
+        if node_id in node:
+            return node[0]
+    return None
 
 sentences = [
 "He showed the sea to the girl.",

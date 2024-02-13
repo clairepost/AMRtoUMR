@@ -5,7 +5,6 @@ import os
 import random
 import pandas as pd
 import ast
-from error_analysis import get_indices
 
 ##The baeline model
 # this will be a rules-only baseline model, extract the test data (animacy info will already be applied)
@@ -21,7 +20,9 @@ def calc_role(Y_preds):
 
 def run_baseline_X_times():
     num_iterations=20
-    X_tupes, y_true = extract_data("test")
+    # X_tupes, y_true = extract_data("test")
+    print("Running augment baseline")
+    X_tupes, y_true = extract_data("augment")
     X = pd.DataFrame.from_records(X_tupes, columns=['sent', 'ne_info', 'amr_graph', 'amr_head_name', 'amr_role', 'amr_tail_name'])
     
     comparison_results = []
@@ -37,7 +38,7 @@ def run_baseline_X_times():
         df[f'comparison_results_{i}'] = result
 
     # Save the DataFrame to a new CSV file
-    df.to_csv(f'baseline_results_NEW.csv', index=False)
+    df.to_csv(f'baseline_results_augment3.csv', index=False)
     return comparison_results
 
 
@@ -78,52 +79,13 @@ def run_baseline(num_iters, split):
 
     y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
     full_df = pd.concat([X, y_pred],axis = 1)
-    full_df.to_csv("output/baseline_"+split+".csv")
+    full_df.to_csv("output/baseline_"+split+"_allFiles.csv")
     return full_df
-
-def run_splits_nn():
-    num_iters = 1
-    X_1 = preprocess_data("train",True,True)
-    X = preprocess_data("test", True, True)
-
-    all_Xs = pd.concat((X,X_1),axis=0)
-    
-    splits= get_indices(all_Xs)
-
-    for i, (train_index, test_index) in splits:
-        print(f"Fold {i}:")
-        print(f"  Train: index={train_index}")
-        print(f"  Test:  index={test_index}")
-        
-        y_preds = []
-        X = all_Xs.iloc[test_index.tolist()]
-        y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
-        for _ in range(num_iters):
-            print(y_prob)
-            y_calc = calc_role(y_prob)
-            y_preds.append(y_calc)
-
-        c = len(y_preds)
-        n = len(y_preds[0])
-
-        print(y_preds)
-        # Transpose the list
-        list_of_lists_n = [[y_preds[j][i] for j in range(c)] for i in range(n)]
-       # y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
-    
-        #X = X.loc[:,~X.columns.duplicated()].copy() #drop duplicte columns
-        print(type(y_preds[0]))
-        print(y_preds[0])
-        #y_preds = pd.Series(y_preds)
-        X["y_pred"] = y_preds[0]
-        X.to_csv("output/k-fold/baseline_"+str(i)+".csv")
-    return X
-
 
 
 if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
     #run_baseline_X_times()
-    run_splits_nn()
+    run_baseline(5,"augment")
     #run_baseline(20,"test") #Marie's version

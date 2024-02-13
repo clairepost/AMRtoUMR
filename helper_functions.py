@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import re
 from str2graph import create_graph
 import re
 import torch
@@ -8,7 +9,7 @@ from str2graph import create_graph,draw_graph
 from alignment import *
 from sklearn.preprocessing import LabelEncoder
 from transformers import BertModel, BertTokenizer, BertConfig
-from animacyParser import parse_animacy_runner
+from animacyParser import parse_animacy_runner, animacy_decider
 from rules import detect_split_role
 
 def extract_data(split):
@@ -20,6 +21,9 @@ def extract_data(split):
         df = read_training_data()
     elif split == "test":
         df = read_test_data()
+    elif split == "augment":
+        print("reading in the augment sample data")
+        df = read_augment_fake_parallel_data()
     else:
         print("extract_data() takes in 1 arg: either 'train' or 'test'")
         return
@@ -103,6 +107,278 @@ def read_training_data():
     return splits_data_df
     
 
+# def read_augment_data():
+#     # reads in the augmented data
+#     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
+#     # creates dummy variables for the extra umr columns
+
+#     # step 1 - open files
+#     # put all files in dicts
+#     augment_files = {}
+
+#     augment_path = os.path.join(os.getcwd(), 'raw_data', 'augment-data-english')
+
+#     for f in os.listdir(augment_path):
+#         file_path = os.path.join(augment_path, f)
+#         with open(file_path, 'rb') as file1:
+#             try:
+#                 content = file1.read().decode('utf-8')
+#             except UnicodeDecodeError:
+#                 # If 'utf-8' decoding fails, try another encoding
+#                 content = file1.read().decode('latin-1')
+#             augment_files[f] = content
+
+#     # step 2 - get file names
+#     #create file mappings augment data
+#     augment_files[1] = augment_files.pop('amr-release-3.0-amrs-bolt.txt')
+#     augment_files[2] = augment_files.pop('amr-release-3.0-amrs-cctv.txt')
+#     augment_files[3] = augment_files.pop('amr-release-3.0-amrs-consensus.txt')
+#     augment_files[4] = augment_files.pop('amr-release-3.0-amrs-dfa.txt')
+#     augment_files[5] = augment_files.pop('amr-release-3.0-amrs-dfb.txt')
+#     augment_files[6] = augment_files.pop('amr-release-3.0-amrs-fables.txt')
+#     augment_files[7] = augment_files.pop('amr-release-3.0-amrs-guidelines.txt')
+#     augment_files[8] = augment_files.pop('amr-release-3.0-amrs-mt09sdl.txt')
+#     augment_files[9] = augment_files.pop('amr-release-3.0-amrs-proxy.txt')
+#     augment_files[10] = augment_files.pop('amr-release-3.0-amrs-wb.txt')
+#     augment_files[11] = augment_files.pop('amr-release-3.0-amrs-wiki.txt')
+#     augment_files[12] = augment_files.pop('amr-release-3.0-amrs-xinhua.txt')
+
+#     file_map_a = {1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
+
+
+#     # step 3 - extract graphs and sentences
+
+#     all_sentences_augment = {}
+#     augment_sents = {}
+#     for f in augment_files:
+#         if f == '.DS_Store':
+#             continue  # Skip system files
+#         augment_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', augment_files[f])#extract the graphs
+#         sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)', augment_files[f]) #first look
+#         if not sentences:
+#             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',augment_files[f])#second look
+#             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+#         all_sentences_augment[f] = sentences
+        
+
+#     # step 4 - make graphs
+        
+#     #using the str2graph.create_graph() function
+#     augment_graphs = {}
+#     for file in augment_sents.keys():
+#         augment_graphs[file] = []
+#         for sent in augment_sents[file]:
+#             augment_graphs[file].append(create_graph(sent))
+
+
+#     # step 5 - split role definitions
+
+#     amr_roles= {
+#        ":mod",
+#        ":cause",
+#        ":part", 
+#        ":consist-of",
+#        ":source",
+#        ":destination",
+#        ":condition",
+#        ":ARG1-of"
+#         } # I think remove concession
+    
+#     amr_roles_in_tail= {
+#        ":ARG1-of": "cause-01"
+#     }
+#     umr_t2r = {
+#         "cause-01":[":cause", ":reason",":Cause-of"]
+#     }
+
+#     # step 6 - animacy parsing 
+
+#     ne_info = {}
+#     for f in all_sentences_augment:
+#         ne_info[f] = parse_animacy_runner(all_sentences_augment[f])
+
+
+#     # step 7 - make a data frame (INCOMPLETE: NEED HELP HERE OUT)
+    
+#     # define empty umrs 
+#     umr_graphs = None
+
+#     splits_data = align_graphs_on_AMR_splits(all_sentences_augment,ne_info, augment_graphs,umr_graphs=None, amr_roles=amr_roles, amr_roles_in_tail=amr_roles_in_tail, umr_t2r=umr_t2r)
+
+#     # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
+
+#     # Convert splits_data to DataFrame
+#     columns = ["file", "sent_i", "sent", "ne_info", "amr_graph", "amr_head_name", "amr_tail_name", "amr_role",
+#                "umr_head_name", "umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id",
+#                "umr_tail_id"]
+#     splits_data_df = pd.DataFrame(splits_data, columns=columns)
+
+#     # step 8 - save and return data frame
+
+#     splits_data_df.to_csv("input_data/augment_data.csv")
+#     return splits_data_df
+
+def read_augment_fake_parallel_data():
+    #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
+    # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
+    # put all files in dicts
+    umr_files = {}
+    amr_files = {}
+
+    # umr_path = os.getcwd() + os.path.join(os.getcwd(), 'raw_data', 'umr-fake')
+    # amr_path = os.getcwd() + os.path.join(os.getcwd(), 'raw_data', 'augment-sample-data-english2')
+    umr_path = os.getcwd() + '/raw_data/umr-fake-extra'
+    amr_path = os.getcwd() + '/raw_data/augment-data-english'
+
+    
+    for f in os.listdir(umr_path):
+        file_path = os.path.join(umr_path, f)
+        with open(file_path, 'rb') as file1:
+            try:
+                content = file1.read().decode('utf-8')
+            except UnicodeDecodeError:
+                # If 'utf-8' decoding fails, try another encoding
+                content = file1.read().decode('latin-1')
+            umr_files[f] = content
+
+    
+    for f in os.listdir(amr_path):
+        file_path = os.path.join(amr_path, f)
+        with open(file_path, 'rb') as file1:
+            try:
+                content = file1.read().decode('utf-8')
+            except UnicodeDecodeError:
+                # If 'utf-8' decoding fails, try another encoding
+                content = file1.read().decode('latin-1')
+            amr_files[f] = content
+
+    # step 2 - get file names
+    # #create file mappings augment data
+    # umr_files[0] = umr_files.pop('umr-fake-consensus.txt')
+    # umr_files[1] = umr_files.pop('umr-fake-wiki.txt')
+    # amr_files[0] = amr_files.pop('amr-release-3.0-amrs-consensus.txt')
+    # amr_files[1] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
+    # umr_files[2] = umr_files.pop('umr-fake-guidelines.txt')
+    # amr_files[2] = amr_files.pop('amr-release-3.0-amrs-guidelines.txt')
+    # umr_files[3] = umr_files.pop('umr-fake-fables.txt')
+    # amr_files[3] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
+
+    # # file_map = {1:"consensus"}
+    # file_map = {0:"consensus",1:"wiki",2:"guidelines",3:"fables"}
+
+    amr_files[1] = amr_files.pop('amr-release-3.0-amrs-bolt.txt')
+    amr_files[2] = amr_files.pop('amr-release-3.0-amrs-cctv.txt')
+    amr_files[3] = amr_files.pop('amr-release-3.0-amrs-consensus.txt')
+    amr_files[4] = amr_files.pop('amr-release-3.0-amrs-dfa.txt')
+    amr_files[5] = amr_files.pop('amr-release-3.0-amrs-dfb.txt')
+    amr_files[6] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
+    amr_files[7] = amr_files.pop('amr-release-3.0-amrs-guidelines.txt')
+    amr_files[8] = amr_files.pop('amr-release-3.0-amrs-mt09sdl.txt')
+    amr_files[9] = amr_files.pop('amr-release-3.0-amrs-proxy.txt')
+    amr_files[10] = amr_files.pop('amr-release-3.0-amrs-wb.txt')
+    amr_files[11] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
+    amr_files[0] = amr_files.pop('amr-release-3.0-amrs-xinhua.txt')
+
+    umr_files[1] = umr_files.pop('umr-fake-bolt.txt')
+    umr_files[2] = umr_files.pop('umr-fake-cctv.txt')
+    umr_files[3] = umr_files.pop('umr-fake-consensus.txt')
+    umr_files[4] = umr_files.pop('umr-fake-dfa.txt')
+    umr_files[5] = umr_files.pop('umr-fake-dfb.txt')
+    umr_files[6] = umr_files.pop('umr-fake-fables.txt')
+    umr_files[7] = umr_files.pop('umr-fake-guidelines.txt')
+    umr_files[8] = umr_files.pop('umr-fake-mt09sdl.txt')
+    umr_files[9] = umr_files.pop('umr-fake-proxy.txt')
+    umr_files[10] = umr_files.pop('umr-fake-wb.txt')
+    umr_files[11] = umr_files.pop('umr-fake-wiki.txt')
+    umr_files[0] = umr_files.pop('umr-fake-xinhua.txt')
+
+
+
+    file_map = {1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
+
+
+    # step 3 - extract graphs and sentences
+
+    umr_sents = {}
+    all_sentences = {}
+    for f in umr_files:
+        # umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
+        umr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', umr_files[f])
+        sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)',umr_files[f]) #first look
+        if not sentences:
+            sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',umr_files[f])#second look
+            sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+        
+    # TODO: pass in AMR sents to the X_tuple, add a column with that info, pass said x_tuple directly into the animacy_runner, change that function and call, do animacy parsing all over there (no double calls to animacy)
+    amr_sents = {}
+    for f in amr_files:
+        amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
+        sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)',amr_files[f]) #first look
+        if not sentences:
+            sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
+            sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+        all_sentences[f] = sentences
+
+
+    #using the str2graph.create_graph() function
+    umr_graphs = {}
+    for file in umr_sents.keys():
+        umr_graphs[file] = []
+        for sent in umr_sents[file]:
+            umr_graphs[file].append(create_graph(sent))
+
+
+    amr_graphs = {}
+    for file in amr_sents.keys():
+        amr_graphs[file] = []
+        for sent in amr_sents[file]:
+            amr_graphs[file].append(create_graph(sent))
+
+
+    amr_roles= {
+       ":mod",
+       ":cause",
+       ":part", 
+       ":consist-of",
+       ":source",
+       ":destination",
+       ":condition",
+       ":ARG1-of"
+        } # I think remove concession
+    
+    amr_roles_in_tail= {
+       ":ARG1-of": "cause-01"
+    }
+    umr_t2r = {
+        "cause-01":[":cause", ":reason",":Cause-of"]
+    }
+    
+
+    columnsTemp = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
+
+    ne_info = {}
+    for f in all_sentences:
+        
+        print("IN NE INFO FINDER: file ", f)
+        
+        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
+    
+    splits_data1, total_count = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data_df_temp = pd.DataFrame(splits_data1)
+    splits_data_df_temp.columns= columnsTemp
+
+    # add to data frame
+    splits_data_df_temp["animacy"] = animacy_decider(splits_data_df_temp, f)
+
+    # Convert splits_data_df_temp to a DataFrame
+    splits_data_df_temp.to_csv("input_data/augment_fake_data3.csv")
+    return splits_data_df_temp
+
+
+
+
+
+
         
 def read_test_data():
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
@@ -115,11 +391,11 @@ def read_test_data():
     amr_path = os.getcwd() + '/raw_data/AMR-data-english'
 
     for f in os.listdir(umr_path):
-        file1 = open(umr_path + '/' + f, 'r',encoding="utf8")
+        file1 = open(umr_path + '/' + f, 'r')
         umr_files[f] = file1.read()
 
     for f in os.listdir(amr_path):
-        file1 = open(amr_path + '/' + f, 'r',encoding="utf8")
+        file1 = open(amr_path + '/' + f, 'r')
         amr_files[f] = file1.read()
 
     #Do not have all of the UMR annotations for the Putin document, so just grab everything before this sentence id from AMR
@@ -132,25 +408,20 @@ def read_test_data():
     amr_files[3] = amr_files.pop('putin_ENG_0152_2000_1208-AMR.txt')
     amr_files[4] = amr_files.pop('edmund_pope-AMR.txt')
     amr_files[5] = amr_files.pop('pear-AMR__of__english-umr-0004.txt')
-    amr_files[6] = amr_files.pop('amr-release-3.0-amrs-wiki.txt')
 
     umr_files[1] = umr_files.pop('lindsay-umr.txt')
     umr_files[2] = umr_files.pop('Lorelei_lorpt-024_Philippines_Landslide_2023-release.txt')
     umr_files[3] = umr_files.pop('lorelei_lorpt-151_putin_2023-release.txt')
     umr_files[4] = umr_files.pop('lorelei_lorpt-152_edmundpope_2023-release.txt')
     umr_files[5] = umr_files.pop('Pear_Story_2023-release.txt')
-    umr_files[6] = umr_files.pop('umr-partial-fake-wiki.txt')
 
-    file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story", 6:"Augment"}
+    file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story"}
 
     umr_sents = {}
     all_sentences = {}
     for f in umr_files:
-        if f!= 6:
-            umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
-        else:
-            umr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', umr_files[f])
-            
+        umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
+
     amr_sents = {}
     for f in amr_files:
         amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
@@ -201,11 +472,17 @@ def read_test_data():
     splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
     splits_data_df = pd.DataFrame(splits_data)
 
+    # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
+
+
     columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
     splits_data_df.columns= columns
     splits_data_df.to_csv("input_data/test_data.csv")
     return splits_data_df
+
+# make a new function that works for data augmention adding it from the FinalProject.ipynb
+
 
 def map_categorical_to_tensor(series):
     """
@@ -361,8 +638,14 @@ def preprocess_data(split, reload_graphs, reload_rules):
         else:
             X = pd.read_csv("input_data/test_data.csv")
             X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+    elif split == "augment":
+        if reload_graphs == True:
+            X = read_augment_fake_parallel_data()
+        else:
+            X = pd.read_csv("input_data/augment_fake_data.csv")
+            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
     else:
-        print("arg 1 must be 'test' or 'train")
+        print("arg 1 must be 'test','train', or 'augment'")
         return
     
 
@@ -396,8 +679,9 @@ def preprocess_data(split, reload_graphs, reload_rules):
 
 
 
-X = preprocess_data("test", True, True)
-Y = preprocess_data("train", True,True)
-print(create_mapping())
+#X = preprocess_data("test", True, True)
+#print(create_mapping())
 # read_test_data()
-#read_training_data("training_data")
+# read_training_data("training_data")
+# read_augment_sample_data()
+read_augment_fake_parallel_data()

@@ -135,6 +135,13 @@ def detect_split_role(X_tuples):
                 Y.append(([":cause", ":reason"], [0.9, 0.1]))
             elif animacy_info == "animate":
                 Y.append(([":reason"], [1.0]))
+        
+        elif role == "cause-01" or role == ":ARG1-of" or role == ":ARG0-of":
+            if animacy_info == "inanimate":
+                Y.append(([":cause", ":reason"], [0.9, 0.1]))
+            elif animacy_info == "animate":
+                Y.append(([":reason"], [1.0]))
+        
 
         # Rule 3: Source -> (material, source, start) # Rule 4: Find parent node of source and check if it has a theme
         elif role == ":source":

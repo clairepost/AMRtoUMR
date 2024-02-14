@@ -1,0 +1,1177 @@
+Column1,file,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy,y_guess,y_guess_dist,y_pred
+0,0,0,"If that is the case, after the child is born, the father will go to the mother's home, and present the family matriarch with gifts, asking to be accepted as the father.","[{'B_human': 'child'}, {'B_human': 'father'}, {'B_human': 'mat'}, {'B_human': 'father'}]","(a / and
+      :op1 (g / go-02
+            :ARG0 (p3 / person
+                  :ARG0-of (h3 / have-rel-role-91
+                        :ARG1 c
+                        :ARG2 (f / father)))
+            :ARG4 (h / home
+                  :poss (p4 / person
+                        :ARG0-of (h4 / have-rel-role-91
+                              :ARG1 c
+                              :ARG2 (m / mother)))))
+      :op2 (p / present-01
+            :ARG0 p3
+            :ARG1 (g2 / gift)
+            :ARG2 (p2 / person
+                  :ARG0-of (h2 / have-org-role-91
+                        :ARG1 (f2 / family)
+                        :ARG2 (m2 / matriarch))))
+      :op3 (a3 / ask-02
+            :ARG0 p3
+            :ARG1 (a4 / accept-01
+                  :ARG1 h3))
+      :time (a2 / after
+            :op1 (b / bear-02
+                  :ARG1 (c / child)))
+      :condition (t / that))
+
+",DiGraph with 26 nodes and 25 edges,and,that,:condition,and,that,:condition,a_0,a_0,t_25,t_25,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+1,0,12,British investor,[{'W_Inanimate': 'country'}],"(p / person
+      :ARG0-of (i / invest-01)
+      :mod (c / country :wiki ""United_Kingdom"" :name (n / name :op1 ""Britain"")))
+
+",DiGraph with 6 nodes and 5 edges,person,country,:mod,person,country,:mod,p_0,p_0,c_2,c_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+2,0,19,"According to government sources, the killing happened yesterday.",[],"(s / say-01
+      :ARG0 (s2 / source
+            :mod (g / government-organization
+                  :ARG0-of (g2 / govern-01)))
+      :ARG1 (k / kill-01
+            :time (y / yesterday)))
+
+",DiGraph with 6 nodes and 5 edges,source,government-organization,:mod,source,government-organization,:mod,s2_1,s2_1,g_2,g_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+3,0,38,A large number of people gathered.,[],"(g / gather-03
+      :ARG0 (p / person)
+      :quant (n / number
+            :mod (l / large)))
+
+",DiGraph with 4 nodes and 3 edges,number,large,:mod,number,large,:mod,n_2,n_2,l_3,l_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+4,0,40,20 Canadian dollars,[{'W_Inanimate': 'country'}],"(m / monetary-quantity :quant 20
+      :unit (d / dollar
+            :mod (c / country :wiki ""Canada""
+                  :name (n / name :op1 ""Canada""))))
+
+",DiGraph with 6 nodes and 5 edges,dollar,country,:mod,dollar,country,:mod,d_2,d_2,c_3,c_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+5,0,52,10% of smokers die of lung cancer.,[{'B_human': 'smoke'}],"(i / include-91
+      :ARG1 (p / person
+            :ARG1-of (d / die-01
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (d2 / disease :wiki ""Lung_cancer"" :name (n / name :op1 ""lung"" :op2 ""cancer"")))))
+      :ARG2 (p2 / person
+            :ARG0-of (s2 / smoke-02))
+      :ARG3 (p3 / percentage-entity :value 10))
+
+",DiGraph with 13 nodes and 12 edges,die-01,cause-01,:ARG1-of,die-01,cause-01,cause-01,d_2,c2_3,c2_3,d_2,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+6,0,52,10% of smokers die of lung cancer.,[{'B_human': 'smoke'}],"(i / include-91
+      :ARG1 (p / person
+            :ARG1-of (d / die-01
+                  :ARG1-of (c2 / cause-01
+                        :ARG0 (d2 / disease :wiki ""Lung_cancer"" :name (n / name :op1 ""lung"" :op2 ""cancer"")))))
+      :ARG2 (p2 / person
+            :ARG0-of (s2 / smoke-02))
+      :ARG3 (p3 / percentage-entity :value 10))
+
+",DiGraph with 13 nodes and 12 edges,die-01,cause-01,:ARG1-of,die-01,cause-01,cause-01,d_2,c2_3,c2_3,d_2,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+7,0,69,The old man died of lung cancer .,[{'B_human': 'man'}],"(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))
+
+",DiGraph with 9 nodes and 8 edges,die-01,cause-01,:ARG1-of,die-01,cause-01,cause-01,d_0,c_3,c_3,d_0,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+8,0,69,The old man died of lung cancer .,[{'B_human': 'man'}],"(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))
+
+",DiGraph with 9 nodes and 8 edges,man,old,:mod,man,old,:mod,m_1,m_1,o_2,o_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+9,0,69,The old man died of lung cancer .,[{'B_human': 'man'}],"(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))
+
+",DiGraph with 9 nodes and 8 edges,die-01,cause-01,:ARG1-of,die-01,cause-01,cause-01,d_0,c_3,c_3,d_0,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+10,0,72,"Darrell Phillips, vice president of human resources for Hollingworth & Vose","[{'W_Animate': 'person'}, {'W_Animate': 'company'}]","(p / person :wiki -
+      :name (n / name :op1 ""Darrell"" :op2 ""Phillips"")
+      :ARG0-of (h2 / have-org-role-91
+            :ARG1 (c / company :wiki -
+                  :name (n2 / name :op1 ""Hollingworth"" :op2 ""&"" :op3 ""Vose""))
+            :ARG2 (p2 / president
+                  :mod (v / vice)
+                  :topic (r / resource
+                        :mod (h / human)))))
+
+",DiGraph with 15 nodes and 14 edges,president,vice,:mod,president,vice,:mod,p2_11,p2_11,v_12,v_12,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+11,0,72,"Darrell Phillips, vice president of human resources for Hollingworth & Vose","[{'W_Animate': 'person'}, {'W_Animate': 'company'}]","(p / person :wiki -
+      :name (n / name :op1 ""Darrell"" :op2 ""Phillips"")
+      :ARG0-of (h2 / have-org-role-91
+            :ARG1 (c / company :wiki -
+                  :name (n2 / name :op1 ""Hollingworth"" :op2 ""&"" :op3 ""Vose""))
+            :ARG2 (p2 / president
+                  :mod (v / vice)
+                  :topic (r / resource
+                        :mod (h / human)))))
+
+",DiGraph with 15 nodes and 14 edges,resource,human,:mod,resource,human,:mod,r_13,r_13,h_14,h_14,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+12,0,77,The mayor arrived with a police escort .,[],"(a / arrive-01
+      :ARG1 (p2 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (m / mayor)))
+      :accompanier (e / escort
+            :mod (p / police)))
+
+",DiGraph with 6 nodes and 5 edges,escort,police,:mod,escort,police,:mod,e_4,e_4,p_5,p_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+13,0,78,I ate pasta with tomato sauce .,[{'PER': 'I'}],"(e / eat-01
+      :ARG0 (i / i)
+      :ARG1 (p / pasta)
+      :accompanier (s / sauce
+            :mod (t / tomato)))
+
+",DiGraph with 5 nodes and 4 edges,sauce,tomato,:mod,sauce,tomato,:mod,s_3,s_3,t_4,t_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+14,0,80,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'city'}]","(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))
+
+",DiGraph with 11 nodes and 10 edges,drive-01,city,:source,drive-01,city,:source,d_0,d_0,c_3,c_3,inanimate,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]","[':source', ':source', ':source', ':source', ':source']"
+15,0,80,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'city'}]","(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))
+
+",DiGraph with 11 nodes and 10 edges,drive-01,city,:destination,drive-01,city,:source,d_0,d_0,c2_7,c_3,inanimate,[':goal'],[1.0],"[':goal', ':goal', ':goal', ':goal', ':goal']"
+16,0,81,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}, {'W_Inanimate': 'country'}]","(m / meet-02
+      :ARG0 (b / boy)
+      :ARG1 (g / girl
+            :source (c / country :wiki ""Spain"" :name (n / name :op1 ""Spain""))))
+
+",DiGraph with 7 nodes and 6 edges,girl,country,:source,girl,country,:source,g_2,g_2,c_3,c_3,inanimate,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]","[':source', ':start', ':source', ':material', ':source']"
+17,0,89,"In the 1974 soccer World Cup final, Germany beat the Netherlands 2-1.","[{'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'game'}]","(b / beat-03
+      :ARG0 (c / country :wiki ""Germany""
+            :name (n / name :op1 ""Germany""))
+      :ARG1 (c2 / country :wiki ""Netherlands""
+            :name (n2 / name :op1 ""Netherlands""))
+      :ARG2 (f / final
+            :subevent-of (g / game :wiki ""FIFA_World_Cup""
+                  :name (n3 / name :op1 ""World"" :op2 ""Cup"")
+                  :mod (s / soccer)
+                  :time (d / date-entity :year 1974)))
+      :quant (s2 / score-entity :op1 2 :op2 1))
+
+",DiGraph with 21 nodes and 20 edges,game,soccer,:mod,game,soccer,:mod,g_10,g_10,s_15,s_15,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+18,0,102,A special gubernatorial election will take place next Tuesday .,[],"(e / elect-01
+      :ARG2 (g / governor
+            :ARG2-of (h / have-org-role-91))
+      :time (d / date-entity
+            :weekday (t / tuesday)
+            :mod (n / next))
+      :ARG1-of (s / special-02))
+
+",DiGraph with 7 nodes and 6 edges,date-entity,next,:mod,date-entity,next,:mod,d_3,d_3,n_5,n_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+19,0,103,microbial virus,[],"(v / virus
+      :mod (m / microbe))
+
+",DiGraph with 2 nodes and 1 edges,virus,microbe,:mod,virus,microbe,:mod,v_0,v_0,m_1,m_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+20,0,105,Which team won ?,[],"(w / win-01
+      :ARG0 (a / amr-unknown
+            :mod (t / team)))
+
+",DiGraph with 3 nodes and 2 edges,amr-unknown,team,:mod,amr-unknown,team,:mod,a_1,a_1,t_2,t_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+21,0,106,this Wednesday afternoon,[],"(d / date-entity
+      :weekday (w / wednesday)
+      :dayperiod (a / afternoon)
+      :mod (t / this))
+
+",DiGraph with 4 nodes and 3 edges,date-entity,this,:mod,date-entity,this,:mod,d_0,d_0,t_3,t_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+22,0,109,CEO of IBM,[{'W_Animate': 'company'}],"(p / person
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (c2 / company :wiki ""IBM"" :name (n / name :op1 ""IBM""))
+            :ARG2 (o / officer
+                  :mod (c / chief)
+                  :mod (e / executive))))
+
+",DiGraph with 9 nodes and 8 edges,officer,chief,:mod,officer,chief,:mod,o_6,o_6,c_7,c_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+23,0,109,CEO of IBM,[{'W_Animate': 'company'}],"(p / person
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (c2 / company :wiki ""IBM"" :name (n / name :op1 ""IBM""))
+            :ARG2 (o / officer
+                  :mod (c / chief)
+                  :mod (e / executive))))
+
+",DiGraph with 9 nodes and 8 edges,officer,executive,:mod,officer,executive,:mod,o_6,o_6,e_8,e_8,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+24,0,110,The game will be canceled if it rains .,[],"(c / cancel-01
+      :ARG1 (g / game)
+      :condition (r / rain-01))
+
+",DiGraph with 3 nodes and 2 edges,cancel-01,rain-01,:condition,cancel-01,rain-01,:condition,c_0,c_0,r_2,r_2,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+25,0,111,"In the case of rain, the game will be canceled .",[],"(c / cancel-01
+      :ARG1 (g / game)
+      :condition (r / rain-01))
+
+",DiGraph with 3 nodes and 2 edges,cancel-01,rain-01,:condition,cancel-01,rain-01,:condition,c_0,c_0,r_2,r_2,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+26,0,112,The game will be canceled unless the rain stops .,[],"(c / cancel-01
+      :ARG1 (g / game)
+      :condition (s / stop-01 :polarity -
+            :ARG1 (r / rain-01)))
+
+",DiGraph with 5 nodes and 4 edges,cancel-01,stop-01,:condition,cancel-01,stop-01,:condition,c_0,c_0,s_2,s_2,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+27,0,116,high tech companies like IBM and Google,"[{'ORG': 'IBM'}, {'ORG': 'Google'}, {'W_Animate': 'company'}, {'W_Animate': 'company'}]","(c / company
+      :mod (t / tech
+            :ARG1-of (h / high-02))
+      :example (a / and
+            :op1 (c2 / company :wiki ""IBM"" :name (n / name :op1 ""IBM""))
+            :op2 (c3 / company :wiki ""Google"" :name (n2 / name :op1 ""Google""))))
+
+",DiGraph with 12 nodes and 11 edges,company,tech,:mod,company,tech,:mod,c_0,c_0,t_1,t_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+28,0,132,"I like classical music, but John likes jazz .","[{'PER': 'I'}, {'W_Animate': 'person'}]","(c / contrast-01
+      :ARG1 (l / like-01
+            :ARG0 (i / i)
+            :ARG1 (m / music
+                  :mod (c2 / classics)))
+      :ARG2 (l2 / like-01
+            :ARG0 (p / person :wiki - :name (n / name :op1 ""John""))
+            :ARG1 (j / jazz)))
+
+",DiGraph with 11 nodes and 10 edges,music,classics,:mod,music,classics,:mod,m_3,m_3,c2_4,c2_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+29,0,144,Group A: (1) Germany (2) Brazil (3) Italy (4) Argentina,"[{'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]","(c / consist-01
+      :ARG1 (g / group :mod ""A"")
+      :ARG2 (a2 / and
+            :op1 (c2 / country :wiki ""Germany"" :li 1 :name (n / name :op1 ""Germany""))
+            :op2 (c3 / country :wiki ""Brazil"" :li 2 :name (n2 / name :op1 ""Brazil""))
+            :op3 (c4 / country :wiki ""Italy"" :li 3 :name (n3 / name :op1 ""Italy""))
+            :op4 (c5 / country :wiki ""Argentina"" :li 4 :name (n4 / name :op1 ""Argentina""))))
+
+",DiGraph with 24 nodes and 23 edges,group,"""A""",:mod,group,"""A""",:mod,g_1,g_1,"""A""_2","""A""_2",inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+30,0,147,Never do that again.,[],"(d / do-02 :polarity - :mode imperative
+      :ARG0 (y / you)
+      :ARG1 (t / that)
+      :time (e / ever)
+      :mod (a / again))
+
+",DiGraph with 6 nodes and 5 edges,do-02,again,:mod,do-02,again,:mod,d_0,d_0,a_5,a_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+31,0,149,I drove from the store.,[{'PER': 'I'}],"(d / drive-01
+      :ARG0 (i / i)
+      :source (s / store))
+
+",DiGraph with 3 nodes and 2 edges,drive-01,store,:source,drive-01,store,:source,d_0,d_0,s_2,s_2,inanimate,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]","[':source', ':source', ':source', ':start', ':source']"
+32,0,160,I backed away from the window.,[{'PER': 'I'}],"(b / back-02
+      :ARG0 (i / i)
+      :source (w / window))
+
+",DiGraph with 3 nodes and 2 edges,back-02,window,:source,back-02,window,:source,b_0,b_0,w_2,w_2,inanimate,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]","[':start', ':source', ':start', ':source', ':source']"
+33,0,168,He said he would support them as long as they didn't break any rules.,"[{'PER': 'He'}, {'PER': 'he'}, {'PER': 'them'}, {'PER': 'they'}]","(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (s2 / support-01
+            :ARG0 h
+            :ARG1 (t / they)
+            :condition (a / as-long-as
+                  :op1 (b / break-18 :polarity -
+                        :ARG0 t
+                        :ARG1 (r / rule
+                              :mod (a2 / any))))))
+
+",DiGraph with 11 nodes and 10 edges,support-01,as-long-as,:condition,support-01,as-long-as,:condition,s2_2,s2_2,a_5,a_5,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+34,0,168,He said he would support them as long as they didn't break any rules.,"[{'PER': 'He'}, {'PER': 'he'}, {'PER': 'them'}, {'PER': 'they'}]","(s / say-01
+      :ARG0 (h / he)
+      :ARG1 (s2 / support-01
+            :ARG0 h
+            :ARG1 (t / they)
+            :condition (a / as-long-as
+                  :op1 (b / break-18 :polarity -
+                        :ARG0 t
+                        :ARG1 (r / rule
+                              :mod (a2 / any))))))
+
+",DiGraph with 11 nodes and 10 edges,rule,any,:mod,rule,any,:mod,r_9,r_9,a2_10,a2_10,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+35,0,172,only 10 minutes,[],"(t / temporal-quantity :quant 10
+      :unit (m / minute)
+      :mod (o / only))
+
+",DiGraph with 3 nodes and 2 edges,temporal-quantity :quant 10,only,:mod,temporal-quantity :quant 10,only,:mod,t_0,t_0,o_2,o_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+36,0,182,There was a big explosion .,[],"(e / explode-01
+      :mod (b / big))
+
+",DiGraph with 2 nodes and 1 edges,explode-01,big,:mod,explode-01,big,:mod,e_0,e_0,b_1,b_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+37,0,184,Our next meeting will be on Friday at 11am .,[],"(m / meet-01
+      :ARG0 (w / we)
+      :mod (n / next)
+      :time (d / date-entity :time ""11:00""
+            :weekday (f / friday)))
+
+",DiGraph with 6 nodes and 5 edges,meet-01,next,:mod,meet-01,next,:mod,m_0,m_0,n_2,n_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+38,0,197,Three Roman legions were annihilated in the Battle of the Teutoburg Forest in 9 AD .,[{'W_Inanimate': 'country'}],"(a / annihilate-01
+      :ARG1 (l / legion :quant 3
+            :mod (c / country :wiki ""Roman_Empire""
+                  :name (n / name :op1 ""Roman"" :op2 ""Empire"")))
+      :subevent-of (b / battle-01 :wiki ""Teutoburg_Forest""
+            :name (n2 / name :op1 ""Teutoburg"" :op2 ""Forest"")
+            :time (d / date-entity :year 9 :era ""AD"")))
+
+",DiGraph with 16 nodes and 15 edges,legion,country,:mod,legion,country,:mod,l_1,l_1,c_3,c_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+39,0,199,academic year 2011-2012,[],"(d / date-entity :year 2011 :year2 2012
+      :calendar (y / year
+            :mod (a / academia)))
+
+",DiGraph with 4 nodes and 3 edges,year,academia,:mod,year,academia,:mod,y_2,y_2,a_3,a_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+40,0,200,United States government fiscal year 2012,[{'W_Inanimate': 'country'}],"(d / date-entity :year 2012
+      :calendar (y / year
+            :mod (f / finance)
+            :mod (g / government-organization
+                  :ARG0-of (g2 / govern-01
+                        :ARG1 (c / country :wiki ""United_States""
+                              :name (n / name :op1 ""United"" :op2 ""States""))))))
+
+",DiGraph with 10 nodes and 9 edges,year,finance,:mod,year,finance,:mod,y_2,y_2,f_3,f_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+41,0,200,United States government fiscal year 2012,[{'W_Inanimate': 'country'}],"(d / date-entity :year 2012
+      :calendar (y / year
+            :mod (f / finance)
+            :mod (g / government-organization
+                  :ARG0-of (g2 / govern-01
+                        :ARG1 (c / country :wiki ""United_States""
+                              :name (n / name :op1 ""United"" :op2 ""States""))))))
+
+",DiGraph with 10 nodes and 9 edges,year,government-organization,:mod,year,government-organization,:mod,y_2,y_2,g_4,g_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+42,0,223,What a great book!,[],"(b / book
+      :mod (g / great
+            :degree (s / so)))
+
+",DiGraph with 3 nodes and 2 edges,book,great,:mod,book,great,:mod,b_0,b_0,g_1,g_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+43,0,227,"Dad, I need more money.",[{'PER': 'I'}],"(s / say-01
+      :ARG0 i
+      :ARG1 (n / need-01
+            :ARG0 (i / i)
+            :ARG1 (m / money
+                  :mod (m2 / more)))
+      :ARG2 (p / person
+            :ARG0-of (h / have-rel-role-91
+                  :ARG1 i
+                  :ARG2 (f / father))))
+
+",DiGraph with 10 nodes and 9 edges,money,more,:mod,money,more,:mod,m_4,m_4,m2_5,m2_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+44,0,231,Most students don't like math.,[],"(d / dislike-01
+      :ARG0 (p / person
+            :ARG0-of (s / study-01)
+            :mod (m2 / most))
+      :ARG1 (m / mathematics))
+
+",DiGraph with 5 nodes and 4 edges,person,most,:mod,person,most,:mod,p_1,p_1,m2_3,m2_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+45,0,257,nuclear weapons,[],"(w / weapon
+      :mod (n / nucleus))
+
+",DiGraph with 2 nodes and 1 edges,weapon,nucleus,:mod,weapon,nucleus,:mod,w_0,w_0,n_1,n_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+46,0,258,The big fish wants to eat the little fish.,[],"(w / want-01
+      :ARG0 (f / fish
+            :mod (b / big))
+      :ARG1 (e / eat-01
+            :ARG0 f
+            :ARG1 (f2 / fish
+                  :mod (l / little))))
+
+",DiGraph with 7 nodes and 6 edges,fish,big,:mod,fish,big,:mod,f_1,f_1,b_2,b_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+47,0,263,United Nations Secretary General Ban Ki-moon traveled to Egypt.,"[{'W_Animate': 'person'}, {'W_Animate': 'organization'}, {'W_Inanimate': 'country'}]","(t / travel-01
+      :ARG0 (p / person :wiki ""Ban_Ki-moon"" :name (n / name :op1 ""Ban"" :op2 ""Ki-moon"")
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (o / organization :wiki ""United_Nations"" :name (n3 / name :op1 ""United"" :op2 ""Nations""))
+                  :ARG2 (s / secretary
+                        :mod (g / general))))
+      :ARG4 (c / country :wiki ""Egypt"" :name (n2 / name :op1 ""Egypt"")))
+
+",DiGraph with 18 nodes and 17 edges,secretary,general,:mod,secretary,general,:mod,s_12,s_12,g_13,g_13,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+48,0,269,Should we increase security at the expense of democratic principles?,[{'PER': 'we'}],"(r / recommend-01 :polarity (a / amr-unknown)
+      :ARG1 (i / increase-01
+            :ARG0 (w / we)
+            :ARG1 (s / security)
+            :manner (c / compromise-02
+                  :ARG0 w
+                  :ARG1 (p / principle
+                        :mod (d / democracy)))))
+
+",DiGraph with 8 nodes and 7 edges,principle,democracy,:mod,principle,democracy,:mod,p_6,p_6,d_7,d_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+49,0,278,"She works for UBS, a big Swiss bank.","[{'PER': 'She'}, {'W_Inanimate': 'country'}]","(w / work-01
+      :ARG0 (s / she)
+      :ARG2 (b / bank :wiki ""UBS""
+            :name (n / name :op1 ""UBS"")
+            :mod (b2 / big)
+            :mod (c / country :wiki ""Switzerland""
+                  :name (n2 / name :op1 ""Switzerland""))))
+
+",DiGraph with 11 nodes and 10 edges,bank,big,:mod,bank,big,:mod,b_2,b_2,b2_6,b2_6,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+50,0,278,"She works for UBS, a big Swiss bank.","[{'PER': 'She'}, {'W_Inanimate': 'country'}]","(w / work-01
+      :ARG0 (s / she)
+      :ARG2 (b / bank :wiki ""UBS""
+            :name (n / name :op1 ""UBS"")
+            :mod (b2 / big)
+            :mod (c / country :wiki ""Switzerland""
+                  :name (n2 / name :op1 ""Switzerland""))))
+
+",DiGraph with 11 nodes and 10 edges,bank,country,:mod,bank,country,:mod,b_2,b_2,c_7,c_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+51,0,288,"When I met her for the first time, Mary still worked for Goldman Sachs.","[{'PER': 'I'}, {'PER': 'her'}, {'W_Animate': 'person'}, {'W_Animate': 'company'}]","(w / work-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 ""Mary""))
+      :ARG2 (c / company :wiki ""Goldman_Sachs""
+            :name (n2 / name :op1 ""Goldman"" :op2 ""Sachs""))
+      :mod (s / still)
+      :time (m / meet-03
+            :ARG0 (i / i)
+            :ARG1 p
+            :ord (o / ordinal-entity :value 1)))
+
+",DiGraph with 16 nodes and 15 edges,work-01,still,:mod,work-01,still,:mod,w_0,w_0,s_10,s_10,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+52,0,291,North Korea agreed to dismantle the nuclear reactor in return for economic aid.,[{'W_Inanimate': 'country'}],"(a / agree-01
+      :ARG0 (c / country :wiki ""North_Korea"" :name (n / name :op1 ""North"" :op2 ""Korea""))
+      :ARG1 (d / dismantle-01
+            :ARG0 c
+            :ARG1 (r / reactor
+                  :mod (n2 / nucleus))
+            :ARG3-of (r2 / return-05
+                  :ARG0 c
+                  :ARG1 (a2 / aid-01
+                        :ARG1 (e2 / economy)
+                        :ARG2 c))))
+
+",DiGraph with 15 nodes and 14 edges,reactor,nucleus,:mod,reactor,nucleus,:mod,r_8,r_8,n2_9,n2_9,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+53,0,292,"The company paid $20,000 in return for the release of all claims.",[],"(p / pay-01
+      :ARG0 (c / company)
+      :ARG1 (m / monetary-quantity :quant 20000
+            :unit (d / dollar))
+      :ARG3 (r / release-01
+            :ARG1 (c2 / claim-02
+                  :mod (a / all))
+            :ARG2 c))
+
+",DiGraph with 9 nodes and 8 edges,claim-02,all,:mod,claim-02,all,:mod,c2_6,c2_6,a_7,a_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+54,0,294,Lawmakers demanded the ban of chemical weapons.,[],"(d / demand-01
+      :ARG0 (p / person
+            :ARG0-of (l / legislate-01))
+      :ARG1 (b / ban-01
+            :ARG1 (w / weapon
+                  :mod (c / chemical))))
+
+",DiGraph with 6 nodes and 5 edges,weapon,chemical,:mod,weapon,chemical,:mod,w_4,w_4,c_5,c_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+55,0,298,audio and/or video components,[],"(c / component
+      :mod (a / and-or
+            :op1 (a2 / audio)
+            :op2 (v / video)))
+
+",DiGraph with 4 nodes and 3 edges,component,and-or,:mod,component,and-or,:mod,c_0,c_0,a_1,a_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+56,0,299,"During negotiations between North Korea and the US, North Korean officials promised that the country will freeze its nuclear program.","[{'PER': 'US'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]","(p / promise-01
+      :ARG0 (p2 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (c / country :wiki ""North_Korea"" :name (n / name :op1 ""North"" :op2 ""Korea""))
+                  :ARG2 (o / official)))
+      :ARG1 (f / freeze-01
+            :ARG0 c
+            :ARG1 (p3 / program
+                  :mod (n2 / nucleus)
+                  :poss c))
+      :time (n3 / negotiate-01
+            :ARG0 c
+            :ARG1 (c2 / country :wiki ""United_States"" :name (n4 / name :op1 ""US""))))
+
+",DiGraph with 20 nodes and 19 edges,program,nucleus,:mod,program,nucleus,:mod,p3_11,p3_11,n2_12,n2_12,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+57,0,300,"During negotiations between North Korea and the US, North Korean officials promised that North Korea will freeze its nuclear program.","[{'PER': 'US'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]","(p / promise-01
+      :ARG0 (p2 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (c / country :wiki ""North_Korea""
+                        :name (n / name :op1 ""North"" :op2 ""Korea""))
+                  :ARG2 (o / official)))
+      :ARG1 (f / freeze-01
+            :ARG0 c
+            :ARG1 (p3 / program
+                  :mod (n2 / nucleus)
+                  :poss c))
+      :time (n3 / negotiate-01
+            :ARG0 c
+            :ARG1 (c2 / country :wiki ""United_States""
+                  :name (n4 / name :op1 ""US""))))
+
+",DiGraph with 20 nodes and 19 edges,program,nucleus,:mod,program,nucleus,:mod,p3_11,p3_11,n2_12,n2_12,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+58,0,301,North Korean officials promised that North Korea will soon begin to freeze its nuclear program.,[{'W_Inanimate': 'country'}],"(p / promise-01
+      :ARG0 (p2 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG1 (c / country :wiki ""North_Korea""
+                        :name (n / name :op1 ""North"" :op2 ""Korea""))
+                  :ARG2 (o / official)))
+      :ARG1 (b / begin-01
+            :ARG0 c
+            :ARG1 (f / freeze-01
+                  :ARG0 c
+                  :ARG1 (p3 / program
+                        :mod (n2 / nucleus)
+                        :poss c))
+            :time (s / soon)))
+
+",DiGraph with 17 nodes and 16 edges,program,nucleus,:mod,program,nucleus,:mod,p3_13,p3_13,n2_14,n2_14,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+59,0,313,Iraqi Interior Ministry operations director Major General Abdel Karim Khalaf,"[{'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p / person :wiki -
+      :name (n3 / name :op1 ""Abdel"" :op2 ""Karim"" :op3 ""Khalaf"")
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (g / government-organization :wiki ""Ministry_of_Interior_(Iraq)""
+                  :name (n2 / name :op1 ""Interior"" :op2 ""Ministry"")
+                  :poss (c / country :wiki ""Iraq""
+                        :name (n / name :op1 ""Iraq"")))
+            :ARG2 (d / director
+                  :mod (o / operate-01)))
+      :ARG0-of (h2 / have-org-role-91
+            :ARG2 (m / major-general)))
+
+",DiGraph with 19 nodes and 18 edges,director,operate-01,:mod,director,operate-01,:mod,d_15,d_15,o_16,o_16,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+60,0,319,USC Associate Professor for Mathematics Jay Bartroff,"[{'W_Animate': 'person'}, {'W_Animate': 'university'}]","(p / person :wiki -
+      :name (n / name :op1 ""Jay"" :op2 ""Bartroff"")
+      :ARG0-of (h / have-org-role-91
+            :ARG1 (u / university :wiki ""University_of_Southern_California""
+                  :name (n2 / name :op1 ""USC""))
+            :ARG2 (p2 / professor
+                  :mod (a / associate)
+                  :topic (m / mathematics))))
+
+",DiGraph with 12 nodes and 11 edges,professor,associate,:mod,professor,associate,:mod,p2_9,p2_9,a_10,a_10,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+61,0,327,We met only once.,[{'PER': 'We'}],"(m / meet-03
+      :ARG0 (w / we)
+      :ARG1-of (h / have-frequency-91
+            :ARG2 1
+            :mod (o / only)))
+
+",DiGraph with 5 nodes and 4 edges,have-frequency-91,only,:mod,have-frequency-91,only,:mod,h_2,h_2,o_4,o_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+62,0,342,China spent 430 billion yuan RMB on water conservation.,[{'W_Inanimate': 'country'}],"(s / spend-01
+      :ARG0 (c / country :wiki ""China""
+            :name (n / name :op1 ""China""))
+      :ARG1 (c2 / conserve-01
+            :ARG1 (w / water))
+      :ARG3 (m / monetary-quantity :quant 430000000000
+            :unit (y / yuan
+                  :mod (r / renminbi))))
+
+",DiGraph with 11 nodes and 10 edges,yuan,renminbi,:mod,yuan,renminbi,:mod,y_9,y_9,r_10,r_10,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+63,0,345,He works for the news agency AFP.,[{'PER': 'He'}],"(w / work-01
+      :ARG0 (h / he)
+      :ARG2 (a / agency :wiki ""Agence_France-Presse""
+            :name (n / name :op1 ""AFP"")
+            :mod (n2 / news)))
+
+",DiGraph with 7 nodes and 6 edges,agency,news,:mod,agency,news,:mod,a_2,a_2,n2_6,n2_6,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+64,0,369,Of course I know.,[{'PER': 'I'}],"(k / know-01
+      :ARG0 (i / i)
+      :mod (o / of-course))
+
+",DiGraph with 3 nodes and 2 edges,know-01,of-course,:mod,know-01,of-course,:mod,k_0,k_0,o_2,o_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+65,0,370,deputy minister of defense,[],"(m / minister
+      :mod (d / deputy)
+      :topic (d2 / defend-01))
+
+",DiGraph with 3 nodes and 2 edges,minister,deputy,:mod,minister,deputy,:mod,m_0,m_0,d_1,d_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+66,0,371,David Cameron is the prime minister of the United Kingdom.,"[{'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(h / have-org-role-91
+      :ARG0 (p / person :wiki ""David_Cameron""
+            :name (n / name :op1 ""David"" :op2 ""Cameron""))
+      :ARG1 (c / country :wiki ""United_Kingdom""
+            :name (n2 / name :op1 ""United"" :op2 ""Kingdom""))
+      :ARG2 (m / minister
+            :mod (p2 / prime)))
+
+",DiGraph with 13 nodes and 12 edges,minister,prime,:mod,minister,prime,:mod,m_11,m_11,p2_12,p2_12,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+67,0,373,a state-of-the-art missile defense system,[],"(s / system
+      :ARG2-of (d / defend-01
+            :ARG3 (m / missile))
+      :mod (s2 / state-of-the-art))
+
+",DiGraph with 4 nodes and 3 edges,system,state-of-the-art,:mod,system,state-of-the-art,:mod,s_0,s_0,s2_3,s2_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+68,0,375,Leukemia is a kind of cancer.,[],"(d / disease :wiki ""Cancer"" :name (n / name :op1 ""cancer"")
+      :mod (k / kind)
+      :domain (d2 / disease :wiki ""Leukemia"" :name (n2 / name :op1 ""leukemia"")))
+
+",DiGraph with 8 nodes and 7 edges,disease,kind,:mod,disease,kind,:mod,d_0,d_0,k_4,k_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+69,0,376,Leukemia is a type of cancer.,[],"(d / disease :wiki ""Cancer"" :name (n / name :op1 ""cancer"")
+      :mod (t / type)
+      :domain (d2 / disease :wiki ""Leukemia"" :name (n2 / name :op1 ""leukemia"")))
+
+",DiGraph with 8 nodes and 7 edges,disease,type,:mod,disease,type,:mod,d_0,d_0,t_4,t_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+70,0,377,Leukemia is a form of cancer.,[],"(d / disease :wiki ""Cancer"" :name (n / name :op1 ""cancer"")
+      :mod (f / form)
+      :domain (d2 / disease :wiki ""Leukemia"" :name (n2 / name :op1 ""leukemia"")))
+
+",DiGraph with 8 nodes and 7 edges,disease,form,:mod,disease,form,:mod,d_0,d_0,f_4,f_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+71,0,378,Leukemia is some sort of cancer.,[],"(d / disease :wiki ""Cancer"" :name (n / name :op1 ""cancer"")
+      :mod (s / sort)
+      :domain (d2 / disease :wiki ""Leukemia"" :name (n2 / name :op1 ""leukemia"")))
+
+",DiGraph with 8 nodes and 7 edges,disease,sort,:mod,disease,sort,:mod,d_0,d_0,s_4,s_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+72,0,389,Hot!!! :P,[],"(h / hot-03 :mode expressive
+      :mod (e / emoticon :value "":P""))
+
+",DiGraph with 4 nodes and 3 edges,hot-03,emoticon,:mod,hot-03,emoticon,:mod,h_0,h_0,e_2,e_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+73,0,391,a 5.6% interest rate,[],"(r / rate
+      :mod (i / interest)
+      :quant (p / percentage-entity :value 5.6))
+
+",DiGraph with 4 nodes and 3 edges,rate,interest,:mod,rate,interest,:mod,r_0,r_0,i_1,i_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+74,0,396,a surface-to-surface missile,[],"(m / missile
+      :source (s / surface)
+      :destination (s2 / surface))
+
+",DiGraph with 3 nodes and 2 edges,missile,surface,:source,missile,surface,:source,m_0,m_0,s_1,s_1,inanimate,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]","[':material', ':source', ':source', ':source', ':source']"
+75,0,396,a surface-to-surface missile,[],"(m / missile
+      :source (s / surface)
+      :destination (s2 / surface))
+
+",DiGraph with 3 nodes and 2 edges,missile,surface,:destination,missile,surface,:source,m_0,m_0,s2_2,s_1,inanimate,[':goal'],[1.0],"[':goal', ':goal', ':goal', ':goal', ':goal']"
+76,0,399,"If I remember correctly, he lost.","[{'PER': 'I'}, {'PER': 'he'}]","(l / lose-03
+      :ARG0 (h / he)
+      :condition (r / remember-01
+            :ARG0 (i / i)
+            :ARG1 l
+            :ARG1-of (c / correct-02)))
+
+",DiGraph with 6 nodes and 5 edges,lose-03,remember-01,:condition,lose-03,remember-01,:condition,l_0,l_0,r_2,r_2,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+77,0,408,That's a really big fish.,[],"(f / fish
+      :mod (b / big
+            :degree (r / really))
+      :domain (t / that))
+
+",DiGraph with 4 nodes and 3 edges,fish,big,:mod,fish,big,:mod,f_0,f_0,b_1,b_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+78,0,409,The earthquake occurred in Indonesia's remote eastern province of Papua.,"[{'W_Inanimate': 'province'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(b / be-located-at-91
+      :ARG1 (e / earthquake)
+      :ARG2 (p / province :wiki ""Papua_(province)""
+            :name (n / name :op1 ""Papua"")
+            :location (e2 / east
+                  :mod (r / remote)
+                  :part-of (c / country :wiki ""Indonesia""
+                        :name (n2 / name :op1 ""Indonesia"")))))
+
+",DiGraph with 12 nodes and 11 edges,east,remote,:mod,east,remote,:mod,e2_6,e2_6,r_7,r_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+79,0,413,"It rained, so we postponed the game.",[{'PER': 'we'}],"(r / rain-01
+      :ARG0-of (c / cause-01
+            :ARG1 (p / postpone-01
+                  :ARG0 (w / we)
+                  :ARG1 (g / game))))
+
+",DiGraph with 5 nodes and 4 edges,rain-01,cause-01,:ARG0-of,rain-01,cause-01,cause-01,r_0,c_1,c_1,r_0,animate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+80,0,413,"It rained, so we postponed the game.",[{'PER': 'we'}],"(r / rain-01
+      :ARG0-of (c / cause-01
+            :ARG1 (p / postpone-01
+                  :ARG0 (w / we)
+                  :ARG1 (g / game))))
+
+",DiGraph with 5 nodes and 4 edges,rain-01,cause-01,:ARG0-of,rain-01,cause-01,cause-01,r_0,c_1,c_1,r_0,animate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+81,0,416,I'm sick too.,[],"(s / sick-05
+      :ARG1 (i / i)
+      :mod (t / too))
+
+",DiGraph with 3 nodes and 2 edges,sick-05,too,:mod,sick-05,too,:mod,s_0,s_0,t_2,t_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+82,0,422,He found something else.,[{'PER': 'He'}],"(f / find-01
+      :ARG0 (h / he)
+      :ARG1 (s / something
+            :mod (e / else)))
+
+",DiGraph with 4 nodes and 3 edges,something,else,:mod,something,else,:mod,s_2,s_2,e_3,e_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+83,0,423,Everybody else had already left.,[],"(l / leave-11
+      :ARG0 (e / everybody
+            :mod (e2 / else))
+      :time (a / already))
+
+",DiGraph with 4 nodes and 3 edges,everybody,else,:mod,everybody,else,:mod,e_1,e_1,e2_2,e2_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+84,0,424,We insist that you adhere to the contract or else we will sue you.,"[{'PER': 'We'}, {'PER': 'you'}, {'PER': 'we'}, {'PER': 'you'}]","(a / and
+      :op1 (i / insist-01
+            :ARG0 (w / we)
+            :ARG1 (a2 / adhere-02
+                  :ARG0 (y / you)
+                  :ARG1 (c / contract)))
+      :op2 (s / sue-02
+            :ARG0 w
+            :ARG1 y
+            :condition (h / have-polarity-91
+                  :ARG1 a2
+                  :ARG2 -)))
+
+",DiGraph with 12 nodes and 11 edges,sue-02,have-polarity-91,:condition,sue-02,have-polarity-91,:condition,s_6,s_6,h_9,h_9,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+85,0,425,"There was another fire alarm, but I had to leave anyway.",[{'PER': 'I'}],"(a / and
+      :op1 (a2 / alarm-01
+            :topic (f / fire))
+      :op2 (o / obligate-01
+            :ARG2 (l / leave-11
+                  :ARG0 (i / i))
+            :mod (a3 / anyway)))
+
+",DiGraph with 7 nodes and 6 edges,obligate-01,anyway,:mod,obligate-01,anyway,:mod,o_3,o_3,a3_6,a3_6,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+86,0,426,"Anyway, I have to leave now.",[{'PER': 'I'}],"(o / obligate-01
+      :ARG2 (l / leave-11
+            :ARG0 (i / i)
+            :time (n / now))
+      :mod (a / anyway))
+
+",DiGraph with 5 nodes and 4 edges,obligate-01,anyway,:mod,obligate-01,anyway,:mod,o_0,o_0,a_4,a_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+87,0,428,Call 911 if he comes back anyway.,[{'PER': 'he'}],"(c / call-02 :mode imperative
+      :ARG0 (y / you)
+      :ARG1 (p / phone-number-entity :value 911)
+      :condition (r / return-01
+            :ARG1 (h / he)
+            :ARG1-of (h2 / have-concession-91)))
+
+",DiGraph with 7 nodes and 6 edges,call-02,return-01,:condition,call-02,return-01,:condition,c_0,c_0,r_4,r_4,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+88,0,435,Jerry visited all countries except Cuba.,"[{'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(v / visit-01
+      :ARG0 (p / person :wiki -
+            :name (n / name :op1 ""Jerry""))
+      :ARG1 (c / country
+            :mod (a / all)
+            :ARG2-of (e / except-01
+                  :ARG1 (c2 / country :wiki ""Cuba""
+                        :name (n2 / name :op1 ""Cuba"")))))
+
+",DiGraph with 12 nodes and 11 edges,country,all,:mod,country,all,:mod,c_5,c_5,a_6,a_6,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':other-role', ':mod', ':mod']"
+89,0,436,I solved the math problem on my own.,[{'PER': 'I'}],"(s / solve-01
+      :ARG0 (i / i)
+      :ARG1 (p / problem
+            :topic (m / mathematics))
+      :mod (b / by-oneself))
+
+",DiGraph with 5 nodes and 4 edges,solve-01,by-oneself,:mod,solve-01,by-oneself,:mod,s_0,s_0,b_4,b_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+90,0,437,I solved the software problem by myself.,[{'PER': 'I'}],"(s / solve-01
+      :ARG0 (i / i)
+      :ARG1 (p / problem
+            :topic (s2 / software))
+      :mod (b / by-oneself))
+
+",DiGraph with 5 nodes and 4 edges,solve-01,by-oneself,:mod,solve-01,by-oneself,:mod,s_0,s_0,b_4,b_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+91,0,439,All buildings within a mile of the explosion were damaged.,[{'W_Inanimate': 'location'}],"(d / damage-01
+      :ARG1 (b / building
+            :mod (a / all)
+            :location (r / relative-position
+                  :op1 (e / explode-01)
+                  :quant (u / up-to
+                        :op1 (d2 / distance-quantity :quant 1
+                              :unit (m / mile))))))
+
+",DiGraph with 9 nodes and 8 edges,building,all,:mod,building,all,:mod,b_1,b_1,a_2,a_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+92,0,446,The energy will be supplied through wind turbines.,[],"(s / supply-01
+      :ARG1 (e / energy)
+      :instrument (t / turbine
+            :mod (w / wind)))
+
+",DiGraph with 4 nodes and 3 edges,turbine,wind,:mod,turbine,wind,:mod,t_2,t_2,w_3,w_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+93,0,451,This book is less expensive.,[],"(h / have-degree-91
+      :ARG1 (b / book
+            :mod (t / this))
+      :ARG2 (e / expensive)
+      :ARG3 (l / less))
+
+",DiGraph with 5 nodes and 4 edges,book,this,:mod,book,this,:mod,b_1,b_1,t_2,t_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':other-role', ':mod', ':mod']"
+94,0,457,"When she arrived, he was still asleep.","[{'PER': 'she'}, {'PER': 'he'}]","(s / sleep-01
+      :ARG0 (h / he)
+      :mod (s2 / still)
+      :time (a / arrive-01
+            :ARG1 (s3 / she)))
+
+",DiGraph with 5 nodes and 4 edges,sleep-01,still,:mod,sleep-01,still,:mod,s_0,s_0,s2_2,s2_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+95,0,458,"When all else fails, I use superglue.",[{'PER': 'I'}],"(u / use-01
+      :ARG0 (i / i)
+      :ARG1 (s / superglue)
+      :condition (f / fail-01
+            :ARG1 (a / all
+                  :mod (e / else))))
+
+",DiGraph with 6 nodes and 5 edges,use-01,fail-01,:condition,use-01,fail-01,:condition,u_0,u_0,f_3,f_3,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+96,0,458,"When all else fails, I use superglue.",[{'PER': 'I'}],"(u / use-01
+      :ARG0 (i / i)
+      :ARG1 (s / superglue)
+      :condition (f / fail-01
+            :ARG1 (a / all
+                  :mod (e / else))))
+
+",DiGraph with 6 nodes and 5 edges,all,else,:mod,all,else,:mod,a_4,a_4,e_5,e_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+97,0,461,The drug has serious side effects.,[],"(e / effect-03
+      :ARG0 (d / drug)
+      :ARG1 (e2 / event
+            :mod (s / side)
+            :ARG1-of (s2 / serious-02)))
+
+",DiGraph with 5 nodes and 4 edges,event,side,:mod,event,side,:mod,e2_2,e2_2,s_3,s_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+98,0,463,Solutions with a pH less than 7 are said to be acidic.,[],"(s / say-01
+      :ARG1 (a / acidic
+            :domain (s2 / solution
+                  :mod (l / less-than
+                        :op1 (a2 / acidity-quantity :quant 7
+                              :scale (p / ph))))))
+
+",DiGraph with 7 nodes and 6 edges,solution,less-than,:mod,solution,less-than,:mod,s2_2,s2_2,l_3,l_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+99,0,468,"The Japanese town bombed in 1945 was recently hit by deadly waves, causing devastating destruction.","[{'MISC': 'Japanese'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(h / hit-01
+      :ARG1 (t / town
+            :location (c / country :wiki ""Japan"" :name (n / name :op1 ""Japan""))
+            :ARG1-of (b / bomb-01
+                  :time (d / date-entity :year 1945)))
+      :ARG2 (w / wave
+            :ARG0-of (k / kill-01))
+      :time (r / recent)
+      :ARG0-of (c2 / cause-01
+            :ARG1 (d2 / destroy-01
+                  :ARG0-of (d3 / devastate-01))))
+
+",DiGraph with 15 nodes and 14 edges,hit-01,cause-01,:ARG0-of,hit-01,cause-01,cause-01,h_0,c2_12,c2_12,h_0,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+100,0,468,"The Japanese town bombed in 1945 was recently hit by deadly waves, causing devastating destruction.","[{'MISC': 'Japanese'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(h / hit-01
+      :ARG1 (t / town
+            :location (c / country :wiki ""Japan"" :name (n / name :op1 ""Japan""))
+            :ARG1-of (b / bomb-01
+                  :time (d / date-entity :year 1945)))
+      :ARG2 (w / wave
+            :ARG0-of (k / kill-01))
+      :time (r / recent)
+      :ARG0-of (c2 / cause-01
+            :ARG1 (d2 / destroy-01
+                  :ARG0-of (d3 / devastate-01))))
+
+",DiGraph with 15 nodes and 14 edges,hit-01,cause-01,:ARG0-of,hit-01,cause-01,cause-01,h_0,c2_12,c2_12,h_0,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+101,0,475,"A 7.8 earthquake struck eastern Iran, killing 40 people in the village of Hiduj, severely damaging many of its buildings, and triggering an international aid response.","[{'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(s / strike-01
+      :ARG1 (e2 / east
+            :part-of (c / country :wiki ""Iran""
+                  :name (n / name :op1 ""Iran"")))
+      :ARG2 (e / earthquake
+            :quant (s2 / seismic-quantity :quant 7.8)
+            :ARG0-of (k / kill-01
+                  :ARG1 (p / person :quant 40)
+                  :location (v / village :wiki ""Hiduj""
+                        :name (n2 / name :op1 ""Hiduj"")))
+            :ARG0-of (d / damage-01
+                  :ARG1 (b / building
+                        :quant (m / many)
+                        :location v)
+                  :degree (s3 / severe))
+            :ARG0-of (t / trigger-01
+                  :ARG1 (r / respond-01
+                        :ARG1 e
+                        :ARG2 (a / aid-01)
+                        :mod (i / international)))))
+
+",DiGraph with 26 nodes and 25 edges,respond-01,international,:mod,respond-01,international,:mod,r_22,r_22,i_25,i_25,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+102,0,487,I oppose weapons intended for killing other humans.,"[{'B_animal': 'humans'}, {'PER': 'I'}]","(o / oppose-01
+      :ARG0 (i / i)
+      :ARG1 (w / weapon
+            :ARG2-of (k / kill-01
+                  :ARG1 (h / human
+                        :mod (o2 / other))
+                  :ARG1-of (i2 / intend-01))))
+
+",DiGraph with 7 nodes and 6 edges,human,other,:mod,human,other,:mod,h_4,h_4,o2_5,o2_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+103,0,502,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}, {'W_Animate': 'person'}]","(r / reasonable-02 :mode imperative :polite +
+      :ARG1 (p / person :wiki - :name (n / name :op1 ""John""))
+      :ARG1-of (c / cause-01
+            :ARG0 (i / include-91
+                  :ARG1 (c2 / child)
+                  :ARG2 (a / audience))))
+
+
+
+",DiGraph with 10 nodes and 9 edges,reasonable-02,cause-01,:ARG1-of,reasonable-02,cause-01,cause-01,r_0,c_6,c_6,r_0,animate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+104,0,502,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}, {'W_Animate': 'person'}]","(r / reasonable-02 :mode imperative :polite +
+      :ARG1 (p / person :wiki - :name (n / name :op1 ""John""))
+      :ARG1-of (c / cause-01
+            :ARG0 (i / include-91
+                  :ARG1 (c2 / child)
+                  :ARG2 (a / audience))))
+
+
+
+",DiGraph with 10 nodes and 9 edges,reasonable-02,cause-01,:ARG1-of,reasonable-02,cause-01,cause-01,r_0,c_6,c_6,r_0,animate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+105,0,504,"For more information, click <a href=""http://www.hollywoodbowl.com"">here</a>.",[{'W_Inanimate': 'location'}],"(c / click-01 :mode imperative
+      :ARG0 (y / you)
+      :location (h / here
+            :ARG1-of (h2 / hyperlink-91
+                  :ARG3 (u / url-entity :value ""http://www.hollywoodbowl.com"")))
+      :purpose (i / information
+            :mod (m / more)))
+
+",DiGraph with 9 nodes and 8 edges,information,more,:mod,information,more,:mod,i_7,i_7,m_8,m_8,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+106,0,513,"<a href=""http://gutenberg.net.au/ebooks03/0300771h.html"">The Little Prince</a>",[{'MISC': 'Little Prince'}],"(p / prince
+      :mod (l / little)
+      :ARG1-of (h / hyperlink-91
+            :ARG3 (u / url-entity :value ""http://gutenberg.net.au/ebooks03/0300771h.html"")))
+
+",DiGraph with 5 nodes and 4 edges,prince,little,:mod,prince,little,:mod,p_0,p_0,l_1,l_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+107,0,515,"Raf-1 also correlated with nuclear activated MAPK (p=0.0022, r<sup>2</sup>=0.1525).","[{'MISC': 'Raf'}, {'MISC': '1'}, {'MISC': 'MA'}]","(c / correlate-01
+      :ARG1 (e / enzyme :wiki ""C-Raf"" :name (n / name :op1 ""Raf-1""))
+      :ARG2 (e2 / enzyme :wiki ""Mitogen-activated_protein_kinase"" :name (n2 / name :op1 ""MAPK""))
+      :mod (n3 / nucleus)
+      :ARG1-of (a / activate-01)
+      :ARG1-of (s / statistical-test-91
+            :ARG2 0.0022
+            :ARG3 0.1525)
+      :mod (a2 / also))
+
+",DiGraph with 15 nodes and 14 edges,correlate-01,nucleus,:mod,correlate-01,nucleus,:mod,c_0,c_0,n3_9,n3_9,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+108,0,515,"Raf-1 also correlated with nuclear activated MAPK (p=0.0022, r<sup>2</sup>=0.1525).","[{'MISC': 'Raf'}, {'MISC': '1'}, {'MISC': 'MA'}]","(c / correlate-01
+      :ARG1 (e / enzyme :wiki ""C-Raf"" :name (n / name :op1 ""Raf-1""))
+      :ARG2 (e2 / enzyme :wiki ""Mitogen-activated_protein_kinase"" :name (n2 / name :op1 ""MAPK""))
+      :mod (n3 / nucleus)
+      :ARG1-of (a / activate-01)
+      :ARG1-of (s / statistical-test-91
+            :ARG2 0.0022
+            :ARG3 0.1525)
+      :mod (a2 / also))
+
+",DiGraph with 15 nodes and 14 edges,correlate-01,also,:mod,correlate-01,also,:mod,c_0,c_0,a2_14,a2_14,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+109,0,516,"All of these predictions were confirmed experimentally (Fig. 4, A-C).",[],"(c / confirm-01
+      :ARG1 (t / thing
+            :ARG1-of (p / predict-01)
+            :mod (a / all)
+            :mod (t2 / this))
+      :manner (e / experiment-01)
+      :ARG1-of (d / describe-01
+            :ARG0 (a2 / and
+                  :op1 (f / figure :mod ""4A"")
+                  :op2 (f2 / figure :mod ""4B"")
+                  :op3 (f3 / figure :mod ""4C""))))
+
+",DiGraph with 14 nodes and 13 edges,thing,all,:mod,thing,all,:mod,t_1,t_1,a_3,a_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':other-role', ':mod', ':mod', ':mod', ':mod']"
+110,0,516,"All of these predictions were confirmed experimentally (Fig. 4, A-C).",[],"(c / confirm-01
+      :ARG1 (t / thing
+            :ARG1-of (p / predict-01)
+            :mod (a / all)
+            :mod (t2 / this))
+      :manner (e / experiment-01)
+      :ARG1-of (d / describe-01
+            :ARG0 (a2 / and
+                  :op1 (f / figure :mod ""4A"")
+                  :op2 (f2 / figure :mod ""4B"")
+                  :op3 (f3 / figure :mod ""4C""))))
+
+",DiGraph with 14 nodes and 13 edges,thing,this,:mod,thing,this,:mod,t_1,t_1,t2_4,t2_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+111,0,516,"All of these predictions were confirmed experimentally (Fig. 4, A-C).",[],"(c / confirm-01
+      :ARG1 (t / thing
+            :ARG1-of (p / predict-01)
+            :mod (a / all)
+            :mod (t2 / this))
+      :manner (e / experiment-01)
+      :ARG1-of (d / describe-01
+            :ARG0 (a2 / and
+                  :op1 (f / figure :mod ""4A"")
+                  :op2 (f2 / figure :mod ""4B"")
+                  :op3 (f3 / figure :mod ""4C""))))
+
+",DiGraph with 14 nodes and 13 edges,figure,"""4A""",:mod,figure,"""4A""",:mod,f_8,f_8,"""4A""_9","""4A""_9",inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+112,0,517,These frequencies were significantly different by Chi square test (p value = 0.001).,"[{'MISC': 'Chi'}, {'W_Inanimate': 'thing'}]","(d / differ-02
+      :ARG1 (h / have-frequency-91
+            :mod (t / this))
+      :ARG1-of (s / significant-02)
+      :ARG1-of (s2 / statistical-test-91
+            :ARG2 0.001
+            :ARG4 (t2 / thing :wiki ""Chi-squared_test"" :name (n / name :op1 ""Chi"" :op2 ""square"" :op3 ""test""))))
+
+",DiGraph with 12 nodes and 11 edges,have-frequency-91,this,:mod,have-frequency-91,this,:mod,h_1,h_1,t_2,t_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+113,0,522,Occupy Wall Street protesters demanded a reduction in economic inequality.,[],"(d / demand-01
+      :ARG0 (p / person
+            :ARG0-of (p2 / protest-01)
+            :mod (p3 / political-movement :wiki ""Occupy_Wall_Street""
+                  :name (n / name :op1 ""Occupy"" :op2 ""Wall"" :op3 ""Street"")))
+      :ARG1 (r / reduce-01
+            :ARG1 (e / equal-01 :polarity -
+                  :mod (e2 / economy))))
+
+",DiGraph with 13 nodes and 12 edges,person,political-movement,:mod,person,political-movement,:mod,p_1,p_1,p3_3,p3_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+114,0,522,Occupy Wall Street protesters demanded a reduction in economic inequality.,[],"(d / demand-01
+      :ARG0 (p / person
+            :ARG0-of (p2 / protest-01)
+            :mod (p3 / political-movement :wiki ""Occupy_Wall_Street""
+                  :name (n / name :op1 ""Occupy"" :op2 ""Wall"" :op3 ""Street"")))
+      :ARG1 (r / reduce-01
+            :ARG1 (e / equal-01 :polarity -
+                  :mod (e2 / economy))))
+
+",DiGraph with 13 nodes and 12 edges,equal-01,economy,:mod,equal-01,economy,:mod,e_10,e_10,e2_12,e2_12,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+115,0,523,Vietnam is a communist nation.,[{'W_Inanimate': 'country'}],"(n / nation
+      :mod (p / political-movement :wiki ""Communism"" :name (n2 / name :op1 ""communism""))
+      :domain (c / country :wiki ""Vietnam"" :name (n3 / name :op1 ""Vietnam"")))
+
+",DiGraph with 9 nodes and 8 edges,nation,political-movement,:mod,nation,political-movement,:mod,n_0,n_0,p_1,p_1,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+116,0,524,The mayor condemned the neo-Nazi violence.,[],"(c / condemn-01
+      :ARG0 (m / mayor)
+      :ARG1 (v / violence
+            :mod (p / person
+                  :mod (p2 / political-movement :wiki ""Neo-Nazism"" :name (n / name :op1 ""neo-Nazism"")))))
+
+",DiGraph with 8 nodes and 7 edges,violence,person,:mod,violence,person,:mod,v_2,v_2,p_3,p_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+117,0,524,The mayor condemned the neo-Nazi violence.,[],"(c / condemn-01
+      :ARG0 (m / mayor)
+      :ARG1 (v / violence
+            :mod (p / person
+                  :mod (p2 / political-movement :wiki ""Neo-Nazism"" :name (n / name :op1 ""neo-Nazism"")))))
+
+",DiGraph with 8 nodes and 7 edges,person,political-movement,:mod,person,political-movement,:mod,p_3,p_3,p2_4,p2_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+118,0,530,Where the bloody fuck did you hide my beer?,"[{'PER': 'you'}, {'W_Inanimate': 'location'}]","(h / hide-01
+      :ARG0 (y / you)
+      :ARG1 (b / beer
+            :poss (i / i))
+      :location (a / amr-unknown)
+      :mod (f / fuck :mode expressive
+            :mod (b2 / bloody :mode expressive)))
+
+",DiGraph with 9 nodes and 8 edges,hide-01,fuck,:mod,hide-01,fuck,:mod,h_0,h_0,f_5,f_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+119,0,530,Where the bloody fuck did you hide my beer?,"[{'PER': 'you'}, {'W_Inanimate': 'location'}]","(h / hide-01
+      :ARG0 (y / you)
+      :ARG1 (b / beer
+            :poss (i / i))
+      :location (a / amr-unknown)
+      :mod (f / fuck :mode expressive
+            :mod (b2 / bloody :mode expressive)))
+
+",DiGraph with 9 nodes and 8 edges,fuck,bloody,:mod,fuck,bloody,:mod,f_5,f_5,b2_7,b2_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+120,0,531,Give me the fucking beer!,[{'PER': 'me'}],"(g / give-01 :mode imperative
+      :ARG0 (y / you)
+      :ARG1 (b / beer
+            :mod (f / fucking :mode expressive))
+      :ARG2 (i / i))
+
+",DiGraph with 6 nodes and 5 edges,beer,fucking :mode expressive,:mod,beer,fucking :mode expressive,:mod,b_3,b_3,f_4,f_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+121,0,532,WTF are you talking about?,[{'PER': 'you'}],"(t / talk-01
+      :ARG0 (y / you)
+      :ARG1 (a / amr-unknown)
+      :mod (f / fuck :mode expressive))
+
+",DiGraph with 5 nodes and 4 edges,talk-01,fuck,:mod,talk-01,fuck,:mod,t_0,t_0,f_3,f_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+122,0,541,I know why the chicken crossed the road.,[{'PER': 'I'}],"(k / know-01
+      :ARG0 (i / i)
+      :ARG1 (t / thing
+            :ARG0-of (c / cause-01
+                  :ARG1 (c2 / cross-02
+                        :ARG0 (c3 / chicken)
+                        :ARG1 (r / road)))))
+
+",DiGraph with 7 nodes and 6 edges,thing,cause-01,:ARG0-of,thing,cause-01,cause-01,t_2,c_3,c_3,t_2,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+123,0,541,I know why the chicken crossed the road.,[{'PER': 'I'}],"(k / know-01
+      :ARG0 (i / i)
+      :ARG1 (t / thing
+            :ARG0-of (c / cause-01
+                  :ARG1 (c2 / cross-02
+                        :ARG0 (c3 / chicken)
+                        :ARG1 (r / road)))))
+
+",DiGraph with 7 nodes and 6 edges,thing,cause-01,:ARG0-of,thing,cause-01,cause-01,t_2,c_3,c_3,t_2,inanimate,['None'],[1.0],"['None', 'None', 'None', 'None', 'None']"
+124,0,549,This food will last us for at least three months.,[{'PER': 'us'}],"(l / last-03
+      :ARG1 (f / food
+            :mod (t / this))
+      :ARG2 (a / at-least
+            :op1 (t2 / temporal-quantity :quant 3
+                  :unit (m / month)))
+      :ARG3 (w / we))
+
+",DiGraph with 8 nodes and 7 edges,food,this,:mod,food,this,:mod,f_1,f_1,t_2,t_2,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+125,0,550,BP estimates that global oil reserves will last 53.3 years at the current production rates.,[{'W_Animate': 'company'}],"(e / estimate-01
+      :ARG0 (c / company :wiki ""BP"" :name (n / name :op1 ""BP""))
+      :ARG1 (l / last-03
+            :ARG1 (r / reserve
+                  :mod (o / oil)
+                  :mod (g / globe))
+            :ARG2 (t / temporal-quantity :quant 53.3
+                  :unit (y / year))
+            :ARG4 (r2 / rate
+                  :mod (p / produce-01
+                        :ARG1 o)
+                  :time (c2 / current))))
+
+",DiGraph with 16 nodes and 15 edges,reserve,oil,:mod,reserve,oil,:mod,r_6,r_6,o_7,o_7,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+126,0,550,BP estimates that global oil reserves will last 53.3 years at the current production rates.,[{'W_Animate': 'company'}],"(e / estimate-01
+      :ARG0 (c / company :wiki ""BP"" :name (n / name :op1 ""BP""))
+      :ARG1 (l / last-03
+            :ARG1 (r / reserve
+                  :mod (o / oil)
+                  :mod (g / globe))
+            :ARG2 (t / temporal-quantity :quant 53.3
+                  :unit (y / year))
+            :ARG4 (r2 / rate
+                  :mod (p / produce-01
+                        :ARG1 o)
+                  :time (c2 / current))))
+
+",DiGraph with 16 nodes and 15 edges,reserve,globe,:mod,reserve,globe,:mod,r_6,r_6,g_8,g_8,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+127,0,550,BP estimates that global oil reserves will last 53.3 years at the current production rates.,[{'W_Animate': 'company'}],"(e / estimate-01
+      :ARG0 (c / company :wiki ""BP"" :name (n / name :op1 ""BP""))
+      :ARG1 (l / last-03
+            :ARG1 (r / reserve
+                  :mod (o / oil)
+                  :mod (g / globe))
+            :ARG2 (t / temporal-quantity :quant 53.3
+                  :unit (y / year))
+            :ARG4 (r2 / rate
+                  :mod (p / produce-01
+                        :ARG1 o)
+                  :time (c2 / current))))
+
+",DiGraph with 16 nodes and 15 edges,rate,produce-01,:mod,rate,produce-01,:mod,r2_12,r2_12,p_13,p_13,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+128,0,551,This well-built car will last you for a very long time.,[{'PER': 'you'}],"(l / last-04
+      :ARG1 (c / car
+            :ARG1-of (b / build-01
+                  :manner (w / well-09))
+            :mod (t2 / this))
+      :ARG2 (t / time
+            :ARG1-of (l2 / long-03
+                  :degree (v / very)))
+      :ARG4 (y / you))
+
+",DiGraph with 9 nodes and 8 edges,car,this,:mod,car,this,:mod,c_1,c_1,t2_4,t2_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+129,0,559,Gefitinib binds wild-type EGFR kinase with K<sub>d</sub> = 53.5 nM.,[],"(b / bind-01
+      :ARG1 (s / small-molecule :wiki ""Gefitinib""
+            :name (n / name :op1 ""gefitinib""))
+      :ARG2 (k / kinase :wiki ""Epidermal_growth_factor_receptor""
+            :name (n2 / name :op1 ""EGFR"")
+            :mod (w / wild-type))
+      :ARG4 (b2 / binding-affinity-91
+            :ARG1 (d / dissociation-constant)
+            :ARG2 (c / concentration-quantity :quant 53.5
+                  :unit (n3 / nanomolar))))
+
+",DiGraph with 15 nodes and 14 edges,kinase,wild-type,:mod,kinase,wild-type,:mod,k_5,k_5,w_9,w_9,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+130,0,567,Seats in rows 6-20 cost $30.,[{'W_Inanimate': 'location'}],"(c / cost-01
+      :ARG1 (s / seat
+            :location (r / row
+                  :mod (v / value-interval :op1 6 :op2 20)))
+      :ARG2 (m / monetary-quantity :quant 30
+            :unit (d / dollar)))
+
+",DiGraph with 9 nodes and 8 edges,row,value-interval,:mod,row,value-interval,:mod,r_2,r_2,v_3,v_3,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+131,0,568,"To prepare for tomorrow's class, please read pages 320-325.",[],"(r / read-01 :mode imperative :polite +
+      :ARG0 (y / you)
+      :ARG1 (p / page
+            :mod (v / value-interval :op1 320 :op2 325))
+      :purpose (p2 / prepare-02
+            :ARG0 y
+            :ARG1 y
+            :ARG2 (c / class
+                  :time (t / tomorrow))))
+
+",DiGraph with 12 nodes and 11 edges,page,value-interval,:mod,page,value-interval,:mod,p_4,p_4,v_5,v_5,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+132,0,578,"The most common word in English is ""the"".","[{'MISC': 'English'}, {'W_Inanimate': 'language'}]","(w / word
+      :ARG1-of (h / have-degree-91
+            :ARG2 (c / common)
+            :ARG3 (m / most))
+      :mod (l / language :wiki ""English_language"" :name (n / name :op1 ""English""))
+      :domain (s / string-entity :value ""the""))
+
+",DiGraph with 10 nodes and 9 edges,word,language,:mod,word,language,:mod,w_0,w_0,l_4,l_4,inanimate,"[':mod', ':other-role']","[0.995, 0.005]","[':mod', ':mod', ':mod', ':mod', ':mod']"
+133,0,588,My name is Bill if you need me.,"[{'PER': 'Bill'}, {'PER': 'you'}, {'PER': 'me'}, {'W_Animate': 'person'}]","(n / name-01
+      :ARG1 (i / i)
+      :ARG2 (p / person :wiki -
+            :name (n2 / name :op1 ""Bill""))
+      :ARG1-of (r / relevant-01
+            :ARG2 (y / you)
+            :condition (n3 / need-01
+                  :ARG0 y
+                  :ARG1 i)))
+
+",DiGraph with 11 nodes and 10 edges,relevant-01,need-01,:condition,relevant-01,need-01,:condition,r_6,r_6,n3_8,n3_8,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"
+134,0,589,There is food in the fridge in case you get hungry.,[{'PER': 'you'}],"(b / be-located-at-91
+      :ARG1 (f / food)
+      :ARG2 (f2 / fridge)
+      :ARG1-of (r / relevant-01
+            :ARG2 (y / you)
+            :condition (g / get-03
+                  :ARG1 y
+                  :ARG2 (h2 / hunger-01
+                        :ARG0 y))))
+
+",DiGraph with 9 nodes and 8 edges,relevant-01,get-03,:condition,relevant-01,get-03,:condition,r_3,r_3,g_5,g_5,inanimate,[':condition'],[1.0],"[':condition', ':condition', ':condition', ':condition', ':condition']"

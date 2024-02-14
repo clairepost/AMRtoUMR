@@ -38,7 +38,7 @@ def run_baseline_X_times():
         df[f'comparison_results_{i}'] = result
 
     # Save the DataFrame to a new CSV file
-    df.to_csv(f'baseline_results_augment3.csv', index=False)
+    df.to_csv(f'baseline_results_debug.csv', index=False)
     return comparison_results
 
 
@@ -79,7 +79,7 @@ def run_baseline(num_iters, split):
 
     y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
     full_df = pd.concat([X, y_pred],axis = 1)
-    full_df.to_csv("output/baseline_"+split+"_allFiles.csv")
+    full_df.to_csv("output/baseline_"+split+"_files_all_Cause.csv")
     return full_df
 
 

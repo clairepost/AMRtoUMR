@@ -105,118 +105,9 @@ def read_training_data():
     splits_data_df.columns= columns
     splits_data_df.to_csv("input_data/train_data.csv")
     return splits_data_df
+
     
 
-# def read_augment_data():
-#     # reads in the augmented data
-#     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
-#     # creates dummy variables for the extra umr columns
-
-#     # step 1 - open files
-#     # put all files in dicts
-#     augment_files = {}
-
-#     augment_path = os.path.join(os.getcwd(), 'raw_data', 'augment-data-english')
-
-#     for f in os.listdir(augment_path):
-#         file_path = os.path.join(augment_path, f)
-#         with open(file_path, 'rb') as file1:
-#             try:
-#                 content = file1.read().decode('utf-8')
-#             except UnicodeDecodeError:
-#                 # If 'utf-8' decoding fails, try another encoding
-#                 content = file1.read().decode('latin-1')
-#             augment_files[f] = content
-
-#     # step 2 - get file names
-#     #create file mappings augment data
-#     augment_files[1] = augment_files.pop('amr-release-3.0-amrs-bolt.txt')
-#     augment_files[2] = augment_files.pop('amr-release-3.0-amrs-cctv.txt')
-#     augment_files[3] = augment_files.pop('amr-release-3.0-amrs-consensus.txt')
-#     augment_files[4] = augment_files.pop('amr-release-3.0-amrs-dfa.txt')
-#     augment_files[5] = augment_files.pop('amr-release-3.0-amrs-dfb.txt')
-#     augment_files[6] = augment_files.pop('amr-release-3.0-amrs-fables.txt')
-#     augment_files[7] = augment_files.pop('amr-release-3.0-amrs-guidelines.txt')
-#     augment_files[8] = augment_files.pop('amr-release-3.0-amrs-mt09sdl.txt')
-#     augment_files[9] = augment_files.pop('amr-release-3.0-amrs-proxy.txt')
-#     augment_files[10] = augment_files.pop('amr-release-3.0-amrs-wb.txt')
-#     augment_files[11] = augment_files.pop('amr-release-3.0-amrs-wiki.txt')
-#     augment_files[12] = augment_files.pop('amr-release-3.0-amrs-xinhua.txt')
-
-#     file_map_a = {1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
-
-
-#     # step 3 - extract graphs and sentences
-
-#     all_sentences_augment = {}
-#     augment_sents = {}
-#     for f in augment_files:
-#         if f == '.DS_Store':
-#             continue  # Skip system files
-#         augment_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', augment_files[f])#extract the graphs
-#         sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)', augment_files[f]) #first look
-#         if not sentences:
-#             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',augment_files[f])#second look
-#             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
-#         all_sentences_augment[f] = sentences
-        
-
-#     # step 4 - make graphs
-        
-#     #using the str2graph.create_graph() function
-#     augment_graphs = {}
-#     for file in augment_sents.keys():
-#         augment_graphs[file] = []
-#         for sent in augment_sents[file]:
-#             augment_graphs[file].append(create_graph(sent))
-
-
-#     # step 5 - split role definitions
-
-#     amr_roles= {
-#        ":mod",
-#        ":cause",
-#        ":part", 
-#        ":consist-of",
-#        ":source",
-#        ":destination",
-#        ":condition",
-#        ":ARG1-of"
-#         } # I think remove concession
-    
-#     amr_roles_in_tail= {
-#        ":ARG1-of": "cause-01"
-#     }
-#     umr_t2r = {
-#         "cause-01":[":cause", ":reason",":Cause-of"]
-#     }
-
-#     # step 6 - animacy parsing 
-
-#     ne_info = {}
-#     for f in all_sentences_augment:
-#         ne_info[f] = parse_animacy_runner(all_sentences_augment[f])
-
-
-#     # step 7 - make a data frame (INCOMPLETE: NEED HELP HERE OUT)
-    
-#     # define empty umrs 
-#     umr_graphs = None
-
-#     splits_data = align_graphs_on_AMR_splits(all_sentences_augment,ne_info, augment_graphs,umr_graphs=None, amr_roles=amr_roles, amr_roles_in_tail=amr_roles_in_tail, umr_t2r=umr_t2r)
-
-#     # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
-
-#     # Convert splits_data to DataFrame
-#     columns = ["file", "sent_i", "sent", "ne_info", "amr_graph", "amr_head_name", "amr_tail_name", "amr_role",
-#                "umr_head_name", "umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id",
-#                "umr_tail_id"]
-#     splits_data_df = pd.DataFrame(splits_data, columns=columns)
-
-#     # step 8 - save and return data frame
-
-#     splits_data_df.to_csv("input_data/augment_data.csv")
-#     return splits_data_df
 
 def read_augment_fake_parallel_data():
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
@@ -229,6 +120,8 @@ def read_augment_fake_parallel_data():
     # amr_path = os.getcwd() + os.path.join(os.getcwd(), 'raw_data', 'augment-sample-data-english2')
     umr_path = os.getcwd() + '/raw_data/umr-fake-extra'
     amr_path = os.getcwd() + '/raw_data/augment-data-english'
+    # umr_path = os.getcwd() + '/raw_data/umr-debug'
+    # amr_path = os.getcwd() + '/raw_data/amr-debug'
 
     
     for f in os.listdir(umr_path):
@@ -264,7 +157,7 @@ def read_augment_fake_parallel_data():
     # amr_files[3] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
 
     # # file_map = {1:"consensus"}
-    # file_map = {0:"consensus",1:"wiki",2:"guidelines",3:"fables"}
+    file_map = {0:"consensus",1:"wiki",2:"guidelines",3:"fables"}
 
     amr_files[1] = amr_files.pop('amr-release-3.0-amrs-bolt.txt')
     amr_files[2] = amr_files.pop('amr-release-3.0-amrs-cctv.txt')
@@ -292,9 +185,10 @@ def read_augment_fake_parallel_data():
     umr_files[11] = umr_files.pop('umr-fake-wiki.txt')
     umr_files[0] = umr_files.pop('umr-fake-xinhua.txt')
 
+    # amr_files[0] = amr_files.pop('amr-debug.txt')
+    # umr_files[0] = umr_files.pop('umr-fake-debug.txt')
 
-
-    file_map = {1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
+    file_map = {0:"debug",1:"bolt",2:"cctv",3:"consensus",4:"dfa",5:"dfb",6:"fables",7:"guidelines",8:"mt09",9:"proxy",10:"wb",11:"wiki",12:"xinhua"}
 
 
     # step 3 - extract graphs and sentences
@@ -309,7 +203,7 @@ def read_augment_fake_parallel_data():
             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',umr_files[f])#second look
             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
         
-    # TODO: pass in AMR sents to the X_tuple, add a column with that info, pass said x_tuple directly into the animacy_runner, change that function and call, do animacy parsing all over there (no double calls to animacy)
+    
     amr_sents = {}
     for f in amr_files:
         amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
@@ -343,18 +237,20 @@ def read_augment_fake_parallel_data():
        ":source",
        ":destination",
        ":condition",
-       ":ARG1-of"
+       ":ARG1-of",
+       ":ARG0-of"
         } # I think remove concession
     
     amr_roles_in_tail= {
-       ":ARG1-of": "cause-01"
+       ":ARG1-of": "cause-01",
+       ":ARG0-of": "cause-01"
     }
     umr_t2r = {
-        "cause-01":[":cause", ":reason",":Cause-of"]
+        "cause-01":[":cause", ":reason",":Cause-of","cause-01"]
     }
     
 
-    columnsTemp = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
+    columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
 
     ne_info = {}
     for f in all_sentences:
@@ -363,16 +259,16 @@ def read_augment_fake_parallel_data():
         
         ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
     
-    splits_data1, total_count = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
-    splits_data_df_temp = pd.DataFrame(splits_data1)
-    splits_data_df_temp.columns= columnsTemp
+    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data_df = pd.DataFrame(splits_data)
+    splits_data_df.columns= columns
 
     # add to data frame
-    splits_data_df_temp["animacy"] = animacy_decider(splits_data_df_temp, f)
+    splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
 
     # Convert splits_data_df_temp to a DataFrame
-    splits_data_df_temp.to_csv("input_data/augment_fake_data3.csv")
-    return splits_data_df_temp
+    splits_data_df.to_csv("input_data/augment_getting_causes.csv")
+    return splits_data_df
 
 
 
@@ -465,21 +361,39 @@ def read_test_data():
         "cause-01":[":cause", ":reason",":Cause-of"]
     }
 
+    columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
+
     ne_info = {}
     for f in all_sentences:
-        ne_info[f] = parse_animacy_runner(all_sentences[f])
-
-    splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
+        print("IN NE INFO FINDER: file ", f)
+        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
+    
+    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
     splits_data_df = pd.DataFrame(splits_data)
-
-    # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
-
-
-    columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
-
     splits_data_df.columns= columns
+
+    # add to data frame
+    splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
+
+    # Convert splits_data_df_temp to a DataFrame
     splits_data_df.to_csv("input_data/test_data.csv")
     return splits_data_df
+
+    # ne_info = {}
+    # for f in all_sentences:
+    #     ne_info[f] = parse_animacy_runner(all_sentences[f])
+
+    # splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
+    # splits_data_df = pd.DataFrame(splits_data)
+
+    # # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
+
+
+    # columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+
+    # splits_data_df.columns= columns
+    # splits_data_df.to_csv("input_data/test_data.csv")
+    # return splits_data_df
 
 # make a new function that works for data augmention adding it from the FinalProject.ipynb
 
@@ -559,17 +473,21 @@ def get_embeddings(data):
 def create_mapping():
     amr_roles= {":mod",
             ":cause",
+            "cause-01",
             ":part", 
             ":consist-of",
             ":source",
             ":destination",
             ":condition",
+            ":ARG0-of",
             ":ARG1-of"}
 
     umr_roles = {":mod", #mod with a space to avoid modal
                     ":other-role",
                     ":cause",
                     ":Cause-of",
+                    "cause-01", # added this for data augmentation
+                    "consist-of", # data augment
                     ":reason",
                     ":part",
                     ":group",
@@ -579,6 +497,7 @@ def create_mapping():
                     ":goal",
                     ":recipient",
                     ":condition",
+                    ":concessive-condition",
                     ":Material-of"}
 
     #crete role relationship dict
@@ -586,6 +505,7 @@ def create_mapping():
     amr2umr_splits = dict.fromkeys(amr_roles,0)
     amr2umr_splits[":mod"] = [":mod",":other-role"]
     amr2umr_splits[":cause"] = [":cause",":reason"]
+    amr2umr_splits["cause-01"] = [":cause",":reason"]
     amr2umr_splits[":part"] = [":part"]
     amr2umr_splits[":cause"] = [":cause",":reason"]
     amr2umr_splits[":source"] = [":material",":source",":start"]
@@ -593,6 +513,7 @@ def create_mapping():
     amr2umr_splits[":destination"] = [":goal",":recipient"]
     amr2umr_splits[":condition"] = [":condition"]
     amr2umr_splits[":ARG1-of"] = [":cause",":Cause-of"] #manipulative right now, this doesn't fully reflect split roles
+    amr2umr_splits[":ARG0-of"] = [":cause",":Cause-of"] #manipulative right now, this doesn't fully reflect split roles
 
     swap_amr_int_dict = create_combined_dict(amr_roles)
     swap_umr_int_dict = create_combined_dict(umr_roles)

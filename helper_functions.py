@@ -259,9 +259,22 @@ def read_augment_fake_parallel_data():
         
         ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
     
-    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
-    splits_data_df = pd.DataFrame(splits_data)
-    splits_data_df.columns= columns
+
+    #marie updarte: doing one role at a time
+        splits_data_df = pd.DataFrame(columns = columns)
+    for role in amr_roles:
+        role = {role}
+        splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,role, amr_roles_in_tail, umr_t2r)
+        splits_data_df_partial = pd.DataFrame(splits_data)
+        splits_data_df_partial.columns= columns
+        splits_data_df = pd.concat(splits_data_df, splits_data_df_partial)
+        
+        
+    #Marie commented this out- uncomment this to run all roles at once
+
+    # splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    # splits_data_df = pd.DataFrame(splits_data)
+    # splits_data_df.columns= columns
 
     # add to data frame
     splits_data_df["animacy"] = animacy_decider(splits_data_df, f)

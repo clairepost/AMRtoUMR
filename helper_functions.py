@@ -266,8 +266,9 @@ def read_augment_fake_parallel_data():
         role = {role}
         splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,role, amr_roles_in_tail, umr_t2r)
         splits_data_df_partial = pd.DataFrame(splits_data)
-        splits_data_df_partial.columns= columns
-        splits_data_df = pd.concat(splits_data_df, splits_data_df_partial)
+        if splits_data_df_partial.size != 0:
+            splits_data_df_partial.columns=columns
+            splits_data_df =pd.concat([splits_data_df, splits_data_df_partial], ignore_index=True)
         
         
     #Marie commented this out- uncomment this to run all roles at once
@@ -282,7 +283,7 @@ def read_augment_fake_parallel_data():
     # Convert splits_data_df_temp to a DataFrame
     splits_data_df.to_csv("input_data/augment_getting_causes.csv")
     return splits_data_df
-
+ 
 
 
 

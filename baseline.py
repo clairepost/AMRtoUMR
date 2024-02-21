@@ -62,31 +62,31 @@ def run_baseline(num_iters, split):
     #slightly different implementation than what is happening in compare_results. Just so the format is consistent across models
     #takes in num of iterations: returns X (input data- size (n x m)) and y_probs (size n x num_iters)
     y_preds = []
-    X = preprocess_data(split, True,True) #reload the graphs and the rules -> set both to True
+    X = preprocess_data(split, True, True) #reload the graphs and the rules -> set both to True
     y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
     for i in range(num_iters):
-        print(y_prob)
         y_calc = calc_role(y_prob)
         y_preds.append(y_calc)
 
     c = len(y_preds)
     n = len(y_preds[0])
 
-    print(y_preds)
+    #print(y_preds)
     # Transpose the list
     list_of_lists_n = [[y_preds[j][i] for j in range(c)] for i in range(n)]
 
     y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
     full_df = pd.concat([X, y_pred],axis = 1)
-    full_df.to_csv("output/baseline_"+split+".csv")
+    full_df.to_csv("output/470-results/baseline_"+split+"_files_470.csv")
     return full_df
 
 def run_splits_nn():
     num_iters = 1
-    X_1 = preprocess_data("train",True,True)
-    X = preprocess_data("test", True, True)
+    X_1 = preprocess_data("train",False,False)
+    X = preprocess_data("test", False, False)
+    X_2 = preprocess_data("augment2", True, True)
 
-    all_Xs = pd.concat((X,X_1),axis=0)
+    all_Xs = pd.concat((X,X_1, X_2),axis=0)
     
     splits= get_indices(all_Xs)
 
@@ -116,7 +116,7 @@ def run_splits_nn():
         print(y_preds[0])
         #y_preds = pd.Series(y_preds)
         X["y_pred"] = y_preds[0]
-        X.to_csv("output/k-fold/baseline_"+str(i)+".csv")
+        X.to_csv("output/k-foldv2/baseline_"+str(i)+".csv")
     return X
 
 
@@ -125,5 +125,5 @@ if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
     #run_baseline_X_times()
-    run_splits_nn()
-    #run_baseline(20,"test") #Marie's version
+  #  run_splits_nn()
+    run_baseline(5,"augment2") #Marie's version

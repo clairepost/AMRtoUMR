@@ -123,11 +123,18 @@ def run_splits_nn():
         print("finished running k-fold baseline rules")
     return X
 
-
+def combine_baseline_results():
+    train_df = run_baseline(5, "train")
+    test_df = run_baseline(5,"test")
+    full_df = pd.concat([train_df,test_df],axis = 0)
+    full_df.to_csv("output/470-results-inverted/baseline.csv")
+    
 
 if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
     #run_baseline_X_times()
-    run_splits_nn()
+   # run_splits_nn()
  #   run_baseline(5,"augment2") #Marie's version
+    combine_baseline_results()
+    

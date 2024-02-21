@@ -226,23 +226,39 @@ def run_splits_nn(model_choice):
         print("finished running k-folds pn base_nn")
     return df_test
 
-def run_on_all_data():
+def run_on_all_data(inverse= False):
     # creates the training data from the train data and test data, results in around 100 examples
-    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
+
+    #inverse == False:  the splits to have train/test as the train and then evaluates on the augmented data
+    if inverse == False:
+        embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
+        
+        embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
+        all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
+        all_amr_roles = torch.cat((amr_role,amr_role_1),0)
+        all_umr_roles = torch.cat((umr_role, umr_role_1),0)
+        all_Xs = pd.concat((X,X_1),axis=0)
+
+        model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping)
+
+        embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("augment2")
+
+        df_test = predict(model, (embeddings_1, amr_role_1, umr_role_1,X_1), swap_umr_int_dict, swap_amr_int_dict) 
+        df_test.to_csv(f"output/470-results/base_nn.csv")
+    else:
+        embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
+        embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
+        all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
+        all_amr_roles = torch.cat((amr_role,amr_role_1),0)
+        all_umr_roles = torch.cat((umr_role, umr_role_1),0)
+        all_Xs = pd.concat((X,X_1),axis=0)
+
+        embeddings_2,amr_role_2, umr_role_2, X_2, mapping_2, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("augment2")
+        model = train_model(embeddings_2,amr_role_2, umr_role_2,mapping_2)
+
+        df_test = predict(model, (all_embeddings, all_amr_roles,all_umr_roles,all_Xs), swap_umr_int_dict_1, swap_amr_int_dict_1)
+        df_test.to_csv(f"output/470-results-inverted/base_nn.csv")
     
-    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
-    all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
-    all_amr_roles = torch.cat((amr_role,amr_role_1),0)
-    all_umr_roles = torch.cat((umr_role, umr_role_1),0)
-    all_Xs = pd.concat((X,X_1),axis=0)
-
-    model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping)
-
-    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("augment2")
-
-    df_test = predict(model, (embeddings_1, amr_role_1, umr_role_1,X_1), swap_umr_int_dict, swap_amr_int_dict) 
-
-    df_test.to_csv(f"output/470-results/base_nn.csv")
     print("Finished baseline_nn on all data")
 
 
@@ -250,6 +266,6 @@ def run_on_all_data():
     
 
 if __name__ == "__main__":
-    run_on_all_data()
+    run_on_all_data(inverse = True)
   #  run_splits_nn("base_nn")
     

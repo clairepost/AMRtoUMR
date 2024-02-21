@@ -1,0 +1,2 @@
+tensor([0.5708, 0.4571], grad_fn=<UnbindBackward0>)
+tensor([0.4292, 0.5429], grad_fn=<UnbindBackward0>)

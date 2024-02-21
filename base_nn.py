@@ -187,9 +187,7 @@ def run_splits_nn(model_choice):
         return
     
 
-
-
-    #embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
+    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train")
     
     embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test")
     embeddings_2, amr_role_2, umr_role_2, X_2, _,_,_ = preprocessing_for_NN("augment2")
@@ -225,6 +223,7 @@ def run_splits_nn(model_choice):
         print(len(Xs))
         print(len(df_test))
         df_test.to_csv(f"output/k-foldv2/{model_choice}_test_{i}.csv")
+        print("finished running k-folds pn base_nn")
     return df_test
 
 def run_on_all_data():
@@ -239,17 +238,18 @@ def run_on_all_data():
 
     model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping)
 
-    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("augmented")
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("augment2")
 
     df_test = predict(model, (embeddings_1, amr_role_1, umr_role_1,X_1), swap_umr_int_dict, swap_amr_int_dict) 
 
-    df_test.to_csv(f"output/470-results_base_nn.py")
+    df_test.to_csv(f"output/470-results/base_nn.csv")
+    print("Finished baseline_nn on all data")
 
 
 
     
 
 if __name__ == "__main__":
-    #run_base_nn()
-    run_splits_nn("base_nn")
+    run_on_all_data()
+  #  run_splits_nn("base_nn")
     

@@ -1,9 +1,6 @@
 
 #using stratified k-fold cross validation
 
-
-
-
 def run_buckets(train, test):
     # combine training and test data
     # using a seed- split into 5 different 80-20 splits?
@@ -22,5 +19,6 @@ def get_indices(x):
     seed = 0
     kf = StratifiedKFold(n_splits=num_splits, shuffle = True, random_state=seed)
     kf.get_n_splits(x,x)
+    print(x)
     return enumerate(kf.split(x,x))
 

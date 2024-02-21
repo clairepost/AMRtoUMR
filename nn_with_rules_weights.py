@@ -232,11 +232,14 @@ def run_splits_nn(model_choice):
     embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_output = preprocessing("train")
     
     embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_1 = preprocessing("test")
-    all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
-    all_amr_roles = torch.cat((amr_role,amr_role_1),0)
-    all_umr_roles = torch.cat((umr_role, umr_role_1),0)
-    all_rule_outputs = torch.cat((rule_output, rule_outputs_1),0)
-    all_Xs = pd.concat((X,X_1),axis=0)
+    embeddings_2,amr_role_2, umr_role_2, X_2, mapping_2, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_2 = preprocessing("augment2")
+
+
+    all_embeddings=  torch.cat((embeddings,embeddings_1,embeddings_2), 0)
+    all_amr_roles = torch.cat((amr_role,amr_role_1,amr_role_2),0)
+    all_umr_roles = torch.cat((umr_role, umr_role_1,umr_role_2),0)
+    all_rule_outputs = torch.cat((rule_output, rule_outputs_1,rule_outputs_2),0)
+    all_Xs = pd.concat((X,X_1,X_2),axis=0)
     weights = []
 
 
@@ -265,19 +268,48 @@ def run_splits_nn(model_choice):
         Xs = all_Xs.iloc[test_index.tolist()]
 
         df_test, weight_i = predict(model, (embeddings, amr_roles, umr_roles,Xs, rule_outputs), swap_umr_int_dict, swap_amr_int_dict) 
+        print(df_test)
+        print(type(df_test))
         weights.append(weight_i)
 
 
-        df_test.to_csv(f"output/k-fold/{model_choice}_test_{i}.csv")
-    final_weights_folder = "output/k-fold/combined_nn_weights.txt"
+        df_test.to_csv(f"output/k-foldv2/{model_choice}_test_{i}.csv")
+    final_weights_folder = "output/k-foldv2/combined_nn_weights_all.txt"
     with open(final_weights_folder, 'w') as f:
         for line in weights:
             f.write(f"{line}\n")
+    print("finished running nn with weights k-fold")
     return df_test
+
+
+def run_on_all_data():
+    # creates the training data from the train data and test data, results in around 100 examples
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_output = preprocessing("train")
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_1 = preprocessing("test")
+    all_embeddings=  torch.cat((embeddings,embeddings_1), 0)
+    all_amr_roles = torch.cat((amr_role,amr_role_1),0)
+    all_umr_roles = torch.cat((umr_role, umr_role_1),0)
+    all_rule_outputs = torch.cat((rule_output, rule_outputs_1),0)
+    all_Xs = pd.concat((X,X_1),axis=0)
+
+    model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping, all_rule_outputs)
+
+    embeddings_2,amr_role_2, umr_role_2, X_2, mapping_2, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_2 = preprocessing("augment2")
+
+    df_test, weight_i = predict(model, (embeddings_2, amr_role_2, umr_role_2,X_2, rule_outputs_2), swap_umr_int_dict, swap_amr_int_dict) 
+
+    df_test.to_csv(f"output/470-results/nn_with_rules_weights.csv")
+    final_weights_folder = "output/470-results/combined_nn_weights_all.txt"
+    with open(final_weights_folder, 'w') as f:
+        for line in weight_i:
+            f.write(f"{line}\n")
+    print("Finished nn_wth_rules on all data")
+
+
 
 
 
 if __name__ == "__main__":
-    #run_nn_with_rules()
+    run_on_all_data()
     run_splits_nn("nn_with_rules_weights")
     

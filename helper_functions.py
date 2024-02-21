@@ -726,11 +726,15 @@ def preprocess_data(split, reload_graphs, reload_rules):
 
 
 
+if __name__ == "__main__":
+   # X = preprocess_data("test", True, True)
+   # X = preprocess_data("train", True, True)
+  #  X = preprocess_data("augment2", True, True)
+    X = preprocess_data("test", False, False)
+    X = preprocess_data("train", False, False)
+    X = preprocess_data("augment2", False, False)
+    #print(create_mapping())
+    # read_test_data()
+    # read_training_data()
 
-
-#X = preprocess_data("test", True, True)
-#print(create_mapping())
-# read_test_data()
-# read_training_data()
-
-#create_missing_data()
+    # create_missing_data()

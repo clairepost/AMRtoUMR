@@ -79,7 +79,7 @@ def run_baseline(num_iters, split):
 
     y_pred = pd.Series(list_of_lists_n,name ="y_pred") 
     full_df = pd.concat([X, y_pred],axis = 1)
-    full_df.to_csv("output/baseline_"+split+"_files_all_Cause.csv")
+    full_df.to_csv("output/baseline_"+split+"_files_470.csv")
     return full_df
 
 
@@ -87,5 +87,5 @@ if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
     #run_baseline_X_times()
-    run_baseline(5,"augment")
-    #run_baseline(20,"test") #Marie's version
+    #run_splits_nn()
+    run_baseline(5,"augment2") #Marie's version

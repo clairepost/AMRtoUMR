@@ -275,6 +275,21 @@ def read_augment_fake_parallel_data():
     # might be easier to read in form the csv and make a txt file with the sentences
         # append # ::snt to the front of the sentence and then append the amr_prints  
     # then it will have one amr
+
+
+def create_missing_data():
+    df = pd.read_csv("input_data/annotated_470.csv")
+
+    # Function to format each row
+    def format_row(row):
+        return f"# ::snt {row['sent']}\n{row['amr_prints']}\n\n"
+
+    # Write formatted data to a text file
+    with open("raw_data/annotated_examples.txt", "w") as f:
+        for index, row in df.iterrows():
+            f.write(format_row(row))
+
+
 def read_missing_data():
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
@@ -284,7 +299,18 @@ def read_missing_data():
 
     # step 1 - read in from the changed txt file
 
+    amr_path = os.getcwd() + '/raw_data/annotated_examples.txt'
+    umr_path = os.getcwd() + '/raw_data/annotated_examples.txt'
+    
     # read in the graphs and the sentences
+    with open(amr_path, 'rb') as file1:
+        try:
+            content = file1.read().decode('utf-8')
+        except UnicodeDecodeError:
+            # If 'utf-8' decoding fails, try another encoding
+            content = file1.read().decode('latin-1')
+        umr_files[0] = content
+        amr_files[0] = content
 
     # step 2 - get file names (not necessary)
    
@@ -292,6 +318,7 @@ def read_missing_data():
 
     umr_sents = {}
     all_sentences = {}
+
     for f in umr_files:
         # umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
         umr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', umr_files[f])
@@ -308,7 +335,10 @@ def read_missing_data():
         if not sentences:
             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+
         all_sentences[f] = sentences
+    print("number of sentences:",len(sentences))
+    print("example:", sentences[3])
 
 
     #using the str2graph.create_graph() function
@@ -324,7 +354,6 @@ def read_missing_data():
         amr_graphs[file] = []
         for sent in amr_sents[file]:
             amr_graphs[file].append(create_graph(sent))
-
 
     amr_roles= {
        ":mod",
@@ -350,13 +379,13 @@ def read_missing_data():
     columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
 
     ne_info = {}
-    for f in all_sentences:
+    for f in amr_sents:
         
         print("IN NE INFO FINDER: file ", f)
         
-        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
+        ne_info[f] = parse_animacy_runner(amr_sents[f], amr_sents[f])
     
-    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data = align_graphs_no_animacy(amr_sents, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
     splits_data_df = pd.DataFrame(splits_data)
     splits_data_df.columns= columns
 
@@ -364,12 +393,8 @@ def read_missing_data():
     splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
 
     # Convert splits_data_df_temp to a DataFrame
-    splits_data_df.to_csv("input_data/augment_getting_causes.csv")
+    splits_data_df.to_csv("input_data/annoated_470_create_graphs.csv")
     return splits_data_df
-
-
-
-
 
 
         
@@ -552,8 +577,11 @@ def get_embeddings(data):
     D_BERT = config.hidden_size
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     embeddings = []
+    print(range(len(data)))
+    print(data["sent"])
     for i in range(len(data)):
-        # Example input text
+
+        # Example input text)
         text = data["sent"][i]
         print(text)
 
@@ -662,6 +690,11 @@ def preprocess_data(split, reload_graphs, reload_rules):
         else:
             X = pd.read_csv("input_data/augment_fake_data.csv")
             X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+    elif split == "augment2":
+        if reload_graphs==True:
+            X = read_missing_data()
+            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+
     else:
         print("arg 1 must be 'test','train', or 'augment'")
         return
@@ -702,4 +735,6 @@ def preprocess_data(split, reload_graphs, reload_rules):
 # read_test_data()
 # read_training_data("training_data")
 # read_augment_sample_data()
-read_augment_fake_parallel_data()
+#read_augment_fake_parallel_data()
+#create_missing_data()
+read_missing_data()

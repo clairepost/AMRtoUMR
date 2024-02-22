@@ -22,6 +22,11 @@ from nn_with_rules_weights import basic_nn_with_rules_w
 
 file_path = "output/silver-star-k_folds/rules-rerun/"
 
+silver_stats_file = "silver_stats_file.csv"
+gold_stats_file= "gold-stats_file.csv"
+
+
+
 def run(num_epochs):
 
     output_file_path = file_path + str(num_epochs) + "/"
@@ -36,6 +41,18 @@ def run(num_epochs):
     gold_data.to_csv(output_file_path + "gold_data.csv")
     silver_data.to_csv(output_file_path + "silver_data.csv")
 
+    gold_counts = gold_data['umr_role'].value_counts()
+    gold_tot= gold_counts.sum()
+    gold_counts = pd.concat([gold_counts, (pd.Series({'Total': gold_tot}))])
+    silver_counts = silver_data['umr_role'].value_counts()
+    silver_tot = silver_counts.sum()
+    silver_counts = pd.concat([silver_counts, (pd.Series({'Total': silver_tot}))])
+    
+
+    gold_counts.to_csv("results/" +gold_stats_file)
+    silver_counts.to_csv("results/" +silver_stats_file)
+    print("stored dataset stats")
+    return
 
 
     #REMOVE THIS LINE FOR RUNNING THE WHOLE THING

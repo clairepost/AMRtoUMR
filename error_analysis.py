@@ -1,8 +1,5 @@
 
-#using k-fold cross validation
-
-
-
+#using stratified k-fold cross validation
 
 def run_buckets(train, test):
     # combine training and test data
@@ -13,18 +10,15 @@ def run_buckets(train, test):
         # report confusion matrix
     pass
 
-from sklearn.model_selection import KFold
+from sklearn.model_selection import StratifiedKFold
 import numpy as np
-
-
-
 
 
 def get_indices(x):
     num_splits = 5
     seed = 0
-    kf = KFold(n_splits=num_splits, shuffle = True, random_state=seed)
-    kf.get_n_splits(x)
-    
-    return enumerate(kf.split(x))
+    kf = StratifiedKFold(n_splits=num_splits, shuffle = True, random_state=seed)
+    kf.get_n_splits(x,x)
+    print(x)
+    return enumerate(kf.split(x,x))
 

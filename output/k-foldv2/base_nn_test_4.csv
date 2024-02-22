@@ -1,0 +1,1766 @@
+,Unnamed: 0,file,sent_i,sent,ne_info,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,y_guess,y_guess_dist,Unnamed: 0.1,index,ID,FIle,amr_prints,animacy,y_gold,counts,y_pred
+1,2,AMR to UMR targerted conversion split roles - Graphs.csv,3,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:start,d_3,s4d_1,c2_10,s4c_6,[':goal'],[1.0],,,,,,,,,:goal
+9,11,AMR to UMR targerted conversion split roles - Graphs.csv,11,The old man died of lung cancer .,[{'B_human': 'man'}],DiGraph with 9 nodes and 9 edges,die-01,cause-01,:ARG1-of,die-01,disease,:Cause-of,d_3,s12d2_5,c_6,s12d_2,"[':cause', ':reason']","[0.9, 0.1]",,,,,,,,,:cause
+16,19,AMR to UMR targerted conversion split roles - Graphs.csv,20,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]",DiGraph with 7 nodes and 7 edges,divorce-01,cause-01,:ARG1-of,divorce-02,alcoholism,:reason,d_3,s21a_9,c_6,s21d_2,"[':cause', ':reason']","[0.9, 0.1]",,,,,,,,,:cause
+17,20,AMR to UMR targerted conversion split roles - Graphs.csv,21,I saw a cloud of dust .,[{'PER': 'I'}],DiGraph with 4 nodes and 4 edges,cloud,dust,:consist-of,cloud,dust,:material,c_5,s32c_6,d_6,s32d_7,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",,,,,,,,,:part
+21,25,AMR to UMR targerted conversion split roles - Graphs.csv,26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],DiGraph with 14 nodes and 14 edges,dust,blue,:mod,dust,blue,:mod,d3_7,s37d2_5,b2_8,s37b_6,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+27,34,AMR to UMR targerted conversion split roles - Graphs.csv,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:source,d_3,s4d_1,c2_10,s4c_6,[':goal'],[1.0],,,,,,,,,:goal
+28,35,AMR to UMR targerted conversion split roles - Graphs.csv,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]",DiGraph with 11 nodes and 11 edges,drive-01,city,:source,drive-01,city,:source,d_3,s4d_1,c_6,s4c_6,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",,,,,,,,,:start
+31,40,AMR to UMR targerted conversion split roles - Graphs.csv,36,She got a master's degree in linguistics from UCLA.,"[{'ORG': 'UCLA'}, {'B_human': 'master'}, {'PER': 'She'}]",DiGraph with 9 nodes and 9 edges,degree,master,:mod,degree,master,:mod,d_5,s47d_3,m_6,s47m_4,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+37,46,AMR to UMR targerted conversion split roles - Graphs.csv,39,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}]",DiGraph with 12 nodes and 12 edges,start-01,city,:source,start-01,city,:start,s_3,s50s_2,c_10,s50c_7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",,,,,,,,,:start
+1,5,2,6,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],DiGraph with 11 nodes and 10 edges,and,only,:mod,and,only,:mod,a_2,s7a_1,o2_10,s7o2_9,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+5,9,2,7,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],DiGraph with 15 nodes and 14 edges,group-01,tiny,:mod,group,tiny,:mod,g_1,s8g_1,t2_13,s8t2_2,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+20,31,2,23,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],DiGraph with 22 nodes and 21 edges,cloud,heavy,:mod,cloud,heavy,:mod,c_5,s24c_6,h2_6,s24h2_8,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+23,34,2,25,"Relief groups called for drinking water, food, blankets and body bags to be brought to the scene.",[],DiGraph with 12 nodes and 11 edges,bag,body,:mod,bag,body,:mod,b3_9,s26b3_12,b4_10,s26b4_13,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+28,40,3,4,Marsha Lipman is Editor of Moscow based news magazine 'Itogi'.,"[{'PER': 'Marsha Lipman'}, {'MISC': 'Moscow'}, {'ORG': 'Itogi'}]",DiGraph with 16 nodes and 15 edges,magazine,news,:mod,magazine,news,:mod,m_6,s5m_5,n3_10,s5n3_9,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+36,52,4,1,Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.,"[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}]",DiGraph with 26 nodes and 25 edges,businessman,country,:mod,businessman,country,:mod,b2_0,s2b_4,c5_1,s2c4_5,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+37,53,4,1,Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.,"[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}]",DiGraph with 26 nodes and 25 edges,week,last,:mod,week,last,:mod,w_14,s2w_16,l_15,s2l_17,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+44,62,5,11,but I don't . . he's wearing like an apron with huge pockets .,[{'PER': 'I'}],DiGraph with 7 nodes and 6 edges,pocket,huge,:mod,pocket,huge,:mod,s12p2_5,s12p2_8,s12h_6,s12h_10,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+49,69,5,23,"A--nd u--m then he climbs back up the ladder ,",[{'PER': 'he'}],DiGraph with 7 nodes and 6 edges,climb-01,back,:mod,climb-01,back,:other-role,s24c_1,s24c_0,s24b_6,s24b_8,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+52,72,5,42,I'm giving you all these details .,[{'PER': 'you'}],DiGraph with 6 nodes and 5 edges,detail,this,:mod,detail,this,:mod,s43d_2,s43d_4,s43t_4,s43t_6,"[':mod', ':other-role']","[0.995, 0.005]",,,,,,,,,:mod
+1,1,,14,"Instead in this instance the Liberation Army headquarters emergency contingency plan obviously was not a contingency plan designed with earthquakes as the assumed condition, as the soldiers all rushed straight to Wenchuan, without immediately sending out troops in the direction of badly-hit areas Beichuan, Qingchuan and Gansu's Longnan; only 24 hours later was the full extent of the disaster area taken into consideration.","[{'ORG': 'Liberation Army'}, {'LOC': 'Wenchuan'}, {'LOC': 'Beichuan'}, {'LOC': 'Qingchuan'}, {'LOC': 'Gansu'}, {'LOC': 'Longnan'}, {'B_human': 'soldiers'}, {'W_Animate': 'military'}, {'W_Inanimate': 'county'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'province'}]",DiGraph with 65 nodes and 64 edges,plan-01,cause-01,:ARG1-of,plan-01,cause-01,:cause,p_1,c2_11,c2_11,p_1,"[':cause', ':reason']","[0.9, 0.1]",1.0,1.0,29.0,1.0,"(m2 / multi-sentence
+  :snt1 (p / plan-01
+  :ARG1 (p2 / plan-01
+  :ARG0 (h3 / headquarters
+  :poss (m3 / military :wiki ""People's_Liberation_Army"" :name (n / name :op1 ""Liberation"" :op2 ""Army"")))
+  :mod (c3 / contingency
+  :mod (e / emergency)))
+  :ARG1-of (c2 / cause-01
+  :ARG0 (a2 / and
+  :op1 (r / rush-01
+  :ARG0 (s2 / soldier
+  :mod (a4 / all))
+  :ARG2 (c6 / county :wiki ""Wenchuan_County"" :name (n6 / name :op1 ""Wenchuan""))
+  :ARG1-of (s3 / straight-04))
+  :op2 (s / send-03 :polarity -
+  :ARG1 (t4 / troop)
+  :ARG5 (a6 / and
+  :op1 (c7 / city :wiki ""Beichuan_Qiang_Autonomous_County"" :name (n5 / name :op1 ""Beichuan""))
+  :op2 (c8 / city :wiki ""Qingchuan_County"" :name (n4 / name :op1 ""Qingchuan""))
+  :op3 (c9 / city :wiki ""Longnan"" :name (n3 / name :op1 ""Longnan"")
+  :location (p3 / province :wiki ""Gansu"" :name (n2 / name :op1 ""Gansu"")))
+  :ARG1-of (h / hit-01
+  :ARG1-of (b / bad-05)))
+  :time (i3 / immediate))))
+  :time (i2 / instance
+  :mod (t / this))
+  :ARG1-of (o / obvious-01)
+  :mod (c4 / contingency)
+  :ARG1-of (d / design-01 :polarity -
+  :manner (a3 / assume-02
+  :ARG1 (e2 / earthquake)
+  :ARG2 (t2 / thing
+  :ARG2-of (c5 / condition-01))))
+  :ARG1-of (i / instead-of-91))
+  :snt2 (c / consider-02
+  :ARG1 (e3 / extent
+  :extent-of (a7 / area
+  :mod (d2 / disaster))
+  :mod (f / full))
+  :time (a / after
+  :quant (t5 / temporal-quantity :quant 24
+  :unit (h2 / hour)
+  :mod (o2 / only)))))",inanimate,:cause,1.0,:cause
+4,5,,30,Am I being foolish in doing this?,[{'PER': 'I'}],DiGraph with 5 nodes and 4 edges,amr-unknown,do-02,:condition,amr-unknown,do-02,:condition,f_0,f_0,d_2,d_2,[':condition'],[1.0],5.0,7.0,66.0,1.0,"(f / foolish :polarity (a / amr-unknown)
+  :domain (i / i)
+  :condition (d / do-02
+  :ARG0 i
+  :ARG1 (t / this)))",inanimate,:condition,1.0,:condition
+5,6,,35,"As long as we stick to this issue, Xinghui surely has no way of winning the lawsuit if it goes to court.","[{'PER': 'Xinghui'}, {'PER': 'we'}, {'W_Animate': 'company'}]",DiGraph with 19 nodes and 18 edges,sure-02,as-long-as,:condition,sure-02,as-long-as,:condition,s_0,s_0,a_14,a_14,[':condition'],[1.0],6.0,8.0,77.0,1.0,"(s / sure-02
+  :ARG1 (h / have-03 :polarity -
+  :ARG0 (c / company :wiki - :name (n / name :op1 ""Xinghui""))
+  :ARG1 (w2 / way
+  :instrument-of (w3 / win-01
+  :ARG0 c
+  :ARG2 (s3 / sue-02)))
+  :condition (g / go-01
+  :ARG1 s3
+  :ARG4 (c2 / court)))
+  :condition (a / as-long-as
+  :op1 (s2 / stick-01
+  :ARG1 (w / we)
+  :ARG2 (i / issue-02
+  :mod (t / this)))))",inanimate,:condition,1.0,:condition
+9,10,,147,But the glory of the earthquake workers did not produce good luck for the departed spirits of Wenchuan.,"[{'PER': 'Wenchu'}, {'B_human': 'workers'}, {'W_Inanimate': 'county'}]",DiGraph with 15 nodes and 14 edges,spirit,county,:source,spirit,county,:source,s_9,s_9,c2_10,c2_10,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",10.0,34.0,260.0,1.0,"(c / contrast-01
+  :ARG2 (p / produce-01 :polarity -
+  :ARG0 (g / glory
+  :poss (p2 / person
+  :ARG0-of (w / work-01
+  :mod (e / earthquake))))
+  :ARG1 (l2 / luck
+  :ARG1-of (g2 / good-02))
+  :ARG3 (s / spirit
+  :source (c2 / county :wiki ""Wenchuan_County"" :name (n / name :op1 ""Wenchuan""))
+  :ARG0-of (d / depart-01))))",inanimate,:source,1.0,:start
+24,25,,363,"Not only that, Wang Peirong's generous and courageous endeavors have led to revenge from the reported on numerous occasions: when reporting the corruption of Li Rongqi, he was severely beaten up by hired goons; when reporting the black forces, he was retaliated by the black forces, and hospitalized for the injuries.","[{'PER': 'Wang Peiro'}, {'PER': 'Li Rong'}, {'B_human': 'go'}, {'PER': 'he'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}]",DiGraph with 50 nodes and 49 edges,hospitalize-01,cause-01,:ARG1-of,hospitalize-01,cause-01,:reason,h2_38,c3_40,c3_40,h2_38,[':reason'],[1.0],25.0,87.0,662.0,1.0,"(a2 / and
+  :op1 (t2 / thing
+  :mod (o2 / only :polarity -)
+  :domain (t3 / that))
+  :op2 (l / lead-03
+  :ARG0 (t / thing
+  :ARG1-of (e2 / endeavor-01
+  :ARG0 (p2 / person :wiki - :name (n / name :op1 ""Wang"" :op2 ""Peirong"")))
+  :ARG2-of (g / generous-01
+  :ARG0 p2)
+  :mod (c / courage))
+  :ARG2 (r / revenge-00
+  :ARG0 (p / person
+  :ARG1-of (r2 / report-01)))
+  :example (a / and
+  :op1 (b / beat-up-05
+  :ARG0 (g2 / goon
+  :ARG1-of (h / hire-01))
+  :ARG1 p2
+  :manner (s / severe)
+  :time (r4 / report-01
+  :ARG0 p2
+  :ARG1 (c2 / corruption
+  :ARG1-of (c4 / cause-01
+  :ARG0 (p3 / person :wiki - :name (n3 / name :op1 ""Li"" :op2 ""Rongqi""))))))
+  :op2 (a3 / and
+  :op1 (r3 / retaliate-01
+  :ARG0 f
+  :ARG1 p2)
+  :op2 (h2 / hospitalize-01
+  :ARG1 p2
+  :ARG1-of (c3 / cause-01
+  :ARG0 (i / injure-01
+  :ARG0 f
+  :ARG1 p2)))
+  :time (r5 / report-01
+  :ARG0 p2
+  :ARG1 (f / force
+  :ARG1-of (b2 / black-07)))))
+  :frequency (o / occasion-02
+  :quant (n2 / numerous))))",animate,:reason,1.0,:cause
+29,30,,551,"while some rich men have a strong desire to marry N concubines (because their mistresses often fuss about wanting to get married) but they do not have the allowance, and would be guilty of bigamy.","[{'B_human': 'men'}, {'B_human': 'con'}, {'B_human': 'mistress'}, {'PER': 'they'}, {'W_Inanimate': 'variable'}]",DiGraph with 30 nodes and 29 edges,desire-01,cause-01,:ARG1-of,desire-01,cause-01,:reason,d_1,c3_13,c3_13,d_1,[':reason'],[1.0],30.0,151.0,1072.0,1.0,"(c / contrast-01
+  :ARG2 (d / desire-01
+  :ARG0 (m / man
+  :mod (s / some)
+  :mod (r / rich))
+  :ARG1 (m2 / marry-01
+  :ARG1 m
+  :ARG2 (c2 / concubine
+  :quant (v / variable :wiki -
+  :name (n / name :op1 ""N""))))
+  :ARG1-of (s2 / strong-02)
+  :ARG1-of (c3 / cause-01
+  :ARG0 (f / fuss-01
+  :ARG0 (m3 / mistress
+  :poss m)
+  :ARG1 (w / want-01
+  :ARG0 m3
+  :ARG1 (m4 / marry-01
+  :ARG1 m
+  :ARG2 m3))
+  :frequency (o / often)))
+  :concession-of (a / and
+  :op1 (a2 / allow-01 :polarity -
+  :ARG1 m)
+  :op2 (g / guilty-01
+  :ARG1 m
+  :ARG2 (b / bigamy)))))",animate,:reason,1.0,:cause
+36,39,,189,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}, {'W_Inanimate': 'event'}, {'W_Inanimate': 'city'}]",DiGraph with 12 nodes and 11 edges,start-01,city,:source,start-01,city,:start,s_0,s_0,c_7,c_7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",39.0,293.0,2358.0,2.0,"(s / start-01
+  :ARG1 (e2 / event :wiki -
+  :name (n / name :op1 ""The"" :op2 ""Wonder"" :op3 ""Tour""))
+  :source (c / city :wiki ""Hong_Kong""
+  :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",inanimate,:start,1.0,:start
+43,46,,914,Isn't advice from experts required to run a country like the US?,"[{'LOC': 'US'}, {'B_human': 'experts'}, {'PER': 'US'}, {'W_Inanimate': 'country'}]",DiGraph with 11 nodes and 10 edges,advice,person,:source,advice,person,:source,a_7,a_7,p_8,p_8,[':source'],[1.0],46.0,466.0,3568.0,4.0,"(r / require-01 :polarity -
+  :ARG0 (r2 / run-01
+  :ARG1 (c / country
+  :example (c2 / country :wiki ""United_States"" :name (n / name :op1 ""U.S.""))))
+  :ARG1 (a / advice
+  :source (p / person
+  :ARG1-of (e / expert-01)))
+  :ARG1-of (r3 / request-confirmation-91))",animate,:source,1.0,:start
+48,51,,1710,We did have the car unlocked at times so it is a definate possibility.,[{'PER': 'We'}],DiGraph with 8 nodes and 7 edges,possibility,cause-01,:ARG1-of,possibility,cause-01,:reason,p_0,c_2,c_2,p_0,[':reason'],[1.0],51.0,711.0,5132.0,4.0,"(p / possibility
+  :mod (d / definite)
+  :ARG1-of (c / cause-01
+  :ARG0 (u / unlock-01
+  :ARG0 (w / we)
+  :ARG1 (c2 / car)
+  :frequency (a / at-times)))
+  :domain (i / it))",animate,:reason,1.0,:cause
+49,52,,1771,"The oppressors should not get too comfy, as oppressors the world over are finding out they get over thrown by force of public will.","[{'B_human': 'op'}, {'B_human': 'op'}, {'PER': 'they'}, {'W_Inanimate': 'location'}]",DiGraph with 20 nodes and 19 edges,recommend-01,cause-01,:ARG1-of,recommend-01,cause-01,:reason,r_0,c2_9,c2_9,r_0,[':reason'],[1.0],52.0,728.0,5222.0,4.0,"(r / recommend-01
+  :ARG1 (g / get-03 :polarity -
+  :ARG1 (p2 / person
+  :ARG0-of (o / oppress-01))
+  :ARG2 (c / comfy
+  :ARG2-of (h / have-degree-91
+  :ARG1 p2
+  :ARG3 (t / too))))
+  :ARG1-of (c2 / cause-01
+  :ARG0 (f / find-out-03
+  :ARG0 (p3 / person
+  :ARG0-of (o2 / oppress-01)
+  :location (w / world
+  :mod (o3 / over)))
+  :ARG1 (o4 / overthrow-01
+  :ARG0 (f2 / force-04
+  :ARG0 (w2 / will-02
+  :ARG0 (p / public)))
+  :ARG1 o2))))",animate,:reason,1.0,:cause
+53,57,,3348,should she have her kid taken away from her?,"[{'B_human': 'kid'}, {'PER': 'she'}, {'PER': 'her'}, {'PER': 'her'}]",DiGraph with 8 nodes and 7 edges,take-away-05,s,:source,take-away-05,s,:start,t_2,t_2,s_7,s_7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",57.0,917.0,6115.0,4.0,"(r / recommend-01 :polarity (a / amr-unknown)
+  :ARG1 (h / have-04
+  :ARG1 (t / take-away-05
+  :ARG1 (p / person
+  :ARG0-of (h2 / have-rel-role-91
+  :ARG1 (s / she)
+  :ARG2 (k / kid)))
+  :source s)))",inanimate,:start,1.0,:start
+57,61,,2611,"I would say 90% chance that will end up feeling even more sad than you are if you go see her, coz feeling don't just die in 2 months (unless there was nothing at the start).","[{'PER': 'I'}, {'PER': 'you'}, {'PER': 'you'}, {'PER': 'her'}]",DiGraph with 33 nodes and 32 edges,chance-02,cause-01,:ARG1-of,chance-02,cause-01,:cause,c_2,c2_19,c2_19,c_2,"[':cause', ':reason']","[0.9, 0.1]",61.0,954.0,6258.0,4.0,"(s / say-01
+  :ARG0 (i / i)
+  :ARG1 (c / chance-02
+  :ARG1 (e / end-up-03
+  :ARG2 (f / feel-01
+  :ARG1 (s2 / sad-02
+  :mod (e2 / even)
+  :ARG2-of (h / have-degree-91
+  :ARG1 i
+  :ARG3 (m / more)
+  :ARG4 (s3 / sad-02
+  :ARG1 (y / you))))))
+  :ARG2 (p / percentage-entity :value 90)
+  :condition (g / go-02
+  :ARG0 y
+  :ARG4 (s4 / see-01
+  :ARG0 y
+  :ARG1 (s5 / she)))
+  :ARG1-of (c2 / cause-01
+  :ARG0 (d / die-down-02 :polarity -
+  :ARG1 (t2 / thing
+  :ARG1-of (f2 / feel-01))
+  :mod (j / just)
+  :time (a / after
+  :op1 (n2 / now)
+  :quant (t / temporal-quantity :quant 2
+  :unit (m2 / month)))
+  :condition (n / nothing :polarity -
+  :time (s6 / start-01))))))",inanimate,:cause,1.0,:cause
+60,65,,4994,"We were then chased from Norway, because we were invaded by Norwegians saying that we were strangers, while it had been our land for centuries and centuries, and we couldn't be considered as strangers.","[{'LOC': 'Norway'}, {'MISC': 'Norwegian'}, {'B_human': 'strangers'}, {'B_human': 'strangers'}, {'PER': 'We'}, {'PER': 'we'}, {'PER': 'we'}, {'PER': 'we'}, {'W_Inanimate': 'country'}]",DiGraph with 27 nodes and 26 edges,chase-01,c2,:source,chase-01,c2,:start,c3_11,c3_11,c2_13,c2_13,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",65.0,1295.0,8283.0,4.0,"(a / and
+  :op1 (c / cause-01
+  :ARG0 (i / invade-01
+  :ARG0 (p / person
+  :mod (c2 / country :wiki ""Norway"" :name (n / name :op1 ""Norway""))
+  :ARG0-of (s / say-01
+  :ARG1 (s2 / stranger
+  :domain p))))
+  :ARG1 (c3 / chase-01
+  :ARG1 (w / we)
+  :source c2
+  :time (t / then))
+  :concession (l / land
+  :poss w
+  :domain c2
+  :duration (m / multiple
+  :op1 (t2 / temporal-quantity :quant 1
+  :unit (c4 / century)))))
+  :op2 (p2 / possible-01 :polarity -
+  :ARG1 (c5 / consider-02
+  :ARG1 w
+  :ARG2 s2)))",inanimate,:start,1.0,:start
+61,66,,5131,This is COMPLETELY different to asking whether an entire nations population should be a certain skin colour - skin colour should be irrelevant.,[],DiGraph with 18 nodes and 17 edges,skin,population,:part,skin,population,:part,s_7,s_7,p_8,p_8,[':part'],[1.0],66.0,1325.0,8435.0,4.0,"(a2 / and
+  :op1 (r / resemble-01 :polarity -
+  :ARG1 (t / this)
+  :ARG2 (a / ask-01
+  :ARG1 (r2 / recommend-01
+  :ARG1 (c2 / color
+  :mod (s / skin
+  :part (p / population
+  :poss (n / nation)
+  :mod (e / entire)))
+  :mod (c3 / certain))))
+  :ARG1-of (c / complete-02))
+  :op2 (r3 / recommend-01
+  :ARG1 (r4 / relevant-01 :polarity -
+  :ARG1 (c4 / color
+  :domain (s2 / skin)))))",inanimate,:part,1.0,:part
+62,67,,5374,The meat from the sacrifice of Eid al-Adha is mostly given away to others although there is no limit to what may be eaten or given in charity or used to feed the poor or the rich or even if one wants to give it away cooked or uncooked.,"[{'MISC': 'Eid al-Adha'}, {'W_Inanimate': 'event'}]",DiGraph with 39 nodes and 38 edges,meat,sacrifice-01,:source,meat,sacrifice-01,:source,m_1,m_1,s_2,s_2,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",67.0,1374.0,8716.0,4.0,"(g / give-away-02
+  :ARG1 (m / meat
+  :source (s / sacrifice-01
+  :mod (e / event :wiki ""Eid_al-Adha"" :name (n / name :op1 ""Eid"" :op2 ""al-Adha"")))
+  :quant (m3 / most))
+  :ARG2 (o / other)
+  :concession (l / limit-01 :polarity -
+  :ARG1 (p / permit-01
+  :ARG1 (o2 / or
+  :op1 (e2 / eat-01
+  :ARG1 m)
+  :op2 (g2 / give-01
+  :ARG1 m
+  :manner (c / charity))
+  :op3 (u / use-01
+  :ARG1 m
+  :ARG2 (f / feed-01
+  :ARG1 m
+  :ARG2 (p2 / person
+  :mod (o3 / or
+  :op1 (p3 / poor)
+  :op2 (r / rich)))))
+  :op4 (h / have-concession-91
+  :ARG2 (e4 / even-if
+  :op1 (w / want-01
+  :ARG0 (o4 / one)
+  :ARG1 (g3 / give-away-02
+  :ARG0 o4
+  :ARG1 m
+  :mod (o5 / or
+  :op1 (c2 / cook-01
+  :ARG1 m)
+  :op2 (c3 / cook-01 :polarity -))))))))))",inanimate,:source,1.0,:start
+63,68,,5512,"Many conjectures like NSAIDs, simvastatin, fish oil have come and gone.","[{'MISC': 'NSAID'}, {'W_Inanimate': 'product'}, {'W_Inanimate': 'product'}]",DiGraph with 18 nodes and 17 edges,oil,fish,:source,oil,fish,:material,o_14,o_14,f_15,f_15,[':source'],[1.0],68.0,1401.0,8863.0,4.0,"(a / and
+  :op1 (c / come-01
+  :ARG1 (c2 / conjecture-01
+  :quant (m / many)
+  :ARG2-of (i / include-01
+  :ARG1 (a2 / and
+  :op1 (p / product :wiki ""Nonsteroidal_anti-inflammatory_drug"" :name (n / name :op1 ""NSAID""))
+  :op2 (p2 / product :wiki ""Simvastatin"" :name (n2 / name :op1 ""Simvastatin""))
+  :op3 (o / oil
+  :source (f / fish))))))
+  :op2 (g / go-02
+  :ARG0 c2))",animate,:material,1.0,:start
+73,79,,6194,The Carrier JFK CV67 was due to arrive yesterday however she was held off an additional day due to high winds in the area and will arrive today at the Inactive Ships Reserve at the former PNSY where she will reside for the next two years in mothballs.,"[{'MISC': 'Carrier JFK CV6'}, {'ORG': 'Inactive Ships'}, {'LOC': 'Reserve'}, {'ORG': 'P'}, {'ORG': 'NS'}, {'LOC': 'Y'}, {'PER': 'she'}, {'PER': 'she'}, {'W_Inanimate': 'ship'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'facility'}]",DiGraph with 40 nodes and 39 edges,hold-off-08,cause-01,:ARG1-of,hold-off-08,cause-01,:cause,h_12,c2_16,c2_16,h_12,"[':cause', ':reason']","[0.9, 0.1]",79.0,1820.0,11584.0,4.0,"(h3 / have-concession-91
+  :ARG1 (d2 / due-03
+  :ARG1 (s2 / ship :wiki ""USS_John_F._Kennedy_(CV-67)"" :name (n / name :op1 ""Carrier"" :op2 ""JFK"" :op3 ""CV67""))
+  :ARG2 (a / arrive-01
+  :ARG1 s2)
+  :time (y / yesterday))
+  :ARG2 (a2 / and
+  :op1 (h / hold-off-08
+  :ARG1 s2
+  :duration (d / day
+  :mod (a3 / additional))
+  :ARG1-of (c2 / cause-01
+  :ARG0 (w / wind
+  :ARG1-of (h2 / high-02)
+  :location (a4 / area))))
+  :op2 (a5 / arrive-01
+  :ARG1 s2
+  :ARG4 (r2 / reserve
+  :location (f2 / facility :wiki ""Portsmouth_Naval_Shipyard"" :name (n3 / name :op1 ""PNSY"")
+  :time (f3 / former)
+  :location-of (r / reside-01
+  :ARG0 s2
+  :ARG1 (m / mothball)
+  :time (a6 / after
+  :op1 (n4 / now)
+  :duration (t2 / temporal-quantity :quant 2
+  :unit (y2 / year)))))
+  :mod (s3 / ship
+  :ARG0-of (a7 / activity-06 :polarity -)))
+  :time (t / today))))",inanimate,:cause,1.0,:cause
+77,85,,7619,"Frankly, the level of organization and commitment they've shown, and the fact that they didn't fail miserably before, plus all the members up for removal being from the same ethnic background (what do you mean by South Asian, anyway?","[{'MISC': 'South Asian'}, {'B_human': 'members'}, {'PER': 'they'}, {'PER': 'you'}, {'W_Inanimate': 'location'}]",DiGraph with 30 nodes and 29 edges,member,background,:source,member,background,:source,m3_13,m3_13,b2_16,b2_16,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",85.0,1826.0,11669.0,4.0,"(m / multi-sentence
+  :snt1 (a / and
+  :op1 (l / level
+  :quant-of (a2 / and
+  :op1 (o / organize-01)
+  :op2 (c / commit-01))
+  :ARG1-of (s / show-01
+  :ARG0 (t / they)))
+  :op2 (f / fail-01 :polarity -
+  :ARG1 t
+  :degree (m2 / miserable)
+  :time (b / before))
+  :op3 (m3 / member
+  :mod (a3 / all)
+  :ARG1-of (r / remove-01)
+  :source (b2 / background
+  :ARG1-of (s2 / same-01)
+  :mod (e / ethnic)))
+  :mod (f2 / frank))
+  :snt2 (m4 / mean-01
+  :ARG0 (y / you)
+  :ARG1 (p / person
+  :location (w / world-region :wiki ""South_Asia"" :name (n / name :op1 ""South"" :op2 ""Asia"")))
+  :ARG2 (a4 / amr-unknown)
+  :mod (a5 / anyway)))",inanimate,:source,1.0,:start
+79,87,,7622,"If a scene was already being made, why did no one think to record it on their phones?",[],DiGraph with 12 nodes and 11 edges,think-01,make-01,:condition,think-01,make-01,:condition,t_0,t_0,m_9,m_9,[':condition'],[1.0],87.0,1828.0,11678.0,4.0,"(t / think-01
+  :ARG0 (n / no-one)
+  :ARG1 (r / record-01
+  :ARG0 n
+  :ARG1 (s / scene)
+  :instrument (p / phone
+  :poss n))
+  :ARG1-of (c / cause-01
+  :ARG0 (a / amr-unknown))
+  :condition (m / make-01
+  :ARG1 s
+  :time (a2 / already)))",inanimate,:condition,1.0,:condition
+83,92,,6256,I got derided and laughed at alot for the seemingly overcaustiousness I ALWAYS undertook.,"[{'PER': 'I'}, {'PER': 'I'}]",DiGraph with 13 nodes and 12 edges,laugh-01,cause-01,:ARG1-of,laugh-01,cause-01,:reason,l_8,c2_10,c2_10,l_8,"[':cause', ':reason']","[0.9, 0.1]",92.0,1833.0,11691.0,4.0,"(a / and
+  :op1 (d / deride-01
+  :ARG1 (i / i)
+  :ARG2 (u / undertake-01
+  :ARG0 i
+  :ARG1 (o / overcautious
+  :ARG1-of (s / seem-01))
+  :time (a2 / always)))
+  :op2 (l / laugh-01
+  :ARG2 i
+  :ARG1-of (c2 / cause-01
+  :ARG0 u))
+  :quant (l2 / lot))",inanimate,:reason,1.0,:cause
+98,109,,2083,"In frequent threads here the brain-dead leftists moan about how the ""idle rich"" (like there is such a thing) don't deserve their money.","[{'B_human': 'left'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]",DiGraph with 17 nodes and 16 edges,person,brain,:part,person,brain,:part,p2_1,p2_1,b_3,b_3,[':part'],[1.0],109.0,2113.0,13660.0,5.0,"(m / moan-01
+  :ARG0 (p2 / person
+  :ARG1-of (l / left-19)
+  :part (b / brain
+  :ARG1-of (d2 / die-01)))
+  :ARG1 (d / deserve-01 :polarity -
+  :ARG0 (p / person
+  :mod (r / rich)
+  :ARG1-of (i / idle-01))
+  :ARG1 (m2 / money
+  :poss p)
+  :conj-as-if (e / exist-01
+  :ARG1 p))
+  :location (t / thread
+  :ARG1-of (f / frequent-02)
+  :location (h / here)))",inanimate,:part,1.0,:part
+99,110,,4216,Obama has pulled the country back from the brink of disaster that Bush'n'Cheney had left it in.,"[{'PER': 'Obama'}, {'PER': 'Bush'}, {'PER': 'Cheney'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}]",DiGraph with 21 nodes and 20 edges,pull-01,brink,:source,pull-01,brink,:start,p_0,p_0,b2_8,b2_8,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",110.0,2384.0,15748.0,5.0,"(p / pull-01
+  :ARG0 (p2 / person :wiki ""Barack_Obama""
+  :name (n / name :op1 ""Obama""))
+  :ARG1 (c / country)
+  :ARG2 (b / back-02
+  :ARG1 c)
+  :source (b2 / brink
+  :poss (d / disaster)
+  :ARG2-of (l / leave-12
+  :ARG0 (a / and
+  :op1 (p3 / person :wiki ""George_W._Bush""
+  :name (n2 / name :op1 ""Bush""))
+  :op2 (p4 / person :wiki ""Dick_Cheney""
+  :name (n3 / name :op1 ""Cheney"")))
+  :ARG1 c)))",inanimate,:start,1.0,:start
+109,122,,10638,"You get laid off your job, in the next thirty days you get a letter from your employer telling you that you have the option to continue your health insurance coverage.","[{'B_human': 'employer'}, {'PER': 'You'}, {'PER': 'you'}, {'PER': 'you'}, {'PER': 'you'}]",DiGraph with 28 nodes and 27 edges,letter,person,:source,letter,person,:source,l2_7,l2_7,p_8,p_8,[':source'],[1.0],122.0,3013.0,20749.0,5.0,"(a / and
+  :op1 (l / lay-off-02
+  :ARG0 (j / job
+  :poss y)
+  :ARG1 (y / you))
+  :op2 (g / get-01
+  :ARG0 y
+  :ARG1 (l2 / letter
+  :source (p / person
+  :ARG0-of (e2 / employ-01
+  :ARG1 y))
+  :ARG0-of (t2 / tell-01
+  :ARG1 (h / have-03
+  :ARG0 y
+  :ARG1 (o2 / opt-01
+  :ARG0 y
+  :ARG1 (c2 / continue-01
+  :ARG0 y
+  :ARG1 (c3 / cover-01
+  :ARG1 (i / insure-02
+  :ARG1 (h2 / health
+  :poss y))))))
+  :ARG2 y))
+  :time (a2 / after
+  :op1 l
+  :quant (t / temporal-quantity :quant 30
+  :unit (d / day)))))",animate,:source,1.0,:start
+111,124,,10975,"Sure, buy internet insurance or any of those other plans--just don't get sick!",[],DiGraph with 21 nodes and 20 edges,insure-02,internet,:source,insure-02,internet,:source,i2_5,i2_5,i3_6,i3_6,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",124.0,3059.0,21035.0,5.0,"(c / contrast-01
+  :ARG1 (b / buy-01 :mode imperative
+  :ARG0 (y / you)
+  :ARG1 (o / or
+  :op1 (i2 / insure-02
+  :source (i3 / internet))
+  :op2 (p2 / plan
+  :mod (a / any)
+  :ARG1-of (i4 / include-91
+  :ARG2 (p / plan
+  :mod (o2 / other)
+  :mod (t / that)))))
+  :ARG1-of (s / sure-02))
+  :ARG2 (g / get-03 :polarity - :mode imperative
+  :ARG1 y
+  :ARG2 (s2 / sick-05
+  :ARG1 y)
+  :mod (j / just)))",inanimate,:source,1.0,:start
+114,127,,19151,"The black Ford with no hood and a beat-up front grill, remained in the Judicial Center parking lot Wednesday afternoon, set off by a police car and orange cones.","[{'ORG': 'Ford'}, {'LOC': 'Judicial Center'}, {'W_Inanimate': 'location'}]",DiGraph with 28 nodes and 27 edges,car-make,grill,:part,car-make,grill,:part,c_1,c_1,g_8,g_8,[':part'],[1.0],127.0,3982.0,28367.0,5.0,"(r / remain-01
+  :ARG1 (c / car-make :wiki ""Ford_Motor_Company""
+  :name (n / name :op1 ""Ford"")
+  :ARG1-of (b / black-04)
+  :part (h / hood :polarity -)
+  :part (g / grill
+  :mod (f / front)
+  :ARG1-of (b2 / beat-up-05))
+  :ARG1-of (s / set-01
+  :ARG0 (a2 / and
+  :op1 (c2 / car
+  :mod (p2 / police))
+  :op2 (c3 / cone
+  :mod (o2 / orange)))
+  :ARG2 (o / off)))
+  :location (l / lot
+  :purpose (p / park-01)
+  :mod (g2 / government-organization :wiki ""Kansas_Supreme_Court""
+  :name (n2 / name :op1 ""Judicial"" :op2 ""Center"")))
+  :time (d / date-entity
+  :weekday (w / wednesday)
+  :dayperiod (a / afternoon)))",inanimate,:part,1.0,:part
+121,134,,20875,At a few locations (top of a ridge) Wind turbines are making electricity when the wind blows.,[{'W_Inanimate': 'location'}],DiGraph with 12 nodes and 11 edges,ridge,top,:part,ridge,top,:part,r_9,r_9,t2_10,t2_10,[':part'],[1.0],134.0,4221.0,30088.0,5.0,"(m / make-01
+  :ARG0 (t / turbine
+  :mod (w / wind))
+  :ARG1 (e / electricity)
+  :mod (s / still)
+  :time (b / blow-01
+  :ARG0 w)
+  :location (l / location
+  :ARG2-of (i2 / include-91
+  :ARG1 (r / ridge
+  :part (t2 / top)))
+  :quant (f / few)))",inanimate,:part,1.0,:part
+123,136,,21204,"I didn't read any LBS books, but I saw many movie shorts depicting a ""stereotypical"" white-wide-lipped, wide-eyed Sambo,who seemed concocted for the purpose of denigrating black people.","[{'ORG': 'L'}, {'MISC': 'BS'}, {'PER': 'Sam'}, {'PER': 'bo'}, {'PER': 'I'}, {'PER': 'I'}, {'W_Inanimate': 'book'}, {'W_Animate': 'person'}]",DiGraph with 31 nodes and 30 edges,person,eye,:part,person,eye,:part,p_16,p_16,e_20,e_20,[':part'],[1.0],136.0,4281.0,30509.0,5.0,"(c / contrast-01
+  :ARG1 (r / read-01 :polarity -
+  :ARG0 (i / i)
+  :ARG1 (b / book
+  :mod (a / any)
+  :poss (b3 / book :wiki ""The_Story_of_Little_Black_Sambo"" :name (n / name :op1 ""LBS""))))
+  :ARG2 (s / see-01
+  :ARG0 i
+  :ARG1 (d / depict-01
+  :ARG0 (s2 / short-07
+  :ARG1 (m / movie)
+  :quant (m2 / many))
+  :ARG1 (p / person :wiki ""Sambo_(racial_term)"" :name (n2 / name :op1 ""Sambo"")
+  :part (e / eye
+  :ARG1-of (w / wide-02))
+  :part (l / lip
+  :ARG1-of (w2 / wide-02)
+  :ARG1-of (w3 / white-03))
+  :ARG1-of (s3 / stereotypic-02)
+  :ARG1-of (c3 / concoct-01
+  :ARG1-of (s5 / seem-01)
+  :purpose (d2 / denigrate-01
+  :ARG1 (p2 / person
+  :ARG1-of (b2 / black-05))))))))",inanimate,:part,1.0,:part
+125,138,,22381,"Excessive wear on the inside of the front part of the shoe indicates over pronation, such wear on the outside of the front of the shoe indicates supination.",[],DiGraph with 17 nodes and 16 edges,front,inside,:part,front,inside,:part,f_4,f_4,i3_5,i3_5,[':part'],[1.0],138.0,4468.0,31690.0,5.0,"(a / and
+  :op1 (i2 / indicate-01
+  :ARG0 (w / wear-01
+  :ARG1 (p / part
+  :mod (f / front
+  :part (i3 / inside))
+  :part-of (s / shoe))
+  :ARG1-of (e / excessive-02))
+  :ARG1 (p2 / pronate-01
+  :ARG1-of (o / over-03)))
+  :op2 (i4 / indicate-01
+  :ARG0 (w2 / wear-01
+  :ARG1 (f2 / front
+  :part (o2 / outside)
+  :part-of s)
+  :mod (s2 / such))
+  :ARG1 (s3 / supinate-01)))",inanimate,:part,1.0,:part
+128,141,,23845,"I had my ears boxed, ran from my school so many times crying, I had snowballs, apples and even rocks thrown at me by the kids.","[{'B_human': 'kids'}, {'PER': 'I'}, {'PER': 'I'}, {'PER': 'me'}]",DiGraph with 22 nodes and 21 edges,i,ear,:part,i,ear,:part,i_2,i_2,e_3,e_3,[':part'],[1.0],141.0,4592.0,33129.0,5.0,"(a / and
+  :op1 (b / box-03
+  :ARG0 (i / i
+  :part (e / ear)))
+  :op2 (r / run-16
+  :ARG0 i
+  :ARG2 (s / school
+  :poss i)
+  :manner (c / cry-02
+  :ARG0 i)
+  :frequency (t / time
+  :ARG1-of (h2 / have-degree-91
+  :ARG2 (m / many)
+  :ARG3 (s2 / so))))
+  :op3 (t2 / throw-01
+  :ARG0 (k / kid)
+  :ARG1 (a2 / and
+  :op1 (s3 / snowball)
+  :op2 (a3 / apple)
+  :op3 (r2 / rock
+  :mod (e2 / even)))
+  :ARG2 i))",inanimate,:part,1.0,:part
+129,142,,24028,"It does seem that IF all of the west Antarctic ice sheet - both above and below sea level - were to melt, worldwide ocean levels WOULD rise by 5 meters.","[{'MISC': 'Antarctic'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]",DiGraph with 23 nodes and 22 edges,world-region,west,:part,world-region,west,:part,w3_12,w3_12,w2_16,w2_16,[':part'],[1.0],142.0,4617.0,33435.0,5.0,"(s / seem-01
+  :ARG1 (r / rise-01
+  :ARG1 (l / level
+  :mod (o / ocean))
+  :ARG2 (d / distance-quantity :quant 5
+  :unit (m / meter))
+  :location (w / worldwide)
+  :condition (m2 / melt-01
+  :ARG1 (s2 / sheet
+  :consist-of (i2 / ice)
+  :mod (a / all)
+  :mod (w3 / world-region :wiki ""Antarctic"" :name (n / name :op1 ""Antarctic"")
+  :part (w2 / west))
+  :location (a2 / and
+  :op2 (a3 / above
+  :op1 (l2 / level
+  :mod (s3 / sea))
+  :op2 (b / below
+  :op2 l2)))))))",inanimate,:part,1.0,:part
+133,146,,24741,"The result of a ballot among almost 1,000 workers in NHS Logistics will be announced tomorrow and could herald the biggest bout of industrial action against the privatisation of NHS services.","[{'ORG': 'NHS Logistics'}, {'ORG': 'NHS'}, {'B_human': 'workers'}, {'W_Animate': 'company'}]",DiGraph with 30 nodes and 29 edges,ballot,person,:part,ballot,person,:part,b2_4,b2_4,p_5,p_5,[':part'],[1.0],146.0,4713.0,34302.0,5.0,"(a4 / and
+  :op1 (a2 / announce-01
+  :ARG1 (t / thing
+  :ARG2-of (r / result-01
+  :ARG1 (b2 / ballot
+  :part (p / person
+  :ARG0-of (w / work-01
+  :ARG2 (c / company :wiki ""NHS_Supply_Chain"" :name (n / name :op1 ""NHS"" :op2 ""Logistics"")))
+  :quant (a3 / almost :op1 1000)))))
+  :time (t2 / tomorrow))
+  :op2 (p2 / possible-01
+  :ARG1 (h2 / herald-01
+  :ARG1 (b3 / bout
+  :topic (a5 / act-02
+  :ARG1 (o / oppose-01
+  :ARG1 (p3 / privatize-01
+  :ARG1 (s / serve-01
+  :ARG0 (g / government-organization :wiki ""National_Health_Service"" :name (n2 / name :op1 ""NHS"")))))
+  :mod (i2 / industry))
+  :ARG1-of (h3 / have-degree-91
+  :ARG2 (b4 / big)
+  :ARG3 (m2 / most))))))",animate,:part,1.0,:part
+136,149,,24936,Mr Blair had to stand there as if he were in the stocks and the village idiot had arrived with a basket of rotten fruit.,"[{'PER': 'Blair'}, {'B_human': 'idiot'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}]",DiGraph with 21 nodes and 20 edges,basket,fruit,:part,basket,fruit,:part,b2_18,b2_18,f_19,f_19,[':part'],[1.0],149.0,4731.0,34547.0,5.0,"(o / obligate-01
+  :ARG1 (p / person :wiki ""Tony_Blair"" :name (n / name :op1 ""Mr"" :op2 ""Blair""))
+  :ARG2 (s / stand-01
+  :ARG1 p
+  :location (t / there)
+  :ARG1-of (r / resemble-01
+  :ARG2 (a / and
+  :op1 (b / be-located-at-91
+  :ARG1 p
+  :ARG2 (s2 / stock))
+  :op2 (a2 / arrive-01
+  :ARG1 (i2 / idiot
+  :mod (v / village)
+  :ARG0-of (h / have-03
+  :ARG1 (b2 / basket
+  :part (f / fruit
+  :ARG1-of (r2 / rot-01))))))))))",inanimate,:part,1.0,:part
+144,157,,26589,There's a massive risk with taking away children from their families because of the devastating effect it has on families (look up Munchausen by Proxy if you're interested.,"[{'PER': 'Mu'}, {'ORG': 'aus'}, {'B_human': 'children'}]",DiGraph with 26 nodes and 25 edges,take-away-05,family,:source,take-away-05,family,:start,t_12,t_12,f_14,f_14,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",157.0,4968.0,36355.0,5.0,"(m3 / multi-sentence
+  :snt2 (l / look-up-05
+  :ARG0 (y / you)
+  :ARG1 (d2 / disease :wiki ""Factitious_disorder_imposed_on_another"" :name (n / name :op1 ""Munchausen"" :op2 ""by"" :op3 ""Proxy""))
+  :condition (i2 / interest-01
+  :ARG1 y))
+  :snt1 (r / risk-01
+  :ARG1 (t / take-away-05
+  :ARG1 (c / child)
+  :source (f / family
+  :ARG1-of (h / have-rel-role-91
+  :ARG0 c
+  :ARG2 (m2 / member))))
+  :mod (m / massive)
+  :ARG1-of (c2 / cause-01
+  :ARG0 (a / affect-01
+  :ARG0 t
+  :ARG1 f
+  :ARG2 (d / devastate-01
+  :ARG0 t
+  :ARG1 f)))))",inanimate,:start,1.0,:start
+146,159,,26781,I even got pissed off with letters from both parties in the post D:,"[{'PER': 'I'}, {'W_Inanimate': 'location'}]",DiGraph with 7 nodes and 6 edges,letter,party,:source,letter,party,:source,l_2,l_2,p3_4,p3_4,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",159.0,4996.0,36547.0,5.0,"(p / piss-off-02
+  :ARG1 (i / i)
+  :ARG2 (l / letter
+  :location (p2 / post)
+  :source (p3 / party
+  :mod (b / both)))
+  :mod (e / even))",inanimate,:source,1.0,:start
+156,169,,29692,"If expelled this could create a small pocket of less oxygenated air, which could potentially have a foul smell (ie swamp gas).",[],DiGraph with 18 nodes and 17 edges,gas,swamp,:source,gas,swamp,:source,g_14,g_14,s3_15,s3_15,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",169.0,5378.0,40014.0,5.0,"(p2 / possible-01
+  :ARG1 (c / create-01
+  :ARG0 (t / this)
+  :ARG1 (p3 / pocket
+  :mod (s / small)
+  :consist-of (a / air
+  :ARG1-of (h / have-degree-91
+  :ARG2 (o / oxygenate-01
+  :ARG1 a)
+  :ARG3 (l / less)))
+  :ARG1-of (s2 / smell-02
+  :ARG2 (f / foul)
+  :ARG1-of (p4 / possible-01))
+  :ARG1-of (m / mean-01
+  :ARG2 (g / gas
+  :source (s3 / swamp)))))
+  :condition (e / expel-01
+  :ARG1 t))",inanimate,:source,1.0,:start
+157,170,,30185,He respects Constitutional freedoms but sees possible harm to NYC should the full extent of those freedoms be exercised by building this Muslim complex.,"[{'MISC': 'Constitutional'}, {'LOC': 'NYC'}, {'MISC': 'Muslim'}, {'PER': 'He'}, {'W_Inanimate': 'law'}, {'W_Inanimate': 'city'}]",DiGraph with 26 nodes and 25 edges,free-04,law,:source,free-04,law,:source,f3_3,f3_3,l_4,l_4,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",170.0,5441.0,40528.0,5.0,"(c / contrast-01
+  :ARG1 (r3 / respect-01
+  :ARG0 (h3 / he)
+  :ARG1 (f3 / free-04
+  :source (l / law :wiki ""United_States_Constitution"" :name (n3 / name :op1 ""Constitution""))))
+  :ARG2 (s / see-01
+  :ARG1 (p / possible-01
+  :ARG1 (h2 / harm-01
+  :ARG1 (c2 / city :wiki ""New_York_City"" :name (n2 / name :op1 ""NYC"")))
+  :condition (e / exercise-01
+  :ARG0 (b / build-02
+  :ARG1 (c3 / complex
+  :mod (r2 / religious-group :wiki ""Muslim"" :name (n / name :op1 ""Muslim""))
+  :mod (t2 / this)))
+  :ARG1 f3
+  :degree (e2 / extent
+  :mod (f2 / full))))))",inanimate,:source,1.0,:start
+161,174,,31394,"She was a convenient physical repository, someone to talk to, someone who thought that the sun shone out of his backside, and he basked in the adulation.","[{'PER': 'She'}, {'PER': 'he'}, {'W_Inanimate': 'star'}]",DiGraph with 18 nodes and 17 edges,out,backside,:source,out,backside,:source,o_10,o_10,b_11,b_11,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",174.0,5660.0,41756.0,5.0,"(a / and
+  :op1 (r / repository
+  :domain (s / she
+  :ARG2-of (t / talk-01)
+  :ARG0-of (t2 / think-01
+  :ARG1 (s2 / shine-01
+  :ARG1 (s3 / star :wiki ""Sun""
+  :name (n / name :op1 ""Sun""))
+  :direction (o / out
+  :source (b / backside
+  :part-of (h / he))))))
+  :mod (c / convenient)
+  :mod (p / physical))
+  :op2 (b2 / bask-01
+  :ARG0 h
+  :ARG1 (a2 / adulation)))",inanimate,:source,1.0,:start
+163,176,,31436,then i wouldnt have felt that he had ripped my heart out of my chest and stamped on it.,"[{'PER': 'i'}, {'PER': 'he'}]",DiGraph with 13 nodes and 12 edges,heart,chest,:source,heart,chest,:source,h2_5,h2_5,c_7,c_7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",176.0,5665.0,41784.0,5.0,"(f / feel-01 :polarity -
+  :ARG0 (i / i)
+  :ARG1 (a / and
+  :op1 (r / rip-out-03
+  :ARG0 (h / he)
+  :ARG1 (h2 / heart
+  :part-of i
+  :source (c / chest
+  :part-of i)))
+  :op2 (s / stamp-04
+  :ARG0 h
+  :ARG1 h2))
+  :time (t / then))",inanimate,:source,1.0,:start
+167,180,,32060,The government data shows how the damaging effects of the drug have swept across England.,"[{'LOC': 'England'}, {'W_Inanimate': 'country'}]",DiGraph with 14 nodes and 13 edges,data,government-organization,:source,data,government-organization,:source,d_1,d_1,g3_2,g3_2,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",180.0,5759.0,42315.0,5.0,"(s / show-01
+  :ARG0 (d / data
+  :source (g3 / government-organization
+  :ARG0-of (g4 / govern-01)))
+  :ARG1 (t / thing
+  :manner-of (d4 / damage-01
+  :ARG2-of (a / affect-01
+  :ARG0 (d2 / drug)
+  :ARG1-of (s2 / sweep-02
+  :ARG2 (a2 / across
+  :op1 (c2 / country :wiki ""England"" :name (n2 / name :op1 ""England""))))))))",inanimate,:source,1.0,:start
+172,185,,32496,He just texted me to ask if any of you French hipforumers are in the area and would be kind enough to give him a lift southwards?,"[{'MISC': 'French'}, {'B_human': 'hip'}, {'PER': 'He'}, {'PER': 'me'}, {'PER': 'you'}, {'PER': 'him'}, {'W_Inanimate': 'country'}]",DiGraph with 24 nodes and 23 edges,hipforumer,country,:source,hipforumer,country,:source,h2_9,h2_9,c_10,c_10,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",185.0,5820.0,42686.0,5.0,"(t / text-01
+  :ARG0 (h / he)
+  :ARG2 (i / i)
+  :ARG3 (a / ask-01
+  :ARG0 h
+  :ARG1 (t2 / truth-value
+  :polarity-of (a2 / and
+  :op1 (b / be-located-at-91
+  :ARG1 (y / you
+  :mod (h2 / hipforumer
+  :source (c / country :wiki ""France"" :name (n / name :op1 ""France"")))
+  :mod (a4 / any))
+  :ARG2 (a3 / area))
+  :op2 (g / give-01 :polite +
+  :ARG0 y
+  :ARG1 (l / lift
+  :destination (s / south))
+  :ARG2 h
+  :condition b))))
+  :time (j / just))",inanimate,:source,1.0,:start
+178,191,,32696,"The intention of Sharia law was to serve justice to the parties in conflict, it is human interpretation of God's word to suit their era, it is not a divine law, neither is it God's law as propagated.","[{'MISC': 'S'}, {'MISC': 'haria'}, {'PER': 'God'}, {'PER': 'God'}, {'W_Inanimate': 'law'}, {'W_Animate': 'person'}, {'W_Inanimate': 'law'}, {'W_Inanimate': 'law'}]",DiGraph with 33 nodes and 32 edges,word,person,:source,word,person,:source,w_12,w_12,p2_13,p2_13,[':source'],[1.0],191.0,5848.0,42838.0,5.0,"(a / and
+  :op1 (i / intend-01
+  :ARG1 (s / serve-01
+  :ARG0 (l / law :wiki ""Sharia"" :name (n / name :op1 ""Sharia""))
+  :ARG1 (j / justice)
+  :ARG2 (p / party
+  :ARG0-of (c / conflict-01))))
+  :op2 (i2 / interpret-01
+  :ARG0 (h / human)
+  :ARG1 (w / word
+  :source (p2 / person :wiki ""God"" :name (n2 / name :op1 ""God"")))
+  :purpose (s2 / suit-01
+  :ARG0 h
+  :ARG1 l
+  :ARG2 (e / era
+  :poss h))
+  :domain l)
+  :op3 (l3 / law :polarity -
+  :mod (d / divine)
+  :domain l)
+  :op4 (l5 / law :polarity -
+  :manner (p4 / propagate-01
+  :ARG1 l)
+  :domain l
+  :poss p2))",animate,:source,1.0,:start
+191,204,,48,South Koreans are angered by the international pressure on their traditional cuisine.,"[{'MISC': 'South Koreans'}, {'W_Inanimate': 'country'}]",DiGraph with 12 nodes and 11 edges,person,country,:source,person,country,:source,p_6,p_6,c_7,c_7,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]",204.0,5948.0,43635.0,9.0,"(a / anger-01
+  :ARG0 (p2 / pressure-01
+  :ARG0 (i / international)
+  :ARG1 (c2 / cuisine
+  :poss p
+  :mod (t / traditional)))
+  :ARG1 (p / person
+  :source (c / country :wiki ""South_Korea""
+  :name (n / name :op1 ""South"" :op2 ""Korea""))))",inanimate,:source,1.0,:start
+195,209,,3149,The Thai armed forces do not currently have any surface-to-surface missiles in their inventory.,"[{'MISC': 'Thai'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}]",DiGraph with 13 nodes and 12 edges,missile,surface,:destination,missile,surface,:goal,m_7,m_7,s2_9,s_8,[':goal'],[1.0],209.0,6392.0,46663.0,9.0,"(h / have-03 :polarity -
+  :ARG0 (f / force
+  :ARG1-of (a / arm-01)
+  :mod (c / country :wiki ""Thailand"" :name (n / name :op1 ""Thailand"")))
+  :ARG1 (m / missile
+  :source (s / surface)
+  :destination (s2 / surface))
+  :time (c2 / current)
+  :location (i / inventory
+  :poss f))",inanimate,:goal,1.0,:goal
+203,217,,7837,The statement also consisted of a youtube video clip of American comedian bill Maher ridiculing a fatwa by Al-Sistani on whether certain positions of sexual intercourse were permitted for married couples.,"[{'MISC': 'American'}, {'PER': 'Maher'}, {'PER': 'Al'}, {'PER': 'Sistani'}, {'B_human': 'comedian'}, {'W_Inanimate': 'publication'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]",DiGraph with 34 nodes and 33 edges,fatwa,person,:source,fatwa,person,:source,f_20,f_20,p2_21,p2_21,[':source'],[1.0],217.0,6994.0,51494.0,9.0,"(c / consist-01
+  :ARG1 (t / thing
+  :ARG1-of (s / state-01))
+  :ARG2 (c2 / clip
+  :mod (v / video)
+  :mod (p / publication :wiki ""YouTube"" :name (n / name :op1 ""YouTube""))
+  :poss (c3 / comedian :wiki ""Bill_Maher"" :name (n2 / name :op1 ""Bill"" :op2 ""Maher"")
+  :mod (c4 / country :wiki ""United_States"" :name (n3 / name :op1 ""United"" :op2 ""States"")))
+  :ARG0-of (r / ridicule-01
+  :ARG1 (f / fatwa
+  :source (p2 / person :wiki ""Ali_al-Sistani"" :name (n4 / name :op1 ""Al-Sistani""))
+  :topic (t2 / truth-value
+  :polarity-of (p3 / permit-01
+  :ARG1 (p4 / position
+  :mod (i / intercourse
+  :mod (s2 / sex-01))
+  :mod (c5 / certain))
+  :ARG2 (c6 / couple
+  :ARG1-of (m / marry-01)))))))
+  :mod (a / also))",animate,:source,1.0,:start
+208,222,,176,It is named after the Beaver River that flows from Alberta to Saskatchewan.,"[{'LOC': 'Beaver River'}, {'LOC': 'Alberta'}, {'LOC': 'Saskatchewan'}, {'W_Inanimate': 'river'}, {'W_Inanimate': 'province'}, {'W_Inanimate': 'province'}]",DiGraph with 16 nodes and 15 edges,flow-01,province,:destination,flow-01,province,:goal,f_7,f_7,p2_12,p_8,[':goal'],[1.0],222.0,7130.0,53268.0,11.0,"(n / name-02
+  :ARG1 (i2 / it)
+  :ARG2 (r / river :wiki ""Beaver_River_(Canada)"" :name (n2 / name :op1 ""Beaver"" :op2 ""River"")
+  :ARG1-of (f / flow-01
+  :source (p / province :wiki ""Alberta"" :name (n3 / name :op1 ""Alberta""))
+  :destination (p2 / province :wiki ""Saskatchewan"" :name (n4 / name :op1 ""Saskatchewan"")))))",inanimate,:goal,1.0,:goal
+220,237,,529,"Faced with the reality of this medical treatment , in recent years Jiao Bozhong and his research institute decided to seek out a scientific , effective prescription from the treasure chest of Chinese medicine .","[{'PER': 'Jiao Bozhong'}, {'MISC': 'Chinese'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]",DiGraph with 31 nodes and 30 edges,decide-01,cause-01,:ARG1-of,decide-01,cause-01,:cause,d_0,c5_22,c5_22,d_0,"[':cause', ':reason']","[0.9, 0.1]",237.0,7574.0,62691.0,0.0,"(d / decide-01
+  :ARG0 (a / and
+  :op1 (p2 / person :wiki - :name (n / name :op1 ""Jiao"" :op2 ""Bozhong""))
+  :op2 (r / research-institute
+  :poss p2))
+  :ARG1 (s / seek-out-02
+  :ARG0 a
+  :ARG1 (t4 / thing
+  :ARG1-of (p / prescribe-02
+  :ARG0-of (e / effective-04)
+  :mod (s2 / science)))
+  :ARG2 (c3 / chest
+  :mod (t / treasure)
+  :part-of (m / medicine
+  :mod (c4 / country :wiki ""China"" :name (n2 / name :op1 ""China"")))))
+  :ARG1-of (c5 / cause-01
+  :ARG0 (f / face-01
+  :ARG0 a
+  :ARG1 (r2 / reality
+  :poss (t2 / treat-03
+  :mod (m2 / medicine)
+  :mod (t3 / this)))))
+  :time (y / year
+  :mod (r3 / recent)))",inanimate,:cause,1.0,:cause
+221,238,,36,"However, what greatly surprised me was the attitude of the student union in this appeal. They seemed very reluctant to make the contract public.","[{'B_human': 'student'}, {'PER': 'me'}, {'PER': 'They'}]",DiGraph with 18 nodes and 17 edges,union,person,:consist-of,union,person,:group,u_4,u_4,p2_5,p2_5,[':group'],[1.0],238.0,67508.0,,1.0,"(m / multi-sentence
+      :snt1 (c / contrast-01
+            :ARG2 (s2 / surprise-01
+                  :ARG0 (a / attitude
+                        :poss (u / union
+                              :consist-of (p2 / person
+                                    :ARG0-of (s3 / study-01)))
+                        :topic (a2 / appeal-01
+                              :mod (t2 / this)))
+                  :ARG1 (i / i)
+                  :degree (g / great)))
+      :snt2 (s / seem-01
+            :ARG1 (r / reluctant-01
+                  :ARG0 (t / they)
+                  :ARG1 (p3 / publicize-01
+                        :ARG0 t
+                        :ARG1 (c2 / contract-02))
+                  :degree (v / very))))
+
+",animate,:group,1.0,:group
+225,242,,153,"Because, once someone has made a promise, he would be doomed thereafter to bear this bloody weight of ""being unable to effectively avoid earthquake disasters.""",[{'PER': 'he'}],DiGraph with 17 nodes and 16 edges,weight,possible-01,:consist-of,weight,possible-01,:material,w_5,w_5,p2_8,p2_8,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",242.0,67512.0,,1.0,"(c / cause-01
+      :ARG0 (d / doom-01
+            :ARG1 (s / someone)
+            :ARG2 (b / bear-01
+                  :ARG0 s
+                  :ARG1 (w / weight
+                        :mod (b2 / bloody)
+                        :mod (t2 / this)
+                        :consist-of (p2 / possible-01 :polarity -
+                              :ARG1 (a2 / avoid-01
+                                    :ARG1 (d2 / disaster
+                                          :ARG1-of (c2 / cause-01
+                                                :ARG0 (e2 / earthquake)))
+                                    :ARG1-of (e / effective-04)))))
+            :time (p / promise-01
+                  :ARG0 s)))
+
+",inanimate,:material,1.0,:part
+231,248,,486,"Life is never a bed of roses in any location, even more in a foreign land where there is a language barrier, different customs and no family or friends.","[{'B_human': 'friends'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]",DiGraph with 19 nodes and 18 edges,bed,rose,:consist-of,bed,rose,:material,b_0,b_0,r_2,r_2,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",248.0,67523.0,,1.0,"(b / bed :polarity -
+      :consist-of (r / rose)
+      :domain (l / life)
+      :time (e / ever)
+      :location (l4 / location
+            :mod (a2 / any))
+      :location (l2 / land
+            :mod (f / foreign)
+            :location-of (a4 / and
+                  :op1 (b2 / barrier
+                        :mod (l3 / language))
+                  :op2 (c / custom
+                        :ARG1-of (d / differ-02))
+                  :op3 (o / or :polarity -
+                        :op1 (f2 / family)
+                        :op2 (f3 / friend)))
+            :mod (m / more
+                  :mod (e2 / even))))
+
+",inanimate,:material,1.0,:part
+236,253,,561,But one of the undisputable reasons is that a huge smoker's group exists within our huge contingent of civil servants.,"[{'B_human': 'servants'}, {'W_Inanimate': 'location'}]",DiGraph with 16 nodes and 15 edges,person,person,:consist-of,person,person,:group,p2_4,p2_4,p_8,p2_4,[':group'],[1.0],253.0,67530.0,,1.0,"(c / contrast-01
+  :ARG2 (i / include-91
+          :ARG1 (e / exist-01
+                  :ARG1 (g / group
+                          :consist-of (p2 / person
+                                        :ARG0-of (s / smoke-02)))
+                  :location (c2 / contingent
+                              :mod (h / huge)
+                              :consist-of (p / person
+                                            :mod (c3 / civil)
+                                            :ARG0-of (s2 / serve-01))
+                              :poss (w / we)))
+          :ARG2 (r / reason
+                  :ARG1-of (d / dispute-01
+                             :polarity -
+                             :ARG1-of (p3 / possible-01)))))
+
+",animate,:group,1.0,:part
+238,255,,564,"Their track performance for blowing smoke rings also has a compounding effect in repeatedly setting new records for consumption expenses by civil servants, and it has become an organic portion of officialdom corruption as a whole.",[{'B_human': 'servants'}],DiGraph with 27 nodes and 26 edges,ring,smoke-01,:consist-of,ring,smoke-01,:material,r_6,r_6,s_7,s_7,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",255.0,67532.0,,1.0,"(a / and
+      :op1 (e / effect-03
+            :ARG0 (p / perform-01
+                  :ARG0 (t / they)
+                  :ARG1 (b / blow-01
+                        :ARG0 t
+                        :ARG1 (r / ring
+                              :consist-of (s / smoke-01)))
+                  :mod (t2 / track))
+            :ARG1 (s2 / set-02
+                  :ARG1 (r3 / record
+                        :ARG1-of (n / new-01))
+                  :ARG2 (e2 / expend-01
+                        :ARG0 (p3 / person
+                              :mod (c3 / civil)
+                              :ARG0-of (s3 / serve-01))
+                        :ARG2 (c2 / consume-01))
+                  :ARG1-of (r2 / repeat-01))
+            :ARG0-of (c / compound-01)
+            :mod (a2 / also))
+      :op2 (b2 / become-01
+            :ARG1 e
+            :ARG2 (p2 / portion
+                  :part-of (c4 / corrupt-01
+                        :ARG1 (o2 / officialdom)
+                        :prep-as (w / whole))
+                  :mod (o / organic))))
+
+",inanimate,:material,1.0,:part
+239,256,,565,It was precisely this horrifying social backdrop that prompted NPC Representative Ma Wenfang to solemnly set forth her proposal that consumption of tobacco products on public funds be universally banned.,"[{'ORG': 'NPC'}, {'PER': 'Ma Wen'}, {'PER': 'her'}, {'W_Animate': 'person'}]",DiGraph with 28 nodes and 27 edges,product,tobacco,:consist-of,product,tobacco,:material,p4_22,p4_22,t_23,t_23,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",256.0,67533.0,,1.0,"(p / prompt-02
+      :ARG0 (b / backdrop
+            :mod (s / social)
+            :ARG0-of (h / horrify-01)
+            :manner (p2 / precise)
+            :mod (t2 / this))
+      :ARG1 (p6 / person :wiki - :name (n / name :op1 ""Ma"" :op2 ""Wenfang"")
+            :ARG0-of (r2 / represent-01
+                  :ARG1 (g / government-organization :wiki ""National_People's_Congress"" :name (n2 / name :op1 ""NPC""))))
+      :ARG2 (s2 / set-forth-00
+            :ARG0 p6
+            :ARG1 (p3 / propose-01
+                  :ARG0 p6
+                  :ARG1 (b2 / ban-01
+                        :ARG1 (c / consume-01
+                              :ARG1 (p4 / product
+                                    :consist-of (t / tobacco)
+                                    :ARG1-of (f / fund-01
+                                          :ARG0 (p5 / public))))
+                        :manner (u / universal)))
+            :manner (s3 / solemn)))
+
+",inanimate,:material,1.0,:part
+242,259,,627,"There are also many people wallowing in the array of wine glasses and poker chips becoming ""vessels for wine and bags for food.""",[],DiGraph with 18 nodes and 17 edges,array,and,:consist-of,array,and,:material,a_4,a_4,a2_5,a5_0,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",259.0,67536.0,,1.0,"(a5 / and
+      :op1 (w / wallow-01
+            :ARG0 (p / person
+                  :quant (m / many))
+            :ARG1 (a / array
+                  :consist-of (a2 / and
+                        :op1 (g / glass
+                              :mod (w2 / wine))
+                        :op2 (c / chip
+                              :mod (p2 / poker))))
+            :mod (a4 / also))
+      :op2 (b / become-01
+            :ARG1 p
+            :ARG2 (a3 / and
+                  :op1 (v / vessel
+                        :location-of (w3 / wine))
+                  :op2 (b2 / bag
+                        :location-of (f / food)))))
+
+",inanimate,:material,1.0,:part
+251,268,,1182,2. Create a few nuclear-powered aircraft carrier battle groups.,[],DiGraph with 9 nodes and 8 edges,group,carrier,:consist-of,group,carrier,:material,g_1,g_1,c2_4,c2_4,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",268.0,67548.0,,1.0,"(c / create-01
+      :ARG1 (g / group
+            :mod (b / battle-01)
+            :quant (f / few)
+            :consist-of (c2 / carrier
+                  :mod (a / aircraft)
+                  :ARG1-of (p / power-01
+                        :ARG0 (n / nucleus))))
+      :li 2)
+
+",inanimate,:material,1.0,:group
+258,275,,219,"This vid indicates inertia shifts in ice not to be due to global warming but due to physics of the earth, sun, moon system.","[{'W_Inanimate': 'planet'}, {'W_Inanimate': 'location'}]",DiGraph with 21 nodes and 20 edges,system,and,:consist-of,system,and,:part,s2_6,s2_6,a_7,a_7,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",275.0,67564.0,,4.0,"(i / indicate-01
+      :ARG0 (v / video
+            :mod (t / this))
+      :ARG1 (i4 / instead-of-91
+            :ARG1 (c3 / cause-01
+                  :ARG0 (p / physics
+                        :part-of (s2 / system
+                              :consist-of (a / and
+                                    :op1 (p2 / planet :wiki ""Earth"" :name (n / name :op1 ""Earth""))
+                                    :op2 (s3 / sun)
+                                    :op3 (m / moon))))
+                  :ARG1 s)
+            :ARG2 (c2 / cause-01
+                  :ARG0 (w / warm-01
+                        :ARG1 (g / globe))
+                  :ARG1 (s / shift-01
+                        :ARG1 (i2 / inertia)
+                        :location (i3 / ice)))))
+
+",inanimate,:part,1.0,:part
+267,284,,709,"But if we don't and we allow our technological civilisation to collapse under its own weight, the next generations of humans will have to do without the major stepping stone of an oil based economy.","[{'B_animal': 'humans'}, {'PER': 'we'}, {'PER': 'we'}]",DiGraph with 25 nodes and 24 edges,generation,human,:consist-of,generation,human,:group,g_2,g_2,h_4,h_4,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",284.0,67576.0,,4.0,"(c / contrast-01
+      :ARG2 (o3 / obligate-01
+            :ARG1 (g / generation
+                  :mod (n / next)
+                  :consist-of (h / human))
+            :ARG2 (d2 / do-02
+                  :ARG3 (s / stone
+                        :mod (s2 / step-01)
+                        :ARG1-of (m / major-02)
+                        :ARG1-of (m2 / mean-01
+                              :ARG2 (e / economy
+                                    :ARG1-of (b / base-02
+                                          :ARG2 (o2 / oil)))))
+                  :manner (w2 / without))
+            :condition (a / and
+                  :op1 (d / do-02 :polarity -
+                        :ARG0 (w / we))
+                  :op2 (a2 / allow-01
+                        :ARG0 w
+                        :ARG1 (c3 / collapse-01
+                              :ARG0 (w3 / weight
+                                    :poss c2)
+                              :ARG1 (c2 / civilization
+                                    :mod (t / technological)))))))
+
+",inanimate,:group,1.0,:part
+272,289,,762,"If we look at the magnitudinal stratification of this universe we go from, as we interpret it, and with our current ability to decern at sub nano levels, the smallest subatomic particles through atoms, molecules, solids, constructs, and on, and on, and on, to planets, star systems, galaxies, and on to our entire known universe.","[{'PER': 'we'}, {'PER': 'we'}, {'PER': 'we'}]",DiGraph with 39 nodes and 38 edges,system,star,:consist-of,system,star,:part,s4_9,s4_9,s5_10,s5_10,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",289.0,67581.0,,4.0,"(g / go-02
+      :ARG0 (w / we)
+      :ARG3 (p / particle
+            :mod (s / subatom)
+            :ARG1-of (h / have-degree-91
+                  :ARG2 (s2 / small)
+                  :ARG3 (m / most)))
+      :ARG4 (a3 / and
+            :op1 (p2 / planet)
+            :op2 (s4 / system
+                  :consist-of (s5 / star))
+            :op3 (g2 / galaxy)
+            :op4 (u / universe
+                  :ARG1-of (k / know-02
+                        :ARG0 w)
+                  :mod (e / entire)))
+      :direction (t / through
+            :op1 (a / atom)
+            :op2 (m2 / molecule)
+            :op3 (t3 / thing
+                  :ARG1-of (s3 / solid-02))
+            :op4 (c / construct)
+            :op5 (e2 / et-cetera))
+      :condition (l / look-01
+            :ARG0 w
+            :ARG1 (s6 / stratify-01
+                  :ARG1 (u2 / universe
+                        :mod (t2 / this))
+                  :ARG2 (m3 / magnitude)))
+      :manner (c2 / capable-01
+            :ARG1 w
+            :ARG2 (d / discern-01
+                  :manner (l2 / level
+                        :mod (n / nano
+                              :mod (s7 / sub))))
+            :time (c3 / current))
+      :manner (i / interpret-01
+            :ARG0 w
+            :ARG1 u))
+
+",inanimate,:part,1.0,:group
+283,300,,1890,"We've made a new generation of enemies in Pakistan and Afghanistan for these assassinations (and the ""night raids"" Obama escalated in Afghanistan).","[{'LOC': 'Pakistan'}, {'LOC': 'Afghanistan'}, {'PER': 'Obama'}, {'LOC': 'Afghanistan'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}]",DiGraph with 29 nodes and 28 edges,generation,person,:consist-of,generation,person,:group,g_2,g_2,p2_4,p2_4,[':group'],[1.0],300.0,67605.0,,4.0,"(m / make-01
+      :ARG0 (w / we)
+      :ARG1 (g / generation
+            :ARG1-of (n / new-01)
+            :consist-of (p2 / person
+                  :ARG0-of (h / have-rel-role-91
+                        :ARG1 w
+                        :ARG2 (e / enemy)))
+            :location (c2 / country :wiki ""Afghanistan"" :name (n3 / name :op1 ""Afghanistan""))
+            :location (c / country :wiki ""Pakistan"" :name (n2 / name :op1 ""Pakistan"")))
+      :ARG1-of (c3 / cause-01
+            :ARG0 (a2 / and
+                  :op1 (a3 / assassinate-01
+                        :mod (t / this))
+                  :op2 (r / raid-01
+                        :time (d / date-entity
+                              :dayperiod (n4 / night)))
+                  :ARG1-of (e2 / escalate-01
+                        :ARG0 (p / person :wiki ""Barack_Obama"" :name (n5 / name :op1 ""Obama""))
+                        :location c2))))
+
+",animate,:group,1.0,:part
+284,301,,1921,"Given a Republican in office, one of those in the present batch of candidates, I have more trouble not seeing things get worse in some ugly ways re the economy and how life would work for the struggling with little income.","[{'MISC': 'Republican'}, {'B_human': 'candidates'}, {'PER': 'I'}]",DiGraph with 36 nodes and 35 edges,batch,candidate,:consist-of,batch,candidate,:group,b_32,b_32,c_34,c_34,[':group'],[1.0],301.0,67606.0,,4.0,"(i3 / infer-01
+      :ARG1 (h3 / have-trouble-04
+            :ARG0 (i4 / i)
+            :ARG1 (s / see-01 :polarity -
+                  :ARG0 i4
+                  :ARG1 (w3 / worsen-01
+                        :ARG1 (t2 / thing)
+                        :manner (w / way
+                              :quant (s2 / some)
+                              :mod (u / ugly)
+                              :topic (a2 / and
+                                    :op1 (e2 / economy)
+                                    :op2 (t3 / thing
+                                          :manner-of (w2 / work-09
+                                                :ARG1 (l / life)
+                                                :ARG2 (p5 / person
+                                                      :ARG0-of (s3 / struggle-02
+                                                            :ARG1 (i2 / income
+                                                                  :quant (l2 / little))))))))))
+            :ARG1-of (h4 / have-quant-91
+                  :ARG3 (m / more)))
+      :ARG2 (h / have-org-role-91
+            :ARG0 (p6 / person
+                  :ARG0-of (h2 / have-org-role-91
+                        :ARG1 (p2 / political-party :wiki ""Republican_Party_(United_States)"" :name (n / name :op1 ""Republican"" :op2 ""Party"")))
+                  :ARG1-of (i / include-91
+                        :ARG2 (p3 / person
+                              :source (b / batch
+                                    :time (p4 / present)
+                                    :consist-of (c / candidate)))))
+            :ARG2 (o2 / office)))
+
+",animate,:group,1.0,:part
+299,316,,3600,Secondly it is a chamber of experts which functions in a largely advisory capacity.,[{'B_human': 'experts'}],DiGraph with 8 nodes and 7 edges,chamber,person,:consist-of,chamber,person,:group,c_0,c_0,p_1,p_1,[':group'],[1.0],316.0,67624.0,,4.0,"(c / chamber
+      :consist-of (p / person
+            :ARG1-of (e / expert-01))
+      :ARG0-of (f / function-01
+            :ARG1 (c2 / capacity
+                  :mod (a / advise-01
+                        :degree (l / large))))
+      :li 2)
+
+",animate,:group,1.0,:group
+308,325,,4262,"So many have been killed that the UN has given up trying to count casualties, and yet we have a clique of barbarians and mafia crooks in Moscow holding the world hostage over this issue.","[{'ORG': 'UN'}, {'LOC': 'Moscow'}, {'B_human': 'bar'}, {'B_human': 'c'}, {'PER': 'we'}, {'W_Animate': 'organization'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]",DiGraph with 34 nodes and 33 edges,clique,and,:consist-of,clique,and,:group,c5_19,c5_19,a2_20,a_0,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",325.0,67634.0,,4.0,"(a / and
+      :op1 (k / kill-01
+            :ARG1 (p / person
+                  :ARG1-of (h4 / have-quant-91
+                        :ARG2 (m / many)
+                        :ARG3 (s / so)))
+            :ARG0-of (c / cause-01
+                  :ARG1 (g / give-up-07
+                        :ARG0 (o / organization :wiki ""United_Nations"" :name (n / name :op1 ""UN""))
+                        :ARG1 (t / try-01
+                              :ARG0 o
+                              :ARG1 (c3 / count-01
+                                    :ARG0 o
+                                    :ARG1 (c4 / casualty))))))
+      :op2 (h / have-03
+            :ARG0 (w / we)
+            :ARG1 (c5 / clique
+                  :consist-of (a2 / and
+                        :op1 (b / barbarian)
+                        :op2 (c6 / crook
+                              :mod (m2 / mafia))
+                        :ARG0-of (h2 / hold-01
+                              :ARG1 (w2 / world)
+                              :ARG3 (h3 / hostage
+                                    :topic (i / issue-02
+                                          :mod (t2 / this))))))
+            :mod (y / yet)
+            :location (c7 / city :wiki ""Moscow"" :name (n2 / name :op1 ""Moscow""))))
+
+",inanimate,:group,1.0,:part
+312,329,,4920,That's ******* disgusting and I hope the perpertrators are made to suffer what generations of Iraqi's already have and will ever endure.,"[{'MISC': 'Iraqi'}, {'B_human': 'per'}, {'PER': 'I'}, {'W_Inanimate': 'country'}]",DiGraph with 23 nodes and 22 edges,generation,person,:consist-of,generation,person,:group,g_11,g_11,p3_12,p_7,[':group'],[1.0],329.0,67638.0,,4.0,"(a / and
+      :op1 (d / disgust-01
+            :ARG0 (t / that))
+      :op2 (h / hope-01
+            :ARG0 (i / i)
+            :ARG1 (m / make-02
+                  :ARG1 (s / suffer-01
+                        :ARG0 (p / person
+                              :ARG0-of (p2 / perpetrate-01))
+                        :ARG1 (t3 / thing
+                              :ARG1-of (s2 / suffer-01
+                                    :ARG0 (g / generation
+                                          :consist-of (p3 / person
+                                                :mod (c / country :wiki ""Iraq""
+                                                      :name (n2 / name :op1 ""Iraq"")))))
+                              :ARG2-of (e / endure-01
+                                    :ARG1 g
+                                    :time (e2 / ever))
+                              :ARG2-of (e3 / endure-01
+                                    :ARG1 g
+                                    :time (a2 / already)))))))
+
+",animate,:group,1.0,:part
+325,342,,1554,which is why something like 80% of anti-choice activists are men.,"[{'B_human': 'activists'}, {'B_human': 'men'}]",DiGraph with 10 nodes and 9 edges,percentage-entity,activist,:consist-of,percentage-entity,activist,:group,p2_4,p2_4,a2_6,a2_6,[':group'],[1.0],342.0,67683.0,,5.0,"(c / cause-01
+      :ARG0 (a / amr-unknown)
+      :ARG1 (r2 / resemble-01
+            :ARG1 (s / something)
+            :ARG2 (p2 / percentage-entity :value 80
+                  :consist-of (a2 / activist
+                        :ARG0-of (o / oppose-01
+                              :ARG1 (c3 / choose-01))
+                        :mod (m / man)))))
+
+",animate,:group,1.0,:part
+332,349,,6593,"Our country is supposed to be a nation of laws and not men, right?",[{'B_human': 'men'}],DiGraph with 12 nodes and 11 edges,nation,man,:consist-of,nation,man,:group,n2_9,n_4,m_10,m_10,[':group'],[1.0],349.0,67712.0,,5.0,"(c2 / contrast-01
+      :ARG1 (s / suppose-02
+            :ARG1 (c / country
+                  :poss (w / we))
+            :ARG2 (n / nation
+                  :consist-of (l / law)))
+      :ARG2 (s2 / suppose-02 :polarity -
+            :ARG1 c
+            :ARG2 (n2 / nation
+                  :consist-of (m / man)))
+      :ARG1-of (r2 / request-confirmation-91))
+
+",animate,:group,1.0,:part
+333,350,,7094,that business would be a one man shop.,[{'B_human': 'man'}],DiGraph with 5 nodes and 4 edges,shop,man,:consist-of,shop,man,:group,s_0,s_0,m_1,m_1,[':group'],[1.0],350.0,67713.0,,5.0,"(s / shop
+      :consist-of (m / man :quant 1)
+      :domain (b / business
+            :mod (t / that)))
+
+",animate,:group,1.0,:part
+334,351,,7988,*plays flute to summon the small band of lefties out of the woodwork*,[{'B_human': 'left'}],DiGraph with 8 nodes and 7 edges,band,person,:consist-of,band,person,:group,b_3,b_3,p2_4,p2_4,[':group'],[1.0],351.0,67721.0,,5.0,"(p / play-11
+      :ARG2 (f / flute)
+      :purpose (s / summon-01
+            :ARG1 (b / band
+                  :consist-of (p2 / person
+                        :ARG1-of (l / left-19))
+                  :mod (s3 / small))
+            :source (w / woodwork)))
+
+",animate,:group,1.0,:group
+336,353,,10087,Washington led a group group of soldiers larger than at any revoloutionary war battle into western PA to enforce the collection of the tax.,"[{'PER': 'Washington'}, {'ORG': 'PA'}, {'B_human': 'soldiers'}, {'W_Animate': 'person'}, {'W_Inanimate': 'state'}]",DiGraph with 25 nodes and 24 edges,group,soldier,:consist-of,group,soldier,:group,g_5,g_5,s2_6,s2_6,[':group'],[1.0],353.0,67726.0,,5.0,"(l / lead-02
+      :ARG0 (p / person :wiki ""George_Washington"" :name (n3 / name :op1 ""Washington""))
+      :ARG1 (g / group
+            :consist-of (s2 / soldier)
+            :ARG1-of (h / have-degree-91
+                  :ARG2 (l2 / large)
+                  :ARG3 (m / more)
+                  :ARG4 (g2 / group
+                        :mod (s3 / soldier)
+                        :ARG0-of (b / battle-01
+                              :mod (w2 / war
+                                    :ARG1-of (r / revolutionary-04))
+                              :mod (a / any)))))
+      :ARG2 (e / enforce-01
+            :ARG0 p
+            :ARG1 (c2 / collect-01
+                  :ARG1 (t / tax-01)))
+      :direction (w3 / west
+            :part-of (s4 / state :wiki ""Pennsylvania"" :name (n5 / name :op1 ""Pennsylvania""))))
+
+",animate,:group,1.0,:group
+338,355,,11150,"You really want us to believe that whole cadres of people out there are getting turned down by their insurance companies for procedures clearly defined in their policies as covered, with no recourse but to suck it up?","[{'PER': 'You'}, {'PER': 'us'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]",DiGraph with 25 nodes and 24 edges,cadre,person,:consist-of,cadre,person,:group,c2_7,c2_7,p_9,p_9,[':group'],[1.0],355.0,67731.0,,5.0,"(w / want-01
+      :ARG0 (y / you)
+      :ARG1 (b / believe-01
+            :ARG0 (w2 / we)
+            :ARG1 (t / turn-down-05
+                  :ARG0 (c / company
+                        :ARG0-of (i / insure-02))
+                  :ARG1 (c2 / cadre
+                        :mod (w3 / whole)
+                        :consist-of (p / person)
+                        :location (o / out-there))
+                  :manner (r / recourse :polarity -
+                        :ARG2-of (e / except-01
+                              :ARG1 (s / suck-up-02
+                                    :ARG1 (i2 / it))))
+                  :ARG1-of (c5 / cause-01
+                        :ARG0 (p2 / procedure
+                              :ARG1-of (d / define-01
+                                    :ARG2 (c4 / cover-01)
+                                    :ARG1-of (c3 / clear-06)
+                                    :location (p3 / policy-01
+                                          :ARG0 c))))))
+      :polarity (a / amr-unknown)
+      :ARG1-of (r2 / real-04))
+
+",animate,:group,1.0,:part
+341,358,,14623,"Who, you and your tribe of Republicans?","[{'MISC': 'Republicans'}, {'PER': 'you'}]",DiGraph with 11 nodes and 10 edges,tribe,person,:consist-of,tribe,person,:group,t_2,t_2,p_3,p_3,[':group'],[1.0],358.0,67769.0,,5.0,"(a / and
+      :op1 (y / you)
+      :op2 (t / tribe
+            :consist-of (p / person
+                  :mod (p2 / political-party :wiki ""Republican_Party_(United_States)""
+                        :name (n / name :op1 ""Republican"")))
+            :poss y)
+      :polarity (a3 / amr-unknown)
+      :mod (a2 / amr-unknown))
+
+",animate,:group,1.0,:group
+347,364,,16745,"here we are dissecting a sermonette from someone who got rolled, trashed, burned and taken to the cleaners in a day and half by everyone from the NY Times and Wapo to the real honest to goodness pajama laden denizen of grannies basement Blogger...","[{'ORG': 'NY Times'}, {'ORG': 'Wapo'}, {'B_human': 'den'}, {'B_human': 'g'}, {'PER': 'we'}, {'W_Inanimate': 'newspaper'}, {'W_Inanimate': 'newspaper'}, {'W_Inanimate': 'location'}]",DiGraph with 40 nodes and 39 edges,denizen,person,:consist-of,denizen,person,:group,d_18,d_18,p2_19,p2_19,[':group'],[1.0],364.0,67788.0,,5.0,"(d2 / dissect-01
+      :ARG0 (w / we)
+      :ARG1 (s / sermonette
+            :source (a / and
+                  :op1 (s2 / someone
+                        :ARG1-of (r / roll-01
+                              :ARG0 (a3 / and
+                                    :op1 (n2 / newspaper :wiki ""The_New_York_Times"" :name (n3 / name :op1 ""NY"" :op2 ""Times""))
+                                    :op2 (n / newspaper :wiki ""The_Washington_Post"" :name (n4 / name :op1 ""The"" :op2 ""Washington"" :op3 ""Post""))
+                                    :op3 (d / denizen
+                                          :consist-of (p2 / person
+                                                :ARG0-of (b2 / blog-01)
+                                                :mod (b3 / basement
+                                                      :poss (g / granny)))
+                                          :ARG1-of (l / load-01)
+                                          :mod (p / pajamas)
+                                          :mod (g2 / goodness)
+                                          :ARG0-of (h / honest-01
+                                                :ARG1-of (r2 / real-04))))
+                              :duration (t4 / temporal-quantity :quant 1.5
+                                    :unit (d3 / day)))
+                        :ARG1-of (t2 / trash-01
+                              :ARG0 a3)
+                        :ARG1-of (b / burn-01
+                              :ARG0 a3)
+                        :ARG1-of (t3 / take-01
+                              :ARG0 a3
+                              :ARG3 (c2 / company
+                                    :ARG0-of (c / clean-01))))))
+      :location (h2 / here))
+
+",animate,:group,1.0,:part
+348,365,,16830,You are somehow equating the religion of a set of perpertators to a henous crime...,"[{'B_human': 'per'}, {'PER': 'You'}]",DiGraph with 9 nodes and 8 edges,set,person,:consist-of,set,person,:group,s2_3,s2_3,p2_4,p2_4,[':group'],[1.0],365.0,67789.0,,5.0,"(e / equate-01
+      :ARG0 (y / you)
+      :ARG1 (r / religion
+            :poss (s2 / set
+                  :consist-of (p2 / person
+                        :ARG0-of (p / perpetrate-01))))
+      :ARG2 (c / crime-02
+            :mod (h / heinous))
+      :mod (s / somehow))
+
+",animate,:group,1.0,:group
+352,369,,18598,That decision on halting the Constellation program and moving appropriations elsewhere within the NASA budget resulted from the evaluation by an independent panel of experts on the subject.,"[{'MISC': 'Constellation'}, {'ORG': 'NASA'}, {'B_human': 'experts'}, {'W_Inanimate': 'program'}, {'W_Inanimate': 'location'}]",DiGraph with 23 nodes and 22 edges,panel,person,:consist-of,panel,person,:group,p_2,p_2,p2_3,p2_3,[':group'],[1.0],369.0,67816.0,,5.0,"(r / result-01
+      :ARG1 (e / evaluate-01
+            :ARG0 (p / panel
+                  :consist-of (p2 / person
+                        :ARG1-of (e2 / expert-01
+                              :ARG2 a))
+                  :mod (i2 / independent)))
+      :ARG2 (d / decide-01
+            :ARG3 (a / and
+                  :op1 (h / halt-01
+                        :ARG1 (p3 / program :wiki ""Constellation_program""
+                              :name (n / name :op1 ""Constellation"")))
+                  :op2 (m / move-01
+                        :ARG1 (t / thing
+                              :ARG1-of (a2 / appropriate-01))
+                        :ARG2 (e3 / elsewhere
+                              :location (b / budget-01
+                                    :ARG2 (r2 / research-institute :wiki ""NASA""
+                                          :name (n2 / name :op1 ""NASA""))))))))
+
+",animate,:group,1.0,:part
+354,371,,18851,"Or refusing Austria's ""disaster relief team specializing in water purification and decontamination, 10 disaster relief experts, 10 water pumps, 4 person psychological support team, 6 person communication support team, elite police ""Cobra"" team specializing in protection, 100 troops with technical skills""?","[{'LOC': 'Austria'}, {'ORG': 'Cobra'}, {'B_human': 'experts'}, {'B_human': 'person'}, {'B_human': 'person'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}, {'W_Animate': 'team'}, {'W_Inanimate': 'country'}]",DiGraph with 49 nodes and 48 edges,team,person,:consist-of,team,person,:group,t4_26,t_3,p6_27,p2_12,[':group'],[1.0],371.0,67821.0,,5.0,"(o / or
+      :op2 (r / refuse-01
+            :ARG1 (a / and
+                  :op1 (t / team
+                        :ARG0-of (s / specialize-01
+                              :ARG1 (a2 / and
+                                    :op1 (p / purify-01
+                                          :ARG1 (w / water))
+                                    :op2 (d / decontaminate-01
+                                          :ARG1 w)))
+                        :purpose (r2 / relieve-01
+                              :ARG1 (d2 / disaster)))
+                  :op2 (p2 / person :quant 10
+                        :ARG1-of (e / expert-01
+                              :ARG2 (r3 / relieve-01
+                                    :ARG1 d2)))
+                  :op3 (t2 / thing
+                        :ARG0-of (p3 / pump-01
+                              :ARG2 w))
+                  :op4 (t3 / team
+                        :consist-of (p4 / person :quant 4)
+                        :purpose (s2 / support-01
+                              :ARG0 t3
+                              :ARG1 (p5 / psychology)))
+                  :op5 (t4 / team
+                        :consist-of (p6 / person :quant 6)
+                        :purpose (s3 / support-01
+                              :ARG0 t4
+                              :ARG1 (c2 / communicate-01)))
+                  :op6 (t6 / team :wiki -
+                        :name (n2 / name :op1 ""Cobra"")
+                        :ARG0-of (s4 / specialize-01
+                              :ARG1 (p7 / protect-01))
+                        :consist-of (p8 / police
+                              :mod (e2 / elite)))
+                  :op7 (t5 / troop :quant 100
+                        :ARG0-of (h / have-03
+                              :ARG1 (s5 / skill
+                                    :mod (t7 / technical)))))
+            :ARG2 (c / country :wiki ""Austria""
+                  :name (n / name :op1 ""Austria""))))
+
+",animate,:group,1.0,:group
+358,375,,19919,The best slave is a slave that doesn't know he/she is a slave.,"[{'B_human': 'slave'}, {'B_human': 'slave'}, {'B_human': 'slave'}]",DiGraph with 10 nodes and 9 edges,slave,slave,:consist-of,slave,slave,:group,s_3,s_3,s2_4,s_3,[':group'],[1.0],375.0,67833.0,,5.0,"(h / have-degree-91
+      :ARG1 s
+      :ARG2 (g / good-02
+            :ARG1 (s / slave
+                  :consist-of (s2 / slave
+                        :ARG0-of (k / know-01 :polarity -
+                              :ARG1 (e / enslave-01
+                                    :ARG1 s2)))))
+      :ARG3 (m / most))
+
+",animate,:group,1.0,:group
+365,382,,20857,It is usually reacted in retorts with wood pulp and H2SO4 and Zinc catalyst to make Rayon.,"[{'MISC': 'Z'}, {'ORG': 'Rayon'}, {'W_Inanimate': 'location'}]",DiGraph with 22 nodes and 21 edges,pulp,wood,:consist-of,pulp,wood,:material,p_3,p_3,w_4,w_4,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",382.0,67889.0,,5.0,"(r / react-01
+      :ARG0 (i2 / it)
+      :ARG1 (a / and
+            :op1 (p / pulp
+                  :consist-of (w / wood))
+            :op2 (s / small-molecule :wiki ""Sulfuric_acid""
+                  :name (n / name :op1 ""H2SO4""))
+            :op3 (c / catalyze-01
+                  :ARG0 (s2 / small-molecule :wiki ""Zinc""
+                        :name (n2 / name :op1 ""Zinc""))))
+      :ARG2 (m / make-01
+            :ARG0 i2
+            :ARG1 (s3 / small-molecule :wiki ""Rayon""
+                  :name (n3 / name :op1 ""Rayon"")))
+      :mod (u / usual)
+      :location (r2 / retort))
+
+",inanimate,:material,1.0,:part
+369,386,,21235,You know I love you and Nimh and appreciate you both.,"[{'PER': 'Ni'}, {'PER': 'You'}, {'PER': 'I'}, {'PER': 'you'}, {'PER': 'you'}, {'W_Animate': 'person'}]",DiGraph with 15 nodes and 14 edges,both,a2,:consist-of,both,a2,:group,b_13,b_13,a2_14,a2_14,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]",386.0,67893.0,,5.0,"(k / know-01
+      :ARG0 (y / you)
+      :ARG1 (a / and
+            :op1 (l / love-01
+                  :ARG0 (i / i)
+                  :ARG1 (a2 / and
+                        :op1 y
+                        :op2 (p / person :wiki -
+                              :name (n / name :op1 ""Nimh""))))
+            :op2 (a3 / appreciate-02
+                  :ARG0 i
+                  :ARG1 (b / both
+                        :consist-of a2))))
+
+",inanimate,:group,1.0,:part
+374,391,,5996,The members of the 4 or 5-man terror cells led normal lives and avoided contact with known Islamic organizations.,"[{'MISC': 'Islamic'}, {'B_human': 'members'}, {'B_human': 'man'}]",DiGraph with 23 nodes and 22 edges,cell,person,:consist-of,cell,person,:group,c_4,c_4,p_6,p2_2,[':group'],[1.0],391.0,68252.0,,9.0,"(a2 / and
+      :op1 (l / lead-01
+            :ARG0 (p2 / person
+                  :ARG0-of (h / have-org-role-91
+                        :ARG1 (c / cell
+                              :mod (t / terror)
+                              :consist-of (p / person
+                                    :quant (o / or :op1 4 :op2 5)))
+                        :ARG2 (m / member)))
+            :ARG1 (l2 / life
+                  :ARG1-of (n / normal-02)))
+      :op2 (a / avoid-01
+            :ARG0 p2
+            :ARG1 (c2 / contact-01
+                  :ARG0 p2
+                  :ARG1 (o2 / organization
+                        :mod (r / religious-group :wiki ""Islam"" :name (n2 / name :op1 ""Islam""))
+                        :ARG1-of (k / know-01)))))
+
+",animate,:group,1.0,:group
+390,410,,1561,"MCC say, on your bikes Cobber, because that urn is a gift, not a trophy, and it stays where it is.","[{'ORG': 'MCC'}, {'PER': 'Cobb'}, {'W_Inanimate': 'location'}]",DiGraph with 20 nodes and 19 edges,bike-01,cause-01,:ARG1-of,bike-01,cause-01,:cause,b_5,c2_8,c2_8,b_5,"[':cause', ':reason']","[0.9, 0.1]",410.0,71388.0,,4.0,"(s / say-01
+      :ARG0 (c / club :wiki ""Marylebone_Cricket_Club"" :name (n / name :op1 ""MCC""))
+      :ARG1 (b / bike-01 :mode imperative
+            :ARG0 c3
+            :ARG1-of (c2 / cause-01
+                  :ARG0 (a / and
+                        :op1 (g / gift-01
+                              :ARG1 (u / urn
+                                    :mod (t / that)
+                                    :mod (t2 / trophy :polarity -)))
+                        :op2 (s2 / stay-01
+                              :ARG1 u
+                              :location (b2 / be-located-at-91
+                                    :ARG1 u)))))
+      :ARG2 (c3 / cobber))
+
+",inanimate,:cause,1.0,:cause
+391,413,,1711,Really stinks at it was just our anniversary right before.,[],DiGraph with 8 nodes and 7 edges,stink-01,cause-01,:ARG1-of,stink-01,cause-01,:cause,s_0,c_2,c_2,s_0,"[':cause', ':reason']","[0.9, 0.1]",413.0,71408.0,,4.0,"(s / stink-01
+      :degree (r / really)
+      :ARG1-of (c / cause-01
+            :ARG0 (a / anniversary
+                  :poss (w / we)
+                  :time (b / before
+                        :mod (r2 / right))
+                  :mod (j / just))))
+
+",inanimate,:cause,1.0,:cause
+394,417,,614,Otherwise you will be killed by jihadis because you are a traitor .,"[{'B_human': 'traitor'}, {'PER': 'you'}, {'PER': 'you'}]",DiGraph with 8 nodes and 7 edges,kill-01,cause-01,:ARG1-of,kill-01,cause-01,:reason,k_0,c_3,c_3,k_0,"[':cause', ':reason']","[0.9, 0.1]",417.0,75893.0,,10.0,"(k / kill-01
+      :ARG0 (j / jihadi)
+      :ARG1 (y / you)
+      :ARG1-of (c / cause-01
+            :ARG0 (b / betray-01
+                  :ARG0 y))
+      :condition (h / have-polarity-91
+            :ARG2 -))
+
+",inanimate,:reason,1.0,:cause
+401,424,,11619,"Then Shepard went on about a young teen who bought Skittles from a 7-11 and while unarmed, was walking back to his father while he was followed by an armed man who police told to stop following the kid.","[{'PER': 'Shepard'}, {'MISC': 'Skittle'}, {'B_human': 'teen'}, {'B_human': 'father'}, {'B_human': 'man'}, {'B_human': 'kid'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Inanimate': 'product'}]",DiGraph with 41 nodes and 40 edges,walk-01,person,:destination,walk-01,person,:goal,w_21,w_21,p_23,p2_1,"[':goal', ':recipient']","[0.1, 0.9]",424.0,76053.0,,5.0,"(g / go-on-25
+      :ARG0 (p2 / person :wiki ""Shepard_Smith"" :name (n / name :op1 ""Shepard""))
+      :time (t / then)
+      :topic (t2 / teen
+            :mod (y / young)
+            :ARG0-of (b2 / buy-01
+                  :ARG1 (p6 / product :wiki ""Skittles_(confectionery)"" :name (n2 / name :op1 ""Skittles""))
+                  :ARG2 (p4 / person
+                        :age (b / between
+                              :op1 (t3 / temporal-quantity :quant 7
+                                    :unit (y2 / year))
+                              :op2 (t4 / temporal-quantity :quant 11
+                                    :unit (y3 / year)))))
+            :ARG0-of (w / walk-01
+                  :ARG2 (b4 / back)
+                  :destination (p / person
+                        :ARG0-of (h / have-rel-role-91
+                              :ARG1 t2
+                              :ARG2 (f / father)))
+                  :manner (a2 / arm-01 :polarity -
+                        :ARG1 t2)
+                  :time (f2 / follow-01
+                        :ARG1 (m / man
+                              :ARG1-of (a / arm-01)
+                              :ARG2-of (t6 / tell-01
+                                    :ARG0 (p5 / police)
+                                    :ARG1 (s2 / stop-01
+                                          :ARG0 m
+                                          :ARG1 (f3 / follow-01
+                                                :ARG1 m
+                                                :ARG2 t2))))
+                        :ARG2 t2))))
+
+",animate,:goal,1.0,:goal
+405,428,,25453,"I went to see another male friend last night who I know has a thing for me, and he started hitting on me and I let him have sex with me, until I realised I couldn't do it and stopped and made him take me home.","[{'B_human': 'friend'}, {'PER': 'I'}, {'PER': 'I'}, {'PER': 'me'}, {'PER': 'he'}, {'PER': 'me'}, {'PER': 'I'}, {'PER': 'him'}, {'PER': 'me'}, {'PER': 'I'}, {'PER': 'I'}, {'PER': 'him'}, {'PER': 'me'}]",DiGraph with 48 nodes and 47 edges,thing,i,:destination,thing,i,:recipient,t_12,t_12,i_15,i_3,"[':goal', ':recipient']","[0.1, 0.9]",428.0,76127.0,,5.0,"(a / and
+      :op1 (a2 / and
+            :op1 (g2 / go-02
+                  :ARG0 (i / i)
+                  :ARG1 (s / see-01
+                        :ARG0 i
+                        :ARG1 (p / person
+                              :ARG0-of (h / have-rel-role-91
+                                    :ARG2 (f / friend))
+                              :mod (a3 / another)
+                              :mod (m / male)
+                              :ARG0-of (h2 / have-03
+                                    :ARG1 (t / thing
+                                          :ARG1-of (k / know-01
+                                                :ARG0 i)
+                                          :destination i)))
+                        :time (d2 / date-entity
+                              :mod (l / last)
+                              :dayperiod (n / night))))
+            :op2 (s2 / start-01
+                  :ARG0 p
+                  :ARG1 (h3 / hit-on-04
+                        :ARG0 p
+                        :ARG1 i)))
+      :op2 (l2 / let-01
+            :ARG0 i
+            :ARG1 (s3 / sex-01
+                  :ARG0 p
+                  :ARG1 i)
+            :time (u / until
+                  :op1 (a5 / and
+                        :op1 (a4 / and
+                              :op1 (r / realize-01
+                                    :ARG0 i
+                                    :ARG1 (p2 / possible-01 :polarity -
+                                          :ARG1 (d / do-02
+                                                :ARG0 i
+                                                :ARG1 s3)))
+                              :op2 (s4 / stop-01
+                                    :ARG0 i
+                                    :ARG1 s3))
+                        :op2 (m2 / make-02
+                              :ARG0 i
+                              :ARG1 (t2 / take-01
+                                    :ARG0 p
+                                    :ARG1 i
+                                    :ARG3 (h4 / home)))))))
+
+",animate,:recipient,1.0,:goal
+411,434,,30164,There was a convoluted pathway from the break in to the president with multiple denials lies and excuses.,[{'B_human': 'president'}],DiGraph with 12 nodes and 11 edges,pathway,person,:destination,pathway,person,:goal,p_0,p_0,p2_3,p2_3,"[':goal', ':recipient']","[0.1, 0.9]",434.0,76151.0,,5.0,"(p / pathway
+      :source (b / break-02)
+      :ARG1-of (c / convolute-01)
+      :destination (p2 / person
+            :ARG0-of (h / have-org-role-91
+                  :ARG2 (p3 / president)))
+      :accompanier (d / deny-01
+            :quant (m / multiple))
+      :accompanier (l / lie-08
+            :quant m)
+      :accompanier (e / excuse-02
+            :quant m))
+
+",animate,:goal,1.0,:goal
+418,441,,550,a surface-to-surface missile,[],DiGraph with 3 nodes and 2 edges,missile,surface,:destination,missile,surface,:goal,m_0,m_0,s2_2,s_1,[':goal'],[1.0],441.0,76184.0,,7.0,"(m / missile
+      :source (s / surface)
+      :destination (s2 / surface))
+
+",inanimate,:goal,1.0,:goal
+420,443,,259,Suggestions that there are no longer drug lords in Afghanistan and that drug traffic into Tajikistan has been eradicated are unrealistic and false.,"[{'LOC': 'Afghanistan'}, {'LOC': 'Tajikistan'}, {'B_human': 'lords'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]",DiGraph with 21 nodes and 20 edges,traffic,country,:destination,traffic,country,:goal,t_15,t_15,c2_17,c_9,[':goal'],[1.0],443.0,76193.0,,9.0,"(a / and
+      :op1 (r / realistic-03 :polarity -
+            :ARG1 s)
+      :op2 (f / false
+            :domain (s / suggest-01
+                  :ARG1 (a2 / and
+                        :op1 (l / lord
+                              :mod (d / drug)
+                              :location (c / country :wiki ""Afghanistan"" :name (n / name :op1 ""Afghanistan""))
+                              :time (n3 / no-longer))
+                        :op2 (e / eradicate-01
+                              :ARG1 (t / traffic
+                                    :mod (d2 / drug)
+                                    :destination (c2 / country :wiki ""Tajikistan"" :name (n2 / name :op1 ""Tajikistan""))))))))
+
+",inanimate,:goal,1.0,:goal
+425,448,,758,Narain also stated the Indian Defense Ministry has sought government approval to allow the Ministry to carry forward unutilized military budgetary allocations from 1 fiscal year to another.,"[{'PER': 'Narain'}, {'ORG': 'Indian Defense Ministry'}, {'ORG': 'Ministry'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]",DiGraph with 33 nodes and 32 edges,carry-01,year,:destination,carry-01,year,:goal,c2_18,c2_18,y4_29,y_27,[':goal'],[1.0],448.0,76198.0,,9.0,"(s / state-01
+      :ARG0 (p / person :wiki - :name (n / name :op1 ""Narain""))
+      :ARG1 (s2 / seek-01
+            :ARG0 (m / ministry
+                  :topic (d / defend-01)
+                  :mod (c / country :wiki ""India"" :name (n2 / name :op1 ""India"")))
+            :ARG1 (a2 / approve-01
+                  :ARG0 (g / government-organization
+                        :ARG0-of (g2 / govern-01
+                              :ARG1 c))
+                  :ARG1 (a3 / allow-01
+                        :ARG0 g
+                        :ARG1 (c2 / carry-01
+                              :ARG0 m
+                              :ARG1 (t / thing
+                                    :ARG1-of (a4 / allocate-01
+                                          :ARG2 (b / budget
+                                                :poss (m2 / military)))
+                                    :ARG1-of (u / utilize-01 :polarity -))
+                              :direction (f / forward)
+                              :source (y / year
+                                    :mod (f3 / finance))
+                              :destination (y4 / year
+                                    :mod (f4 / finance)
+                                    :mod (a5 / another))))))
+      :mod (a / also))
+
+",inanimate,:goal,1.0,:goal
+426,449,,833,The IAEA must be given as much intelligence information as possible to guide inspectors to anything that should be inspected or to any item hidden from inspectors.,"[{'ORG': 'IAEA'}, {'B_human': 'inspector'}, {'B_human': 'inspector'}, {'W_Animate': 'organization'}]",DiGraph with 24 nodes and 23 edges,guide-01,or,:destination,guide-01,or,:goal,g2_12,g2_12,o3_15,o3_15,[':goal'],[1.0],449.0,76199.0,,9.0,"(o2 / obligate-01
+      :ARG2 (g / give-01
+            :ARG1 (i / information
+                  :topic (i2 / intelligence)
+                  :ARG1-of (h / have-quant-91
+                        :ARG3 (m / most)
+                        :ARG5 (i7 / information
+                              :ARG1-of (p / possible-01))))
+            :ARG2 (o / organization :wiki ""International_Atomic_Energy_Agency"" :name (n / name :op1 ""IAEA""))
+            :purpose (g2 / guide-01
+                  :ARG0 (p2 / person
+                        :ARG0-of (i3 / inspect-01))
+                  :destination (o3 / or
+                        :op1 (a / anything
+                              :ARG1-of (i4 / inspect-01
+                                    :ARG0 p2
+                                    :ARG1-of (r / recommend-01)))
+                        :op2 (i5 / item
+                              :mod (a2 / any)
+                              :ARG1-of (h2 / hide-01
+                                    :ARG2 p2))))))
+
+",inanimate,:goal,1.0,:goal
+427,450,,1155,Spacecraft launched from Kourou benefit from the Earth's full rotational speed on the equator to aid their trajectory into space.,"[{'LOC': 'Kourou'}, {'LOC': 'Earth'}, {'W_Inanimate': 'planet'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]",DiGraph with 19 nodes and 18 edges,trajectory,space,:destination,trajectory,space,:goal,t_10,t_10,s3_11,s3_11,[':goal'],[1.0],450.0,76200.0,,9.0,"(b / benefit-01
+      :ARG0 (s2 / speed
+            :poss (r / rotate-01
+                  :ARG1 (p / planet :wiki ""Earth"" :name (n2 / name :op1 ""Earth"")))
+            :ARG1-of (f / full-09)
+            :prep-on (e / equator)
+            :ARG0-of (a / aid-01
+                  :ARG1 (t / trajectory
+                        :destination (s3 / space)
+                        :poss s)))
+      :ARG1 (s / spacecraft
+            :ARG1-of (l / launch-01
+                  :location (c / city :wiki ""Kourou"" :name (n / name :op1 ""Kourou"")))))
+
+",inanimate,:goal,1.0,:goal
+440,463,,5070,Japan has stepped up military research after North Korea surprised the world in 980000 by firing a missile over the Japanese mainland into the Pacific Ocean.,"[{'LOC': 'Japan'}, {'LOC': 'North Korea'}, {'MISC': 'Japanese'}, {'LOC': 'Pacific Ocean'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'ocean'}]",DiGraph with 29 nodes and 28 edges,fire-01,into,:destination,fire-01,into,:goal,f_15,f_15,i_21,i_21,[':goal'],[1.0],463.0,76223.0,,9.0,"(s / step-up-03
+      :ARG0 (c / country :wiki ""Japan""
+            :name (n / name :op1 ""Japan""))
+      :ARG1 (r / research-01
+            :mod (m / military))
+      :time (a / after
+            :op1 (s2 / surprise-01
+                  :ARG0 (c2 / country :wiki ""North_Korea""
+                        :name (n2 / name :op1 ""North"" :op2 ""Korea""))
+                  :ARG1 (w / world)
+                  :ARG2 (f / fire-01
+                        :ARG0 c2
+                        :ARG1 (m2 / missile)
+                        :path (o2 / over
+                              :op1 (m3 / mainland
+                                    :mod c))
+                        :destination (i / into
+                              :op1 (o / ocean :wiki ""Pacific_Ocean""
+                                    :name (n4 / name :op1 ""Pacific"" :op2 ""Ocean""))))
+                  :time (d / date-entity :year 1998))))
+
+",inanimate,:goal,1.0,:goal
+443,466,,6487,Afriforum stated that the group would organize protests along the route to Zimbabwe.,"[{'ORG': 'Afriforum'}, {'LOC': 'Zimbabwe'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]",DiGraph with 14 nodes and 13 edges,route,country,:destination,route,country,:goal,r_9,r_9,c_10,c_10,[':goal'],[1.0],466.0,76232.0,,9.0,"(s / state-01
+      :ARG0 (g / group :wiki ""AfriForum""
+            :name (n / name :op1 ""Afriforum""))
+      :ARG1 (o / organize-01
+            :ARG0 g
+            :ARG1 (p / protest-01
+                  :location (a / along
+                        :op1 (r / route
+                              :destination (c / country :wiki ""Zimbabwe""
+                                    :name (n2 / name :op1 ""Zimbabwe"")))))))
+
+",inanimate,:goal,1.0,:goal
+444,467,,6813,Thomas Olsson stated that the lawyers for Al-Barakaat International would now examine ways of having the assets released to the Somali immigrants in Sweden who used the network to send funds to relatives in Somalia.,"[{'PER': 'Thomas Olsson'}, {'ORG': 'Al-Barakaat International'}, {'MISC': 'Somali'}, {'LOC': 'Sweden'}, {'LOC': 'Somalia'}, {'B_human': 'lawyers'}, {'B_human': 'immigrants'}, {'B_human': 'relatives'}, {'W_Animate': 'person'}, {'W_Animate': 'organization'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}]",DiGraph with 40 nodes and 39 edges,release-01,person,:destination,release-01,person,:recipient,r_18,r_18,p2_20,p_1,"[':goal', ':recipient']","[0.1, 0.9]",467.0,76233.0,,9.0,"(s / state-01
+      :ARG0 (p / person :wiki - :name (n / name :op1 ""Thomas"" :op2 ""Olsson""))
+      :ARG1 (e / examine-01
+            :ARG0 (p3 / person
+                  :ARG0-of (h / have-org-role-91
+                        :ARG1 (o / organization :wiki ""Al-Barakat"" :name (n2 / name :op1 ""Al-Barakaat"" :op2 ""International""))
+                        :ARG2 (l / lawyer)))
+            :ARG1 (w / way
+                  :instrument-of (h2 / have-04
+                        :ARG0 p3
+                        :ARG1 (r / release-01
+                              :ARG1 (a / asset)
+                              :destination (p2 / person
+                                    :mod (c / country :wiki ""Somalia"" :name (n3 / name :op1 ""Somalia""))
+                                    :location (c2 / country :wiki ""Sweden"" :name (n4 / name :op1 ""Sweden""))
+                                    :ARG0-of (u / use-01
+                                          :ARG1 (n5 / network)
+                                          :ARG2 (s2 / send-01
+                                                :ARG0 p2
+                                                :ARG1 (f / fund)
+                                                :ARG2 (p4 / person
+                                                      :location c
+                                                      :ARG0-of (h3 / have-rel-role-91
+                                                            :ARG2 (r2 / relative)))))
+                                    :ARG0-of (i / immigrate-01)))))
+            :time (n6 / now)))
+
+",animate,:recipient,1.0,:goal

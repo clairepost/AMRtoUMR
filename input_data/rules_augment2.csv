@@ -1,0 +1,471 @@
+,y_guess,y_guess_dist
+0,[':condition'],[1.0]
+1,"[':cause', ':reason']","[0.9, 0.1]"
+2,[':condition'],[1.0]
+3,"[':cause', ':reason']","[0.9, 0.1]"
+4,"[':cause', ':reason']","[0.9, 0.1]"
+5,[':condition'],[1.0]
+6,[':condition'],[1.0]
+7,[':condition'],[1.0]
+8,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+9,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+10,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+11,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+12,[':reason'],[1.0]
+13,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+14,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+15,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+16,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+17,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+18,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+19,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+20,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+21,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+22,[':reason'],[1.0]
+23,[':reason'],[1.0]
+24,[':reason'],[1.0]
+25,[':reason'],[1.0]
+26,[':reason'],[1.0]
+27,[':goal'],[1.0]
+28,[':goal'],[1.0]
+29,[':condition'],[1.0]
+30,[':reason'],[1.0]
+31,[':reason'],[1.0]
+32,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+33,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+34,[':reason'],[1.0]
+35,[':reason'],[1.0]
+36,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+37,[':part'],[1.0]
+38,[':part'],[1.0]
+39,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+40,[':part'],[1.0]
+41,[':source'],[1.0]
+42,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+43,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+44,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+45,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+46,[':source'],[1.0]
+47,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+48,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+49,[':source'],[1.0]
+50,[':reason'],[1.0]
+51,[':reason'],[1.0]
+52,[':reason'],[1.0]
+53,"[':cause', ':reason']","[0.9, 0.1]"
+54,"[':cause', ':reason']","[0.9, 0.1]"
+55,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+56,[':goal'],[1.0]
+57,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+58,[':part'],[1.0]
+59,"[':cause', ':reason']","[0.9, 0.1]"
+60,"[':cause', ':reason']","[0.9, 0.1]"
+61,"[':cause', ':reason']","[0.9, 0.1]"
+62,"[':cause', ':reason']","[0.9, 0.1]"
+63,"[':cause', ':reason']","[0.9, 0.1]"
+64,[':part'],[1.0]
+65,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+66,[':part'],[1.0]
+67,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+68,[':source'],[1.0]
+69,[':reason'],[1.0]
+70,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+71,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+72,[':part'],[1.0]
+73,[':reason'],[1.0]
+74,[':reason'],[1.0]
+75,[':condition'],[1.0]
+76,"[':cause', ':reason']","[0.9, 0.1]"
+77,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+78,"[':cause', ':reason']","[0.9, 0.1]"
+79,"[':cause', ':reason']","[0.9, 0.1]"
+80,"[':cause', ':reason']","[0.9, 0.1]"
+81,"[':cause', ':reason']","[0.9, 0.1]"
+82,"[':cause', ':reason']","[0.9, 0.1]"
+83,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+84,[':reason'],[1.0]
+85,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+86,[':condition'],[1.0]
+87,[':condition'],[1.0]
+88,[':reason'],[1.0]
+89,[':condition'],[1.0]
+90,"[':cause', ':reason']","[0.9, 0.1]"
+91,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+92,"[':cause', ':reason']","[0.9, 0.1]"
+93,"[':cause', ':reason']","[0.9, 0.1]"
+94,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+95,[':condition'],[1.0]
+96,[':condition'],[1.0]
+97,[':condition'],[1.0]
+98,[':condition'],[1.0]
+99,[':reason'],[1.0]
+100,[':part'],[1.0]
+101,[':condition'],[1.0]
+102,"[':cause', ':reason']","[0.9, 0.1]"
+103,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+104,[':part'],[1.0]
+105,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+106,[':part'],[1.0]
+107,[':part'],[1.0]
+108,[':part'],[1.0]
+109,[':part'],[1.0]
+110,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+111,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+112,[':source'],[1.0]
+113,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+114,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+115,[':reason'],[1.0]
+116,[':reason'],[1.0]
+117,[':reason'],[1.0]
+118,[':reason'],[1.0]
+119,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+120,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+121,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+122,[':source'],[1.0]
+123,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+124,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+125,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+126,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+127,[':part'],[1.0]
+128,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+129,[':part'],[1.0]
+130,[':part'],[1.0]
+131,[':part'],[1.0]
+132,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+133,[':part'],[1.0]
+134,[':part'],[1.0]
+135,[':part'],[1.0]
+136,[':part'],[1.0]
+137,[':part'],[1.0]
+138,[':part'],[1.0]
+139,[':part'],[1.0]
+140,[':goal'],[1.0]
+141,[':part'],[1.0]
+142,[':part'],[1.0]
+143,[':part'],[1.0]
+144,[':goal'],[1.0]
+145,[':part'],[1.0]
+146,[':part'],[1.0]
+147,[':part'],[1.0]
+148,[':part'],[1.0]
+149,[':part'],[1.0]
+150,[':part'],[1.0]
+151,[':part'],[1.0]
+152,[':part'],[1.0]
+153,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+154,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+155,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+156,[':source'],[1.0]
+157,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+158,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+159,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+160,[':part'],[1.0]
+161,[':part'],[1.0]
+162,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+163,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+164,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+165,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+166,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+167,[':group'],[1.0]
+168,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+169,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+170,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+171,[':source'],[1.0]
+172,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+173,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+174,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+175,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+176,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+177,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+178,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+179,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+180,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+181,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+182,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+183,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+184,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+185,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+186,[':source'],[1.0]
+187,[':goal'],[1.0]
+188,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+189,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+190,[':source'],[1.0]
+191,[':source'],[1.0]
+192,[':source'],[1.0]
+193,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+194,[':goal'],[1.0]
+195,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+196,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+197,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+198,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+199,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+200,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+201,[':goal'],[1.0]
+202,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+203,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+204,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+205,[':goal'],[1.0]
+206,[':goal'],[1.0]
+207,[':goal'],[1.0]
+208,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+209,[':goal'],[1.0]
+210,[':goal'],[1.0]
+211,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+212,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+213,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+214,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+215,[':goal'],[1.0]
+216,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+217,[':source'],[1.0]
+218,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+219,[':goal'],[1.0]
+220,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+221,"[':material', ':source', ':start']","[0.1, 0.6, 0.3]"
+222,[':goal'],[1.0]
+223,[':goal'],[1.0]
+224,[':goal'],[1.0]
+225,"[':cause', ':reason']","[0.9, 0.1]"
+226,"[':cause', ':reason']","[0.9, 0.1]"
+227,"[':cause', ':reason']","[0.9, 0.1]"
+228,"[':cause', ':reason']","[0.9, 0.1]"
+229,"[':cause', ':reason']","[0.9, 0.1]"
+230,"[':cause', ':reason']","[0.9, 0.1]"
+231,"[':cause', ':reason']","[0.9, 0.1]"
+232,"[':cause', ':reason']","[0.9, 0.1]"
+233,"[':cause', ':reason']","[0.9, 0.1]"
+234,"[':cause', ':reason']","[0.9, 0.1]"
+235,"[':cause', ':reason']","[0.9, 0.1]"
+236,"[':cause', ':reason']","[0.9, 0.1]"
+237,"[':cause', ':reason']","[0.9, 0.1]"
+238,[':group'],[1.0]
+239,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+240,[':group'],[1.0]
+241,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+242,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+243,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+244,[':group'],[1.0]
+245,[':group'],[1.0]
+246,[':group'],[1.0]
+247,[':group'],[1.0]
+248,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+249,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+250,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+251,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+252,[':group'],[1.0]
+253,[':group'],[1.0]
+254,[':group'],[1.0]
+255,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+256,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+257,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+258,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+259,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+260,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+261,[':group'],[1.0]
+262,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+263,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+264,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+265,[':group'],[1.0]
+266,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+267,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+268,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+269,[':group'],[1.0]
+270,[':group'],[1.0]
+271,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+272,[':group'],[1.0]
+273,[':group'],[1.0]
+274,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+275,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+276,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+277,[':group'],[1.0]
+278,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+279,[':group'],[1.0]
+280,[':group'],[1.0]
+281,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+282,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+283,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+284,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+285,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+286,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+287,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+288,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+289,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+290,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+291,[':group'],[1.0]
+292,[':group'],[1.0]
+293,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+294,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+295,[':group'],[1.0]
+296,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+297,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+298,[':group'],[1.0]
+299,[':group'],[1.0]
+300,[':group'],[1.0]
+301,[':group'],[1.0]
+302,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+303,[':group'],[1.0]
+304,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+305,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+306,[':group'],[1.0]
+307,[':group'],[1.0]
+308,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+309,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+310,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+311,[':group'],[1.0]
+312,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+313,[':group'],[1.0]
+314,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+315,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+316,[':group'],[1.0]
+317,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+318,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+319,[':group'],[1.0]
+320,[':group'],[1.0]
+321,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+322,[':group'],[1.0]
+323,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+324,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+325,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+326,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+327,[':group'],[1.0]
+328,[':group'],[1.0]
+329,[':group'],[1.0]
+330,[':group'],[1.0]
+331,[':group'],[1.0]
+332,[':group'],[1.0]
+333,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+334,[':group'],[1.0]
+335,[':group'],[1.0]
+336,[':group'],[1.0]
+337,[':group'],[1.0]
+338,[':group'],[1.0]
+339,[':group'],[1.0]
+340,[':group'],[1.0]
+341,[':group'],[1.0]
+342,[':group'],[1.0]
+343,[':group'],[1.0]
+344,[':group'],[1.0]
+345,[':group'],[1.0]
+346,[':group'],[1.0]
+347,[':group'],[1.0]
+348,[':group'],[1.0]
+349,[':group'],[1.0]
+350,[':group'],[1.0]
+351,[':group'],[1.0]
+352,[':group'],[1.0]
+353,[':group'],[1.0]
+354,[':group'],[1.0]
+355,[':group'],[1.0]
+356,[':group'],[1.0]
+357,[':group'],[1.0]
+358,[':group'],[1.0]
+359,[':group'],[1.0]
+360,[':group'],[1.0]
+361,[':group'],[1.0]
+362,[':group'],[1.0]
+363,[':group'],[1.0]
+364,[':group'],[1.0]
+365,[':group'],[1.0]
+366,[':group'],[1.0]
+367,[':group'],[1.0]
+368,[':group'],[1.0]
+369,[':group'],[1.0]
+370,[':group'],[1.0]
+371,[':group'],[1.0]
+372,[':group'],[1.0]
+373,[':group'],[1.0]
+374,[':group'],[1.0]
+375,[':group'],[1.0]
+376,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+377,[':group'],[1.0]
+378,[':group'],[1.0]
+379,[':group'],[1.0]
+380,[':group'],[1.0]
+381,[':group'],[1.0]
+382,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+383,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+384,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+385,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+386,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+387,[':group'],[1.0]
+388,[':group'],[1.0]
+389,[':group'],[1.0]
+390,[':group'],[1.0]
+391,[':group'],[1.0]
+392,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+393,[':group'],[1.0]
+394,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+395,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+396,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+397,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+398,[':group'],[1.0]
+399,[':group'],[1.0]
+400,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+401,"[':group', ':part', ':material']","[0.1, 0.1, 0.8]"
+402,"[':cause', ':reason']","[0.9, 0.1]"
+403,"[':cause', ':reason']","[0.9, 0.1]"
+404,"[':cause', ':reason']","[0.9, 0.1]"
+405,"[':cause', ':reason']","[0.9, 0.1]"
+406,"[':cause', ':reason']","[0.9, 0.1]"
+407,"[':cause', ':reason']","[0.9, 0.1]"
+408,"[':cause', ':reason']","[0.9, 0.1]"
+409,"[':cause', ':reason']","[0.9, 0.1]"
+410,"[':cause', ':reason']","[0.9, 0.1]"
+411,"[':cause', ':reason']","[0.9, 0.1]"
+412,"[':cause', ':reason']","[0.9, 0.1]"
+413,"[':cause', ':reason']","[0.9, 0.1]"
+414,"[':cause', ':reason']","[0.9, 0.1]"
+415,"[':cause', ':reason']","[0.9, 0.1]"
+416,"[':cause', ':reason']","[0.9, 0.1]"
+417,"[':cause', ':reason']","[0.9, 0.1]"
+418,"[':cause', ':reason']","[0.9, 0.1]"
+419,"[':cause', ':reason']","[0.9, 0.1]"
+420,"[':cause', ':reason']","[0.9, 0.1]"
+421,"[':cause', ':reason']","[0.9, 0.1]"
+422,"[':goal', ':recipient']","[0.1, 0.9]"
+423,"[':goal', ':recipient']","[0.1, 0.9]"
+424,"[':goal', ':recipient']","[0.1, 0.9]"
+425,[':goal'],[1.0]
+426,"[':goal', ':recipient']","[0.1, 0.9]"
+427,"[':goal', ':recipient']","[0.1, 0.9]"
+428,"[':goal', ':recipient']","[0.1, 0.9]"
+429,"[':goal', ':recipient']","[0.1, 0.9]"
+430,"[':goal', ':recipient']","[0.1, 0.9]"
+431,"[':goal', ':recipient']","[0.1, 0.9]"
+432,"[':goal', ':recipient']","[0.1, 0.9]"
+433,"[':goal', ':recipient']","[0.1, 0.9]"
+434,"[':goal', ':recipient']","[0.1, 0.9]"
+435,[':goal'],[1.0]
+436,[':goal'],[1.0]
+437,[':goal'],[1.0]
+438,[':goal'],[1.0]
+439,[':goal'],[1.0]
+440,[':goal'],[1.0]
+441,[':goal'],[1.0]
+442,[':goal'],[1.0]
+443,[':goal'],[1.0]
+444,[':goal'],[1.0]
+445,[':goal'],[1.0]
+446,[':goal'],[1.0]
+447,[':goal'],[1.0]
+448,[':goal'],[1.0]
+449,[':goal'],[1.0]
+450,[':goal'],[1.0]
+451,[':goal'],[1.0]
+452,[':goal'],[1.0]
+453,[':goal'],[1.0]
+454,[':goal'],[1.0]
+455,[':goal'],[1.0]
+456,[':goal'],[1.0]
+457,[':goal'],[1.0]
+458,[':goal'],[1.0]
+459,[':goal'],[1.0]
+460,[':goal'],[1.0]
+461,[':goal'],[1.0]
+462,[':goal'],[1.0]
+463,[':goal'],[1.0]
+464,[':goal'],[1.0]
+465,[':goal'],[1.0]
+466,[':goal'],[1.0]
+467,"[':goal', ':recipient']","[0.1, 0.9]"
+468,[':goal'],[1.0]
+469,[':goal'],[1.0]

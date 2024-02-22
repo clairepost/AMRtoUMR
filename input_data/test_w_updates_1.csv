@@ -168,7 +168,7 @@
             :ARG1 (n2 / nation)
             :ARG1-of (t2 / televise-01)))
 
-",DiGraph with 23 nodes and 22 edges,rush-01,and,:source,rush-01,and,:path,r_8,s9r_9,a2_15,s9a2_14,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
+",DiGraph with 23 nodes and 22 edges,team,rescue-01,:mod,team,rescue-01,,t_10,s9t_10,r2_11,s9r2_11,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
 11,2,8,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe.","[{'PER': 'Gloria Arroyo'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Gloria"" :op2 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -189,7 +189,7 @@
             :ARG1 (n2 / nation)
             :ARG1-of (t2 / televise-01)))
 
-",DiGraph with 23 nodes and 22 edges,team,rescue-01,:mod,team,rescue-01,,t_10,s9t_10,r2_11,s9r2_11,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
+",DiGraph with 23 nodes and 22 edges,rush-01,and,:source,rush-01,and,:path,r_8,s9r_9,a2_15,s9a2_14,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
 12,2,9,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'PER': 'I'}, {'PER': 'she'}, {'W_Animate': 'military'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (s2 / she)
       :ARG1 (o / order-02
@@ -500,7 +500,7 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+",DiGraph with 36 nodes and 35 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_21,s21e_26,h3_24,s21h3_29,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
 27,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
@@ -534,7 +534,7 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_21,s21e_26,h3_24,s21h3_29,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+",DiGraph with 36 nodes and 35 edges,person,official,:mod,person,official,,p4_34,s21p_1,o_35,s21o_44,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
 28,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
@@ -568,7 +568,7 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,person,official,:mod,person,official,,p4_34,s21p_1,o_35,s21o_44,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
 29,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
@@ -624,7 +624,7 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,team,company,:source,team,company,:source,t_8,s22t_9,c_11,s22c_15,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+",DiGraph with 23 nodes and 22 edges,go-01,also,:mod,go-01,also,:mod,g_7,s22g_8,a2_22,s22a2_34,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
 31,2,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -646,7 +646,7 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,go-01,also,:mod,go-01,also,:mod,g_7,s22g_8,a2_22,s22a2_34,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+",DiGraph with 23 nodes and 22 edges,company,mine-01,:mod,company,mine-01,:mod,c_11,s22c_15,m_12,s22m_16,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
 32,2,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -668,7 +668,7 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,company,mine-01,:mod,company,mine-01,:mod,c_11,s22c_15,m_12,s22m_16,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+",DiGraph with 23 nodes and 22 edges,team,company,:source,team,company,:source,t_8,s22t_9,c_11,s22c_15,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
 33,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
@@ -691,7 +691,7 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+",DiGraph with 22 nodes and 21 edges,helicopter,military,:mod,helicopter,military,:mod,h_2,s24h_1,m_3,s24m_2,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
 34,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
@@ -714,7 +714,7 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,helicopter,military,:mod,helicopter,military,:mod,h_2,s24h_1,m_3,s24m_2,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+",DiGraph with 22 nodes and 21 edges,cloud,heavy,:mod,cloud,heavy,:mod,c_5,s24c_6,h2_6,s24h2_8,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
 35,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
@@ -737,7 +737,7 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cloud,heavy,:mod,cloud,heavy,:mod,c_5,s24c_6,h2_6,s24h2_8,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
 36,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
@@ -978,7 +978,7 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,article,law,:source,article,law,:source,a3_42,s8a3_55,l_43,s8l_56,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+",DiGraph with 52 nodes and 51 edges,reason,that,:mod,reason,that,:mod,r_5,s8r_6,t_7,s8t_8,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
 47,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
@@ -1024,7 +1024,7 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,sentence-01,have-04,:condition,sentence-01,have-concession-91,,s5_33,s8s5_44,h2_41,s8h3_4,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+",DiGraph with 52 nodes and 51 edges,outlet,various,:mod,outlet,various,:mod,o_10,s8o_14,v_11,s8v_15,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
 48,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
@@ -1070,7 +1070,7 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,reason,that,:mod,reason,that,:mod,r_5,s8r_6,t_7,s8t_8,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+",DiGraph with 52 nodes and 51 edges,term,maximum,:mod,term,maximum,:mod,t6_39,s8t6_50,m3_40,s8m3_51,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
 49,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
@@ -1116,7 +1116,7 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,outlet,various,:mod,outlet,various,:mod,o_10,s8o_14,v_11,s8v_15,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+",DiGraph with 52 nodes and 51 edges,sentence-01,have-04,:condition,sentence-01,have-concession-91,,s5_33,s8s5_44,h2_41,s8h3_4,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
 50,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
@@ -1162,7 +1162,7 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,term,maximum,:mod,term,maximum,:mod,t6_39,s8t6_50,m3_40,s8m3_51,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+",DiGraph with 52 nodes and 51 edges,article,law,:source,article,law,:source,a3_42,s8a3_55,l_43,s8l_56,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
 51,3,9,"""They also said this court did not give the lawyers for the defense due procedure.""",[{'PER': 'They'}],"(s2 / say-01
       :ARG0 (t / they)
       :ARG1 (g / give-01 :polarity -

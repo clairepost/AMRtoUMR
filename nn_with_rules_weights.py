@@ -17,13 +17,16 @@ import sklearn
 def create_rule_weight_tensor(y_guess, rule_weights,mapping):
     #takes guess and weights and will return a tensor of size(n, output_length) for the corresponding weights of each rule
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
-    num_classes_output = len(set(flat_values))//2
+    num_classes_output = len(set(flat_values))//2 
+    num_classes_output = 17
     weight_tensor = torch.zeros(len(y_guess),num_classes_output)
     #weight_tensor = torch.full((len(y_guess),num_classes_output),0.01) #allow for the rules to be mistaken here as well
 
-    for i in range(len(y_guess)):
-        for j in range(len(y_guess[i])):
-            y_guess[i][j] = mapping[y_guess[i][j]]
+
+    if type(y_guess[0][0]) != int:
+        for i in range(len(y_guess)):
+            for j in range(len(y_guess[i])):
+                y_guess[i][j] = mapping[y_guess[i][j]]
 
     # Fill the tensor with corresponding weights
     for i, (class_numbers, weights_list) in enumerate(zip(y_guess, rule_weights)):
@@ -33,25 +36,39 @@ def create_rule_weight_tensor(y_guess, rule_weights,mapping):
     return weight_tensor
 
 
-def preprocessing(split):
+def preprocessing(split,reload_data = True, X = [], embeddings = []):
     #training is a boolean: set it to trtue, to preprocess the training data, and false to preprocess the test data
     #load in data, get bert embeddings, and set it up as tensors
-
-    X = preprocess_data(split, False, False)
+    if reload_data == True:
+        X = preprocess_data(split, False, False)
    
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
     # Convert the categorical column to numerical form using the mapping
+
+    print(len(X))
+
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
+    
 
-    umr_roles = torch.tensor(X["umr_role"],dtype=torch.long)
-    amr_roles = torch.tensor(X['amr_role'], dtype=torch.long)
-    embeddings = get_embeddings(X) 
+    X = X.dropna(subset=["umr_role"])
+    X = X.dropna(subset=["amr_role"])
+
+    X.reset_index(drop=True)
+    print(len(X))
+
+    umr_roles = torch.tensor(X["umr_role"].to_list(),dtype=torch.long)
+    amr_roles = torch.tensor(X['amr_role'].to_list(), dtype=torch.long)
+
+    if embeddings == []:
+        embeddings = get_embeddings(X)
+    else:
+        print("length of embeddings better equal length of data:", len(embeddings), len(X))
    
 
-    y_guess = X["y_guess"]
-    rule_weights = X["y_guess_dist"]
+    y_guess = X["y_guess"].to_list()
+    rule_weights = X["y_guess_dist"].to_list()
     rule_outputs = create_rule_weight_tensor(y_guess, rule_weights,swap_umr_int_dict)
 
     #print sizes of returned data
@@ -63,7 +80,7 @@ def preprocessing(split):
 
     return embeddings,amr_roles, umr_roles, X, mapping, swap_umr_int_dict,swap_amr_int_dict, rule_outputs #return X and y_truefor mapping back to the categories later
 
-def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs):
+def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs, num_eps):
 
     # #define the loss function
     # class CustomLoss(nn.Module):
@@ -133,6 +150,7 @@ def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs):
     num_amr_roles = len(mapping.keys())
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
     num_classes_output = len(set(flat_values))
+    num_classes_output = 17 #doing the same fix as base_nn b/c i can't figure this out rn
 
     dataset = TensorDataset(embeddings, amr_roles, umr_roles,rule_outputs)
 
@@ -147,7 +165,7 @@ def train_model(embeddings, amr_roles, umr_roles,mapping, rule_outputs):
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Training loop
-    num_epochs = 50
+    num_epochs = num_eps
 
     for epoch in range(num_epochs):
         for x, amr_role, target, rule_output in dataset:
@@ -330,6 +348,14 @@ def run_on_all_data(inverse = False):
             for line in weight_i:
                 f.write(f"{line}\n")
         print("Finished nn_wth_rules on all data")
+
+def basic_nn_with_rules_w(train,test,train_embeddings, test_embeddings,num_epochs):
+    embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict, rule_output = preprocessing("train", False, train, train_embeddings)
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_1 = preprocessing("test", False, test, test_embeddings)
+
+    model = train_model(embeddings,amr_role, umr_role,mapping, rule_output, num_epochs)
+    df_test, weight_i = predict(model, (embeddings_1,amr_role_1,umr_role_1,X_1, rule_outputs_1), swap_umr_int_dict, swap_amr_int_dict) 
+    return df_test["y_pred"].to_list()
 
 
 

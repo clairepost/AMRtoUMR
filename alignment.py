@@ -120,6 +120,8 @@ def align_graphs_no_animacy(sentence_dict, ne_info, amr_print, amr_graphs,umr_gr
     all_amr_roles.update(amr_roles_in_tail)
 
     splits_data = []
+    print("AMR KEYS",amr_graphs.keys())
+    print("UMR KEYS",umr_graphs.keys())
     for file in amr_graphs.keys():
         sentences = sentence_dict[file]
         for sent_i in range(len(amr_graphs[file])):
@@ -164,11 +166,11 @@ def align_graphs_no_animacy(sentence_dict, ne_info, amr_print, amr_graphs,umr_gr
                     if r in amr_roles_in_tail:
                        
                        if amr_tail_name == amr_roles_in_tail[r]:
-                            print("\nIN THE AMR ROLES IN TAIL\n", "r: ", r, "roles: ", amr_roles_in_tail)
-                            print("\nsecond edge: ", amr_role)
-                            print("amr_head_name: ", amr_head_name)
-                            print("amr_tail_name: ", amr_tail_name)
-                            print("checking if the tail name is in the amr_roles_in_tail == TRUE")
+                            # print("\nIN THE AMR ROLES IN TAIL\n", "r: ", r, "roles: ", amr_roles_in_tail)
+                            # print("\nsecond edge: ", amr_role)
+                            # print("amr_head_name: ", amr_head_name)
+                            # print("amr_tail_name: ", amr_tail_name)
+                            # print("checking if the tail name is in the amr_roles_in_tail == TRUE")
                             head_ans = [item for item in (umr_graph.nodes(data="name")) if lemmatizer.lemmatize(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
                             # get the relation and then we will get the tail
                             r_matcher =  umr_t2r[amr_tail_name]

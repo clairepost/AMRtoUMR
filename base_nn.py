@@ -13,7 +13,7 @@ from error_analysis import get_indices
 import numpy as np
 import ast
 
-def preprocessing_for_NN(split, reload_data = True, X = []):
+def preprocessing_for_NN(split, reload_data = True, X = [], embeddings = []):
     #split is either "train" or "test"
     #load in data, get bert embeddings, and set it up as tensors
 
@@ -26,11 +26,15 @@ def preprocessing_for_NN(split, reload_data = True, X = []):
     if reload_data == True:
         X = preprocess_data(split, False, False)
     
-   
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
     # Convert the categorical column to numerical form using the mapping
+    column_type = X['amr_role'].dtype
+    column_type = X['umr_role'].dtype
+
+
     X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
+    print(X['umr_role'])
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
 
     print(len(X))
@@ -40,10 +44,12 @@ def preprocessing_for_NN(split, reload_data = True, X = []):
 
     X.reset_index(drop=True)
     
-    print(len(X))
-    umr_role = torch.tensor(X["umr_role"],dtype=torch.long)
-    amr_role = torch.tensor(X['amr_role'], dtype=torch.long)
-    embeddings = get_embeddings(X) 
+    umr_role = torch.tensor(X["umr_role"].to_list(),dtype=torch.long)
+    amr_role = torch.tensor(X['amr_role'].to_list(), dtype=torch.long)
+    if embeddings == []:
+        embeddings = get_embeddings(X)
+    else:
+        print("length of embeddings better equal length of data:", len(embeddings), len(X))
     
 
     #print sizes of returned data
@@ -53,7 +59,7 @@ def preprocessing_for_NN(split, reload_data = True, X = []):
 
     return embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict #return X and y_truefor mapping back to the categories later
 
-def train_model(embeddings, amr_role, umr_role,mapping):
+def train_model(embeddings, amr_role, umr_role,mapping, num_eps):
 
     # Sample data (replace this with your actual data)
     # X = torch.randn((100, 5))  # 100 samples, 5 features
@@ -96,7 +102,8 @@ def train_model(embeddings, amr_role, umr_role,mapping):
     input_size = embeddings.size(dim =1)  # Replace with the actual number of features
     num_amr_roles = len(mapping.keys())
     flat_values = [item for value in mapping.values() for item in (value if isinstance(value, list) else [value])]
-    num_classes_output = len(set(flat_values))
+    #num_classes_output = len(set(flat_values))
+    num_classes_output =17 #hard-coded b/c I can't figure this out rn
 
     print("input size", input_size)
     print("num amr roles", num_amr_roles)
@@ -109,7 +116,7 @@ def train_model(embeddings, amr_role, umr_role,mapping):
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
     # Training loop
-    num_epochs = 50
+    num_epochs = num_eps
 
     for epoch in range(num_epochs):
         for inputs, letter, targets in dataset:
@@ -262,19 +269,14 @@ def run_on_all_data(inverse= False):
     
     print("Finished baseline_nn on all data")
 
-def basic_base_nn(train,test):
-    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train", False, train)
-    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test", False, test)
+def basic_base_nn(train,test,train_embeddings, test_embeddings, num_epochs):
+    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train", False, train, train_embeddings)
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test", False, test, test_embeddings)
 
-    model = train_model(embeddings,amr_role, umr_role,mapping)
+    print(amr_role, umr_role)
+    model = train_model(embeddings,amr_role, umr_role,mapping, num_epochs)
     df_test = predict(model, (embeddings_1, amr_role_1, umr_role_1,X_1), swap_umr_int_dict, swap_amr_int_dict) 
     return df_test["y_pred"].to_list()
-
-
-
-
-    
-
 
 
 

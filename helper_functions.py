@@ -691,24 +691,33 @@ def preprocess_data(split, reload_graphs, reload_rules):
             #X['y_guess'] = X['y_guess'].apply(ast.literal_eval) 
             #X['y_guess_dist'] = X['y_guess_dist'].apply(ast.literal_eval)
         X = X.drop(["y_pred", "y_guess", "y_guess_dist"], axis = 1)
+    elif split == "silver":
+        if reload_graphs == True:
+            print("can't reload silver graphs")
+            return
+        else:
+            X = pd.read_csv("input_data\silver_star.csv")
+            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
+            X['y_pred'] = X['y_pred'].apply(lambda x: x[1:] if isinstance(x, list) and len(x) > 1 else x[0])
+
     else:
-        print("arg 1 must be 'test','train', or 'augment', or augment2")
+        print("arg 1 must be 'test','train', or 'augment', or augment2","silver")
         return
     
-
-    if reload_rules == True:
-        rules = detect_split_role(X)
-        # Create a DataFrame
-        rules_df = pd.DataFrame(rules, columns=['y_guess', 'y_guess_dist'])  
-        rules_df.to_csv(rules_file)
-    else:
-        rules_df = pd.read_csv(rules_file)
-        rules_df['y_guess'] = rules_df['y_guess'].apply(ast.literal_eval)
-        rules_df['y_guess_dist'] = rules_df['y_guess_dist'].apply(ast.literal_eval)
-    X = pd.concat([X, rules_df], axis = 1)
+    if split != "silver":
+        if reload_rules == True and split != "silver":
+            rules = detect_split_role(X)
+            # Create a DataFrame
+            rules_df = pd.DataFrame(rules, columns=['y_guess', 'y_guess_dist'])  
+            rules_df.to_csv(rules_file)
+        else:
+            rules_df = pd.read_csv(rules_file)
+            rules_df['y_guess'] = rules_df['y_guess'].apply(ast.literal_eval)
+            rules_df['y_guess_dist'] = rules_df['y_guess_dist'].apply(ast.literal_eval)
+        X = pd.concat([X, rules_df], axis = 1)
     
     
-    if split != "alignment2":
+    if split != "alignment2" and split != "silver":
         #clean up data
         a2umr_map,amr_2_int, umr_2_int = create_mapping()
         rows_to_drop = [] #if alignment stop made a mistake and found roles that we aren't exploring
@@ -733,6 +742,8 @@ if __name__ == "__main__":
     X = preprocess_data("test", False, False)
     X = preprocess_data("train", False, False)
     X = preprocess_data("augment2", False, False)
+    X = preprocess_data("silver", False, False)
+    print(X.head)
     #print(create_mapping())
     # read_test_data()
     # read_training_data()

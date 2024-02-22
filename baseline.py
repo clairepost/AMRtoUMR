@@ -128,7 +128,13 @@ def combine_baseline_results():
     test_df = run_baseline(5,"test")
     full_df = pd.concat([train_df,test_df],axis = 0)
     full_df.to_csv("output/470-results-inverted/baseline.csv")
-    
+
+
+def basic_baseline(X):
+    y_prob = list(zip(X["y_guess"], X["y_guess_dist"]))
+    y_calc = calc_role(y_prob)
+
+    return y_calc
 
 if __name__ == "__main__":
     df = pd.DataFrame()

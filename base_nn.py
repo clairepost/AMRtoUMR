@@ -13,7 +13,7 @@ from error_analysis import get_indices
 import numpy as np
 import ast
 
-def preprocessing_for_NN(split):
+def preprocessing_for_NN(split, reload_data = True, X = []):
     #split is either "train" or "test"
     #load in data, get bert embeddings, and set it up as tensors
 
@@ -23,8 +23,9 @@ def preprocessing_for_NN(split):
     #     X['umr_role'] = X['y_gold']
 
     # else:
-
-    X = preprocess_data(split, False, False)
+    if reload_data == True:
+        X = preprocess_data(split, False, False)
+    
    
     mapping ,swap_amr_int_dict,swap_umr_int_dict = create_mapping()
 
@@ -261,9 +262,21 @@ def run_on_all_data(inverse= False):
     
     print("Finished baseline_nn on all data")
 
+def basic_base_nn(train,test):
+    embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train", False, train)
+    embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test", False, test)
+
+    model = train_model(embeddings,amr_role, umr_role,mapping)
+    df_test = predict(model, (embeddings_1, amr_role_1, umr_role_1,X_1), swap_umr_int_dict, swap_amr_int_dict) 
+    return df_test["y_pred"].to_list()
+
+
 
 
     
+
+
+
 
 if __name__ == "__main__":
     run_on_all_data(inverse = True)

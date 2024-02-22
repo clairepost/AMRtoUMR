@@ -1,5 +1,6 @@
 
 from helper_functions import extract_data, preprocess_data
+from error_analysis import get_indices
 from rules import detect_split_role
 import os
 import random
@@ -146,7 +147,7 @@ if __name__ == "__main__":
     df = pd.DataFrame()
     # Run the baseline model
     #run_baseline_X_times()
-   # run_splits_nn()
+    run_splits_nn()
  #   run_baseline(5,"augment2") #Marie's version
-    combine_baseline_results()
+    #combine_baseline_results()
     

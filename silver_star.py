@@ -20,7 +20,7 @@ from baseline import basic_baseline
 from base_nn import basic_base_nn
 from nn_with_rules_weights import basic_nn_with_rules_w
 
-file_path = "output/silver-star-k_folds/"
+file_path = "output/silver-star-k_folds/rules-rerun/"
 
 def run(num_epochs):
 
@@ -40,8 +40,8 @@ def run(num_epochs):
 
     #REMOVE THIS LINE FOR RUNNING THE WHOLE THING
     #silver_data = silver_data.head(10)
-    silv_embeddings = get_embeddings(silver_data)
-    gold_embeddings = get_embeddings(gold_data)
+    # silv_embeddings = get_embeddings(silver_data)
+    # gold_embeddings = get_embeddings(gold_data)
 
     splits= get_indices(gold_data["umr_role"])
 
@@ -56,9 +56,9 @@ def run(num_epochs):
         fold_train = pd.concat([fold_train, silver_data], axis = 0)
         fold_test= gold_data.iloc[test_index]
 
-        fold_embeddings_train = gold_embeddings[train_index]
-        fold_embeddings_train = torch.cat((fold_embeddings_train, silv_embeddings), dim=0)
-        fold_embeddings_test = gold_embeddings[test_index]
+        # fold_embeddings_train = gold_embeddings[train_index]
+        # fold_embeddings_train = torch.cat((fold_embeddings_train, silv_embeddings), dim=0)
+        # fold_embeddings_test = gold_embeddings[test_index]
 
         #RULES
         print("UPDATING RULES" + f"Fold {i}:")
@@ -68,20 +68,20 @@ def run(num_epochs):
         
         fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
 
-        #BASIC NN
-        print(fold_train)
-        print("RUNNING BASE NN" + f"Fold {i}:")
+        # #BASIC NN
+        # print(fold_train)
+        # print("RUNNING BASE NN" + f"Fold {i}:")
         
-        fold_test["y_pred_NN"] = basic_base_nn(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
-        #intermediate save
-        fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
+        # fold_test["y_pred_NN"] = basic_base_nn(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
+        # #intermediate save
+        # fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
 
-        #NN WITH RULES
-        print("RUNNING NN + RULES" + f"Fold {i}:")
-        fold_test["y_pred_NN_RULE"] = basic_nn_with_rules_w(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
+        # #NN WITH RULES
+        # print("RUNNING NN + RULES" + f"Fold {i}:")
+        # fold_test["y_pred_NN_RULE"] = basic_nn_with_rules_w(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
 
-        #intermediate save
-        fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
+        # #intermediate save
+        # fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
 
         #SAVE all into one DF
         fold_test["fold"] = i
@@ -104,7 +104,7 @@ def run_stats():
 
 
 if __name__ == "__main__":
-    epochs_list = [50,200]
+    epochs_list = [10]
     for epoch in epochs_list:
         run(epoch)
     run_stats()

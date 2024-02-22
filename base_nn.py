@@ -216,7 +216,7 @@ def run_splits_nn(model_choice):
         amr_roles = torch.index_select(all_amr_roles, 0,torch.LongTensor(train_index) )
         umr_roles = torch.index_select(all_umr_roles, 0,torch.LongTensor(train_index) )
 
-        model = train_model(embeddings,amr_roles, umr_roles,mapping)
+        model = train_model(embeddings,amr_roles, umr_roles,mapping, 50)
 
         #select test data
         embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))
@@ -268,7 +268,7 @@ def run_on_all_data(inverse= False):
     
     print("Finished baseline_nn on all data")
 
-def basic_base_nn(train,test,train_embeddings, test_embeddings, num_epochs):
+def basic_base_nn(train,test,train_embeddings, test_embeddings, num_epochs=50):
     embeddings, amr_role, umr_role, X, mapping, swap_umr_int_dict, swap_amr_int_dict = preprocessing_for_NN("train", False, train, train_embeddings)
     embeddings_1,amr_role_1, umr_role_1, X_1, mapping_1, swap_umr_int_dict_1,swap_amr_int_dict_1 = preprocessing_for_NN("test", False, test, test_embeddings)
 
@@ -280,6 +280,6 @@ def basic_base_nn(train,test,train_embeddings, test_embeddings, num_epochs):
 
 
 if __name__ == "__main__":
-    run_on_all_data(inverse = True)
-  #  run_splits_nn("base_nn")
+ #   run_on_all_data(inverse = True)
+    run_splits_nn("base_nn")
     

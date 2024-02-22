@@ -282,7 +282,7 @@ def run_splits_nn(model_choice):
         rule_outputs = torch.index_select(all_rule_outputs, 0,torch.LongTensor(train_index) )
 
 
-        model = train_model(embeddings,amr_roles, umr_roles,mapping, rule_outputs)
+        model = train_model(embeddings,amr_roles, umr_roles,mapping, rule_outputs,50)
 
         #select test data
         embeddings =  torch.index_select(all_embeddings, 0, torch.LongTensor(test_index))

@@ -1,15 +1,15 @@
 Parameter containing:
-tensor([[ 0.7933, -0.1598],
-        [ 0.2067,  1.1598]], requires_grad=True)
+tensor([[ 0.7270, -0.0901],
+        [ 0.2730,  1.0901]], requires_grad=True)
 Parameter containing:
-tensor([[0.5877, 0.2187],
-        [0.4123, 0.7813]], requires_grad=True)
+tensor([[0.6306, 0.1671],
+        [0.3694, 0.8329]], requires_grad=True)
 Parameter containing:
-tensor([[0.6014, 0.1195],
-        [0.3986, 0.8805]], requires_grad=True)
+tensor([[ 0.8845, -0.0022],
+        [ 0.1155,  1.0022]], requires_grad=True)
 Parameter containing:
-tensor([[0.5923, 0.1929],
-        [0.4077, 0.8071]], requires_grad=True)
+tensor([[0.6320, 0.4111],
+        [0.3680, 0.5889]], requires_grad=True)
 Parameter containing:
-tensor([[0.5681, 0.3283],
-        [0.4319, 0.6717]], requires_grad=True)
+tensor([[ 0.8090, -0.3451],
+        [ 0.1910,  1.3451]], requires_grad=True)

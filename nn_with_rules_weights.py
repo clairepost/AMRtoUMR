@@ -320,7 +320,7 @@ def run_on_all_data(inverse = False):
         all_rule_outputs = torch.cat((rule_output, rule_outputs_1),0)
         all_Xs = pd.concat((X,X_1),axis=0)
 
-        model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping, all_rule_outputs)
+        model = train_model(all_embeddings,all_amr_roles, all_umr_roles,mapping, all_rule_outputs,50)
 
         embeddings_2,amr_role_2, umr_role_2, X_2, mapping_2, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_2 = preprocessing("augment2")
 
@@ -345,7 +345,7 @@ def run_on_all_data(inverse = False):
 
         embeddings_2,amr_role_2, umr_role_2, X_2, mapping_2, swap_umr_int_dict,swap_amr_int_dict,rule_outputs_2 = preprocessing("augment2")
 
-        model = train_model(embeddings_2,amr_role_2, umr_role_2,mapping_2, rule_outputs_2)
+        model = train_model(embeddings_2,amr_role_2, umr_role_2,mapping_2, rule_outputs_2, 50)
 
         df_test, weight_i = predict(model, (all_embeddings,all_amr_roles,all_umr_roles,all_Xs, all_rule_outputs), swap_umr_int_dict, swap_amr_int_dict) 
 
@@ -370,7 +370,7 @@ def basic_nn_with_rules_w(train,test,train_embeddings, test_embeddings,num_epoch
 
 
 if __name__ == "__main__":
-    run_on_all_data(inverse = True)
-    run_on_all_data(inverse = False)
-    #run_splits_nn("nn_with_rules_weights")
+  #  run_on_all_data(inverse = True)
+   # run_on_all_data(inverse = False)
+    run_splits_nn("nn_with_rules_weights")
     

@@ -1,0 +1,603 @@
+,file,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy
+0,AMR to UMR targerted conversion split roles - Graphs.csv,1,It 's extremely troublesome to get there via land .,[],"
+
+
+(t / trouble-05
+      :ARG2 (g / get-05
+            :destination (t2 / there)
+            :path (l / land))
+      :degree (e / extreme))",DiGraph with 5 nodes and 5 edges,get-05,there,:destination,get-05,there,:goal,g_4,s2g_3,t2_5,s2t2_4,inanimate
+1,AMR to UMR targerted conversion split roles - Graphs.csv,2,She heated the oven to 250 degrees Celsius.,"[{'MISC': 'Celsius'}, {'PER': 'She'}]","
+
+
+(h / heat-01
+      :ARG0 (s / she)
+      :ARG1 (o / oven)
+      :destination (t / temperature-quantity :quant 250
+            :scale (c / celsius)))",DiGraph with 6 nodes and 6 edges,heat-01,temperature-quantity,:destination,heat-up-02,temperature-quantity,,h_3,s3h_2,t_6,s3t_4,inanimate
+2,AMR to UMR targerted conversion split roles - Graphs.csv,3,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
+
+
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:source,drive-01,city,:start,d_3,s4d_1,c_6,s4c_6,inanimate
+3,AMR to UMR targerted conversion split roles - Graphs.csv,3,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
+
+
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:start,d_3,s4d_1,c2_10,s4c_6,inanimate
+4,AMR to UMR targerted conversion split roles - Graphs.csv,4,I drove to the store.,[{'PER': 'I'}],"
+
+
+(d / drive-01
+      :ARG0 (i / i)
+      :destination (s / store))",DiGraph with 3 nodes and 3 edges,drive-01,store,:destination,drive-01,store,:goal,d_3,s5d_2,s_5,s5s_6,inanimate
+5,AMR to UMR targerted conversion split roles - Graphs.csv,5,I walked up to the window.,[{'PER': 'I'}],"
+
+
+(w / walk-01
+      :ARG0 (i / i)
+      :destination (w2 / window))",DiGraph with 3 nodes and 3 edges,walk-01,window,:destination,walk-01,window,:goal,w_3,s6w_2,w2_5,s6w2_6,inanimate
+6,AMR to UMR targerted conversion split roles - Graphs.csv,6,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]","
+
+
+(f / fire-01
+      :ARG0 (a / aircraft-type :wiki ""Mikoyan-Gurevich_MiG-25"" :name (n / name :op1 ""MiG-25""))
+      :ARG1 (m / missile
+            :source (a2 / air)
+            :direction (a3 / air))
+      :destination (a4 / aircraft-type :wiki ""General_Atomics_MQ-1_Predator"" :name (n2 / name :op1 ""Predator"")))",DiGraph with 12 nodes and 12 edges,missile,air,:source,missile,air,:source,m_8,s7m_6,a2_9,s7a3_7,inanimate
+7,AMR to UMR targerted conversion split roles - Graphs.csv,6,The MiG-25 fired an AAM at the Predator.,"[{'MISC': 'MiG-25'}, {'MISC': 'AA'}, {'MISC': 'Predator'}]","
+
+
+(f / fire-01
+      :ARG0 (a / aircraft-type :wiki ""Mikoyan-Gurevich_MiG-25"" :name (n / name :op1 ""MiG-25""))
+      :ARG1 (m / missile
+            :source (a2 / air)
+            :direction (a3 / air))
+      :destination (a4 / aircraft-type :wiki ""General_Atomics_MQ-1_Predator"" :name (n2 / name :op1 ""Predator"")))",DiGraph with 12 nodes and 12 edges,fire-01,aircraft-type,:destination,fire-01,aircraft-type,:instrument,f_3,s7f_2,a4_11,s7a_3,inanimate
+8,AMR to UMR targerted conversion split roles - Graphs.csv,7,"For their honeymoon, the couple flew first class to Hawaii.","[{'LOC': 'Hawaii'}, {'B_human': 'couple'}]","
+
+
+(f / fly-01
+      :ARG1 (c / couple)
+      :destination (s / state :wiki ""Hawaii"" :name (n / name :op1 ""Hawaii""))
+      :manner (c2 / class
+            :ord (o / ordinal-entity :value 1))
+      :subevent-of (h / honeymoon-01
+            :ARG0 c))",DiGraph with 11 nodes and 11 edges,fly-01,state,:destination,fly-01,state,:goal,f_3,s8f_0,s_5,s8s_2,inanimate
+9,AMR to UMR targerted conversion split roles - Graphs.csv,10,"The boy murmured softly to soothe the girl, because he worried about her.","[{'B_human': 'boy'}, {'B_human': 'girl'}, {'PER': 'he'}, {'PER': 'her'}]","
+(m / murmur-01
+  :ARG0 (b / boy)
+  :manner (s / soft-02)
+  :purpose (s2 / soothe-01
+               :ARG1 (g / girl))
+  :cause (w / worry-01
+            :ARG0 boy
+            :topic girl))",DiGraph with 8 nodes and 8 edges,murmur-01,worry-01,:cause,murmur-01,worry-01,:reason,m_1,s11m_1,w_6,s11w_6,inanimate
+10,AMR to UMR targerted conversion split roles - Graphs.csv,11,The old man died of lung cancer .,[{'B_human': 'man'}],"
+
+
+(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))",DiGraph with 9 nodes and 9 edges,die-01,cause-01,:ARG1-of,die-01,disease,:Cause-of,d_3,s12d2_5,c_6,s12d_2,inanimate
+11,AMR to UMR targerted conversion split roles - Graphs.csv,11,The old man died of lung cancer .,[{'B_human': 'man'}],"
+
+
+(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))",DiGraph with 9 nodes and 9 edges,die-01,cause-01,:ARG1-of,die-01,disease,:Cause-of,d_3,s12d2_5,c_6,s12d_2,inanimate
+12,AMR to UMR targerted conversion split roles - Graphs.csv,11,The old man died of lung cancer .,[{'B_human': 'man'}],"
+
+
+(d / die-01
+      :ARG1 (m / man
+            :mod (o / old))
+      :ARG1-of (c / cause-01
+            :ARG0 (d2 / disease :wiki ""Lung_cancer""
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))",DiGraph with 9 nodes and 9 edges,man,old,:mod,man,old,:mod,m_4,s12m_3,o_5,s12o_4,inanimate
+13,AMR to UMR targerted conversion split roles - Graphs.csv,12,The match has been canceled due to the rain.,[],"
+
+
+(c / cancel-01
+      :ARG1 (m / match-03)
+      :ARG1-of (c2 / cause-01
+            :ARG0 (r / rain-01)))",DiGraph with 4 nodes and 4 edges,cancel-01,cause-01,:ARG1-of,cancel-01,rain-01,:cause,c_3,s13r_4,c2_5,s13c_2,inanimate
+14,AMR to UMR targerted conversion split roles - Graphs.csv,12,The match has been canceled due to the rain.,[],"
+
+
+(c / cancel-01
+      :ARG1 (m / match-03)
+      :ARG1-of (c2 / cause-01
+            :ARG0 (r / rain-01)))",DiGraph with 4 nodes and 4 edges,cancel-01,cause-01,:ARG1-of,cancel-01,rain-01,:cause,c_3,s13r_4,c2_5,s13c_2,inanimate
+15,AMR to UMR targerted conversion split roles - Graphs.csv,13,He was injured and therefore unable to play.,[{'PER': 'He'}],"
+
+
+(i / injure-01
+      :ARG1 (h / he)
+      :ARG0-of (c / cause-01
+            :ARG1 (p / possible-01 :polarity -
+                  :ARG1 (p2 / play-01
+                        :ARG0 h))))",DiGraph with 7 nodes and 7 edges,injure-01,cause-01,:ARG0-of,injure-01,possible-01,:cause,i_3,s14p_6,c_5,s14i2_2,inanimate
+16,AMR to UMR targerted conversion split roles - Graphs.csv,13,He was injured and therefore unable to play.,[{'PER': 'He'}],"
+
+
+(i / injure-01
+      :ARG1 (h / he)
+      :ARG0-of (c / cause-01
+            :ARG1 (p / possible-01 :polarity -
+                  :ARG1 (p2 / play-01
+                        :ARG0 h))))",DiGraph with 7 nodes and 7 edges,injure-01,cause-01,:ARG0-of,injure-01,possible-01,:cause,i_3,s14p_6,c_5,s14i2_2,inanimate
+17,AMR to UMR targerted conversion split roles - Graphs.csv,14,"I can't do work at home, because she shouts at me.","[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}]","
+
+
+(p / possible-01 :polarity -
+      :ARG1 (w / work-01
+            :ARG0 (i / i)
+            :location (h / home))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / shout-01
+                  :ARG0 (s2 / she)
+                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,:ARG1-of,possible-01,shout-01,:reason,p_3,s15s_9,c_7,s15p_2,animate
+18,AMR to UMR targerted conversion split roles - Graphs.csv,14,"I can't do work at home, because she shouts at me.","[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}]","
+
+
+(p / possible-01 :polarity -
+      :ARG1 (w / work-01
+            :ARG0 (i / i)
+            :location (h / home))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / shout-01
+                  :ARG0 (s2 / she)
+                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,:ARG1-of,possible-01,shout-01,:reason,p_3,s15s_9,c_7,s15p_2,animate
+19,AMR to UMR targerted conversion split roles - Graphs.csv,15,The hospital has been vacated due to extensive damage.,[],"
+
+
+(v / vacate-01
+      :ARG1 (h / hospital)
+      :ARG1-of (c / cause-01
+            :ARG0 (d / damage-01
+                  :ARG1-of (e / extensive-03))))",DiGraph with 5 nodes and 5 edges,vacate-01,cause-01,:ARG1-of,vacate-01,damage-01,:cause,v_3,s16d_4,c_5,s16v_2,inanimate
+20,AMR to UMR targerted conversion split roles - Graphs.csv,15,The hospital has been vacated due to extensive damage.,[],"
+
+
+(v / vacate-01
+      :ARG1 (h / hospital)
+      :ARG1-of (c / cause-01
+            :ARG0 (d / damage-01
+                  :ARG1-of (e / extensive-03))))",DiGraph with 5 nodes and 5 edges,vacate-01,cause-01,:ARG1-of,vacate-01,damage-01,:cause,v_3,s16d_4,c_5,s16v_2,inanimate
+21,AMR to UMR targerted conversion split roles - Graphs.csv,16,The earthquake caused a tsunami.,[],"
+
+
+(c / cause-01
+      :ARG0 (e / earthquake)
+      :ARG1 (t / tsunami))",DiGraph with 3 nodes and 3 edges,cause-01,cause-01,,have-cause-91,natural-disaster,:cause,c_3,s17n3_6,c_3,s17h_2,inanimate
+22,AMR to UMR targerted conversion split roles - Graphs.csv,16,The earthquake caused a tsunami.,[],"
+
+
+(c / cause-01
+      :ARG0 (e / earthquake)
+      :ARG1 (t / tsunami))",DiGraph with 3 nodes and 3 edges,cause-01,cause-01,,have-cause-91,natural-disaster,:cause,c_3,s17n3_6,c_3,s17h_2,inanimate
+23,AMR to UMR targerted conversion split roles - Graphs.csv,17,Scores of people drowned when the boat sank.,[],"
+
+
+(d / drown-02
+      :ARG1 (p / person
+            :quant (m / multiple :op1 20))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / sink-01
+                  :ARG1 (b / boat))))",DiGraph with 7 nodes and 7 edges,drown-02,cause-01,:ARG1-of,drown-02,sink-01,:cause,d_3,s18s_6,c_7,s18d_2,inanimate
+24,AMR to UMR targerted conversion split roles - Graphs.csv,17,Scores of people drowned when the boat sank.,[],"
+
+
+(d / drown-02
+      :ARG1 (p / person
+            :quant (m / multiple :op1 20))
+      :ARG1-of (c / cause-01
+            :ARG0 (s / sink-01
+                  :ARG1 (b / boat))))",DiGraph with 7 nodes and 7 edges,drown-02,cause-01,:ARG1-of,drown-02,sink-01,:cause,d_3,s18s_6,c_7,s18d_2,inanimate
+25,AMR to UMR targerted conversion split roles - Graphs.csv,18,I must stop now as the shuttle leaves in 10 minutes.,[{'PER': 'I'}],"
+
+
+(o / obligate-01
+      :ARG2 (s / stop-01
+            :ARG0 (i / i)
+            :time (n / now))
+      :ARG1-of (c / cause-01
+            :ARG0 (l / leave-11
+                  :ARG0 (s2 / shuttle)
+                  :time (a / after
+                        :op1 (n2 / now)
+                        :quant (t / temporal-quantity :quant 10
+                              :unit (m / minute))))))",DiGraph with 12 nodes and 12 edges,obligate-01,cause-01,:ARG1-of,obligate-01,leave-11,:Cause-of,o_3,s19l_8,c_7,s19o_2,inanimate
+26,AMR to UMR targerted conversion split roles - Graphs.csv,18,I must stop now as the shuttle leaves in 10 minutes.,[{'PER': 'I'}],"
+
+
+(o / obligate-01
+      :ARG2 (s / stop-01
+            :ARG0 (i / i)
+            :time (n / now))
+      :ARG1-of (c / cause-01
+            :ARG0 (l / leave-11
+                  :ARG0 (s2 / shuttle)
+                  :time (a / after
+                        :op1 (n2 / now)
+                        :quant (t / temporal-quantity :quant 10
+                              :unit (m / minute))))))",DiGraph with 12 nodes and 12 edges,obligate-01,cause-01,:ARG1-of,obligate-01,leave-11,:Cause-of,o_3,s19l_8,c_7,s19o_2,inanimate
+27,AMR to UMR targerted conversion split roles - Graphs.csv,19,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}]","
+
+
+(r / reasonable-02 :mode imperative :polite +
+      :ARG1 (p / person :wiki - :name (n / name :op1 ""John""))
+      :ARG1-of (c / cause-01
+            :ARG0 (i / include-91
+                  :ARG1 (c2 / child)
+                  :ARG2 (a / audience))))",DiGraph with 10 nodes and 10 edges,reasonable-02,cause-01,:ARG1-of,reasonable-02,audience,:reason,r_3,s20a_6,c_9,s20r_1,animate
+28,AMR to UMR targerted conversion split roles - Graphs.csv,19,"John, please -- there are children in the audience.","[{'PER': 'John'}, {'B_human': 'children'}]","
+
+
+(r / reasonable-02 :mode imperative :polite +
+      :ARG1 (p / person :wiki - :name (n / name :op1 ""John""))
+      :ARG1-of (c / cause-01
+            :ARG0 (i / include-91
+                  :ARG1 (c2 / child)
+                  :ARG2 (a / audience))))",DiGraph with 10 nodes and 10 edges,reasonable-02,cause-01,:ARG1-of,reasonable-02,audience,:reason,r_3,s20a_6,c_9,s20r_1,animate
+29,AMR to UMR targerted conversion split roles - Graphs.csv,20,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]","
+
+
+(d / divorce-01
+      :ARG0 (s / she)
+      :ARG1 (h / he)
+      :ARG1-of (c / cause-01
+            :ARG0 (a / alcoholic
+                  :domain h)
+            :degree (p / part)))",DiGraph with 7 nodes and 7 edges,divorce-01,cause-01,:ARG1-of,divorce-02,alcoholism,:reason,d_3,s21a_9,c_6,s21d_2,inanimate
+30,AMR to UMR targerted conversion split roles - Graphs.csv,20,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]","
+
+
+(d / divorce-01
+      :ARG0 (s / she)
+      :ARG1 (h / he)
+      :ARG1-of (c / cause-01
+            :ARG0 (a / alcoholic
+                  :domain h)
+            :degree (p / part)))",DiGraph with 7 nodes and 7 edges,divorce-01,cause-01,:ARG1-of,divorce-02,alcoholism,:reason,d_3,s21a_9,c_6,s21d_2,inanimate
+31,AMR to UMR targerted conversion split roles - Graphs.csv,21,I saw a cloud of dust .,[{'PER': 'I'}],"
+
+
+(s / see-01
+      :ARG0 (i / i)
+      :ARG1 (c / cloud
+            :consist-of (d / dust)))",DiGraph with 4 nodes and 4 edges,cloud,dust,:consist-of,cloud,dust,:material,c_5,s32c_6,d_6,s32d_7,inanimate
+32,AMR to UMR targerted conversion split roles - Graphs.csv,23,a ring of gold,[],"
+
+
+(r / ring
+      :consist-of (g / gold))",DiGraph with 2 nodes and 2 edges,ring,gold,:consist-of,ring,gold,:material,r_3,s34r_3,g_4,s34g_4,inanimate
+33,AMR to UMR targerted conversion split roles - Graphs.csv,24,The children's choir sang beautifully.,[],"
+
+
+(s / sing-01
+      :ARG0 (c / choir
+            :consist-of (c2 / child))
+      :ARG1-of (b / beautiful-02))",DiGraph with 4 nodes and 4 edges,choir,child,:consist-of,choir,child,:group,c_4,s35c_3,c2_5,s35c2_4,animate
+34,AMR to UMR targerted conversion split roles - Graphs.csv,25,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]","
+
+
+(p / protein-segment :wiki - :name (n / name :op1 ""eXchanger"" :op2 ""Inhibitory"" :op3 ""Peptide"")
+      :consist-of (r / residue
+            :mod (v / value-interval :op1 251 :op2 271)
+            :part-of (p2 / protein :wiki ""Sodium-calcium_exchanger"" :name (n2 / name :op1 ""NCX1""))))",DiGraph with 13 nodes and 13 edges,protein-segment,residue,:consist-of,protein-segment,residue,:Material-of,p_3,s36p_2,r_9,s36r_7,inanimate
+35,AMR to UMR targerted conversion split roles - Graphs.csv,25,the eXchanger Inhibitory Peptide (XIP) region (residues 251-271) of NCX1,"[{'MISC': 'e'}, {'MISC': 'In'}, {'MISC': 'ory Peptide'}, {'MISC': 'NC'}]","
+
+
+(p / protein-segment :wiki - :name (n / name :op1 ""eXchanger"" :op2 ""Inhibitory"" :op3 ""Peptide"")
+      :consist-of (r / residue
+            :mod (v / value-interval :op1 251 :op2 271)
+            :part-of (p2 / protein :wiki ""Sodium-calcium_exchanger"" :name (n2 / name :op1 ""NCX1""))))",DiGraph with 13 nodes and 13 edges,residue,value-interval,:mod,residue,value-interval,,r_9,s36r_7,v_10,s36v_8,inanimate
+36,AMR to UMR targerted conversion split roles - Graphs.csv,26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],"
+
+
+(d / describe-01
+      :ARG0 (p / person
+            :ARG0-of (w / work-01))
+      :ARG1 (c3 / cloud
+            :consist-of (d3 / dust
+                  :mod (b2 / blue))
+            :ARG1-of (h / hang-01
+                  :location (o / over
+                        :op1 (t / thing
+                              :part-of (f / factory)))
+                  :concession (v / ventilate-01
+                        :ARG0 (f2 / fan
+                              :mod (e / exhaust))
+                        :ARG1 (a / area)))))",DiGraph with 14 nodes and 14 edges,cloud,dust,:consist-of,cloud-01,dust,:material,c3_6,s37c_4,d3_7,s37d2_5,inanimate
+37,AMR to UMR targerted conversion split roles - Graphs.csv,26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],"
+
+
+(d / describe-01
+      :ARG0 (p / person
+            :ARG0-of (w / work-01))
+      :ARG1 (c3 / cloud
+            :consist-of (d3 / dust
+                  :mod (b2 / blue))
+            :ARG1-of (h / hang-01
+                  :location (o / over
+                        :op1 (t / thing
+                              :part-of (f / factory)))
+                  :concession (v / ventilate-01
+                        :ARG0 (f2 / fan
+                              :mod (e / exhaust))
+                        :ARG1 (a / area)))))",DiGraph with 14 nodes and 14 edges,dust,blue,:mod,dust,blue,:mod,d3_7,s37d2_5,b2_8,s37b_6,inanimate
+38,AMR to UMR targerted conversion split roles - Graphs.csv,27,"Rush, Levin, Hannity, Savage etc all said Romney was the conservative candidate.","[{'PER': 'Rush'}, {'PER': 'Levin'}, {'PER': 'Hannity'}, {'PER': 'Savage'}, {'PER': 'Romney'}, {'B_human': 'candidate'}]","
+
+
+(s / say-01
+      :ARG0 (a / all
+            :consist-of (a2 / and
+                  :op1 (p2 / person :wiki ""Rush_Limbaugh""
+                        :name (n2 / name :op1 ""Rush""))
+                  :op2 (p3 / person :wiki ""Mark_Levin""
+                        :name (n3 / name :op1 ""Levin""))
+                  :op3 (p4 / person :wiki ""Sean_Hannity""
+                        :name (n4 / name :op1 ""Hannity""))
+                  :op4 (p5 / person :wiki ""Michael_Savage""
+                        :name (n5 / name :op1 ""Savage""))
+                  :op5 (e / et-cetera)))
+      :ARG1 (c / candidate
+            :mod (c2 / conservative)
+            :domain (p / person :wiki ""Mitt_Romney""
+                  :name (n / name :op1 ""Romney""))))",DiGraph with 26 nodes and 26 edges,candidate,conservative,:mod,candidate,conservative,:mod,c_23,s38c_3,c2_24,s38c2_6,inanimate
+39,AMR to UMR targerted conversion split roles - Graphs.csv,28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]","
+
+(r / rally-01
+      :ARG1 (p / person
+            :source (c / country :wiki ""South_Korea"" :name (n / name :op1 ""South"" :op2 ""Korea"")))
+      :ARG2 (s / support-01
+            :ARG0 p
+            :ARG1 (r2 / right-05
+                  :ARG1 p
+                  :ARG2 (e / eat-01
+                        :ARG0 p
+                        :ARG1 (m / meat
+                              :consist-of (d2 / dog)))))
+      :time (d / date-entity :year 2002 :month 1 :day 11))",DiGraph with 19 nodes and 19 edges,person,country,:source,person,country,:group,p_3,s39p_3,c_4,s39c_4,inanimate
+40,AMR to UMR targerted conversion split roles - Graphs.csv,28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]","
+
+(r / rally-01
+      :ARG1 (p / person
+            :source (c / country :wiki ""South_Korea"" :name (n / name :op1 ""South"" :op2 ""Korea"")))
+      :ARG2 (s / support-01
+            :ARG0 p
+            :ARG1 (r2 / right-05
+                  :ARG1 p
+                  :ARG2 (e / eat-01
+                        :ARG0 p
+                        :ARG1 (m / meat
+                              :consist-of (d2 / dog)))))
+      :time (d / date-entity :year 2002 :month 1 :day 11))",DiGraph with 19 nodes and 19 edges,meat,dog,:consist-of,meat,dog,,m_15,s39m_11,d2_16,s39d2_12,animate
+41,AMR to UMR targerted conversion split roles - Graphs.csv,29,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],"
+
+
+(c / continue-01
+      :ARG1 (e / extremism
+            :mod (r / religion))
+      :location (c2 / country :wiki ""Pakistan""
+            :name (n / name :op1 ""Pakistan""))
+      :concession (b / ban-01
+            :ARG1 (g / group
+                  :consist-of (m / militant))))",DiGraph with 10 nodes and 10 edges,group,militant,:consist-of,group,militant,,g_11,s40g_9,m_12,s40m_10,inanimate
+42,AMR to UMR targerted conversion split roles - Graphs.csv,29,Religious extremism continues in Pakistan despite the banning of militant groups.,[{'LOC': 'Pakistan'}],"
+
+
+(c / continue-01
+      :ARG1 (e / extremism
+            :mod (r / religion))
+      :location (c2 / country :wiki ""Pakistan""
+            :name (n / name :op1 ""Pakistan""))
+      :concession (b / ban-01
+            :ARG1 (g / group
+                  :consist-of (m / militant))))",DiGraph with 10 nodes and 10 edges,extremism,religion,:mod,extremism,religion,:mod,e_4,s40e_3,r_5,s40r_4,inanimate
+43,AMR to UMR targerted conversion split roles - Graphs.csv,30,They will focus on the import of cheap chemical drugs made in Thailand.,"[{'LOC': 'Thailand'}, {'PER': 'They'}]","
+
+
+(f / focus-01
+      :ARG0 (t / they)
+      :ARG1 (i / import-01
+            :ARG1 (d / drug
+                  :ARG1-of (c2 / cheap-02)
+                  :consist-of (c3 / chemical)
+                  :ARG1-of (m / make-01
+                        :location (c / country :wiki ""Thailand"" :name (n / name :op1 ""Thailand""))))))",DiGraph with 11 nodes and 11 edges,drug,chemical,:consist-of,drug,chemical,:material,d_6,s41d_7,c3_8,s41c2_9,inanimate
+44,AMR to UMR targerted conversion split roles - Graphs.csv,31,The boy met a girl from Spain .,"[{'LOC': 'Spain'}, {'B_human': 'boy'}, {'B_human': 'girl'}]","
+
+
+(m / meet-02
+      :ARG0 (b / boy)
+      :ARG1 (g / girl
+            :source (c / country :wiki ""Spain"" :name (n / name :op1 ""Spain""))))",DiGraph with 7 nodes and 7 edges,girl,country,:source,girl,country,,g_5,s42g_3,c_6,s42c_5,inanimate
+45,AMR to UMR targerted conversion split roles - Graphs.csv,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
+
+
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:source,drive-01,city,:source,d_3,s4d_1,c_6,s4c_6,inanimate
+46,AMR to UMR targerted conversion split roles - Graphs.csv,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
+
+
+(d / drive-01
+      :ARG0 (h / he)
+      :direction (w / west)
+      :source (c / city :wiki ""Houston""
+            :name (n / name :op1 ""Houston""))
+      :destination (c2 / city :wiki ""Austin,_Texas""
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:source,d_3,s4d_1,c2_10,s4c_6,inanimate
+47,AMR to UMR targerted conversion split roles - Graphs.csv,33, I backed away from the window.,[{'PER': 'I'}],"
+
+
+(b / back-02
+      :ARG0 (i / i)
+      :source (w / window))",DiGraph with 3 nodes and 3 edges,back-02,window,:source,back-02,window,:start,b_3,s44b_2,w_5,s44w_6,inanimate
+48,AMR to UMR targerted conversion split roles - Graphs.csv,34,These have all be vacated too from what I'm hearing.,[],"
+
+
+(v / vacate-01
+      :ARG1 (t / this
+            :mod (a / all))
+      :source (t2 / thing
+            :ARG1-of (h / hear-01
+                  :ARG0 (i / i)))
+      :mod (t3 / too))",DiGraph with 7 nodes and 7 edges,vacate-01,thing,:source,vacate-01,thing,:undergoer,v_3,s45v_0,t2_6,s45t_1,inanimate
+49,AMR to UMR targerted conversion split roles - Graphs.csv,34,These have all be vacated too from what I'm hearing.,[],"
+
+
+(v / vacate-01
+      :ARG1 (t / this
+            :mod (a / all))
+      :source (t2 / thing
+            :ARG1-of (h / hear-01
+                  :ARG0 (i / i)))
+      :mod (t3 / too))",DiGraph with 7 nodes and 7 edges,vacate-01,too,:mod,vacate-01,too,:mod,v_3,s45v_0,t3_9,s45t2_7,inanimate
+50,AMR to UMR targerted conversion split roles - Graphs.csv,35,physicists from all over the world,[{'B_human': 'Ph'}],"
+
+
+(p / physicist
+      :source (a / all-over
+            :op1 (w / world)))",DiGraph with 3 nodes and 3 edges,physicist,all-over,:source,physicists,all-over,,p_3,physicists_1,a_4,s46a_4,inanimate
+51,AMR to UMR targerted conversion split roles - Graphs.csv,36,She got a master's degree in linguistics from UCLA.,"[{'ORG': 'UCLA'}, {'B_human': 'master'}, {'PER': 'She'}]","
+
+
+(g / get-01
+      :ARG0 (s / she)
+      :ARG1 (d / degree
+            :mod (m / master)
+            :topic (l / linguistics)
+            :source (u / university :wiki ""University_of_California,_Los_Angeles"" :name (n / name :op1 ""UCLA""))))",DiGraph with 9 nodes and 9 edges,degree,master,:mod,degree,master,:mod,d_5,s47d_3,m_6,s47m_4,inanimate
+52,AMR to UMR targerted conversion split roles - Graphs.csv,37,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]","
+
+
+(p / possible-01
+      :ARG1 (m / make-05
+            :ARG0 (c / company :wiki ""Hallmark_Cards""
+                  :name (n / name :op1 ""Hallmark""))
+            :ARG1 (f / fortune
+                  :source (g / guy
+                        :mod (t / this)))))",DiGraph with 9 nodes and 9 edges,fortune,guy,:source,fortune,guy,:source,f_9,s48f_4,g_10,s48g_5,animate
+53,AMR to UMR targerted conversion split roles - Graphs.csv,37,Hallmark could make a fortune off of this guy.,"[{'MISC': 'Hallmark'}, {'B_human': 'guy'}]","
+
+
+(p / possible-01
+      :ARG1 (m / make-05
+            :ARG0 (c / company :wiki ""Hallmark_Cards""
+                  :name (n / name :op1 ""Hallmark""))
+            :ARG1 (f / fortune
+                  :source (g / guy
+                        :mod (t / this)))))",DiGraph with 9 nodes and 9 edges,guy,this,:mod,guy,this,:mod,g_10,s48g_5,t_11,s48t_6,inanimate
+54,AMR to UMR targerted conversion split roles - Graphs.csv,38,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]","
+
+
+(s / stimulate-01
+      :ARG0 (i / it)
+      :ARG1 (o / other)
+      :ARG3 (c / contribute-01
+            :ARG0 o
+            :degree (b / big))
+      :purpose (p / possible-01
+            :ARG1 (p2 / participate-01
+                  :ARG0 o
+                  :ARG1 (w / wave-04
+                        :ARG1 (c2 / cash
+                              :ARG1-of (f / free-03)
+                              :source (k / king
+                                    :mod (b2 / boy)))
+                        :mod (n / next)))))",DiGraph with 15 nodes and 15 edges,cash,king,:source,cash,king,:source,c2_13,s49c2_14,k_15,s49k_16,inanimate
+55,AMR to UMR targerted conversion split roles - Graphs.csv,38,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]","
+
+
+(s / stimulate-01
+      :ARG0 (i / it)
+      :ARG1 (o / other)
+      :ARG3 (c / contribute-01
+            :ARG0 o
+            :degree (b / big))
+      :purpose (p / possible-01
+            :ARG1 (p2 / participate-01
+                  :ARG0 o
+                  :ARG1 (w / wave-04
+                        :ARG1 (c2 / cash
+                              :ARG1-of (f / free-03)
+                              :source (k / king
+                                    :mod (b2 / boy)))
+                        :mod (n / next)))))",DiGraph with 15 nodes and 15 edges,wave-04,next,:mod,wave-04,next,:mod,w_12,s49w_13,n_17,s49n_18,inanimate
+56,AMR to UMR targerted conversion split roles - Graphs.csv,38,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]","
+
+
+(s / stimulate-01
+      :ARG0 (i / it)
+      :ARG1 (o / other)
+      :ARG3 (c / contribute-01
+            :ARG0 o
+            :degree (b / big))
+      :purpose (p / possible-01
+            :ARG1 (p2 / participate-01
+                  :ARG0 o
+                  :ARG1 (w / wave-04
+                        :ARG1 (c2 / cash
+                              :ARG1-of (f / free-03)
+                              :source (k / king
+                                    :mod (b2 / boy)))
+                        :mod (n / next)))))",DiGraph with 15 nodes and 15 edges,king,boy,:mod,king,boy,:mod,k_15,s49k_16,b2_16,s49b2_17,inanimate
+57,AMR to UMR targerted conversion split roles - Graphs.csv,39,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}]","
+
+
+(s / start-01
+      :ARG1 (e2 / event :wiki -
+            :name (n / name :op1 ""The"" :op2 ""Wonder"" :op3 ""Tour""))
+      :source (c / city :wiki ""Hong_Kong""
+            :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",DiGraph with 12 nodes and 12 edges,start-01,city,:source,start-01,city,:start,s_3,s50s_2,c_10,s50c_7,inanimate
+58,AMR to UMR targerted conversion split roles - Graphs.csv,40,"After all , what are the joyful memories from inside paradise ?",[],"
+
+
+(m / memory
+      :mod (j / joyful)
+      :domain (a / amr-unknown)
+      :source (i / inside
+            :op1 (p / paradise))
+      :mod (a2 / after-all))",DiGraph with 6 nodes and 6 edges,memory,inside,:source,memory,inside,,m_3,s51m_2,i_6,s51i2_6,inanimate
+59,AMR to UMR targerted conversion split roles - Graphs.csv,40,"After all , what are the joyful memories from inside paradise ?",[],"
+
+
+(m / memory
+      :mod (j / joyful)
+      :domain (a / amr-unknown)
+      :source (i / inside
+            :op1 (p / paradise))
+      :mod (a2 / after-all))",DiGraph with 6 nodes and 6 edges,memory,joyful,:mod,memory,joyful,:mod,m_3,s51m_2,j_4,s51j_3,inanimate
+60,AMR to UMR targerted conversion split roles - Graphs.csv,40,"After all , what are the joyful memories from inside paradise ?",[],"
+
+
+(m / memory
+      :mod (j / joyful)
+      :domain (a / amr-unknown)
+      :source (i / inside
+            :op1 (p / paradise))
+      :mod (a2 / after-all))",DiGraph with 6 nodes and 6 edges,memory,after-all,:mod,memory,after-all,:mod,m_3,s51m_2,a2_8,s51a_7,inanimate

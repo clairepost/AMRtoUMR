@@ -187,7 +187,7 @@ def parse_animacy_runner(sentences, amr_print):
     return ans
 
 
-def animacy_decider(X_tuples, file_id):
+def animacy_decider(X_tuples):
     # I need to create a data structure like this but instead I am feeling it with animate / inaniamate decision
     animacy_info = []
     count = 0

@@ -52,16 +52,19 @@ def remove_comment_lines(input_string):
     return result_string
 
 def read_training_data():
+    print("READING TRAINING DATA")
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     amr_graphs = {}
     umr_graphs = {} #keys are file name, values are list of sentences
+    amr_prints = {}
     sents= {}
     ne_info = {}
-    folder = "raw_data/training_data"
+    folder = "raw_data/training_data_edit"
     for file in os.listdir(folder):
-        df = pd.read_csv(folder + "/" + file) #read file
+        # df = pd.read_csv(folder + "/" + file) #read file
+        df = pd.read_csv(folder + "/" + file, encoding='latin1') # Specify encoding here
         df.dropna(subset=['UMR'], inplace=True) #remove the rows that don't have umr graphs
-        #get AMR, UMR cols
+        # #get AMR, UMR cols
         amr_graphs_str = df["AMR"]
         umr_graphs_str = df["UMR"] 
         sents[file]= df["sentence"].tolist()
@@ -69,15 +72,35 @@ def read_training_data():
 
         #set up dict for this file, dicts are used just for consiticncy sake of the rest of the data
         amr_graphs[file] =[]
+        amr_prints[file] = []
         umr_graphs[file] = []
 
         for i in amr_graphs_str:
             i = remove_comment_lines(i)
             amr_graphs[file].append(create_graph(i))
+            amr_prints[file].append(i)
+        print("\nAMR PRINTS", file, ":\n", amr_prints)
         
         for i in umr_graphs_str:
             umr_graphs[file].append(create_graph(i))
        
+    # amr_roles= {
+    #    ":mod",
+    #    ":cause",
+    #    ":part", 
+    #    ":consist-of",
+    #    ":source",
+    #    ":destination",
+    #    ":condition",
+    #    ":ARG1-of"
+    #     } # I think remove concession
+    
+    # amr_roles_in_tail= {
+    #    ":ARG1-of": "cause-01"
+    # }
+    # umr_t2r = {
+    #     "cause-01":[":cause", ":reason",":Cause-of"]
+    # }
     amr_roles= {
        ":mod",
        ":cause",
@@ -86,30 +109,177 @@ def read_training_data():
        ":source",
        ":destination",
        ":condition",
-       ":ARG1-of"
+       ":ARG1-of",
+       ":ARG0-of"
         } # I think remove concession
     
     amr_roles_in_tail= {
-       ":ARG1-of": "cause-01"
+       ":ARG1-of": "cause-01",
+       ":ARG0-of": "cause-01"
     }
     umr_t2r = {
-        "cause-01":[":cause", ":reason",":Cause-of"]
+        "cause-01":[":cause", ":reason",":Cause-of","cause-01"]
     }
+
+    columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
+
+    splits_data = align_graphs_no_animacy(sents, ne_info, amr_prints,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data_df = pd.DataFrame(splits_data)
+    splits_data_df.columns= columns
+
+    # add to data frame
+    splits_data_df["animacy"] = animacy_decider(splits_data_df)
         
 
-    splits_data = align_graphs_on_AMR_splits(sents,ne_info ,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail, umr_t2r)
-    splits_data_df = pd.DataFrame(splits_data)
+    # splits_data = align_graphs_on_AMR_splits(sents,ne_info ,amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail, umr_t2r)
+    # splits_data_df = pd.DataFrame(splits_data)
 
-    columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+    # columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
 
-    splits_data_df.columns= columns
-    splits_data_df.to_csv("input_data/train_data.csv")
+    splits_data_df.to_csv("input_data/train_data_new_animacy.csv")
     return splits_data_df
 
+def read_test_data():
+    # new test data version
+    umr_files = {}
+    amr_files = {}
+    umr_path = os.getcwd() + '/raw_data/UMR-data-english'
+    amr_path = os.getcwd() + '/raw_data/AMR-data-english'
+
     
+    for f in os.listdir(umr_path):
+        file_path = os.path.join(umr_path, f)
+        with open(file_path, 'rb') as file1:
+            try:
+                content = file1.read().decode('utf-8')
+            except UnicodeDecodeError:
+                # If 'utf-8' decoding fails, try another encoding
+                content = file1.read().decode('latin-1')
+            umr_files[f] = content
+
+    
+    for f in os.listdir(amr_path):
+        file_path = os.path.join(amr_path, f)
+        with open(file_path, 'rb') as file1:
+            try:
+                content = file1.read().decode('utf-8')
+            except UnicodeDecodeError:
+                # If 'utf-8' decoding fails, try another encoding
+                content = file1.read().decode('latin-1')
+            amr_files[f] = content
+
+    #Do not have all of the UMR annotations for the Putin document, so just grab everything before this sentence id from AMR
+    amr_files["putin_ENG_0152_2000_1208-AMR.txt"] = amr_files["putin_ENG_0152_2000_1208-AMR.txt"].split("::id NW_PRI_ENG_0152_2000_1208.13")[0]
+
+    # step 2 - get file names
+
+    #create file mappings
+    #Change key-names to the mapping above, allows for easier comparison
+    amr_files[1] = amr_files.pop('lindsay-AMR.txt')
+    amr_files[2] = amr_files.pop('lorpt-024_Phillipines_landslide_AMR.txt')
+    amr_files[3] = amr_files.pop('putin_ENG_0152_2000_1208-AMR.txt')
+    amr_files[4] = amr_files.pop('edmund_pope-AMR.txt')
+    amr_files[5] = amr_files.pop('pear-AMR__of__english-umr-0004.txt')
+
+    umr_files[1] = umr_files.pop('lindsay-umr.txt')
+    umr_files[2] = umr_files.pop('Lorelei_lorpt-024_Philippines_Landslide_2023-release.txt')
+    umr_files[3] = umr_files.pop('lorelei_lorpt-151_putin_2023-release.txt')
+    umr_files[4] = umr_files.pop('lorelei_lorpt-152_edmundpope_2023-release.txt')
+    umr_files[5] = umr_files.pop('Pear_Story_2023-release.txt')
+
+    file_map = {1:"Lindsay",2: "Landslide", 3:"Putin",4:"Edmund Pope", 5:"Pear Story"}
+
+
+    # step 3 - extract graphs and sentences
+
+    umr_sents = {}
+    all_sentences = {}
+    for f in umr_files:
+        umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
+
+    
+    amr_sents = {}
+    for f in amr_files:
+        amr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', amr_files[f])
+        sentences = re.findall(r'(?<=# ::snt\s).+?(?=\n)',amr_files[f]) #first look
+        if not sentences:
+            sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
+            sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
+        all_sentences[f] = sentences
+    
+    print(all_sentences)
+    print("\nUMR Sents\n", umr_sents)
+
+    #using the str2graph.create_graph() function
+    umr_graphs = {}
+    for file in umr_sents.keys():
+        umr_graphs[file] = []
+        for sent in umr_sents[file]:
+            umr_graphs[file].append(create_graph(sent))
+
+
+    amr_graphs = {}
+    for file in amr_sents.keys():
+        amr_graphs[file] = []
+        for sent in amr_sents[file]:
+            amr_graphs[file].append(create_graph(sent))
+
+
+    amr_roles= {
+       ":mod",
+       ":cause",
+       ":part", 
+       ":consist-of",
+       ":source",
+       ":destination",
+       ":condition",
+       ":ARG1-of",
+       ":ARG0-of"
+        } # I think remove concession
+    
+    amr_roles_in_tail= {
+       ":ARG1-of": "cause-01",
+       ":ARG0-of": "cause-01"
+    }
+    umr_t2r = {
+        "cause-01":[":cause", ":reason",":Cause-of","cause-01"]
+    }
+    
+
+    columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
+
+    ne_info = {}
+    for f in all_sentences:
+        
+        print("IN NE INFO FINDER: file ", f)
+        
+        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
+    
+    
+    
+    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data_df = pd.DataFrame(splits_data)
+    splits_data_df.columns= columns
+
+    # add to data frame
+    splits_data_df["animacy"] = animacy_decider(splits_data_df)
+
+    # Convert splits_data_df_temp to a DataFrame
+    print("Splits data df\n\n", splits_data_df.head)
+    
+    # splits_data_df["sent"] = splits_data_df["sent"].astype(str)
+    # splits_data_df["ne_info"] = splits_data_df["ne_info"].astype(str)
+    splits_data_df['sent'] = splits_data_df['sent'].apply(lambda x: f'"{x}"' if '"' not in str(x) else x)
+    splits_data_df['ne'] = splits_data_df['sent'].apply(lambda x: f'"{x}"' if '"' not in str(x) else x)
+
+
+    splits_data_df.to_csv("input_data/test_w_updates_1.csv")
+    return splits_data_df
+
 
 
 def read_augment_fake_parallel_data():
+    print("in the read augment parallel data file")
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
     # put all files in dicts
@@ -155,9 +325,6 @@ def read_augment_fake_parallel_data():
     # amr_files[2] = amr_files.pop('amr-release-3.0-amrs-guidelines.txt')
     # umr_files[3] = umr_files.pop('umr-fake-fables.txt')
     # amr_files[3] = amr_files.pop('amr-release-3.0-amrs-fables.txt')
-
-    # # file_map = {1:"consensus"}
-    file_map = {0:"consensus",1:"wiki",2:"guidelines",3:"fables"}
 
     amr_files[1] = amr_files.pop('amr-release-3.0-amrs-bolt.txt')
     amr_files[2] = amr_files.pop('amr-release-3.0-amrs-cctv.txt')
@@ -264,7 +431,7 @@ def read_augment_fake_parallel_data():
     splits_data_df.columns= columns
 
     # add to data frame
-    splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
+    splits_data_df["animacy"] = animacy_decider(splits_data_df)
 
     # Convert splits_data_df_temp to a DataFrame
     splits_data_df.to_csv("input_data/augment_getting_causes.csv")
@@ -275,21 +442,6 @@ def read_augment_fake_parallel_data():
     # might be easier to read in form the csv and make a txt file with the sentences
         # append # ::snt to the front of the sentence and then append the amr_prints  
     # then it will have one amr
-
-
-def create_missing_data():
-    df = pd.read_csv("input_data/annotated_470.csv")
-
-    # Function to format each row
-    def format_row(row):
-        return f"# ::snt {row['sent']}\n{row['amr_prints']}\n\n"
-
-    # Write formatted data to a text file
-    with open("raw_data/annotated_examples.txt", "w") as f:
-        for index, row in df.iterrows():
-            f.write(format_row(row))
-
-
 def read_missing_data():
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
@@ -299,18 +451,7 @@ def read_missing_data():
 
     # step 1 - read in from the changed txt file
 
-    amr_path = os.getcwd() + '/raw_data/annotated_examples.txt'
-    umr_path = os.getcwd() + '/raw_data/annotated_examples.txt'
-    
     # read in the graphs and the sentences
-    with open(amr_path, 'rb') as file1:
-        try:
-            content = file1.read().decode('utf-8')
-        except UnicodeDecodeError:
-            # If 'utf-8' decoding fails, try another encoding
-            content = file1.read().decode('latin-1')
-        umr_files[0] = content
-        amr_files[0] = content
 
     # step 2 - get file names (not necessary)
    
@@ -318,7 +459,6 @@ def read_missing_data():
 
     umr_sents = {}
     all_sentences = {}
-
     for f in umr_files:
         # umr_sents[f] = re.findall(r'(?<=sentence level graph:\n)\([^#]*(?=\n\n#)', umr_files[f])
         umr_sents[f] = re.findall(r'(?<=[\n])\([^#]*(?=\n|)', umr_files[f])
@@ -335,10 +475,7 @@ def read_missing_data():
         if not sentences:
             sentences = re.findall(r'(?<=:: snt)[^\n:]*(?=\n)',amr_files[f])#second look
             sentences = [re.sub(r'^\d+\s*', '', element) for element in sentences]
-
         all_sentences[f] = sentences
-    print("number of sentences:",len(sentences))
-    print("example:", sentences[3])
 
 
     #using the str2graph.create_graph() function
@@ -354,6 +491,7 @@ def read_missing_data():
         amr_graphs[file] = []
         for sent in amr_sents[file]:
             amr_graphs[file].append(create_graph(sent))
+
 
     amr_roles= {
        ":mod",
@@ -379,26 +517,30 @@ def read_missing_data():
     columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
 
     ne_info = {}
-    for f in amr_sents:
+    for f in all_sentences:
         
         print("IN NE INFO FINDER: file ", f)
         
-        ne_info[f] = parse_animacy_runner(amr_sents[f], amr_sents[f])
+        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
     
-    splits_data = align_graphs_no_animacy(amr_sents, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
     splits_data_df = pd.DataFrame(splits_data)
     splits_data_df.columns= columns
 
     # add to data frame
-    splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
+    splits_data_df["animacy"] = animacy_decider(splits_data_df)
 
     # Convert splits_data_df_temp to a DataFrame
-    splits_data_df.to_csv("input_data/annoated_470_create_graphs.csv")
+    splits_data_df.to_csv("input_data/augment_getting_causes.csv")
     return splits_data_df
 
 
+
+
+
+
         
-def read_test_data():
+def read_test_data_original():
     #reads in the raw training data, returns a df consisting of the parsed and aligned graphs
     # THIS FUNCTION IS MOSTLY COPIED OVER FROM FINALY_PROJECT.IPYNB
     # put all files in dicts
@@ -483,41 +625,21 @@ def read_test_data():
         "cause-01":[":cause", ":reason",":Cause-of"]
     }
 
-    columns = ["file", "sent_i","sent","ne_info","amr_prints", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"] 
-
     ne_info = {}
     for f in all_sentences:
-        print("IN NE INFO FINDER: file ", f)
-        ne_info[f] = parse_animacy_runner(all_sentences[f], amr_sents[f])
-    
-    splits_data = align_graphs_no_animacy(all_sentences, ne_info, amr_sents,amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r) 
+        ne_info[f] = parse_animacy_runner(all_sentences[f])
+
+    splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
     splits_data_df = pd.DataFrame(splits_data)
+
+    # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
+
+
+    columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
+
     splits_data_df.columns= columns
-
-    # add to data frame
-    splits_data_df["animacy"] = animacy_decider(splits_data_df, f)
-
-    # Convert splits_data_df_temp to a DataFrame
     splits_data_df.to_csv("input_data/test_data.csv")
     return splits_data_df
-
-    # ne_info = {}
-    # for f in all_sentences:
-    #     ne_info[f] = parse_animacy_runner(all_sentences[f])
-
-    # splits_data = align_graphs_on_AMR_splits(all_sentences,ne_info, amr_graphs,umr_graphs,amr_roles, amr_roles_in_tail, umr_t2r)
-    # splits_data_df = pd.DataFrame(splits_data)
-
-    # # fill in the UMR columns with dummy variable of nothing should be fine since it is just predicting, run it through 
-
-
-    # columns = ["file", "sent_i","sent","ne_info", "amr_graph","amr_head_name", "amr_tail_name", "amr_role","umr_head_name","umr_tail_name", "umr_role", "amr_head_id", "umr_head_id", "amr_tail_id", "umr_tail_id"]
-
-    # splits_data_df.columns= columns
-    # splits_data_df.to_csv("input_data/test_data.csv")
-    # return splits_data_df
-
-# make a new function that works for data augmention adding it from the FinalProject.ipynb
 
 
 def map_categorical_to_tensor(series):
@@ -577,11 +699,8 @@ def get_embeddings(data):
     D_BERT = config.hidden_size
     tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     embeddings = []
-    print(range(len(data)))
-    print(data["sent"])
     for i in range(len(data)):
-
-        # Example input text)
+        # Example input text
         text = data["sent"][i]
         print(text)
 
@@ -662,6 +781,7 @@ def create_combined_dict(input_set):
 
 
 def preprocess_data(split, reload_graphs, reload_rules):
+    print("Sent to preprocess: ", split)
     #Function that will read in files from the input/test_data_splits or training data_split 
     #Return a dataframe X where X contains sentence info, graph info, animacy info, amr and umr_role, rule info
     #Args: 
@@ -690,11 +810,6 @@ def preprocess_data(split, reload_graphs, reload_rules):
         else:
             X = pd.read_csv("input_data/augment_fake_data.csv")
             X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
-    elif split == "augment2":
-        if reload_graphs==True:
-            X = read_missing_data()
-            X['ne_info'] = X['ne_info'].apply(ast.literal_eval) #ne_info will need to be a literal
-
     else:
         print("arg 1 must be 'test','train', or 'augment'")
         return
@@ -735,6 +850,4 @@ def preprocess_data(split, reload_graphs, reload_rules):
 # read_test_data()
 # read_training_data("training_data")
 # read_augment_sample_data()
-#read_augment_fake_parallel_data()
-#create_missing_data()
-read_missing_data()
+# read_augment_fake_parallel_data()

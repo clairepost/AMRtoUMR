@@ -1,11 +1,11 @@
-,file,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy
-0,1,1,"If it rains , Alana won't water the plants .",[{'PER': 'Alan'}],"(s2w / water-01
+,file,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy,ne
+0,1,1,"""If it rains , Alana won't water the plants .""",[{'PER': 'Alan'}],"(s2w / water-01
     :ARG0 (s2p / person
         :name (s2n / name :op1 ""Alana""))
     :ARG1 (s2p2 / plant)
     :condition (s2r / rain-01))
-",DiGraph with 6 nodes and 5 edges,water-01,rain-01,:condition,water-01,rain-01,:condition,s2w_0,s2w_0,s2r_5,s2r_6,inanimate
-1,2,2,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'W_Animate': 'organization'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(s / say-01
+",DiGraph with 6 nodes and 5 edges,water-01,rain-01,:condition,water-01,rain-01,:condition,s2w_0,s2w_0,s2r_5,s2r_6,inanimate,"""If it rains , Alana won't water the plants ."""
+1,2,2,"""About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.""","[{'W_Animate': 'organization'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(s / say-01
       :ARG0 (o / organization :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" :name (n / name :op1 ""Red"" :op2 ""Cross""))
       :ARG1 (a / and
             :op1 (b / believe-01
@@ -24,8 +24,8 @@
                         :ARG1 (v / village
                               :mod (e / entire))))))
 
-",DiGraph with 27 nodes and 26 edges,person,other,:mod,person,other-01,,p2_13,s3p_9,o2_15,s3o_20,inanimate
-2,2,2,"About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.","[{'W_Animate': 'organization'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(s / say-01
+",DiGraph with 27 nodes and 26 edges,person,other,:mod,person,other-01,,p2_13,s3p_9,o2_15,s3o_20,inanimate,"""About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said."""
+2,2,2,"""About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said.""","[{'W_Animate': 'organization'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(s / say-01
       :ARG0 (o / organization :wiki ""International_Red_Cross_and_Red_Crescent_Movement"" :name (n / name :op1 ""Red"" :op2 ""Cross""))
       :ARG1 (a / and
             :op1 (b / believe-01
@@ -44,8 +44,8 @@
                         :ARG1 (v / village
                               :mod (e / entire))))))
 
-",DiGraph with 27 nodes and 26 edges,village,entire,:mod,village,entire,:extent,v_25,s3v_35,e_26,s3e_36,inanimate
-3,2,5,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[{'W_Inanimate': 'location'}],"(s / show-01
+",DiGraph with 27 nodes and 26 edges,village,entire,:mod,village,entire,:extent,v_25,s3v_35,e_26,s3e_36,inanimate,"""About 200 people were believed killed and 1,500 others were missing in the central Philippines on Friday when a landslide buried an entire village, the Red Cross said."""
+3,2,5,"""The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.""",[{'W_Inanimate': 'location'}],"(s / show-01
       :ARG0 (f / footage
             :topic (v / village
                   :ARG1-of (d / devastate-01))
@@ -59,8 +59,8 @@
                               :ARG1-of (g / green-02))
                         :mod (l / lush)))))
 
-",DiGraph with 14 nodes and 13 edges,thing,farmland,:mod,thing,farmland,,t_9,s6t_11,f2_10,s6f2_13,inanimate
-4,2,5,The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.,[{'W_Inanimate': 'location'}],"(s / show-01
+",DiGraph with 14 nodes and 13 edges,thing,farmland,:mod,thing,farmland,,t_9,s6t_11,f2_10,s6f2_13,inanimate,"""The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland."""
+4,2,5,"""The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland.""",[{'W_Inanimate': 'location'}],"(s / show-01
       :ARG0 (f / footage
             :topic (v / village
                   :ARG1-of (d / devastate-01))
@@ -74,8 +74,8 @@
                               :ARG1-of (g / green-02))
                         :mod (l / lush)))))
 
-",DiGraph with 14 nodes and 13 edges,thing,lush,:mod,thing,lush,,t_9,s6t_11,l_13,s6l_14,inanimate
-5,2,6,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],"(p / possible-01
+",DiGraph with 14 nodes and 13 edges,thing,lush,:mod,thing,lush,,t_9,s6t_11,l_13,s6l_14,inanimate,"""The first footage from the devastated village showed a sea of mud covering what had been lush green valley farmland."""
+5,2,6,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen.""",[],"(p / possible-01
       :ARG1 (s / see-01
             :ARG1 (a / and
                   :op1 (s2 / sheet
@@ -87,8 +87,8 @@
                         :mod (o / occasional))
                   :mod (o2 / only))))
 
-",DiGraph with 11 nodes and 10 edges,and,only,:mod,and,only,:mod,a_2,s7a_1,o2_10,s7o2_9,inanimate
-6,2,6,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],"(p / possible-01
+",DiGraph with 11 nodes and 10 edges,and,only,:mod,and,only,:mod,a_2,s7a_1,o2_10,s7o2_9,inanimate,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen."""
+6,2,6,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen.""",[],"(p / possible-01
       :ARG1 (s / see-01
             :ARG1 (a / and
                   :op1 (s2 / sheet
@@ -100,8 +100,8 @@
                         :mod (o / occasional))
                   :mod (o2 / only))))
 
-",DiGraph with 11 nodes and 10 edges,tree,coconut,:mod,tree,coconut,:mod,t2_7,s7t2_6,c_8,s7c_7,inanimate
-7,2,6,Only a few sheets of tin roofing and the occasional coconut tree could be seen.,[],"(p / possible-01
+",DiGraph with 11 nodes and 10 edges,tree,coconut,:mod,tree,coconut,:mod,t2_7,s7t2_6,c_8,s7c_7,inanimate,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen."""
+7,2,6,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen.""",[],"(p / possible-01
       :ARG1 (s / see-01
             :ARG1 (a / and
                   :op1 (s2 / sheet
@@ -113,8 +113,8 @@
                         :mod (o / occasional))
                   :mod (o2 / only))))
 
-",DiGraph with 11 nodes and 10 edges,tree,occasional,:mod,tree,occasional,:mod,t2_7,s7t2_6,o_9,s7o_8,inanimate
-8,2,7,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],"(s / show-01
+",DiGraph with 11 nodes and 10 edges,tree,occasional,:mod,tree,occasional,:mod,t2_7,s7t2_6,o_9,s7o_8,inanimate,"""Only a few sheets of tin roofing and the occasional coconut tree could be seen."""
+8,2,7,"""Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.""",[{'B_human': 'survivors'}],"(s / show-01
       :ARG1 (g / group-01
             :ARG1 (p / person
                   :ARG0-of (s2 / survive-02)
@@ -130,8 +130,8 @@
             :mod (t2 / tiny))
       :mod (a2 / also))
 
-",DiGraph with 15 nodes and 14 edges,show-01,also,:mod,show-01,also,:mod,s_0,s8s_0,a2_14,s8a2_25,inanimate
-9,2,7,"Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.",[{'B_human': 'survivors'}],"(s / show-01
+",DiGraph with 15 nodes and 14 edges,show-01,also,:mod,show-01,also,:mod,s_0,s8s_0,a2_14,s8a2_25,inanimate,"""Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction."""
+9,2,7,"""Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction.""",[{'B_human': 'survivors'}],"(s / show-01
       :ARG1 (g / group-01
             :ARG1 (p / person
                   :ARG0-of (s2 / survive-02)
@@ -147,7 +147,7 @@
             :mod (t2 / tiny))
       :mod (a2 / also))
 
-",DiGraph with 15 nodes and 14 edges,group-01,tiny,:mod,group,tiny,:mod,g_1,s8g_1,t2_13,s8t2_2,inanimate
+",DiGraph with 15 nodes and 14 edges,group-01,tiny,:mod,group,tiny,:mod,g_1,s8g_1,t2_13,s8t2_2,inanimate,"""Tiny groups of mud-spattered survivors were also shown, walking through the muck, apparently stunned by the scope of the destruction."""
 10,2,8,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe.","[{'PER': 'Gloria Arroyo'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Gloria"" :op2 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -168,7 +168,7 @@
             :ARG1 (n2 / nation)
             :ARG1-of (t2 / televise-01)))
 
-",DiGraph with 23 nodes and 22 edges,rush-01,and,:source,rush-01,and,:path,r_8,s9r_9,a2_15,s9a2_14,inanimate
+",DiGraph with 23 nodes and 22 edges,rush-01,and,:source,rush-01,and,:path,r_8,s9r_9,a2_15,s9a2_14,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
 11,2,8,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe.","[{'PER': 'Gloria Arroyo'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Gloria"" :op2 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -189,7 +189,7 @@
             :ARG1 (n2 / nation)
             :ARG1-of (t2 / televise-01)))
 
-",DiGraph with 23 nodes and 22 edges,team,rescue-01,:mod,team,rescue-01,,t_10,s9t_10,r2_11,s9r2_11,inanimate
+",DiGraph with 23 nodes and 22 edges,team,rescue-01,:mod,team,rescue-01,,t_10,s9t_10,r2_11,s9r2_11,inanimate,"In a televised address to the nation, President Gloria Arroyo said rescue teams were rushing to the area from ""air, land and sea"" to cope with the catastrophe."
 12,2,9,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'PER': 'I'}, {'PER': 'she'}, {'W_Animate': 'military'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (s2 / she)
       :ARG1 (o / order-02
@@ -203,7 +203,7 @@
                   :location (c / country-region :wiki - :name (n3 / name :op1 ""Central"" :op2 ""Philippines"")))
             :ARG2 (a2 / area)))
 
-",DiGraph with 20 nodes and 19 edges,force-04,navy,:mod,force,navy,:mod,f_10,s10f_12,n2_12,s10n2_16,inanimate
+",DiGraph with 20 nodes and 19 edges,force-04,navy,:mod,force,navy,:mod,f_10,s10f_12,n2_12,s10n2_16,inanimate,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said."
 13,2,9,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'PER': 'I'}, {'PER': 'she'}, {'W_Animate': 'military'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (s2 / she)
       :ARG1 (o / order-02
@@ -217,7 +217,7 @@
                   :location (c / country-region :wiki - :name (n3 / name :op1 ""Central"" :op2 ""Philippines"")))
             :ARG2 (a2 / area)))
 
-",DiGraph with 20 nodes and 19 edges,force-04,entire,:mod,force,entire,:extent,f_10,s10f_12,e_13,s10e_17,inanimate
+",DiGraph with 20 nodes and 19 edges,force-04,entire,:mod,force,entire,:extent,f_10,s10f_12,e_13,s10e_17,inanimate,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said."
 14,2,10,"""Naval ships will be used as floating hospitals and command centres for relief and rescue.""",[],"(u / use-01
       :ARG1 (s / ship
             :mod (n / navy))
@@ -230,7 +230,7 @@
                         :op1 (r / relieve-01)
                         :op2 (r2 / rescue-01)))))
 
-",DiGraph with 11 nodes and 10 edges,ship,navy,:mod,ship,navy,:mod,s_1,s11s2_3,n_2,s11n_4,inanimate
+",DiGraph with 11 nodes and 10 edges,ship,navy,:mod,ship,navy,:mod,s_1,s11s2_3,n_2,s11n_4,inanimate,"""Naval ships will be used as floating hospitals and command centres for relief and rescue."""
 15,2,10,"""Naval ships will be used as floating hospitals and command centres for relief and rescue.""",[],"(u / use-01
       :ARG1 (s / ship
             :mod (n / navy))
@@ -243,8 +243,8 @@
                         :op1 (r / relieve-01)
                         :op2 (r2 / rescue-01)))))
 
-",DiGraph with 11 nodes and 10 edges,center,command-02,:mod,center,command-02,:mod,c_6,s11c_10,c2_7,s11c2_11,inanimate
-16,2,11,"Leyte Governor Rosette Lerias said the latest census indicated there were 375 houses with 3,000 people living in Guinsaugon before the landslide.","[{'W_Animate': 'person'}, {'W_Inanimate': 'island'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(s / say-01
+",DiGraph with 11 nodes and 10 edges,center,command-02,:mod,center,command-02,:mod,c_6,s11c_10,c2_7,s11c2_11,inanimate,"""Naval ships will be used as floating hospitals and command centres for relief and rescue."""
+16,2,11,"""Leyte Governor Rosette Lerias said the latest census indicated there were 375 houses with 3,000 people living in Guinsaugon before the landslide.""","[{'W_Animate': 'person'}, {'W_Inanimate': 'island'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(s / say-01
       :ARG0 (p / person :wiki - :name (n / name :op1 ""Rosette"" :op2 ""Lerias"")
             :ARG0-of (h / have-org-role-91
                   :ARG1 (i2 / island :wiki ""Leyte"" :name (n2 / name :op1 ""Leyte""))
@@ -259,8 +259,8 @@
                   :time (b / before
                         :op1 (l3 / landslide)))))
 
-",DiGraph with 26 nodes and 25 edges,census,last,:mod,census,last,:mod,c_13,s12c_14,l_14,s12l_15,inanimate
-17,2,15,"Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out.","[{'ORG': 'Leria'}, {'LOC': 'Guinsaugon'}, {'LOC': 'Leyte'}, {'B_human': 'residents'}, {'W_Animate': 'person'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'island'}]","(s / say-01
+",DiGraph with 26 nodes and 25 edges,census,last,:mod,census,last,:mod,c_13,s12c_14,l_14,s12l_15,inanimate,"""Leyte Governor Rosette Lerias said the latest census indicated there were 375 houses with 3,000 people living in Guinsaugon before the landslide."""
+17,2,15,"""Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out.""","[{'ORG': 'Leria'}, {'LOC': 'Guinsaugon'}, {'LOC': 'Leyte'}, {'B_human': 'residents'}, {'W_Animate': 'person'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'island'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (e / evacuate-01
@@ -290,8 +290,8 @@
                               :op2 (c3 / come-out-09
                                     :ARG1 (s3 / sun)))))))
 
-",DiGraph with 36 nodes and 35 edges,return-01,cause-01,:ARG1-of,return-01,and,:reason,r2_26,s16a2_42,c2_30,s16r2_34,inanimate
-18,2,15,"Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out.","[{'ORG': 'Leria'}, {'LOC': 'Guinsaugon'}, {'LOC': 'Leyte'}, {'B_human': 'residents'}, {'W_Animate': 'person'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'island'}]","(s / say-01
+",DiGraph with 36 nodes and 35 edges,return-01,cause-01,:ARG1-of,return-01,and,:reason,r2_26,s16a2_42,c2_30,s16r2_34,inanimate,"""Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out."""
+18,2,15,"""Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out.""","[{'ORG': 'Leria'}, {'LOC': 'Guinsaugon'}, {'LOC': 'Leyte'}, {'B_human': 'residents'}, {'W_Animate': 'person'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'island'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (e / evacuate-01
@@ -321,8 +321,8 @@
                               :op2 (c3 / come-out-09
                                     :ARG1 (s3 / sun)))))))
 
-",DiGraph with 36 nodes and 35 edges,return-01,cause-01,:ARG1-of,return-01,and,:reason,r2_26,s16a2_42,c2_30,s16r2_34,inanimate
-19,2,16,"A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
+",DiGraph with 36 nodes and 35 edges,return-01,cause-01,:ARG1-of,return-01,and,:reason,r2_26,s16a2_42,c2_30,s16r2_34,inanimate,"""Lerias said that many Guinsaugon residents had been evacuated after landslides earlier in the week had killed more than 20 people on Leyte, but that many had returned Friday because the rains had stopped and the sun had come out."""
+19,2,16,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.""","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
       :ARG1 (h / help-01
             :ARG0 (e / earthquake
                   :quant (s / seismic-quantity :quant 2.6)
@@ -345,8 +345,8 @@
                               :ARG1-of (g / govern-01
                                     :ARG0 (g2 / government-organization)))))))
 
-",DiGraph with 27 nodes and 26 edges,earthquake,mild,:mod,earthquake-02,mild,:mod,e_2,s17e_12,m_5,s17m_16,inanimate
-20,2,16,"A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
+",DiGraph with 27 nodes and 26 edges,earthquake,mild,:mod,earthquake-02,mild,:mod,e_2,s17e_12,m_5,s17m_16,inanimate,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office."""
+20,2,16,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.""","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
       :ARG1 (h / help-01
             :ARG0 (e / earthquake
                   :quant (s / seismic-quantity :quant 2.6)
@@ -369,7 +369,7 @@
                               :ARG1-of (g / govern-01
                                     :ARG0 (g2 / government-organization)))))))
 
-",DiGraph with 27 nodes and 26 edges,wall,mud,:mod,wall,mud,:material,w_10,s17w_30,m2_11,s17m2_31,inanimate
+",DiGraph with 27 nodes and 26 edges,wall,mud,:mod,wall,mud,:material,w_10,s17w_30,m2_11,s17m2_31,inanimate,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office."""
 21,2,17,"""The area could have really been ready for a landslide because of the amount of rainfall and if there was a minor earthquake, it might have hastened it,"" Solidum said.","[{'PER': 'Solid'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Solidum""))
@@ -389,7 +389,7 @@
                         :ARG1 l)
                   :condition e)))
 
-",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,:ARG1-of,ready-02,volume-quantity,:cause,p2_6,s18v_10,c_11,s18r_6,inanimate
+",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,:ARG1-of,ready-02,volume-quantity,:cause,p2_6,s18v_10,c_11,s18r_6,inanimate,"""The area could have really been ready for a landslide because of the amount of rainfall and if there was a minor earthquake, it might have hastened it,"" Solidum said."
 22,2,17,"""The area could have really been ready for a landslide because of the amount of rainfall and if there was a minor earthquake, it might have hastened it,"" Solidum said.","[{'PER': 'Solid'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Solidum""))
@@ -409,8 +409,8 @@
                         :ARG1 l)
                   :condition e)))
 
-",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,:ARG1-of,ready-02,volume-quantity,:cause,p2_6,s18v_10,c_11,s18r_6,inanimate
-23,2,18,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'W_Animate': 'person'}],"(s / say-01
+",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,:ARG1-of,ready-02,volume-quantity,:cause,p2_6,s18v_10,c_11,s18r_6,inanimate,"""The area could have really been ready for a landslide because of the amount of rainfall and if there was a minor earthquake, it might have hastened it,"" Solidum said."
+23,2,18,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.""",[{'W_Animate': 'person'}],"(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Nestor"" :op2 ""Sadirin"")
             :ARG0-of (h / have-org-role-91
@@ -428,8 +428,8 @@
             :op2 (r3 / rescue-01 :quant 100
                   :ARG1 (p2 / person))))
 
-",DiGraph with 22 nodes and 21 edges,force-04,task-01,:mod,force,task-01,:ARG0-of,f_10,s19f_10,t_11,s19t_11,inanimate
-24,2,18,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'W_Animate': 'person'}],"(s / say-01
+",DiGraph with 22 nodes and 21 edges,force-04,task-01,:mod,force,task-01,:ARG0-of,f_10,s19f_10,t_11,s19t_11,inanimate,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued."""
+24,2,18,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.""",[{'W_Animate': 'person'}],"(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Nestor"" :op2 ""Sadirin"")
             :ARG0-of (h / have-org-role-91
@@ -447,8 +447,8 @@
             :op2 (r3 / rescue-01 :quant 100
                   :ARG1 (p2 / person))))
 
-",DiGraph with 22 nodes and 21 edges,task-01,rescue-01,:mod,task-01,rescue-01,:ARG1,t_11,s19t_11,r_12,s19r_12,inanimate
-25,2,18,"Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.",[{'W_Animate': 'person'}],"(s / say-01
+",DiGraph with 22 nodes and 21 edges,task-01,rescue-01,:mod,task-01,rescue-01,:ARG1,t_11,s19t_11,r_12,s19r_12,inanimate,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued."""
+25,2,18,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued.""",[{'W_Animate': 'person'}],"(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Nestor"" :op2 ""Sadirin"")
             :ARG0-of (h / have-org-role-91
@@ -466,8 +466,8 @@
             :op2 (r3 / rescue-01 :quant 100
                   :ARG1 (p2 / person))))
 
-",DiGraph with 22 nodes and 21 edges,body,die-01,:mod,body,die-01,:ARG1-of,b_15,s19b_17,d_17,s19d_19,inanimate
-26,2,20,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
+",DiGraph with 22 nodes and 21 edges,body,die-01,:mod,body,die-01,:ARG1-of,b_15,s19b_17,d_17,s19d_19,inanimate,"""Army Colonel Nestor Sadirin, head of a rescue task force, said 16 dead bodies had been recovered so far and 100 people rescued."""
+26,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (p2 / person
@@ -500,8 +500,8 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate
-27,2,20,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
+",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+27,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (p2 / person
@@ -534,8 +534,8 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate
-28,2,20,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
+",DiGraph with 36 nodes and 35 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_21,s21e_26,h3_24,s21h3_29,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+28,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (p2 / person
@@ -568,8 +568,8 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_21,s21e_26,h3_24,s21h3_29,inanimate
-29,2,20,"Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
+",DiGraph with 36 nodes and 35 edges,person,official,:mod,person,official,,p4_34,s21p_1,o_35,s21o_44,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+29,2,20,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas.""","[{'PER': 'Le'}, {'B_human': 'rescue'}, {'B_human': 'officials'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(c / call-03
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Lerias""))
       :ARG1 (p2 / person
@@ -602,8 +602,8 @@
                                     :ARG0 (p4 / person
                                           :mod (o / official))))))))
 
-",DiGraph with 36 nodes and 35 edges,person,official,:mod,person,official,,p4_34,s21p_1,o_35,s21o_44,inanimate
-30,2,21,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
+",DiGraph with 36 nodes and 35 edges,call-03,cause-01,:ARG1-of,call-03,work-09,:reason,c_0,s21w_25,c3_17,s21c_0,inanimate,"""Lerias called for more rescuers to come to the site to help look for bodies as heavy earth moving equipment could not work in the mud, which officials said was more than six metres (yards) deep in many areas."""
+30,2,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
                   :ARG2 (p2 / president)))
@@ -624,8 +624,8 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,team,company,:source,team,company,:source,t_8,s22t_9,c_11,s22c_15,inanimate
-31,2,21,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
+",DiGraph with 23 nodes and 22 edges,team,company,:source,team,company,:source,t_8,s22t_9,c_11,s22c_15,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+31,2,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
                   :ARG2 (p2 / president)))
@@ -646,8 +646,8 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,go-01,also,:mod,go-01,also,:mod,g_7,s22g_8,a2_22,s22a2_34,inanimate
-32,2,21,"Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
+",DiGraph with 23 nodes and 22 edges,go-01,also,:mod,go-01,also,:mod,g_7,s22g_8,a2_22,s22a2_34,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+32,2,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
                   :ARG2 (p2 / president)))
@@ -668,8 +668,8 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,company,mine-01,:mod,company,mine-01,:mod,c_11,s22c_15,m_12,s22m_16,inanimate
-33,2,23,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],"(p / possible-01
+",DiGraph with 23 nodes and 22 edges,company,mine-01,:mod,company,mine-01,:mod,c_11,s22c_15,m_12,s22m_16,inanimate,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said."""
+33,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
                   :mod (m / military))
@@ -691,8 +691,8 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate
-34,2,23,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],"(p / possible-01
+",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+34,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
                   :mod (m / military))
@@ -714,8 +714,8 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate
-35,2,23,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],"(p / possible-01
+",DiGraph with 22 nodes and 21 edges,helicopter,military,:mod,helicopter,military,:mod,h_2,s24h_1,m_3,s24m_2,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+35,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
                   :mod (m / military))
@@ -737,8 +737,8 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,helicopter,military,:mod,helicopter,military,:mod,h_2,s24h_1,m_3,s24m_2,inanimate
-36,2,23,Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.,[],"(p / possible-01
+",DiGraph with 22 nodes and 21 edges,cloud,heavy,:mod,cloud,heavy,:mod,c_5,s24c_6,h2_6,s24h2_8,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+36,2,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
                   :mod (m / military))
@@ -760,8 +760,8 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cloud,heavy,:mod,cloud,heavy,:mod,c_5,s24c_6,h2_6,s24h2_8,inanimate
-37,2,24,Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a possible new disaster.,"[{'PER': 'Le'}, {'ORG': 'ria'}, {'B_human': 'rescue'}, {'W_Animate': 'person'}]","(s / say-01
+",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities."""
+37,2,24,"""Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a possible new disaster.""","[{'PER': 'Le'}, {'ORG': 'ria'}, {'B_human': 'rescue'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki - :name (n / name :op1 ""Lerias""))
       :ARG1 (c / cause-01 :polarity -
             :ARG0 (l / landslide
@@ -783,8 +783,8 @@
                               :ARG1-of (n2 / new-01)
                               :ARG1-of (p3 / possible-01))))))
 
-",DiGraph with 25 nodes and 24 edges,landslide,small,:mod,landslide-01,small,:mod,l_7,s25l_7,s2_8,s25s2_8,inanimate
-38,2,25,"Relief groups called for drinking water, food, blankets and body bags to be brought to the scene.",[],"(c / call-03
+",DiGraph with 25 nodes and 24 edges,landslide,small,:mod,landslide-01,small,:mod,l_7,s25l_7,s2_8,s25s2_8,inanimate,"""Lerias said a smaller landslide later in the afternoon caused no damage but left many of the rescuers worried about a possible new disaster."""
+38,2,25,"""Relief groups called for drinking water, food, blankets and body bags to be brought to the scene.""",[],"(c / call-03
       :ARG0 (g / group
             :ARG0-of (r / relieve-01))
       :ARG1 (b / bring-01
@@ -797,8 +797,8 @@
                         :mod (b4 / body)))
             :ARG2 (s / scene)))
 
-",DiGraph with 12 nodes and 11 edges,bag,body,:mod,bag,body,:mod,b3_9,s26b3_12,b4_10,s26b4_13,inanimate
-39,2,26,Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area.,"[{'W_Animate': 'person'}, {'W_Inanimate': 'location'}]","(s / say-01
+",DiGraph with 12 nodes and 11 edges,bag,body,:mod,bag,body,:mod,b3_9,s26b3_12,b4_10,s26b4_13,inanimate,"""Relief groups called for drinking water, food, blankets and body bags to be brought to the scene."""
+39,2,26,"""Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area.""","[{'W_Animate': 'person'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Eva"" :op2 ""Dumol"")
             :ARG0-of (h / have-org-role-91
@@ -820,8 +820,8 @@
             :ARG1 p
             :medium (r / radio)))
 
-",DiGraph with 26 nodes and 25 edges,board,provincial,:mod,board,provincial,:mod,b_7,s27b_7,p2_8,s27p2_8,inanimate
-40,2,26,Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area.,"[{'W_Animate': 'person'}, {'W_Inanimate': 'location'}]","(s / say-01
+",DiGraph with 26 nodes and 25 edges,board,provincial,:mod,board,provincial,:mod,b_7,s27b_7,p2_8,s27p2_8,inanimate,"""Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area."""
+40,2,26,"""Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area.""","[{'W_Animate': 'person'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Eva"" :op2 ""Dumol"")
             :ARG0-of (h / have-org-role-91
@@ -843,8 +843,8 @@
             :ARG1 p
             :medium (r / radio)))
 
-",DiGraph with 26 nodes and 25 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_11,s27e_11,h2_12,s27h2_12,inanimate
-41,3,1,This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.,"[{'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(b / begin-01
+",DiGraph with 26 nodes and 25 edges,equipment,heavy,:mod,equipment,heavy,:mod,e_11,s27e_11,h2_12,s27h2_12,inanimate,"""Provincial board member Eva Dumol said in a radio interview that heavy equipment that was already in the area to clear up earlier landslides was being sent to the Guinasaugon area."""
+41,3,1,"""This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.""","[{'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(b / begin-01
       :ARG0 (b2 / businessman
             :mod (c / country :wiki ""United_States""
                   :name (n / name :op1 ""America"")))
@@ -865,8 +865,8 @@
                   :ARG2 (s3 / spy-01
                         :ARG0 b2))))
 
-",DiGraph with 25 nodes and 24 edges,businessman,country,:mod,businessman,country,,b2_1,s2b_4,c_2,s2c_5,inanimate
-42,3,1,This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.,"[{'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(b / begin-01
+",DiGraph with 25 nodes and 24 edges,businessman,country,:mod,businessman,country,,b2_1,s2b_4,c_2,s2c_5,inanimate,"""This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying."""
+42,3,1,"""This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying.""","[{'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(b / begin-01
       :ARG0 (b2 / businessman
             :mod (c / country :wiki ""United_States""
                   :name (n / name :op1 ""America"")))
@@ -887,8 +887,8 @@
                   :ARG2 (s3 / spy-01
                         :ARG0 b2))))
 
-",DiGraph with 25 nodes and 24 edges,week,this,:mod,week,this,:mod,w_18,s2w_29,t2_19,s2t3_30,inanimate
-43,3,2,Specifically Russian prosecutors charged that Pope had stolen secrets relating to a high-speed Russian torpedo.,"[{'MISC': 'Russian'}, {'PER': 'Pope'}, {'MISC': 'Russian'}, {'B_human': 'prosecutors'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / charge-05
+",DiGraph with 25 nodes and 24 edges,week,this,:mod,week,this,:mod,w_18,s2w_29,t2_19,s2t3_30,inanimate,"""This week the American businessman began serving a 20-year prison sentence in Moscow after being convicted of spying."""
+43,3,2,"""Specifically Russian prosecutors charged that Pope had stolen secrets relating to a high-speed Russian torpedo.""","[{'MISC': 'Russian'}, {'PER': 'Pope'}, {'MISC': 'Russian'}, {'B_human': 'prosecutors'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / charge-05
       :ARG0 (p3 / person
             :ARG0-of (p4 / prosecute-01)
             :mod (c / country :wiki ""Russia""
@@ -905,8 +905,8 @@
                                     :ARG1-of (h / high-02))))))
       :manner (s4 / specific-02))
 
-",DiGraph with 20 nodes and 19 edges,person,country,:mod,person,country,:mod,p3_1,s3p_1,c_3,s3c2_5,inanimate
-44,3,4,Marsha Lipman is Editor of Moscow based news magazine 'Itogi'.,"[{'PER': 'Marsha Lipman'}, {'MISC': 'Moscow'}, {'ORG': 'Itogi'}, {'W_Animate': 'person'}, {'W_Inanimate': 'magazine'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(p / person :wiki -
+",DiGraph with 20 nodes and 19 edges,person,country,:mod,person,country,:mod,p3_1,s3p_1,c_3,s3c2_5,inanimate,"""Specifically Russian prosecutors charged that Pope had stolen secrets relating to a high-speed Russian torpedo."""
+44,3,4,"""Marsha Lipman is Editor of Moscow based news magazine 'Itogi'.""","[{'PER': 'Marsha Lipman'}, {'MISC': 'Moscow'}, {'ORG': 'Itogi'}, {'W_Animate': 'person'}, {'W_Inanimate': 'magazine'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(p / person :wiki -
       :name (n2 / name :op1 ""Marsha"" :op2 ""Lipman"")
       :ARG0-of (h / have-org-role-91
             :ARG1 (m / magazine :wiki -
@@ -917,8 +917,8 @@
                               :name (n / name :op1 ""Moscow""))))
             :ARG2 (e / editor)))
 
-",DiGraph with 16 nodes and 15 edges,magazine,news,:mod,magazine,news,:mod,m_6,s5m_5,n3_10,s5n3_9,inanimate
-45,3,5,"Marsha, did the Presidential Pardons Commission give any reason for their decision?",[{'W_Animate': 'person'}],"(a2 / ask-01
+",DiGraph with 16 nodes and 15 edges,magazine,news,:mod,magazine,news,:mod,m_6,s5m_5,n3_10,s5n3_9,inanimate,"""Marsha Lipman is Editor of Moscow based news magazine 'Itogi'."""
+45,3,5,"""Marsha, did the Presidential Pardons Commission give any reason for their decision?""",[{'W_Animate': 'person'}],"(a2 / ask-01
       :ARG0 (i / i)
       :ARG1 (g / give-01
             :ARG0 g2
@@ -932,8 +932,8 @@
       :ARG2 (p3 / person :wiki -
             :name (n / name :op1 ""Marsha"")))
 
-",DiGraph with 19 nodes and 18 edges,reason-01,any,:mod,reason,any,:mod,r_4,s6r_9,a3_13,s6a_15,inanimate
-46,3,7,"I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
+",DiGraph with 19 nodes and 18 edges,reason-01,any,:mod,reason,any,:mod,r_4,s6r_9,a3_13,s6a_15,inanimate,"""Marsha, did the Presidential Pardons Commission give any reason for their decision?"""
+46,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
             :ARG1 (t3 / truth-value
@@ -978,8 +978,8 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,article,law,:source,article,law,:source,a3_42,s8a3_55,l_43,s8l_56,inanimate
-47,3,7,"I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
+",DiGraph with 52 nodes and 51 edges,article,law,:source,article,law,:source,a3_42,s8a3_55,l_43,s8l_56,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+47,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
             :ARG1 (t3 / truth-value
@@ -1024,8 +1024,8 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,sentence-01,have-04,:condition,sentence-01,have-concession-91,,s5_33,s8s5_44,h2_41,s8h3_4,inanimate
-48,3,7,"I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
+",DiGraph with 52 nodes and 51 edges,sentence-01,have-04,:condition,sentence-01,have-concession-91,,s5_33,s8s5_44,h2_41,s8h3_4,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+48,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
             :ARG1 (t3 / truth-value
@@ -1070,8 +1070,8 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,reason,that,:mod,reason,that,:mod,r_5,s8r_6,t_7,s8t_8,inanimate
-49,3,7,"I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
+",DiGraph with 52 nodes and 51 edges,reason,that,:mod,reason,that,:mod,r_5,s8r_6,t_7,s8t_8,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+49,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
             :ARG1 (t3 / truth-value
@@ -1116,8 +1116,8 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,outlet,various,:mod,outlet,various,:mod,o_10,s8o_14,v_11,s8v_15,inanimate
-50,3,7,"I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
+",DiGraph with 52 nodes and 51 edges,outlet,various,:mod,outlet,various,:mod,o_10,s8o_14,v_11,s8v_15,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+50,3,7,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years.""","[{'LOC': 'Russia'}, {'PER': 'Edmund Pope'}, {'B_human': 'members'}, {'PER': 'I'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'they'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c2 / contrast-01
       :ARG1 (s / sure-02 :polarity -
             :ARG0 (i / i)
             :ARG1 (t3 / truth-value
@@ -1162,8 +1162,8 @@
                                                             :unit (y4 / year)))))
                                     :degree (r3 / really)))))))
 
-",DiGraph with 52 nodes and 51 edges,term,maximum,:mod,term,maximum,:mod,t6_39,s8t6_50,m3_40,s8m3_51,inanimate
-51,3,9,They also said this court did not give the lawyers for the defense due procedure.,[{'PER': 'They'}],"(s2 / say-01
+",DiGraph with 52 nodes and 51 edges,term,maximum,:mod,term,maximum,:mod,t6_39,s8t6_50,m3_40,s8m3_51,inanimate,"""I am not sure if those were the formal reasons but members of the commission have been interviewed today by various outlets and they say that they were afraid of the spy mania rising in Russia, that they thought it was really suspicious to them that Edmund Pope was sentenced to the maximum term, whereas the article of the law had 10 to 20 years."""
+51,3,9,"""They also said this court did not give the lawyers for the defense due procedure.""",[{'PER': 'They'}],"(s2 / say-01
       :ARG0 (t / they)
       :ARG1 (g / give-01 :polarity -
             :ARG0 (c / court
@@ -1174,8 +1174,8 @@
                   :ARG0-of (d / defend-01)))
       :mod (a2 / also))
 
-",DiGraph with 11 nodes and 10 edges,say-01,also,:mod,say-01,also,,s2_0,s10s3_0,a2_10,s10a2_22,inanimate
-52,3,9,They also said this court did not give the lawyers for the defense due procedure.,[{'PER': 'They'}],"(s2 / say-01
+",DiGraph with 11 nodes and 10 edges,say-01,also,:mod,say-01,also,,s2_0,s10s3_0,a2_10,s10a2_22,inanimate,"""They also said this court did not give the lawyers for the defense due procedure."""
+52,3,9,"""They also said this court did not give the lawyers for the defense due procedure.""",[{'PER': 'They'}],"(s2 / say-01
       :ARG0 (t / they)
       :ARG1 (g / give-01 :polarity -
             :ARG0 (c / court
@@ -1186,8 +1186,8 @@
                   :ARG0-of (d / defend-01)))
       :mod (a2 / also))
 
-",DiGraph with 11 nodes and 10 edges,court,this,:mod,court,this,:mod,c_4,s10c_7,t2_5,s10t2_8,inanimate
-53,3,9,They also said this court did not give the lawyers for the defense due procedure.,[{'PER': 'They'}],"(s2 / say-01
+",DiGraph with 11 nodes and 10 edges,court,this,:mod,court,this,:mod,c_4,s10c_7,t2_5,s10t2_8,inanimate,"""They also said this court did not give the lawyers for the defense due procedure."""
+53,3,9,"""They also said this court did not give the lawyers for the defense due procedure.""",[{'PER': 'They'}],"(s2 / say-01
       :ARG0 (t / they)
       :ARG1 (g / give-01 :polarity -
             :ARG0 (c / court
@@ -1198,8 +1198,8 @@
                   :ARG0-of (d / defend-01)))
       :mod (a2 / also))
 
-",DiGraph with 11 nodes and 10 edges,procedure,due,:mod,procedure-01,due,:ARG1,p_6,s10p_9,d2_7,s10d2_10,inanimate
-54,3,11,"Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors.","[{'PER': 'Putin'}, {'B_human': 'prosecutors'}, {'W_Animate': 'person'}]","(a3 / and
+",DiGraph with 11 nodes and 10 edges,procedure,due,:mod,procedure-01,due,:ARG1,p_6,s10p_9,d2_7,s10d2_10,inanimate,"""They also said this court did not give the lawyers for the defense due procedure."""
+54,3,11,"""Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors.""","[{'PER': 'Putin'}, {'B_human': 'prosecutors'}, {'W_Animate': 'person'}]","(a3 / and
       :op1 (s5 / sound-01
             :ARG1 (m2 / much
                   :degree-of (t2 / this))
@@ -1230,8 +1230,8 @@
                                                 :poss p))))))
             :mod (m / more)))
 
-",DiGraph with 34 nodes and 33 edges,sound-01,less,:mod,sound-01,less,,s5_1,s12s5_8,l_5,s12l3_13,inanimate
-55,3,11,"Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors.","[{'PER': 'Putin'}, {'B_human': 'prosecutors'}, {'W_Animate': 'person'}]","(a3 / and
+",DiGraph with 34 nodes and 33 edges,sound-01,less,:mod,sound-01,less,,s5_1,s12s5_8,l_5,s12l3_13,inanimate,"""Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors."""
+55,3,11,"""Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors.""","[{'PER': 'Putin'}, {'B_human': 'prosecutors'}, {'W_Animate': 'person'}]","(a3 / and
       :op1 (s5 / sound-01
             :ARG1 (m2 / much
                   :degree-of (t2 / this))
@@ -1262,8 +1262,8 @@
                                                 :poss p))))))
             :mod (m / more)))
 
-",DiGraph with 34 nodes and 33 edges,system,court,:mod,system,court,:mod,s4_25,s12s4_35,c2_26,s12c2_36,inanimate
-56,4,1,Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.,"[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
+",DiGraph with 34 nodes and 33 edges,system,court,:mod,system,court,:mod,s4_25,s12s4_35,c2_26,s12c2_36,inanimate,"""Much of this sounds less like a pardon and more like a criticism of the number of institutions that Mr. Putin also has to show some support of, including his court system and his police and his prosecutors."""
+56,4,1,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.""","[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
       :mod (c5 / country :wiki ""United_States""
             :name (n6 / name :op1 ""America""))
       :domain (p / person :wiki ""Edmond_Pope""
@@ -1283,8 +1283,8 @@
                         :unit (y2 / year)))
             :ARG3 s2))
 
-",DiGraph with 26 nodes and 25 edges,businessman,country,:mod,businessman,country,:mod,b2_0,s2b_4,c5_1,s2c4_5,inanimate
-57,4,1,Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.,"[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
+",DiGraph with 26 nodes and 25 edges,businessman,country,:mod,businessman,country,:mod,b2_0,s2b_4,c5_1,s2c4_5,inanimate,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison."""
+57,4,1,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.""","[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
       :mod (c5 / country :wiki ""United_States""
             :name (n6 / name :op1 ""America""))
       :domain (p / person :wiki ""Edmond_Pope""
@@ -1304,8 +1304,8 @@
                         :unit (y2 / year)))
             :ARG3 s2))
 
-",DiGraph with 26 nodes and 25 edges,week,last,:mod,week,last,:mod,w_14,s2w_16,l_15,s2l_17,inanimate
-58,4,1,Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.,"[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
+",DiGraph with 26 nodes and 25 edges,week,last,:mod,week,last,:mod,w_14,s2w_16,l_15,s2l_17,inanimate,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison."""
+58,4,1,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.""","[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
       :mod (c5 / country :wiki ""United_States""
             :name (n6 / name :op1 ""America""))
       :domain (p / person :wiki ""Edmond_Pope""
@@ -1325,8 +1325,8 @@
                         :unit (y2 / year)))
             :ARG3 s2))
 
-",DiGraph with 26 nodes and 25 edges,prison,country,:mod,prison,country,,p2_17,s2p2_21,c3_18,s2c4_5,inanimate
-59,4,3,Russian President Vladimir Putin pardoned him for health reasons.,"[{'MISC': 'Russian'}, {'PER': 'Vladimir Putin'}, {'PER': 'him'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p3 / pardon-01
+",DiGraph with 26 nodes and 25 edges,prison,country,:mod,prison,country,,p2_17,s2p2_21,c3_18,s2c4_5,inanimate,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison."""
+59,4,3,"""Russian President Vladimir Putin pardoned him for health reasons.""","[{'MISC': 'Russian'}, {'PER': 'Vladimir Putin'}, {'PER': 'him'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p3 / pardon-01
       :ARG0 (p / person :wiki ""Vladimir_Putin""
             :name (n / name :op1 ""Vladimir"" :op2 ""Putin"")
             :ARG0-of (h / have-org-role-91
@@ -1338,8 +1338,8 @@
             :ARG0 (r2 / reason
                   :mod (h3 / health))))
 
-",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,:ARG1-of,pardon-01,reason,:reason,p3_0,s4r_15,c2_13,s4p_0,inanimate
-60,4,3,Russian President Vladimir Putin pardoned him for health reasons.,"[{'MISC': 'Russian'}, {'PER': 'Vladimir Putin'}, {'PER': 'him'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p3 / pardon-01
+",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,:ARG1-of,pardon-01,reason,:reason,p3_0,s4r_15,c2_13,s4p_0,inanimate,"""Russian President Vladimir Putin pardoned him for health reasons."""
+60,4,3,"""Russian President Vladimir Putin pardoned him for health reasons.""","[{'MISC': 'Russian'}, {'PER': 'Vladimir Putin'}, {'PER': 'him'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p3 / pardon-01
       :ARG0 (p / person :wiki ""Vladimir_Putin""
             :name (n / name :op1 ""Vladimir"" :op2 ""Putin"")
             :ARG0-of (h / have-org-role-91
@@ -1351,8 +1351,8 @@
             :ARG0 (r2 / reason
                   :mod (h3 / health))))
 
-",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,:ARG1-of,pardon-01,reason,:reason,p3_0,s4r_15,c2_13,s4p_0,inanimate
-61,4,4,"Pope was flown to the U.S. military base at Ramstein, Germany.","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
+",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,:ARG1-of,pardon-01,reason,:reason,p3_0,s4r_15,c2_13,s4p_0,inanimate,"""Russian President Vladimir Putin pardoned him for health reasons."""
+61,4,4,"""Pope was flown to the U.S. military base at Ramstein, Germany.""","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
       :ARG1 (p / person :wiki ""Edmond_Pope""
             :name (n3 / name :op1 ""Pope""))
       :destination (b2 / base
@@ -1364,8 +1364,8 @@
                   :location (c2 / country :wiki ""Germany""
                         :name (n2 / name :op1 ""Germany"")))))
 
-",DiGraph with 19 nodes and 18 edges,fly-01,base,:destination,fly-01,base,:goal,f_0,s5f_0,b2_5,s5b_5,inanimate
-62,4,4,"Pope was flown to the U.S. military base at Ramstein, Germany.","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
+",DiGraph with 19 nodes and 18 edges,base,military,:mod,base,military,:mod,b2_5,s5b_5,m_6,s5m_6,inanimate,"""Pope was flown to the U.S. military base at Ramstein, Germany."""
+62,4,4,"""Pope was flown to the U.S. military base at Ramstein, Germany.""","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
       :ARG1 (p / person :wiki ""Edmond_Pope""
             :name (n3 / name :op1 ""Pope""))
       :destination (b2 / base
@@ -1377,8 +1377,8 @@
                   :location (c2 / country :wiki ""Germany""
                         :name (n2 / name :op1 ""Germany"")))))
 
-",DiGraph with 19 nodes and 18 edges,base,military,:mod,base,military,:mod,b2_5,s5b_5,m_6,s5m_6,inanimate
-63,4,4,"Pope was flown to the U.S. military base at Ramstein, Germany.","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
+",DiGraph with 19 nodes and 18 edges,military,country,:mod,military,country,:mod,m_6,s5m_6,c_7,s5c_7,inanimate,"""Pope was flown to the U.S. military base at Ramstein, Germany."""
+63,4,4,"""Pope was flown to the U.S. military base at Ramstein, Germany.""","[{'PER': 'Pope'}, {'LOC': 'U.S.'}, {'LOC': 'Ramstein'}, {'LOC': 'Germany'}, {'PER': 'US'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(f / fly-01
       :ARG1 (p / person :wiki ""Edmond_Pope""
             :name (n3 / name :op1 ""Pope""))
       :destination (b2 / base
@@ -1390,8 +1390,8 @@
                   :location (c2 / country :wiki ""Germany""
                         :name (n2 / name :op1 ""Germany"")))))
 
-",DiGraph with 19 nodes and 18 edges,military,country,:mod,military,country,:mod,m_6,s5m_6,c_7,s5c_7,inanimate
-64,4,5,He will spend the next several days at the medical center there before he returns home with his wife Sherry.,"[{'PER': 'He'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(s2 / spend-02
+",DiGraph with 19 nodes and 18 edges,fly-01,base,:destination,fly-01,base,:goal,f_0,s5f_0,b2_5,s5b_5,inanimate,"""Pope was flown to the U.S. military base at Ramstein, Germany."""
+64,4,5,"""He will spend the next several days at the medical center there before he returns home with his wife Sherry.""","[{'PER': 'He'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(s2 / spend-02
       :ARG0 (h2 / he)
       :ARG1 (s / several
             :op1 (t / temporal-quantity :quant 1
@@ -1410,8 +1410,8 @@
             :mod (m / medical)
             :location (t2 / there)))
 
-",DiGraph with 21 nodes and 20 edges,day,next,:mod,day,next,,d_5,s6d_6,n2_6,s6n_7,inanimate
-65,4,7,Doctors will examine him for signs that the cancer may have come back while he awaiting trial in a Russian jail.,"[{'PER': 'him'}, {'PER': 'he'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(e / examine-01
+",DiGraph with 21 nodes and 20 edges,day,next,:mod,day,next,,d_5,s6d_6,n2_6,s6n_7,inanimate,"""He will spend the next several days at the medical center there before he returns home with his wife Sherry."""
+65,4,7,"""Doctors will examine him for signs that the cancer may have come back while he awaiting trial in a Russian jail.""","[{'PER': 'him'}, {'PER': 'he'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(e / examine-01
       :ARG0 (d3 / doctor)
       :ARG1 (h / he)
       :ARG2 (s / signal-07
@@ -1429,15 +1429,15 @@
                                           :name (n3 / name :op1 ""Russia""))))))
             :ARG2 d3))
 
-",DiGraph with 21 nodes and 20 edges,jail,country,:mod,jail,country,:mod,j_15,s8j_21,c2_16,s8c2_22,inanimate
-66,5,5,you can't see him yet .,"[{'PER': 'you'}, {'PER': 'him'}]","(s6s / see-01
+",DiGraph with 21 nodes and 20 edges,jail,country,:mod,jail,country,:mod,j_15,s8j_21,c2_16,s8c2_22,inanimate,"""Doctors will examine him for signs that the cancer may have come back while he awaiting trial in a Russian jail."""
+66,5,5,"""you can't see him yet .""","[{'PER': 'you'}, {'PER': 'him'}]","(s6s / see-01
   :polarity -
   :ARG0 (s6y / you)
   :ARG1 (s6h / he)
   :mod (s6y2 / yet))
 
-",DiGraph with 5 nodes and 4 edges,see-01,yet,:mod,see-01,yet,:mod,s6s_0,s6s_0,s6y2_4,s6y_7,inanimate
-67,5,11,but I don't . . he's wearing like an apron with huge pockets .,[{'PER': 'I'}],"(s12w / wear-01
+",DiGraph with 5 nodes and 4 edges,see-01,yet,:mod,see-01,yet,:mod,s6s_0,s6s_0,s6y2_4,s6y_7,inanimate,"""you can't see him yet ."""
+67,5,11,"""but I don't . . he's wearing like an apron with huge pockets .""",[{'PER': 'I'}],"(s12w / wear-01
   :ARG0 (s12h / he)
   :ARG1 (s12t / thing
         :ARG1-of (s12r / resemble-01
@@ -1445,8 +1445,8 @@
         :part (s12p2 / pocket
                 :mod (s12h / huge))))
 
-",DiGraph with 7 nodes and 6 edges,thing,pocket,:part,thing,pocket,:part,s12t_2,s12t_4,s12p2_5,s12p2_8,inanimate
-68,5,11,but I don't . . he's wearing like an apron with huge pockets .,[{'PER': 'I'}],"(s12w / wear-01
+",DiGraph with 7 nodes and 6 edges,pocket,huge,:mod,pocket,huge,:mod,s12p2_5,s12p2_8,s12h_6,s12h_10,inanimate,"""but I don't . . he's wearing like an apron with huge pockets ."""
+68,5,11,"""but I don't . . he's wearing like an apron with huge pockets .""",[{'PER': 'I'}],"(s12w / wear-01
   :ARG0 (s12h / he)
   :ARG1 (s12t / thing
         :ARG1-of (s12r / resemble-01
@@ -1454,8 +1454,8 @@
         :part (s12p2 / pocket
                 :mod (s12h / huge))))
 
-",DiGraph with 7 nodes and 6 edges,pocket,huge,:mod,pocket,huge,:mod,s12p2_5,s12p2_8,s12h_6,s12h_10,inanimate
-69,5,13,I don't know if that's important or not .,[{'PER': 'I'}],"(s14k / know-01
+",DiGraph with 7 nodes and 6 edges,thing,pocket,:part,thing,pocket,:part,s12t_2,s12t_4,s12p2_5,s12p2_8,inanimate,"""but I don't . . he's wearing like an apron with huge pockets ."""
+69,5,13,"""I don't know if that's important or not .""",[{'PER': 'I'}],"(s14k / know-01
   :polarity -
   :ARG0 (s14i / i)
   :ARG1 (s14t / truth-value
@@ -1463,16 +1463,16 @@
                 :ARG1 (s14t / thing
                         :mod (s14t2 / that)))))
 
-",DiGraph with 7 nodes and 6 edges,thing,that,:mod,thing,that,:mod,s14t_5,s14t_5,s14t2_6,s14t2_6,inanimate
-70,5,14,"A-nd u-h and then he gets down out of the tree ,",[{'PER': 'he'}],"(s15a / and
+",DiGraph with 7 nodes and 6 edges,thing,that,:mod,thing,that,:mod,s14t_5,s14t_5,s14t2_6,s14t2_6,inanimate,"""I don't know if that's important or not ."""
+70,5,14,"""A-nd u-h and then he gets down out of the tree ,""",[{'PER': 'he'}],"(s15a / and
   :op2 (s15g / get-05
         :ARG1 (s15h / he)
         :ARG2 (s15d / down)
         :source (s15t / tree)
         :time (s15t2 / then)))
 
-",DiGraph with 6 nodes and 5 edges,get-05,tree,:source,get-05,tree,:source,s15g_1,s15g_0,s15t_4,s15t_5,inanimate
-71,5,15,and he dumps all his pears into the basket,[{'PER': 'he'}],"(s16a / and
+",DiGraph with 6 nodes and 5 edges,get-05,tree,:source,get-05,tree,:source,s15g_1,s15g_0,s15t_4,s15t_5,inanimate,"""A-nd u-h and then he gets down out of the tree ,"""
+71,5,15,"""and he dumps all his pears into the basket""",[{'PER': 'he'}],"(s16a / and
   :op2 (s16d / dump-01
         :ARG0 (s16h / he)
         :ARG1 (s16p2 / pear
@@ -1480,8 +1480,8 @@
                 :poss s16p)
         :destination (s16b / basket)))
 
-",DiGraph with 7 nodes and 6 edges,dump-01,basket,:destination,dump-01,basket,:goal,s16d_1,s16d_0,s16b_6,s16b_7,inanimate
-72,5,22,That's why it fell off in the first place .,[],"(s23c / cause-01
+",DiGraph with 7 nodes and 6 edges,dump-01,basket,:destination,dump-01,basket,:goal,s16d_1,s16d_0,s16b_6,s16b_7,inanimate,"""and he dumps all his pears into the basket"""
+72,5,22,"""That's why it fell off in the first place .""",[],"(s23c / cause-01
   :ARG0 (s23t / thing
         :mod (s23t2 / that))
   :ARG1 (s23f / fall-01
@@ -1489,8 +1489,8 @@
         :direction (s23o / off)
         :mod (s23i2 / in-the-first-place)))
 
-",DiGraph with 7 nodes and 6 edges,thing,that,:mod,thing,that,,s23t_1,s23t_2,s23t2_2,s23t2_9,inanimate
-73,5,22,That's why it fell off in the first place .,[],"(s23c / cause-01
+",DiGraph with 7 nodes and 6 edges,thing,that,:mod,thing,that,,s23t_1,s23t_2,s23t2_2,s23t2_9,inanimate,"""That's why it fell off in the first place ."""
+73,5,22,"""That's why it fell off in the first place .""",[],"(s23c / cause-01
   :ARG0 (s23t / thing
         :mod (s23t2 / that))
   :ARG1 (s23f / fall-01
@@ -1498,8 +1498,8 @@
         :direction (s23o / off)
         :mod (s23i2 / in-the-first-place)))
 
-",DiGraph with 7 nodes and 6 edges,fall-01,in-the-first-place,:mod,fall-01,in-the-first-place,,s23f_3,s23f_1,s23i2_6,s23i2_10,inanimate
-74,5,23,"A--nd u--m then he climbs back up the ladder ,",[{'PER': 'he'}],"(s24a / and
+",DiGraph with 7 nodes and 6 edges,fall-01,in-the-first-place,:mod,fall-01,in-the-first-place,,s23f_3,s23f_1,s23i2_6,s23i2_10,inanimate,"""That's why it fell off in the first place ."""
+74,5,23,"""A--nd u--m then he climbs back up the ladder ,""",[{'PER': 'he'}],"(s24a / and
   :op2 (s24c / climb-01
         :ARG0 (s24h / he)
         :ARG1 (s24l / ladder)
@@ -1507,8 +1507,8 @@
         :time (s24t / then)
         :mod (s24b / back)))
 
-",DiGraph with 7 nodes and 6 edges,climb-01,back,:mod,climb-01,back,:other-role,s24c_1,s24c_0,s24b_6,s24b_8,inanimate
-75,5,24,and he and he . . starts picking pears again .,"[{'PER': 'he'}, {'PER': 'he'}]","(s25a / and
+",DiGraph with 7 nodes and 6 edges,climb-01,back,:mod,climb-01,back,:other-role,s24c_1,s24c_0,s24b_6,s24b_8,inanimate,"""A--nd u--m then he climbs back up the ladder ,"""
+75,5,24,"""and he and he . . starts picking pears again .""","[{'PER': 'he'}, {'PER': 'he'}]","(s25a / and
   :op2 (s25s / start-01
         :ARG0 (s25h / he)
         :ARG1 (s25p / pick-01
@@ -1516,8 +1516,8 @@
                 :ARG1 (s25p3 / pear)
                 :mod (s25a / again))))
 
-",DiGraph with 7 nodes and 6 edges,pick-01,again,:mod,pick-01,again,:other-role,s25p_3,s25p_2,s25a_6,s25a_8,inanimate
-76,5,31,"they don't e . . I don't think they even look at each other ,","[{'PER': 'they'}, {'PER': 'I'}, {'PER': 'they'}]","(s32t / think-01
+",DiGraph with 7 nodes and 6 edges,pick-01,again,:mod,pick-01,again,:other-role,s25p_3,s25p_2,s25a_6,s25a_8,inanimate,"""and he and he . . starts picking pears again ."""
+76,5,31,"""they don't e . . I don't think they even look at each other ,""","[{'PER': 'they'}, {'PER': 'I'}, {'PER': 'they'}]","(s32t / think-01
   :ARG0 (s32i / i)
   :ARG1 (s32l / look-01
         :polarity -
@@ -1525,36 +1525,36 @@
         :ARG1 s32t
         :mod (s32e / even)))
 
-",DiGraph with 7 nodes and 6 edges,look-01,even,:mod,look-01,even,:mod,s32l_2,s32l_4,s32e_6,s32e_13,inanimate
-77,5,42,I'm giving you all these details .,[{'PER': 'you'}],"(s43g / give-01
+",DiGraph with 7 nodes and 6 edges,look-01,even,:mod,look-01,even,:mod,s32l_2,s32l_4,s32e_6,s32e_13,inanimate,"""they don't e . . I don't think they even look at each other ,"""
+77,5,42,"""I'm giving you all these details .""",[{'PER': 'you'}],"(s43g / give-01
   :ARG0 (s43i / i)
   :ARG1 (s43d / detail
           :quant (s43a / all)
           :mod (s43t / this))
   :ARG2 (s43y / you))
 
-",DiGraph with 6 nodes and 5 edges,detail,this,:mod,detail,this,:mod,s43d_2,s43d_4,s43t_4,s43t_6,inanimate
-78,5,50,"he gets off his bike ,",[{'PER': 'he'}],"(s51g / get-05
+",DiGraph with 6 nodes and 5 edges,detail,this,:mod,detail,this,:mod,s43d_2,s43d_4,s43t_4,s43t_6,inanimate,"""I'm giving you all these details ."""
+78,5,50,"""he gets off his bike ,""",[{'PER': 'he'}],"(s51g / get-05
   :ARG1 (s51h / he)
   :source (s51b / bike
             :poss s51h)
   :direction (s51o / off))
 
-",DiGraph with 5 nodes and 4 edges,get-05,bike,:source,get-05,bike,:source,s51g_0,s51g_0,s51b_2,s51b_4,inanimate
-79,5,60,". . gets off the bicycle ,",[],"(s61g / get-05
+",DiGraph with 5 nodes and 4 edges,get-05,bike,:source,get-05,bike,:source,s51g_0,s51g_0,s51b_2,s51b_4,inanimate,"""he gets off his bike ,"""
+79,5,60,""". . gets off the bicycle ,""",[],"(s61g / get-05
   :source (s61b / bicycle)
   :direction (s61o / off))
 
-",DiGraph with 3 nodes and 2 edges,get-05,bicycle,:source,get-05,bicycle,:source,s61g_0,s61g_0,s61b_1,s61b_2,inanimate
-80,5,61,"I think he he picks up the b—asket of pears ,","[{'PER': 'I'}, {'PER': 'he'}, {'PER': 'he'}]","(s62t / think-01
+",DiGraph with 3 nodes and 2 edges,get-05,bicycle,:source,get-05,bicycle,:source,s61g_0,s61g_0,s61b_1,s61b_2,inanimate,""". . gets off the bicycle ,"""
+80,5,61,"""I think he he picks up the b—asket of pears ,""","[{'PER': 'I'}, {'PER': 'he'}, {'PER': 'he'}]","(s62t / think-01
   :ARG0 (s62i / i)
   :ARG1 (s62p / pick-up-04
         :ARG0 (s62h / he)
         :ARG1 (s62b / basket
                 :mod (s62p2 / pear))))
 
-",DiGraph with 6 nodes and 5 edges,basket,pear,:mod,basket,pear,,s62b_4,s62b_9,s62p2_5,s62p3_8,inanimate
-81,5,66,"riding off and the next scene you see him ,","[{'PER': 'you'}, {'PER': 'him'}]","(s67a / and
+",DiGraph with 6 nodes and 5 edges,basket,pear,:mod,basket,pear,,s62b_4,s62b_9,s62p2_5,s62p3_8,inanimate,"""I think he he picks up the b—asket of pears ,"""
+81,5,66,"""riding off and the next scene you see him ,""","[{'PER': 'you'}, {'PER': 'him'}]","(s67a / and
   :op1 (s67r / ride-01
         :ARG0 s67h
         :direction (s67o / off))
@@ -1564,16 +1564,16 @@
         :time (s67s2 / scene
                 :mod (s67n / next))))
 
-",DiGraph with 9 nodes and 8 edges,scene,next,:mod,scene,next,:mod,s67s2_7,s67s2_13,s67n_8,s67n_14,inanimate
-82,5,78,"and . . the . . pears all s--pray all over the place ,",[],"(s79a / and
+",DiGraph with 9 nodes and 8 edges,scene,next,:mod,scene,next,:mod,s67s2_7,s67s2_13,s67n_8,s67n_14,inanimate,"""riding off and the next scene you see him ,"""
+82,5,78,"""and . . the . . pears all s--pray all over the place ,""",[],"(s79a / and
   :op2 (s79s / spray-01
         :ARG1 (s79p / pear
                 :quant (s79a / all))
         :ARG2 (s79p2 / place
                 :mod (s79a2 / all-over))))
 
-",DiGraph with 6 nodes and 5 edges,place,all-over,:mod,place,all,,s79p2_4,s79p2_3,s79a2_5,s79a_2,inanimate
-83,5,82,. . and he goes . . you know {brushing gesture} and then you see three other boys about his age .,"[{'PER': 'he'}, {'PER': 'you'}, {'PER': 'you'}]","(s83a / and
+",DiGraph with 6 nodes and 5 edges,place,all-over,:mod,place,all,,s79p2_4,s79p2_3,s79a2_5,s79a_2,inanimate,"""and . . the . . pears all s--pray all over the place ,"""
+83,5,82,""". . and he goes . . you know {brushing gesture} and then you see three other boys about his age .""","[{'PER': 'he'}, {'PER': 'you'}, {'PER': 'you'}]","(s83a / and
   :op1 (s83g / go-05
         :ARG0 (s83h / he)
         :ARG1 (s83g2 / gesture
@@ -1588,8 +1588,8 @@
                         :age-of s83h))))
         :time (s83t3 / then))
 
-",DiGraph with 14 nodes and 13 edges,gesture,brush-off-04,:mod,gesture-91,brush-off-04,:ARG1,s83g2_3,s83g2_5,s83b_4,s83b_7,inanimate
-84,5,82,. . and he goes . . you know {brushing gesture} and then you see three other boys about his age .,"[{'PER': 'he'}, {'PER': 'you'}, {'PER': 'you'}]","(s83a / and
+",DiGraph with 14 nodes and 13 edges,gesture,brush-off-04,:mod,gesture-91,brush-off-04,:ARG1,s83g2_3,s83g2_5,s83b_4,s83b_7,inanimate,""". . and he goes . . you know {brushing gesture} and then you see three other boys about his age ."""
+84,5,82,""". . and he goes . . you know {brushing gesture} and then you see three other boys about his age .""","[{'PER': 'he'}, {'PER': 'you'}, {'PER': 'you'}]","(s83a / and
   :op1 (s83g / go-05
         :ARG0 (s83h / he)
         :ARG1 (s83g2 / gesture
@@ -1604,14 +1604,14 @@
                         :age-of s83h))))
         :time (s83t3 / then))
 
-",DiGraph with 14 nodes and 13 edges,boy,other,:mod,boy,other,,s83b2_7,s83b2_14,s83o_9,s83o_16,inanimate
-85,5,91,there's no speech in the whole movie .,[{'W_Inanimate': 'location'}],"(s92s / speech
+",DiGraph with 14 nodes and 13 edges,boy,other,:mod,boy,other,,s83b2_7,s83b2_14,s83o_9,s83o_16,inanimate,""". . and he goes . . you know {brushing gesture} and then you see three other boys about his age ."""
+85,5,91,"""there's no speech in the whole movie .""",[{'W_Inanimate': 'location'}],"(s92s / speech
   :polarity -
   :location (s92m / movie
         :mod (s92w / whole)))
 
-",DiGraph with 4 nodes and 3 edges,movie,whole,:mod,movie,whole,:extent,s92m_2,s92m_1,s92w_3,s92w_3,inanimate
-86,5,93,they . . u--m . . help him . . put the pears back in the basket.,"[{'PER': 'they'}, {'PER': 'him'}]","(s94h / help-01
+",DiGraph with 4 nodes and 3 edges,movie,whole,:mod,movie,whole,:extent,s92m_2,s92m_1,s92w_3,s92w_3,inanimate,"""there's no speech in the whole movie ."""
+86,5,93,"""they . . u--m . . help him . . put the pears back in the basket.""","[{'PER': 'they'}, {'PER': 'him'}]","(s94h / help-01
   :ARG0 (s94t / they)
   :ARG1 (s94p2 / put-01
           :ARG0 (s94h2 / he)
@@ -1620,26 +1620,26 @@
           :mod (s94b2 / back))
   :ARG2 s94h2)
 
-",DiGraph with 8 nodes and 7 edges,put-01,back,:mod,put-01,back,:other-role,s94p2_2,s94p2_4,s94b2_6,s94b2_12,inanimate
-87,5,95,"Just pick them up ,",[{'PER': 'them'}],"(s96p / pick-up-04
+",DiGraph with 8 nodes and 7 edges,put-01,back,:mod,put-01,back,:other-role,s94p2_2,s94p2_4,s94b2_6,s94b2_12,inanimate,"""they . . u--m . . help him . . put the pears back in the basket."""
+87,5,95,"""Just pick them up ,""",[{'PER': 'them'}],"(s96p / pick-up-04
   :ARG1 (s96t / they)
   :mod (s96j / just))
 
-",DiGraph with 3 nodes and 2 edges,pick-up-04,just,:mod,pick-up-04,just,:mod,s96p_0,s96p_0,s96j_2,s96j_5,inanimate
-88,5,101,he just splits .,[{'PER': 'he'}],"(s102s / split-02
+",DiGraph with 3 nodes and 2 edges,pick-up-04,just,:mod,pick-up-04,just,:mod,s96p_0,s96p_0,s96j_2,s96j_5,inanimate,"""Just pick them up ,"""
+88,5,101,"""he just splits .""",[{'PER': 'he'}],"(s102s / split-02
   :ARG0 (s102h / he)
   :mod (s102j / just))
 
-",DiGraph with 3 nodes and 2 edges,split-02,just,:mod,split-02,just,:mod,s102s_0,s102s_0,s102j_2,s102j_4,inanimate
-89,5,111,A--nd um I just remembered another detail .,[{'PER': 'I'}],"(s112a / and
+",DiGraph with 3 nodes and 2 edges,split-02,just,:mod,split-02,just,:mod,s102s_0,s102s_0,s102j_2,s102j_4,inanimate,"""he just splits ."""
+89,5,111,"""A--nd um I just remembered another detail .""",[{'PER': 'I'}],"(s112a / and
   :op2 (s112r / remember-01
         :ARG0 (s112i / i)
         :ARG1 (s112d / detail
                 :mod (s112a / another))
         :time (s112j / just)))
 
-",DiGraph with 6 nodes and 5 edges,detail,another,:mod,detail,another,:mod,s112d_3,s112d_4,s112a_4,s112a_5,inanimate
-90,5,117,A--nd u—m then you don't see the kid with the bike with the pears anymore .,[{'PER': 'you'}],"(s118a / and
+",DiGraph with 6 nodes and 5 edges,detail,another,:mod,detail,another,:mod,s112d_3,s112d_4,s112a_4,s112a_5,inanimate,"""A--nd um I just remembered another detail ."""
+90,5,117,"""A--nd u—m then you don't see the kid with the bike with the pears anymore .""",[{'PER': 'you'}],"(s118a / and
   :op2 (s118s / see-01
         :polarity -
         :ARG0 (s118y / you)
@@ -1648,8 +1648,8 @@
                 :accompanier (s118p2 / pear))
         :mod (s118a2 / anymore)))
 
-",DiGraph with 8 nodes and 7 edges,see-01,anymore,:mod,see-01,anymore,:mod,s118s_1,s118s_0,s118a2_7,s118a2_12,inanimate
-91,5,119,one of them has a . . what do you call those little [l.l?] um paddleball?,"[{'PER': 'them'}, {'PER': 'you'}]","(s120h / have-03
+",DiGraph with 8 nodes and 7 edges,see-01,anymore,:mod,see-01,anymore,:mod,s118s_1,s118s_0,s118a2_7,s118a2_12,inanimate,"""A--nd u—m then you don't see the kid with the bike with the pears anymore ."""
+91,5,119,"""one of them has a . . what do you call those little [l.l?] um paddleball?""","[{'PER': 'them'}, {'PER': 'you'}]","(s120h / have-03
   :ARG1 (s120p / person
         :quant 1
         :ARG1-of (s120i2 / include-91
@@ -1662,8 +1662,8 @@
                         :mod (s120l / little))
                 :ARG2 (s120u / amr-unknown))))
 
-",DiGraph with 12 nodes and 11 edges,thing,that,:mod,thing,that,:mod,s120t_8,s120t_19,s120t2_9,s120t2_21,inanimate
-92,5,119,one of them has a . . what do you call those little [l.l?] um paddleball?,"[{'PER': 'them'}, {'PER': 'you'}]","(s120h / have-03
+",DiGraph with 12 nodes and 11 edges,thing,that,:mod,thing,that,:mod,s120t_8,s120t_19,s120t2_9,s120t2_21,inanimate,"""one of them has a . . what do you call those little [l.l?] um paddleball?"""
+92,5,119,"""one of them has a . . what do you call those little [l.l?] um paddleball?""","[{'PER': 'them'}, {'PER': 'you'}]","(s120h / have-03
   :ARG1 (s120p / person
         :quant 1
         :ARG1-of (s120i2 / include-91
@@ -1676,26 +1676,26 @@
                         :mod (s120l / little))
                 :ARG2 (s120u / amr-unknown))))
 
-",DiGraph with 12 nodes and 11 edges,thing,little,:mod,thing,little,:mod,s120t_8,s120t_19,s120l_10,s120l_22,inanimate
-93,5,128,"U-m and he's ge he's getting down out of the tree ,",[],"(s129a / and 
+",DiGraph with 12 nodes and 11 edges,thing,little,:mod,thing,little,:mod,s120t_8,s120t_19,s120l_10,s120l_22,inanimate,"""one of them has a . . what do you call those little [l.l?] um paddleball?"""
+93,5,128,"""U-m and he's ge he's getting down out of the tree ,""",[],"(s129a / and 
   :op2 (s129g / get-05
         :ARG1 (s129h /)
         :ARG2 (s129d / down)
         :source (s129t / tree)))
 
-",DiGraph with 5 nodes and 4 edges,get-05,tree,:source,get-05,tree,:source,s129g_1,s129g_0,s129t_4,s129t_6,inanimate
-94,5,133,And he goes . . {counting gesture},[{'PER': 'he'}],"(s134a / and
+",DiGraph with 5 nodes and 4 edges,get-05,tree,:source,get-05,tree,:source,s129g_1,s129g_0,s129t_4,s129t_6,inanimate,"""U-m and he's ge he's getting down out of the tree ,"""
+94,5,133,"""And he goes . . {counting gesture}""",[{'PER': 'he'}],"(s134a / and
   :op2 (s134g / go-05
         :ARG0 (s134h / he)
         :ARG1 (s134g2 / gesture
                 :mod (s134c / count-01
                         :ARG0 s134p))))
 
-",DiGraph with 6 nodes and 5 edges,gesture,count-01,:mod,gesture-91,count-01,:ARG1,s134g2_3,s134g2_4,s134c_4,s134c_6,inanimate
-95,5,137,and that's the end of the movie .,[],"(s138a / and
+",DiGraph with 6 nodes and 5 edges,gesture,count-01,:mod,gesture-91,count-01,:ARG1,s134g2_3,s134g2_4,s134c_4,s134c_6,inanimate,"""And he goes . . {counting gesture}"""
+95,5,137,"""and that's the end of the movie .""",[],"(s138a / and
   :op2 (s138e / end-01
         :ARG2 (s138t / thing
                 :mod (s138t2 / that))
         :ARG1 (s138m / movie)))
 
-",DiGraph with 5 nodes and 4 edges,thing,that,:mod,thing,that,:mod,s138t_2,s138t_1,s138t2_3,s138t2_2,inanimate
+",DiGraph with 5 nodes and 4 edges,thing,that,:mod,thing,that,:mod,s138t_2,s138t_1,s138t2_3,s138t2_2,inanimate,"""and that's the end of the movie ."""

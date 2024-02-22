@@ -1,7 +1,7 @@
 from nltk.stem import WordNetLemmatizer
 import ast
 
-def align_graphs_on_AMR_splits(sentence_dict, ne_info, amr_print, amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r, ne_animacy):
+def align_graphs_on_AMR_splits(sentence_dict, ne_info, amr_print, amr_graphs,umr_graphs,amr_roles,amr_roles_in_tail,umr_t2r):
 
 
     cant_find_heads_count = 0
@@ -25,7 +25,7 @@ def align_graphs_on_AMR_splits(sentence_dict, ne_info, amr_print, amr_graphs,umr
 
             sent = sentences[sent_i]
             ne = ne_info[file][sent_i]
-            animacy = ne_animacy[file][sent_i]
+            
             if type(ne) == str:
                 ne = ast.literal_eval(ne)[0]
 
@@ -67,7 +67,7 @@ def align_graphs_on_AMR_splits(sentence_dict, ne_info, amr_print, amr_graphs,umr
                                 umr_tail_name = umr_graph.nodes[r_ans[1]]['name']
                                 umr_tail_id = r_ans[0]
                                 umr_head_id = r_ans[1]
-                                entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id, animacy]
+                                entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                     elif (edge[2]==r and r not in amr_roles_in_tail): # found an amr split role in the graph we're looking for, now let's align it to the umr graph
                         total_count +=1
@@ -90,7 +90,7 @@ def align_graphs_on_AMR_splits(sentence_dict, ne_info, amr_print, amr_graphs,umr
                                     umr_head_tail_no_role+=1
 
                                 #create entry and add to data
-                                entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id, animacy]
+                                entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                             else:
                                 #couldn't find matching tail in umr graph
@@ -146,50 +146,55 @@ def align_graphs_no_animacy(sentence_dict, ne_info, amr_print, amr_graphs,umr_gr
                 for edge in amr_all_edges:
                    
                     amr_role = edge[2]
-                    print("\nsecond edge: ", amr_role)
                     
                     #get amr head and tail node and ids 
                     head_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[0]][0]
                     amr_head_id = head_ans[0]
                     amr_head_name = head_ans[1]
-                    print("amr_head_name: ", amr_head_name)
+                    
 
                     tail_ans = [item for item in (amr_graph.nodes(data="name")) if item[0] == edge[1]][0]
                     amr_tail_id = tail_ans[0]
                     amr_tail_name =  tail_ans[1]
-                    print("amr_tail_name: ", amr_tail_name)
 
                     #split on the '-' so that if there's an updated roleset it won't matter, also do a stemmer in case there's slight variation
                     tail_matcher = lemmatizer.lemmatize(tail_ans[1].split('-')[0])
                     head_matcher = lemmatizer.lemmatize(amr_head_name.split('-')[0])
 
                     if r in amr_roles_in_tail:
-                       print("\nIN THE AMR ROLES IN TAIL\n", "r: ", r, "roles: ", amr_roles_in_tail)
+                       
                        if amr_tail_name == amr_roles_in_tail[r]:
+                            print("\nIN THE AMR ROLES IN TAIL\n", "r: ", r, "roles: ", amr_roles_in_tail)
+                            print("\nsecond edge: ", amr_role)
+                            print("amr_head_name: ", amr_head_name)
+                            print("amr_tail_name: ", amr_tail_name)
                             print("checking if the tail name is in the amr_roles_in_tail == TRUE")
                             head_ans = [item for item in (umr_graph.nodes(data="name")) if lemmatizer.lemmatize(item[1].split('-')[0]) == head_matcher or item[1]== amr_head_name]
                             # get the relation and then we will get the tail
                             r_matcher =  umr_t2r[amr_tail_name]
-                            #r_ans = [item for item in list(umr_graph.edges(data='label'))[2] if porter.stem(item.split('-')[0]) in r_matcher or item in r_matcher]
-                            # r_ans = []
-                            # augment_ans = []
+                            # flag = False
+                            r_ans = []
                             for item in list(umr_graph.edges(data='label')):
                                 tail_check = umr_graph.nodes[item[1]]['name']
                                 if item[2] is not None and item[2] in r_matcher:
+                                    print("found ", item[2], " in tail checker")
                                     r_ans=(item)
                                     umr_role = r_ans[2]
+                                    print("umr role: ", umr_role)
+                                    
                                 elif tail_check in r_matcher:
+                                    print("found ", tail_check, " in tail checker")
                                     r_ans= (item)
                                     umr_role = tail_check
-                            # this is being added to process augmented files that do not have the changed structure
-                            # for item2 in list(umr_graph.nodes(data='name')):
-                            #     if item[1] == 'cause-01':
-                            #         augment_ans=(item)
-                            #         umr_role = item[1]
-                            # print("umr_graph.nodes: ", umr_graph.nodes)
-                            # print("silly")
-                            
+                                
+                                    
+                            # if flag == True
                             if r_ans:
+                                print("r_ans: ", r_ans)
+                                print("umr_role: ", umr_role)
+                                print("FileID: ", file)
+                                print(sent)
+                                print(amr_prints)
                                 total_count +=1
                                 umr_head_name = umr_graph.nodes[r_ans[0]]['name']
                                 umr_tail_name = umr_graph.nodes[r_ans[1]]['name']
@@ -198,9 +203,15 @@ def align_graphs_no_animacy(sentence_dict, ne_info, amr_print, amr_graphs,umr_gr
                                 entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
                                 splits_data.append(entry)
                                 print("\nFOUND A Cause: ", entry,"\n")
-                            # elif augment_ans:
-                            #     total_count+=1
-                            #     umr_head_name = umr_graph.nodes[augment_ans[0]]['name']
+                            # else:
+                            #     umr_head_tail_no_role+=1
+                            #     umr_head_name = "None"
+                            #     umr_tail_name = "None"
+                            #     umr_tail_id = "None"
+                            #     umr_head_id = "None"
+                            #     #create entry and add to data
+                            #     entry = [file, sent_i, sent, ne,amr_prints, amr_graph, amr_head_name, amr_tail_name, amr_role, umr_head_name, umr_tail_name, umr_role, amr_head_id, umr_head_id, amr_tail_id, umr_tail_id]
+                            #     splits_data.append(entry)
                     elif (edge[2]==r and r not in amr_roles_in_tail): # found an amr split role in the graph we're looking for, now let's align it to the umr graph
                         total_count +=1
                         #continue on

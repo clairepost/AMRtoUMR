@@ -48,15 +48,22 @@ def preprocessing(split,reload_data = True, X = [], embeddings = []):
 
     print(len(X))
 
-    X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
-    X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
+    if type(X['umr_role'].iloc[0])== str and type(X['amr_role'].iloc[0])==str:
+
+        X['amr_role'] = X['amr_role'].map(swap_amr_int_dict)
+        X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
     
 
-    X = X.dropna(subset=["umr_role"])
-    X = X.dropna(subset=["amr_role"])
+        X = X.dropna(subset=["umr_role"])
+        X = X.dropna(subset=["amr_role"])
 
-    X.reset_index(drop=True)
-    print(len(X))
+        X.reset_index(drop=True)
+        print(len(X))
+    else:
+        print("0- UMR\n", X['umr_role'].iloc[0])
+        print("0- AMR\n", X['amr_role'].iloc[0])
+
+
 
     umr_roles = torch.tensor(X["umr_role"].to_list(),dtype=torch.long)
     amr_roles = torch.tensor(X['amr_role'].to_list(), dtype=torch.long)

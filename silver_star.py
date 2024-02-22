@@ -39,7 +39,7 @@ def run(num_epochs):
 
 
     #REMOVE THIS LINE FOR RUNNING THE WHOLE THING
-    silver_data = silver_data.head(10)
+    #silver_data = silver_data.head(10)
     silv_embeddings = get_embeddings(silver_data)
     gold_embeddings = get_embeddings(gold_data)
 
@@ -61,7 +61,7 @@ def run(num_epochs):
         fold_embeddings_test = gold_embeddings[test_index]
 
         #RULES
-        print("UPDATING RULES")
+        print("UPDATING RULES" + f"Fold {i}:")
         fold_test["y_pred_RULE"] =  basic_baseline(fold_test)
 
         #intermediate save
@@ -70,14 +70,14 @@ def run(num_epochs):
 
         #BASIC NN
         print(fold_train)
-        print("RUNNING BASE NN")
+        print("RUNNING BASE NN" + f"Fold {i}:")
         
         fold_test["y_pred_NN"] = basic_base_nn(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
         #intermediate save
         fold_test.to_csv(f'{output_file_path}fold_{i}.csv')
 
         #NN WITH RULES
-        print("RUNNING NN + RULES")
+        print("RUNNING NN + RULES" + f"Fold {i}:")
         fold_test["y_pred_NN_RULE"] = basic_nn_with_rules_w(fold_train, fold_test, fold_embeddings_train, fold_embeddings_test, num_epochs)
 
         #intermediate save
@@ -104,7 +104,7 @@ def run_stats():
 
 
 if __name__ == "__main__":
-    epochs_list = [10]
+    epochs_list = [50,200]
     for epoch in epochs_list:
         run(epoch)
     run_stats()

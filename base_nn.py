@@ -37,7 +37,6 @@ def preprocessing_for_NN(split, reload_data = True, X = [], embeddings = []):
     print(X['umr_role'])
     X['umr_role'] = X['umr_role'].map(swap_umr_int_dict)
 
-    print(len(X))
 
     X = X.dropna(subset=["umr_role"])
     X = X.dropna(subset=["amr_role"])
@@ -52,10 +51,10 @@ def preprocessing_for_NN(split, reload_data = True, X = [], embeddings = []):
         print("length of embeddings better equal length of data:", len(embeddings), len(X))
     
 
-    #print sizes of returned data
-    print("amr_role" , amr_role.size())
-    print("umr_role" , umr_role.size())
-    print("embeddings size", embeddings.size()) #size ([50,768])
+    # #print sizes of returned data
+    # print("amr_role" , amr_role.size())
+    # print("umr_role" , umr_role.size())
+    # print("embeddings size", embeddings.size()) #size ([50,768])
 
     return embeddings,amr_role, umr_role, X, mapping, swap_umr_int_dict,swap_amr_int_dict #return X and y_truefor mapping back to the categories later
 

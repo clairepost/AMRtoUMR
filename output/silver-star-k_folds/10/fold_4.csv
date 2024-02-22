@@ -1,4 +1,4 @@
-,Unnamed: 0,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy,y_guess,y_guess_dist,y_pred_RULE,y_pred_NN_RULE
+,Unnamed: 0,sent_i,sent,ne_info,amr_prints,amr_graph,amr_head_name,amr_tail_name,amr_role,umr_head_name,umr_tail_name,umr_role,amr_head_id,umr_head_id,amr_tail_id,umr_tail_id,animacy,y_guess,y_guess_dist,y_pred_RULE,y_pred_NN,y_pred,y_pred_NN_RULE
 1,2,3,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
 
 
@@ -8,7 +8,7 @@
       :source (c / city :wiki ""Houston""
             :name (n / name :op1 ""Houston""))
       :destination (c2 / city :wiki ""Austin,_Texas""
-            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,5,drive-01,city,14,d_3,s4d_1,c2_10,s4c_6,inanimate,[8],[1.0],8,:goal
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:start,d_3,s4d_1,c2_10,s4c_6,inanimate,[15],[1.0],15,:goal,:goal,:goal
 9,11,11,The old man died of lung cancer .,[{'B_human': 'man'}],"
 
 
@@ -17,14 +17,14 @@
             :mod (o / old))
       :ARG1-of (c / cause-01
             :ARG0 (d2 / disease :wiki ""Lung_cancer""
-                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))",DiGraph with 9 nodes and 9 edges,man,old,9,man,old,7,m_4,s12m_3,o_5,s12o_4,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+                  :name (n / name :op1 ""lung"" :op2 ""cancer""))))",DiGraph with 9 nodes and 9 edges,man,old,:mod,man,old,:mod,m_4,s12m_3,o_5,s12o_4,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 11,13,12,The match has been canceled due to the rain.,[],"
 
 
 (c / cancel-01
       :ARG1 (m / match-03)
       :ARG1-of (c2 / cause-01
-            :ARG0 (r / rain-01)))",DiGraph with 4 nodes and 4 edges,cancel-01,cause-01,2,cancel-01,rain-01,1,c_3,s13r_4,c2_5,s13c_2,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+            :ARG0 (r / rain-01)))",DiGraph with 4 nodes and 4 edges,cancel-01,cause-01,:ARG1-of,cancel-01,rain-01,:cause,c_3,s13r_4,c2_5,s13c_2,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 14,16,13,He was injured and therefore unable to play.,[{'PER': 'He'}],"
 
 
@@ -33,7 +33,7 @@
       :ARG0-of (c / cause-01
             :ARG1 (p / possible-01 :polarity -
                   :ARG1 (p2 / play-01
-                        :ARG0 h))))",DiGraph with 7 nodes and 7 edges,injure-01,cause-01,3,injure-01,possible-01,1,i_3,s14p_6,c_5,s14i2_2,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+                        :ARG0 h))))",DiGraph with 7 nodes and 7 edges,injure-01,cause-01,:ARG0-of,injure-01,possible-01,:cause,i_3,s14p_6,c_5,s14i2_2,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 15,17,14,"I can't do work at home, because she shouts at me.","[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}]","
 
 
@@ -44,7 +44,7 @@
       :ARG1-of (c / cause-01
             :ARG0 (s / shout-01
                   :ARG0 (s2 / she)
-                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,2,possible-01,shout-01,5,p_3,s15s_9,c_7,s15p_2,animate,[5],[1.0],5,:cause
+                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,:ARG1-of,possible-01,shout-01,:reason,p_3,s15s_9,c_7,s15p_2,animate,[16],[1.0],16,:cause,:reason,:reason
 16,18,14,"I can't do work at home, because she shouts at me.","[{'PER': 'I'}, {'PER': 'she'}, {'PER': 'me'}]","
 
 
@@ -55,7 +55,7 @@
       :ARG1-of (c / cause-01
             :ARG0 (s / shout-01
                   :ARG0 (s2 / she)
-                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,2,possible-01,shout-01,5,p_3,s15s_9,c_7,s15p_2,animate,[5],[1.0],5,:cause
+                  :ARG2 i)))",DiGraph with 8 nodes and 8 edges,possible-01 :polarity -,cause-01,:ARG1-of,possible-01,shout-01,:reason,p_3,s15s_9,c_7,s15p_2,animate,[16],[1.0],16,:cause,:reason,:reason
 22,24,18,I must stop now as the shuttle leaves in 10 minutes.,[{'PER': 'I'}],"
 
 
@@ -69,7 +69,7 @@
                   :time (a / after
                         :op1 (n2 / now)
                         :quant (t / temporal-quantity :quant 10
-                              :unit (m / minute))))))",DiGraph with 12 nodes and 12 edges,obligate-01,cause-01,2,obligate-01,leave-11,2,o_3,s19l_8,c_7,s19o_2,inanimate,"[1, 5]","[0.9, 0.1]",5,:Cause-of
+                              :unit (m / minute))))))",DiGraph with 12 nodes and 12 edges,obligate-01,cause-01,:ARG1-of,obligate-01,leave-11,:Cause-of,o_3,s19l_8,c_7,s19o_2,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 26,28,20,She divorced him in part due to his alcoholism.,"[{'PER': 'She'}, {'PER': 'him'}]","
 
 
@@ -79,14 +79,14 @@
       :ARG1-of (c / cause-01
             :ARG0 (a / alcoholic
                   :domain h)
-            :degree (p / part)))",DiGraph with 7 nodes and 7 edges,divorce-01,cause-01,2,divorce-02,alcoholism,5,d_3,s21a_9,c_6,s21d_2,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+            :degree (p / part)))",DiGraph with 7 nodes and 7 edges,divorce-01,cause-01,:ARG1-of,divorce-02,alcoholism,:reason,d_3,s21a_9,c_6,s21d_2,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 29,31,24,The children's choir sang beautifully.,[],"
 
 
 (s / sing-01
       :ARG0 (c / choir
             :consist-of (c2 / child))
-      :ARG1-of (b / beautiful-02))",DiGraph with 4 nodes and 4 edges,choir,child,7,choir,child,4,c_4,s35c_3,c2_5,s35c2_4,animate,[4],[1.0],4,:material
+      :ARG1-of (b / beautiful-02))",DiGraph with 4 nodes and 4 edges,choir,child,:consist-of,choir,child,:group,c_4,s35c_3,c2_5,s35c2_4,animate,[6],[1.0],6,:group,:group,:group
 32,35,26,"Workers described `` clouds of blue dust '' that hung over parts of the factory , even though exhaust fans ventilated the area .",[{'B_human': 'Workers'}],"
 
 
@@ -103,7 +103,7 @@
                   :concession (v / ventilate-01
                         :ARG0 (f2 / fan
                               :mod (e / exhaust))
-                        :ARG1 (a / area)))))",DiGraph with 14 nodes and 14 edges,cloud,dust,7,cloud-01,dust,16,c3_6,s37c_4,d3_7,s37d2_5,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:material
+                        :ARG1 (a / area)))))",DiGraph with 14 nodes and 14 edges,cloud,dust,:consist-of,cloud-01,dust,:material,c3_6,s37c_4,d3_7,s37d2_5,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 34,37,28,"South Koreans rallied on January 11, 2002 in support of their right to eat dog meat.","[{'MISC': 'South Koreans'}, {'B_animal': 'dog'}]","
 
 (r / rally-01
@@ -117,7 +117,7 @@
                         :ARG0 p
                         :ARG1 (m / meat
                               :consist-of (d2 / dog)))))
-      :time (d / date-entity :year 2002 :month 1 :day 11))",DiGraph with 19 nodes and 19 edges,person,country,0,person,country,4,p_3,s39p_3,c_4,s39c_4,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:source
+      :time (d / date-entity :year 2002 :month 1 :day 11))",DiGraph with 19 nodes and 19 edges,person,country,:source,person,country,:group,p_3,s39p_3,c_4,s39c_4,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 37,43,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
 
 
@@ -127,7 +127,7 @@
       :source (c / city :wiki ""Houston""
             :name (n / name :op1 ""Houston""))
       :destination (c2 / city :wiki ""Austin,_Texas""
-            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,5,drive-01,city,9,d_3,s4d_1,c2_10,s4c_6,inanimate,[8],[1.0],8,:goal
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:destination,drive-01,city,:source,d_3,s4d_1,c2_10,s4c_6,inanimate,[15],[1.0],15,:goal,:goal,:goal
 38,44,32,"He drove west, from Houston to Austin .","[{'LOC': 'Houston'}, {'LOC': 'Austin'}, {'PER': 'He'}]","
 
 
@@ -137,7 +137,7 @@
       :source (c / city :wiki ""Houston""
             :name (n / name :op1 ""Houston""))
       :destination (c2 / city :wiki ""Austin,_Texas""
-            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,0,drive-01,city,9,d_3,s4d_1,c_6,s4c_6,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:start
+            :name (n2 / name :op1 ""Austin"")))",DiGraph with 11 nodes and 11 edges,drive-01,city,:source,drive-01,city,:source,d_3,s4d_1,c_6,s4c_6,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 44,52,38,It stimulates others to be big contributors so they may be in on the next wave of free cash from the boy king.,"[{'B_human': 'contributors'}, {'B_human': 'boy king'}, {'PER': 'they'}]","
 
 
@@ -155,7 +155,7 @@
                               :ARG1-of (f / free-03)
                               :source (k / king
                                     :mod (b2 / boy)))
-                        :mod (n / next)))))",DiGraph with 15 nodes and 15 edges,wave-04,next,9,wave-04,next,7,w_12,s49w_13,n_17,s49n_18,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+                        :mod (n / next)))))",DiGraph with 15 nodes and 15 edges,wave-04,next,:mod,wave-04,next,:mod,w_12,s49w_13,n_17,s49n_18,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 47,55,39,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}]","
 
 
@@ -163,7 +163,7 @@
       :ARG1 (e2 / event :wiki -
             :name (n / name :op1 ""The"" :op2 ""Wonder"" :op3 ""Tour""))
       :source (c / city :wiki ""Hong_Kong""
-            :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",DiGraph with 12 nodes and 12 edges,start-01,city,0,start-01,city,14,s_3,s50s_2,c_10,s50c_7,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:start
+            :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",DiGraph with 12 nodes and 12 edges,start-01,city,:source,start-01,city,:start,s_3,s50s_2,c_10,s50c_7,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 6,12,9,"""I have ordered the Coast Guard and our entire naval force in the (central Philippines) region to the area,"" she said.","[{'PER': 'I'}, {'PER': 'she'}, {'W_Animate': 'military'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (s2 / she)
       :ARG1 (o / order-02
@@ -177,7 +177,7 @@
                   :location (c / country-region :wiki - :name (n3 / name :op1 ""Central"" :op2 ""Philippines"")))
             :ARG2 (a2 / area)))
 
-",DiGraph with 20 nodes and 19 edges,force-04,navy,9,force,navy,7,f_10,s10f_12,n2_12,s10n2_16,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 20 nodes and 19 edges,force-04,navy,:mod,force,navy,:mod,f_10,s10f_12,n2_12,s10n2_16,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 12,19,16,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.""","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
       :ARG1 (h / help-01
             :ARG0 (e / earthquake
@@ -201,7 +201,7 @@
                               :ARG1-of (g / govern-01
                                     :ARG0 (g2 / government-organization)))))))
 
-",DiGraph with 27 nodes and 26 edges,earthquake,mild,9,earthquake-02,mild,7,e_2,s17e_12,m_5,s17m_16,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 27 nodes and 26 edges,earthquake,mild,:mod,earthquake-02,mild,:mod,e_2,s17e_12,m_5,s17m_16,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 13,20,16,"""A mild 2.6-magnitude earthquake which struck before the landslide may also have helped set off the wall of mud that crashed down on the village, said Rene Solidum, head of the government vulcanology office.""","[{'PER': 'Rene Solidum'}, {'W_Animate': 'person'}]","(p / possible-01
       :ARG1 (h / help-01
             :ARG0 (e / earthquake
@@ -225,7 +225,7 @@
                               :ARG1-of (g / govern-01
                                     :ARG0 (g2 / government-organization)))))))
 
-",DiGraph with 27 nodes and 26 edges,wall,mud,9,wall,mud,16,w_10,s17w_30,m2_11,s17m2_31,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 27 nodes and 26 edges,wall,mud,:mod,wall,mud,:material,w_10,s17w_30,m2_11,s17m2_31,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 14,21,17,"""The area could have really been ready for a landslide because of the amount of rainfall and if there was a minor earthquake, it might have hastened it,"" Solidum said.","[{'PER': 'Solid'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki -
             :name (n / name :op1 ""Solidum""))
@@ -245,7 +245,7 @@
                         :ARG1 l)
                   :condition e)))
 
-",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,2,ready-02,volume-quantity,1,p2_6,s18v_10,c_11,s18r_6,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+",DiGraph with 20 nodes and 19 edges,possible-01,cause-01,:ARG1-of,ready-02,volume-quantity,:cause,p2_6,s18v_10,c_11,s18r_6,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 20,31,21,"""Volunteer rescue teams from the country's mining companies, skilled in digging through the earth to rescue people, were also going to the area, said President Arroyo said.""","[{'PER': 'Arroyo'}, {'B_human': 'Volunteer'}, {'W_Animate': 'person'}]","(s / say-01
       :ARG0 (p / person :wiki ""Gloria_Macapagal_Arroyo"" :name (n / name :op1 ""Arroyo"")
             :ARG0-of (h / have-org-role-91
@@ -267,7 +267,7 @@
             :ARG4 (a / area)
             :mod (a2 / also)))
 
-",DiGraph with 23 nodes and 22 edges,company,mine-01,9,company,mine-01,7,c_11,s22c_15,m_12,s22m_16,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 23 nodes and 22 edges,company,mine-01,:mod,company,mine-01,:mod,c_11,s22c_15,m_12,s22m_16,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 22,33,23,"""Military helicopters were able to reach the area despite heavy clouds but the flights ceased after nightfall because the aircraft did not have night-flying capabilities.""",[],"(p / possible-01
       :ARG1 (r / reach-01
             :ARG0 (h / helicopter
@@ -290,7 +290,7 @@
                                     :time (d / date-entity
                                           :dayperiod (n2 / night))))))))
 
-",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,2,cease-01,capable-01,5,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+",DiGraph with 22 nodes and 21 edges,cease-01,cause-01,:ARG1-of,cease-01,capable-01,:reason,c2_7,s24c4_17,c3_13,s24c2_11,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 41,57,1,"""Pope is the American businessman who was convicted last week on spying charges and sentenced to 20 years in a Russian prison.""","[{'PER': 'Pope'}, {'MISC': 'American'}, {'MISC': 'Russian'}, {'B_human': 'businessman'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(b2 / businessman
       :mod (c5 / country :wiki ""United_States""
             :name (n6 / name :op1 ""America""))
@@ -311,7 +311,7 @@
                         :unit (y2 / year)))
             :ARG3 s2))
 
-",DiGraph with 26 nodes and 25 edges,week,last,9,week,last,7,w_14,s2w_16,l_15,s2l_17,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 26 nodes and 25 edges,week,last,:mod,week,last,:mod,w_14,s2w_16,l_15,s2l_17,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 42,59,3,"""Russian President Vladimir Putin pardoned him for health reasons.""","[{'MISC': 'Russian'}, {'PER': 'Vladimir Putin'}, {'PER': 'him'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(p3 / pardon-01
       :ARG0 (p / person :wiki ""Vladimir_Putin""
             :name (n / name :op1 ""Vladimir"" :op2 ""Putin"")
@@ -324,14 +324,14 @@
             :ARG0 (r2 / reason
                   :mod (h3 / health))))
 
-",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,2,pardon-01,reason,5,p3_0,s4r_15,c2_13,s4p_0,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+",DiGraph with 16 nodes and 15 edges,pardon-01,cause-01,:ARG1-of,pardon-01,reason,:reason,p3_0,s4r_15,c2_13,s4p_0,inanimate,"[9, 16]","[0.9, 0.1]",16,:cause,:cause,:cause
 48,66,5,"""you can't see him yet .""","[{'PER': 'you'}, {'PER': 'him'}]","(s6s / see-01
   :polarity -
   :ARG0 (s6y / you)
   :ARG1 (s6h / he)
   :mod (s6y2 / yet))
 
-",DiGraph with 5 nodes and 4 edges,see-01,yet,9,see-01,yet,7,s6s_0,s6s_0,s6y2_4,s6y_7,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 5 nodes and 4 edges,see-01,yet,:mod,see-01,yet,:mod,s6s_0,s6s_0,s6y2_4,s6y_7,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 56,76,31,"""they don't e . . I don't think they even look at each other ,""","[{'PER': 'they'}, {'PER': 'I'}, {'PER': 'they'}]","(s32t / think-01
   :ARG0 (s32i / i)
   :ARG1 (s32l / look-01
@@ -340,7 +340,7 @@
         :ARG1 s32t
         :mod (s32e / even)))
 
-",DiGraph with 7 nodes and 6 edges,look-01,even,9,look-01,even,7,s32l_2,s32l_4,s32e_6,s32e_13,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 7 nodes and 6 edges,look-01,even,:mod,look-01,even,:mod,s32l_2,s32l_4,s32e_6,s32e_13,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 61,86,93,"""they . . u--m . . help him . . put the pears back in the basket.""","[{'PER': 'they'}, {'PER': 'him'}]","(s94h / help-01
   :ARG0 (s94t / they)
   :ARG1 (s94p2 / put-01
@@ -350,7 +350,7 @@
           :mod (s94b2 / back))
   :ARG2 s94h2)
 
-",DiGraph with 8 nodes and 7 edges,put-01,back,9,put-01,back,12,s94p2_2,s94p2_4,s94b2_6,s94b2_12,inanimate,"[7, 12]","[0.995, 0.005]",7,:other-role
+",DiGraph with 8 nodes and 7 edges,put-01,back,:mod,put-01,back,:other-role,s94p2_2,s94p2_4,s94b2_6,s94b2_12,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 65,90,117,"""A--nd u—m then you don't see the kid with the bike with the pears anymore .""",[{'PER': 'you'}],"(s118a / and
   :op2 (s118s / see-01
         :polarity -
@@ -360,7 +360,7 @@
                 :accompanier (s118p2 / pear))
         :mod (s118a2 / anymore)))
 
-",DiGraph with 8 nodes and 7 edges,see-01,anymore,9,see-01,anymore,7,s118s_1,s118s_0,s118a2_7,s118a2_12,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 8 nodes and 7 edges,see-01,anymore,:mod,see-01,anymore,:mod,s118s_1,s118s_0,s118a2_7,s118a2_12,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 67,92,119,"""one of them has a . . what do you call those little [l.l?] um paddleball?""","[{'PER': 'them'}, {'PER': 'you'}]","(s120h / have-03
   :ARG1 (s120p / person
         :quant 1
@@ -374,14 +374,14 @@
                         :mod (s120l / little))
                 :ARG2 (s120u / amr-unknown))))
 
-",DiGraph with 12 nodes and 11 edges,thing,little,9,thing,little,7,s120t_8,s120t_19,s120l_10,s120l_22,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 12 nodes and 11 edges,thing,little,:mod,thing,little,:mod,s120t_8,s120t_19,s120l_10,s120l_22,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 69,95,137,"""and that's the end of the movie .""",[],"(s138a / and
   :op2 (s138e / end-01
         :ARG2 (s138t / thing
                 :mod (s138t2 / that))
         :ARG1 (s138m / movie)))
 
-",DiGraph with 5 nodes and 4 edges,thing,that,9,thing,that,7,s138t_2,s138t_1,s138t2_3,s138t2_2,inanimate,"[7, 12]","[0.995, 0.005]",7,:mod
+",DiGraph with 5 nodes and 4 edges,thing,that,:mod,thing,that,:mod,s138t_2,s138t_1,s138t2_3,s138t2_2,inanimate,"[7, 13]","[0.995, 0.005]",7,:mod,:mod,:mod
 7,7,35,"As long as we stick to this issue, Xinghui surely has no way of winning the lawsuit if it goes to court.","[{'PER': 'Xinghui'}, {'PER': 'we'}, {'W_Animate': 'company'}]","(s / sure-02
   :ARG1 (h / have-03 :polarity -
   :ARG0 (c / company :wiki - :name (n / name :op1 ""Xinghui""))
@@ -396,7 +396,7 @@
   :op1 (s2 / stick-01
   :ARG1 (w / we)
   :ARG2 (i / issue-02
-  :mod (t / this)))))",DiGraph with 19 nodes and 18 edges,have-03,go-01,8,have-03,go-01,6,h_1,h_1,g_11,g_11,inanimate,[6],[1.0],6,:condition
+  :mod (t / this)))))",DiGraph with 19 nodes and 18 edges,have-03,go-01,:condition,have-03,go-01,:condition,h_1,h_1,g_11,g_11,inanimate,[14],[1.0],14,:condition,:condition,:condition
 10,10,147,But the glory of the earthquake workers did not produce good luck for the departed spirits of Wenchuan.,"[{'PER': 'Wenchu'}, {'B_human': 'workers'}, {'W_Inanimate': 'county'}]","(c / contrast-01
   :ARG2 (p / produce-01 :polarity -
   :ARG0 (g / glory
@@ -407,7 +407,7 @@
   :ARG1-of (g2 / good-02))
   :ARG3 (s / spirit
   :source (c2 / county :wiki ""Wenchuan_County"" :name (n / name :op1 ""Wenchuan""))
-  :ARG0-of (d / depart-01))))",DiGraph with 15 nodes and 14 edges,spirit,county,0,spirit,county,9,s_9,s_9,c2_10,c2_10,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",16,:source
+  :ARG0-of (d / depart-01))))",DiGraph with 15 nodes and 14 edges,spirit,county,:source,spirit,county,:source,s_9,s_9,c2_10,c2_10,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 34,34,653,Not only does a reduction in cars on the road alleviate traffic pressure on the road; it also reduces the pressure of air pollution so that more residents can cheer for the blue sky of Beijing from their heart.,"[{'LOC': 'Beijing'}, {'B_human': 'residents'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(a / and
   :op1 (a2 / alleviate-01
   :ARG0 (r / reduce-01
@@ -433,12 +433,12 @@
   :name (n / name :op1 ""Beijing"")))
   :manner (h / heart
   :part-of p5))))
-  :mod (a4 / also)))",DiGraph with 28 nodes and 27 edges,reduce-01,cause-01,3,reduce-01,cause-01,5,r4_8,c2_13,c2_13,r4_8,animate,[5],[1.0],5,:cause
+  :mod (a4 / also)))",DiGraph with 28 nodes and 27 edges,reduce-01,cause-01,:ARG0-of,reduce-01,cause-01,:reason,r4_8,c2_13,c2_13,r4_8,animate,[16],[1.0],16,:cause,:reason,:reason
 39,39,189,The Wonder Tour will start from Hong Kong .,"[{'MISC': 'Wonder Tour'}, {'LOC': 'Hong Kong'}, {'W_Inanimate': 'event'}, {'W_Inanimate': 'city'}]","(s / start-01
   :ARG1 (e2 / event :wiki -
   :name (n / name :op1 ""The"" :op2 ""Wonder"" :op3 ""Tour""))
   :source (c / city :wiki ""Hong_Kong""
-  :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",DiGraph with 12 nodes and 11 edges,start-01,city,0,start-01,city,14,s_0,s_0,c_7,c_7,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:start
+  :name (n2 / name :op1 ""Hong"" :op2 ""Kong"")))",DiGraph with 12 nodes and 11 edges,start-01,city,:source,start-01,city,:start,s_0,s_0,c_7,c_7,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",10,:source,:source,:source
 40,40,14,"From 1953 to 1955 , 9.8 billion Kent cigarettes with the filters were sold , the company said .",[{'ORG': 'Kent'}],"(s / say-01
   :ARG0 (c / company)
   :ARG1 (s2 / sell-01
@@ -448,7 +448,7 @@
   :ARG0-of (f / filter-02)))
   :time (d / date-interval
   :op1 (d2 / date-entity :year 1953)
-  :op2 (d3 / date-entity :year 1955))))",DiGraph with 15 nodes and 14 edges,cigarette,product,4,cigarette,product,3,c2_3,c2_3,p_8,p_8,inanimate,[3],[1.0],3,:part
+  :op2 (d3 / date-entity :year 1955))))",DiGraph with 15 nodes and 14 edges,cigarette,product,:part,cigarette,product,:part,c2_3,c2_3,p_8,p_8,inanimate,[8],[1.0],8,:part,:part,:part
 46,46,914,Isn't advice from experts required to run a country like the US?,"[{'LOC': 'US'}, {'B_human': 'experts'}, {'PER': 'US'}, {'W_Inanimate': 'country'}]","(r / require-01 :polarity -
   :ARG0 (r2 / run-01
   :ARG1 (c / country
@@ -456,7 +456,7 @@
   :ARG1 (a / advice
   :source (p / person
   :ARG1-of (e / expert-01)))
-  :ARG1-of (r3 / request-confirmation-91))",DiGraph with 11 nodes and 10 edges,advice,person,0,advice,person,9,a_7,a_7,p_8,p_8,animate,[9],[1.0],9,:source
+  :ARG1-of (r3 / request-confirmation-91))",DiGraph with 11 nodes and 10 edges,advice,person,:source,advice,person,:source,a_7,a_7,p_8,p_8,animate,[0],[1.0],0,:source,:source,:source
 57,57,3348,should she have her kid taken away from her?,"[{'B_human': 'kid'}, {'PER': 'she'}, {'PER': 'her'}, {'PER': 'her'}]","(r / recommend-01 :polarity (a / amr-unknown)
   :ARG1 (h / have-04
   :ARG1 (t / take-away-05
@@ -464,7 +464,7 @@
   :ARG0-of (h2 / have-rel-role-91
   :ARG1 (s / she)
   :ARG2 (k / kid)))
-  :source s)))",DiGraph with 8 nodes and 7 edges,take-away-05,s,0,take-away-05,s,14,t_2,t_2,s_7,s_7,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :source s)))",DiGraph with 8 nodes and 7 edges,take-away-05,s,:source,take-away-05,s,:start,t_2,t_2,s_7,s_7,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 65,65,4994,"We were then chased from Norway, because we were invaded by Norwegians saying that we were strangers, while it had been our land for centuries and centuries, and we couldn't be considered as strangers.","[{'LOC': 'Norway'}, {'MISC': 'Norwegian'}, {'B_human': 'strangers'}, {'B_human': 'strangers'}, {'PER': 'We'}, {'PER': 'we'}, {'PER': 'we'}, {'PER': 'we'}, {'W_Inanimate': 'country'}]","(a / and
   :op1 (c / cause-01
   :ARG0 (i / invade-01
@@ -486,7 +486,7 @@
   :op2 (p2 / possible-01 :polarity -
   :ARG1 (c5 / consider-02
   :ARG1 w
-  :ARG2 s2)))",DiGraph with 27 nodes and 26 edges,chase-01,c2,0,chase-01,c2,14,c3_11,c3_11,c2_13,c2_13,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :ARG2 s2)))",DiGraph with 27 nodes and 26 edges,chase-01,c2,:source,chase-01,c2,:start,c3_11,c3_11,c2_13,c2_13,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 67,67,5374,The meat from the sacrifice of Eid al-Adha is mostly given away to others although there is no limit to what may be eaten or given in charity or used to feed the poor or the rich or even if one wants to give it away cooked or uncooked.,"[{'MISC': 'Eid al-Adha'}, {'W_Inanimate': 'event'}]","(g / give-away-02
   :ARG1 (m / meat
   :source (s / sacrifice-01
@@ -519,7 +519,7 @@
   :mod (o5 / or
   :op1 (c2 / cook-01
   :ARG1 m)
-  :op2 (c3 / cook-01 :polarity -))))))))))",DiGraph with 39 nodes and 38 edges,meat,sacrifice-01,0,meat,sacrifice-01,9,m_1,m_1,s_2,s_2,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :op2 (c3 / cook-01 :polarity -))))))))))",DiGraph with 39 nodes and 38 edges,meat,sacrifice-01,:source,meat,sacrifice-01,:source,m_1,m_1,s_2,s_2,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 72,72,5896,I'll even provide nice hollow point ammo for them to use.,[{'PER': 'them'}],"(p / provide-01
   :ARG0 (i / i)
   :ARG1 (a / ammo
@@ -528,7 +528,7 @@
   :ARG1-of (n / nice-01))
   :ARG2 (t / they)
   :purpose (u / use-01
-  :ARG0 t))",DiGraph with 9 nodes and 8 edges,ammo,point,4,ammo,point,3,a_2,a_2,p2_3,p2_3,inanimate,[3],[1.0],3,:part
+  :ARG0 t))",DiGraph with 9 nodes and 8 edges,ammo,point,:part,ammo,point,:part,a_2,a_2,p2_3,p2_3,inanimate,[8],[1.0],8,:part,:part,:part
 73,73,6050,I gave you an explanation as to why he did what he did (in part thanks to us).,"[{'PER': 'I'}, {'PER': 'you'}, {'PER': 'he'}, {'PER': 'he'}, {'PER': 'us'}]","(e / explain-01
   :ARG0 (i / i)
   :ARG1 (t / thing
@@ -541,7 +541,7 @@
   :ARG1-of (c2 / cause-01
   :ARG0 (w / we)
   :degree (p / part)))))
-  :ARG2 (y / you))",DiGraph with 13 nodes and 12 edges,thing,cause-01,2,do-02,cause-01,5,t_2,c2_9,c_3,d_4,animate,[5],[1.0],5,:cause
+  :ARG2 (y / you))",DiGraph with 13 nodes and 12 edges,thing,cause-01,:ARG1-of,do-02,cause-01,:reason,t_2,c2_9,c_3,d_4,animate,[16],[1.0],16,:cause,:reason,:reason
 74,74,6050,I gave you an explanation as to why he did what he did (in part thanks to us).,"[{'PER': 'I'}, {'PER': 'you'}, {'PER': 'he'}, {'PER': 'he'}, {'PER': 'us'}]","(e / explain-01
   :ARG0 (i / i)
   :ARG1 (t / thing
@@ -554,7 +554,7 @@
   :ARG1-of (c2 / cause-01
   :ARG0 (w / we)
   :degree (p / part)))))
-  :ARG2 (y / you))",DiGraph with 13 nodes and 12 edges,do-02,cause-01,2,do-02,cause-01,5,d_4,c2_9,c2_9,d_4,animate,[5],[1.0],5,:cause
+  :ARG2 (y / you))",DiGraph with 13 nodes and 12 edges,do-02,cause-01,:ARG1-of,do-02,cause-01,:reason,d_4,c2_9,c2_9,d_4,animate,[16],[1.0],16,:cause,:reason,:reason
 75,75,7534,It was no use to him and would probably have gone to the tip if it hadn't sold.,[{'PER': 'him'}],"(a / and
   :op1 (u / use-01 :polarity -
   :ARG0 (h / he)
@@ -564,7 +564,7 @@
   :ARG4 (t / tip)
   :mod (p / probable)
   :condition (s / sell-01 :polarity -
-  :ARG1 i2)))",DiGraph with 12 nodes and 11 edges,go-01,sell-01,8,go-01,sell-01,6,g_5,g_5,s_9,s_9,inanimate,[6],[1.0],6,:condition
+  :ARG1 i2)))",DiGraph with 12 nodes and 11 edges,go-01,sell-01,:condition,go-01,sell-01,:condition,g_5,g_5,s_9,s_9,inanimate,[14],[1.0],14,:condition,:condition,:condition
 85,85,7619,"Frankly, the level of organization and commitment they've shown, and the fact that they didn't fail miserably before, plus all the members up for removal being from the same ethnic background (what do you mean by South Asian, anyway?","[{'MISC': 'South Asian'}, {'B_human': 'members'}, {'PER': 'they'}, {'PER': 'you'}, {'W_Inanimate': 'location'}]","(m / multi-sentence
   :snt1 (a / and
   :op1 (l / level
@@ -589,14 +589,14 @@
   :ARG1 (p / person
   :location (w / world-region :wiki ""South_Asia"" :name (n / name :op1 ""South"" :op2 ""Asia"")))
   :ARG2 (a4 / amr-unknown)
-  :mod (a5 / anyway)))",DiGraph with 30 nodes and 29 edges,member,background,0,member,background,9,m3_13,m3_13,b2_16,b2_16,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:source
+  :mod (a5 / anyway)))",DiGraph with 30 nodes and 29 edges,member,background,:source,member,background,:source,m3_13,m3_13,b2_16,b2_16,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 90,90,6251,WHY ARE YOU DISCUSSING IT ON THIS THREAD.,"[{'PER': 'YOU'}, {'W_Inanimate': 'location'}]","(d / discuss-01
   :ARG0 (y / you)
   :ARG1 (i / it)
   :location (t / thread
   :mod (t2 / this))
   :ARG1-of (c / cause-01
-  :ARG0 (a / amr-unknown)))",DiGraph with 7 nodes and 6 edges,discuss-01,cause-01,2,discuss-01,cause-01,1,d_0,c_5,c_5,d_0,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+  :ARG0 (a / amr-unknown)))",DiGraph with 7 nodes and 6 edges,discuss-01,cause-01,:ARG1-of,discuss-01,cause-01,:cause,d_0,c_5,c_5,d_0,inanimate,"[9, 16]","[0.9, 0.1]",16,:cause,:cause,:cause
 95,95,7649,If someone stole my money at school and then hired security guards I would feel no remorse what so ever if I were to stab them or anyone involved with their bullshit in the streets.,"[{'PER': 'I'}, {'PER': 'I'}, {'PER': 'them'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(f / feel-01 :polarity -
   :ARG0 (i / i)
   :ARG1 (r / remorse)
@@ -622,7 +622,7 @@
   :ARG1 s2)
   :mod (s6 / security))
   :time (t / then)))
-  :mod (w / whatsoever))",DiGraph with 26 nodes and 25 edges,feel-01 :polarity -,stab-01,8,feel-01 :polarity -,stab-01,6,f_0,f_0,s_3,s_3,inanimate,[6],[1.0],6,:condition
+  :mod (w / whatsoever))",DiGraph with 26 nodes and 25 edges,feel-01 :polarity -,stab-01,:condition,feel-01 :polarity -,stab-01,:condition,f_0,f_0,s_3,s_3,inanimate,[14],[1.0],14,:condition,:condition,:condition
 102,102,6342,WHY DIDN'T WE WHACK THEM AS SOON AS THEY WERE IDENTIFIED???,"[{'PER': 'WE'}, {'PER': 'THEM'}, {'PER': 'THEY'}]","(w / whack-01 :polarity -
   :ARG0 (w2 / we)
   :ARG1 (t / they)
@@ -630,7 +630,7 @@
   :ARG0 (a / amr-unknown))
   :time (a2 / as-soon-as
   :op1 (i / identify-01
-  :ARG1 t)))",DiGraph with 8 nodes and 7 edges,whack-01 :polarity -,cause-01,2,whack-01 :polarity -,cause-01,1,w_0,c_3,c_3,w_0,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+  :ARG1 t)))",DiGraph with 8 nodes and 7 edges,whack-01 :polarity -,cause-01,:ARG1-of,whack-01 :polarity -,cause-01,:cause,w_0,c_3,c_3,w_0,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 104,104,374,"It applies to male adherents of feminism too, you know, limp-wristed, leftist men.","[{'B_human': 'ad'}, {'B_human': 'men'}, {'PER': 'you'}]","(a3 / apply-02
   :ARG1 (i / it)
   :ARG2 (m2 / man
@@ -641,7 +641,7 @@
   :mod (l3 / limp)))
   :mod (k / know-06
   :ARG0 (y / you))
-  :mod (t / too))",DiGraph with 11 nodes and 10 edges,man,wrist,4,man,wrist,3,m2_2,m2_2,w_6,w_6,inanimate,[3],[1.0],3,:part
+  :mod (t / too))",DiGraph with 11 nodes and 10 edges,man,wrist,:part,man,wrist,:part,m2_2,m2_2,w_6,w_6,inanimate,[8],[1.0],8,:part,:part,:part
 106,106,1319,why would an intelligent person get involved in a business in which parts of it could violate their beliefs?,[{'B_human': 'person'}],"(i / involve-01
   :ARG0 (p2 / person
   :ARG1-of (i2 / intelligent-01))
@@ -654,7 +654,7 @@
   :ARG0 p2))
   :ARG1-of (p3 / possible-01))))
   :ARG1-of (c / cause-01
-  :ARG0 (a / amr-unknown)))",DiGraph with 13 nodes and 12 edges,business,thing,4,business,thing,3,b_4,b_4,t2_5,t2_5,inanimate,[3],[1.0],3,:part
+  :ARG0 (a / amr-unknown)))",DiGraph with 13 nodes and 12 edges,business,thing,:part,business,thing,:part,b_4,b_4,t2_5,t2_5,inanimate,[8],[1.0],8,:part,:part,:part
 107,107,2029,"She lives in Section 8 housing, a nice three bedroom two bath apartment.","[{'MISC': '8'}, {'PER': 'She'}, {'W_Inanimate': 'law'}]","(l / live-01
   :ARG0 (s / she)
   :ARG1 (h / house-01
@@ -665,7 +665,7 @@
   :op2 (b2 / bath :quant 2))
   :ARG1-of (n2 / nice-01))
   :mod (l2 / law :wiki ""Section_8_(housing)""
-  :name (n / name :op1 ""Section"" :op2 8))))",DiGraph with 16 nodes and 15 edges,apartment,and,4,apartment,and,3,a_4,a_4,a2_5,a2_5,inanimate,[3],[1.0],3,:part
+  :name (n / name :op1 ""Section"" :op2 8))))",DiGraph with 16 nodes and 15 edges,apartment,and,:part,apartment,and,:part,a_4,a_4,a2_5,a2_5,inanimate,[8],[1.0],8,:part,:part,:part
 109,109,2083,"In frequent threads here the brain-dead leftists moan about how the ""idle rich"" (like there is such a thing) don't deserve their money.","[{'B_human': 'left'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(m / moan-01
   :ARG0 (p2 / person
   :ARG1-of (l / left-19)
@@ -681,7 +681,7 @@
   :ARG1 p))
   :location (t / thread
   :ARG1-of (f / frequent-02)
-  :location (h / here)))",DiGraph with 17 nodes and 16 edges,person,brain,4,person,brain,3,p2_1,p2_1,b_3,b_3,inanimate,[3],[1.0],3,:part
+  :location (h / here)))",DiGraph with 17 nodes and 16 edges,person,brain,:part,person,brain,:part,p2_1,p2_1,b_3,b_3,inanimate,[8],[1.0],8,:part,:part,:part
 110,110,4216,Obama has pulled the country back from the brink of disaster that Bush'n'Cheney had left it in.,"[{'PER': 'Obama'}, {'PER': 'Bush'}, {'PER': 'Cheney'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}]","(p / pull-01
   :ARG0 (p2 / person :wiki ""Barack_Obama""
   :name (n / name :op1 ""Obama""))
@@ -696,7 +696,7 @@
   :name (n2 / name :op1 ""Bush""))
   :op2 (p4 / person :wiki ""Dick_Cheney""
   :name (n3 / name :op1 ""Cheney"")))
-  :ARG1 c)))",DiGraph with 21 nodes and 20 edges,pull-01,brink,0,pull-01,brink,14,p_0,p_0,b2_8,b2_8,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:start
+  :ARG1 c)))",DiGraph with 21 nodes and 20 edges,pull-01,brink,:source,pull-01,brink,:start,p_0,p_0,b2_8,b2_8,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 122,122,10638,"You get laid off your job, in the next thirty days you get a letter from your employer telling you that you have the option to continue your health insurance coverage.","[{'B_human': 'employer'}, {'PER': 'You'}, {'PER': 'you'}, {'PER': 'you'}, {'PER': 'you'}]","(a / and
   :op1 (l / lay-off-02
   :ARG0 (j / job
@@ -723,7 +723,7 @@
   :time (a2 / after
   :op1 l
   :quant (t / temporal-quantity :quant 30
-  :unit (d / day)))))",DiGraph with 28 nodes and 27 edges,letter,person,0,letter,person,9,l2_7,l2_7,p_8,p_8,animate,[9],[1.0],9,:source
+  :unit (d / day)))))",DiGraph with 28 nodes and 27 edges,letter,person,:source,letter,person,:source,l2_7,l2_7,p_8,p_8,animate,[0],[1.0],0,:source,:source,:source
 124,124,10975,"Sure, buy internet insurance or any of those other plans--just don't get sick!",[],"(c / contrast-01
   :ARG1 (b / buy-01 :mode imperative
   :ARG0 (y / you)
@@ -741,7 +741,7 @@
   :ARG1 y
   :ARG2 (s2 / sick-05
   :ARG1 y)
-  :mod (j / just)))",DiGraph with 21 nodes and 20 edges,insure-02,internet,0,insure-02,internet,9,i2_5,i2_5,i3_6,i3_6,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:source
+  :mod (j / just)))",DiGraph with 21 nodes and 20 edges,insure-02,internet,:source,insure-02,internet,:source,i2_5,i2_5,i3_6,i3_6,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",3,:source,:source,:source
 129,129,20085,"Along the lines of healthcare's major cost factors, wonder what the US govt is planning to do about affecting a change in reduction of crime from drug-related costs and costs due to inner city and domestic violence?","[{'LOC': 'US'}, {'PER': 'US'}, {'W_Inanimate': 'country'}]","(e / exemplify-01
   :ARG0 (w / wonder-01
   :ARG1 (t / thing
@@ -769,7 +769,7 @@
   :ARG1 (f / factor-01
   :ARG2 (c2 / cost-01
   :ARG1 (h / healthcare))
-  :ARG1-of (m / major-02)))",DiGraph with 31 nodes and 30 edges,city,inner,4,city,inner,3,c9_23,c9_23,i2_24,i2_24,inanimate,[3],[1.0],3,:part
+  :ARG1-of (m / major-02)))",DiGraph with 31 nodes and 30 edges,city,inner,:part,city,inner,:part,c9_23,c9_23,i2_24,i2_24,inanimate,[8],[1.0],8,:part,:part,:part
 135,135,21070,"In the absence of any evidence tending to show that possession or use of a 'shotgun having a barrel of less than eighteen inches in length' at this time has some reasonable relationship to the preservation or efficiency of a well regulated militia, we cannot say that the Second Amendment guarantees the right to keep and bear such an instrument.","[{'MISC': 'Second Amendment'}, {'PER': 'we'}, {'W_Inanimate': 'law'}]","(a2 / absent-01
   :ARG1 (e / evidence-01
   :ARG1 (t / tend-02
@@ -807,7 +807,7 @@
   :ARG1 (i / instrument
   :mod (s2 / such)))
   :op2 (b2 / bear-01
-  :ARG1 i))))))))",DiGraph with 44 nodes and 43 edges,shotgun,barrel,4,shotgun,barrel,3,s4_6,s4_6,b_7,b_7,inanimate,[3],[1.0],3,:part
+  :ARG1 i))))))))",DiGraph with 44 nodes and 43 edges,shotgun,barrel,:part,shotgun,barrel,:part,s4_6,s4_6,b_7,b_7,inanimate,[8],[1.0],8,:part,:part,:part
 138,138,22381,"Excessive wear on the inside of the front part of the shoe indicates over pronation, such wear on the outside of the front of the shoe indicates supination.",[],"(a / and
   :op1 (i2 / indicate-01
   :ARG0 (w / wear-01
@@ -824,7 +824,7 @@
   :part (o2 / outside)
   :part-of s)
   :mod (s2 / such))
-  :ARG1 (s3 / supinate-01)))",DiGraph with 17 nodes and 16 edges,front,inside,4,front,inside,3,f_4,f_4,i3_5,i3_5,inanimate,[3],[1.0],3,:part
+  :ARG1 (s3 / supinate-01)))",DiGraph with 17 nodes and 16 edges,front,inside,:part,front,inside,:part,f_4,f_4,i3_5,i3_5,inanimate,[8],[1.0],8,:part,:part,:part
 146,146,24741,"The result of a ballot among almost 1,000 workers in NHS Logistics will be announced tomorrow and could herald the biggest bout of industrial action against the privatisation of NHS services.","[{'ORG': 'NHS Logistics'}, {'ORG': 'NHS'}, {'B_human': 'workers'}, {'W_Animate': 'company'}]","(a4 / and
   :op1 (a2 / announce-01
   :ARG1 (t / thing
@@ -846,7 +846,7 @@
   :mod (i2 / industry))
   :ARG1-of (h3 / have-degree-91
   :ARG2 (b4 / big)
-  :ARG3 (m2 / most))))))",DiGraph with 30 nodes and 29 edges,ballot,person,4,ballot,person,3,b2_4,b2_4,p_5,p_5,animate,[3],[1.0],3,:part
+  :ARG3 (m2 / most))))))",DiGraph with 30 nodes and 29 edges,ballot,person,:part,ballot,person,:part,b2_4,b2_4,p_5,p_5,animate,[8],[1.0],8,:part,:part,:part
 157,157,26589,There's a massive risk with taking away children from their families because of the devastating effect it has on families (look up Munchausen by Proxy if you're interested.,"[{'PER': 'Mu'}, {'ORG': 'aus'}, {'B_human': 'children'}]","(m3 / multi-sentence
   :snt2 (l / look-up-05
   :ARG0 (y / you)
@@ -867,14 +867,14 @@
   :ARG1 f
   :ARG2 (d / devastate-01
   :ARG0 t
-  :ARG1 f)))))",DiGraph with 26 nodes and 25 edges,take-away-05,family,0,take-away-05,family,14,t_12,t_12,f_14,f_14,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:source
+  :ARG1 f)))))",DiGraph with 26 nodes and 25 edges,take-away-05,family,:source,take-away-05,family,:start,t_12,t_12,f_14,f_14,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 159,159,26781,I even got pissed off with letters from both parties in the post D:,"[{'PER': 'I'}, {'W_Inanimate': 'location'}]","(p / piss-off-02
   :ARG1 (i / i)
   :ARG2 (l / letter
   :location (p2 / post)
   :source (p3 / party
   :mod (b / both)))
-  :mod (e / even))",DiGraph with 7 nodes and 6 edges,letter,party,0,letter,party,9,l_2,l_2,p3_4,p3_4,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :mod (e / even))",DiGraph with 7 nodes and 6 edges,letter,party,:source,letter,party,:source,l_2,l_2,p3_4,p3_4,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 169,169,29692,"If expelled this could create a small pocket of less oxygenated air, which could potentially have a foul smell (ie swamp gas).",[],"(p2 / possible-01
   :ARG1 (c / create-01
   :ARG0 (t / this)
@@ -892,7 +892,7 @@
   :ARG2 (g / gas
   :source (s3 / swamp)))))
   :condition (e / expel-01
-  :ARG1 t))",DiGraph with 18 nodes and 17 edges,gas,swamp,0,gas,swamp,9,g_14,g_14,s3_15,s3_15,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :ARG1 t))",DiGraph with 18 nodes and 17 edges,gas,swamp,:source,gas,swamp,:source,g_14,g_14,s3_15,s3_15,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 170,170,30185,He respects Constitutional freedoms but sees possible harm to NYC should the full extent of those freedoms be exercised by building this Muslim complex.,"[{'MISC': 'Constitutional'}, {'LOC': 'NYC'}, {'MISC': 'Muslim'}, {'PER': 'He'}, {'W_Inanimate': 'law'}, {'W_Inanimate': 'city'}]","(c / contrast-01
   :ARG1 (r3 / respect-01
   :ARG0 (h3 / he)
@@ -909,7 +909,7 @@
   :mod (t2 / this)))
   :ARG1 f3
   :degree (e2 / extent
-  :mod (f2 / full))))))",DiGraph with 26 nodes and 25 edges,free-04,law,0,free-04,law,9,f3_3,f3_3,l_4,l_4,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :mod (f2 / full))))))",DiGraph with 26 nodes and 25 edges,free-04,law,:source,free-04,law,:source,f3_3,f3_3,l_4,l_4,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 174,174,31394,"She was a convenient physical repository, someone to talk to, someone who thought that the sun shone out of his backside, and he basked in the adulation.","[{'PER': 'She'}, {'PER': 'he'}, {'W_Inanimate': 'star'}]","(a / and
   :op1 (r / repository
   :domain (s / she
@@ -925,7 +925,7 @@
   :mod (p / physical))
   :op2 (b2 / bask-01
   :ARG0 h
-  :ARG1 (a2 / adulation)))",DiGraph with 18 nodes and 17 edges,out,backside,0,out,backside,9,o_10,o_10,b_11,b_11,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :ARG1 (a2 / adulation)))",DiGraph with 18 nodes and 17 edges,out,backside,:source,out,backside,:source,o_10,o_10,b_11,b_11,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",3,:source,:source,:source
 176,176,31436,then i wouldnt have felt that he had ripped my heart out of my chest and stamped on it.,"[{'PER': 'i'}, {'PER': 'he'}]","(f / feel-01 :polarity -
   :ARG0 (i / i)
   :ARG1 (a / and
@@ -938,7 +938,7 @@
   :op2 (s / stamp-04
   :ARG0 h
   :ARG1 h2))
-  :time (t / then))",DiGraph with 13 nodes and 12 edges,heart,chest,0,heart,chest,9,h2_5,h2_5,c_7,c_7,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",14,:source
+  :time (t / then))",DiGraph with 13 nodes and 12 edges,heart,chest,:source,heart,chest,:source,h2_5,h2_5,c_7,c_7,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",10,:source,:source,:source
 180,180,32060,The government data shows how the damaging effects of the drug have swept across England.,"[{'LOC': 'England'}, {'W_Inanimate': 'country'}]","(s / show-01
   :ARG0 (d / data
   :source (g3 / government-organization
@@ -949,7 +949,7 @@
   :ARG0 (d2 / drug)
   :ARG1-of (s2 / sweep-02
   :ARG2 (a2 / across
-  :op1 (c2 / country :wiki ""England"" :name (n2 / name :op1 ""England""))))))))",DiGraph with 14 nodes and 13 edges,data,government-organization,0,data,government-organization,9,d_1,d_1,g3_2,g3_2,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:start
+  :op1 (c2 / country :wiki ""England"" :name (n2 / name :op1 ""England""))))))))",DiGraph with 14 nodes and 13 edges,data,government-organization,:source,data,government-organization,:source,d_1,d_1,g3_2,g3_2,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 185,185,32496,He just texted me to ask if any of you French hipforumers are in the area and would be kind enough to give him a lift southwards?,"[{'MISC': 'French'}, {'B_human': 'hip'}, {'PER': 'He'}, {'PER': 'me'}, {'PER': 'you'}, {'PER': 'him'}, {'W_Inanimate': 'country'}]","(t / text-01
   :ARG0 (h / he)
   :ARG2 (i / i)
@@ -969,7 +969,7 @@
   :destination (s / south))
   :ARG2 h
   :condition b))))
-  :time (j / just))",DiGraph with 24 nodes and 23 edges,hipforumer,country,0,hipforumer,country,9,h2_9,h2_9,c_10,c_10,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",9,:source
+  :time (j / just))",DiGraph with 24 nodes and 23 edges,hipforumer,country,:source,hipforumer,country,:source,h2_9,h2_9,c_10,c_10,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",3,:source,:source,:source
 191,191,32696,"The intention of Sharia law was to serve justice to the parties in conflict, it is human interpretation of God's word to suit their era, it is not a divine law, neither is it God's law as propagated.","[{'MISC': 'S'}, {'MISC': 'haria'}, {'PER': 'God'}, {'PER': 'God'}, {'W_Inanimate': 'law'}, {'W_Animate': 'person'}, {'W_Inanimate': 'law'}, {'W_Inanimate': 'law'}]","(a / and
   :op1 (i / intend-01
   :ARG1 (s / serve-01
@@ -994,7 +994,7 @@
   :manner (p4 / propagate-01
   :ARG1 l)
   :domain l
-  :poss p2))",DiGraph with 33 nodes and 32 edges,word,person,0,word,person,9,w_12,w_12,p2_13,p2_13,animate,[9],[1.0],9,:source
+  :poss p2))",DiGraph with 33 nodes and 32 edges,word,person,:source,word,person,:source,w_12,w_12,p2_13,p2_13,animate,[0],[1.0],0,:source,:source,:source
 204,204,48,South Koreans are angered by the international pressure on their traditional cuisine.,"[{'MISC': 'South Koreans'}, {'W_Inanimate': 'country'}]","(a / anger-01
   :ARG0 (p2 / pressure-01
   :ARG0 (i / international)
@@ -1003,7 +1003,7 @@
   :mod (t / traditional)))
   :ARG1 (p / person
   :source (c / country :wiki ""South_Korea""
-  :name (n / name :op1 ""South"" :op2 ""Korea""))))",DiGraph with 12 nodes and 11 edges,person,country,0,person,country,9,p_6,p_6,c_7,c_7,inanimate,"[16, 9, 14]","[0.1, 0.6, 0.3]",16,:source
+  :name (n / name :op1 ""South"" :op2 ""Korea""))))",DiGraph with 12 nodes and 11 edges,person,country,:source,person,country,:source,p_6,p_6,c_7,c_7,inanimate,"[10, 0, 3]","[0.1, 0.6, 0.3]",0,:source,:source,:source
 208,209,3149,The Thai armed forces do not currently have any surface-to-surface missiles in their inventory.,"[{'MISC': 'Thai'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}]","(h / have-03 :polarity -
   :ARG0 (f / force
   :ARG1-of (a / arm-01)
@@ -1013,7 +1013,7 @@
   :destination (s2 / surface))
   :time (c2 / current)
   :location (i / inventory
-  :poss f))",DiGraph with 13 nodes and 12 edges,missile,surface,5,missile,surface,8,m_7,m_7,s2_9,s_8,inanimate,[8],[1.0],8,:goal
+  :poss f))",DiGraph with 13 nodes and 12 edges,missile,surface,:destination,missile,surface,:goal,m_7,m_7,s2_9,s_8,inanimate,[15],[1.0],15,:goal,:goal,:goal
 216,217,7837,The statement also consisted of a youtube video clip of American comedian bill Maher ridiculing a fatwa by Al-Sistani on whether certain positions of sexual intercourse were permitted for married couples.,"[{'MISC': 'American'}, {'PER': 'Maher'}, {'PER': 'Al'}, {'PER': 'Sistani'}, {'B_human': 'comedian'}, {'W_Inanimate': 'publication'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}]","(c / consist-01
   :ARG1 (t / thing
   :ARG1-of (s / state-01))
@@ -1033,13 +1033,13 @@
   :mod (c5 / certain))
   :ARG2 (c6 / couple
   :ARG1-of (m / marry-01)))))))
-  :mod (a / also))",DiGraph with 34 nodes and 33 edges,fatwa,person,0,fatwa,person,9,f_20,f_20,p2_21,p2_21,animate,[9],[1.0],9,:source
+  :mod (a / also))",DiGraph with 34 nodes and 33 edges,fatwa,person,:source,fatwa,person,:source,f_20,f_20,p2_21,p2_21,animate,[0],[1.0],0,:source,:source,:source
 221,222,176,It is named after the Beaver River that flows from Alberta to Saskatchewan.,"[{'LOC': 'Beaver River'}, {'LOC': 'Alberta'}, {'LOC': 'Saskatchewan'}, {'W_Inanimate': 'river'}, {'W_Inanimate': 'province'}, {'W_Inanimate': 'province'}]","(n / name-02
   :ARG1 (i2 / it)
   :ARG2 (r / river :wiki ""Beaver_River_(Canada)"" :name (n2 / name :op1 ""Beaver"" :op2 ""River"")
   :ARG1-of (f / flow-01
   :source (p / province :wiki ""Alberta"" :name (n3 / name :op1 ""Alberta""))
-  :destination (p2 / province :wiki ""Saskatchewan"" :name (n4 / name :op1 ""Saskatchewan"")))))",DiGraph with 16 nodes and 15 edges,flow-01,province,5,flow-01,province,8,f_7,f_7,p2_12,p_8,inanimate,[8],[1.0],8,:goal
+  :destination (p2 / province :wiki ""Saskatchewan"" :name (n4 / name :op1 ""Saskatchewan"")))))",DiGraph with 16 nodes and 15 edges,flow-01,province,:destination,flow-01,province,:goal,f_7,f_7,p2_12,p_8,inanimate,[15],[1.0],15,:goal,:goal,:goal
 226,227,602,"in one heady year , Abather 's contracts would mushroom from a few thousand dollars to an $ 862,000 electrification project ( later canceled because he could n't procure the needed equipment ) .","[{'ORG': 'Abather'}, {'PER': 'he'}, {'W_Animate': 'person'}]","(m2 / mushroom-01
   :ARG1 (c / contract-02
   :ARG2 (p2 / person :wiki - :name (n / name :op1 ""Abather"")))
@@ -1062,7 +1062,7 @@
   :ARG1-of (n2 / need-01)))))))
   :duration (t2 / temporal-quantity :quant 1
   :mod (h / heady)
-  :unit (y / year)))",DiGraph with 30 nodes and 29 edges,cancel-01,cause-01,2,cancel-01,cause-01,1,c2_15,c3_18,c3_18,c2_15,inanimate,"[1, 5]","[0.9, 0.1]",5,:cause
+  :unit (y / year)))",DiGraph with 30 nodes and 29 edges,cancel-01,cause-01,:ARG1-of,cancel-01,cause-01,:cause,c2_15,c3_18,c3_18,c2_15,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 229,230,729,( An Amman - based aid worker later told me that American diplomats are so distraught by the policies they are charged with representing that `` it just takes a few gin and tonics and they 'll break down . '' ),"[{'MISC': 'Amman'}, {'MISC': 'American'}, {'B_human': 'worker'}, {'B_human': 'diplomat'}, {'PER': 'me'}, {'PER': 'they'}, {'PER': 'they'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}, {'W_Inanimate': 'country'}]","(t / tell-01
   :ARG0 (p / person
   :ARG0-of (w / work-01
@@ -1088,7 +1088,7 @@
   :quant (f / few))
   :mod (j / just))))
   :ARG2 (i / i)
-  :time (a3 / after))",DiGraph with 33 nodes and 32 edges,distraught,cause-01,3,distraught,cause-01,1,d2_9,c_22,c_22,d2_9,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+  :time (a3 / after))",DiGraph with 33 nodes and 32 edges,distraught,cause-01,:ARG0-of,distraught,cause-01,:cause,d2_9,c_22,c_22,d2_9,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 238,239,87,"Moreover, the grand old men of the CCP who handed over on a silver platter a huge chunk of land in Manchuria north of the Amur River to Soviet Russia, who gave away land equivalent to ten percent of national territory in northern Mongolia; why not take this back, instead of insisting on trying to grab back a Taiwan that remains in the hands of Chinese people?","[{'ORG': 'CCP'}, {'LOC': 'Manchuria'}, {'LOC': 'Amur River'}, {'MISC': 'Soviet'}, {'LOC': 'Russia'}, {'LOC': 'Mongolia'}, {'LOC': 'Taiwan'}, {'MISC': 'Chinese'}, {'B_human': 'men'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'river'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]","(a3 / and
       :op2 (t / take-01 :polarity -
             :ARG0 (m / man
@@ -1136,7 +1136,7 @@
                                                       :ARG1 c)))
                                     :mod (b2 / back)))))))
 
-",DiGraph with 70 nodes and 69 edges,platter,silver,7,platter,silver,16,p2_30,p2_30,s_31,s_31,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",4,:group
+",DiGraph with 70 nodes and 69 edges,platter,silver,:consist-of,platter,silver,:material,p2_30,p2_30,s_31,s_31,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 240,241,128,"Yet no matter how many changes of dynasties there are, the value system has always been carried on.",[],"(c / contrast-01
       :ARG2 (c2 / carry-on-02
             :ARG1 (s / system
@@ -1147,7 +1147,7 @@
                         :quant-of (c4 / change-01
                               :ARG1 (d / dynasty))))))
 
-",DiGraph with 9 nodes and 8 edges,system,value,7,system,value,7,s_2,s_2,v_3,v_3,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:group
+",DiGraph with 9 nodes and 8 edges,system,value,:consist-of,system,value,:mod,s_2,s_2,v_3,v_3,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 247,248,486,"Life is never a bed of roses in any location, even more in a foreign land where there is a language barrier, different customs and no family or friends.","[{'B_human': 'friends'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'location'}]","(b / bed :polarity -
       :consist-of (r / rose)
       :domain (l / life)
@@ -1167,7 +1167,7 @@
             :mod (m / more
                   :mod (e2 / even))))
 
-",DiGraph with 19 nodes and 18 edges,bed,rose,7,bed,rose,16,b_0,b_0,r_2,r_2,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",3,:group
+",DiGraph with 19 nodes and 18 edges,bed,rose,:consist-of,bed,rose,:material,b_0,b_0,r_2,r_2,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 251,252,561,But one of the undisputable reasons is that a huge smoker's group exists within our huge contingent of civil servants.,"[{'B_human': 'servants'}, {'W_Inanimate': 'location'}]","(c / contrast-01
   :ARG2 (i / include-91
           :ARG1 (e / exist-01
@@ -1185,7 +1185,7 @@
                              :polarity -
                              :ARG1-of (p3 / possible-01)))))
 
-",DiGraph with 16 nodes and 15 edges,group,person,7,group,person,4,g_3,g_3,p2_4,p2_4,animate,[4],[1.0],4,:group
+",DiGraph with 16 nodes and 15 edges,group,person,:consist-of,group,person,:group,g_3,g_3,p2_4,p2_4,animate,[6],[1.0],6,:group,:group,:group
 254,255,564,"Their track performance for blowing smoke rings also has a compounding effect in repeatedly setting new records for consumption expenses by civil servants, and it has become an organic portion of officialdom corruption as a whole.",[{'B_human': 'servants'}],"(a / and
       :op1 (e / effect-03
             :ARG0 (p / perform-01
@@ -1214,7 +1214,7 @@
                         :prep-as (w / whole))
                   :mod (o / organic))))
 
-",DiGraph with 27 nodes and 26 edges,ring,smoke-01,7,ring,smoke-01,16,r_6,r_6,s_7,s_7,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:part
+",DiGraph with 27 nodes and 26 edges,ring,smoke-01,:consist-of,ring,smoke-01,:material,r_6,r_6,s_7,s_7,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 259,260,649,"While 2012 is quickly approaching, there is even the spectacular scene of four lines opening at the same time. It is veritably ""putting all firepower into operation""!",[],"(m / multi-sentence
       :snt2 (o2 / operate-01
             :ARG0 (i / it)
@@ -1232,7 +1232,7 @@
                   :ARG1-of (q / quick-02))
             :mod (e / even)))
 
-",DiGraph with 18 nodes and 17 edges,scene,open-01,7,scene,open-01,3,s_6,s_6,o_8,o_8,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:part
+",DiGraph with 18 nodes and 17 edges,scene,open-01,:consist-of,scene,open-01,:part,s_6,s_6,o_8,o_8,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 260,261,767,Manhunt. Post the pictures of that bunch of perpetrators!,"[{'PER': 'Man'}, {'B_human': 'per'}, {'W_Animate': 'person'}]","(m / multi-sentence
       :snt1 (p5 / person :wiki -
             :name (n / name :op1 ""Manhunt""))
@@ -1243,7 +1243,7 @@
                         :consist-of (p3 / person
                               :ARG0-of (p4 / perpetrate-01))))))
 
-",DiGraph with 12 nodes and 11 edges,bunch,person,7,bunch,person,4,b_9,b_9,p3_10,p5_1,animate,[4],[1.0],4,:group
+",DiGraph with 12 nodes and 11 edges,bunch,person,:consist-of,bunch,person,:group,b_9,b_9,p3_10,p5_1,animate,[6],[1.0],6,:group,:group,:group
 263,264,940,"However, nowadays, with its own serious problems, it continues to abandon the Far East and many cities have become heaps of ruins.",[{'LOC': 'Far East'}],"(c3 / contrast-01
       :ARG2 (a / and
             :op1 (c / continue-01
@@ -1262,14 +1262,14 @@
                         :consist-of (r2 / ruin)))
             :time (n2 / nowadays)))
 
-",DiGraph with 21 nodes and 20 edges,heap,ruin,7,heap,ruin,16,h_18,h_18,r2_19,r2_19,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",3,:group
+",DiGraph with 21 nodes and 20 edges,heap,ruin,:consist-of,heap,ruin,:material,h_18,h_18,r2_19,r2_19,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 264,265,1081,Remove this group of jerks!,[{'B_human': 'jerk'}],"(r / remove-01 :mode imperative
       :ARG0 (y / you)
       :ARG1 (g / group
             :mod (t / this)
             :consist-of (j / jerk)))
 
-",DiGraph with 5 nodes and 4 edges,group,jerk,7,group,jerk,4,g_2,g_2,j_4,j_4,animate,[4],[1.0],4,:group
+",DiGraph with 5 nodes and 4 edges,group,jerk,:consist-of,group,jerk,:group,g_2,g_2,j_4,j_4,animate,[6],[1.0],6,:group,:group,:group
 269,270,12,Dr. Talcott led a team of researchers from the National Cancer Institute and the medical schools of Harvard University and Boston University .,"[{'PER': 'Ta'}, {'PER': 'lcott'}, {'ORG': 'National Cancer Institute'}, {'ORG': 'Harvard University'}, {'ORG': 'Boston University'}, {'B_human': 'researchers'}, {'W_Animate': 'university'}, {'W_Animate': 'university'}]","(l / lead-02
       :ARG0 (d / doctor :wiki - :name (n2 / name :op1 ""Talcott""))
       :ARG1 (t3 / team
@@ -1285,7 +1285,7 @@
                                     :mod (m2 / medicine)
                                     :part-of (u2 / university :wiki ""Boston_University"" :name (b / name :op1 ""Boston"" :op2 ""University""))))))))
 
-",DiGraph with 30 nodes and 29 edges,team,person,7,team,person,4,t3_5,t3_5,p2_6,p2_6,animate,[4],[1.0],4,:group
+",DiGraph with 30 nodes and 29 edges,team,person,:consist-of,team,person,:group,t3_5,t3_5,p2_6,p2_6,animate,[6],[1.0],6,:group,:group,:group
 272,273,182,THe Green Party is the party for the libtards who are too crazy even for other libtards.,[{'ORG': 'Green Party'}],"(p / political-party :wiki ""Green_Party_of_the_United_States"" :name (n / name :op1 ""Green"" :op2 ""Party"")
       :consist-of (p2 / person
             :ARG1-of (l / liberal-02)
@@ -1300,7 +1300,7 @@
                               :mod (o / other))
                         :mod (e / even)))))
 
-",DiGraph with 16 nodes and 15 edges,political-party,person,7,political-party,person,4,p_0,p_0,p2_4,p2_4,animate,[4],[1.0],4,:group
+",DiGraph with 16 nodes and 15 edges,political-party,person,:consist-of,political-party,person,:group,p_0,p_0,p2_4,p2_4,animate,[6],[1.0],6,:group,:group,:group
 273,274,218,Notice the ice cap weight shifting it is due to earths own inertia and the sun moon alignment.,[{'W_Inanimate': 'planet'}],"(n / notice-01 :mode imperative
       :ARG0 (y / you)
       :ARG1 (s / shift-01
@@ -1316,7 +1316,7 @@
                                     :op1 (s2 / sun)
                                     :op2 (m / moon)))))))
 
-",DiGraph with 17 nodes and 16 edges,cap,ice,7,cap,ice,16,c_5,c_5,i_6,i_6,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:part
+",DiGraph with 17 nodes and 16 edges,cap,ice,:consist-of,cap,ice,:material,c_5,c_5,i_6,i_6,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 276,277,304,There are laws and barriers afffecting groups of people.,[],"(a / affect-01
       :ARG0 (a2 / and
             :op1 (l / law)
@@ -1324,7 +1324,7 @@
       :ARG1 (g / group
             :consist-of (p / person)))
 
-",DiGraph with 6 nodes and 5 edges,group,person,7,group,person,4,g_4,g_4,p_5,p_5,animate,[4],[1.0],4,:group
+",DiGraph with 6 nodes and 5 edges,group,person,:consist-of,group,person,:group,g_4,g_4,p_5,p_5,animate,[6],[1.0],6,:group,:group,:group
 277,278,481,"Back in April, 2003 the Army was making the initial advance to capture Baghdad Int'l airport, Victor and his wingmen found an Iraqi ambush site of about 12 APCs that were less than a mile from the Army advance.","[{'ORG': 'Army'}, {'LOC': 'Baghdad Int'}, {'LOC': 'l'}, {'PER': 'Victor'}, {'MISC': 'Iraqi'}, {'ORG': 'Army'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'military'}, {'W_Inanimate': 'airport'}]","(f / find-01
       :ARG0 (a2 / and
             :op1 (p / person :wiki - :name (n / name :op1 ""Victor""))
@@ -1354,7 +1354,7 @@
                   :ARG1 (a5 / airport :wiki ""Baghdad_International_Airport"" :name (n4 / name :op1 ""Baghdad"" :op2 ""International"" :op3 ""Airport"")))
             :mod (i / initial)))
 
-",DiGraph with 46 nodes and 45 edges,site,carrier,7,site,carrier,3,s_10,s_10,c3_12,c3_12,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",4,:group
+",DiGraph with 46 nodes and 45 edges,site,carrier,:consist-of,site,carrier,:part,s_10,s_10,c3_12,c3_12,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 299,300,1890,"We've made a new generation of enemies in Pakistan and Afghanistan for these assassinations (and the ""night raids"" Obama escalated in Afghanistan).","[{'LOC': 'Pakistan'}, {'LOC': 'Afghanistan'}, {'PER': 'Obama'}, {'LOC': 'Afghanistan'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Animate': 'person'}, {'W_Inanimate': 'location'}]","(m / make-01
       :ARG0 (w / we)
       :ARG1 (g / generation
@@ -1376,7 +1376,7 @@
                         :ARG0 (p / person :wiki ""Barack_Obama"" :name (n5 / name :op1 ""Obama""))
                         :location c2))))
 
-",DiGraph with 29 nodes and 28 edges,generation,person,7,generation,person,4,g_2,g_2,p2_4,p2_4,animate,[4],[1.0],4,:group
+",DiGraph with 29 nodes and 28 edges,generation,person,:consist-of,generation,person,:group,g_2,g_2,p2_4,p2_4,animate,[6],[1.0],6,:group,:group,:group
 305,306,2706,In first year we were always together in the same group of friends..,"[{'B_human': 'friends'}, {'PER': 'we'}]","(t / together
       :domain (w / we
             :time (a / always)
@@ -1389,7 +1389,7 @@
             :time (y / year
                   :ord (o / ordinal-entity :value 1))))
 
-",DiGraph with 12 nodes and 11 edges,group,person,7,group,person,4,g_3,g_3,p_4,p_4,animate,[4],[1.0],4,:group
+",DiGraph with 12 nodes and 11 edges,group,person,:consist-of,group,person,:group,g_3,g_3,p_4,p_4,animate,[6],[1.0],6,:group,:group,:group
 318,319,3846,You mostly get concentrated ghettos with black people and then entire states full of white people.,[{'PER': 'You'}],"(g / get-01
       :ARG0 (y / you)
       :ARG1 (a / and
@@ -1405,7 +1405,7 @@
                   :time (t / then)))
       :mod (m / most))
 
-",DiGraph with 14 nodes and 13 edges,ghetto,person,7,ghetto,person,4,g2_3,g2_3,p_5,p_5,animate,[4],[1.0],4,:group
+",DiGraph with 14 nodes and 13 edges,ghetto,person,:consist-of,ghetto,person,:group,g2_3,g2_3,p_5,p_5,animate,[6],[1.0],6,:group,:group,:group
 321,322,4052,"Take the TV debates for example: everyone hated Dave's ""down with the people"" and ""I met a black man the other day..."" act, but at the same time, had he remained aloof and failed to engage with anyone, he would have aggravated another group of people, and been called a toff even more.","[{'PER': 'Dave'}, {'B_human': 'man'}, {'PER': 'I'}, {'PER': 'he'}, {'PER': 'he'}, {'W_Animate': 'person'}]","(t / take-01 :mode imperative
       :ARG0 (y / you)
       :ARG1 (d / debate-01
@@ -1449,7 +1449,7 @@
                                           :ARG0 p2
                                           :ARG2 (a8 / anyone))))))))
 
-",DiGraph with 45 nodes and 44 edges,group,person,7,group,person,4,g_25,g_25,p3_26,p2_10,animate,[4],[1.0],4,:group
+",DiGraph with 45 nodes and 44 edges,group,person,:consist-of,group,person,:group,g_25,g_25,p3_26,p2_10,animate,[6],[1.0],6,:group,:group,:group
 324,325,4262,"So many have been killed that the UN has given up trying to count casualties, and yet we have a clique of barbarians and mafia crooks in Moscow holding the world hostage over this issue.","[{'ORG': 'UN'}, {'LOC': 'Moscow'}, {'B_human': 'bar'}, {'B_human': 'c'}, {'PER': 'we'}, {'W_Animate': 'organization'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(a / and
       :op1 (k / kill-01
             :ARG1 (p / person
@@ -1479,7 +1479,7 @@
             :mod (y / yet)
             :location (c7 / city :wiki ""Moscow"" :name (n2 / name :op1 ""Moscow""))))
 
-",DiGraph with 34 nodes and 33 edges,clique,and,7,clique,and,4,c5_19,c5_19,a2_20,a_0,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:group
+",DiGraph with 34 nodes and 33 edges,clique,and,:consist-of,clique,and,:group,c5_19,c5_19,a2_20,a_0,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 327,328,4910,They would never allow generations of Iraqi's to suffer from mutations and deformities like these.,"[{'MISC': 'Iraqi'}, {'PER': 'They'}, {'W_Inanimate': 'country'}]","(a / allow-01 :polarity -
       :ARG0 (t / they)
       :ARG1 (s / suffer-01
@@ -1496,7 +1496,7 @@
                         :ARG2 (t2 / this))))
       :time (e / ever))
 
-",DiGraph with 17 nodes and 16 edges,generation,person,7,generation,person,4,g_4,g_4,p_5,p_5,animate,[4],[1.0],4,:group
+",DiGraph with 17 nodes and 16 edges,generation,person,:consist-of,generation,person,:group,g_4,g_4,p_5,p_5,animate,[6],[1.0],6,:group,:group,:group
 328,329,4920,That's ******* disgusting and I hope the perpertrators are made to suffer what generations of Iraqi's already have and will ever endure.,"[{'MISC': 'Iraqi'}, {'B_human': 'per'}, {'PER': 'I'}, {'W_Inanimate': 'country'}]","(a / and
       :op1 (d / disgust-01
             :ARG0 (t / that))
@@ -1519,7 +1519,7 @@
                                     :ARG1 g
                                     :time (a2 / already)))))))
 
-",DiGraph with 23 nodes and 22 edges,generation,person,7,generation,person,4,g_11,g_11,p3_12,p_7,animate,[4],[1.0],4,:group
+",DiGraph with 23 nodes and 22 edges,generation,person,:consist-of,generation,person,:group,g_11,g_11,p3_12,p_7,animate,[6],[1.0],6,:group,:group,:group
 332,333,5135,"The issue with places like ""white"" hollywood is the glass ceiling that keeps minorities AND women out, as there is the feeling (whether true or not!) that there is not a level and fair playing field.","[{'B_human': 'minorities'}, {'B_human': 'women'}]","(i / issue-02
       :ARG0 (c / ceiling
             :consist-of (g / glass)
@@ -1545,7 +1545,7 @@
                   :ARG1-of (r2 / regardless-91
                         :ARG2 f2))))
 
-",DiGraph with 29 nodes and 28 edges,ceiling,glass,7,ceiling,glass,16,c_1,c_1,g_2,g_2,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:group
+",DiGraph with 29 nodes and 28 edges,ceiling,glass,:consist-of,ceiling,glass,:material,c_1,c_1,g_2,g_2,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",6,:group,:material,:material
 336,337,6345,"Bush hasn't lifted a finger to help either of those groups of men, and that's why IMO Bush has shown himself to be nothing but an honorless pig.","[{'PER': 'Bush'}, {'ORG': 'I'}, {'PER': 'Bush'}, {'B_human': 'men'}, {'B_animal': 'pig'}, {'W_Animate': 'person'}]","(c / cause-01
       :ARG0 (l / lift-01 :polarity -
             :ARG0 (p / person :wiki ""George_W._Bush"" :name (n / name :op1 ""Bush""))
@@ -1567,7 +1567,7 @@
                         :domain p
                         :mod (n2 / nothing-but)))))
 
-",DiGraph with 25 nodes and 24 edges,group,man,7,group,man,4,g2_13,g_10,m_14,m_14,animate,[4],[1.0],4,:group
+",DiGraph with 25 nodes and 24 edges,group,man,:consist-of,group,man,:group,g2_13,g_10,m_14,m_14,animate,[6],[1.0],6,:group,:group,:group
 343,344,2153,I am talking about generations of unemployed and unemployable people.,[{'PER': 'I'}],"(t / talk-01
       :ARG0 (i / i)
       :ARG1 (a / and
@@ -1579,7 +1579,7 @@
                   :ARG1-of (e2 / employ-01
                         :ARG1-of (p3 / possible-01 :polarity -)))))
 
-",DiGraph with 12 nodes and 11 edges,generation,person,7,generation,person,4,g2_7,g_3,p2_8,p_4,animate,[4],[1.0],4,:group
+",DiGraph with 12 nodes and 11 edges,generation,person,:consist-of,generation,person,:group,g2_7,g_3,p2_8,p_4,animate,[6],[1.0],6,:group,:group,:group
 350,351,7988,*plays flute to summon the small band of lefties out of the woodwork*,[{'B_human': 'left'}],"(p / play-11
       :ARG2 (f / flute)
       :purpose (s / summon-01
@@ -1589,7 +1589,7 @@
                   :mod (s3 / small))
             :source (w / woodwork)))
 
-",DiGraph with 8 nodes and 7 edges,band,person,7,band,person,4,b_3,b_3,p2_4,p2_4,animate,[4],[1.0],4,:group
+",DiGraph with 8 nodes and 7 edges,band,person,:consist-of,band,person,:group,b_3,b_3,p2_4,p2_4,animate,[6],[1.0],6,:group,:group,:group
 362,363,16686,"There are no groups of right wingers dancing in the streets waving signs that say ""Death to Liberals!""","[{'MISC': 'Liberals'}, {'B_human': 'winger'}, {'W_Inanimate': 'location'}]","(g / group :polarity -
       :consist-of (p2 / person
             :ARG1-of (r / right-08)
@@ -1602,7 +1602,7 @@
                                     :ARG1 (p / person
                                           :ARG1-of (l / liberal-02))))))))
 
-",DiGraph with 11 nodes and 10 edges,group :polarity -,person,7,group :polarity -,person,4,g_0,g_0,p2_1,p2_1,animate,[4],[1.0],4,:group
+",DiGraph with 11 nodes and 10 edges,group :polarity -,person,:consist-of,group :polarity -,person,:group,g_0,g_0,p2_1,p2_1,animate,[6],[1.0],6,:group,:group,:group
 374,375,19919,The best slave is a slave that doesn't know he/she is a slave.,"[{'B_human': 'slave'}, {'B_human': 'slave'}, {'B_human': 'slave'}]","(h / have-degree-91
       :ARG1 s
       :ARG2 (g / good-02
@@ -1613,7 +1613,7 @@
                                     :ARG1 s2)))))
       :ARG3 (m / most))
 
-",DiGraph with 10 nodes and 9 edges,slave,slave,7,slave,slave,4,s_3,s_3,s2_4,s_3,animate,[4],[1.0],4,:group
+",DiGraph with 10 nodes and 9 edges,slave,slave,:consist-of,slave,slave,:group,s_3,s_3,s2_4,s_3,animate,[6],[1.0],6,:group,:group,:group
 376,377,19945,"There were 62 people on my payroll this week, and only 2 at the minimum wage that aren't tipped on top of it.",[{'W_Animate': 'person'}],"(a / and
       :op1 (p / payroll
             :poss (i / i)
@@ -1630,7 +1630,7 @@
                   :quant (o / only :op1 2))
             :ARG2 p2))
 
-",DiGraph with 18 nodes and 17 edges,payroll,person,7,payroll,person,4,p_1,p_1,p2_3,p2_3,animate,[4],[1.0],4,:group
+",DiGraph with 18 nodes and 17 edges,payroll,person,:consist-of,payroll,person,:group,p_1,p_1,p2_3,p2_3,animate,[6],[1.0],6,:group,:group,:group
 385,386,21235,You know I love you and Nimh and appreciate you both.,"[{'PER': 'Ni'}, {'PER': 'You'}, {'PER': 'I'}, {'PER': 'you'}, {'PER': 'you'}, {'W_Animate': 'person'}]","(k / know-01
       :ARG0 (y / you)
       :ARG1 (a / and
@@ -1645,7 +1645,7 @@
                   :ARG1 (b / both
                         :consist-of a2))))
 
-",DiGraph with 15 nodes and 14 edges,both,a2,7,both,a2,4,b_13,b_13,a2_14,a2_14,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",16,:group
+",DiGraph with 15 nodes and 14 edges,both,a2,:consist-of,both,a2,:group,b_13,b_13,a2_14,a2_14,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",8,:group,:material,:material
 395,396,541,Bunuel believed reality is actually a smoke screen for hidden urges .,"[{'PER': 'B'}, {'PER': 'unuel'}, {'W_Animate': 'person'}]","(b2 / believe-01
       :ARG0 (p2 / person :wiki ""Luis_Buñuel"" :name (n / name :op1 ""Bunuel""))
       :ARG1 (s / screen
@@ -1655,7 +1655,7 @@
             :domain (r / reality)
             :ARG1-of (a / actual-02)))
 
-",DiGraph with 11 nodes and 10 edges,screen,smoke,7,screen,smoke,16,s_5,s_5,s2_8,s2_8,inanimate,"[4, 3, 16]","[0.1, 0.1, 0.8]",3,:group
+",DiGraph with 11 nodes and 10 edges,screen,smoke,:consist-of,screen,smoke,:material,s_5,s_5,s2_8,s2_8,inanimate,"[6, 8, 10]","[0.1, 0.1, 0.8]",10,:group,:material,:material
 407,410,1561,"MCC say, on your bikes Cobber, because that urn is a gift, not a trophy, and it stays where it is.","[{'ORG': 'MCC'}, {'PER': 'Cobb'}, {'W_Inanimate': 'location'}]","(s / say-01
       :ARG0 (c / club :wiki ""Marylebone_Cricket_Club"" :name (n / name :op1 ""MCC""))
       :ARG1 (b / bike-01 :mode imperative
@@ -1672,7 +1672,7 @@
                                     :ARG1 u)))))
       :ARG2 (c3 / cobber))
 
-",DiGraph with 20 nodes and 19 edges,bike-01,cause-01,2,bike-01,cause-01,1,b_5,c2_8,c2_8,b_5,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+",DiGraph with 20 nodes and 19 edges,bike-01,cause-01,:ARG1-of,bike-01,cause-01,:cause,b_5,c2_8,c2_8,b_5,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 411,414,1732,If they found deposits of rhodium and platinum itd be a major reason to enter negotiations to help em develop their resources.,[{'PER': 'they'}],"(h / have-condition-91
       :ARG1 (r2 / reason
             :ARG1-of (m / major-02)
@@ -1693,7 +1693,7 @@
                         :op1 (r / rhodium)
                         :op2 (p / platinum)))))
 
-",DiGraph with 19 nodes and 18 edges,reason,cause-01,3,reason,cause-01,1,r2_1,c_4,c_4,r2_1,inanimate,"[1, 5]","[0.9, 0.1]",1,:cause
+",DiGraph with 19 nodes and 18 edges,reason,cause-01,:ARG0-of,reason,cause-01,:cause,r2_1,c_4,c_4,r2_1,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 413,416,603,"Abather and Balqes glow with wonder when they speak of those days , of earning a good living and having their own home for the first time .","[{'ORG': 'Ba'}, {'PER': 'they'}, {'W_Animate': 'person'}, {'W_Animate': 'person'}]","(g / glow-01
       :ARG0 (a2 / and
             :op1 (p3 / person :wiki - :name (n / name :op1 ""Abather""))
@@ -1714,7 +1714,7 @@
             :ARG0 (w / wonder-02
                   :ARG0 a2)))
 
-",DiGraph with 26 nodes and 25 edges,glow-01,cause-01,2,glow-01,cause-01,1,g_0,c_23,c_23,g_0,inanimate,"[1, 5]","[0.9, 0.1]",5,:cause
+",DiGraph with 26 nodes and 25 edges,glow-01,cause-01,:ARG1-of,glow-01,cause-01,:cause,g_0,c_23,c_23,g_0,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 414,417,614,Otherwise you will be killed by jihadis because you are a traitor .,"[{'B_human': 'traitor'}, {'PER': 'you'}, {'PER': 'you'}]","(k / kill-01
       :ARG0 (j / jihadi)
       :ARG1 (y / you)
@@ -1724,7 +1724,7 @@
       :condition (h / have-polarity-91
             :ARG2 -))
 
-",DiGraph with 8 nodes and 7 edges,kill-01,cause-01,2,kill-01,cause-01,5,k_0,c_3,c_3,k_0,inanimate,"[1, 5]","[0.9, 0.1]",5,:cause
+",DiGraph with 8 nodes and 7 edges,kill-01,cause-01,:ARG1-of,kill-01,cause-01,:reason,k_0,c_3,c_3,k_0,inanimate,"[9, 16]","[0.9, 0.1]",9,:cause,:cause,:cause
 420,423,9848,Not everyone is as rich or as selfish towards his kids as Bill Gates is.,"[{'PER': 'Bill Gates'}, {'B_human': 'kids'}, {'W_Animate': 'person'}]","(h2 / have-degree-91 :polarity -
       :ARG1 (e5 / everyone)
       :ARG2 (o / or
@@ -1737,7 +1737,7 @@
       :ARG3 (e4 / equal)
       :ARG4 (p / person :wiki ""Bill_Gates"" :name (n / name :op1 ""Bill"" :op2 ""Gates"")))
 
-",DiGraph with 15 nodes and 14 edges,or,person,5,or,person,10,o_3,o_3,p2_6,p2_6,animate,"[8, 10]","[0.1, 0.9]",10,:recipient
+",DiGraph with 15 nodes and 14 edges,or,person,:destination,or,person,:recipient,o_3,o_3,p2_6,p2_6,animate,"[15, 5]","[0.1, 0.9]",5,:goal,:goal,:goal
 421,424,11619,"Then Shepard went on about a young teen who bought Skittles from a 7-11 and while unarmed, was walking back to his father while he was followed by an armed man who police told to stop following the kid.","[{'PER': 'Shepard'}, {'MISC': 'Skittle'}, {'B_human': 'teen'}, {'B_human': 'father'}, {'B_human': 'man'}, {'B_human': 'kid'}, {'PER': 'he'}, {'W_Animate': 'person'}, {'W_Inanimate': 'product'}]","(g / go-on-25
       :ARG0 (p2 / person :wiki ""Shepard_Smith"" :name (n / name :op1 ""Shepard""))
       :time (t / then)
@@ -1771,13 +1771,13 @@
                                                 :ARG2 t2))))
                         :ARG2 t2))))
 
-",DiGraph with 41 nodes and 40 edges,walk-01,person,5,walk-01,person,8,w_21,w_21,p_23,p2_1,animate,"[8, 10]","[0.1, 0.9]",10,:goal
+",DiGraph with 41 nodes and 40 edges,walk-01,person,:destination,walk-01,person,:goal,w_21,w_21,p_23,p2_1,animate,"[15, 5]","[0.1, 0.9]",5,:goal,:goal,:goal
 428,431,25666,This sort of happened to me once recently.,[{'PER': 'me'}],"(t / this :frequency 1
       :mod (s / sort)
       :destination (i / i)
       :time (r / recent))
 
-",DiGraph with 4 nodes and 3 edges,this :frequency 1,i,5,this :frequency 1,i,10,t_0,t_0,i_2,i_2,animate,"[8, 10]","[0.1, 0.9]",10,:goal
+",DiGraph with 4 nodes and 3 edges,this :frequency 1,i,:destination,this :frequency 1,i,:recipient,t_0,t_0,i_2,i_2,animate,"[15, 5]","[0.1, 0.9]",5,:goal,:goal,:goal
 431,434,30164,There was a convoluted pathway from the break in to the president with multiple denials lies and excuses.,[{'B_human': 'president'}],"(p / pathway
       :source (b / break-02)
       :ARG1-of (c / convolute-01)
@@ -1791,12 +1791,12 @@
       :accompanier (e / excuse-02
             :quant m))
 
-",DiGraph with 12 nodes and 11 edges,pathway,person,5,pathway,person,8,p_0,p_0,p2_3,p2_3,animate,"[8, 10]","[0.1, 0.9]",10,:recipient
+",DiGraph with 12 nodes and 11 edges,pathway,person,:destination,pathway,person,:goal,p_0,p_0,p2_3,p2_3,animate,"[15, 5]","[0.1, 0.9]",5,:goal,:goal,:goal
 438,441,550,a surface-to-surface missile,[],"(m / missile
       :source (s / surface)
       :destination (s2 / surface))
 
-",DiGraph with 3 nodes and 2 edges,missile,surface,5,missile,surface,8,m_0,m_0,s2_2,s_1,inanimate,[8],[1.0],8,:goal
+",DiGraph with 3 nodes and 2 edges,missile,surface,:destination,missile,surface,:goal,m_0,m_0,s2_2,s_1,inanimate,[15],[1.0],15,:goal,:goal,:goal
 440,443,259,Suggestions that there are no longer drug lords in Afghanistan and that drug traffic into Tajikistan has been eradicated are unrealistic and false.,"[{'LOC': 'Afghanistan'}, {'LOC': 'Tajikistan'}, {'B_human': 'lords'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}]","(a / and
       :op1 (r / realistic-03 :polarity -
             :ARG1 s)
@@ -1812,7 +1812,7 @@
                                     :mod (d2 / drug)
                                     :destination (c2 / country :wiki ""Tajikistan"" :name (n2 / name :op1 ""Tajikistan""))))))))
 
-",DiGraph with 21 nodes and 20 edges,traffic,country,5,traffic,country,8,t_15,t_15,c2_17,c_9,inanimate,[8],[1.0],8,:goal
+",DiGraph with 21 nodes and 20 edges,traffic,country,:destination,traffic,country,:goal,t_15,t_15,c2_17,c_9,inanimate,[15],[1.0],15,:goal,:goal,:goal
 445,448,758,Narain also stated the Indian Defense Ministry has sought government approval to allow the Ministry to carry forward unutilized military budgetary allocations from 1 fiscal year to another.,"[{'PER': 'Narain'}, {'ORG': 'Indian Defense Ministry'}, {'ORG': 'Ministry'}, {'W_Animate': 'person'}, {'W_Inanimate': 'country'}]","(s / state-01
       :ARG0 (p / person :wiki - :name (n / name :op1 ""Narain""))
       :ARG1 (s2 / seek-01
@@ -1840,7 +1840,7 @@
                                     :mod (a5 / another))))))
       :mod (a / also))
 
-",DiGraph with 33 nodes and 32 edges,carry-01,year,5,carry-01,year,8,c2_18,c2_18,y4_29,y_27,inanimate,[8],[1.0],8,:goal
+",DiGraph with 33 nodes and 32 edges,carry-01,year,:destination,carry-01,year,:goal,c2_18,c2_18,y4_29,y_27,inanimate,[15],[1.0],15,:goal,:goal,:goal
 446,449,833,The IAEA must be given as much intelligence information as possible to guide inspectors to anything that should be inspected or to any item hidden from inspectors.,"[{'ORG': 'IAEA'}, {'B_human': 'inspector'}, {'B_human': 'inspector'}, {'W_Animate': 'organization'}]","(o2 / obligate-01
       :ARG2 (g / give-01
             :ARG1 (i / information
@@ -1863,7 +1863,7 @@
                               :ARG1-of (h2 / hide-01
                                     :ARG2 p2))))))
 
-",DiGraph with 24 nodes and 23 edges,guide-01,or,5,guide-01,or,8,g2_12,g2_12,o3_15,o3_15,inanimate,[8],[1.0],8,:goal
+",DiGraph with 24 nodes and 23 edges,guide-01,or,:destination,guide-01,or,:goal,g2_12,g2_12,o3_15,o3_15,inanimate,[15],[1.0],15,:goal,:goal,:goal
 447,450,1155,Spacecraft launched from Kourou benefit from the Earth's full rotational speed on the equator to aid their trajectory into space.,"[{'LOC': 'Kourou'}, {'LOC': 'Earth'}, {'W_Inanimate': 'planet'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'city'}]","(b / benefit-01
       :ARG0 (s2 / speed
             :poss (r / rotate-01
@@ -1878,7 +1878,7 @@
             :ARG1-of (l / launch-01
                   :location (c / city :wiki ""Kourou"" :name (n / name :op1 ""Kourou"")))))
 
-",DiGraph with 19 nodes and 18 edges,trajectory,space,5,trajectory,space,8,t_10,t_10,s3_11,s3_11,inanimate,[8],[1.0],8,:goal
+",DiGraph with 19 nodes and 18 edges,trajectory,space,:destination,trajectory,space,:goal,t_10,t_10,s3_11,s3_11,inanimate,[15],[1.0],15,:goal,:goal,:goal
 460,463,5070,Japan has stepped up military research after North Korea surprised the world in 980000 by firing a missile over the Japanese mainland into the Pacific Ocean.,"[{'LOC': 'Japan'}, {'LOC': 'North Korea'}, {'MISC': 'Japanese'}, {'LOC': 'Pacific Ocean'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'country'}, {'W_Inanimate': 'ocean'}]","(s / step-up-03
       :ARG0 (c / country :wiki ""Japan""
             :name (n / name :op1 ""Japan""))
@@ -1900,7 +1900,7 @@
                                     :name (n4 / name :op1 ""Pacific"" :op2 ""Ocean""))))
                   :time (d / date-entity :year 1998))))
 
-",DiGraph with 29 nodes and 28 edges,fire-01,into,5,fire-01,into,8,f_15,f_15,i_21,i_21,inanimate,[8],[1.0],8,:goal
+",DiGraph with 29 nodes and 28 edges,fire-01,into,:destination,fire-01,into,:goal,f_15,f_15,i_21,i_21,inanimate,[15],[1.0],15,:goal,:goal,:goal
 463,466,6487,Afriforum stated that the group would organize protests along the route to Zimbabwe.,"[{'ORG': 'Afriforum'}, {'LOC': 'Zimbabwe'}, {'W_Inanimate': 'location'}, {'W_Inanimate': 'country'}]","(s / state-01
       :ARG0 (g / group :wiki ""AfriForum""
             :name (n / name :op1 ""Afriforum""))
@@ -1912,4 +1912,4 @@
                               :destination (c / country :wiki ""Zimbabwe""
                                     :name (n2 / name :op1 ""Zimbabwe"")))))))
 
-",DiGraph with 14 nodes and 13 edges,route,country,5,route,country,8,r_9,r_9,c_10,c_10,inanimate,[8],[1.0],8,:goal
+",DiGraph with 14 nodes and 13 edges,route,country,:destination,route,country,:goal,r_9,r_9,c_10,c_10,inanimate,[15],[1.0],15,:goal,:goal,:goal

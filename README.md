@@ -1,7 +1,8 @@
 
 # AMR to UMR split-role conversion
-Model as described in the paper:
 
+Corresponding codebase to the paper "Accelerating UMR Adoption: Neuro-Symbolic Conversion from AMR-to-UMR with Low Supervision", accepted to DMR 2024.
+Models as described in the paper:
 
  - baseline.py : Uses only animacy inforamtion and rules to predict the UMR roles
  - base_nn.py: Uses only role_constraints to predict the UMR roles
